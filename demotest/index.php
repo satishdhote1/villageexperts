@@ -62,23 +62,43 @@ if(isset($_SESSION['SESS_ID'])) {
   </div>
   
   <div class="main_body_box">
-      <div class="container">       
-          <div class="col-lg-4 col-md-4 col-sm-4"> 
-          </div>    
+      <div class="container">   
           
           <?php
 		  if(isset($_SESSION['SESS_ID'])) {
           $time = time();
 		  $timeLESS = $time-30;
-		  ?> 
+		  ?>     
+          <div class="col-lg-2 col-md-2 col-sm-2"> 
+          </div>    
           <div class="col-lg-4 col-md-4 col-sm-4 pal" style="border:1px solid #ccc; background:#FFF; margin-top:50px; padding:10px;">
-          <h2 style=" text-align:center;">My Team</h2>
+          <h2 style=" text-align:center;">Online users</h2>
           	<?php
-          	$qryU=mysqli_query($bd, "SELECT * FROM users WHERE introduced_by='$UID'");
+          	$qryU=mysqli_query($bd, "SELECT * FROM users WHERE NOT(id='$UID') ORDER BY name");
 			while($memU=mysqli_fetch_assoc($qryU)) {
                 if($memU['last_seen']>$timeLESS){
 				?>
                 	<div id="u<?php echo $memU['id'];?>" style="line-height: 30px;"><a href="#" onClick="selectu('<?php echo $memU['id'];?>')"><img src="images/login.png" alt="Logged In" style="width:18px; float:left;margin-top: 6px;margin-right: 5px;"><?php echo $memU['name'];?><img src="images/selected.png" alt="Logged Out" style="width:18px; float:right;margin-top: 6px;margin-right: 5px; display:none;" id="selected_img"></a></div>
+                <?php
+				}
+				else {
+				?>
+                	<!--<div id="u<?php echo $memU['id'];?>" style="line-height: 30px; padding: 10px;"><img src="images/not-login.png" alt="Logged Out" style="width:18px; float:left;margin-top: 6px;margin-right: 5px;"><?php echo $memU['name'];?></div>-->
+                    <?php
+				}
+			}
+			?>
+           <input type="hidden" value="" id="connect_with"> 
+            <a class="log_in_button" id="connect_button" style="float:left; width:100%; margin-top:20px; background: #ff6c00; color:#FFF; font-size: 25px; display:none;" href="#" onClick="start_communication();">Connect</a>
+          </div>   
+          <div class="col-lg-4 col-md-4 col-sm-4 pal" style="border:1px solid #ccc; background:#FFF; margin-top:50px; padding:10px;">            
+            <h2 style=" text-align:center;">Offline users</h2>
+          	<?php
+          	$qryU=mysqli_query($bd, "SELECT * FROM users WHERE NOT(id='$UID') ORDER BY name");
+			while($memU=mysqli_fetch_assoc($qryU)) {
+                if($memU['last_seen']>$timeLESS){
+				?>
+                	<!--<div id="u<?php echo $memU['id'];?>" style="line-height: 30px;"><a href="#" onClick="selectu('<?php echo $memU['id'];?>')"><img src="images/login.png" alt="Logged In" style="width:18px; float:left;margin-top: 6px;margin-right: 5px;"><?php echo $memU['name'];?><img src="images/selected.png" alt="Logged Out" style="width:18px; float:right;margin-top: 6px;margin-right: 5px; display:none;" id="selected_img"></a></div>-->
                 <?php
 				}
 				else {
@@ -88,13 +108,15 @@ if(isset($_SESSION['SESS_ID'])) {
 				}
 			}
 			?>
-           <input type="hidden" value="" id="connect_with"> 
-            <a class="log_in_button" id="connect_button" style="float:left; width:100%; margin-top:20px; background: #ff6c00; color:#FFF; font-size: 25px; display:none;" href="#" onClick="start_communication();">Connect</a>
-          </div>
+          </div>  
+          <div class="col-lg-2 col-md-2 col-sm-2"> 
+          </div>    
           <?php
 		  }
 		  else {
-		  ?>
+		  ?>    
+          <div class="col-lg-4 col-md-4 col-sm-4"> 
+          </div>    
           <div class="col-lg-4 col-md-4 col-sm-4 pal" style="border:1px solid #ccc; background:#FFF; margin-top:50px;     padding: 15px;">
           <h2 style=" text-align:center;">Login Here</h2>
           	<?php $lerror; ?>
@@ -103,13 +125,12 @@ if(isset($_SESSION['SESS_ID'])) {
             <input type="submit" value="LOGIN"  class="log_in_button" style="float:left; width:100%; margin-top:20px;">
             </form>
             
-          </div>
+          </div>    
+          <div class="col-lg-4 col-md-4 col-sm-4"> 
+          </div>    
           <?php
 		  }
 		  ?>
-               
-          <div class="col-lg-4 col-md-4 col-sm-4"> 
-          </div>   
           
           
           
@@ -143,7 +164,16 @@ if(isset($_SESSION['SESS_ID'])) {
     <script>
 	function start_communication(){
 		var uid = document.getElementById("connect_with").value;
-		location.href = "communication.php?cid="+uid;
+
+				$.ajax({
+					url : "schedulecommunication.php?cid="+uid,
+					success : function (data) {
+						if(data) {
+						location.href = "https://www.villageexperts.com:8084/#/"+data+"?s=1";
+						}
+					}
+				});
+		//location.href = "communication.php?cid="+uid;
 	}
 	</script>
     <?php
@@ -159,7 +189,7 @@ $.ajax({
 	url : "checkcommunication.php",
 	success : function (data) {
 		if(data) {
-    	location.href = "communication.php?crid="+data;
+    	location.href = "https://www.villageexperts.com:8084/#/"+data+"?s=1";
 		}
 	}
 });

@@ -24,7 +24,7 @@ $time=time();
 <title>Communication - Service Exchange</title>
 </head>
 <body>
-<div class="bottm_box"><a href="index.php"><div class="home_button">Home</div></a>
+<div class="bottm_box"><a href="index.php"><div class="home_button">Back to Home</div></a>
   </div>
 <iframe id="myiframe" height="90%" width="100%"></iframe> 
 
@@ -37,7 +37,7 @@ $time=time();
     if(isset($_GET['cid'])) {
 		?>
 <script>
-document.getElementById('myiframe').src="https://54.200.195.225:8084/#/<?php echo $spid."".$time; ?>?s=1";
+document.getElementById('myiframe').src="https://www.villageexperts.com:8084/#/<?php echo $spid."".$time; ?>?s=1";
 </script>
 <?php
 	}
@@ -46,7 +46,7 @@ document.getElementById('myiframe').src="https://54.200.195.225:8084/#/<?php ech
 <script>
 jQuery(document).ready(function() {
     setTimeout(function() {
-        document.getElementById('myiframe').src="https://54.200.195.225:8084/#/<?php echo $_GET['crid']; ?>?s=1";
+        document.getElementById('myiframe').src="https://www.villageexperts.com:8084/#/<?php echo $_GET['crid']; ?>?s=1";
     }, 10000);
 });
 
