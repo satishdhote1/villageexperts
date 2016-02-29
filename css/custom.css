@@ -2017,3 +2017,34 @@ img {
 	font-family:'RobotoCondensed-Regular';
 	color:#F30;	
 }
+
+.main-box {
+		float:left;
+		width:90%;
+		margin:5%;
+		border:1px solid #ccc;
+	}
+	.icon-box {
+		width:60%;
+		float:left;
+		margin:20px 20%;
+	}
+	.redirect-btn {
+		width:80%;
+		float:left;
+		margin: 0px 10% 20px 10%;
+		background: #0078AC;
+    	border-bottom: 2px solid #06425D;
+		border-radius:5px;
+		padding:10px;
+		color:#FFF;
+		font-family: 'RobotoCondensed-Regular';
+    	font-size: 16px;
+		text-align:center;
+		cursor:pointer;
+	}
+	.redirect-btn:hover {
+		color:#FFF;
+		text-decoration:none;
+		background: #05628A;
+	}

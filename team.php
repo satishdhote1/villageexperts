@@ -119,34 +119,69 @@ else {
 ?>
   </div>
   </div>
-  <div class="main_body_box" style="background:none; margin-top:60px;">
+  <div class="main_body_box" style="background:none;">
       <div class="container"> 
+      
+          <a href="#">
+          <div class="log_in_button" style="width:320px; float:left; margin-top:20px;">Create Group</div>
+          </a>
+          <div class="clearfix"></div>
+  		<h2 style="text-align:center; color: #0078AC;">My Groups</h2>
+        
       	<div class="col-lg-4">
         	<div class="main-box">
             	<div class="icon-box">
                 <img src="images/team.png" alt="team">
                 </div>
-                <a class="redirect-btn" href="team.php">Team Member</a>
+                <a class="redirect-btn" href="#">Group 1</a>
             </div>
         </div>
- 
+        
       	<div class="col-lg-4">
         	<div class="main-box">
             	<div class="icon-box">
-                <img src="images/old-sp.png" alt="team">
+                <img src="images/team.png" alt="team">
                 </div>
-                <a class="redirect-btn" href="#">Known Service Provider</a>
+                <a class="redirect-btn" href="#">Group 2</a>
             </div>
         </div>
- 
+        
       	<div class="col-lg-4">
         	<div class="main-box">
             	<div class="icon-box">
-                <img src="images/new-sp.png" alt="team">
+                <img src="images/team.png" alt="team">
                 </div>
-                <a class="redirect-btn" href="new_search.php">New Service Provider</a>
+                <a class="redirect-btn" href="#">Group 3</a>
             </div>
         </div>
+        
+      	<div class="col-lg-4">
+        	<div class="main-box">
+            	<div class="icon-box">
+                <img src="images/team.png" alt="team">
+                </div>
+                <a class="redirect-btn" href="#">Group 4</a>
+            </div>
+        </div>
+        
+      	<div class="col-lg-4">
+        	<div class="main-box">
+            	<div class="icon-box">
+                <img src="images/team.png" alt="team">
+                </div>
+                <a class="redirect-btn" href="#">Group 5</a>
+            </div>
+        </div>
+        
+      	<div class="col-lg-4">
+        	<div class="main-box">
+            	<div class="icon-box">
+                <img src="images/team.png" alt="team">
+                </div>
+                <a class="redirect-btn" href="#">Group 6</a>
+            </div>
+        </div>
+        
       </div>  
       <hr />
       <div class="copy_text">Copyrights 2015.  All Rights Reserved</div>

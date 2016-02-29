@@ -119,38 +119,164 @@ else {
 ?>
   </div>
   </div>
-  <div class="main_body_box" style="background:none; margin-top:60px;">
-      <div class="container"> 
-      	<div class="col-lg-4">
-        	<div class="main-box">
-            	<div class="icon-box">
-                <img src="images/team.png" alt="team">
-                </div>
-                <a class="redirect-btn" href="team.php">Team Member</a>
-            </div>
-        </div>
- 
-      	<div class="col-lg-4">
-        	<div class="main-box">
-            	<div class="icon-box">
-                <img src="images/old-sp.png" alt="team">
-                </div>
-                <a class="redirect-btn" href="#">Known Service Provider</a>
-            </div>
-        </div>
- 
-      	<div class="col-lg-4">
-        	<div class="main-box">
-            	<div class="icon-box">
-                <img src="images/new-sp.png" alt="team">
-                </div>
-                <a class="redirect-btn" href="new_search.php">New Service Provider</a>
-            </div>
-        </div>
-      </div>  
-      <hr />
-      <div class="copy_text">Copyrights 2015.  All Rights Reserved</div>
+  <form action="search.php" method="get">
+  <div class="main_body_box">
+  <div class="container">
+  <div class="col-lg-9 col-md-9 col-sm-8">
+  <a href="demotest">
+  <div class="log_in_button" style="width:320px; float:left; margin-top:20px;">Goto Test Page</div>
+  </a>
+  <div class="main_box">
+  <div class="mid_image" id="test1"><img src="images/image.png" alt="image"></div>
+  <div class="fild_box">
+  <!--<div class="expart_fild_box"><input name="q" class="expart_fild_box_main" placeholder="... the Expertise i am seeking..." type="hidden"></div>-->
+  <input name="q" class="expart_fild_box_main" placeholder="... the Expertise i am seeking..." type="hidden" value="">
+  <div class="loader"><img src="images/ajax_loader_gray.gif" alt="loader"></div>
+  
+  <div class="expart_list_box">
+  <select name="expertise" class="expart_fild_box_main" id="expertise">
+  <option value="">Choose Expertise From...</option>
+  <?php
+  $qryExpart=mysqli_query($bd, "SELECT * FROM professions ORDER BY Professions ASC");
+  while($memExpart=mysqli_fetch_assoc($qryExpart)) {
+	  echo "<option value=".$memExpart['ProfessionID'].">".$memExpart['Professions']."</option>";
+  }
+  ?>
+  </select>
   </div>
+  <div class="loader"><img src="images/ajax_loader_gray.gif" alt="loader"></div>
+  </div>
+  <!--<div class="search_button">
+  <div class="search_button_main">
+  <a href="#"><span class="search_text">Search</span>
+  <div class="search_icon"><img src="images/search_icon.png" alt="icon"></div></a>
+  </div>
+  </div>-->
+  
+  <input type="submit" class="search_button_main" value="Search">
+  </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-4">
+  <div class="tree_box">
+  <div class="attorni_box">
+  <h1>Profession</h1>
+  <div class="attorny_sub_box" id="specl">
+  <div class="imanigition_box">
+  	<span style="color:#CCC">Select Expertise..</span>
+  </div>
+  
+  </div>
+  </div>
+  
+  <div class="attorni_box">
+  <h1>Language</h1>
+  <div class="attorny_sub_box">
+  <?php
+  $qryLanguage=mysqli_query($bd, "SELECT * FROM language");
+  while($memLanguage=mysqli_fetch_assoc($qryLanguage)) {
+  ?>
+  <div class="imanigition_box">
+  <div class="check_box"><input name="language[]" type="checkbox" value="<?php echo $memLanguage['LanguageID']; ?>"></div>
+  <span class="check_text"><?php echo $memLanguage['Languages']; ?></span>
+  </div>
+  <?php
+  }
+  ?>
+  </div>
+  </div>
+  <!--
+  <div class="attorni_box">
+  <h1>Passed the Bar</h1>
+  <div class="attorny_sub_box">
+  <div class="imanigition_box">
+  <div class="check_box"><input name="" type="checkbox" value=""></div>
+  <span class="check_text">Yes</span>
+  </div>
+  <div class="imanigition_box">
+  <div class="check_box"><input name="" type="checkbox" value=""></div>
+  <span class="check_text">Not necessary</span>
+  </div>
+  </div>
+  </div>
+  -->
+  <div class="attorni_box">
+  <h1>Experience</h1>
+  <div class="attorny_sub_box">
+  <?php
+  $qryExperience=mysqli_query($bd, "SELECT * FROM experience");
+  while($memExperience=mysqli_fetch_assoc($qryExperience)) {
+  ?>
+  <div class="imanigition_box">
+  <div class="check_box"><input name="experience[]" type="checkbox" value="<?php echo $memExperience['YearsOfExperienceID']; ?>"></div>
+  <span class="check_text"><?php echo $memExperience['YearsOfExperience']; ?></span>
+  </div>
+  <?php
+  }
+  ?>
+  </div>
+  <!--<div class="attorny_sub_box">
+  <div class="imanigition_box">
+  <div class="check_box"><input name="" type="checkbox" value=""></div>
+  <span class="check_text">Expert</span>
+  </div>
+  <div class="imanigition_box">
+  <div class="check_box"><input name="" type="checkbox" value=""></div>
+  <span class="check_text">Moderate expertise</span>
+  </div>
+  <div class="imanigition_box">
+  <div class="check_box"><input name="" type="checkbox" value=""></div>
+  <span class="check_text">Beginner</span>
+  </div>
+  </div>-->
+  </div>
+  </div>
+  </div>
+  
+  <div class="search_button_mob">
+  <div class="search_button_main">
+  <a href="#"><span class="search_text">Search</span>
+  <div class="search_icon"><img src="images/search_icon.png" alt="icon"></div></a>
+  </div>
+  </div>
+  </div>
+  
+  
+  <div class="container" style="text-align:center;">
+  <?php
+  $qryspr=mysqli_query($bd, "SELECT * FROM service_provider");
+	if($memspr=mysqli_fetch_assoc($qryspr)) {
+		$num_spr = mysqli_num_rows($qryspr);
+	}
+	else {
+		$num_spr = "0";
+	}
+	
+	$timeNow=date('ymdhis');
+	$timeless=$timeNow-60;
+  $qryspl=mysqli_query($bd, "SELECT * FROM status WHERE lastActivity > '$timeless'");
+	if($memspl=mysqli_fetch_assoc($qryspl)) {
+		$num_spl = mysqli_num_rows($qryspl);
+	}
+	else {
+		$num_spl = "0";
+	}
+		
+  $qrysrr=mysqli_query($bd, "SELECT * FROM service_requester");
+	if($memsrr=mysqli_fetch_assoc($qrysrr)) {
+		$num_srr = mysqli_num_rows($qrysrr);
+	}
+	else {
+		$num_srr = "0";
+	}
+	
+	echo "Service provider registered : ".$num_spr." | Service provider login : ".$num_spl." | Service requestor registered : ".$num_srr;
+	?>
+  </div>
+  
+  <hr />
+  <div class="copy_text">Copyrights 2015.  All Rights Reserved</div>
+  </div>
+  </form>
   
   
   
