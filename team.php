@@ -1,6 +1,12 @@
 <?php
 	session_start();
 require('config.php');
+if($_SESSION['SESS_ID']||$_SESSION['SESS_SR_ID']) {
+}
+else {
+	header('location:index.php?error="loginerror"');
+	exit();	
+}
 if(isset($_SESSION['SESS_ID'])) {
 	$SPID=$_SESSION['SESS_ID'];
 	$qryProfile=mysqli_query($bd, "SELECT * FROM service_provider WHERE SPID='$SPID'");

@@ -1,8 +1,10 @@
 <?php
 	session_start();
 require('config.php');
+  $general_user = "";
 if(isset($_SESSION['SESS_ID'])) {
 	$SPID=$_SESSION['SESS_ID'];
+  $general_user = $SPID;
 	$qryProfile=mysqli_query($bd, "SELECT * FROM service_provider WHERE SPID='$SPID'");
 	if($memProfile=mysqli_fetch_assoc($qryProfile)) {
 		$fname=$memProfile['First_Name'];
@@ -12,9 +14,12 @@ if(isset($_SESSION['SESS_ID'])) {
 
 if(isset($_SESSION['SESS_SR_ID'])) {
 	$SRID=$_SESSION['SESS_SR_ID'];
+  $general_user = $SRID;
 	$qryProfile=mysqli_query($bd, "SELECT * FROM service_requester WHERE SRID='$SRID'");
 	if($memProfile=mysqli_fetch_assoc($qryProfile)) {
 		$sremail=$memProfile['email'];
+    $srfname=$memProfile['First_Name'];
+    $srlname=$memProfile['Last_Name'];
 	}
 }
 ?>
@@ -60,24 +65,25 @@ elseif(isset($_SESSION['SESS_SR_ID'])){
 
     <div class="main_image_box">
   <div class="main_image"><img src="profile_images/no-profile-img-male.gif" alt="image"></div>
-  <span class="main_image_name_text"><a href="service_requestor_profile_page.php"><?php echo $sremail;?></a> | <a href="logout.php">Log out</a></span>
+  <span class="main_image_name_text"><a href="service_requestor_profile_page.php"><?php echo $srfname." ".$srlname;?></a> | <a href="logout.php">Log out</a></span>
   </div>
     <?php
 }
 else {
 ?>
   
-  <div class="right_header">
+  <div class="right_header" style="width: 410px;">
   <span class="service_text" style="text-align:center; font-size:16px;">Login</span>
   <div class="button_box">
   <a href="service_provider_login.php"><div class="sign_up_button">Service Provider</div></a>
-  <a href="service_requestor_login.php"><div class="log_in_button">Service Requestor</div></a>
+  <a href="service_requestor_login.php"><div class="log_in_button" style="float: left; margin-left: 10px;">Service Requestor</div></a>
+  <a href="nm_login_page.php"><div class="sign_up_button">Group Members</div></a>
   </div>
   </div>
   <div class="right_one_header" style="">
   <!--<div onClick="show_login();" onMouseOver="show_login();" onMouseOut="hide_login();"><span class="service_text">Service Provider Login</span>-->
   <!--Demo-->
-  <div class="right_header">
+  <div class="right_header" style="width: 270px;">
   <span class="service_text" style="text-align:center; font-size:16px;">Register</span>
   <div class="button_box">
   <a href="service_provider_page.php"><div class="sign_up_button">Service Provider</div></a>
@@ -121,12 +127,16 @@ else {
   </div>
   <div class="main_body_box" style="background:none; margin-top:60px;">
       <div class="container"> 
+  <a href="demotest">
+  <div class="log_in_button" style="width:320px; float:left; margin-top:20px; margin-left:30px;">Goto Test Page</div>
+  </a>
+  <div class="clearfix"></div>
       	<div class="col-lg-4">
         	<div class="main-box">
             	<div class="icon-box">
                 <img src="images/team.png" alt="team">
                 </div>
-                <a class="redirect-btn" href="team.php">Team Member</a>
+                <a class="redirect-btn" href="groups.php">My Groups</a>
             </div>
         </div>
  
@@ -135,17 +145,17 @@ else {
             	<div class="icon-box">
                 <img src="images/old-sp.png" alt="team">
                 </div>
-                <a class="redirect-btn" href="#">Known Service Provider</a>
+                <a class="redirect-btn" href="known_service_provider.php">Known Service Provider</a>
             </div>
         </div>
  
       	<div class="col-lg-4">
         	<div class="main-box">
-            	<div class="icon-box">
-                <img src="images/new-sp.png" alt="team">
-                </div>
-                <a class="redirect-btn" href="new_search.php">New Service Provider</a>
+            <div class="icon-box">
+              <img src="images/new-sp.png" alt="team">
             </div>
+            <a class="redirect-btn" href="new_search.php">New Service Provider</a>
+          </div>
         </div>
       </div>  
       <hr />
@@ -161,12 +171,12 @@ else {
   
   
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-   <script>
-  setInterval(pal, 3000); // Update every 3 seconds 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script>
+setInterval(pal, 3000); // Update every 3 seconds 
 
 function pal() 
 { 
@@ -177,7 +187,7 @@ $.post("updatestatus.php");
    
    
    
-  <script>
+<script>
   setInterval(update, 10000); // Update every 10 seconds 
 
 function update() 
@@ -218,7 +228,7 @@ $.ajax({
 			var audio = new Audio('sounds/final-warn-sound.mp3');
 			audio.play();
 				window.setTimeout(function(){
-        			location.href = "communication.php?spid="+spid;
+        			location.href = "https://www.villageexperts.com:8084/#/"+spid;
     			}, 3000);
 			
 		}
@@ -271,5 +281,81 @@ $.ajax({
 } 
 </script>
 <?php }?>
+
+
+
+<!--Service Requester Status-->
+<?php
+if(isset($_SESSION['SESS_SR_ID'])) {
+?>
+<script>
+setInterval(last_seen, 10000); // Update every 10 seconds
+function last_seen() 
+{ 
+$.ajax({
+	url : "requester_status.php",
+	success : function (data) {
+		if(data) {
+    	
+		}
+	}
+});
+} 
+</script>
+<?php
+}
+
+if($_SESSION['SESS_ID']||$_SESSION['SESS_SR_ID']) {
+?>
+<script>
+  setInterval("checkcommunication_group('<?php echo $general_user; ?>')", 10000); // Update every 10 seconds 
+function checkcommunication_group(spid) 
+{ 
+$.ajax({
+  url : "checkcommunication_group.php",
+  success : function (data) {
+    if(data=='error') {
+    }
+    else{
+      var audio = new Audio('sounds/final-warn-sound.mp3');
+      audio.play();
+        window.setTimeout(function(){
+              location.href = "https://www.villageexperts.com:8084/#/"+data;
+          }, 3000);      
+    }
+  }
+});
+} 
+</script>
+<?php } ?>
+
+  <?php
+  if(isset($_GET['error'])){
+    $error=str_replace('"','',$_GET['error']);
+    if($error=='loginerror') {
+  ?>
+    <div style="width: 100%; height: 100%; position: fixed; background: rgba(0, 0, 0, 0.78);" id="notif_box">
+      <div style="width: 300px;padding-right: 20px; background: #fff; color: #F00; margin: auto; margin-top: 220px; font-size: 18px; text-align: right;"><a href="javascript:void(0);" title="Close" style="color: #F00;" onclick="close_notif();">X</a></div>     
+      <div style="width: 300px; padding: 20px; background: #fff; color: #F00; margin: auto; font-size: 18px; padding-top: 0px;">You have to login to access the page. Thank You!</div>      
+    </div>
+  <?php
+    }
+    elseif ($error=='wrongpassword') {
+    ?>
+      <div style="width: 100%; height: 100%; position: fixed; background: rgba(0, 0, 0, 0.78);" id="notif_box">
+        <div style="width: 300px;padding-right: 20px; background: #fff; color: #F00; margin: auto; margin-top: 220px; font-size: 18px; text-align: right;"><a href="javascript:void(0);" title="Close" style="color: #F00;" onclick="close_notif();">X</a></div>
+        <div style="width: 300px; padding: 20px; background: #fff; color: #F00; margin: auto; font-size: 18px; padding-top: 0px;">Username or password is wrong. Please try again. Thank You!</div>      
+      </div>
+    <?php
+    }
+  }
+  ?>
+    <script type="text/javascript">
+      function close_notif() {
+        document.getElementById("notif_box").style.display="none";
+      }
+    </script>
+
+
   </body>
 </html>

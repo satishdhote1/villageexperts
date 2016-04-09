@@ -2048,3 +2048,58 @@ img {
 		text-decoration:none;
 		background: #05628A;
 	}
+	
+	.deactive-btn {
+		width:80%;
+		float:left;
+		margin: 0px 10% 20px 10%;
+		border-radius:5px;
+		padding:10px;
+		font-family: 'RobotoCondensed-Regular';
+    	font-size: 16px;
+		text-align:center;
+		background: #ccc;
+	    color: #000;
+	    cursor: initial;
+	    border-bottom: 2px solid #5D5D5D;
+	}
+	.provider_form_box h1 {
+		width: 100%;
+		float: left;
+		font-family: 'RobotoCondensed-Regular';
+		font-size: 24px;
+		color: #FFF;
+		text-align:center;
+	}
+	.register_right_box h1 {
+		text-align:center;
+	}
+	.service_left_box {
+		text-align:justify;
+	}
+	
+	
+	
+.member_box {
+	background: #fff;
+    float: left;
+    width: 100%;
+    height: 300px;
+    overflow-y: auto;
+}
+.single_member {
+    padding: 5px 20px;
+    color: #333;
+    font-size: 16px;
+    float: left;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+	line-height: 30px;
+}
+
+.single_member a {
+    color: #1274C0;
+}
+.login_ico {width:18px; float:left; margin-top: 6px; margin-right: 5px;}
+.selected_ico {width:18px; float:right; margin-top: 6px; margin-right: 5px; display:none;}
+.selected .selected_ico {display:block;}

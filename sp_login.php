@@ -13,10 +13,10 @@ if($memLogin=mysqli_fetch_assoc($qryLogin)) {
 			$_SESSION['SESS_ID'] = $memLogin['SPID'];
 			//echo $_SESSION['SESS_ID'];
 			session_write_close();
+			header('location:index.php');
 }
 else {
-			//echo "hi";
+			header('location:index.php?error=wrongpassword');
 }
-			header('location:index.php');
 
 ?>
