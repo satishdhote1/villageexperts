@@ -1,0 +1,11 @@
+*.pyc
+.DS_Store
+bower_components
+google_appengine*
+node_modules
+out
+secrets.json
+validation-report.json
+validation-status.json
+webtest-master*
+/src/web_app/js/enums.js
