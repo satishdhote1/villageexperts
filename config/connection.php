@@ -7,7 +7,7 @@ class connections
 	private $password="byethost";
 	private $dbname="b7_15994620_crm";*/
 
-	private $servername="54.193.124.35";
+	private $servername="localhost";
 	private $uname="root";
 	private $password="mysqlroot";
 	private $dbname="villageexpertsdb";
@@ -19,12 +19,12 @@ class connections
 	public function connect()
 		{	
 			$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
-			if(!$con)
-			die("Connection failed: ". mysqli_connect_error() );
-			else
+			if(!$con){
+				die("Connection failed: ". mysqli_connect_error() );
+			}else
 			{
-			//session_start();
-			return $con;
+				//session_start();
+				return $con;
 			}
 			//echo "Connected";
 		}
@@ -36,8 +36,6 @@ class connections
 			return $emailData; 
 			
 		}
-	
-	
 }
 
 
