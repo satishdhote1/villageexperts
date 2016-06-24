@@ -1,0 +1,149 @@
+
+<?php 
+include("config/connection.php");
+session_start();
+
+if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
+{
+$user_id = $_SESSION['logged_user_id'];
+$user_name  = $_SESSION['logged_user_name'];
+$user_pic = $_SESSION['logged_user_image'];
+$userType = $_SESSION['logged_role_code'];
+$rightPanelShow = isset($_REQUEST['success'])?$_REQUEST['success']:'';
+$conn=new connections();
+$conn=$conn->connect();
+
+					$sql="SELECT * FROM groups where  created_by_id = ".$user_id." AND created_by_user_role = '".$userType."' order by groups.group_name";
+					$result = mysqli_query($conn, $sql);
+					$groupsList = array();
+					if (mysqli_num_rows($result) > 0)  
+					{
+						while($row = mysqli_fetch_assoc($result)) {
+							//$launguages = mysqli_fetch_assoc($result);
+							$groupsList[] = $row;
+						}
+						/* echo "<br><pre>";
+						 print_r($groupsList);
+						 echo "</pre><br>";
+*/
+					}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>village expart</title>
+
+<!-- Bootstrap Core CSS -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/mainstyle.css" rel="stylesheet">
+<!--<link href="css/groups.css" rel="stylesheet">-->
+</head>
+<style>
+.over-lap{display:block !important}
+</style>
+<body class="bodybg">
+<div class="container-fluid header-part">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
+      <div class="over-lap">
+        <div class="profile pull-left"> <img src="images/uploads/<?php echo (!empty($user_pic))?$user_pic:"img-3.jpg"; ?>" class="img-responsive"> </div>
+        <div class="pull-right">
+          <p class="loginname"><?php echo $user_name;  ?></p>
+          <div class=""><a href="logout.php" class="btn btn-info bg-blue logout">Logout</a></div>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+<div class="row">
+
+<div class="col-md-4 text-center">
+<div class="grop-part membersPanel">
+<h2 class="my-group">My Groups</h2>
+ <ul class="list-group list-group-modify">
+ <?php
+ 		foreach($groupsList as $groupsLists)
+		{
+ 			$groupName = $groupsLists['group_name'];
+			$img = !empty($groupsLists['image'])?$groupsLists['image']:"img-3.jpg";
+			$gm_id = $groupsLists['group_id'];
+			
+			
+ ?>
+        <li class="list-group-item mygroupsList" id="<?php  echo $gm_id; ?>" dir="<?php echo $groupName; ?>"><a href="javascript:void(0);"><span class="profile-img"><img src="images/groupPhotos/<?php echo $img; ?>"></span><?php echo $groupName;  ?></a></li>
+       
+        <?php
+		      }
+			  
+		?>
+  </ul>
+
+</div>
+<div class="newGroupButton"><a class="navmenu btn-add-group" href="add-new-group.php"><span><i class="fa fa-plus"></i></span>Add New Group </a></div>
+</div>
+
+<div class="col-md-4 col-md-offset-4 text-center">
+<div class="grop-part rightGMpanel" style="display:none">
+<h2 class="my-group membersPanelTitle"></h2>
+<div class="row">
+<div class="col-xs-6 padding-right0">
+<?php   
+if(!empty($rightPanelShow) && $rightPanelShow == 1)
+{
+
+?>
+<input type="hidden" class="rightPanelShow" name="rightPanelShow" value="1" id = <?php  echo $_REQUEST['id'] ;?>>
+<?php }  ?>
+<p class="on-line-member">Online <span class="active-id"><i class="fa fa-circle  red-circel" aria-hidden="true"></i>
+</span></p>
+<ul class="list-group member-group-modify onlineMembers">
+       
+       
+        </ul>
+</div>
+<div class="col-xs-6 padding-left0 opacity-half">
+<p class="on-line-member">Offline <span class="active-id"><i class="fa fa-circle" aria-hidden="true"></i>
+</span></p>
+<ul class="list-group member-group-modify offlineMembers">
+        
+        
+    </ul>
+</div>
+
+</div>
+</div>
+<!--//This link source(<a>) is dynamicaly set from myGroup.js--> 
+<div class="newGMbutton" style="display:none" id=""><a class="navmenu btn-add-group member-btn-color" href="add-new-member.php"><span><i class="fa fa-plus"></i></span>Add New Group-Member</a></div>
+</div>
+
+</div>
+</div>
+<!-- jQuery Version 1.11.1 --> 
+<script src="js/jquery.js"></script> 
+
+<!-- Bootstrap Core JavaScript --> 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/myGroups.js"></script>
+</body>
+</html>
+
+<?php
+ 
+}
+else
+{
+	header("Refresh: 3; url=index.php");
+		echo '<center><h1 style="color:red">You are not autorized.Redirecting....</h1></center>';
+}
+
+?>

@@ -1,0 +1,311 @@
+@charset "utf-8";
+/* CSS Document */
+.bodybg{background:url(../images/background.jpg) 100% 100%;background-size:cover;font-family:Arial, Helvetica, sans-serif}
+.header-part{background:rgba(255,255,255,0.9);width:100%;}
+.logo{padding:10px 0px;}
+.over-lap {
+    position: absolute;
+    right: 50px;
+    top: 7px;
+	display:none;
+}
+.profile.pull-left {
+    border-radius: 50%;
+    height: 80px;
+    margin-right: 25px;
+    overflow: hidden;
+    width: 80px;
+}
+.loginname{font-size:12px;color:#000;font-family:Arial, Helvetica, sans-serif;}
+.bg-blue{background:#0078ac;border:0px;}
+.bg-login{background:#fff;margin-top:100px;border-radius:5px;;}
+.header-bg {
+    background: #60567d;
+}
+.title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 10px 0;
+    text-transform: uppercase;
+	margin-top:10px;
+	margin-bottom:0px;
+}
+
+.btn-service {
+    background:#9f86e6;
+    border: 0 none;
+    margin: 18px 0;
+    min-height: 43px;
+    width: 150px;
+	color:#fff;
+	transition:all ease-in-out 0.5s 0s;
+}
+
+
+
+
+.btn-service:hover:hover{background:#06C;}
+
+
+
+
+
+.hder {
+    background: #385277 none repeat scroll 0 0;
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 25px;
+    margin: 25px auto;
+    padding: 15px 1px 15px 25px;
+    text-align: left;
+    text-transform: uppercase;
+    width: 94%;
+}
+.modify-modal-width{max-width:960px;width:100%;}
+
+
+label.control-label {
+    color: #39383c;
+    font-size: 12px;
+	font-family:Arial, Helvetica, sans-serif;
+}
+.form-control{border-radius:0px;}
+.close-btn {
+    color: white;
+    position: absolute;
+    right: 50px;
+    top: 36px;
+}
+.upload {
+    background: red none repeat scroll 0 0;
+    border: 0 none;
+    float: right;
+    margin-top: 20px;
+}
+.border4sd{border:solid 1px #eee;margin-bottom:20px;}
+.btn-close-mdfy{background:#8080FF;color:#fff;}
+.width-modify{width:400px; margin:0px auto;padding-top:50px;}
+.icon-block {
+    background: #fe0000 none repeat scroll 0 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    left: -62px;
+    top: -5px;
+    min-width: 47px;
+    padding: 12px;
+    position: absolute;
+    z-index: 100;
+}
+.icon-block i {
+    color: white;
+    font-size: 17px;
+}
+.btn-modify-submit {
+    background: #f00 none repeat scroll 0 0;
+    border-radius: 3px;
+    color: #fff;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 8px 28px;
+	border:0px;
+}
+
+.bg-off-white{background:#E8E8E8;margin-top:80px; padding-bottom: 30px;margin-bottom:30px;}
+
+.connect {
+    background: #ff7e00 none repeat scroll 0 0;
+    margin: 0;
+    padding: 3px 0 10px 0px;
+    transition: all 0.5s ease-in-out 0s;
+}	
+.over-lap-connect {
+    left: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.col-1 {
+    background: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin: 1.5%;
+    position: relative;
+    
+}
+.connect a {
+    color: #fff;
+    display: inline-block;
+    font-family: helvetica;
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    text-transform: uppercase;
+	font-weight:bold;
+}
+.col-1 > img {
+    padding: 30px 0;
+	margin:auto;
+}
+.connect:hover{background:#c56100;}
+.col-1:hover .over-lap-connect{transform:scale(1.1);}
+/*-------------MY GROUP---------------*/
+.grop-part{background:#fff;margin:40px auto;}
+.my-group{   background: #ad8a62 ;
+    color: #fff;
+    font-family: fantasy;
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+    padding: 12px;
+}
+.profile-img{width:35px; height:35px;border-radius:50%;overflow:hidden;float:left;margin-left:30px; margin-right: 50px;}
+.profile-img > img {
+    height: 100%;
+    width: 100%;
+}
+.list-group-modify{width:92%;margin:auto;border-radius:0px;padding: 3px 0 1px;}
+.list-group-modify li{background:#f1f0fe;border:0px;margin:5px auto;}
+.list-group-modify li.list-group-item{padding:0px;text-align:left;}
+.list-group-modify li.list-group-item a{ font-size: 15px;line-height: 34px;color:#535351;font-family:Arial, Helvetica, sans-serif;display:inline-block;width:100%;}
+.list-group-modify li.list-group-item:last-child {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+   margin-bottom:20px;
+}
+.list-group-modify li.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+	
+}
+.list-group-modify li.list-group-item a:hover {background:#9a90ff;text-decoration:none;color:#fff;}
+a{transition: all 0.3s ease-in-out 0s}
+.btn-add-group {
+    background: #ff9416 none repeat scroll 0 0;
+    border-radius: 5px;
+    color: white;
+    display: inline-block;
+    font-size: 15px;
+    margin: 20px auto;
+    min-height: 46px;
+    padding: 10px 0;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+.navmenu.btn-add-group > span {
+    background: #e17a01 none repeat scroll 0 0;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    color: #000;
+    font-size: 30px;
+    left: 0;
+    margin: 0;
+    min-height: 46px;
+    padding: 1px 10px;
+    position: absolute;
+    top: 0;
+}
+.btn-add-group:hover{background:#e17a01;text-decoration:none;color:#fff;}
+.btn-add-group:hover span{color:#fff;transition:all 0.2s ease-in-out 0s;}
+.list-group-modify li.list-group-item a:hover {
+    background: #9a90ff none repeat scroll 0 0;
+    color: #fff;
+    text-decoration: none;
+}
+.list-group-modify li.list-group-item a.active {
+   
+    color: #fff !important;
+	background:#ff0000 !important;
+ 
+}
+a:focus {
+    outline: none;
+    outline-offset: -2px;
+}
+.profile-img-mmbr {
+    border-radius: 50%;
+    float: left;
+    height: 35px;
+    margin-left: 12px;
+    margin-right: 10px;
+    overflow: hidden;
+    width: 35px;
+}
+.profile-img-mmbr > img {
+    height: 100%;
+    width: 100%;
+}
+
+
+.member-group-modify{width:96%;margin:auto;border-radius:0px;padding: 3px 0 1px;}
+.member-group-modify li{background:#f1f0fe;border:0px;margin:5px auto;}
+.member-group-modify li.list-group-item{padding:0px;text-align:left;}
+.member-group-modify li.list-group-item a{ font-size: 15px;line-height: 34px;color:#535351;font-family:Arial, Helvetica, sans-serif;display:inline-block;width:100%;}
+.member-group-modify li.list-group-item:last-child {
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+   margin-bottom:20px;
+}
+.member-group-modify li.list-group-item:first-child {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+	
+}
+.member-group-modify li.list-group-item a:hover {background:#9a90ff;text-decoration:none;color:#fff;}
+.padding-right0{padding-right:0px;}
+.padding-left0{padding-left:0px;}
+.on-line-member{background:#587cf0;color:#fff;font-size:17px;font-weight:bold;padding:8px 0px}
+.active-id{margin-left:15px;color:#fff;}
+.red-circel{color:#f00;}
+.opacity-half{opacity:0.3;}
+.member-btn-color{background:#aebbff;}
+.member-btn-color:hover{background:#768dff;}
+.navmenu.member-btn-color > span{background:#768dff;}
+
+/*-------------ADD NEW MEMBER-----------------*/
+.add-new{background:#e8e8e8;margin:50px 0px;padding:10px 0px;}
+label.control-label {
+    color: #676767;
+    font-family: Helvetica;
+    margin: 0;
+    padding: 0;
+}
+.row.witdh-modify {
+  
+    margin: auto;
+    width: 94%;
+}
+.form-group-gap {
+    margin-bottom: 0px !important;
+    padding: 0px 0 15px 29px;
+}
+.btn-upload-modify {
+    background: #09f none repeat scroll 0 0;
+    border: 0 none;
+    color: #fff;
+    margin-bottom: 50px;
+    margin-top: 30px;
+	transition:all 0.5s ease-in-out 0s;
+}
+.btn-upload-modify:hover{background:#0CF;color:#000;}
+.ppdding0{padding:0px !important;}
+.upload-img-block {
+    text-align: center;
+    width: 83%;
+}
+.group-submit {
+    background: #7970ff none repeat scroll 0 0;
+    border: 0 none;
+    border-radius: 5px;
+    color: #fff;
+    margin: 90px 0 0;
+    padding: 10px;
+    width: 80%;
+}
+.group-submit:hover{background:#0CF;color:#000;}
