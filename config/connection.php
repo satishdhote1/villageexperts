@@ -2,21 +2,22 @@
 //global $con;
 class connections
 {
-	private $servername="sql207.byethost7.com";
+/*	private $servername="sql207.byethost7.com";
 	private $uname="b7_15994620";
 	private $password="byethost";
-	private $dbname="b7_15994620_crm";
-	
-	
+	private $dbname="b7_15994620_crm";*/
+
+	private $servername="54.193.124.35";
+	private $uname="root";
+	private $password="mysqlroot";
+	private $dbname="villageexpertsdb";
+
 	//email cnfig
 	private $emailUsername ='dassamtest2@gmail.com';
 	private $emailPassword ='dassamtest253';
-	
-	
-	
+		
 	public function connect()
-		{
-			
+		{	
 			$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
 			if(!$con)
 			die("Connection failed: ". mysqli_connect_error() );
