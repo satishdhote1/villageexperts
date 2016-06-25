@@ -16,30 +16,27 @@ $memberName = isset($_REQUEST['memberName'])? $_REQUEST['memberName'] : '';
 $email = isset($_REQUEST['email'])? $_REQUEST['email'] : '';
 
 $sql="SELECT * FROM group_member where  gm_id = ".$member_id." AND status='N'";
-					$resultData = mysqli_query($conn, $sql);
-					$memberData = array();$img='img-3.jpg';
-					if (mysqli_num_rows($resultData) > 0)  
-					{
-						$memberData = mysqli_fetch_assoc($resultData);
-							$img = !empty($memberData['gm_image'])?$memberData['gm_image']:$img;
-						/* echo "<br><pre>";
-						 print_r($groupsList);
-						 echo "</pre><br>";
-						*/
-					}
-					else
-					{
-						header("Refresh: 5; url=index.php");
-						echo '<center><h1 style="color:red">You are not authorized to go through this process!<br>
-						Because this member does\'t exist or already registered!<br>Redirecting....</h1></center>';	
-						
-					}
-					$memberName =!empty($memberData['gm_name'])?$memberData['gm_name']:$memberName;
-					$email =!empty($memberData['gm_email'])?$memberData['gm_email']:$email;
-					$phone =!empty($memberData['gm_phone'])?$memberData['gm_phone']:'';
-					//$gm_group_id =!empty($memberData['gm_group_id'])?$memberData['gm_group_id']:'';
-
-
+$resultData = mysqli_query($conn, $sql);
+$memberData = array();$img='img-3.jpg';
+if (mysqli_num_rows($resultData) > 0)  
+{
+	$memberData = mysqli_fetch_assoc($resultData);
+	$img = !empty($memberData['gm_image'])?$memberData['gm_image']:$img;
+	/* echo "<br><pre>";
+	 print_r($groupsList);
+	 echo "</pre><br>";
+	*/
+}
+else
+{
+	header("Refresh: 5; url=index.php");
+	echo '<center><h1 style="color:red">You are not authorized to go through this process!<br>
+	Because this member does\'t exist or already registered!<br>Redirecting....</h1></center>';
+}
+$memberName =!empty($memberData['gm_name'])?$memberData['gm_name']:$memberName;
+$email =!empty($memberData['gm_email'])?$memberData['gm_email']:$email;
+$phone =!empty($memberData['gm_phone'])?$memberData['gm_phone']:'';
+//$gm_group_id =!empty($memberData['gm_group_id'])?$memberData['gm_group_id']:'';
 ?>
 
 <!DOCTYPE html>
@@ -161,7 +158,7 @@ else
 	header("Refresh: 3; url=index.php");
 		echo '<center><h1 style="color:red">You are not autorized.Redirecting....</h1></center>';
 }       
-     */           
+*/           
     
    
           

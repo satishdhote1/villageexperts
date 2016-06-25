@@ -30,14 +30,9 @@ die();
 
 $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
- if(isset($_REQUEST['submit']))
+ if(isset($_REQUEST['submit'])){
 
-  {
-
-	  
-
-	
-
+	 
 	$memberName = isset($_REQUEST['member-Name'])?$_REQUEST['member-Name']:'';
 
 	$mobileNo = isset($_REQUEST['mobileNo'])?$_REQUEST['mobileNo']:'';
@@ -46,48 +41,28 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 	$groupIds =isset($_REQUEST['gmID'])?$_REQUEST['gmID']:0;
 
-	
-
-
-
 	$currentDate = date('Y-m-d');
 
-	
+	$sql="insert into group_member (gm_name,gm_phone,gm_email,group_ids,gm_logged_in) values ('".$memberName."',".$mobileNo.", '".$Email."','".$groupIds."', 'N')" ;//echo $ sql;exit();
 
-	
+		$tableResult = mysqli_query($conn, $sql);
 
-	 $sql="insert into group_member (gm_name,gm_phone,gm_email,group_ids,gm_logged_in) values ('".$memberName."',".$mobileNo.", '".$Email."','".$groupIds."', 'N')" ;//echo $ sql;exit();
+		$MSG = "Registered Sucessfully!";
 
-					$tableResult = mysqli_query($conn, $sql);
+		$result['success'] = 1;
 
-					$MSG = "Registered Sucessfully!";
+		$result['error'] = 0;
 
-					 $result['success'] = 1;
+		$result['MSG'].="<br>".$MSG;
 
-   					$result['error'] = 0;
+		if($tableResult > 0)
 
-					$result['MSG'].="<br>".$MSG;
+		{
 
-					if($tableResult > 0)
-
-					{
-
-						$member_id = mysqli_insert_id($conn);
+			$member_id = mysqli_insert_id($conn);
 
 						
-
-						
-
 			   //----------------------------Email Body Texts------------------------
-
-			
-
-			  
-
-					
-
-				
-
 
 
 				$body = '
@@ -120,59 +95,51 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 			
 
-			
-
-				
-
-			
-
 			   //----------------------------//Email Body Texts------------------------
 
 
 
-	$emailObject=new connections();
+		$emailObject=new connections();
 
-	 $emailData = $emailObject->geEmailConfig();
+	 	$emailData = $emailObject->geEmailConfig();
 
-	
+		$mail = new PHPMailer();
 
-	$mail = new PHPMailer();
+   		$mail->IsSMTP();
 
-   $mail->IsSMTP();
+   		$mail->Mailer = "smtp";
 
-   $mail->Mailer = "smtp";
+   		$mail->Host = "smtp.gmail.com";
 
-   $mail->Host = "smtp.gmail.com";
+   		$mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
 
-   $mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
+   		$mail->SMTPAuth = true;
 
-   $mail->SMTPAuth = true;
+   		$mail->SMTPSecure = 'tls';
 
-   $mail->SMTPSecure = 'tls';
+    	$mail->Username = $emailData['uname'];
 
-    $mail->Username = $emailData['uname'];
+		$mail->Password = $emailData['pwd'];
 
-	$mail->Password = $emailData['pwd'];
+   		$mail->From     = "dassamtest2@gmail.com";
 
-   $mail->From     = "dassamtest2@gmail.com";
+   		$mail->FromName = "Village Expert";
 
-   $mail->FromName = "Village Expert";
+   		$mail->AddAddress($Email, $memberName);
 
-   $mail->AddAddress($Email, $memberName);
+  		// $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
 
-  // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
+   		$mail->Subject = "Village-Expert Membership Verification.";
 
-   $mail->Subject = "Village-Expert Membership Verification.";
+   		$mail->Body    = $body;
 
-   $mail->Body    = $body;
+   		$mail->WordWrap = 50;  
 
-   $mail->WordWrap = 50;  
+   		$mail->IsHTML(true);
 
-   $mail->IsHTML(true);
+   		if(!$mail->Send())
 
-   if(!$mail->Send())
-
-	 echo "Mailer Error: " . $mail->ErrorInfo;
+	 		echo "Mailer Error: " . $mail->ErrorInfo;
 
    else
 
@@ -185,10 +152,7 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=add-new-member&success=1&gmID=".$member_id."&tag=NewMember");
 
 		
-
 		/*header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=add-new-member&success=1&gmID=".$getGM_id."&groupName=".$getgroupName."&tag=fetchmembers");*/
-
-		
 
 	   //header("Refresh: 5; url=my-group.php?success=1&gmID=".$getGM_id."&groupName=".$getgroupName."&tag=fetchmembers");
 
@@ -204,11 +168,9 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 	 
 
-$memberId =isset($_REQUEST['memberId'])?$_REQUEST['memberId']:0;
+	$memberId =isset($_REQUEST['memberId'])?$_REQUEST['memberId']:0;
 
-	 $groupIds =isset($_REQUEST['gmID'])?$_REQUEST['gmID']:0;
-
-	
+	$groupIds =isset($_REQUEST['gmID'])?$_REQUEST['gmID']:0;
 
 	$groupName = isset($_REQUEST['groupName'])?$_REQUEST['groupName']:'';
 
@@ -220,7 +182,7 @@ $memberId =isset($_REQUEST['memberId'])?$_REQUEST['memberId']:0;
 
 	$Email = '';
 
-	 $sql="select group_ids,gm_name,gm_image,gm_email from group_member where gm_id=$memberId" ;//echo $ sql;exit();
+	$sql="select group_ids,gm_name,gm_image,gm_email from group_member where gm_id=$memberId" ;//echo $ sql;exit();
 
 					$tableResult = mysqli_query($conn, $sql);
 
@@ -268,15 +230,11 @@ $memberId =isset($_REQUEST['memberId'])?$_REQUEST['memberId']:0;
 
 					
 
-	 $sql2="update group_member set group_ids='".$allGroupIds."' where gm_id=$memberId" ;//die();//echo $ sql;exit();
+	 	$sql2="update group_member set group_ids='".$allGroupIds."' where gm_id=$memberId" ;//die();//echo $ sql;exit();
 
 					$tableResult2 = mysqli_query($conn, $sql2);
 
- 
-
- 
-
- $body = '
+ 		$body = '
 
 				<div style="width:100%;max-width:660px;margin:0px auto;">
 
@@ -296,13 +254,6 @@ $memberId =isset($_REQUEST['memberId'])?$_REQUEST['memberId']:0;
 
 				
 
-			
-
-			
-
-				
-
-			
 
 			   //----------------------------//Email Body Texts------------------------
 
@@ -311,8 +262,6 @@ $memberId =isset($_REQUEST['memberId'])?$_REQUEST['memberId']:0;
 	$emailObject=new connections();
 
 	 $emailData = $emailObject->geEmailConfig();
-
-	
 
 	$mail = new PHPMailer();
 
@@ -348,23 +297,20 @@ $memberId =isset($_REQUEST['memberId'])?$_REQUEST['memberId']:0;
 
    $mail->IsHTML(true);
 
-   if(!$mail->Send())
+    if(!$mail->Send())
 
-	 echo "Mailer Error: " . $mail->ErrorInfo;
+	 	echo "Mailer Error: " . $mail->ErrorInfo;
 
-   else
-
+    else
 	{
 
-							$passStr = "Member $memberName Added to Group - ".$_GET['groupName'].". Redirecting..";
+		$passStr = "Member $memberName Added to Group - ".$_GET['groupName'].". Redirecting..";
 
-					 $passImg = $memberImage;
+		$passImg = $memberImage;
 
-					$result['MSG'].=$MSG;
+		$result['MSG'].=$MSG;
 
-					header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=my-group&tag=existing&gmID=$groupIds&groupName=$groupName");
-
-
+		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=my-group&tag=existing&gmID=$groupIds&groupName=$groupName");
 
 	}
 
