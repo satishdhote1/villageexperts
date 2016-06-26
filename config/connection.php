@@ -13,29 +13,33 @@ class connections
 	private $dbname="villageexpertsdb";
 
 	//email cnfig
+	/*	
+	private $emailUsername ='dassamtest2@gmail.com';
+	private $emailPassword ='dassamtest253';*/
+		
 	private $emailUsername ='dassamtest2@gmail.com';
 	private $emailPassword ='dassamtest253';
-		
+
 	public function connect()
-		{	
-			$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
-			if(!$con){
-				die("Connection failed: ". mysqli_connect_error() );
-			}else
-			{
-				//session_start();
-				return $con;
-			}
-			//echo "Connected";
-		}
-		
-		public function geEmailConfig()
+	{	
+		$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
+		if(!$con){
+			die("Connection failed: ". mysqli_connect_error() );
+		}else
 		{
-			$emailData['uname'] = $this->emailUsername;
-			$emailData['pwd'] = $this->emailPassword;
-			return $emailData; 
-			
+			//session_start();
+			return $con;
 		}
+		//echo "Connected";
+	}
+	
+	public function geEmailConfig()
+	{
+		$emailData['uname'] = $this->emailUsername;
+		$emailData['pwd'] = $this->emailPassword;
+		return $emailData; 
+		
+	}
 }
 
 
