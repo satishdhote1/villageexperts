@@ -62,40 +62,36 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 			$member_id = mysqli_insert_id($conn);
 
 						
-			   //----------------------------Email Body Texts------------------------
+		   //----------------------------Email Body Texts------------------------
 
 
-				$body = '
+			$body = '
 
-				<div style="width:100%;max-width:660px;margin:0px auto;">
+			<div style="width:100%;max-width:660px;margin:0px auto;">
 
-				<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/images/logo.png" /></div>';
+			<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/images/logo.png" /></div>';
 
-				$body.='
+			$body.='
 
-				<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">
+			<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">
 
-				<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
+			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 
-				$body.='
+			$body.='Dear '.$memberName.',<br /><br/>
 
-				Dear '.$memberName.',<br /><br/>
+			Your have been added as a Group member to VillageExperts.com site: '.' <br><br>
 
-				Your have been added as a Group member to VillageExperts.com site: '.' <br><br>
+			</p>';
 
-				</p>';
+			$body.='<p>You are requested to complete your Registration By clicking the link below:</p>';
 
-				$body.='<p>You are requested to complete your Registration By clicking the link below:</p>';
+			$body.='<p style="width:200px;margin:20px auto;background:#F00;color:#fff;padding:12px 0px;font-family:Georgia, \'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;">
 
-				$body.='
+			<a href="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/add-new-member-next.php?member_id='.$member_id.'&memberName='.$memberName.'&email='.$Email.'" style="color:#fff;">Complete Registration</a></p></div></div>';
 
-				<p style="width:200px;margin:20px auto;background:#F00;color:#fff;padding:12px 0px;font-family:Georgia, \'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;">
+		
 
-				<a href="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/add-new-member-next.php?member_id='.$member_id.'&memberName='.$memberName.'&email='.$Email.'" style="color:#fff;">Complete Registration</a></p></div></div>';
-
-			
-
-			   //----------------------------//Email Body Texts------------------------
+		   //----------------------------//Email Body Texts------------------------
 
 
 
@@ -109,9 +105,9 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
    		$mail->Mailer = "smtp";
 
-   		$mail->Host = "smtp.gmail.com";
+   		$mail->Host = $emailData['host'];;
 
-   		$mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
+   		$mail->Port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
 
    		$mail->SMTPAuth = true;
 

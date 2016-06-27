@@ -13,12 +13,14 @@ class connections
 	private $dbname="villageexpertsdb";
 
 	//email cnfig
-	/*	
+/*		
 	private $emailUsername ='dassamtest2@gmail.com';
-	private $emailPassword ='dassamtest253';*/
-		
+	private $emailPassword ='dassamtest253';
+	private $host= 'smtp.gmail.com';*/
+
 	private $emailUsername ='AKIAJRGMUMZO76PAE7VQ';
 	private $emailPassword ='AvwImGIsRCL1uE0NVdqErPxo3P8FOhg0RUIWoRoMdvx6';
+	private $host= 'ses-smtp-user.20160627-205547';
 
 	public function connect()
 	{	
