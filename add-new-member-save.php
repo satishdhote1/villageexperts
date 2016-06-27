@@ -93,8 +93,6 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 		   //----------------------------//Email Body Texts------------------------
 
-
-
 		$emailObject=new connections();
 
 	 	$emailData = $emailObject->geEmailConfig();
@@ -117,7 +115,7 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 		$mail->Password = $emailData['pwd'];
 
-   		$mail->From     = "dassamtest2@gmail.com";
+   		$mail->From     = $emailData['from'];
 
    		$mail->FromName = "Village Expert";
 

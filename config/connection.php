@@ -21,6 +21,7 @@ class connections
 	private $emailUsername ='AKIAJRGMUMZO76PAE7VQ';
 	private $emailPassword ='AvwImGIsRCL1uE0NVdqErPxo3P8FOhg0RUIWoRoMdvx6';
 	private $host= 'ses-smtp-user.20160627-205547';
+	private $from ="villageexpert.info@gmail.com";
 
 	public function connect()
 	{	
@@ -39,6 +40,8 @@ class connections
 	{
 		$emailData['uname'] = $this->emailUsername;
 		$emailData['pwd'] = $this->emailPassword;
+		$emailData['host'] = $this->host;
+		$emailData['from'] = $this->from;
 		return $emailData; 
 		
 	}
