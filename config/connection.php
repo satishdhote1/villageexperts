@@ -17,8 +17,8 @@ class connections
 	private $emailUsername ='dassamtest2@gmail.com';
 	private $emailPassword ='dassamtest253';*/
 		
-	private $emailUsername ='dassamtest2@gmail.com';
-	private $emailPassword ='dassamtest253';
+	private $emailUsername ='AKIAJRGMUMZO76PAE7VQ';
+	private $emailPassword ='AvwImGIsRCL1uE0NVdqErPxo3P8FOhg0RUIWoRoMdvx6';
 
 	public function connect()
 	{	
