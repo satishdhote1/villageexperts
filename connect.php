@@ -148,7 +148,7 @@ $currentTimestamp = strtotime("now");
 
    $mail->Mailer = "smtp";
 
-   $mail->Host = "smtp.gmail.com";
+   $mail->Host = "email-smtp.us-west-2.amazonaws.com";//"smtp.gmail.com";
 
    $mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
 
