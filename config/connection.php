@@ -40,10 +40,10 @@ class connections
 	private $host= 'ses-smtp-user.20160627-205547';
 	private $from ="villageexpert.info@gmail.com";
 	*/
-	private $emailUsername ='AKIAJDE2TN3CRH5SMSVQ';
-	private $emailPassword ='Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni';
-	private $host= 'email-smtp.us-west-2.amazonaws.com';
-	private $from ="villageexpert.info@gmail.com
+	private $emailUsername ="AKIAJDE2TN3CRH5SMSVQ";
+	private $emailPassword ="Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni";
+	private $host= "email-smtp.us-west-2.amazonaws.com";
+	private $from ="villageexpert.info@gmail.com";
 	public function connect()
 	{	
 		//$con=new mysqli($this->servername,$this->uname,$this->password,$this->dbname);
