@@ -4,7 +4,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 	private $uname="root";
 	private $password="mysqlroot";
 	private $dbname="villageexpertsdb";
-		$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
+		$con=mysqli_connect("localhost","root","mysqlroot","villageexpertsdb");
 		if ($mysqli->connect_error) {
 		    die('Connect Error, '. $mysqli->connect_errno . ': ' . $mysqli->connect_error);
 		}
