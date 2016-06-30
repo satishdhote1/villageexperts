@@ -3,7 +3,7 @@ error_reporting(E_ERROR);
 
 mysqli_report(MYSQLI_REPORT_STRICT);
 
-		$con=new mysqli("localhost","root","mysqlroot","villageexpertsdb");
+	/*	$con=new mysqli("localhost","root","mysqlroot","villageexpertsdb");
 		//$con = mysqli_connect("localhost","my_user","my_password","my_db");
 
 		// Check connection
@@ -14,7 +14,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 		else{
 				print_r($con);die("Connection success: " );
 			
-		}
+		}*/
 //global $con;
 
 class connections
@@ -47,11 +47,7 @@ class connections
 	public function connect()
 	{	
 		$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
-		if ($mysqli->connect_error) {
-		    die('Connect Error, '. $mysqli->connect_errno . ': ' . $mysqli->connect_error);
-		}
-
-		print_r($con);die("Connection failed: ". mysqli_connect_error() );
+		
 		if(!$con){
 			die("Connection failed: ". mysqli_connect_error() );
 		}else
@@ -73,6 +69,8 @@ class connections
 		
 	}
 }
+$conn=new connections();
+$conn=$conn->connect();
 
 
 ?>
