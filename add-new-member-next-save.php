@@ -96,7 +96,7 @@ die();*/
 					$body.='<div align="left">Your Registration as a Group Member to VillageExperts.com site is successful.</div><br><br>';
 					/*$body.='You are now a member of Group:'.$groupName.'.</p>';
 					if(!empty($groupImage)){
-					$body.='<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/images/groupPhotos/'.$groupImage.'" /></div><br><br>';
+					$body.='<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/groupPhotos/'.$groupImage.'" /></div><br><br>';
 					}*/
 					$body.='<div align="left">Your username is: '.$Email.'</div><br>';
 					$body.='<div align="left">Your Password is: '.$pwd.'</div></div></div>';
