@@ -7,7 +7,7 @@ class connections
 	private $password="byethost";
 	private $dbname="b7_15994620_crm";*/
 
-	private $servername="localhost";
+	private $servername="54.193.124.35:22";
 	private $uname="root";
 	private $password="mysqlroot";
 	private $dbname="villageexpertsdb";
