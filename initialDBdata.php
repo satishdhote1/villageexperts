@@ -1,5 +1,5 @@
 <?php
-die("test");
+
 include("config/connection.php");
 $get = isset($_REQUEST['test'])?$_REQUEST['test']:'';
 //$con=new connections();
