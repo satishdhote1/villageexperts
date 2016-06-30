@@ -46,7 +46,7 @@ class connections
 	private $from ="villageexpert.info@gmail.com";
 	public function connect()
 	{	
-		$con=new mysqli($this->servername,$this->uname,$this->password,$this->dbname);
+		$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
 		
 		if(!$con){
 			die("Connection failed: ". mysqli_connect_error() );
