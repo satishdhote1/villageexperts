@@ -5,7 +5,7 @@ $get = isset($_REQUEST['test'])?$_REQUEST['test']:'';
 //$con=new connections();
 $conn=new connections();
 $conn=$conn->connect();
-die("testts2");
+
 $launguages = array();
 $specialisation = array();
 $subSpecialisation = array();
