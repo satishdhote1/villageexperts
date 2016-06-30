@@ -34,6 +34,7 @@ class connections
 			die("Connection failed: ". mysqli_connect_error() );
 		}else
 		{
+			echo "connected";
 			//session_start();
 			return $con;
 		}
