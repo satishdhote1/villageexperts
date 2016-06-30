@@ -69,7 +69,7 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 			<div style="width:100%;max-width:660px;margin:0px auto;">
 
-			<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/images/logo.png" /></div>';
+			<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 
 			$body.='
 
@@ -87,7 +87,7 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 			$body.='<p style="width:200px;margin:20px auto;background:#F00;color:#fff;padding:12px 0px;font-family:Georgia, \'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;">
 
-			<a href="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/add-new-member-next.php?member_id='.$member_id.'&memberName='.$memberName.'&email='.$Email.'" style="color:#fff;">Complete Registration</a></p></div></div>';
+			<a href="http://'.$_SERVER['SERVER_NAME'].'/add-new-member-next.php?member_id='.$member_id.'&memberName='.$memberName.'&email='.$Email.'" style="color:#fff;">Complete Registration</a></p></div></div>';
 
 		
 
@@ -232,7 +232,7 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 				<div style="width:100%;max-width:660px;margin:0px auto;">
 
-				<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/images/logo.png" /></div>';
+				<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 
 				$body.='
 
@@ -328,9 +328,9 @@ else
 
 	$passStr = 'You are not authorized.Redirecting....';
 
-										$passImg = 'memberPhotos/img-3.jpg';
+	$passImg = 'memberPhotos/img-3.jpg';
 
-										header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
+	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
 
 }
 
