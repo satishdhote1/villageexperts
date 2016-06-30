@@ -53,7 +53,7 @@ if(!empty($user_id)){
 			padding:10px 15px;line-height:25px;text-align:left;">';
 			$body.='<div style="text-align:center;">
 			<img width="200" height="200" src="http://'.$_SERVER['SERVER_NAME'].
-			'/villageExpert/'.$imagePath.'" /></div><br><br>';
+			'/'.$imagePath.'" /></div><br><br>';
 			$body.='Dear '.$row['gm_name'].',<br /><br/>
 			'.$user_name.' has iinitiated a connect session with you . <br/> Please click below to connect<br/><br/>
 			</p>';
@@ -99,7 +99,7 @@ if(!empty($user_id)){
 		   line-height:25px;text-align:left;">';
 			$body.='<div style="text-align:center;">
 			<img width="200" height="200" src="http://'.$_SERVER['SERVER_NAME'].
-			'/villageExpert/'.$imagePath.'" /></div><br><br>';
+			'/'.$imagePath.'" /></div><br><br>';
 			$body.='Dear '.$row['sp_name'].',<br /><br/>
 			'.$user_name.' has iinitiated a connect session with you . <br/> Please click below to connect<br/><br/>
 			</p>';
