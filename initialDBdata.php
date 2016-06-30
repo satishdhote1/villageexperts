@@ -13,13 +13,14 @@ $experience = array();
 
 $sql="SELECT * FROM sp_language order by languages";
 $result = mysqli_query($conn, $sql);
-print_r($result);die();
+
 if (mysqli_num_rows($result) > 0)  
 {
 	while($row = mysqli_fetch_assoc($result)) {
 		//$launguages = mysqli_fetch_assoc($result);
 		$launguages[] = $row;
 	}
+	print_r($launguages);die("tets");
 	if(!empty($get))
 	{
 	 echo "<br><pre>";
