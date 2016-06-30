@@ -1,13 +1,14 @@
 <?php
-mysqli_report(MYSQLI_REPORT_STRICT);
-	private $servername="localhost";
-	private $uname="root";
-	private $password="mysqlroot";
-	private $dbname="villageexpertsdb";
+//mysqli_report(MYSQLI_REPORT_STRICT);
+
 		$con=mysqli_connect("localhost","root","mysqlroot","villageexpertsdb");
-		if ($mysqli->connect_error) {
-		    die('Connect Error, '. $mysqli->connect_errno . ': ' . $mysqli->connect_error);
-		}
+		//$con = mysqli_connect("localhost","my_user","my_password","my_db");
+
+		// Check connection
+		if (mysqli_connect_errno())
+		  {
+		  echo "Failed to connect to MySQL: " . mysqli_connect_error();
+		  }
 		else{
 				print_r($con);die("Connection success: " );
 			
