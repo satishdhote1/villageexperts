@@ -20,7 +20,7 @@ if (mysqli_num_rows($result) > 0)
 		//$launguages = mysqli_fetch_assoc($result);
 		$launguages[] = $row;
 	}
-	print_r($launguages);die("tets");
+	//print_r($launguages);die("tets");
 	if(!empty($get))
 	{
 	 echo "<br><pre>";
