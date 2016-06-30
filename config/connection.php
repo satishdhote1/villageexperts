@@ -1,4 +1,6 @@
 <?php
+error_reporting(E_ERROR);
+
 //mysqli_report(MYSQLI_REPORT_STRICT);
 
 		$con=mysqli_connect("localhost","root","mysqlroot","villageexpertsdb");
