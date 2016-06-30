@@ -30,7 +30,7 @@ class connections
 	public function connect()
 	{	
 		$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
-		print_r($con);die("con failed");
+		print_r($con);die("Connection failed: ". mysqli_connect_error() );
 		if(!$con){
 			die("Connection failed: ". mysqli_connect_error() );
 		}else
