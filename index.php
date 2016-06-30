@@ -1,6 +1,6 @@
 <?php
 
-include("initialDBdata.php");//registration for data
+//include("initialDBdata.php");//registration for data
 
 ?>
 
