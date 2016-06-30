@@ -1,6 +1,17 @@
 <?php
 mysqli_report(MYSQLI_REPORT_STRICT);
-
+	private $servername="localhost";
+	private $uname="root";
+	private $password="mysqlroot";
+	private $dbname="villageexpertsdb";
+		$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
+		if ($mysqli->connect_error) {
+		    die('Connect Error, '. $mysqli->connect_errno . ': ' . $mysqli->connect_error);
+		}
+		else{
+				print_r($con);die("Connection success: " );
+			
+		}
 //global $con;
 class connections
 {
