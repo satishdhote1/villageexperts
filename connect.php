@@ -44,7 +44,7 @@ if(!empty($user_id)){
 									
 			$body = '<div style="width:100%;max-width:660px;margin:0px auto;">
 			<div style="text-align:center;"><img src="http://'.
-			$_SERVER['SERVER_NAME'].'/villageExpert/images/logo.png" /></div>';
+			$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 			$body.='<div 
 			style="border:solid 1px#EEE;text-align:center;margin-bottom:3px;margin-top:10px;background:#F3F3F3;">
 			<p 
@@ -91,7 +91,7 @@ if(!empty($user_id)){
 				//print_r($row);die();
 			$body = '<div style="width:100%;max-width:660px;margin:0px auto;">
 			<div style="text-align:center;"><img src="http://'.
-			$_SERVER['SERVER_NAME'].'/villageExpert/images/logo.png" /></div>';
+			$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 			$body.='<div style="border:solid 1px #EEE;text-align:center;
 			margin-bottom:3px;margin-top:10px;background:#F3F3F3;">
 			<p style="font-size:16px;color:#036;margin:3px 0;
