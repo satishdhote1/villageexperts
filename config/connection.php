@@ -69,9 +69,6 @@ class connections
 		
 	}
 }
-$conn=new connections();
-$conn=$conn->connect();
-print_r($conn);
-die("tets");
+
 
 ?>
