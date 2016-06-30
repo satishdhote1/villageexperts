@@ -1,6 +1,6 @@
 <?php
 
-//include("initialDBdata.php");//registration for data
+include("initialDBdata.php");//registration for data
 
 ?>
 
@@ -22,7 +22,7 @@
 
 <meta name="author" content="">
 
-<title>Test--dfkgnjdkfg-Village Expert</title>
+<title>Village Expert</title>
 
 
 
