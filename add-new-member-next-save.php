@@ -88,11 +88,11 @@ die();*/
 					//----------------------------Email Body Texts------------------------
 				
 					$body = '<div style="width:100%;max-width:660px;margin:0px auto;">
-					<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/images/logo.png" /></div>';
+					<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 					$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">
 					<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 					$body.='Dear '.$memberName.',<br/><br/>	Congratulations ! <br/><br/>';
-					$body.='<div style="text-align:center;"><img width="200" height="200" src="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/images/memberPhotos/'.$uploaded_file.'" /></div><br><br>';
+					$body.='<div style="text-align:center;"><img width="200" height="200" src="http://'.$_SERVER['SERVER_NAME'].'/images/memberPhotos/'.$uploaded_file.'" /></div><br><br>';
 					$body.='<div align="left">Your Registration as a Group Member to VillageExperts.com site is successful.</div><br><br>';
 					/*$body.='You are now a member of Group:'.$groupName.'.</p>';
 					if(!empty($groupImage)){
