@@ -100,7 +100,7 @@ die();*/
 					}*/
 					$body.='<div align="left">Your username is: '.$Email.'</div><br>';
 					$body.='<div align="left">Your Password is: '.$pwd.'</div></div></div>';
-					$body.='<p style="width:200px;margin:20px auto;background:#F00;color:#fff;padding:12px 0px;font-family:Georgia, \'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'/villageExpert/index.php?success=1&type=GM&email='.$Email.'" style="color:#fff;">Click to Login</a></p>';
+					$body.='<p style="width:200px;margin:20px auto;background:#F00;color:#fff;padding:12px 0px;font-family:Georgia, \'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'/index.php?success=1&type=GM&email='.$Email.'" style="color:#fff;">Click to Login</a></p>';
 		
 
 					   //----------------------------//Email Body Texts------------------------
