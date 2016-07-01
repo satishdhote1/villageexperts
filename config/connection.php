@@ -43,7 +43,7 @@ class connections
 	private $emailUsername ="AKIAJDE2TN3CRH5SMSVQ";
 	private $emailPassword ="Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni";
 	private $host= "email-smtp.us-west-2.amazonaws.com";
-	private $from ="villageexpert.info@gmail.com";
+	private $from ="dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
 	public function connect()
 	{	
 		$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
