@@ -97,20 +97,12 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 	 	$emailData = $emailObject->geEmailConfig();
 
-		$mail = new PHPMailer();
-
-   		$mail->IsSMTP();
-
-   		$mail->Mailer = "smtp";
-
-   		$mail->Host = $emailData['host'];;
-
-   		$mail->Port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
-
-   		$mail->SMTPAuth = true;
-
-   		$mail->SMTPSecure = 'tls';
-
+		$mail->IsSMTP();
+   $mail->Mailer = "smtp";
+   $mail->Host = "email-smtp.us-west-2.amazonaws.com";//"smtp.gmail.com";
+   $mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
+   $mail->SMTPAuth = true;
+   $mail->SMTPSecure = 'tls';
     	$mail->Username = $emailData['uname'];
 
 		$mail->Password = $emailData['pwd'];
@@ -251,6 +243,36 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 			   //----------------------------//Email Body Texts------------------------
 
+
+
+/*
+$emailObject=new connections();
+	 $emailData = $emailObject->geEmailConfig();
+$currentTimestamp = strtotime("now");
+	
+	$mail = new PHPMailer();
+	//$mail->SMTPDebug = 1;
+   $mail->IsSMTP();
+   $mail->Mailer = "smtp";
+   $mail->Host = "email-smtp.us-west-2.amazonaws.com";//"smtp.gmail.com";
+   $mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
+   $mail->SMTPAuth = true;
+   $mail->SMTPSecure = 'tls';
+    $mail->Username = $emailData['uname'];
+	$mail->Password = $emailData['pwd'];
+   $mail->From     = "dassamtest2@gmail.com";
+   $mail->FromName = "Village Expert";
+   $mail->AddAddress($email, $name);
+  // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
+   $mail->Subject = "Village-Expert connection between members!";
+   $mail->Body    = $body;
+   $mail->WordWrap = 50;  
+   $mail->IsHTML(true);
+   if(!$mail->Send())
+	 echo "Mailer Error: " . $mail->ErrorInfo;
+   else
+*/
+/*              */
 
 
 	$emailObject=new connections();
