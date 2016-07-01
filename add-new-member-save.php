@@ -1,33 +1,24 @@
 <?php
-
 include("config/connection.php");
-
-require("phpMailer/class.phpmailer.php");
+include("phpSendMail.php");
 
 session_start();
-
+//Establish Daatabase Connection
 $conn=new connections();
-
 $conn=$conn->connect();
 
+//Create Email instance for sending mail
+$emailObject=new phpSendMail();
+
 if((isset($_REQUEST['memberRegFresh']) && $_REQUEST['memberRegFresh'] == 1)|| (isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id'])))
-
 {
-
 /*
-
 echo "<br><pre>";
-
 print_r($_FILES);echo "<br>";
-
 print_r($_REQUEST);
-
 echo "</pre><br>";
-
 die();
-
 */
-
 $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
  if(isset($_REQUEST['submit'])){
@@ -56,7 +47,6 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 		$result['MSG'].="<br>".$MSG;
 
 		if($tableResult > 0)
-
 		{
 
 			$member_id = mysqli_insert_id($conn);
@@ -93,69 +83,19 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 		   //----------------------------//Email Body Texts------------------------
 
-		$emailObject=new connections();
-
-	 	$emailData = $emailObject->geEmailConfig();
-
-		$mail = new PHPMailer();
-	$mail->SMTPDebug = 1;
-   $mail->IsSMTP();
-
-   $mail->Mailer = "smtp";
-   $mail->Host = "email-smtp.us-west-2.amazonaws.com";//"smtp.gmail.com";
-   $mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
-   $mail->SMTPAuth = true;
-   $mail->SMTPSecure = 'tls';
-    	$mail->Username = $emailData['uname'];
-
-		$mail->Password = $emailData['pwd'];
-
-   		$mail->From     = "dassamtest2@gmail.com";//$emailData['from'];
-
-   		$mail->FromName = "Village Expert";
-
-   		$mail->AddAddress($Email, $memberName);
-
-  		// $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
-
-   		$mail->Subject = "Village-Expert Membership Verification.";
-
-   		$mail->Body    = $body;
-
-   		$mail->WordWrap = 50;  
-
-   		$mail->IsHTML(true);
-
-   		if(!$mail->Send())
-
-	 		echo "Mailer Error: " . $mail->ErrorInfo;
-
-   else
-
-	{
-
-		$passStr = 'Member - '.$memberName.' created.<br><br> Please Check Your email to complete the registration. <br><br>Redirecting....';
-
-		$passImg = 'groupPhotos/img-3.jpg';
-
-		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=add-new-member&success=1&gmID=".$member_id."&tag=NewMember");
-
-		
-		/*header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=add-new-member&success=1&gmID=".$getGM_id."&groupName=".$getgroupName."&tag=fetchmembers");*/
-
-	   //header("Refresh: 5; url=my-group.php?success=1&gmID=".$getGM_id."&groupName=".$getgroupName."&tag=fetchmembers");
-
-	  // echo '<center><h1 style="color:red">Member - '.$memberName.' created.<br><br> Please Check Your email to complete the registration. <br><br>Redirecting....</h1></center>';
-
+		$mailSent = $emailObject->sendMail($Email,$memberName,"Village-Expert Membership Verification.",$body);
+		if($mailSent)
+		{
+			$passStr = 'Member - '.$memberName.' created.<br><br> Please Check Your email to complete the registration. <br><br>Redirecting....';
+			$passImg = 'groupPhotos/img-3.jpg';
+			header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=add-new-member&success=1&gmID=".$member_id."&tag=NewMember");	
+		}
+								
 	}
 
   }
 
- }
-
  if(!empty($tag) && $tag == 'existing'){
-
-	 
 
 	$memberId =isset($_REQUEST['memberId'])?$_REQUEST['memberId']:0;
 
@@ -246,119 +186,23 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 			   //----------------------------//Email Body Texts------------------------
 
-
-
-/*
-$emailObject=new connections();
-	 $emailData = $emailObject->geEmailConfig();
-$currentTimestamp = strtotime("now");
+		$mailSent = $emailObject->sendMail($Email,$memberName,"Village-Expert Membership Verification.",$body);
+		if($mailSent)
+		{
+			$passStr = "Member $memberName Added to Group - ".$_GET['groupName'].". Redirecting..";
+			$passImg = $memberImage;
+			$result['MSG'].=$MSG;
+			header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=my-group&tag=existing&gmID=$groupIds&groupName=$groupName");
 	
-	$mail = new PHPMailer();
-	//$mail->SMTPDebug = 1;
-   $mail->IsSMTP();
-   $mail->Mailer = "smtp";
-   $mail->Host = "email-smtp.us-west-2.amazonaws.com";//"smtp.gmail.com";
-   $mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
-   $mail->SMTPAuth = true;
-   $mail->SMTPSecure = 'tls';
-    $mail->Username = $emailData['uname'];
-	$mail->Password = $emailData['pwd'];
-   $mail->From     = "dassamtest2@gmail.com";
-   $mail->FromName = "Village Expert";
-   $mail->AddAddress($email, $name);
-  // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
-   $mail->Subject = "Village-Expert connection between members!";
-   $mail->Body    = $body;
-   $mail->WordWrap = 50;  
-   $mail->IsHTML(true);
-   if(!$mail->Send())
-	 echo "Mailer Error: " . $mail->ErrorInfo;
-   else
-*/
-/*              */
-
-
-	$emailObject=new connections();
-
-	 $emailData = $emailObject->geEmailConfig();
-
-	$mail = new PHPMailer();
-
-   $mail->IsSMTP();
-
-   $mail->Mailer = "smtp";
-
-   $mail->Host = "smtp.gmail.com";
-
-   $mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
-
-   $mail->SMTPAuth = true;
-
-   $mail->SMTPSecure = 'tls';
-
-    $mail->Username = $emailData['uname'];
-
-	$mail->Password = $emailData['pwd'];
-
-   $mail->From     = "dassamtest2@gmail.com";
-
-   $mail->FromName = "Village Expert";
-
-   $mail->AddAddress($Email, $memberName);
-
-  // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
-
-   $mail->Subject = "Village-Expert Membership Verification.";
-
-   $mail->Body    = $body;
-
-   $mail->WordWrap = 50;  
-
-   $mail->IsHTML(true);
-
-    if(!$mail->Send())
-
-	 	echo "Mailer Error: " . $mail->ErrorInfo;
-
-    else
-	{
-
-		$passStr = "Member $memberName Added to Group - ".$_GET['groupName'].". Redirecting..";
-
-		$passImg = $memberImage;
-
-		$result['MSG'].=$MSG;
-
-		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=my-group&tag=existing&gmID=$groupIds&groupName=$groupName");
-
-	}
-
- 
-
- 
-
- 
-
- 
+		}
 
  }
 
- 
-
 }//session checking
-
 else
-
 {
-
 	$passStr = 'You are not authorized.Redirecting....';
-
 	$passImg = 'memberPhotos/img-3.jpg';
-
 	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
-
 }
-
-
-
 ?>
