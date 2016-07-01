@@ -110,7 +110,7 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 		$mail->Password = $emailData['pwd'];
 
-   		$mail->From     = "dassamtest@gmail.com";//$emailData['from'];
+   		$mail->From     = "dassamtest2@gmail.com";//$emailData['from'];
 
    		$mail->FromName = "Village Expert";
 
