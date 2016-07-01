@@ -44,6 +44,7 @@ public function sendMail($email,$memberName,$subject,$body)
    	$mail->IsHTML(true);
    	if(!$mail->Send())
    	{
+   		echo "Mailer Error: " . $mail->ErrorInfo;
    		return false;
    	}
    	else
