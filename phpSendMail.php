@@ -19,31 +19,6 @@ public function geEmailConfig()
 		return $emailData; 
 		
 }
-
-	
-	
-	
-	
-	
-	
-	
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ?>
