@@ -131,7 +131,7 @@ die();*/
 							may be this member does\'t exist!<br>Redirecting....</h1></center>';*/
 				}
 	}
- 	else//if wrong memberid recieved{
+ 	else{//if wrong memberid recieved{
 		   $passStr = 'You are not authorized.Redirecting....';
 			$passImg = 'memberPhotos/img-3.jpg';
 			header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
