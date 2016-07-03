@@ -286,7 +286,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
              <?php foreach($subspecialData as $subspecialDatas) { ?>
               <li class="bg-gray" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
                 <div class="search-profile text-center"><img src="images/SubSpecialization/<?php echo $subspecialDatas['SubSpImages']; ?>">
-                  <p class=""><a href="" class="search-parson-position text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p>
+                  <p class=""><a href="javascript:void(0);" class="search-parson-position text-center subExpertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>" ><?php echo $subspecialDatas['sub_specialisation']; ?></a></p>
                 </div>
               </li>
                <?php } ?>
@@ -313,7 +313,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
               <?php foreach($education as $educationDatas) { ?>
               <li class="bg-gray" id="<?php echo $educationDatas['EducationID']; ?>">
                 <div class="search-profile text-center"><img src="images/education/<?php echo $educationDatas['Image']; ?>">
-                  <p class=""><a href="" class="search-parson-position text-center expertiesLabel" id="expertiesLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"><?php echo $educationDatas['Education']; ?></a></p>
+                  <p class=""><a href="javascript:void(0);" class="search-parson-position text-center degreeLabel" id="degreeLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"><?php echo $educationDatas['Education']; ?></a></p>
                 </div>
               </li>
                <?php } ?>
@@ -335,7 +335,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
                <?php foreach($experience as $experienceDatas) { ?>
               <li class="bg-gray" id="<?php echo $experienceDatas['ExperienceID']; ?>">
                 <div class="search-profile text-center"><img src="images/experience/<?php echo $experienceDatas['Image']; ?>">
-                  <p class=""><a href="" class="search-parson-position text-center"><?php echo $experienceDatas['Experience']; ?></a></p>
+                  <p class=""><a href="javascript:void(0);" class="search-parson-position text-center experienceLabel" dir="<?php echo $experienceDatas['ExperienceID']; ?>" for="<?php echo $experienceDatas['Experience']; ?>"><?php echo $experienceDatas['Experience']; ?></a></p>
                 </div>
               </li>
                <?php } ?>
@@ -375,7 +375,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
               <?php foreach($language as $languageDatas) { ?>
               <li class="bg-gray" id="<?php echo $languageDatas['language_id']; ?>">
                 <div class="search-profile text-center"><img src="images/Languages/<?php echo $languageDatas['images']; ?>">
-                  <p class=""><a href="" class="search-parson-position text-center"><?php echo $languageDatas['languages']; ?></a></p>
+                  <p class=""><a href="javascript:void(0);" class="search-parson-position text-center languageLabel" id="languageLabel" dir="<?php echo $languageDatas['language_id']; ?>" for="<?php echo $languageDatas['languages']; ?>"><?php echo $languageDatas['languages']; ?></a></p>
                 </div>
               </li>
                <?php } ?>
