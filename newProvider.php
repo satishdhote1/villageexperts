@@ -256,7 +256,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
       <div class="background-blue">
         <div class="row">
           <div class="col-md-12">
-            <ul class="list-inline search-list">
+            <ul class="list-inline search-list specialData">
             <?php foreach($specialData as $specialDatas) { ?>
               <li class="bg-gray" id="<?php echo $specialDatas['specialisation_id']; ?>">
                 <div class="search-profile text-center"><img src="images/specialization/<?php echo $specialDatas['images']; ?>">
