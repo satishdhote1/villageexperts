@@ -293,7 +293,6 @@ $sql5="select * from 	sp_language ORDER BY languages";
              
             </ul>
           </div>
-        
         </div>
       </div>
     </div>
