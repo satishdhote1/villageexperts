@@ -146,7 +146,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                 <div class="col-xs-5"><img src="images/img-3.jpg" class="img-responsive"></div>
                   <div class="col-xs-5"><p class="block-text"><a href="" class="text-center">Medical</a></p></div>
                 <div class="col-xs-2"><div class="checkbox padding30" id="checkdiv" style="display:block;">
-    <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
+    <input type="checkbox" name="dsetting" for="chk" id="defaultcard" value="1" class="no-styles">       
     <label for="defaultcard" class="my-label"><span></span></label>
          <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
   </div>
@@ -157,7 +157,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                 <div class="col-xs-5"><img src="images/img-3.jpg" class="img-responsive"></div>
                   <div class="col-xs-5"><p class="block-text"><a href="" class="text-center">Medical</a></p></div>
                 <div class="col-xs-2"><div class="checkbox padding30" id="checkdiv" style="display:block;">
-    <input type="checkbox" name="dsetting" id="1" value="1" class="no-styles">       
+    <input type="checkbox" name="dsetting" id="1" for="chk" value="1" class="no-styles">       
     <label for="1" class="my-label"><span></span></label>
          <input type="hidden" name="paymentnonce" id="1" value="" />
   </div>
@@ -167,7 +167,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
               <li class="row modifi-list-item">
                 <div class="col-xs-5"><img src="images/img-3.jpg" class="img-responsive"></div>
                   <div class="col-xs-5"><p class="block-text"><a href="" class="text-center">Medical</a></p></div>
-                <div class="col-xs-2"><div class="checkbox padding30" id="checkdiv" style="display:block;">
+                <div class="col-xs-2"><div class="checkbox padding30" for="chk" id="checkdiv" style="display:block;">
     <input type="checkbox" name="dsetting" id="1" value="2" class="no-styles">       
     <label for="2" class="my-label"><span></span></label>
          <input type="hidden" name="paymentnonce" id="2" value="" />
@@ -179,7 +179,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                 <div class="col-xs-5"><img src="images/img-3.jpg" class="img-responsive"></div>
                   <div class="col-xs-5"><p class="block-text"><a href="" class="text-center">Medical</a></p></div>
                 <div class="col-xs-2"><div class="checkbox padding30" id="checkdiv" style="display:block;">
-    <input type="checkbox" name="dsetting" id="1" value="3" class="no-styles">       
+    <input type="checkbox" name="dsetting" id="1" value="3" for="chk" class="no-styles">       
     <label for="3" class="my-label"><span></span></label>
          <input type="hidden" name="paymentnonce" id="3" value="" />
   </div>
