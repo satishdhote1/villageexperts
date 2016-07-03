@@ -332,7 +332,11 @@ $sql5="select * from 	sp_language ORDER BY languages";
         <div class="row">
           <div class="col-md-12">
             <ul class="list-inline search-list">
- 			
+ 			 <li class="list-item back-color-2 rateClick" id="rateClick">rate per hour
+
+         <h4>Select maximum rate you willing to pay:</h4><div class="seclect-box" style="width:100%!important"><input type="range" min="0" max="100" step="1" value="10" data-rangeslider>$<span id="js-output"></span>
+
+        </li>
             </ul>
           </div>
         
@@ -374,9 +378,10 @@ $sql5="select * from 	sp_language ORDER BY languages";
 
 <!-- jQuery Version 1.11.1 --> 
 <script src="js/jquery.js"></script> 
-
+<script src="js/rangeslider.js-2.1.1/rangeslider.min.js"></script> 
 <!-- Bootstrap Core JavaScript --> 
-<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.min.js"></script> 
+<script src="js/search.js"></script> 
 </body>
 </html>
 
