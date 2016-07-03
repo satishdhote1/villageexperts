@@ -134,6 +134,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/mainstyle.css" rel="stylesheet">
+<link href="js/rangeslider.js-2.1.1/rangeslider.css" rel="stylesheet">
 </head>
 <style>
 .over-lap {
