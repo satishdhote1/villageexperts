@@ -206,6 +206,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <section class="block-bg">
 <div class="container">
      <div class="row">
+ <form action="result.php" method="post" name="search" id="search" >
 <div class="col-ms-10 col-sm-10 col-xs-12" style="padding:0px;">
 <ul class="list-inline display-list">
 <li>
@@ -237,9 +238,10 @@ $sql5="select * from 	sp_language ORDER BY languages";
 </div>
 <div class="col-ms-2 col-sm-2 col-xs-6">
 <div class="text-center">
-<button class="btn btn-default btn-search-2">Search</button>
+<button type="submit" class="btn btn-default btn-search-2">Search</button>
 </div>
 </div>
+</form>
 <div class="clearfix"></div>
 </div>
 </div>
