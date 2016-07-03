@@ -12,6 +12,45 @@ include("config/connection.php");
 
 session_start();
 
+if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
+{
+
+$user_id = $_SESSION['logged_user_id'];
+
+$user_name  = $_SESSION['logged_user_name'];
+
+$user_pic = $_SESSION['logged_user_image'];
+
+$user_type = $_SESSION['logged_role_code'];
+
+if($_SESSION['logged_role_code']=='SP')
+
+{
+
+	$imagePath = "SP_Photos/";
+
+}
+
+else if($_SESSION['logged_role_code']=='SR')
+
+{
+
+	$imagePath = "SR_Photos/";
+
+}
+
+else if($_SESSION['logged_role_code']=='GM')
+
+{
+
+	$imagePath = "memberPhotos/";
+
+}
+
+else
+
+$imagePath = "/";
+
 $user_name  = $_SESSION['logged_user_name'];
 
 $conn=new connections();
@@ -608,6 +647,13 @@ function getData($conn,$tableName,$id,$selectField,$whereField)
 }
 
 
+}
+else
+{
+	$passStr = 'You are not authorized.Redirecting....';
+	$passImg = 'groupPhotos/img-3.jpg';
+	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
+}
 
 
 
