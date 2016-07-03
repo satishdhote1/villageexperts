@@ -398,8 +398,9 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <script src="js/jquery.js"></script> 
 <script src="js/rangeslider.js-2.1.1/rangeslider.min.js"></script> 
 <!-- Bootstrap Core JavaScript --> 
-<script src="js/bootstrap.min.js"></script> 
-<script src="js/search.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/newProvider.js"></script>
+<!--<script src="js/search.js"></script>--> 
 </body>
 </html>
 
