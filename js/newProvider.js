@@ -19,6 +19,10 @@ var $document = $(document);
      $inputRange.rangeslider({
          polyfill: false
      });
+     
+     
+	var allVals = [];
+ 	var allIDs = [];
      /* get subexperties  */
      $(document).on("click",".expertiesLabel",function() {
      	     $(".loader-exp").show();
@@ -65,31 +69,66 @@ var $document = $(document);
     });
     //SETTING VALUE OF subExpertiesLabel
     $(document).on("click",".subExpertiesLabel",function() {
-
 		var expertId = $(this).attr("for");
 		var expertValue = $(this).attr("dir");
 		$(".subSpecial").val(expertValue);
 		$(".SubSpecialIDS").val(expertId);
-
 	  });
         //SETTING UP degreeLabel
         $(document).on("click",".degreeLabel",function() {
-
 		var expertId = $(this).attr("for");
 		var expertValue = $(this).attr("dir");
 		$(".degree").val(expertValue);
 		$(".DegreeIDS").val(expertId);
-
 	  });
 	  
-	  //SETTING UP degreeLabel
-        $(document).on("click",".degreeLabel",function() {
-
+	  //SETTING UP experienceLabel
+        $(document).on("click",".experienceLabel",function() {
 		var expertId = $(this).attr("for");
 		var expertValue = $(this).attr("dir");
-		$(".degree").val(expertValue);
-		$(".DegreeIDS").val(expertId);
-
+		$(".experience").val(expertValue);
+		$(".ExperienceIDS").val(expertId);
 	  });
+	  
+	 $(document).on("click",".languageLabel",function() {
+	   var flag =0;
+       	   var obj = $(this);
+  	   if (obj.attr("checked")) {
+		flag = 1;
+   	        expertValue = obj.attr("dir");
+		 expertId =  obj.attr("for");
+		obj.attr("checked", false); 
+		console.log(allVals);
+		console.log(allIDs);   
+		allVals = jQuery.grep(allVals, function(value) {
+		  return value != expertValue;
+		});
+ 	        allIDs = jQuery.grep(allIDs, function(value) {
+	         return value != expertId;
+		});
+		console.log(allVals); 
+		console.log(allIDs); 
+		}
+ 		obj.attr("checked", true); 
+ 		var expertId = obj.attr("for");
+	   	var expertValue = obj.attr("dir");
+ 	        if(flag ==0){
+		 allVals = [];allIDs = [];
+		  $(".languageLabel").each(function () {
+		  console.log("test1");  
+		 if( $(this).attr("checked"))
+		 {
+		 expertValue = $(this).attr("dir");
+		 expertId =  $(this).attr("for");
+		 allVals.push(expertValue);
+		 allIDs.push(expertId);
+		console.log(allIDs);
+		console.log(allVals); 
+		 }
+		});
+	}
+  	     $(".language").val(allVals);
+   	     $(".LanguageIDS").val(allIDs);
+         });
 	  
 });
