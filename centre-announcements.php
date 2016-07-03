@@ -93,7 +93,7 @@ $imagePath = "/";
     </div>
 <div class="col-md-3 <?php echo($user_type == 'SP' || $user_type == 'GM')? 'disabled-add tooltip-test" data-toggle="tooltip" title="This Tab may be accessed by Service Requester Only"':'"';?> >
 <div class="col-1 text-center"><img src="images/img-3.jpg" class="img-responsive"> 
-    <h2 class="connect text-center"><a class="navmenu <?php echo($user_type != 'SR')? 'disabled-pointer':''?>" href="<?php echo($user_type == 'SR')?'':''?> " >New Provider</a></h2> 
+    <h2 class="connect text-center"><a class="navmenu <?php echo($user_type != 'SR')? 'disabled-pointer':''?>" href="<?php echo($user_type == 'SR')?'newProvider.php':''?> " >New Provider</a></h2> 
     <p class="over-lap-connect"><img alt="group" src="images/n-p.png"></p>
     </div>
     </div>
