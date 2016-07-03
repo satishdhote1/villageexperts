@@ -1,8 +1,7 @@
 <?php
 include("config/connection.php");
 include("phpSendMail.php");
-$emailObject=new phpSendMail();
-print_r($emailObject->geEmailConfig());die("tessst");
+
 session_start();
 //Establish Daatabase Connection
 $conn=new connections();
