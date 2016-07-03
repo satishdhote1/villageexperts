@@ -34,7 +34,8 @@
 
 .loader-exp > p {
 
-    padding-top: 144px;
+  /*  padding-top: 144px;*/
+   padding-top: 21%;
 
     text-align: center;
 
