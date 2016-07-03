@@ -134,7 +134,6 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/mainstyle.css" rel="stylesheet">
-<link href="js/rangeslider.js-2.1.1/rangeslider.css" rel="stylesheet">
 </head>
 <style>
 .over-lap {
@@ -333,11 +332,14 @@ $sql5="select * from 	sp_language ORDER BY languages";
         <div class="row">
           <div class="col-md-12">
             <ul class="list-inline search-list">
- 			 <li class="list-item back-color-2 rateClick" id="rateClick">rate per hour
+ 			 
 
-         <h4>Select maximum rate you willing to pay:</h4><div class="seclect-box" style="width:100%!important"><input type="range" min="0" max="100" step="1" value="10" data-rangeslider>$<span id="js-output"></span>
+         <h4>Select maximum rate you willing to pay:</h4>
+         <div class="seclect-box" style="width:100%!important">
+         <input type="range" min="0" max="100" step="1" value="10" data-rangeslider>$<span id="js-output">
+         </span>
 
-        </li>
+        
             </ul>
           </div>
         
