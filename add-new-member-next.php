@@ -65,7 +65,7 @@ $phone =!empty($memberData['gm_phone'])?$memberData['gm_phone']:'';
     <div class="col-md-12 text-center">
       <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
       <div class="over-lap">
-        <div class="profile pull-left"> <img src="images/uploads/<?php echo (!empty($user_pic))?$user_pic:"img-3.jpg"; ?>" class="img-responsive"  id="previewLogo"> </div>
+        <div class="profile pull-left"> <img src="images/<?php echo (!empty($user_pic))?$user_pic:"img-3.jpg"; ?>" class="img-responsive"  id="previewLogo"> </div>
         <div class="pull-right">
           <p class="loginname"><?php echo "Welcome Guest!"/*$user_name*/;  ?></p>
           <div class=""><a href="index.php" class="btn btn-info bg-blue logout">Login</a></div>
