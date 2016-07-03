@@ -205,12 +205,30 @@ $sql5="select * from 	sp_language ORDER BY languages";
      <div class="row">
 <div class="col-ms-10 col-sm-10 col-xs-12" style="padding:0px;">
 <ul class="list-inline display-list">
-<li><input type="text" class="form-control radius0" disabled value="Name"></li>
-<li><input type="text" class="form-control radius0" disabled value="Name"></li>
-<li><input type="text" class="form-control radius0" disabled value="Name"></li>
-<li><input type="text" class="form-control radius0" disabled value="Name"></li>
-<li><input type="text" class="form-control radius0" disabled value="Name"></li>
-<li><input type="text" class="form-control radius0" disabled value="Name"></li>
+<li>
+<input type="text" readonly class="form-control radius0 specialisation" value="" name="specialisation">
+<input type="hidden" readonly class="SpecialisationIDS" value="" name="SpecialisationIDS">	
+</li>
+<li>
+<input type="text" readonly class="subSpecial form-control radius0" value="" name="subSpecial">
+<input type="hidden" readonly class="SubSpecialIDS" value="" name="SubSpecialIDS">
+</li>
+<li>
+	<input type="text" readonly class="degree form-control radius0" value="" name="degree">
+        <input type="hidden" readonly class="DegreeIDS" value="" name="DegreeIDS">
+</li>
+<li>
+	<input type="text" readonly class="experience form-control radius0" value="" name="experience">
+        <input type="hidden" readonly class="ExperienceIDS" value="" name="ExperienceIDS">
+	</li>
+<li>
+	<input type="text" readonly class="rate form-control radius0" value="" name="rate">
+	<input type="hidden" readonly class="RateIDS" value="" name="RateIDS">
+</li>
+<li>
+	 <input type="text" readonly class="language form-control radius0" value="" name="language">
+          <input type="hidden" readonly class="LanguageIDS" value="" name="LanguageIDS">
+</li>
 <div class="clearfix"></div>
 </ul>
 </div>
