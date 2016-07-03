@@ -2,8 +2,7 @@
 include("config/connection.php");
 //require("phpMailer/class.phpmailer.php");
 include("phpSendMail.php");
-$emailObject=new phpSendMail();
-print_r($emailObject->geEmailConfig());die("tessst");
+//print_r($emailObject->geEmailConfig());die("tessst");
 session_start();
 
 $user_id  = isset($_SESSION['logged_user_id'])?$_SESSION['logged_user_id']:'';
@@ -150,57 +149,5 @@ else
 	header("location:well-come.php?redirect=connect&passImg=img-3.jpg&passStr=You are not authorized to connect.<br>Redirecting....");
 	
 }
-function sendMail($email,$name,$body){
-	
-	$emailObject=new connections();
 
-	 $emailData = $emailObject->geEmailConfig();
-$currentTimestamp = strtotime("now");
-	
-	$mail = new PHPMailer();
-
-	//$mail->SMTPDebug = 1;
-   $mail->IsSMTP();
-
-   $mail->Mailer = "smtp";
-
-   $mail->Host = "email-smtp.us-west-2.amazonaws.com";//"smtp.gmail.com";
-
-   $mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
-
-   $mail->SMTPAuth = true;
-
-   $mail->SMTPSecure = 'tls';
-
-    $mail->Username = $emailData['uname'];
-
-	$mail->Password = $emailData['pwd'];
-
-   $mail->From     = "dassamtest2@gmail.com";
-
-   $mail->FromName = "Village Expert";
-
-   $mail->AddAddress($email, $name);
-
-  // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
-
-   $mail->Subject = "Village-Expert connection between members!";
-
-   $mail->Body    = $body;
-
-   $mail->WordWrap = 50;  
-
-   $mail->IsHTML(true);
-
-   if(!$mail->Send())
-
-	 echo "Mailer Error: " . $mail->ErrorInfo;
-
-   else
-
-	{
-	  header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
-
-	}
-}
 ?>
