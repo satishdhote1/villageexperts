@@ -321,7 +321,7 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 
   <div class="row">
 
-    <div class="col-md-12 text-center">
+    <div class=" text-center">
 
       <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
 
