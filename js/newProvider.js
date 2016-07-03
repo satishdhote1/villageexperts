@@ -63,5 +63,33 @@ var $document = $(document);
         });
 
     });
-    //
+    //SETTING VALUE OF subExpertiesLabel
+    $(document).on("click",".subExpertiesLabel",function() {
+
+		var expertId = $(this).attr("for");
+		var expertValue = $(this).attr("dir");
+		$(".subSpecial").val(expertValue);
+		$(".SubSpecialIDS").val(expertId);
+
+	  });
+        //SETTING UP degreeLabel
+        $(document).on("click",".degreeLabel",function() {
+
+		var expertId = $(this).attr("for");
+		var expertValue = $(this).attr("dir");
+		$(".degree").val(expertValue);
+		$(".DegreeIDS").val(expertId);
+
+	  });
+	  
+	  //SETTING UP degreeLabel
+        $(document).on("click",".degreeLabel",function() {
+
+		var expertId = $(this).attr("for");
+		var expertValue = $(this).attr("dir");
+		$(".degree").val(expertValue);
+		$(".DegreeIDS").val(expertId);
+
+	  });
+	  
 });
