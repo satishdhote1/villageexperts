@@ -302,8 +302,8 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 <style>
 
 .over-lap {
-
-	display: none !important
+	display: block;
+/*	display: none !important */
 
 }
 
