@@ -1,13 +1,18 @@
 <?php
 include("config/connection.php");
-require("phpMailer/class.phpmailer.php");
-
+//require("phpMailer/class.phpmailer.php");
+include("phpSendMail.php");
+print_r($emailObject->geEmailConfig());die("tessst");
 session_start();
 
 $user_id  = isset($_SESSION['logged_user_id'])?$_SESSION['logged_user_id']:'';
 
 $conn=new connections();
 $conn=$conn->connect();
+
+//Create Email instance for sending mail
+$emailObject=new phpSendMail();
+
 $end_time = isset($_REQUEST['endTime'])?$_REQUEST['endTime']:'';
 
 if(!empty($user_id)){
@@ -63,7 +68,11 @@ if(!empty($user_id)){
 			<a href="https://www.villageexperts.com:8084/?s=1#/'.$currentTimestamp.'" style="color:#fff;">Connect
 			</a></p></div></div>';
 		
-			sendMail($row['gm_email'],$row['gm_name'],$body);//calling mail function
+			//sendMail($row['gm_email'],$row['gm_name'],$body);//calling mail function
+			$mailSent = $emailObject->sendMail($row['gm_email'],$row['gm_name'],"Village-Expert connection between members!",$body);
+			if($mailSent)
+			{
+			}
 			
 			}//end of mysqli_num_rows>0
 		else
@@ -109,7 +118,11 @@ if(!empty($user_id)){
 			<a href="https://www.villageexperts.com:8084/?s=1#/'.$currentTimestamp.
 			'" style="color:#fff;">Connect</a></p></div></div>';
 		
-			sendMail($row['sp_email'],$row['sp_name'],$body);//calling mail function
+			//sendMail($row['sp_email'],$row['sp_name'],$body);//calling mail function
+			$mailSent = $emailObject->sendMail($row['sp_email'],$row['sp_name'],"Village-Expert connection between members!",$body);
+			if($mailSent)
+			{
+			}
 		 }
 		else
 			{
