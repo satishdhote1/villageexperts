@@ -21,10 +21,9 @@ var $document = $(document);
      });
      /* get subexperties  */
      $(document).on("click",".expertiesLabel",function() {
-		$(".ratePhour").hide();//HIDE RANGER
-		$(".expertiesCheckbox").attr("checked", false); //uncheck all checkboxes
+     	     $(".loader-exp").show();
             var expertId = $(this).attr("for");
-			      var expertValue = $(this).attr("dir");
+	    var expertValue = $(this).attr("dir");
 	      $(".specialisation").val(expertValue);
 	      $(".SpecialisationIDS").val(expertId);
 			$.ajax({
@@ -33,6 +32,7 @@ var $document = $(document);
         	data:{getDataOf:"subSpecial",id:expertId},
         	dataType:'json',
           success: function (result) {
+          	$(".loader-exp").hide();
                   console.log(result);
               if(result.success == 1)
                {
@@ -56,7 +56,8 @@ var $document = $(document);
              }
         	},
            error: function (error) {
-						alert("Not Succesful !");
+           	$(".loader-exp").hide();
+		alert("Not Succesful !");
            }
         });
 
