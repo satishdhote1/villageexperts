@@ -29,7 +29,7 @@ public function sendMail($email,$memberName,$subject,$body)
         $mail->IsSMTP();
         $mail->Mailer = "smtp";
         $mail->Host = $this->host;//"smtp.gmail.com";
-        $mail->Port = $this->port;.
+        $mail->Port = $this->port;
         $mail->SMTPAuth = true;
         $mail->SMTPSecure = 'tls';
     	$mail->Username = $this->emailUsername;
