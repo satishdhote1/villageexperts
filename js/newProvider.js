@@ -48,7 +48,7 @@ var $document = $(document);
                 	});
 
                       $('.setSubSpecialData').html(resultData);
-                      $('html, body').animate({scrollTop: $(".setSubSpecialData").offset().top}, 2000);
+                      $('html, body').animate({scrollTop: $(".specialData").offset().top}, 2000);
     
 						  }
 						 else
