@@ -952,7 +952,7 @@ h1.search-title {
 
 }
 
-.search-parson-position{background:#7d71a3;color:#fff;font-family:Arial, Helvetica, sans-serif;font-size:18px;padding:10px 0px;margin:5px 0px;display: inherit;transition:all 0.3s ease-in-out 0s;font-weight:bold;}
+.search-parson-position{background:#7d71a3;color:#fff;font-family:Arial, Helvetica, sans-serif;font-size:15px;padding:10px 0px;margin:5px 0px;display: inherit;transition:all 0.3s ease-in-out 0s;font-weight:bold;}
 
 .search-parson-position:hover{background:#c0b3e6;color:#000;text-decoration:none;}
 
