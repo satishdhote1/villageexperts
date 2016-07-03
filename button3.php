@@ -75,16 +75,44 @@ $sql2="select * from 	sp_sub_specialisation where specialisation_id = 5 order by
 				}
 			}
 			
-			//Get Sub specialization Data
-$sql3="select * from 	experience ORDER BY ExperienceID";
+					//Get Sub Degree Data
+$sql3="select * from 	education ORDER BY EducationID";
 			$tableResult3 = mysqli_query($conn, $sql3);
 			//print_r($tableResult);
 
-				$experience = array();
+				$education = array();
 			if (mysqli_num_rows($tableResult3) > 0)  
 			{
 				while($row = mysqli_fetch_assoc($tableResult3)) {
+				$education[] = $row;
+				}
+			}
+
+
+
+			//Get Sub specialization Data
+$sql4="select * from 	experience ORDER BY ExperienceID";
+			$tableResult4 = mysqli_query($conn, $sql4);
+			//print_r($tableResult);
+
+				$experience = array();
+			if (mysqli_num_rows($tableResult4) > 0)  
+			{
+				while($row = mysqli_fetch_assoc($tableResult4)) {
 				$experience[] = $row;
+				}
+			}
+			
+			//Get Sub Language Data
+$sql5="select * from 	sp_language ORDER BY languages";
+			$tableResult5 = mysqli_query($conn, $sql5);
+			//print_r($tableResult);
+
+				$language = array();
+			if (mysqli_num_rows($tableResult5) > 0)  
+			{
+				while($row = mysqli_fetch_assoc($tableResult5)) {
+				$language[] = $row;
 				}
 			}
 ?>
@@ -260,11 +288,13 @@ $sql3="select * from 	experience ORDER BY ExperienceID";
         <div class="row">
           <div class="col-md-12">
             <ul class="list-inline search-list">
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p class=""><a href="" class="search-parson-position text-center">Medical</a></p>
+              <?php foreach($education as $educationDatas) { ?>
+              <li class="bg-gray" id="<?php echo $educationDatas['EducationID']; ?>">
+                <div class="search-profile text-center"><img src="images/education/<?php echo $educationDatas['Image']; ?>">
+                  <p class=""><a href="" class="search-parson-position text-center"><?php echo $educationDatas['Education']; ?></a></p>
                 </div>
               </li>
+               <?php } ?>
              </ul>
           </div>
         
@@ -282,7 +312,7 @@ $sql3="select * from 	experience ORDER BY ExperienceID";
             <ul class="list-inline search-list">
                <?php foreach($experience as $experienceDatas) { ?>
               <li class="bg-gray" id="<?php echo $experienceDatas['ExperienceID']; ?>">
-                <div class="search-profile text-center"><img src="images/education/<?php echo $experienceDatas['Image']; ?>">
+                <div class="search-profile text-center"><img src="images/experience/<?php echo $experienceDatas['Image']; ?>">
                   <p class=""><a href="" class="search-parson-position text-center"><?php echo $experienceDatas['Experience']; ?></a></p>
                 </div>
               </li>
@@ -302,31 +332,7 @@ $sql3="select * from 	experience ORDER BY ExperienceID";
         <div class="row">
           <div class="col-md-12">
             <ul class="list-inline search-list">
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p class=""><a href="" class="search-parson-position text-center">Medical</a></p>
-                </div>
-              </li>
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p><a href="" class="search-parson-position text-center">Legal</a></p>
-                </div>
-              </li>
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p><a href="#" class="search-parson-position text-center">Tutor</a></p>
-                </div>
-              </li>
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p><a href="#" class="search-parson-position text-center">Coch</a></p>
-                </div>
-              </li>
-             <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p><a href="#" class="search-parson-position text-center">Medical</a></p>
-                </div>
-              </li>
+ 			
             </ul>
           </div>
         
@@ -341,31 +347,13 @@ $sql3="select * from 	experience ORDER BY ExperienceID";
         <div class="row">
           <div class="col-md-12">
             <ul class="list-inline search-list">
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p class=""><a href="" class="search-parson-position text-center">Medical</a></p>
+              <?php foreach($language as $languageDatas) { ?>
+              <li class="bg-gray" id="<?php echo $languageDatas['language_id']; ?>">
+                <div class="search-profile text-center"><img src="images/Languages/<?php echo $languageDatas['images']; ?>">
+                  <p class=""><a href="" class="search-parson-position text-center"><?php echo $languageDatas['languages']; ?></a></p>
                 </div>
               </li>
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p><a href="" class="search-parson-position text-center">Legal</a></p>
-                </div>
-              </li>
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p><a href="#" class="search-parson-position text-center">Tutor</a></p>
-                </div>
-              </li>
-              <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p><a href="#" class="search-parson-position text-center">Coch</a></p>
-                </div>
-              </li>
-             <li class="bg-gray">
-                <div class="search-profile text-center"><img src="images/img-3.jpg">
-                  <p><a href="#" class="search-parson-position text-center">Medical</a></p>
-                </div>
-              </li>
+               <?php } ?>
             </ul>
           </div>
         
