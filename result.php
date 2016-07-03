@@ -310,7 +310,7 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 </style>
 
 <body class="bodybg">
-
+<?php /*?>
 <div class="loader-exp" style="display:none;">
 
 <p><img src="images/ajax-loader.gif"></p>
@@ -372,7 +372,7 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
   </div>
 
 </div>
-
+<?php */?>
 
 
 
