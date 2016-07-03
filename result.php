@@ -401,7 +401,8 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 		  <ul>
 
 <?php
-
+if(!empty($specialData))
+{
 foreach($specialData as $specialDatas)
 
 {
@@ -552,6 +553,10 @@ mins</div>
 
 
 
+}
+}
+else{
+	echo "<center><h1 style='color:red'>Sorry! No results found.</h1></center>";
 }
 
 ?>
