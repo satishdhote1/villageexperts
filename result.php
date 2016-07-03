@@ -311,6 +311,13 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 
 <body class="bodybg">
 
+
+<div class="loader-exp" style="display:none;">
+
+<p><img src="images/ajax-loader.gif"></p>
+
+</div>
+
 <div class="container-fluid header-part">
 
   <div class="row">
@@ -321,13 +328,39 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 
       <div class="over-lap">
 
-        <div class="profile pull-left"> <img src="images/img-3.jpg" class="img-responsive"> </div>
+        <div class="profile pull-left"> <img src="images/<?php echo $imagePath; ?><?php echo (!empty($user_pic))?$user_pic:"img-3.jpg"; ?>" class="img-responsive"> </div>
 
         <div class="pull-right">
 
-          <p class="loginname">SUBHASIS NASKAR</p>
+          <p class="loginname">
 
-          <button class="btn btn-info bg-blue">Logout</button>
+           <?php
+
+          if($user_type == 'SP'){
+
+			 echo "Welcome Service Provider <br>".$user_name."!";  
+
+		  }
+
+		  else if($user_type == 'SR'){
+
+			 echo "Welcome Service Requester <br>".$user_name."!";  
+
+		  }
+
+		   else if($user_type == 'GM'){
+
+			 echo "Welcome Group Member <br>".$user_name."!";  
+
+		  }
+
+		  
+
+		  ?>
+
+          </p>
+
+          <div class=""><a href="logout.php" class="btn btn-info bg-blue logout">Logout</a></div>
 
         </div>
 
@@ -340,6 +373,8 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
   </div>
 
 </div>
+
+
 
 
 
