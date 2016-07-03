@@ -1,10 +1,15 @@
 <?php
 include("config/connection.php");
-require("phpMailer/class.phpmailer.php");
+//require("phpMailer/class.phpmailer.php");
 include("imageresize/smart_resize_image.function.php");
+include("phpSendMail.php");
 session_start();
 $conn=new connections();
 $conn=$conn->connect();
+
+//Create Email instance for sending mail
+$emailObject=new phpSendMail();
+
 //if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 //{
 
@@ -104,40 +109,15 @@ die();*/
 		
 
 					   //----------------------------//Email Body Texts------------------------
-			
-					$emailObject=new connections();
-					$emailData = $emailObject->geEmailConfig();
-				
-					$mail = new PHPMailer();
-				   	$mail->IsSMTP();
-				   	$mail->Mailer = "smtp";
-				   	$mail->Host = "smtp.gmail.com";
-				   	$mail->Port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
-				   	$mail->SMTPAuth = true;
-				   	$mail->SMTPSecure = 'tls';
-				   	$mail->Username = $emailData['uname'];
-				   	$mail->Password = $emailData['pwd'];
-				   	$mail->From     = "dassamtest2@gmail.com";
-				   	$mail->FromName = "Village Expert";
-				   	$mail->AddAddress($Email, $memberName);
-				  	// $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
-				   	$mail->Subject = "Village-Expert Group Member Registration successful!";
-				   	$mail->Body    = $body;
-				   	$mail->WordWrap= 50;  
-				   	$mail->IsHTML(true);
-				   	if(!$mail->Send())
-					 	echo "Mailer Error: " . $mail->ErrorInfo;
-				   	else
-					{
-						echo "test";
-						$passStr.= ' Congratulation!<br>Registration successful!<br>Redirecting to your Login page....';
-						/*$passStr = 'Registration successful!<br>Congrats!You are now a member of  '.$groupName.' group<br>Redirecting to your Login page....';*/
-						$passImg = 'memberPhotos/'.$target_fileName;
-						header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=add-new-member-next&email=$Email");
-					    //header("Refresh: 5; url=index.php?success=1&type=GM");
-						/*echo '<center><h1 style="color:red">Registration successful!<br>
-					Congrats!You are now a member of  '.$groupName.' group.<br>Redirecting....</h1></center>';*/
-					}
+
+			 	$mailSent = $emailObject->sendMail($Email, $memberName,"Village-Expert Group Member Registration successful!",$body);
+				if($mailSent)
+				{
+					$passStr.= ' Congratulation!<br>Registration successful!<br>Redirecting to your Login page....';
+					$passImg = 'memberPhotos/'.$target_fileName;
+					header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=add-new-member-next&email=$Email");
+				}
+					
 				}//if update succesful
 	  			else{
 					$passStr.= ' Registration Error!<br>
