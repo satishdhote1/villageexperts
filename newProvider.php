@@ -220,7 +220,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <li>
 	<input type="text" readonly class="experience form-control radius0" value="" name="experience">
         <input type="hidden" readonly class="ExperienceIDS" value="" name="ExperienceIDS">
-	</li>
+</li>
 <li>
 	<input type="text" readonly class="rate form-control radius0" value="" name="rate">
 	<input type="hidden" readonly class="RateIDS" value="" name="RateIDS">
@@ -279,7 +279,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
       <div class="background-blue">
         <div class="row">
           <div class="col-md-12">
-            <ul class="list-inline search-list">
+            <ul class="list-inline search-list setSubSpecialData">
              <?php foreach($subspecialData as $subspecialDatas) { ?>
               <li class="bg-gray" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
                 <div class="search-profile text-center"><img src="images/SubSpecialization/<?php echo $subspecialDatas['SubSpImages']; ?>">
@@ -310,7 +310,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
               <?php foreach($education as $educationDatas) { ?>
               <li class="bg-gray" id="<?php echo $educationDatas['EducationID']; ?>">
                 <div class="search-profile text-center"><img src="images/education/<?php echo $educationDatas['Image']; ?>">
-                  <p class=""><a href="" class="search-parson-position text-center"><?php echo $educationDatas['Education']; ?></a></p>
+                  <p class=""><a href="" class="search-parson-position text-center expertiesLabel" id="expertiesLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"><?php echo $educationDatas['Education']; ?></a></p>
                 </div>
               </li>
                <?php } ?>
