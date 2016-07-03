@@ -60,7 +60,7 @@ if(!empty($user_id)){
 			$body.='<p style="width:200px;margin:20px auto;
 			background:#F00;color:#fff;padding:12px 0px;font-family:Georgia, \'Times New Roman\', Times,
 			 serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;">
-			<a href="https://www.villageexperts.com:8086/?s=1#/'.$currentTimestamp.'" style="color:#fff;">Connect
+			<a href="https://www.villageexperts.com:8084/?s=1#/'.$currentTimestamp.'" style="color:#fff;">Connect
 			</a></p></div></div>';
 		
 			sendMail($row['gm_email'],$row['gm_name'],$body);//calling mail function
@@ -106,7 +106,7 @@ if(!empty($user_id)){
 			$body.='<p style="width:200px;margin:20px auto;background:#F00;color:#fff;
 			padding:12px 0px;font-family:Georgia, \'Times New Roman\', Times,
 			serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;">
-			<a href="https://www.villageexperts.com:8086/?s=1#/'.$currentTimestamp.
+			<a href="https://www.villageexperts.com:8084/?s=1#/'.$currentTimestamp.
 			'" style="color:#fff;">Connect</a></p></div></div>';
 		
 			sendMail($row['sp_email'],$row['sp_name'],$body);//calling mail function
@@ -183,7 +183,7 @@ $currentTimestamp = strtotime("now");
    else
 
 	{
-	  header("location:https://www.villageexperts.com:8086/?s=1#/".$currentTimestamp);
+	  header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 
 	}
 }
