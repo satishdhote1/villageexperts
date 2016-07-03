@@ -2,6 +2,7 @@
 include("config/connection.php");
 //require("phpMailer/class.phpmailer.php");
 include("phpSendMail.php");
+$emailObject=new phpSendMail();
 print_r($emailObject->geEmailConfig());die("tessst");
 session_start();
 
@@ -72,6 +73,7 @@ if(!empty($user_id)){
 			$mailSent = $emailObject->sendMail($row['gm_email'],$row['gm_name'],"Village-Expert connection between members!",$body);
 			if($mailSent)
 			{
+				 header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 			}
 			
 			}//end of mysqli_num_rows>0
@@ -122,6 +124,7 @@ if(!empty($user_id)){
 			$mailSent = $emailObject->sendMail($row['sp_email'],$row['sp_name'],"Village-Expert connection between members!",$body);
 			if($mailSent)
 			{
+				 header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 			}
 		 }
 		else
