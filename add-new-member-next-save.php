@@ -3,6 +3,8 @@ include("config/connection.php");
 //require("phpMailer/class.phpmailer.php");
 include("imageresize/smart_resize_image.function.php");
 include("phpSendMail.php");
+$emailObject=new phpSendMail();
+print_r($emailObject->geEmailConfig());die("tessst");
 session_start();
 $conn=new connections();
 $conn=$conn->connect();
