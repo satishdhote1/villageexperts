@@ -257,7 +257,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
             <?php foreach($specialData as $specialDatas) { ?>
               <li class="bg-gray" id="<?php echo $specialDatas['specialisation_id']; ?>">
                 <div class="search-profile text-center"><img src="images/specialization/<?php echo $specialDatas['images']; ?>">
-                  <p class=""><a href="" class="search-parson-position text-center expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"><?php echo $specialDatas['specialisation']; ?></a></p>
+                  <p class=""><a href="javascript:void(0);" class="search-parson-position text-center expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"><?php echo $specialDatas['specialisation']; ?></a></p>
                 </div>
               </li>
                <?php } ?>
