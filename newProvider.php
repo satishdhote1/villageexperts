@@ -332,14 +332,10 @@ $sql5="select * from 	sp_language ORDER BY languages";
         <div class="row">
           <div class="col-md-12">
             <ul class="list-inline search-list">
- 			 
-
-         <h4>Select maximum rate you willing to pay:</h4>
-         <div class="seclect-box" style="width:100%!important">
-         <input type="range" min="0" max="100" step="1" value="10" data-rangeslider>$<span id="js-output">
-         </span>
-
-        
+ 	        <h4>Select maximum rate you willing to pay:</h4>
+	         <div class="seclect-box" style="width:100%!important">
+	            <input type="range" min="0" max="100" step="1" value="10" data-rangeslider>$<span id="js-output"></span>
+		</div>
             </ul>
           </div>
         
