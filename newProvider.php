@@ -156,6 +156,9 @@ $sql5="select * from 	sp_language ORDER BY languages";
 
 </style>
 <body class="bodybg">
+<div class="loader-exp" style="display:none;">
+<p><img src="images/ajax-loader.gif"></p>
+</div>
 <div class="container-fluid header-part">
   <div class="row">
     <div class="col-md-12 text-center">
