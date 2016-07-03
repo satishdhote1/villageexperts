@@ -1,43 +1,18 @@
 <?php
+
+
+
+//print_r($_POST);//die();
+
+
+
 include("config/connection.php");
+
+
+
 session_start();
-if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
-{
-$user_id = $_SESSION['logged_user_id'];
 
 $user_name  = $_SESSION['logged_user_name'];
-
-$user_pic = $_SESSION['logged_user_image'];
-
-$user_type = $_SESSION['logged_role_code'];
-
-if($_SESSION['logged_role_code']=='SP')
-
-{
-
-	$imagePath = "SP_Photos/";
-
-}
-
-else if($_SESSION['logged_role_code']=='SR')
-
-{
-
-	$imagePath = "SR_Photos/";
-
-}
-
-else if($_SESSION['logged_role_code']=='GM')
-
-{
-
-	$imagePath = "memberPhotos/";
-
-}
-
-else
-
-$imagePath = "/";
 
 $conn=new connections();
 
@@ -277,7 +252,7 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 
 <meta name="author" content="">
 
-<title>Village Expert</title>
+<title>village expart</title>
 
 
 
@@ -310,56 +285,24 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 </style>
 
 <body class="bodybg">
-<?php /*?>
-<div class="loader-exp" style="display:none;">
-
-<p><img src="images/ajax-loader.gif"></p>
-
-</div>
 
 <div class="container-fluid header-part">
 
   <div class="row">
 
-    <div class=" text-center">
+    <div class="col-md-12 text-center">
 
       <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
 
       <div class="over-lap">
 
-        <div class="profile pull-left"> <img src="images/<?php echo $imagePath; ?><?php echo (!empty($user_pic))?$user_pic:"img-3.jpg"; ?>" class="img-responsive"> </div>
+        <div class="profile pull-left"> <img src="images/img-3.jpg" class="img-responsive"> </div>
 
         <div class="pull-right">
 
-          <p class="loginname">
+          <p class="loginname">SUBHASIS NASKAR</p>
 
-           <?php
-
-          if($user_type == 'SP'){
-
-			 echo "Welcome Service Provider <br>".$user_name."!";  
-
-		  }
-
-		  else if($user_type == 'SR'){
-
-			 echo "Welcome Service Requester <br>".$user_name."!";  
-
-		  }
-
-		   else if($user_type == 'GM'){
-
-			 echo "Welcome Group Member <br>".$user_name."!";  
-
-		  }
-
-		  
-
-		  ?>
-
-          </p>
-
-          <div class=""><a href="logout.php" class="btn btn-info bg-blue logout">Logout</a></div>
+          <button class="btn btn-info bg-blue">Logout</button>
 
         </div>
 
@@ -372,7 +315,6 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
   </div>
 
 </div>
-<?php */?>
 
 
 
@@ -664,13 +606,12 @@ function getData($conn,$tableName,$id,$selectField,$whereField)
 					
 					return $data;
 }
-}
-else
-{
-	$passStr = 'You are not authorized.Redirecting....';
-	$passImg = 'groupPhotos/img-3.jpg';
-	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
-}
+
+
+
+
+
+
 ?>
 
 <?php /*?>
