@@ -426,7 +426,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 <script src="js/rangeslider.js-2.1.1/rangeslider.min.js"></script> 
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
-<script src="js/newProvider.js"></script>
+<script src="js/searchProvider.js"></script>
 <!--<script src="js/search.js"></script>-->
 </body>
 </html>
