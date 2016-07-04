@@ -111,6 +111,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/mainstyle.css" rel="stylesheet">
+<link href="js/rangeslider.js-2.1.1/rangeslider.css" rel="stylesheet">
 </head>
 <style>
 .over-lap {
@@ -422,9 +423,11 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 
 <!-- jQuery Version 1.11.1 --> 
 <script src="js/jquery.js"></script> 
-
+<script src="js/rangeslider.js-2.1.1/rangeslider.min.js"></script> 
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
+<script src="js/newProvider.js"></script>
+<!--<script src="js/search.js"></script>-->
 </body>
 </html>
 
