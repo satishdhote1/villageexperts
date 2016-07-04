@@ -307,7 +307,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
                       <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
-                      <label for="defaultcard" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
+                      <label for="defaultcard" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation_id']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
@@ -332,7 +332,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
                       <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
-                      <label for="defaultcard" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"></span></label>
+                      <label for="defaultcard" class="my-label"><span class="degreeLabel" id="degreeLabel" for="<?php echo $educationDatas['Education']; ?>" dir="<?php echo $educationDatas['EducationID']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
@@ -346,18 +346,18 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
   
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
-    <p class="title-name-2">Sub Specialization</p>
+    <p class="title-name-2">Experience</p>
     </div>
     <div class="col-md-9 col-xs-7" style="padding:0;">
     <ul class="list-inline setSubSpecialData">
-              <?php foreach($subspecialData as $subspecialDatas) { ?>
-              <li class="modifi-list-item-2" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
-                <div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
-                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
+              <?php foreach($experience as $experienceDatas) { ?>
+              <li class="modifi-list-item-2" id="<?php echo $experienceDatas['ExperienceID']; ?>">
+                <div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($experienceDatas['SubSpImages'])?$experienceDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $experienceDatas['sub_specialisation']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
                       <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
-                      <label for="defaultcard" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
+                      <label for="defaultcard" class="my-label"><span class="experienceLabel" id="experienceLabel" for="<?php echo $experienceDatas['Experience']; ?>" dir="<?php echo $experienceDatas['ExperienceID']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
