@@ -381,3 +381,14 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<?php
+ 
+}
+else
+{
+	$passStr = 'You are not authorized.Redirecting....';
+	$passImg = 'groupPhotos/img-3.jpg';
+	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
+}
+?>
