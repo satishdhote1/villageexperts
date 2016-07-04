@@ -281,7 +281,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $specialDatas['specialisation']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
-                      <input type="checkbox" name="checkExp[<?php echo $specialDatas['specialisation_id']; ?>][]" id="checkExp" value="1" class="no-styles">       
+                      <input type="checkbox" name="checkExp[1][]" id="checkExp" value="1" class="no-styles">       
                       <label for="exp<?php echo $specialDatas['specialisation_id']; ?>" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
