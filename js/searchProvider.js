@@ -70,7 +70,7 @@ $("input:checkbox").on('click', function() {
                     	var images = item.SubSpImages;
                     	
                     	 
-              resultData=resultData+'<li class="modifi-list-item-2" id="'+id+'"><div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/'+images+'" class="img-responsive"></div><div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="col-xs-2"><div class="checkbox padding30" id="checkdiv" style="display:block;"><input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles"><label for="defaultcard" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'"></span></label><input type="hidden" name="paymentnonce" id="paymentnonce" value="" /></div></div><div class="" id="setHooverSubExprt"></div></li>';'
+              resultData = resultData + '<li class="modifi-list-item-2" id="'+id+'"><div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/'+images+'" class="img-responsive"></div><div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="col-xs-2"><div class="checkbox padding30" id="checkdiv" style="display:block;"><input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles"><label for="defaultcard" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'"></span></label><input type="hidden" name="paymentnonce" id="paymentnonce" value="" /></div></div><div class="" id="setHooverSubExprt"></div></li>';
              
                    });
 
