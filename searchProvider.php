@@ -281,8 +281,8 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $specialDatas['specialisation']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
-                      <input type="checkbox" name="dsetting" id="defaultcard<?php echo $specialDatas['specialisation_id']; ?>" value="1" class="no-styles">       
-                      <label for="defaultcard<?php echo $specialDatas['specialisation_id']; ?>" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"></span></label>
+                      <input type="checkbox" name="checkExp[<?php echo $specialDatas['specialisation_id']; ?>][]" id="checkExp" value="1" class="no-styles">       
+                      <label for="exp<?php echo $specialDatas['specialisation_id']; ?>" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
@@ -307,8 +307,8 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
-                      <input type="checkbox" name="dsetting" id="defaultcard<?php echo $subspecialDatas['sub_specialisation_id']; ?>" value="1" class="no-styles">       
-                      <label for="defaultcard<?php echo $subspecialDatas['sub_specialisation_id']; ?>" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
+                      <input type="checkbox" name="subSpecial[<?php echo $subspecialDatas['sub_specialisation_id']; ?>][]" id="subSpecial" value="1" class="no-styles">       
+                      <label for="subSpecial<?php echo $subspecialDatas['sub_specialisation_id']; ?>" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
@@ -333,8 +333,8 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $educationDatas['Education']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
-                      <input type="checkbox" name="dsetting" id="defaultcard<?php echo $educationDatas['EducationID']; ?>" value="1" class="no-styles">       
-                      <label for="defaultcard<?php echo $educationDatas['EducationID']; ?>" class="my-label"><span class="degreeLabel" id="degreeLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"></span></label>
+                      <input type="checkbox" name="degree[<?php echo $educationDatas['EducationID']; ?>][]" id="degree<?php echo $educationDatas['EducationID']; ?>" value="1" class="no-styles">       
+                      <label for="degree<?php echo $educationDatas['EducationID']; ?>" class="my-label"><span class="degreeLabel" id="degreeLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
@@ -359,8 +359,8 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $experienceDatas['Experience']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
-                      <input type="checkbox" name="dsetting" id="defaultcard<?php echo $experienceDatas['ExperienceID']; ?>" value="1" class="no-styles">       
-                      <label for="defaultcard<?php echo $experienceDatas['ExperienceID']; ?>" class="my-label"><span class="experienceLabel" id="experienceLabel" for="<?php echo $experienceDatas['ExperienceID']; ?>" dir="<?php echo $experienceDatas['Experience']; ?>"></span></label>
+                      <input type="checkbox" name="experience[<?php echo $experienceDatas['ExperienceID']; ?>][]" id="experience<?php echo $experienceDatas['ExperienceID']; ?>" value="1" class="no-styles">       
+                      <label for="experience<?php echo $experienceDatas['ExperienceID']; ?>" class="my-label"><span class="experienceLabel" id="experienceLabel" for="<?php echo $experienceDatas['ExperienceID']; ?>" dir="<?php echo $experienceDatas['Experience']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
@@ -401,8 +401,8 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $languageDatas['languages']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
-                      <input type="checkbox" name="dsetting" id="defaultcard<?php echo $languageDatas['language_id']; ?>" value="1" class="no-styles">       
-                      <label for="defaultcard<?php echo $languageDatas['language_id']; ?>" class="my-label"><span class="languageLabel" id="languageLabel" for="<?php echo $languageDatas['language_id']; ?>" dir="<?php echo $languageDatas['languages']; ?>"></span></label>
+                      <input type="checkbox" name="language[<?php echo $languageDatas['language_id']; ?>][]" id="language<?php echo $languageDatas['language_id']; ?>" value="1" class="no-styles">       
+                      <label for="language<?php echo $languageDatas['language_id']; ?>" class="my-label"><span class="languageLabel" id="languageLabel" for="<?php echo $languageDatas['language_id']; ?>" dir="<?php echo $languageDatas['languages']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
