@@ -267,6 +267,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 <section class="block-4-section">
 <div class="container">
   <div class="row marginTOP" style="background:#fff;padding:15px 0px;margin:10px 0px;border-radius:5px;">
+ <!-- set expertise-->
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
     <p class="title-name-2">Expertise</p>
@@ -288,6 +289,56 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
               </li>
               <?php } ?>
               <div class="clearfix"></div>
+            </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+<!-- set Sub Specialization-->
+  <div class="box-2">
+    <div class="col-md-3 col-xs-5 text-center">
+    <p class="title-name-2">Sub Specialization</p>
+    </div>
+    <div class="col-md-9 col-xs-7" style="padding:0;">
+    <ul class="list-inline setSubSpecialData">
+              <?php foreach($subspecialData as $subspecialDatas) { ?>
+              <li class="modifi-list-item-2" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
+                <div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
+                  <div class="col-xs-2">
+                    <div class="checkbox padding30" id="checkdiv" style="display:block;">
+                      <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
+                      <label for="defaultcard" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
+                     <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
+				   </div>
+				 </div>
+			    <div class="" id="setHooverSubExp"></div>
+              </li>
+              <?php } ?>
+            </ul>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <!-- set Degree-->
+  <div class="box-2">
+    <div class="col-md-3 col-xs-5 text-center">
+    <p class="title-name-2">Degree</p>
+    </div>
+    <div class="col-md-9 col-xs-7" style="padding:0;">
+    <ul class="list-inline ">
+              <?php foreach($education as $educationDatas) { ?>
+              <li class="modifi-list-item-2" id="<?php echo $educationDatas['EducationID']; ?>">
+                <div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($educationDatas['Image'])?$educationDatas['Image']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $educationDatas['Education']; ?></a></p></div>
+                  <div class="col-xs-2">
+                    <div class="checkbox padding30" id="checkdiv" style="display:block;">
+                      <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
+                      <label for="defaultcard" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"></span></label>
+                     <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
+				   </div>
+				 </div>
+			    <div class="" id="setHooverDegree"></div>
+              </li>
+              <?php } ?>
             </ul>
     </div>
     <div class="clearfix"></div>
@@ -318,56 +369,53 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <div class="clearfix"></div>
   </div>
   
+  
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
-    <p class="title-name-2">Expertish</p>
+    <p class="title-name-2">Sub Specialization</p>
     </div>
     <div class="col-md-9 col-xs-7" style="padding:0;">
-    <ul class="list-inline ">
-              <li class="modifi-list-item-2">
-                <div class="col-xs-4" style="padding:0;"><img src="images/img-3.jpg" class="img-responsive"></div>
-                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="" class="text-center">Medical</a></p></div>
-                <div class="col-xs-2"><div class="checkbox padding30" id="checkdiv" style="display:block;">
-    <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
-    <label for="defaultcard" class="my-label"><span></span></label>
-         <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
-  </div>
-</div>
-<div class="over"></div>
+    <ul class="list-inline setSubSpecialData">
+              <?php foreach($subspecialData as $subspecialDatas) { ?>
+              <li class="modifi-list-item-2" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
+                <div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
+                  <div class="col-xs-2">
+                    <div class="checkbox padding30" id="checkdiv" style="display:block;">
+                      <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
+                      <label for="defaultcard" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
+                     <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
+				   </div>
+				 </div>
+			    <div class="" id="setHooverSubExp"></div>
               </li>
-              <li class="modifi-list-item-2">
-                <div class="col-xs-4" style="padding:0;"><img src="images/img-3.jpg" class="img-responsive"></div>
-                  <div class="col-xs-5" style="padding:0;"><p class="block-text"><a href="" class="text-center">Medical</a></p></div>
-                <div class="col-xs-2" style="padding-right:0px;"><div class="checkbox padding30" id="checkdiv" style="display:block;">
-    <input type="checkbox" name="dsetting" id="1" value="1" class="no-styles">       
-    <label for="1" class="my-label"><span></span></label>
-         <input type="hidden" name="paymentnonce" id="1" value="" />
+              <?php } ?>
+            </ul>
+    </div>
+    <div class="clearfix"></div>
   </div>
-</div>
-
+  
+  
+  <div class="box-2">
+    <div class="col-md-3 col-xs-5 text-center">
+    <p class="title-name-2">Sub Specialization</p>
+    </div>
+    <div class="col-md-9 col-xs-7" style="padding:0;">
+    <ul class="list-inline setSubSpecialData">
+              <?php foreach($subspecialData as $subspecialDatas) { ?>
+              <li class="modifi-list-item-2" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
+                <div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
+                  <div class="col-xs-2">
+                    <div class="checkbox padding30" id="checkdiv" style="display:block;">
+                      <input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles">       
+                      <label for="defaultcard" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
+                     <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
+				   </div>
+				 </div>
+			    <div class="" id="setHooverSubExp"></div>
               </li>
-              <li class="modifi-list-item-2">
-                <div class="col-xs-4" style="padding:0;"><img src="images/img-3.jpg" class="img-responsive"></div>
-                  <div class="col-xs-5" style="padding:0;"><p class="block-text"><a href="" class="text-center">Medical</a></p></div>
-                <div class="col-xs-2" style="padding-right:0px;"><div class="checkbox padding30" id="checkdiv" style="display:block;">
-    <input type="checkbox" name="dsetting" id="10" value="1" class="no-styles">       
-    <label for="10" class="my-label"><span></span></label>
-         <input type="hidden" name="paymentnonce" id="10" value="" />
-  </div>
-</div>
-
-              </li>
-              <li class="modifi-list-item-2">
-                <div class="col-xs-4" style="padding:0;"><img src="images/img-3.jpg" class="img-responsive"></div>
-                  <div class="col-xs-5" style="padding:0;"><p class="block-text"><a href="" class="text-center">Medical</a></p></div>
-                <div class="col-xs-2" style="padding-right:0px;"><div class="checkbox padding30" id="checkdiv" style="display:block;">
-    <input type="checkbox" name="dsetting" id="20" value="1" class="no-styles">       
-    <label for="20" class="my-label"><span></span></label>
-         <input type="hidden" name="paymentnonce" id="20" value="" />
-  </div>
-</div>
-
-              </li>
+              <?php } ?>
             </ul>
     </div>
     <div class="clearfix"></div>
