@@ -1,3 +1,44 @@
+<?php
+include("config/connection.php");
+session_start();
+if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
+{
+$conn=new connections();
+$conn=$conn->connect();
+$user_id = $_SESSION['logged_user_id'];
+$user_name  = $_SESSION['logged_user_name'];
+$user_pic = $_SESSION['logged_user_image'];
+$user_type = $_SESSION['logged_role_code'];
+if($_SESSION['logged_role_code']=='SP')
+{
+	$imagePath = "SP_Photos/";
+}
+else if($_SESSION['logged_role_code']=='SR')
+{
+	$imagePath = "SR_Photos/";
+}
+else if($_SESSION['logged_role_code']=='GM')
+{
+	$imagePath = "memberPhotos/";
+}
+else
+$imagePath = "/";
+
+/*
+//Get specialization Data
+$sql="select * from 	sp_specialisation order by specialisation";
+			$tableResult = mysqli_query($conn, $sql);
+			//print_r($tableResult);
+
+				$specialData = array();
+			if (mysqli_num_rows($tableResult) > 0)  
+			{
+				while($row = mysqli_fetch_assoc($tableResult)) {
+				$specialData[] = $row;
+				}
+			}
+	*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -208,3 +249,15 @@
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+
+<?php
+ 
+}
+else
+{
+	$passStr = 'You are not authorized.Redirecting....';
+	$passImg = 'groupPhotos/img-3.jpg';
+	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
+}
+?>
+
