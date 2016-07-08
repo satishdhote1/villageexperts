@@ -93,11 +93,10 @@ $sql5="select language_id,languages from 	sp_language ORDER BY languages";
 			
 			
 //Get specialization Data
-//select distinct service_provider.*,connect.* from service_provider,connect where service_provider.sp_id in (select sp_id from connect) and connect.sr_id = 68 
-$sql="select user.start_date_time,user.end_date_time,user.ammount, sp.sp_name,sp.sp_image,sp.sp_specialisation_id,sp.sp_sub_specialisation_id,sp.sp_year_of_experience,sp.sp_rate_type3,sp.degree,sp.sp_language_id from  connect user , service_provider sp where user.sr_id = ".$user_id." and user.sp_id in (select sp_id from service_provider) group by user.connect_id order by user.connect_id desc";
+$sql="select distinct service_provider.*,connect.* from service_provider,connect where service_provider.sp_id in (select sp_id from connect) and connect.sr_id = 68 ";
+//$sql="select user.start_date_time,user.end_date_time,user.ammount, sp.sp_name,sp.sp_image,sp.sp_specialisation_id,sp.sp_sub_specialisation_id,sp.sp_year_of_experience,sp.sp_rate_type3,sp.degree,sp.sp_language_id from  connect user , service_provider sp where user.sr_id = ".$user_id." and user.sp_id in (select sp_id from service_provider) group by user.connect_id order by user.connect_id desc";
 			$tableResult = mysqli_query($conn, $sql);
-			//print_r($tableResult);
-
+	
 				$connectData = array();
 			if (mysqli_num_rows($tableResult) > 0)  
 			{
@@ -268,8 +267,8 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount, sp.sp_name,sp
 		  }
 	  }
 	  ?>
-       <td><?php echo !empty($connectDatas['start_date_time'])?$connectDatas['start_date_time']:'-'; ?></td>
-       <td><?php echo !empty($connectDatas['end_date_time'])?$connectDatas['end_date_time']:'-'; ?></td>
+       <td><?php echo !empty($connectDatas['start_date_time'])?date('d/m/Y',$connectDatas['start_date_time']):'-'; ?></td>
+       <td><?php echo !empty($connectDatas['end_date_time'])?date('d/m/Y',$connectDatas['end_date_time']):'-'; ?></td>
        <td><?php echo !empty($connectDatas['ammount'])?$connectDatas['ammount']:'-'; ?></td>
        <td><p class="connect-btn btn">Connect</p></td>
      
