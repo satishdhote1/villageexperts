@@ -277,7 +277,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <ul class="list-inline specialData">
     		 <?php foreach($specialData as $specialDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $specialDatas['specialisation_id']; ?>">
-                <div class="col-xs-4" style="padding:0;"><img src="images/specialization/<?php echo !empty($specialDatas['images'])?$specialDatas['images']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/specialization/<?php echo !empty($specialDatas['images'])?$specialDatas['images']:"img-3.jpg"; ?>" class="img-responsive"></div>
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $specialDatas['specialisation']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
@@ -303,7 +303,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <ul class="list-inline setSubSpecialData">
               <?php foreach($subspecialData as $subspecialDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
-                <div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
@@ -329,7 +329,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <ul class="list-inline ">
               <?php foreach($education as $educationDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $educationDatas['EducationID']; ?>">
-                <div class="col-xs-4" style="padding:0;"><img src="images/education/<?php echo !empty($educationDatas['Image'])?$educationDatas['Image']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/education/<?php echo !empty($educationDatas['Image'])?$educationDatas['Image']:"img-3.jpg"; ?>" class="img-responsive"></div>
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $educationDatas['Education']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
@@ -355,7 +355,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <ul class="list-inline">
               <?php foreach($experience as $experienceDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $experienceDatas['ExperienceID']; ?>">
-                <div class="col-xs-4" style="padding:0;"><img src="images/experience/<?php echo !empty($experienceDatas['SubSpImages'])?$experienceDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/experience/<?php echo !empty($experienceDatas['SubSpImages'])?$experienceDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $experienceDatas['Experience']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
@@ -397,7 +397,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <ul class="list-inline ">
               <?php foreach($language as $languageDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $languageDatas['language_id']; ?>">
-                <div class="col-xs-4" style="padding:0;"><img src="images/Languages/<?php echo !empty($languageDatas['images'])?$languageDatas['images']:"img-3.jpg"; ?>" class="img-responsive"></div>
+                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/Languages/<?php echo !empty($languageDatas['images'])?$languageDatas['images']:"img-3.jpg"; ?>" class="img-responsive"></div>
                  <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $languageDatas['languages']; ?></a></p></div>
                   <div class="col-xs-2">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;">
