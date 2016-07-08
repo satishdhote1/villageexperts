@@ -270,7 +270,7 @@ $sql="select distinct service_provider.*,connect.* from service_provider,connect
        <td><?php echo !empty($connectDatas['start_date_time'])?date('d/m/Y',$connectDatas['start_date_time']):'-'; ?></td>
        <td><?php echo !empty($connectDatas['end_date_time'])?date('d/m/Y',$connectDatas['end_date_time']):'-'; ?></td>
        <td><?php echo !empty($connectDatas['ammount'])?$connectDatas['ammount']:'-'; ?></td>
-       <td><p class="connect-btn btn">Connect</p></td>
+       <td><p class="connect-btn btn"><a href="connect.php?memberId=<?php echo $connectDatas['sp_id'];?>&search=findsp">Connect</a></p></td>
      
        
     </tr>
