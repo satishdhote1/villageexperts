@@ -24,7 +24,7 @@ else if($_SESSION['logged_role_code']=='GM')
 else
 $imagePath = "/";
 
-echo $user_id;
+//echo $user_id;
 
 //Get specialization Data
 $sql="select specialisation_id,specialisation	 from 	sp_specialisation order by specialisation";
