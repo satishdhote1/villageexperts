@@ -41,7 +41,7 @@ public function sendMail($email,$memberName,$subject,$body)
 	$mail->Password = $this->emailPassword;
    	$mail->From     = $this->from;
    	$mail->FromName = $this->from_name;
-   	$mail->AddAddress("satishdhote@gmail.com", $memberName);
+   	$mail->AddAddress($email, $memberName);
   	// $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
    	$mail->Subject = $subject;
    	$mail->Body    = $body;
