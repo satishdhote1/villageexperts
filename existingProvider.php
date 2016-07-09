@@ -169,7 +169,7 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount, sp.sp_name,sp
 <div class="container search-background margin-top60">
   <div class="row marginTOP">
     <div class="col-md-12 text-center">
-      <h1 class="result-text">Result</h1>
+      <h1 class="result-text">Existing Providers</h1>
       <div class="background-blue">
       <table class="table table-hover">
   <thead>
