@@ -251,7 +251,7 @@
       <div class="over-lap">
         <div class="profile pull-left"> <img src="images/img-3.jpg" class="img-responsive"> </div>
         <div class="pull-right">
-          <p class="loginname">SUBHASIS NASKAR</p>
+          <p class="loginname">Test User</p>
           <button class="btn btn-info bg-blue">Logout</button>
         </div>
         <div class="clearfix"></div>
