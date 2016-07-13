@@ -135,7 +135,6 @@ if(!empty($user_id)){
 else
 {
 	header("location:well-come.php?redirect=connect&passImg=img-3.jpg&passStr=You are not authorized to connect.<br>Redirecting....");
-	
 }
 
 ?>

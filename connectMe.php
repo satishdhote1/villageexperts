@@ -31,12 +31,6 @@ $sql="select connect_id,sr_id,max(start_date_time) as start_time from connect wh
 			echo json_encode($result);
 		}
 
-
-
-
-
-
-
 ?>
 <?php
 /*
