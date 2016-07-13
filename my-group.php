@@ -466,11 +466,11 @@ public function checkConnect(){
 	header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 }
 
-$time=2000000;
+/*$time=2000000;
 while(1){
     sleep($time);
     $this->checkConnect();
 }
-
+*/
 
 ?>
