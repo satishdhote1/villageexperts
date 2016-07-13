@@ -255,21 +255,11 @@ include("initialDBdata.php");//registration for data
                             <option value="">Select Any Specialisation</option>
 
                             <?php
-
-                            foreach($specialisation as  $special)
-
-							{
-
-								?>
-
+                            foreach($specialisation as  $special){
+            								?>
                             <option value="<?php  echo $special['specialisation_id'];  ?>"><?php echo $special['specialisation'] ; ?></option>
-
                             <?php
-
-							}
-
-                            
-
+							               }
                             ?>
 
                           </select>
@@ -285,10 +275,6 @@ include("initialDBdata.php");//registration for data
                         <div class="col-sm-6">
 
                           <select style="max-width: 353px" id="SPsubSpecialisation_id" class="form-control-modify form-control SPsubSpecialisation_id" name="SPsubSpecialisation_id">
-
-                            
-
-                           
 
                           </select>
 
