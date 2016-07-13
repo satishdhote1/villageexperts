@@ -72,7 +72,7 @@ if(!empty($user_id)){
 			$mailSent = $emailObject->sendMail($row['gm_email'],$row['gm_name'],"Village-Expert connection between members!",$body);
 			if($mailSent)
 			{
-				 header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
+				header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 			}
 			
 		}//end of mysqli_num_rows>0
@@ -116,8 +116,7 @@ if(!empty($user_id)){
 		}
 		else
 		{
-			header("location:well-come.php?redirect=connect&passImg=img-3.jpg&passStr=
-			You are not authorized to connect.<br>Redirecting....");
+			header("location:well-come.php?redirect=connect&passImg=img-3.jpg&passStr=You are not authorized to connect.<br>Redirecting....");
 		}
 		
 	}
@@ -127,8 +126,7 @@ if(!empty($user_id)){
 		$sql="UPDATE connect SET end_date_time = '".$currentTimestamp."' where start_date_time = '".$end_time."'" ;
 		//echo $sql2;exit();
 		$tableResults = mysqli_query($conn, $sql);
-		header("location:well-come.php?redirect=connect&passImg=img-3.jpg&passStr=
-		Your session Ended.<br>Redirecting....");
+		header("location:well-come.php?redirect=connect&passImg=img-3.jpg&passStr=Your session Ended.<br>Redirecting....");
 	}
 
 }

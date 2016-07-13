@@ -393,24 +393,24 @@ echo "Friends & Family";
 	   
 	   if(isset($_GET['created_by_user_role']) && !empty($_GET['created_by_user_role']))
 	   {
-	   $tableName = ($_GET['created_by_user_role'] == 'SP')?'service_provider':'service_requestor';
-	   $idField = ($_GET['created_by_user_role'] == 'SP')?'sp_id':'sr_id';
-	   $imageField = ($_GET['created_by_user_role'] == 'SP')?'sp_image':'sr_image';
-	   $nameField = ($_GET['created_by_user_role'] == 'SP')?'sp_name':'sr_name';
-	   $sqlFetchPrimaryMembers="SELECT * FROM $tableName where $idField =".$_GET['created_by_id'];
-	    $resultData = mysqli_query($conn, $sqlFetchPrimaryMembers);
+	   		$tableName = ($_GET['created_by_user_role'] == 'SP')?'service_provider':'service_requestor';
+	   		$idField = ($_GET['created_by_user_role'] == 'SP')?'sp_id':'sr_id';
+	   		$imageField = ($_GET['created_by_user_role'] == 'SP')?'sp_image':'sr_image';
+	   		$nameField = ($_GET['created_by_user_role'] == 'SP')?'sp_name':'sr_name';
+	   		$sqlFetchPrimaryMembers="SELECT * FROM $tableName where $idField =".$_GET['created_by_id'];
+	    	$resultData = mysqli_query($conn, $sqlFetchPrimaryMembers);
 									
-									if (mysqli_num_rows($resultData) > 0)  
-									{
-										$row = mysqli_fetch_assoc($resultData) ;
-									
-											$imgSuper = $row[$imageField];
-											$NameSuper = $row[$nameField];
-										
-										//print_r($groupMembersdetails);
-										//die();
-										//$MembersDetais = $groupMembersdetails;
-									}
+		if (mysqli_num_rows($resultData) > 0)  
+		{
+			$row = mysqli_fetch_assoc($resultData) ;
+		
+				$imgSuper = $row[$imageField];
+				$NameSuper = $row[$nameField];
+			
+			//print_r($groupMembersdetails);
+			//die();
+			//$MembersDetais = $groupMembersdetails;
+		}
 	   
 	   
     ?>
@@ -429,8 +429,6 @@ echo "Friends & Family";
 	?>
    </div><!--end of Row-->
   
-   
-   
    </div>
   
    <div class="alert alert-success connSuccess" style="display:none">
@@ -457,9 +455,22 @@ echo "Friends & Family";
 else
 {
 	$passStr = 'You are not authorized.Redirecting....';
-										$passImg = 'groupPhotos/img-3.jpg';
-										header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
+	$passImg = 'groupPhotos/img-3.jpg';
+	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
 	
 }
+
+
+public function checkConnect(){
+	$currentTimestamp=1468414057;
+	header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
+}
+
+$time=2000000;
+while(1){
+    sleep($time);
+    $this->checkConnect();
+}
+
 
 ?>

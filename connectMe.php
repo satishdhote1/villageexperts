@@ -36,8 +36,9 @@ $sql="select connect_id,sr_id,max(start_date_time) as start_time from connect wh
 /*
 for( $i=0;$i<10;$i++)
 {
-echo strtotime("now")."<br>";
+	echo strtotime("now")."<br>";
 	usleep(1000000);
 
 }
-*/?>
+*/
+?>
