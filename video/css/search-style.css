@@ -1,0 +1,343 @@
+/*------------ Color Palette ------------*/
+/*
+LIGHT ORANGE: #e4644b
+DARK ORANGE: #d05942
+LIGHT BLUE: #40529B
+DARK BLUE: #263A8D
+LIGHT TEAL: #008080;
+DARK TEAL: #006868; 
+DARK BROWN: #484141
+Menu text: #f7f1e3
+Submenu text: #ae9f9f
+*/
+
+/*------------ General Settings ------------*/
+
+
+body {
+  font-family:" Helvetica", sans-serif;
+ 
+  height: auto;
+  margin: 0;
+  padding: 0;
+  letter-spacing: .2px;
+  background: linear-gradient(135deg, lightsteelblue, lightblue);
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+ul {
+  width: 276px;
+  list-style: none;
+}
+
+li { cursor: pointer; }
+
+/*------------ Themes ------------*/
+
+.blue { background-color: #40529B; }
+
+.blue-border { border-top: 1px solid #263A8D; }
+
+.teal { background-color: #008080; }
+
+.teal-border { border-top: 1px solid #006868; }
+
+/*------------ Power Card ------------*/
+.search-header2 {
+    background: #363965 none repeat scroll 0 0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #fff;
+    font-family: "Roboto",sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 20px 0;
+   
+    text-align: center;
+    text-transform: uppercase;
+}
+.power {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-left: -46px;
+  width: 92px;
+  height: 92px;
+ 
+  cursor: pointer;
+  background: url('../images/powerup.png') top center no-repeat;
+}
+
+.power:hover { background: url('../images/powerdown.png') top center no-repeat; }
+
+.powerdown {
+  background: url('../images/powerdown.png') top center no-repeat;
+  display: hidden;
+}
+
+/*------------ Main Menu ------------*/
+
+.mainmenu {
+  font-size: 16px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  box-shadow: 0 5px 10px rgba(0,0,0,.35);
+  border-radius: 7px;
+  width:100%;
+}
+
+.mainmenu > li {
+  box-sizing: border-box;
+  height: 48px;
+  color: #f7f1e3;
+}
+
+.mainmenu > li:first-child {
+  border-top: 0;
+  border-radius: 7px 7px 0 0;
+}
+
+.mainmenu > li:last-child { border-radius: 0 0 7px 7px; }
+
+.mainmenu > li span {
+  line-height: 48px;
+  display: block;
+}
+
+.mainmenu > li .icon {
+  display: block;
+  float: left;
+  width: 20px;
+  height: 20px;
+  padding: 14px 20px 0 20px;
+}
+
+.mainmenu > li .messages {
+  font-size: 11px;
+  line-height: 19px;
+  display: block;
+  float: right;
+  width: 34px;
+  height: 18px;
+  margin-top: -33px;
+  margin-right: 19px;
+  padding: 0;
+  text-align: center;
+  background: url("../images/messages.png") no-repeat;
+}
+
+.expand-triangle {
+ 
+  height: 10px;
+  content: " ";
+  margin-left: -40px;
+}
+
+.expand-triangle img {
+  width: 100%;
+  height: inherit;
+  vertical-align: top;
+}
+
+/*------------ Sub Menu ------------*/
+
+.submenu {
+  
+  box-sizing: border-box;
+  content: " ";
+  
+  width:100%;
+  background:#fff;
+  height:450px;
+  overflow-y:scroll;
+}
+
+.submenu li {
+  line-height: 20px;
+  height: auto;
+  margin-left: -40px;
+  padding:0px;
+  transition: border-left 220ms ease-in;
+  border-left: solid 6px #f0f0f0;
+  background-color: #fff;
+  margin-bottom:2px;
+ 
+}
+
+.submenu .chosen, .submenu .chosen:hover { border-left: solid 6px #96d145; }
+
+.submenu li:hover { border-left: solid 6px #548cff; }
+
+.submenu li span { margin-left: 30px; }
+
+/*------------ 3D --------------*/
+.relative{position:relative;}
+#viewport {
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  perspective: 1000px;
+  width: 960px;
+  height: 240px;
+ 
+  
+  margin: 50px auto;
+}
+
+#card {
+  -webkit-transform-style: preserve-3D;
+  -moz-transform-style: preserve-3D;
+  transform-style: preserve-3D;
+  width:100%;
+  height: 100%;
+  border-radius: 7px;
+  margin:auto;
+}
+
+#card > div {
+  position: absolute;
+  backface-visibility: hidden;
+
+}
+
+#front {
+  -webkit-transform: translateZ(1px);
+  -moz-transform: translateZ(1px);
+  transform: translateZ(1px);
+  box-shadow: 0 5px 10px rgba(0,0,0,.35);
+ 
+}
+
+#back {
+  -webkit-transform: translateZ(-1px) rotateY(180deg);
+  -moz-transform: translateZ(-1px) rotateY(180deg);
+  transform: translateZ(-1px) rotateY(180deg);
+}
+
+#front {
+  border-radius: 7px;
+   width:290px;
+  margin-left:336px;
+  height: 100%;
+  position: relative;
+}
+
+ #back {
+  border-radius: 7px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.flip {
+  -webkit-animation: animate 400ms forwards ease-in-out;
+  -moz-animation: animate 400ms forwards ease-in-out;
+  animation: animate 400ms forwards ease-in-out;
+}
+ @-webkit-keyframes 
+animate {  to {
+-webkit-transform: rotateY(-180deg);
+}
+
+from { -webkit-transform: rotateY(0deg); }
+}
+ @-moz-keyframes 
+animate {  to {
+-moz-transform: rotateY(-180deg);
+}
+
+from { -moz-transform: rotateY(0deg); }
+}
+ @keyframes 
+animate {  to {
+transform: rotateY(-180deg);
+}
+
+from { transform: rotateY(0deg); }
+}
+
+.flipback {
+  -webkit-animation: animateback 400ms forwards ease-in-out;
+  -moz-animation: animateback 400ms forwards ease-in-out;
+  animation: animateback 400ms forwards ease-in-out;
+}
+ @-webkit-keyframes 
+animateback {  to {
+-webkit-transform: rotateY(0deg);
+}
+
+from { -webkit-transform: rotateY(-180deg); }
+}
+ @-moz-keyframes 
+animateback {  to {
+-moz-transform: rotateY(0deg);
+}
+
+from { -moz-transform: rotateY(-180deg); }
+}
+ @keyframes 
+animateback {  to {
+transform: rotateY(0deg);
+}
+
+from { transform: rotateY(-180deg); }
+}
+.search-profile-img {
+    border-radius: 50%;
+    height: 100%;
+    max-height: 80px;
+    max-width: 80px;
+    overflow: hidden;
+    width: 100%;
+	border:solid 1px #eee;
+	margin-left:5px;
+}
+.search-profile-img img{width:100%;}
+.category-name {
+    color: #5c76ad;
+    font-size: 16px;
+    text-align: center;
+	font-family:"Helvetica";
+}
+
+.squared-checkbox input[type="checkbox"]:checked + label::after {
+    opacity: 1;
+}
+
+.squared-checkbox {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #d6d6d6 0%, #eaffd1 40%, #aeaeae 100%) repeat scroll 0 0;
+    box-shadow: 0 1px 1px white inset, 0 1px 3px rgba(0, 0, 0, 0.5);
+    height: 35px;
+    margin: 20px auto;
+    position: relative;
+    width: 35px;
+	box-shadow: 0 0 5px #666;
+}
+.squared-checkbox label::after {
+     background: rgba(0, 0, 0, 0) linear-gradient(to bottom, #666 0%, #000 100%) repeat scroll 0 0;
+  
+    content: "";
+    height: 25px;
+    left:0px;
+    opacity: 0;
+    position: absolute;
+    top:0px;
+    width: 25px;
+}
+.squared-checkbox label {
+   
+	background: url(../images/right.png);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.5) inset, 0 1px 0 white;
+    cursor: pointer;
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    top: 4px;
+    width: 26px;
+}
+
+
+.squared-checkbox input[type="checkbox"] {
+    visibility: hidden;
+}
