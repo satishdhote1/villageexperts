@@ -427,6 +427,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/searchProvider.js"></script>
+<script src="js/connectMe.js"></script>
 <!--<script src="js/search.js"></script>-->
 </body>
 </html>
