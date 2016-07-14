@@ -28,6 +28,7 @@ $sql="select connect_id,sr_id,max(start_date_time) as start_time from connect wh
 				$result['data']=$row;	
 				}else
 				{
+				   $result['msg']="Time Expired";
 				   $result['success']=0;
 				   $result['error']=1;	
 				}
