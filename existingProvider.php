@@ -293,7 +293,7 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount, sp.sp_name,sp
 
 <!-- jQuery Version 1.11.1 --> 
 <script src="js/jquery.js"></script> 
-
+<script src="js/connectMe.js"></script>
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 </body>
