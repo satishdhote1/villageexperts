@@ -138,6 +138,7 @@ $conn=$conn->connect();
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/instantImageShow.js"></script>
+<script src="js/connectMe.js"></script>
 </body>
 </html>
 
