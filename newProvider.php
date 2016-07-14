@@ -404,6 +404,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/newProvider.js"></script>
+<script src="js/connectMe.js"></script>
 <!--<script src="js/search.js"></script>--> 
 </body>
 </html>
