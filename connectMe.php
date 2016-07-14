@@ -20,9 +20,17 @@ $sql="select connect_id,sr_id,max(start_date_time) as start_time from connect wh
 			$row = mysqli_fetch_assoc($tableResult);
 			if($row !=NULL)
 			{
+				$result['hour'] = round((strtotime("now") - strtotime($row['start_time']))/3600, 1);
+				if(round((strtotime("now") - strtotime($row['start_time']))/3600, 1) < 2)
+				{
 				$result['success']=1;
 				$result['error']=0;
 				$result['data']=$row;	
+				}else
+				{
+				   $result['success']=0;
+				   $result['error']=1;	
+				}
 			}
 			echo json_encode($result);
 		}
