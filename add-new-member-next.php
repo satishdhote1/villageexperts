@@ -149,6 +149,7 @@ $phone =!empty($memberData['gm_phone'])?$memberData['gm_phone']:'';
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script> 
 <script src="js/instantImageShow.js"></script>
+<script src="js/connectMe.js"></script>
 </body>
 </html>
 <?php
