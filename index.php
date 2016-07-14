@@ -1271,7 +1271,7 @@ include("initialDBdata.php");//registration for data
 <script src="js/jquery.validate.min.js"></script>
 
 <script src="js/instantImageShow.js"></script>
-
+<script src="js/connectMe.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.0/jquery.scrollTo.min.js"></script>
 
 </body>
