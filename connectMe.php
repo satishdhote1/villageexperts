@@ -36,6 +36,7 @@ $sql="select connect_id,sr_id,max(start_date_time) as start_time from connect wh
 		}
 		else
 		{
+			$result['msg'] = "Nobody to connect!";	
 			echo json_encode($result);
 		}
 
