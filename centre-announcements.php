@@ -113,7 +113,7 @@ $imagePath = "/";
 </div>
 <!-- jQuery Version 1.11.1 --> 
 <script src="js/jquery.js"></script> 
-
+<script src="js/connectMe.js"></script>
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 </body>
