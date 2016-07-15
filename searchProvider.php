@@ -224,7 +224,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
  <section class="block-bg">
 <div class="container">
      <div class="row">
- <form action="result.php" method="post" name="search" id="search" >
+ <form action="result.php?source=searchProvider" method="post" name="search" id="search" >
 <div class="col-ms-10 col-sm-10 col-xs-12" style="padding:0px;">
 <ul class="list-inline display-list">
 <li>
