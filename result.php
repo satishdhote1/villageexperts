@@ -556,8 +556,9 @@ mins</div>
 }
 }
 else{
+	$source = isset($_REQUEST['source']) && ($_REQUEST['source']=="newProvider" || $_REQUEST['source'] == "searchProvider")?$_REQUEST['source'].".php":"index.php";
 	echo "<center><h1 style='color:red'>Sorry! No results found.</h1></center>";
-	header("Refresh:2; url=newProvider.php");
+	header("Refresh:2; url=".$source);
 }
 
 ?>
