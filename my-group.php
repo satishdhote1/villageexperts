@@ -4,163 +4,161 @@ session_start();
 
 if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 {
-	$user_id = $_SESSION['logged_user_id'];
-	$user_name  = $_SESSION['logged_user_name'];
-	$user_pic = $_SESSION['logged_user_image'];
-	$user_type = $_SESSION['logged_role_code'];
-	$email = $_SESSION['logged_user_email'];
+$user_id = $_SESSION['logged_user_id'];
+$user_name  = $_SESSION['logged_user_name'];
+$user_pic = $_SESSION['logged_user_image'];
+$user_type = $_SESSION['logged_role_code'];
+$email = $_SESSION['logged_user_email'];
 
-	if($_SESSION['logged_role_code']=='SP')
-	{
-		$imagePath = "SP_Photos/";
-	}
-	else if($_SESSION['logged_role_code']=='SR')
-	{
-		$imagePath = "SR_Photos/";
-	}
-	else if($_SESSION['logged_role_code']=='GM')
-	{
-		$imagePath = "memberPhotos/";
-	}
-	else{
-		$imagePath = "/";
-	}
-
-	$rightPanelShow = isset($_REQUEST['success'])?$_REQUEST['success']:'';
-	$conn=new connections();
-	$conn=$conn->connect();
-
-	if($user_type == 'GM')
-	{ 		
-			$groupIDS =0;
-			$sqlSelect="SELECT group_ids FROM group_member WHERE gm_id = ".$user_id;
-			$resultss = mysqli_query($conn, $sqlSelect);
-			if (mysqli_num_rows($resultss) > 0)  
-		    {
-				$row = mysqli_fetch_assoc($resultss);
-				$groupIDS = $row['group_ids'];
-			}
-		
-		 $groups_idss = $_SESSION['logged_user_groups'];
-		 $sql="SELECT * FROM groups WHERE created_by_id = ".$user_id." OR group_id IN (".$groupIDS.") ORDER BY groups.group_name";
-		$result = mysqli_query($conn, $sql);
-		$groupsList = array();
-		if (mysqli_num_rows($result) > 0)  
-		{
-			$GROUPSIDS = '';
-			while($row = mysqli_fetch_assoc($result)) {
-				//$launguages = mysqli_fetch_assoc($result);
-				$groupsList[] = $row;
-			}
-			
-			//print_r($groupsList);die();
-		}
-	}
-	else
-	{
-		$sql="SELECT * FROM groups where  created_by_id = ".$user_id." AND created_by_user_role = '".$user_type."' order by groups.group_name";
-		$result = mysqli_query($conn, $sql);
-		$groupsList = array();
-		if (mysqli_num_rows($result) > 0)  
-		{
-			while($row = mysqli_fetch_assoc($result)) {
-				//$launguages = mysqli_fetch_assoc($result);
-				$groupsList[] = $row;
-			}
-			 echo "<br><pre>";
-			 print_r($groupsList);
-			 echo "</pre><br>";
-			
-		}
-	}
-
-	$tag = isset($_REQUEST['tag'])? $_REQUEST['tag'] : '';
-	$getGM_id = isset($_REQUEST['gmID'])? $_REQUEST['gmID'] : 0;
-	$getgroupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
-	$groupMembersdetails = array();
-	$onlneMembers = 0;
-	$offlineMembers = 0;
-	$existingMemberslist = array();
-	
-	if($tag == 'fetchmembers')
-	{
-		$gmID = isset($_REQUEST['gmID'])?$_REQUEST['gmID']:0;
-		if($gmID >0)
-		{
-			
-			if($user_type == 'GM')
-			{
-				$sqlFetchMembers="SELECT * FROM group_member where FIND_IN_SET(".$gmID.", `group_ids`) OR gm_group_id = ".$getGM_id." AND status='Y' order by group_member.gm_name";
-				$resultData = mysqli_query($conn, $sqlFetchMembers);
-				$onlyGroupMemberIds = array();
-				if (mysqli_num_rows($resultData) > 0)  
-				{
-					while($row = mysqli_fetch_assoc($resultData)) {
-						//$launguages = mysqli_fetch_assoc($result);
-						if($row['gm_logged_in'] == 'Y' && $user_id!=$row['gm_id'])
-						$onlneMembers = 1;
-						else if($row['gm_logged_in'] == 'N')
-						$offlineMembers = 1;
-						$groupMembersdetails[] = $row;
-						$onlyGroupMemberIds[] = $row['gm_id'];
-					}
-					//print_r($onlyGroupMemberIds);
-					//die();
-					//$MembersDetais = $groupMembersdetails;
-				}
-				//echo "<pre>";print_r($groupMembersdetails);echo "</pre>";die();
-		  		$onlyGroupMemberIdsString = implode(",",$onlyGroupMemberIds);
-		 
-		 		// $onlyGroupMemberIdsString = empty($onlyGroupMemberIdsString)?"":$onlyGroupMemberIdsString;
-				//************Listing of existing Members except this group**********************************
-				if(empty($onlyGroupMemberIdsString))
-				{
-					$sqlFetchMembers2="SELECT * FROM group_member where gm_id NOT IN ( '".$onlyGroupMemberIdsString."' )  AND status='Y' order by group_member.gm_name";
-				}
-				else{
-					$sqlFetchMembers2="SELECT * FROM group_member where gm_id NOT IN ( ".$onlyGroupMemberIdsString.")  AND status='Y' order by group_member.gm_name";
-			 	}
-				$resultData2 = mysqli_query($conn, $sqlFetchMembers2);
+if($_SESSION['logged_role_code']=='SP')
+{
+	$imagePath = "SP_Photos/";
+}
+else if($_SESSION['logged_role_code']=='SR')
+{
+	$imagePath = "SR_Photos/";
+}
+else if($_SESSION['logged_role_code']=='GM')
+{
+	$imagePath = "memberPhotos/";
+}
+else
+$imagePath = "/";
+$rightPanelShow = isset($_REQUEST['success'])?$_REQUEST['success']:'';
+$conn=new connections();
+$conn=$conn->connect();
+					if($user_type == 'GM')
+					{ 		
+							$groupIDS =0;
+							$sqlSelect="SELECT group_ids FROM group_member WHERE gm_id = ".$user_id;
+							$resultss = mysqli_query($conn, $sqlSelect);
+							if (mysqli_num_rows($resultss) > 0)  
+						    {
+								$row = mysqli_fetch_assoc($resultss);
+								$groupIDS = $row['group_ids'];
+							}
 						
-				if (mysqli_num_rows($resultData2) > 0)  
-				{
-					while($row = mysqli_fetch_assoc($resultData2)) {
-						$existingMemberslist[] = $row;
-					}
-					/*print_r($existingMemberslist);
-					die("test");*/
-					//$MembersDetais = $groupMembersdetails;
-				}
-			
-			}
-			else
-			{
-				$sqlFetchMembers="SELECT * FROM group_member where gm_group_id =".$gmID." AND status='Y' order by group_member.gm_name";
-				$resultData = mysqli_query($conn, $sqlFetchMembers);
-					
-				if (mysqli_num_rows($resultData) > 0)  
-				{
-					while($row = mysqli_fetch_assoc($resultData)) {
-						//$launguages = mysqli_fetch_assoc($result);
-						if($row['gm_logged_in'] == 'Y' && $user_id!=$row['gm_id'])
+						 $groups_idss = $_SESSION['logged_user_groups'];
+						 $sql="SELECT * FROM groups WHERE created_by_id = ".$user_id." OR group_id IN (".$groupIDS.") ORDER BY groups.group_name";
+						$result = mysqli_query($conn, $sql);
+						$groupsList = array();
+						if (mysqli_num_rows($result) > 0)  
 						{
-						$onlneMembers = 1;
-						//echo $user_id."---".$row['gm_id'];die();
+							$GROUPSIDS = '';
+							while($row = mysqli_fetch_assoc($result)) {
+								//$launguages = mysqli_fetch_assoc($result);
+								$groupsList[] = $row;
+							}
+							
+							//print_r($groupsList);die();
 						}
-						else if($row['gm_logged_in'] == 'N')
-						$offlineMembers = 1;
-						$groupMembersdetails[] = $row;
-						
 					}
-					//print_r($groupMembersdetails);
-					//die();
-					//$MembersDetais = $groupMembersdetails;
-				}
-			//echo "<pre>";print_r($groupMembersdetails);echo "</pre>";die();
-			
-		   }
-		 }
-	}
+					else
+					{
+						$sql="SELECT * FROM groups where  created_by_id = ".$user_id." AND created_by_user_role = '".$user_type."' order by groups.group_name";
+						$result = mysqli_query($conn, $sql);
+						$groupsList = array();
+						if (mysqli_num_rows($result) > 0)  
+						{
+							while($row = mysqli_fetch_assoc($result)) {
+								//$launguages = mysqli_fetch_assoc($result);
+								$groupsList[] = $row;
+							}
+							/* echo "<br><pre>";
+							 print_r($groupsList);
+							 echo "</pre><br>";
+							 */
+							
+						}
+					}
+					$tag = isset($_REQUEST['tag'])? $_REQUEST['tag'] : '';
+					$getGM_id = isset($_REQUEST['gmID'])? $_REQUEST['gmID'] : 0;
+					$getgroupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
+					$groupMembersdetails = array();$onlneMembers = 0;$offlineMembers = 0;
+					$existingMemberslist = array();
+					if($tag == 'fetchmembers')
+					{
+						 $gmID = isset($_REQUEST['gmID'])?$_REQUEST['gmID']:0;
+						if($gmID >0)
+						{
+							
+							if($user_type == 'GM')
+							{
+								 $sqlFetchMembers="SELECT * FROM group_member where
+FIND_IN_SET(".$gmID.", `group_ids`) OR gm_group_id = ".$getGM_id." AND status='Y' order by group_member.gm_name";
+									$resultData = mysqli_query($conn, $sqlFetchMembers);
+									$onlyGroupMemberIds = array();
+									if (mysqli_num_rows($resultData) > 0)  
+									{
+										while($row = mysqli_fetch_assoc($resultData)) {
+											//$launguages = mysqli_fetch_assoc($result);
+											if($row['gm_logged_in'] == 'Y' && $user_id!=$row['gm_id'])
+											$onlneMembers = 1;
+											else if($row['gm_logged_in'] == 'N')
+											$offlineMembers = 1;
+											$groupMembersdetails[] = $row;
+											$onlyGroupMemberIds[] = $row['gm_id'];
+										}
+										/*print_r($onlyGroupMemberIds);
+										die();
+*/										//$MembersDetais = $groupMembersdetails;
+									}
+							//echo "<pre>";print_r($groupMembersdetails);echo "</pre>";die();
+							  $onlyGroupMemberIdsString = implode(",",$onlyGroupMemberIds);
+							 
+							 // $onlyGroupMemberIdsString = empty($onlyGroupMemberIdsString)?"":$onlyGroupMemberIdsString;
+							//************Listing of existing Members except this group**********************************
+							if(empty($onlyGroupMemberIdsString))
+							{
+								$sqlFetchMembers2="SELECT * 
+						FROM group_member where gm_id NOT IN ( '".$onlyGroupMemberIdsString."' )  AND status='Y' order by group_member.gm_name";
+							}
+							else{
+						 $sqlFetchMembers2="SELECT * 
+						FROM group_member where gm_id NOT IN ( ".$onlyGroupMemberIdsString.")  AND status='Y' order by group_member.gm_name";
+						 }
+									$resultData2 = mysqli_query($conn, $sqlFetchMembers2);
+									
+									if (mysqli_num_rows($resultData2) > 0)  
+									{
+										while($row = mysqli_fetch_assoc($resultData2)) {
+											$existingMemberslist[] = $row;
+											
+										}
+										/*print_r($existingMemberslist);
+										die("test");*/
+										//$MembersDetais = $groupMembersdetails;
+									}
+							
+							}
+							else
+							{
+								$sqlFetchMembers="SELECT * FROM group_member where gm_group_id =".$gmID." AND status='Y' order by group_member.gm_name";
+									$resultData = mysqli_query($conn, $sqlFetchMembers);
+									
+									if (mysqli_num_rows($resultData) > 0)  
+									{
+										while($row = mysqli_fetch_assoc($resultData)) {
+											//$launguages = mysqli_fetch_assoc($result);
+											if($row['gm_logged_in'] == 'Y' && $user_id!=$row['gm_id'])
+											{
+											$onlneMembers = 1;
+											//echo $user_id."---".$row['gm_id'];die();
+											}
+											else if($row['gm_logged_in'] == 'N')
+											$offlineMembers = 1;
+											$groupMembersdetails[] = $row;
+											
+										}
+										//print_r($groupMembersdetails);
+										//die();
+										//$MembersDetais = $groupMembersdetails;
+									}
+							//echo "<pre>";print_r($groupMembersdetails);echo "</pre>";die();
+							
+						   }
+						 }
+					   }
 ?>
 
 <!DOCTYPE html>
@@ -393,24 +391,24 @@ echo "Friends & Family";
 	   
 	   if(isset($_GET['created_by_user_role']) && !empty($_GET['created_by_user_role']))
 	   {
-	   		$tableName = ($_GET['created_by_user_role'] == 'SP')?'service_provider':'service_requestor';
-	   		$idField = ($_GET['created_by_user_role'] == 'SP')?'sp_id':'sr_id';
-	   		$imageField = ($_GET['created_by_user_role'] == 'SP')?'sp_image':'sr_image';
-	   		$nameField = ($_GET['created_by_user_role'] == 'SP')?'sp_name':'sr_name';
-	   		$sqlFetchPrimaryMembers="SELECT * FROM $tableName where $idField =".$_GET['created_by_id'];
-	    	$resultData = mysqli_query($conn, $sqlFetchPrimaryMembers);
+	   $tableName = ($_GET['created_by_user_role'] == 'SP')?'service_provider':'service_requestor';
+	   $idField = ($_GET['created_by_user_role'] == 'SP')?'sp_id':'sr_id';
+	   $imageField = ($_GET['created_by_user_role'] == 'SP')?'sp_image':'sr_image';
+	   $nameField = ($_GET['created_by_user_role'] == 'SP')?'sp_name':'sr_name';
+	   $sqlFetchPrimaryMembers="SELECT * FROM $tableName where $idField =".$_GET['created_by_id'];
+	    $resultData = mysqli_query($conn, $sqlFetchPrimaryMembers);
 									
-		if (mysqli_num_rows($resultData) > 0)  
-		{
-			$row = mysqli_fetch_assoc($resultData) ;
-		
-				$imgSuper = $row[$imageField];
-				$NameSuper = $row[$nameField];
-			
-			//print_r($groupMembersdetails);
-			//die();
-			//$MembersDetais = $groupMembersdetails;
-		}
+									if (mysqli_num_rows($resultData) > 0)  
+									{
+										$row = mysqli_fetch_assoc($resultData) ;
+									
+											$imgSuper = $row[$imageField];
+											$NameSuper = $row[$nameField];
+										
+										//print_r($groupMembersdetails);
+										//die();
+										//$MembersDetais = $groupMembersdetails;
+									}
 	   
 	   
     ?>
@@ -429,6 +427,8 @@ echo "Friends & Family";
 	?>
    </div><!--end of Row-->
   
+   
+   
    </div>
   
    <div class="alert alert-success connSuccess" style="display:none">
@@ -442,10 +442,11 @@ echo "Friends & Family";
 </div>
 <!-- jQuery Version 1.11.1 --> 
 <script src="js/jquery.js"></script> 
-<script src="js/connectMe.js"></script>
+
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/myGroups.js"></script>
+<script src="js/connectMe.js"></script>
 </body>
 </html>
 
@@ -455,22 +456,9 @@ echo "Friends & Family";
 else
 {
 	$passStr = 'You are not authorized.Redirecting....';
-	$passImg = 'groupPhotos/img-3.jpg';
-	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
+										$passImg = 'groupPhotos/img-3.jpg';
+										header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
 	
 }
-
-
-public function checkConnect(){
-	$currentTimestamp=1468414057;
-	header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
-}
-
-/*$time=2000000;
-while(1){
-    sleep($time);
-    $this->checkConnect();
-}
-*/
 
 ?>
