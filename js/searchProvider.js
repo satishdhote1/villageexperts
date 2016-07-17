@@ -8,6 +8,7 @@ var $document = $(document);
          var value = element.value;
          var output = $("#js-output");//element.parentNode.getElementsByTagName('output')[0];
          output.text(value);
+		 if(value!=parseInt(1))
 		 $(".rate").val(value);
      } /** * Initial value output */
      for (var i = $inputRange.length - 1; i >= 0; i--) {
@@ -17,12 +18,53 @@ var $document = $(document);
          valueOutput(e.target);
      }); /** * Initialize the elements */
      $inputRange.rangeslider({
-         polyfill: false
+         polyfill: false,
+		 fillClass: 'rangeslider__fill'
      });
-     
+	 
+	 //Experience range slider
+	 var selectorExp = '[data-rangeslider2]';
+     var $inputRange2 = $(selectorExp); 
+	 
+     function valueOutput2(element) {
+		// alert(element.value);
+         var value = element.value;
+         var output = $("#js-outputExperience");//element.parentNode.getElementsByTagName('output')[0];
+         output.text(value);
+		 if(value!=parseInt(5))
+		 $(".experience").val(value);
+		 $(".ExperienceIDS").val(getExpID(value));
+     } /** * Initial value output */
+     for (var i = $inputRange2.length - 1; i >= 0; i--) {
+         valueOutput2($inputRange2[i]);
+     } /** * Update value output */
+     $document.on('input', selectorExp, function (e) {
+         valueOutput2(e.target);
+     }); /** * Initialize the elements */
+     $inputRange2.rangeslider({
+         polyfill: false,
+		 fillClass: 'rangeslider__fill2'
+     });
+     function getExpID(value){
+		 
+		 if(value <=5)
+		 return 1
+		 else if(value <=10)
+		 return 2
+		 else if(value <=15)
+		 return 3
+		 else if(value <=20)
+		 return 3
+		 else if(value <=25)
+		 return 4
+		 else
+		 return 5
+		 
+	 }
      //chckbox group check
      // the selector will match all input controls of type :checkbox
 // and attach a click event handler 
+/*
 $("input:checkbox").on('click', function() {
   // in the handler, 'this' refers to the box clicked on
   var $box = $(this);
@@ -38,7 +80,7 @@ $("input:checkbox").on('click', function() {
     $box.prop("checked", false);
   }
 });
-     
+ */    
      
      
 	var allVals = [];
@@ -68,15 +110,15 @@ $("input:checkbox").on('click', function() {
     			var id = item.sub_specialisation_id;
                     	var values = item.sub_specialisation;
                     	var images = item.SubSpImages;
-                    	
-                    	 
-              resultData = resultData + '<li class="modifi-list-item-2" id="'+id+'"><div class="col-xs-4" style="padding:0;"><img src="images/SubSpecialization/'+images+'" class="img-responsive"></div><div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="col-xs-2"><div class="checkbox padding30" id="checkdiv" style="display:block;"><input type="checkbox" name="dsetting" id="defaultcard" value="1" class="no-styles"><label for="defaultcard" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'"></span></label><input type="hidden" name="paymentnonce" id="paymentnonce" value="" /></div></div><div class="" id="setHooverSubExprt"></div></li>';
-             
+               
+			   resultData = resultData + '<li class="modifi-list-item-2" id="'+id+'"><div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/'+images+'"></div></div><div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="col-xs-12 text-center"><div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px"><input type="checkbox" name="subSpecial[1][]" id="subSpecial" value="1" class="no-styles"><label for="subSpecial'+id+'" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'"></span></label><input type="hidden" name="paymentnonce" id="paymentnonce" value="" /></div></div><div class="" id="setHooverSubExprt'+id+'"></div></li>';
+
                    });
 
                       $('.setSubSpecialData').html(resultData);
                       $('html, body').animate({scrollTop: $(".specialData").offset().top}, 2000);
-    
+					  $("#setHooverExprt"+expertId).addClass("over");
+    					
 						  }
 						 else
 						 {
@@ -96,6 +138,7 @@ $("input:checkbox").on('click', function() {
 		var expertValue = $(this).attr("dir");
 		$(".subSpecial").val(expertValue);
 		$(".SubSpecialIDS").val(expertId);
+		 $("#setHooverSubExprt"+expertId).addClass("over");
 	  });
         //SETTING UP degreeLabel
         $(document).on("click",".degreeLabel",function() {
@@ -103,14 +146,16 @@ $("input:checkbox").on('click', function() {
 		var expertValue = $(this).attr("dir");
 		$(".degree").val(expertValue);
 		$(".DegreeIDS").val(expertId);
+		 $("#setHooverDegree"+expertId).addClass("over");
 	  });
 	  
 	  //SETTING UP experienceLabel
         $(document).on("click",".experienceLabel",function() {
 		var expertId = $(this).attr("for");
 		var expertValue = $(this).attr("dir");
-		$(".experience").val(expertValue);
-		$(".ExperienceIDS").val(expertId);
+		
+		//$(".experience").val(expertValue);
+		//$(".ExperienceIDS").val(expertId);
 	  });
 	  
 	 $(document).on("click",".languageLabel",function() {
@@ -150,8 +195,10 @@ $("input:checkbox").on('click', function() {
 		 }
 		});
 	}
+		
   	     $(".language").val(allVals);
    	     $(".LanguageIDS").val(allIDs);
+		  $("#setHooverLan"+expertId).addClass("over");
          });
 	  
 });
