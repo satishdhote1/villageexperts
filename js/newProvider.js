@@ -8,6 +8,7 @@ var $document = $(document);
          var value = element.value;
          var output = $("#js-output");//element.parentNode.getElementsByTagName('output')[0];
          output.text(value);
+		 if(value!=parseInt(1))
 		 $(".rate").val(value);
      } /** * Initial value output */
      for (var i = $inputRange.length - 1; i >= 0; i--) {
@@ -19,7 +20,45 @@ var $document = $(document);
      $inputRange.rangeslider({
          polyfill: false
      });
-     
+      //Experience range slider
+	 var selectorExp = '[data-rangeslider2]';
+     var $inputRange2 = $(selectorExp); 
+	 
+     function valueOutput2(element) {
+		// alert(element.value);
+         var value = element.value;
+         var output = $("#js-outputExperience");//element.parentNode.getElementsByTagName('output')[0];
+         output.text(value);
+		 if(value!=parseInt(5))
+		 $(".experience").val(value);
+		 $(".ExperienceIDS").val(getExpID(value));
+     } /** * Initial value output */
+     for (var i = $inputRange2.length - 1; i >= 0; i--) {
+         valueOutput2($inputRange2[i]);
+     } /** * Update value output */
+     $document.on('input', selectorExp, function (e) {
+         valueOutput2(e.target);
+     }); /** * Initialize the elements */
+     $inputRange2.rangeslider({
+         polyfill: false,
+		 fillClass: 'rangeslider__fill2'
+     });
+     function getExpID(value){
+		 
+		 if(value <=5)
+		 return 1
+		 else if(value <=10)
+		 return 2
+		 else if(value <=15)
+		 return 3
+		 else if(value <=20)
+		 return 3
+		 else if(value <=25)
+		 return 4
+		 else
+		 return 5
+		 
+	 }
      
 	var allVals = [];
  	var allIDs = [];
