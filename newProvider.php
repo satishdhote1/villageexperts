@@ -63,7 +63,8 @@ $sql="select * from 	sp_specialisation order by specialisation";
 			}
 			
 //Get Sub specialization Data
-$sql2="select * from 	sp_sub_specialisation where specialisation_id = 5 order by sub_specialisation";
+//$sql2="select * from 	sp_sub_specialisation where specialisation_id = 5 order by sub_specialisation";
+$sql2="select * from 	sp_sub_specialisation  order by sub_specialisation";
 			$tableResult2 = mysqli_query($conn, $sql2);
 			//print_r($tableResult);
 
@@ -153,6 +154,13 @@ $sql5="select * from 	sp_language ORDER BY languages";
     width: 158px;
 }
 .display-list{margin:20px 0px;padding:0px}
+.img-provider {
+    border-radius: 50%;
+    height: 120px;
+    margin: 15px auto;
+    overflow: hidden;
+    width: 120px;
+}
 
 </style>
 <body class="bodybg">
@@ -210,27 +218,27 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <div class="col-ms-10 col-sm-10 col-xs-12" style="padding:0px;">
 <ul class="list-inline display-list">
 <li>
-<input type="text" readonly class="form-control radius0 specialisation" value="" name="specialisation">
+<input type="text" placeholder="Experties" readonly class="form-control radius0 specialisation" value="" name="specialisation">
 <input type="hidden" readonly class="SpecialisationIDS" value="" name="SpecialisationIDS">	
 </li>
 <li>
-<input type="text" readonly class="subSpecial form-control radius0" value="" name="subSpecial">
+<input type="text"  placeholder="Sub Specialization"readonly class="subSpecial form-control radius0" value="" name="subSpecial">
 <input type="hidden" readonly class="SubSpecialIDS" value="" name="SubSpecialIDS">
 </li>
 <li>
-	<input type="text" readonly class="degree form-control radius0" value="" name="degree">
+	<input type="text" placeholder="Degree" readonly class="degree form-control radius0" value="" name="degree">
         <input type="hidden" readonly class="DegreeIDS" value="" name="DegreeIDS">
 </li>
 <li>
-	<input type="text" readonly class="experience form-control radius0" value="" name="experience">
+	<input type="text" placeholder="Experience" readonly class="experience form-control radius0" value="" name="experience">
         <input type="hidden" readonly class="ExperienceIDS" value="" name="ExperienceIDS">
 </li>
 <li>
-	<input type="text" readonly class="rate form-control radius0" value="" name="rate">
+	<input type="text"  placeholder="Rate Per Hour"readonly class="rate form-control radius0" value="" name="rate">
 	<input type="hidden" readonly class="RateIDS" value="" name="RateIDS">
 </li>
 <li>
-	 <input type="text" readonly class="language form-control radius0" value="" name="language">
+	 <input type="text" placeholder="Language" readonly class="language form-control radius0" value="" name="language">
           <input type="hidden" readonly class="LanguageIDS" value="" name="LanguageIDS">
 </li>
 <div class="clearfix"></div>
@@ -261,7 +269,11 @@ $sql5="select * from 	sp_language ORDER BY languages";
             <ul class="list-inline search-list specialData">
             <?php foreach($specialData as $specialDatas) { ?>
               <li class="bg-gray" id="<?php echo $specialDatas['specialisation_id']; ?>">
-                <div class="search-profile text-center"><img src="images/specialization/<?php echo $specialDatas['images']; ?>">
+                <div class="search-profile text-center">
+                <div class="img-provider">
+                <img src="images/specialization/<?php echo $specialDatas['images']; ?>">
+                </div>
+                
                   <p class=""><a href="javascript:void(0);" class="search-parson-position text-center expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"><?php echo $specialDatas['specialisation']; ?></a></p>
                 </div>
               </li>
@@ -287,7 +299,9 @@ $sql5="select * from 	sp_language ORDER BY languages";
             <ul class="list-inline search-list setSubSpecialData">
              <?php foreach($subspecialData as $subspecialDatas) { ?>
               <li class="bg-gray" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
-                <div class="search-profile text-center"><img src="images/SubSpecialization/<?php echo $subspecialDatas['SubSpImages']; ?>">
+                <div class="search-profile text-center">
+                <div class="img-provider"><img src="images/SubSpecialization/<?php echo $subspecialDatas['SubSpImages']; ?>">
+                </div>
                   <p class=""><a href="javascript:void(0);" class="search-parson-position text-center subExpertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>" ><?php echo $subspecialDatas['sub_specialisation']; ?></a></p>
                 </div>
               </li>
@@ -313,7 +327,10 @@ $sql5="select * from 	sp_language ORDER BY languages";
             <ul class="list-inline search-list">
               <?php foreach($education as $educationDatas) { ?>
               <li class="bg-gray" id="<?php echo $educationDatas['EducationID']; ?>">
-                <div class="search-profile text-center"><img src="images/education/<?php echo $educationDatas['Image']; ?>">
+                <div class="search-profile text-center">
+                <div class="img-provider">
+                <img src="images/education/<?php echo $educationDatas['Image']; ?>">
+                </div>
                   <p class=""><a href="javascript:void(0);" class="search-parson-position text-center degreeLabel" id="degreeLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"><?php echo $educationDatas['Education']; ?></a></p>
                 </div>
               </li>
@@ -326,7 +343,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
     </div>
   </div>
   
-  <div class="row marginTOP">
+  <?php /*?><div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Experience</h1>
       <div class="background-blue">
@@ -346,7 +363,25 @@ $sql5="select * from 	sp_language ORDER BY languages";
         </div>
       </div>
     </div>
-    
+    </div><?php */?>
+    <div class="row marginTOP">
+    <div class="col-md-12">
+      <h1 class="search-title">Experience</h1>
+      <div class="background-blue">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline search-list">
+ 	  <h4 class="text-center" style="color:#fff;">Select minimum experience you are looking for:</h4>
+         <div class="seclect-box" style="width:100%!important">
+        <input type="range" min="5" max="100" step="5" value="5" data-rangeslider2>$<span id="js-outputExperience"></span>
+	</div>
+          </ul>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    </div>
    
    <div class="row marginTOP">
     <div class="col-md-12">
@@ -355,9 +390,9 @@ $sql5="select * from 	sp_language ORDER BY languages";
         <div class="row">
           <div class="col-md-12">
             <ul class="list-inline search-list">
- 	  <h4>Select maximum rate you willing to pay:</h4>
+ 	  <h4 class="text-center" style="color:#fff;">Select maximum rate you willing to pay:</h4>
          <div class="seclect-box" style="width:100%!important">
-         <input type="range" min="0" max="100" step="1" value="10" data-rangeslider>$<span id="js-output"></span>
+         <input type="range" min="0" max="100" step="1" value="1" data-rangeslider>$<span id="js-output"></span>
 	</div>
           </ul>
           </div>
@@ -365,7 +400,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
         </div>
       </div>
     </div>
-    
+    </div>
     <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Language</h1>
@@ -375,7 +410,8 @@ $sql5="select * from 	sp_language ORDER BY languages";
             <ul class="list-inline search-list">
               <?php foreach($language as $languageDatas) { ?>
               <li class="bg-gray" id="<?php echo $languageDatas['language_id']; ?>">
-                <div class="search-profile text-center"><img src="images/Languages/<?php echo $languageDatas['images']; ?>">
+                <div class="search-profile text-center">
+                <div class="img-provider"><img src="images/Languages/<?php echo $languageDatas['images']; ?>"></div>
                   <p class=""><a href="javascript:void(0);" class="search-parson-position text-center languageLabel" id="languageLabel" dir="<?php echo $languageDatas['languages']; ?>" for="<?php echo $languageDatas['language_id']; ?>"><?php echo $languageDatas['languages']; ?></a></p>
                 </div>
               </li>
