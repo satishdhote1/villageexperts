@@ -87,7 +87,8 @@ var $document = $(document);
     									var id = item.sub_specialisation_id;
                     	var values = item.sub_specialisation;
                     	var images = item.SubSpImages;
-                    	resultData=resultData+'<li class="bg-gray" id="'+id+'"><div class="search-profile text-center"><img src="images/SubSpecialization/'+images+'"><p class=""><a href="javascript:void(0);" class="search-parson-position text-center subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'">'+values+'</a></p></div></li>';
+						 resultData=resultData+'<li class="bg-gray" id="'+id+'"><div class="search-profile text-center"><div class="img-provider"><img src="images/SubSpecialization/'+images+'"></div><p class=""><a href="javascript:void(0);" class="search-parson-position text-center subExpertiesLabel" for="'+id+'" dir="'+values+'" >'+values+'</a></p></div></li>';
+						
                 	});
 
                       $('.setSubSpecialData').html(resultData);
