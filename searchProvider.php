@@ -3,13 +3,14 @@
 include("config/connection.php");
 session_start();
 if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
-{
+{	
 $conn=new connections();
 $conn=$conn->connect();
 $user_id = $_SESSION['logged_user_id'];
 $user_name  = $_SESSION['logged_user_name'];
 $user_pic = $_SESSION['logged_user_image'];
 $user_type = $_SESSION['logged_role_code'];
+
 if($_SESSION['logged_role_code']=='SP')
 {
 	$imagePath = "SP_Photos/";
@@ -105,7 +106,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>village expart</title>
+<title>Village Expart</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -156,6 +157,7 @@ input[type="checkbox"]:checked + label span {
 input[type="radio"]:checked + label span {
  background-color: #EC2B8C;
 }
+
 input[type="checkbox"] + label span, input[type="radio"]:checked + label span {
  -webkit-transition: background-color 0.4s linear;
  -o-transition: background-color 0.4s linear;
@@ -168,23 +170,41 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
  -moz-transition: background-color 0.4s linear;
  transition: background-color 0.4s linear;
 }
-.modifi-list-item-2{width:32%;display:inline-block;border:1px solid #a1a5ff;position:relative;transition:all 0.5s ease-in-out 0s;margin-right:5px;border-radius:3px;}
+.modifi-list-item-2{width:19%;display:inline-block;border:1px solid #a1a5ff;position:relative;transition:all 0.5s ease-in-out 0s;margin-right:5px;border-radius:3px;margin-bottom:15px;}
+.block-text{margin:0px;}
 .block-text a {
     color: #7d71a3;
     display: inherit;
     font-family: Arial,Helvetica,sans-serif;
     font-size: 14px;
     letter-spacing: 1px;
-    margin: 25px 0 0 0;
+    margin: 0px 0 0 0;
     padding: 6px 0;
     text-transform: uppercase;
-   border-bottom:1px solid #7d71a3;text-align:center; border-top:1px solid #7d71a3;}
-   .checkbox label.my-label{margin:20px 0 0 0 !important;padding-left:0px;}
-   .over{height:100%;width:100%;background:rgba(0,0,0,0.5);position:absolute;top:0;left:0;display:none;transition:all 05s ease-in-out 0s;}
-   .modifi-list-item-2:hover .over{display:block;transition:all 02s ease-in-out 0s;}
-   .title-name-2{font-size:17px;color:#60C;padding:10px 0px;letter-spacing:1px;text-transform:uppercase;margin-top:25px;background:#036;color:#fff;border-radius:3px;}
-   .box-2{margin:15px 0px;border-bottom:2px dashed #eee;}
+   border-bottom:1px solid #7d71a3;text-align:center; border-top:1px solid #7d71a3; min-height:70px;
+    max-height: 70px;
+    overflow: hidden;
    
+  }
+   .checkbox label.my-label{margin:0px 0 0 0 !important;padding-left:0px;}
+   .over{height:100%;width:100%;background:rgba(0,0,0,0.5);position:absolute;top:0;left:0;display:block;transition:all 05s ease-in-out 0s;}
+   .modifi-list-item-2:hover{background:rgba(0,0,0,0.1);}
+   .modifi-list-item-2:hover .over{display:block;transition:all 02s ease-in-out 0s;}
+   .back-ground{background:#036;}
+   .title-name-2{font-size:17px;color:#60C;padding:10px 0px;letter-spacing:1px;text-transform:uppercase;margin-top:25px;color:#fff;border-radius:3px;}
+   .box-2{margin:15px 0px 25px 0px;border-bottom:2px dashed #999;}
+.checkbox-icon {
+    height: 100%;
+    margin: 20px auto;
+    max-height: 130px;
+    max-width: 140px;
+    min-height: 130px;
+    min-width: 140px;
+    overflow: hidden;
+    width: 100%;
+	border-radius:50%;
+}
+   .checkbox-icon img{width:100%;height:100%;}
 </style>
 <body class="bodybg">
 <div class="loader-exp" style="display:none;">
@@ -228,27 +248,27 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 <div class="col-ms-10 col-sm-10 col-xs-12" style="padding:0px;">
 <ul class="list-inline display-list">
 <li>
-<input type="text" readonly class="form-control radius0 specialisation" value="" name="specialisation">
+<input type="text" placeholder="Experties" readonly class="form-control radius0 specialisation" value="" name="specialisation">
 <input type="hidden" readonly class="SpecialisationIDS" value="" name="SpecialisationIDS">	
 </li>
 <li>
-<input type="text" readonly class="subSpecial form-control radius0" value="" name="subSpecial">
+<input type="text"  placeholder="Sub Specialization"readonly class="subSpecial form-control radius0" value="" name="subSpecial">
 <input type="hidden" readonly class="SubSpecialIDS" value="" name="SubSpecialIDS">
 </li>
 <li>
-	<input type="text" readonly class="degree form-control radius0" value="" name="degree">
+	<input type="text" placeholder="Degree" readonly class="degree form-control radius0" value="" name="degree">
         <input type="hidden" readonly class="DegreeIDS" value="" name="DegreeIDS">
 </li>
 <li>
-	<input type="text" readonly class="experience form-control radius0" value="" name="experience">
+	<input type="text" placeholder="Experience" readonly class="experience form-control radius0" value="" name="experience">
         <input type="hidden" readonly class="ExperienceIDS" value="" name="ExperienceIDS">
 </li>
 <li>
-	<input type="text" readonly class="rate form-control radius0" value="" name="rate">
+	<input type="text"  placeholder="Rate Per Hour"readonly class="rate form-control radius0" value="" name="rate">
 	<input type="hidden" readonly class="RateIDS" value="" name="RateIDS">
 </li>
 <li>
-	 <input type="text" readonly class="language form-control radius0" value="" name="language">
+	 <input type="text" placeholder="Language" readonly class="language form-control radius0" value="" name="language">
           <input type="hidden" readonly class="LanguageIDS" value="" name="LanguageIDS">
 </li>
 <div class="clearfix"></div>
@@ -271,22 +291,25 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
  <!-- set expertise-->
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
+    <div class="back-ground">
     <p class="title-name-2">Expertise</p>
+    </div>
     </div>
     <div class="col-md-9 col-xs-7" style="padding:0;">
     <ul class="list-inline specialData">
     		 <?php foreach($specialData as $specialDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $specialDatas['specialisation_id']; ?>">
-                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/specialization/<?php echo !empty($specialDatas['images'])?$specialDatas['images']:"img-3.jpg"; ?>" class="img-responsive"></div>
-                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $specialDatas['specialisation']; ?></a></p></div>
-                  <div class="col-xs-2">
-                    <div class="checkbox padding30" id="checkdiv" style="display:block;">
-                      <input type="checkbox" name="checkExp[<?php echo $specialDatas['specialisation_id']; ?>][]" id="checkExp" value="1" class="no-styles">       
-                      <label for="exp[<?php echo $specialDatas['specialisation_id']; ?>][]" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"></span></label>
+                <div class="col-xs-12 text-center" style="padding:0;"><div class="checkbox-icon">
+        <img src="images/specialization/<?php echo !empty($specialDatas['images'])?$specialDatas['images']:"img-3.jpg"; ?>"> </div></div>
+                 <div class="col-xs-12" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $specialDatas['specialisation']; ?></a></p></div>
+                  <div class="col-xs-12 text-center">
+                    <div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px">
+                      <input type="checkbox" name="checkExp[1][]" id="checkExp" value="1" class="no-styles">       
+                      <label for="expert<?php echo $specialDatas['specialisation_id']; ?>" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
-			    <div class="" id="setHooverExprt"></div>
+			    <div class="" id="setHooverExprt<?php echo $specialDatas['specialisation_id']; ?>"></div>
               </li>
               <?php } ?>
               <div class="clearfix"></div>
@@ -297,22 +320,24 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 <!-- set Sub Specialization-->
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
+    <div class="back-ground">
     <p class="title-name-2">Sub Specialization</p>
+    </div>
     </div>
     <div class="col-md-9 col-xs-7" style="padding:0;">
     <ul class="list-inline setSubSpecialData">
               <?php foreach($subspecialData as $subspecialDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
-                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>" class="img-responsive"></div>
-                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
-                  <div class="col-xs-2">
-                    <div class="checkbox padding30" id="checkdiv" style="display:block;">
+                <div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>"></div></div>
+                 <div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
+                  <div class="col-xs-12 text-center">
+                    <div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px">
                       <input type="checkbox" name="subSpecial[1][]" id="subSpecial" value="1" class="no-styles">       
                       <label for="subSpecial<?php echo $subspecialDatas['sub_specialisation_id']; ?>" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
-			    <div class="" id="setHooverSubExprt"></div>
+			    <div class="" id="setHooverSubExprt<?php echo $subspecialDatas['sub_specialisation_id']; ?>"></div>
               </li>
               <?php } ?>
               <div class="clearfix"></div>
@@ -323,22 +348,25 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
   <!-- set Degree-->
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
+    <div class="back-ground">
     <p class="title-name-2">Degree</p>
+    </div>
     </div>
     <div class="col-md-9 col-xs-7" style="padding:0;">
     <ul class="list-inline ">
               <?php foreach($education as $educationDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $educationDatas['EducationID']; ?>">
-                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/education/<?php echo !empty($educationDatas['Image'])?$educationDatas['Image']:"img-3.jpg"; ?>" class="img-responsive"></div>
-                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $educationDatas['Education']; ?></a></p></div>
-                  <div class="col-xs-2">
-                    <div class="checkbox padding30" id="checkdiv" style="display:block;">
+                <div class="col-xs-12 text-center" style="padding:0;"><div class="checkbox-icon">
+                <img src="images/education/<?php echo !empty($educationDatas['Image'])?$educationDatas['Image']:"img-3.jpg"; ?>" class=""></div></div>
+                 <div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $educationDatas['Education']; ?></a></p></div>
+                  <div class="col-xs-12 text-center">
+                    <div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px">
                       <input type="checkbox" name="degree[1][]" id="degree<?php echo $educationDatas['EducationID']; ?>" value="1" class="no-styles">       
                       <label for="degree<?php echo $educationDatas['EducationID']; ?>" class="my-label"><span class="degreeLabel" id="degreeLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
-			    <div class="" id="setHooverDegree"></div>
+			    <div class="" id="setHooverDegree<?php echo $educationDatas['EducationID']; ?>"></div>
               </li>
               <?php } ?>
               <div class="clearfix"></div>
@@ -347,7 +375,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <div class="clearfix"></div>
   </div>
   
-  <div class="box-2">
+ <?php /*?> <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
     <p class="title-name-2">Experience</p>
     </div>
@@ -371,18 +399,34 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
             </ul>
     </div>
     <div class="clearfix"></div>
+  </div><?php */?>
+   <div class="box-2">
+    <div class="col-md-3 col-xs-5 text-center">
+    <div class="back-ground">
+    <p class="title-name-2">Experience</p>
+    </div>
+    </div>
+    <div class="col-md-9 col-xs-7" style="padding:0;">
+    <ul class="list-inline">
+              <h4>Select minimum experience you are looking for:</h4>
+         <div class="seclect-box" style="width:100%!important">
+         <input type="range" min="5" max="100" step="5" value="0" data-rangeslider2>$<span id="js-outputExperience"></span>
+	</div>            </ul>
+    </div>
+    <div class="clearfix"></div>
   </div>
-  
   
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
+    <div class="back-ground">
     <p class="title-name-2">rate per hour</p>
+    </div>
     </div>
     <div class="col-md-9 col-xs-7" style="padding:0;">
     <ul class="list-inline">
               <h4>Select maximum rate you willing to pay:</h4>
          <div class="seclect-box" style="width:100%!important">
-         <input type="range" min="0" max="100" step="1" value="10" data-rangeslider>$<span id="js-output"></span>
+         <input type="range" min="1" max="100" step="1" value="0" data-rangeslider>$<span id="js-output"></span>
 	</div>            </ul>
     </div>
     <div class="clearfix"></div>
@@ -391,22 +435,26 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
   
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
+    <div class="back-ground">
     <p class="title-name-2">Language</p>
+    </div>
     </div>
     <div class="col-md-9 col-xs-7" style="padding:0;">
     <ul class="list-inline ">
               <?php foreach($language as $languageDatas) { ?>
               <li class="modifi-list-item-2" id="<?php echo $languageDatas['language_id']; ?>">
-                <div class="col-xs-4 div-image-size-provider" style="padding:0;"><img src="images/Languages/<?php echo !empty($languageDatas['images'])?$languageDatas['images']:"img-3.jpg"; ?>" class="img-responsive"></div>
-                 <div class="col-xs-5" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $languageDatas['languages']; ?></a></p></div>
-                  <div class="col-xs-2">
-                    <div class="checkbox padding30" id="checkdiv" style="display:block;">
+                <div class="col-xs-12 text-center" style="padding:0;"><div class="checkbox-icon">
+                <img src="images/Languages/<?php echo !empty($languageDatas['images'])?$languageDatas['images']:"img-3.jpg"; ?>" class=""></div></div>
+                 <div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $languageDatas['languages']; ?></a></p></div>
+                  <div class="col-xs-12 text-center">
+                    <div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px">
                       <input type="checkbox" name="language[][]" id="language<?php echo $languageDatas['language_id']; ?>" value="1" class="no-styles">       
-                      <label for="language<?php echo $languageDatas['language_id']; ?>" class="my-label"><span class="languageLabel" id="languageLabel" for="<?php echo $languageDatas['language_id']; ?>" dir="<?php echo $languageDatas['languages']; ?>"></span></label>
+                      <label for="language<?php echo $languageDatas['language_id']; ?>" class="my-label">
+                      <span class="languageLabel" id="languageLabel" for="<?php echo $languageDatas['language_id']; ?>" dir="<?php echo $languageDatas['languages']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
-			    <div class="" id="setHooverLan"></div>
+			    <div  id="setHooverLan<?php echo $languageDatas['language_id']; ?>"></div>
               </li>
               <?php } ?>
               <div class="clearfix"></div>
