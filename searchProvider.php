@@ -152,17 +152,17 @@ input[type="checkbox"] + label span {
  background-color: #fff;
 }
 input[type="checkbox"]:checked + label span {
- background-color: #707297;
+ /*background-color: #707297;*/
 }
 input[type="radio"]:checked + label span {
- background-color: #EC2B8C;
+ /*background-color: #EC2B8C;*/
 }
 
 input[type="checkbox"] + label span, input[type="radio"]:checked + label span {
- -webkit-transition: background-color 0.4s linear;
+ /*-webkit-transition: background-color 0.4s linear;
  -o-transition: background-color 0.4s linear;
  -moz-transition: background-color 0.4s linear;
- transition: background-color 0.4s linear;
+ transition: background-color 0.4s linear;*/
 }
 input[type="radio"] + label span, input[type="radio"]:checked + label span {
  -webkit-transition: background-color 0.4s linear;
