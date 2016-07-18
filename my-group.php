@@ -82,7 +82,7 @@ $conn=$conn->connect();
 						if($gmID >0)
 						{
 							
-							if($user_type == 'GM')
+							if($user_type == 'GM'  || $user_type == 'SR')
 							{
 								 $sqlFetchMembers="SELECT * FROM group_member where
 FIND_IN_SET(".$gmID.", `group_ids`) OR gm_group_id = ".$getGM_id." AND status='Y' order by group_member.gm_name";
