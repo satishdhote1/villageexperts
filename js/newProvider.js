@@ -130,6 +130,7 @@ var $document = $(document);
 					  });
 					 // alert(".subE"+expertId);
 		$(".subE"+expertId).addClass("liBGColor");
+		 $('html, body').animate({scrollTop: $(".setSubSpecialData").offset().top}, 2000);
 	  });
         //SETTING UP degreeLabel
         $(document).on("click",".degreeLabel",function() {
@@ -145,6 +146,7 @@ var $document = $(document);
 					  }
 					  });
 		$(".deg"+expertId).addClass("liBGColor");
+		 $('html, body').animate({scrollTop: $(".setDegreeData").offset().top}, 2000);
 	  });
 	  
 	  //SETTING UP experienceLabel
@@ -153,6 +155,7 @@ var $document = $(document);
 		var expertValue = $(this).attr("dir");
 		$(".experience").val(expertValue);
 		$(".ExperienceIDS").val(expertId);
+		 $('html, body').animate({scrollTop: $(".setExperienceData").offset().top}, 2000);
 	  });
 	  
 	 $(document).on("click",".languageLabel",function() {
@@ -210,6 +213,7 @@ var $document = $(document);
 			{
 		 		$(".lan"+expertId).addClass("liBGColor");
 			}
+			 $('html, body').animate({scrollTop: $(".setLanData").offset().top}, 2000);
          });
 	  
 });
