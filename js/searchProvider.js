@@ -111,13 +111,20 @@ $("input:checkbox").on('click', function() {
                     	var values = item.sub_specialisation;
                     	var images = item.SubSpImages;
                
-			   resultData = resultData + '<li class="modifi-list-item-2" id="'+id+'"><div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/'+images+'"></div></div><div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="col-xs-12 text-center"><div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px"><input type="checkbox" name="subSpecial[1][]" id="subSpecial" value="1" class="no-styles"><label for="subSpecial'+id+'" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'"></span></label><input type="hidden" name="paymentnonce" id="paymentnonce" value="" /></div></div><div class="" id="setHooverSubExprt'+id+'"></div></li>';
+			   resultData = resultData + '<li class="modifi-list-item-2" id="'+id+'"><div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/'+images+'"></div></div><div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="col-xs-12 text-center"><div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px"><input type="checkbox" name="subSpecial[1][]" id="subSpecial" value="1" class="no-styles"><label for="subSpecial'+id+'" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'"></span></label><input type="hidden" name="paymentnonce" id="paymentnonce" value="" /></div></div><div class="setHooverSubExprt'+id+' removeSubExp" id=""></div></li>';
 
                    });
 
                       $('.setSubSpecialData').html(resultData);
                       $('html, body').animate({scrollTop: $(".specialData").offset().top}, 2000);
-					  $("#setHooverExprt"+expertId).addClass("over");
+					 $(".removeExp").each(function(index, element) {
+					 
+					  if($(this).hasClass("over"))
+					  {
+						 $(this).removeClass("over");
+					  }
+					  });
+					  $(".setHooverExprt"+expertId).addClass("over");
     					
 						  }
 						 else
@@ -138,7 +145,14 @@ $("input:checkbox").on('click', function() {
 		var expertValue = $(this).attr("dir");
 		$(".subSpecial").val(expertValue);
 		$(".SubSpecialIDS").val(expertId);
-		 $("#setHooverSubExprt"+expertId).addClass("over");
+		  $(".removeSubExp").each(function(index, element) {
+					 
+					  if($(this).hasClass("over"))
+					  {
+						 $(this).removeClass("over");
+					  }
+					  });
+		 $(".setHooverSubExprt"+expertId).addClass("over");
 	  });
         //SETTING UP degreeLabel
         $(document).on("click",".degreeLabel",function() {
@@ -146,7 +160,14 @@ $("input:checkbox").on('click', function() {
 		var expertValue = $(this).attr("dir");
 		$(".degree").val(expertValue);
 		$(".DegreeIDS").val(expertId);
-		 $("#setHooverDegree"+expertId).addClass("over");
+		 $(".removeDeg").each(function(index, element) {
+					 
+					  if($(this).hasClass("over"))
+					  {
+						 $(this).removeClass("over");
+					  }
+					  });
+		 $(".setHooverDegree"+expertId).addClass("over");
 	  });
 	  
 	  //SETTING UP experienceLabel
@@ -198,7 +219,14 @@ $("input:checkbox").on('click', function() {
 		
   	     $(".language").val(allVals);
    	     $(".LanguageIDS").val(allIDs);
-		  $("#setHooverLan"+expertId).addClass("over");
+		 /*$(".removeLan").each(function(index, element) {
+					 
+					  if($(this).hasClass("over"))
+					  {
+						 $(this).removeClass("over");
+					  }
+					  });*/
+		  $(".setHooverLan"+expertId).addClass("over");
          });
 	  
 });
