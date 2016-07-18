@@ -930,7 +930,7 @@ h1.search-title {
 .border4side{border:1px solid #eee;}
 
 .bg-gray{background:#faf8ff;}
-
+.search-profile{}
 .search-profile > img {
 
     height: 100%;
@@ -953,6 +953,10 @@ h1.search-title {
 
 }
 
+.search-list li.bg-gray:hover {
+      background:#ed9100;}
+
+
 .search-list li.bg-gray {
 
     border: 1px solid #EEE;
@@ -960,6 +964,8 @@ h1.search-title {
     margin: 10px;
 
     width: 22.5%;
+	border-radius:7px;
+	
 
 }
 
