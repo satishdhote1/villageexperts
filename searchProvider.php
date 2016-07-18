@@ -309,7 +309,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
-			    <div class="" id="setHooverExprt<?php echo $specialDatas['specialisation_id']; ?>"></div>
+			    <div class="setHooverExprt<?php echo $specialDatas['specialisation_id']; ?> removeExp" id=""></div>
               </li>
               <?php } ?>
               <div class="clearfix"></div>
@@ -337,7 +337,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
-			    <div class="" id="setHooverSubExprt<?php echo $subspecialDatas['sub_specialisation_id']; ?>"></div>
+			    <div class="setHooverSubExprt<?php echo $subspecialDatas['sub_specialisation_id']; ?> removeSubExp" id=""></div>
               </li>
               <?php } ?>
               <div class="clearfix"></div>
@@ -366,7 +366,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
-			    <div class="" id="setHooverDegree<?php echo $educationDatas['EducationID']; ?>"></div>
+			    <div class="setHooverDegree<?php echo $educationDatas['EducationID']; ?> removeDeg" id=""></div>
               </li>
               <?php } ?>
               <div class="clearfix"></div>
@@ -454,7 +454,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
 				 </div>
-			    <div  id="setHooverLan<?php echo $languageDatas['language_id']; ?>"></div>
+			    <div class="setHooverLan<?php echo $languageDatas['language_id']; ?> removeLan" id=""></div>
               </li>
               <?php } ?>
               <div class="clearfix"></div>
