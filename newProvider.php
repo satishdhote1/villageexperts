@@ -269,7 +269,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
           <div class="col-md-12">
             <ul class="list-inline search-list specialData">
             <?php foreach($specialData as $specialDatas) { ?>
-              <li class="bg-gray" id="<?php echo $specialDatas['specialisation_id']; ?>">
+              <li class="bg-gray exp<?php echo $specialDatas['specialisation_id']; ?> removeExp" id="">
                 <div class="search-profile text-center">
                 <div class="img-provider">
                 <img src="images/specialization/<?php echo $specialDatas['images']; ?>">
@@ -288,8 +288,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
     
     
     
-    
-    
+     
   </div>
   <div class="row marginTOP">
     <div class="col-md-12">
@@ -299,7 +298,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
           <div class="col-md-12">
             <ul class="list-inline search-list setSubSpecialData">
              <?php foreach($subspecialData as $subspecialDatas) { ?>
-              <li class="bg-gray" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
+              <li class="bg-gray subE<?php echo $subspecialDatas['sub_specialisation_id']; ?>  removeSubExp" id="">
                 <div class="search-profile text-center">
                 <div class="img-provider"><img src="images/SubSpecialization/<?php echo $subspecialDatas['SubSpImages']; ?>">
                 </div>
@@ -327,7 +326,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
           <div class="col-md-12">
             <ul class="list-inline search-list">
               <?php foreach($education as $educationDatas) { ?>
-              <li class="bg-gray" id="<?php echo $educationDatas['EducationID']; ?>">
+              <li class="bg-gray deg<?php echo $educationDatas['EducationID']; ?> removeDeg" id="">
                 <div class="search-profile text-center">
                 <div class="img-provider">
                 <img src="images/education/<?php echo $educationDatas['Image']; ?>">
@@ -410,7 +409,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
           <div class="col-md-12">
             <ul class="list-inline search-list">
               <?php foreach($language as $languageDatas) { ?>
-              <li class="bg-gray" id="<?php echo $languageDatas['language_id']; ?>">
+              <li class="bg-gray lan<?php echo $languageDatas['language_id']; ?> removeLan" id="">
                 <div class="search-profile text-center">
                 <div class="img-provider"><img src="images/Languages/<?php echo $languageDatas['images']; ?>"></div>
                   <p class=""><a href="javascript:void(0);" class="search-parson-position text-center languageLabel" id="languageLabel" dir="<?php echo $languageDatas['languages']; ?>" for="<?php echo $languageDatas['language_id']; ?>"><?php echo $languageDatas['languages']; ?></a></p>
