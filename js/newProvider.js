@@ -87,20 +87,20 @@ var $document = $(document);
     									var id = item.sub_specialisation_id;
                     	var values = item.sub_specialisation;
                     	var images = item.SubSpImages;
-						 resultData=resultData+'<li class="bg-gray subE'+id+'  subExp" id=" "><div class="search-profile text-center"><div class="img-provider"><img src="images/SubSpecialization/'+images+'"></div><p class=""><a href="javascript:void(0);" class="search-parson-position text-center subExpertiesLabel" for="'+id+'" dir="'+values+'" >'+values+'</a></p></div></li>';
+						 resultData=resultData+'<li class="bg-gray subE'+id+'  subExp removeSubExp" id=" "><div class="search-profile text-center"><div class="img-provider"><img src="images/SubSpecialization/'+images+'"></div><p class=""><a href="javascript:void(0);" class="search-parson-position text-center subExpertiesLabel" for="'+id+'" dir="'+values+'" >'+values+'</a></p></div></li>';
 						
                 	});
 
                       $('.setSubSpecialData').html(resultData);
                       $('html, body').animate({scrollTop: $(".specialData").offset().top}, 2000);
 					  $(".removeExp").each(function(index, element) {
-					 
-					  if($(this).hasClass("liBGColor"))
+					 	 var obj = $(this);
+					  if(obj.hasClass("liBGColor"))
 					  {
-						 $(this).removeClass("liBGColor");
+						 obj.removeClass("liBGColor");
 					  }
 					  });
-    				$("#exp"+expertId).addClass("liBGColor");
+    				$(".exp"+expertId).addClass("liBGColor");
 						  }
 						 else
 						 {
@@ -116,15 +116,16 @@ var $document = $(document);
     });
     //SETTING VALUE OF subExpertiesLabel
     $(document).on("click",".subExpertiesLabel",function() {
+		
 		var expertId = $(this).attr("for");
 		var expertValue = $(this).attr("dir");
 		$(".subSpecial").val(expertValue);
 		$(".SubSpecialIDS").val(expertId);
 		$(".removeSubExp").each(function(index, element) {
-					 
-					  if($(this).hasClass("liBGColor"))
+					 var obj = $(this);
+					  if(obj.hasClass("liBGColor"))
 					  {
-						 $(this).removeClass("liBGColor");
+						 obj.removeClass("liBGColor");
 					  }
 					  });
 					 // alert(".subE"+expertId);
@@ -137,13 +138,13 @@ var $document = $(document);
 		$(".degree").val(expertValue);
 		$(".DegreeIDS").val(expertId);
 		$(".removeDeg").each(function(index, element) {
-					 
-					  if($(this).hasClass("liBGColor"))
+					  var obj = $(this);
+					  if(obj.hasClass("liBGColor"))
 					  {
-						 $(this).removeClass("liBGColor");
+						 obj.removeClass("liBGColor");
 					  }
 					  });
-		$("#deg"+expertId).addClass("liBGColor");
+		$(".deg"+expertId).addClass("liBGColor");
 	  });
 	  
 	  //SETTING UP experienceLabel
@@ -201,8 +202,14 @@ var $document = $(document);
 						 $(this).removeClass("liBGColor");
 					  }
 					  });*/
-					  
-		 $("#lan"+expertId).addClass("liBGColor");
+			if($(".lan"+expertId).hasClass("liBGColor"))
+			{
+				$(".lan"+expertId).removeClass("liBGColor");	
+			}
+			else
+			{
+		 		$(".lan"+expertId).addClass("liBGColor");
+			}
          });
 	  
 });
