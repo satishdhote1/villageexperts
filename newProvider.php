@@ -324,7 +324,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
       <div class="background-blue">
         <div class="row">
           <div class="col-md-12">
-            <ul class="list-inline search-list">
+            <ul class="list-inline search-list setDegreeData">
               <?php foreach($education as $educationDatas) { ?>
               <li class="bg-gray deg<?php echo $educationDatas['EducationID']; ?> removeDeg" id="">
                 <div class="search-profile text-center">
@@ -368,7 +368,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
     <div class="col-md-12">
       <h1 class="search-title">Experience</h1>
       <div class="background-blue">
-        <div class="row">
+        <div class="row setExperienceData">
           <div class="col-md-12">
             <ul class="list-inline search-list">
  	  <h4 class="text-center" style="color:#fff;">Select minimum experience you are looking for:</h4>
@@ -407,7 +407,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
       <div class="background-blue">
         <div class="row">
           <div class="col-md-12">
-            <ul class="list-inline search-list">
+            <ul class="list-inline search-list setLanData">
               <?php foreach($language as $languageDatas) { ?>
               <li class="bg-gray lan<?php echo $languageDatas['language_id']; ?> removeLan" id="">
                 <div class="search-profile text-center">
@@ -464,4 +464,3 @@ else
 	
 
 }
-
