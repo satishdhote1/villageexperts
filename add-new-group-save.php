@@ -54,8 +54,8 @@ if(isset($_REQUEST['submit']))
 								  $resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
 							
 								  //call the function (when passing path to pic)
-								  if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
-										
+								  //if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
+								 if (move_uploaded_file($file,  $resizedFile)) {		
 										$sqlUpdate="update groups set image='".$group_last_id.'.'.$imageFileType."' where group_id=".$group_last_id;
 								$tableResults = mysqli_query($conn, $sqlUpdate);
 								if($tableResults > 0)
