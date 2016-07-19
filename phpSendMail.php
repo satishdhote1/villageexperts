@@ -9,10 +9,12 @@ private $emailUsername ="AKIAJDE2TN3CRH5SMSVQ";
 private $emailPassword ="Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni";
 private $host= "email-smtp.us-west-2.amazonaws.com";
 */
-
-private $emailUsername ="AKIAIVWQDQ5MXUANO4ZA";
+private $emailUsername ="dassamtest2@gmail.com";
+private $emailPassword ="dassamtest253";
+private $host= "smtp.gmail.com";
+/*private $emailUsername ="AKIAIVWQDQ5MXUANO4ZA";
 private $emailPassword ="AoBHQwH1NZ+wZIPeSOGa5sOoF1wmhivD2RlX8thYdlyl";
-private $host= "smtp.us-west-2.amazonaws.com";
+private $host= "smtp.us-west-2.amazonaws.com";*/
 private $from ="dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
 private $port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 private $from_name ="Village Expert";
