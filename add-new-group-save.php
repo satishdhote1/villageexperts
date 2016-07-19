@@ -50,7 +50,7 @@ if(isset($_REQUEST['submit']))
 							
 								  //indicate the path and name for the new resized file
 								  $resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
-							
+							die("file==".$file."===== ResizedFile--". $resizedFile);
 								  //call the function (when passing path to pic)
 								  if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
 										
