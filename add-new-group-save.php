@@ -37,7 +37,7 @@ if(isset($_REQUEST['submit']))
 						 if(isset($_FILES) && is_array($_FILES))
 						 {
 							// die("test");
-								  $target_dir = "images/groupPhotos/";
+								  $target_dir = "./images/groupPhotos/";
 								$target_file = $target_dir .time(). basename($_FILES['file']["name"]);
 								
 								//die($target_file);
