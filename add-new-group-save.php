@@ -6,12 +6,12 @@ $conn=new connections();
 $conn=$conn->connect();
 if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 {
-/*
+
 echo "<br><pre>";
 print_r($_FILES);echo "<br>";
 print_r($_REQUEST);
 echo "</pre><br>";
-*/
+
 if(isset($_REQUEST['submit']))
 {
 	
