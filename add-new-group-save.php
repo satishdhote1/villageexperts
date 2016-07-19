@@ -62,9 +62,9 @@ if(isset($_REQUEST['submit']))
 										$uploaded_file= $group_last_id.'.'.$imageFileType;
 										
 										$result['msg'] = "The file ".$group_last_id.'.'.$imageFileType. " has been uploaded.";
-										$result['imageName'] = 'images/groupPhotos/'.$group_last_id.'.'.$imageFileType;
+										$result['imageName'] = 'groupPhotos/'.$group_last_id.'.'.$imageFileType;
 										$passStr = $group_names.'-Group Created.<br>Redirecting....';
-										$passImg = 'images/groupPhotos/'.$group_last_id.'.'.$imageFileType;
+										$passImg = 'groupPhotos/'.$group_last_id.'.'.$imageFileType;
 										header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=my-group");
 										//header("Refresh: 3; url=my-group.php");
 										//echo '<center><h1 style="color:red">'.$group_names.'-Group Created .Redirecting....</h1></center>';
