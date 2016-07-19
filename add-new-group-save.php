@@ -11,7 +11,7 @@ echo "<br><pre>";
 print_r($_FILES);echo "<br>";
 print_r($_REQUEST);
 echo "</pre><br>";
-
+die();
 if(isset($_REQUEST['submit']))
 {
 	
