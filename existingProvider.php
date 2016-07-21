@@ -92,7 +92,7 @@ $sql5="select language_id,languages from 	sp_language ORDER BY languages";
 			}
 			
 	
-$sql="select user.start_date_time,user.end_date_time,user.ammount, sp.sp_name,sp.sp_image,sp.sp_specialisation_id,sp.sp_sub_specialisation_id,sp.sp_year_of_experience,sp.sp_rate_type3,sp.degree,sp.sp_language_id from service_provider sp,connect user where exists(select null from  connect where user.sp_id=sp.sp_id)
+$sql="select user.start_date_time,user.end_date_time,user.ammount,sp.sp_id, sp.sp_name,sp.sp_image,sp.sp_specialisation_id,sp.sp_sub_specialisation_id,sp.sp_year_of_experience,sp.sp_rate_type3,sp.degree,sp.sp_language_id from service_provider sp,connect user where exists(select null from  connect where user.sp_id=sp.sp_id)
  and user.sr_id=".$user_id." group by sp.sp_id  order by user.start_date_time desc";
 //$sql="select user.start_date_time,user.end_date_time,user.ammount, sp.sp_name,sp.sp_image,sp.sp_specialisation_id,sp.sp_sub_specialisation_id,sp.sp_year_of_experience,sp.sp_rate_type3,sp.degree,sp.sp_language_id from  connect user , service_provider sp where user.sr_id = ".$user_id." and user.sp_id in (select sp_id from service_provider) group by user.connect_id order by user.connect_id desc";
 			$tableResult = mysqli_query($conn, $sql);
