@@ -175,8 +175,8 @@ var $document = $(document);
  	        allIDs = jQuery.grep(allIDs, function(value) {
 	         return value != expertId;
 		});
-		console.log(allVals); 
-		console.log(allIDs); 
+		console.log("after remove--"+allVals); 
+		console.log("after remove--"+allIDs); 
 		}
  		obj.attr("checked", true); 
  		var expertId = obj.attr("for");
