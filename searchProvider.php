@@ -205,6 +205,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 	border-radius:50%;
 }
    .checkbox-icon img{width:100%;height:100%;}
+   input[type="text"]{color:#f93;}
 </style>
 <body class="bodybg">
 <div class="loader-exp" style="display:none;">
