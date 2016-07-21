@@ -248,32 +248,32 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 <div class="col-ms-10 col-sm-10 col-xs-12" style="padding:0px;">
 <ul class="list-inline display-list">
 <li>
-	<label>EXPERTISE</label>
+	<label class="providerLabel">EXPERTISE</label>
 <input type="text" placeholder="Expertise" readonly class="form-control radius0 specialisation" value="" name="specialisation">
 <input type="hidden" readonly class="SpecialisationIDS" value="" name="SpecialisationIDS">	
 </li>
 <li>
-<label>SUB SPECIALISATION</label>
+<label class="providerLabel">SUB SPECIALISATION</label>
 <input type="text"  placeholder="Sub Specialization"readonly class="subSpecial form-control radius0" value="" name="subSpecial">
 <input type="hidden" readonly class="SubSpecialIDS" value="" name="SubSpecialIDS">
 </li>
 <li>
-	<label>DEGREE</label>
+	<label class="providerLabel">DEGREE</label>
 	<input type="text" placeholder="Degree" readonly class="degree form-control radius0" value="" name="degree">
         <input type="hidden" readonly class="DegreeIDS" value="" name="DegreeIDS">
 </li>
 <li>
-	<label>EXPERIENCE</label>
+	<label class="providerLabel">EXPERIENCE</label>
 	<input type="text" placeholder="Experience" readonly class="experience form-control radius0" value="" name="experience">
         <input type="hidden" readonly class="ExperienceIDS" value="" name="ExperienceIDS">
 </li>
 <li>
-	<label>RATE/HOUR</label>
+	<label class="providerLabel">RATE/HOUR</label>
 	<input type="text"  placeholder="Rate Per Hour"readonly class="rate form-control radius0" value="" name="rate">
 	<input type="hidden" readonly class="RateIDS" value="" name="RateIDS">
 </li>
 <li>
-	<label>LANGUAGE</label>
+	<label class="providerLabel">LANGUAGE</label>
 	 <input type="text" placeholder="Language" readonly class="language form-control radius0" value="" name="language">
           <input type="hidden" readonly class="LanguageIDS" value="" name="LanguageIDS">
 </li>
