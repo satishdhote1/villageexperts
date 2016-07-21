@@ -246,7 +246,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
      <div class="row">
  <form action="result.php?source=searchProvider" method="post" name="search" id="search"  style="color:#afba00;">
 <div class="col-ms-10 col-sm-10 col-xs-12" style="padding:0px;">
-<ul class="list-inline display-list" style="color:#f93;" >
+<ul class="list-inline display-list" >
 <li>
 	<label class="providerLabel">EXPERTISE</label>
 <input type="text" placeholder="Expertise" readonly class="form-control radius0 specialisation" value="" name="specialisation">
