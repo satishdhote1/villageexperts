@@ -190,11 +190,12 @@ var $document = $(document);
 		}
 		 allVals = [];allIDs = [];
 		  $(".languageLabel").each(function () {
-		  console.log("test1");  
-		 if(obj.attr("checked"))
+		  console.log("test1");
+		  var obj2 = $(this);
+		 if(obj2.attr("checked"))
 		 {
-		 expertValue = obj.attr("dir");
-		 expertId =  obj.attr("for");
+		 expertValue = obj2.attr("dir");
+		 expertId =  obj2.attr("for");
 		 allVals.push(expertValue);
 		 allIDs.push(expertId);
 		console.log(allIDs);
