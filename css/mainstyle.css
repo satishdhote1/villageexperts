@@ -1,6 +1,8 @@
 @charset "utf-8";
 
 /* CSS Document */
+.providerLabel{font-size:13px;}
+
 
 .bodybg{background:url(../images/background.jpg) 100% 100%;background-size:cover;font-family:Arial, Helvetica, sans-serif;background-attachment:fixed;}
 
