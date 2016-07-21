@@ -249,7 +249,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 <ul class="list-inline display-list" >
 <li>
 	<label class="providerLabel">EXPERTISE</label>
-<input type="text" placeholder="Expertise" readonly class="form-control radius0 specialisation" value="" name="specialisation">
+<input type="text" placeholder="Expertise" readonly class="form-control radius0 specialisation" value="" name="specialisation" style="color:#f93a">
 <input type="hidden" readonly class="SpecialisationIDS" value="" name="SpecialisationIDS">	
 </li>
 <li>
