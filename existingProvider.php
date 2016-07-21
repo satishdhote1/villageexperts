@@ -175,15 +175,15 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount,sp.sp_id, sp.s
   <thead>
     <tr class="hder-modify-table">
       <th width="9.09%"></th>
-      <th width="9.09%">Name</th>
-      <th width="9.09%">Expertise</th>
-      <th width="9.09%">Sub-Specialization</th>
-      <th width="9.09%">Education</th>
-      <th width="9.09%">Experience</th>
-       <th width="9.09%">Rate/Hr</th>
-        <th width="9.09%">Language</th>
-        <th width="9.09%">Start Time</th>
-        <th width="9.09%">End Time</th>
+      <th width="9.09%">NAME</th>
+      <th width="9.09%">EXPERTISE</th>
+      <th width="9.09%">SUB SPECIALISATION</th>
+      <th width="9.09%">EDUCATION</th>
+      <th width="9.09%">EXPERIENCE</th>
+       <th width="9.09%">RATE/HR</th>
+        <th width="9.09%">LANGUAGE</th>
+        <th width="9.09%">START TIME</th>
+        <th width="9.09%">END TIME</th>
         <th width="9.09%">Ammount</th>
         <th>&nbsp;</th>
     </tr>
