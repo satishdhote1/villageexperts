@@ -182,13 +182,19 @@ var $document = $(document);
  		var expertId = obj.attr("for");
 	   	var expertValue = obj.attr("dir");
  	        if(flag ==0){
+         	while (allVals.length > 0) {
+		   allVals.pop();
+		}
+		while (allIDs.length > 0) {
+		 allIDs.pop();
+		}
 		 allVals = [];allIDs = [];
 		  $(".languageLabel").each(function () {
 		  console.log("test1");  
-		 if( $(this).attr("checked"))
+		 if(obj.attr("checked"))
 		 {
-		 expertValue = $(this).attr("dir");
-		 expertId =  $(this).attr("for");
+		 expertValue = obj.attr("dir");
+		 expertId =  obj.attr("for");
 		 allVals.push(expertValue);
 		 allIDs.push(expertId);
 		console.log(allIDs);
