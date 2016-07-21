@@ -293,7 +293,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 </section>
 <section class="block-4-section">
 <div class="container">
-  <div class="row marginTOP" style="background:#fff;padding:15px 0px;margin:10px 0px;border-radius:5px;">
+  <div class="row marginTOP" style="background:#ffffaa;/*#fff;*/padding:15px 0px;margin:10px 0px;border-radius:5px;">
  <!-- set expertise-->
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
