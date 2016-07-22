@@ -494,7 +494,7 @@ mins</div>
   <div class="left_attorny_box" >
 
   <div class="left_attorny_white_box">
-  <table width="100%" border="1" bordercolordark="#666666">
+  <table width="100%" border="1" bordercolordark="#666666" style="background: red;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;">
   <tr>
   <td class="headingData">Specialization: </td>
   <td class="ContentData">
@@ -577,7 +577,7 @@ else{
 
  <div class="alert alert-success connSuccess" style="display:none">
   <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Connected ! </strong><?php echo $user_name; ?> successfully Connected to <span><?php echo $specialDatas['sp_name']; ?></span>.
+  <strong>Connected ! </strongleft_attorny_white_box><?php echo $user_name; ?> successfully Connected to <span><?php echo $specialDatas['sp_name']; ?></span>.
   Redirecting...
 </div> 
 
