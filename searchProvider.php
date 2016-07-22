@@ -106,7 +106,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Village Expart</title>
+<title>Village Expert</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="css/font-awesome.min.css">
@@ -325,7 +325,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <div class="clearfix"></div>
   </div>
 <!-- set Sub Specialization-->
-  <div class="box-2">
+  <div class="box-2 moveSubSpecial">
     <div class="col-md-3 col-xs-5 text-center">
     <div class="back-ground">
     <p class="title-name-2">Sub Specialization</p>
