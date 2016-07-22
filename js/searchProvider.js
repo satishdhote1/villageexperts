@@ -70,11 +70,11 @@ var $document = $(document);
 		 else if(value <=15)
 		 return "10-15";
 		 else if(value <=20)
-		 return "15-20"
+		 return "15-20";
 		 else if(value <=25)
-		 return "20-25"
+		 return "20-25";
 		 else
-		 return 30+
+		 return "30+";
 		 
 	 }
      //chckbox group check
