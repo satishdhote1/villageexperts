@@ -47,7 +47,7 @@ if(!empty($user_id)){
 			//echo $sql2;exit();
 			$tableResults = mysqli_query($conn, $sql2);
 									
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;">
+		/*	$body = '<div style="width:100%;max-width:660px;margin:0px auto;">
 			<div style="text-align:center;"><img src="http://'.
 			$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 			$body.='<div 
@@ -71,9 +71,9 @@ if(!empty($user_id)){
 			//sendMail($row['gm_email'],$row['gm_name'],$body);//calling mail function
 			$mailSent = $emailObject->sendMail($row['gm_email'],$row['gm_name'],"Village-Expert connection between members!",$body);
 			if($mailSent)
-			{
+			{*/
 				header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
-			}
+		//	}
 			
 		}//end of mysqli_num_rows>0
 		else
@@ -95,7 +95,7 @@ if(!empty($user_id)){
 		    $row = mysqli_fetch_assoc($tableResult);
 	        $sql2="INSERT INTO connect (sr_id,sp_id,start_date_time)values($user_id,$memberId,'".$currentTimestamp."')" ;
 		    $tableResults = mysqli_query($conn, $sql2);
-		
+		/*
 			//print_r($row);die();
 			$body = '<div style="width:100%;max-width:660px;margin:0px auto;">
 			<div style="text-align:center;"><img src="http://'.	$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
@@ -110,9 +110,9 @@ if(!empty($user_id)){
 			//sendMail($row['sp_email'],$row['sp_name'],$body);//calling mail function
 			$mailSent = $emailObject->sendMail($row['sp_email'],$row['sp_name'],"Village-Expert connection between members!",$body);
 			if($mailSent)
-			{
+			{*/
 				header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
-			}
+		//	}
 		}
 		else
 		{
