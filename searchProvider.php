@@ -264,6 +264,11 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
         <input type="hidden" readonly class="DegreeIDS" value="" name="DegreeIDS">
 </li>
 <li>
+	<label class="providerLabel">LANGUAGE</label>
+	 <input type="text" placeholder="Language" readonly class="language form-control radius0" value="" name="language">
+          <input type="hidden" readonly class="LanguageIDS" value="" name="LanguageIDS">
+</li>
+<li>
 	<label class="providerLabel">EXPERIENCE</label>
 	<input type="text" placeholder="Experience" readonly class="experience form-control radius0" value="" name="experience">
         <input type="hidden" readonly class="ExperienceIDS" value="" name="ExperienceIDS">
@@ -272,11 +277,6 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 	<label class="providerLabel">RATE/HOUR</label>
 	<input type="text"  placeholder="Rate Per Hour"readonly class="rate form-control radius0" value="" name="rate">
 	<input type="hidden" readonly class="RateIDS" value="" name="RateIDS">
-</li>
-<li>
-	<label class="providerLabel">LANGUAGE</label>
-	 <input type="text" placeholder="Language" readonly class="language form-control radius0" value="" name="language">
-          <input type="hidden" readonly class="LanguageIDS" value="" name="LanguageIDS">
 </li>
 <div class="clearfix"></div>
 </ul>
