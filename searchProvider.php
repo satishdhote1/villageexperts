@@ -444,7 +444,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
  <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
     <div class="back-ground">
-    <span id="js-outputExperience"></span>
+    <span id="js-outputExperience" style="background:white;"></span>
     <p class="title-name-2">Experience</p>
     </div>
     </div>
