@@ -191,7 +191,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
    .modifi-list-item-2:hover{background:rgba(0,0,0,0.1);}
    .modifi-list-item-2:hover .over{display:block;transition:all 02s ease-in-out 0s;}
    .back-ground{background:#036;}
-   .title-name-2{font-size:17px;color:#60C;padding:10px 0px;letter-spacing:1px;text-transform:uppercase;margin-top:25px;color:#fff;border-radius:3px;}
+   .title-name-2{font-size:17px;color:#60C;padding:10px 0px;letter-spacing:1px;text-transform:uppercase;margin-top:0px/*25px*/;color:#fff;border-radius:3px;}
    .box-2{margin:15px 0px 25px 0px;border-bottom:2px dashed #999;}
 .checkbox-icon {
     height: 100%;
