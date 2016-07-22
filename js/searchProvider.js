@@ -7,7 +7,7 @@ var $document = $(document);
 		// alert(element.value);
          var value = element.value;
          var output = $("#js-output");//element.parentNode.getElementsByTagName('output')[0];
-         output.text(getExpCat(value));
+         output.text(value);
 		 if(value!=parseInt(1))
 		 $(".rate").val(value);
      } /** * Initial value output */
