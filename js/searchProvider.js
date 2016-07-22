@@ -114,9 +114,9 @@ $("input:checkbox").on('click', function() {
 			   resultData = resultData + '<li class="modifi-list-item-2" id="'+id+'"><div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/'+images+'"></div></div><div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="col-xs-12 text-center"><div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px"><input type="checkbox" name="subSpecial[1][]" id="subSpecial" value="1" class="no-styles"><label for="subSpecial'+id+'" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'"></span></label><input type="hidden" name="paymentnonce" id="paymentnonce" value="" /></div></div><div class="setHooverSubExprt'+id+' removeSubExp" id=""></div></li>';
 
                    });
-			alert( $(".removeExp").offset().top);
+		//	alert( $(".removeExp").offset().top);
                       $('.setSubSpecialData').html(resultData);
-                      $('html').animate({scrollTop: $(".removeExp").offset().top}, 2000);
+                      $('html').animate({scrollTop: $(".removeExp").offset().top+25}, 2000);
 					 $(".removeExp").each(function(index, element) {
 					 
 					  if($(this).hasClass("over"))
