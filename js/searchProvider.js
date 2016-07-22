@@ -7,7 +7,7 @@ var $document = $(document);
 		// alert(element.value);
          var value = element.value;
          var output = $("#js-output");//element.parentNode.getElementsByTagName('output')[0];
-         output.text(value);
+         output.text(getExpCat(value));
 		 if(value!=parseInt(1))
 		 $(".rate").val(value);
      } /** * Initial value output */
@@ -30,8 +30,8 @@ var $document = $(document);
 		// alert(element.value);
          var value = element.value;
          var output = $("#js-outputExperience");//element.parentNode.getElementsByTagName('output')[0];
-         output.text(value);
-		 if(value!=parseInt(5))
+         output.text(getExpCat(value));
+		 if(value!=parseInt(1))
 		 $(".experience").val(value);
 		 $(".ExperienceIDS").val(getExpID(value));
      } /** * Initial value output */
@@ -59,6 +59,22 @@ var $document = $(document);
 		 return 4
 		 else
 		 return 5
+		 
+	 }
+	  function getExpCat(value){
+		 
+		 if(value <=5)
+		 return "1-5";
+		 else if(value <=10)
+		 return "5-10";
+		 else if(value <=15)
+		 return "10-15";
+		 else if(value <=20)
+		 return "15-20"
+		 else if(value <=25)
+		 return "20-25"
+		 else
+		 return 30+
 		 
 	 }
      //chckbox group check
