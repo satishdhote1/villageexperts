@@ -444,6 +444,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
  <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
     <div class="back-ground">
+    <span id="js-outputExperience"></span>
     <p class="title-name-2">Experience</p>
     </div>
     </div>
@@ -451,7 +452,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <ul class="list-inline">
               <h4>Select minimum experience you are looking for:</h4>
          <div class="seclect-box" style="width:100%!important">
-         <input type="range" min="1" max="100" step="5" value="0" data-rangeslider2>$<span id="js-outputExperience"></span>
+         <input type="range" min="1" max="100" step="4" value="0" data-rangeslider2>
 	</div>            </ul>
     </div>
     <div class="clearfix"></div>
@@ -460,6 +461,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
   <div class="box-2">
     <div class="col-md-3 col-xs-5 text-center">
     <div class="back-ground">
+    <span id="js-output"></span>
     <p class="title-name-2">rate per hour</p>
     </div>
     </div>
@@ -467,7 +469,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <ul class="list-inline">
               <h4>Select maximum rate you willing to pay:</h4>
          <div class="seclect-box" style="width:100%!important">
-         <input type="range" min="1" max="100" step="1" value="0" data-rangeslider>$<span id="js-output"></span>
+         <input type="range" min="1" max="100" step="1" value="0" data-rangeslider>
 	</div>            </ul>
     </div>
     <div class="clearfix"></div>
