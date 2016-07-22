@@ -493,7 +493,7 @@ mins</div>
 
   <div class="left_attorny_box" >
 
-  <div class="left_attorny_white_box">
+  <div class="left_attorny_white_box_result">
   <table width="100%" border="1" bordercolordark="#666666" style="background: red;border-radius:10px;-moz-border-radius:10px;-webkit-border-radius:10px;">
   <tr>
   <td class="headingData">Specialization: </td>
