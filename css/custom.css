@@ -1076,6 +1076,19 @@
 	padding-top: 30px;
 	padding-bottom: 30px;
 }
+.left_attorny_white_box_result {
+	width:100%;
+	float:left;
+	/*background:#FFF;*/
+	border-radius:6px;
+	font-family:'RobotoCondensed-Regular';
+	font-size:20px;
+	color:#0078ac;
+	text-align:center;
+	line-height: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
 .certifite_right_box {
 	width:45%;
 	float:right;
