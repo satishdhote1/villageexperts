@@ -29,7 +29,7 @@ var $document = $(document);
          var value = element.value;
          var output = $("#js-outputExperience");//element.parentNode.getElementsByTagName('output')[0];
          output.text(value);
-		 if(value!=parseInt(5))
+		 if(value!=parseInt(1))
 		 $(".experience").val(value);
 		 $(".ExperienceIDS").val(getExpID(value));
      } /** * Initial value output */
