@@ -234,7 +234,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
 		  ?>
 
           </p>
-          <button class="btn btn-info bg-blue">Logout</button>
+          <div class=""><a href="logout.php" class="btn btn-info bg-blue logout">Logout</a></div>
         </div>
         <div class="clearfix"></div>
       </div>
