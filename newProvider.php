@@ -141,7 +141,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 .providerLabel {
     font-size: 13px;
 }
- input[type="text"]{color:#f93;}
+input[type="text"]{color:#f93;}
 .over-lap {
 	display: block !important
 }
@@ -219,7 +219,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <section class="block-bg">
 <div class="container">
      <div class="row">
- <form action="result.php?source=newProvider" method="post" name="search" id="search" >
+ <form action="result.php?source=newProvider" method="post" name="search" id="search" style="color:#afba00;">
 <div class="col-ms-10 col-sm-10 col-xs-12" style="padding:0px;">
 <ul class="list-inline display-list">
 <li>
