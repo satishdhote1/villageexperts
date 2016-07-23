@@ -138,6 +138,10 @@ $sql5="select * from 	sp_language ORDER BY languages";
 <link href="js/rangeslider.js-2.1.1/rangeslider.css" rel="stylesheet">
 </head>
 <style>
+.providerLabel {
+    font-size: 13px;
+}
+ input[type="text"]{color:#f93;}
 .over-lap {
 	display: block !important
 }
@@ -147,7 +151,7 @@ $sql5="select * from 	sp_language ORDER BY languages";
     z-index: 100000;}
 	.header-part{position:fixed;z-index:100000;background:#E9E9EA;}
 	.sear-section{padding-top:260px;}
-	.btn-search-2{background:#ff8003;border:0px;padding:7px 45px;color:#fff;transition:all ease-in-out 0.2s 0s;margin-top:20px;}
+	.btn-search-2{background:#ff8003;border:0px;padding:7px 45px;color:#fff;transition:all ease-in-out 0.2s 0s;margin-top:28%;}
 	.btn-search-2:hover{background:#697bff;color:#eaecff;}
 	.radius0{border-radius:0px;}
 	.display-list > li {
