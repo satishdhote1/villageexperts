@@ -452,7 +452,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <ul class="list-inline">
               <h4>Select minimum experience you are looking for:</h4>
          <div class="seclect-box" style="width:100%!important">
-         <input type="range" min="1" max="100" step="4" value="0" data-rangeslider2>
+         <input type="range" min="1" max="30" step="1" value="0" data-rangeslider2>
 	</div>            </ul>
     </div>
     <div class="clearfix"></div>
