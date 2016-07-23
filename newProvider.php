@@ -374,7 +374,35 @@ input[type="text"]{color:#f93;}
       </div>
     </div>
     </div><?php */?>
+
     <div class="row marginTOP">
+    <div class="col-md-12">
+      <h1 class="search-title">Language</h1>
+      <div class="background-blue">
+        <div class="row">
+          <div class="col-md-12">
+            <ul class="list-inline search-list setLanData">
+              <?php foreach($language as $languageDatas) { ?>
+              <li class="bg-gray lan<?php echo $languageDatas['language_id']; ?> removeLan" id="">
+                <div class="search-profile text-center">
+                <div class="img-provider"><img src="images/Languages/<?php echo $languageDatas['images']; ?>"></div>
+                  <p class=""><a href="javascript:void(0);" class="search-parson-position text-center languageLabel" id="languageLabel" dir="<?php echo $languageDatas['languages']; ?>" for="<?php echo $languageDatas['language_id']; ?>"><?php echo $languageDatas['languages']; ?></a></p>
+                </div>
+              </li>
+               <?php } ?>
+            </ul>
+          </div>
+        
+        </div>
+      </div>
+    </div> 
+    
+    
+    
+  </div>
+  
+  
+      <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Experience</h1>
       <div class="background-blue">
@@ -411,32 +439,6 @@ input[type="text"]{color:#f93;}
       </div>
     </div>
     </div>
-    <div class="row marginTOP">
-    <div class="col-md-12">
-      <h1 class="search-title">Language</h1>
-      <div class="background-blue">
-        <div class="row">
-          <div class="col-md-12">
-            <ul class="list-inline search-list setLanData">
-              <?php foreach($language as $languageDatas) { ?>
-              <li class="bg-gray lan<?php echo $languageDatas['language_id']; ?> removeLan" id="">
-                <div class="search-profile text-center">
-                <div class="img-provider"><img src="images/Languages/<?php echo $languageDatas['images']; ?>"></div>
-                  <p class=""><a href="javascript:void(0);" class="search-parson-position text-center languageLabel" id="languageLabel" dir="<?php echo $languageDatas['languages']; ?>" for="<?php echo $languageDatas['language_id']; ?>"><?php echo $languageDatas['languages']; ?></a></p>
-                </div>
-              </li>
-               <?php } ?>
-            </ul>
-          </div>
-        
-        </div>
-      </div>
-    </div> 
-    
-    
-    
-  </div>
-  
   
   </div>
 </section>
