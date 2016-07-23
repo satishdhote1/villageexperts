@@ -155,7 +155,7 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount,sp.sp_id, sp.s
 		  ?>
 
           </p>
-          <button class="btn btn-info bg-blue">Logout</button>
+           <div class=""><a href="logout.php" class="btn btn-info bg-blue logout">Logout</a></div>
         </div>
         <div class="clearfix"></div>
       </div>
