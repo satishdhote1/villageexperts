@@ -74,7 +74,7 @@ var $document = $(document);
 		 else if(value <=25)
 		 return "20-25";
 		 else
-		 return "30+";
+		 return "25+";
 		 
 	 }
      //chckbox group check
