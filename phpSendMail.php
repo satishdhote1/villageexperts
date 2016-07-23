@@ -13,7 +13,7 @@ private $host= "email-smtp.us-west-2.amazonaws.com";
 private $emailUsername ="AKIAIQSFMVFJH57HUPQQ";
 private $emailPassword ="AloCwokTJfjekrur2vIzaQeCM1SFocG9C3bSEc1Ug3RF";
 private $host= "email-smtp.us-west-2.amazonaws.com";
-private $from ="villageexpert.info@gmail.com";//"villageexpert.info@gmail.com";
+private $from ="villageexpert.info@gmail.com";//"dassamtest2@gmail.com";
 private $port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 private $from_name ="Village Expert";
 public function geEmailConfig()
