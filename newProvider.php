@@ -411,7 +411,7 @@ input[type="text"]{color:#f93;}
             <ul class="list-inline search-list">
  	  <h4 class="text-center" style="color:#fff;">Select minimum experience you are looking for:</h4>
          <div class="seclect-box" style="width:100%!important">
-        <input type="range" min="5" max="100" step="5" value="5" data-rangeslider2>$<span id="js-outputExperience"></span>
+        <input type="range" min="5" max="100" step="5" value="5" data-rangeslider2><span id="js-outputExperience"></span>
 	</div>
           </ul>
           </div>
