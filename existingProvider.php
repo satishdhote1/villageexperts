@@ -116,7 +116,7 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount,sp.sp_id, sp.s
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>village expart</title>
+<title>Village Expert</title>
 
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="css/font-awesome.min.css">
