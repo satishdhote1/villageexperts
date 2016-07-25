@@ -166,7 +166,7 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount,sp.sp_id, sp.s
 
 
 
-<div class="container search-background margin-top60">
+<div class="container-fluid search-background margin-top60">
   <div class="row marginTOP">
     <div class="col-md-12 text-center">
       <h1 class="result-text">Existing Providers</h1>
@@ -174,7 +174,7 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount,sp.sp_id, sp.s
       <table class="table table-hover">
   <thead>
     <tr class="hder-modify-table">
-      <th width="9.09%"></th>
+      <th width=""></th>
       <th width="9.09%">NAME</th>
       <th width="9.09%">EXPERTISE</th>
       <th width="9.09%">SUB SPECIALISATION</th>
