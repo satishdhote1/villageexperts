@@ -124,6 +124,8 @@
 .header-bg {
 
     background: #60567d;
+	 border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 
 }
 
@@ -222,6 +224,7 @@
     min-height: 67px;
 
     padding:15px 25px 0px 0px;
+	border-radius:5px;
 
     text-align: right;
 
@@ -349,7 +352,7 @@ label.control-label {
 
 
 
-.bg-off-white{background:#E8E8E8;margin-top:80px; padding-bottom: 30px;margin-bottom:30px;}
+.bg-off-white{background:#E8E8E8;margin-top:80px; padding-bottom: 30px;margin-bottom:30px;border-radius:5px;}
 
 
 
@@ -362,6 +365,8 @@ label.control-label {
     padding: 3px 0 10px 0px;
 
     transition: all 0.5s ease-in-out 0s;
+	 border-bottom-left-radius: 5px;
+	  border-bottom-right-radius: 5px;
 
 }	
 
@@ -405,7 +410,7 @@ label.control-label {
 
     font-family: helvetica;
 
-    font-size: 25px;
+    font-size: 20px;
 
     margin: 0;
 
@@ -907,21 +912,22 @@ h1.search-title {
 
     border-top-right-radius: 15px;
 
-    color:#fff;
+    color:red/*#fff*/;
 
     font-family: "helvetica";
 
-    font-size: 15px;
+    font-size: 30px /*20px*/;
 
     font-weight: 500;
 
     padding: 11px;
 
     text-align: center;
-
+	
+ text-shadow: 1px 1px 1px #666
     text-transform: uppercase;
 
-    width: 20%;
+    width: 36%;
 
 	margin-bottom: 0;
 
@@ -971,7 +977,18 @@ h1.search-title {
 
 }
 
-.search-parson-position{background:#7d71a3;color:#fff;font-family:Arial, Helvetica, sans-serif;font-size:15px;padding:10px 0px;margin:5px 0px;display: inherit;transition:all 0.3s ease-in-out 0s;font-weight:bold;}
+.search-parson-position{  background: #7d71a3;
+    border-radius: 5px;
+    color: #fff;
+    display: inherit;
+    font-family: georgia;
+    font-size: 18px;
+   overflow:hidden;
+    letter-spacing: 1px;
+    margin: 5px 0;
+    padding: 10px 0;
+    text-transform: uppercase;
+    transition: all 0.3s ease-in-out 0s;}
 
 .search-parson-position:hover{background:#c0b3e6;color:#000;text-decoration:none;}
 
@@ -1027,7 +1044,7 @@ h1.search-title {
 
     font-family:;
 
-    font-size: 14px;
+    font-size: 17px;
 
     padding: 10px 0 !important;
 
