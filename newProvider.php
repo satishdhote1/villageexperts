@@ -157,6 +157,7 @@ input[type="text"]{color:#f93;}
 	.display-list > li {
     width: 158px;
 }
+.right-radius{border-radius:6px;}
 .display-list{margin:20px 0px;padding:0px}
 .img-provider {
     border-radius: 50%;
@@ -238,6 +239,11 @@ input[type="text"]{color:#f93;}
         <input type="hidden" readonly class="DegreeIDS" value="" name="DegreeIDS">
 </li>
 <li>
+	<label class="providerLabel">LANGUAGE</label>
+	 <input type="text" placeholder="Language" readonly class="language form-control radius0" value="" name="language">
+          <input type="hidden" readonly class="LanguageIDS" value="" name="LanguageIDS">
+</li>
+<li>
 	<label class="providerLabel">EXPERIENCE</label>
 	<input type="text" placeholder="Experience" readonly class="experience form-control radius0" value="" name="experience">
         <input type="hidden" readonly class="ExperienceIDS" value="" name="ExperienceIDS">
@@ -247,11 +253,7 @@ input[type="text"]{color:#f93;}
 	<input type="text"  placeholder="Rate Per Hour"readonly class="rate form-control radius0" value="" name="rate">
 	<input type="hidden" readonly class="RateIDS" value="" name="RateIDS">
 </li>
-<li>
-	<label class="providerLabel">LANGUAGE</label>
-	 <input type="text" placeholder="Language" readonly class="language form-control radius0" value="" name="language">
-          <input type="hidden" readonly class="LanguageIDS" value="" name="LanguageIDS">
-</li>
+
 <div class="clearfix"></div>
 </ul>
 </div>
@@ -276,8 +278,8 @@ input[type="text"]{color:#f93;}
       <h1 class="search-title">Expertise</h1>
       <div class="background-blue">
         <div class="row">
-          <div class="col-md-12">
-            <ul class="list-inline search-list specialData">
+          <div class="col-md-12 right-radius">
+            <ul class="list-inline search-list specialData ">
             <?php foreach($specialData as $specialDatas) { ?>
               <li class="bg-gray exp<?php echo $specialDatas['specialisation_id']; ?> removeExp" id="">
                 <div class="search-profile text-center">
@@ -305,7 +307,7 @@ input[type="text"]{color:#f93;}
       <h1 class="search-title">Sub Specialization</h1>
       <div class="background-blue">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 right-radius">
             <ul class="list-inline search-list setSubSpecialData">
              <?php foreach($subspecialData as $subspecialDatas) { ?>
               <li class="bg-gray subE<?php echo $subspecialDatas['sub_specialisation_id']; ?>  removeSubExp" id="">
@@ -333,7 +335,7 @@ input[type="text"]{color:#f93;}
       <h1 class="search-title">Degree</h1>
       <div class="background-blue">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 right-radius">
             <ul class="list-inline search-list setDegreeData">
               <?php foreach($education as $educationDatas) { ?>
               <li class="bg-gray deg<?php echo $educationDatas['EducationID']; ?> removeDeg" id="">
@@ -380,7 +382,7 @@ input[type="text"]{color:#f93;}
       <h1 class="search-title">Language</h1>
       <div class="background-blue">
         <div class="row">
-          <div class="col-md-12">
+          <div class="col-md-12 right-radius">
             <ul class="list-inline search-list setLanData">
               <?php foreach($language as $languageDatas) { ?>
               <li class="bg-gray lan<?php echo $languageDatas['language_id']; ?> removeLan" id="">
@@ -409,9 +411,9 @@ input[type="text"]{color:#f93;}
         <div class="row setExperienceData">
           <div class="col-md-12">
             <ul class="list-inline search-list">
- 	  <h4 class="text-center" style="color:#fff;">Select minimum experience you are looking for:</h4>
+ 	  <h4 class="text-center right-radius" style="color:#fff;"><span class="badge pull-left" style="padding:5px;background:#FFF;margin-left:5px;color:#F00;" id="js-outputExperience"></span>Select minimum experience you are looking for:</h4>
          <div class="seclect-box" style="width:100%!important">
-        <input type="range" min="1" max="30" step="1" value="1" data-rangeslider2><span id="js-outputExperience"></span>
+        <input type="range" min="1" max="30" step="1" value="1" data-rangeslider2>
 	</div>
           </ul>
           </div>
@@ -423,14 +425,14 @@ input[type="text"]{color:#f93;}
    
    <div class="row marginTOP">
     <div class="col-md-12">
-      <h1 class="search-title">rate per hour</h1>
+      <h1 class="search-title">Rate per Hour</h1>
       <div class="background-blue">
         <div class="row">
           <div class="col-md-12">
             <ul class="list-inline search-list">
- 	  <h4 class="text-center" style="color:#fff;">Select maximum rate you willing to pay:</h4>
+ 	  <h4 class="text-center right-radius" style="color:#fff;"><span class="badge pull-left" style="padding:5px;background:#FFF;margin-left:5px;color:#F00;" id="js-output"></span>Select maximum rate you willing to pay:</h4>
          <div class="seclect-box" style="width:100%!important">
-         <input type="range" min="0" max="100" step="1" value="1" data-rangeslider>$<span id="js-output"></span>
+         <input type="range" min="0" max="100" step="1" value="1" data-rangeslider>
 	</div>
           </ul>
           </div>
