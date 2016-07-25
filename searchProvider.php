@@ -190,18 +190,15 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
    .over{height:100%;width:100%;background:rgba(0,0,0,0.5);position:absolute;top:0;left:0;display:block;transition:all 05s ease-in-out 0s;}
    .modifi-list-item-2:hover{background:rgba(0,0,0,0.1);}
    .modifi-list-item-2:hover .over{display:block;transition:all 02s ease-in-out 0s;}
-   .back-ground{background:#036;}
+   .back-ground{background:#036;border-radius:5px;}
    .title-name-2{font-size:17px;color:#60C;padding:10px 0px;letter-spacing:1px;text-transform:uppercase;margin-top:0px/*25px*/;color:#fff;border-radius:3px;}
    .box-2{margin:15px 0px 25px 0px;border-bottom:2px dashed #999;}
 .checkbox-icon {
-    height: 100%;
+    height: 140px;
     margin: 20px auto;
-    max-height: 130px;
-    max-width: 140px;
-    min-height: 130px;
-    min-width: 140px;
+   
     overflow: hidden;
-    width: 100%;
+    width: 140px;
 	border-radius:50%;
 }
    .checkbox-icon img{width:100%;height:100%;}
@@ -309,13 +306,13 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                 <div class="col-xs-12 text-center" style="padding:0;"><div class="checkbox-icon">
         <img src="images/specialization/<?php echo !empty($specialDatas['images'])?$specialDatas['images']:"img-3.jpg"; ?>"> </div></div>
                  <div class="col-xs-12" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $specialDatas['specialisation']; ?></a></p></div>
-                  <div class="col-xs-12 text-center">
+                  <!--<div class="col-xs-12 text-center">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px">
                       <input type="checkbox" name="checkExp[1][]" id="checkExp" value="1" class="no-styles">       
                       <label for="expert<?php echo $specialDatas['specialisation_id']; ?>" class="my-label"><span class="expertiesLabel" id="expertiesLabel" for="<?php echo $specialDatas['specialisation_id']; ?>" dir="<?php echo $specialDatas['specialisation']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
-				 </div>
+				 </div>-->
 			    <div class="setHooverExprt<?php echo $specialDatas['specialisation_id']; ?> removeExp" id=""></div>
               </li>
               <?php } ?>
@@ -337,13 +334,13 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
               <li class="modifi-list-item-2" id="<?php echo $subspecialDatas['sub_specialisation_id']; ?>">
                 <div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/<?php echo !empty($subspecialDatas['SubSpImages'])?$subspecialDatas['SubSpImages']:"img-3.jpg"; ?>"></div></div>
                  <div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $subspecialDatas['sub_specialisation']; ?></a></p></div>
-                  <div class="col-xs-12 text-center">
+                  <!--<div class="col-xs-12 text-center">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px">
                       <input type="checkbox" name="subSpecial[1][]" id="subSpecial" value="1" class="no-styles">       
                       <label for="subSpecial<?php echo $subspecialDatas['sub_specialisation_id']; ?>" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="<?php echo $subspecialDatas['sub_specialisation_id']; ?>" dir="<?php echo $subspecialDatas['sub_specialisation']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
-				 </div>
+				 </div>-->
 			    <div class="setHooverSubExprt<?php echo $subspecialDatas['sub_specialisation_id']; ?> removeSubExp" id=""></div>
               </li>
               <?php } ?>
@@ -366,13 +363,13 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                 <div class="col-xs-12 text-center" style="padding:0;"><div class="checkbox-icon">
                 <img src="images/education/<?php echo !empty($educationDatas['Image'])?$educationDatas['Image']:"img-3.jpg"; ?>" class=""></div></div>
                  <div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $educationDatas['Education']; ?></a></p></div>
-                  <div class="col-xs-12 text-center">
+                  <!--<div class="col-xs-12 text-center">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px">
                       <input type="checkbox" name="degree[1][]" id="degree<?php echo $educationDatas['EducationID']; ?>" value="1" class="no-styles">       
                       <label for="degree<?php echo $educationDatas['EducationID']; ?>" class="my-label"><span class="degreeLabel" id="degreeLabel" for="<?php echo $educationDatas['EducationID']; ?>" dir="<?php echo $educationDatas['Education']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
-				 </div>
+				 </div>-->
 			    <div class="setHooverDegree<?php echo $educationDatas['EducationID']; ?> removeDeg" id=""></div>
               </li>
               <?php } ?>
@@ -423,14 +420,14 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
                 <div class="col-xs-12 text-center" style="padding:0;"><div class="checkbox-icon">
                 <img src="images/Languages/<?php echo !empty($languageDatas['images'])?$languageDatas['images']:"img-3.jpg"; ?>" class=""></div></div>
                  <div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center"><?php echo $languageDatas['languages']; ?></a></p></div>
-                  <div class="col-xs-12 text-center">
+                  <!--<div class="col-xs-12 text-center">
                     <div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px">
                       <input type="checkbox" name="language[][]" id="language<?php echo $languageDatas['language_id']; ?>" value="1" class="no-styles">       
                       <label for="language<?php echo $languageDatas['language_id']; ?>" class="my-label">
                       <span class="languageLabel" id="languageLabel" for="<?php echo $languageDatas['language_id']; ?>" dir="<?php echo $languageDatas['languages']; ?>"></span></label>
                      <input type="hidden" name="paymentnonce" id="paymentnonce" value="" />
 				   </div>
-				 </div>
+				 </div>-->
 			    <div class="setHooverLan<?php echo $languageDatas['language_id']; ?> removeLan" id=""></div>
               </li>
               <?php } ?>
