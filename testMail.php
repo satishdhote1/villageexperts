@@ -1,7 +1,7 @@
 <?php
 if(isset($_REQUEST['params']))
 {
-	echo '<center><h2 style="color:gold;">{"email":null,"name":null,"subject":null,"body":null}</h2></center>';
+	echo '<center><h2 style="color:gold;">{"email":null,"name":null,"subject":null,"body":null},{"str":"?email=&name=&subject=&body="}</h2></center>';
 }
 else
 {
