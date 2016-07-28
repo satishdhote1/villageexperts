@@ -126,8 +126,8 @@ $sql5="select * from 	sp_language ORDER BY languages";
 	.block-4-section{padding-top:260px;}
 	.btn-search-2{background:#ff8003;border:0px;padding:7px 45px;color:#fff;transition:all ease-in-out 0.2s 0s;margin-top:28%;/*20px;*/}
 	.btn-search-2:hover{background:#697bff;color:#eaecff;}
-	.btn-search-3-newProvider {width:50%;background: #ff8003;margin-bottom:1%; border: 0px;padding: 5px 41px;color: #fff;transition: all ease-in-out 0.2s 0s;font-size:26px;}
-	.btn-search-3-newProvider:hover{background:#697bff;color:#eaecff;}
+	.btn-search-3-searchProvider {width:50%;background: #ff8003;margin-bottom:1%; border: 0px;padding: 5px 41px;color: #fff;transition: all ease-in-out 0.2s 0s;font-size:26px;}
+	.btn-search-3-searchProvider:hover{background:#697bff;color:#eaecff;}
 	.radius0{border-radius:0px;}
 	.display-list > li {
     width: 158px;
@@ -475,7 +475,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <div class="clearfix"></div>
   </div>
  <div class="text-center">
-<button type="submit" class="btn btn-default btn-search-3-newProvider">Search</button>
+<button  class="btn btn-default btn-search-3-searchProvider ">Search</button>
 </div>
   </div>
 </section>
