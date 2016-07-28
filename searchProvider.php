@@ -472,7 +472,9 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     </div>
     <div class="clearfix"></div>
   </div>
- 
+ <div class="text-center">
+<button type="submit" class="btn btn-default btn-search-2">Search</button>
+</div>
   </div>
 </section>
 
