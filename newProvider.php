@@ -153,6 +153,8 @@ input[type="text"]{color:#f93;}
 	.sear-section{padding-top:260px;}
 	.btn-search-2{background:#ff8003;border:0px;padding:7px 45px;color:#fff;transition:all ease-in-out 0.2s 0s;margin-top:28%;}
 	.btn-search-2:hover{background:#697bff;color:#eaecff;}
+	.btn-search-3 {width:50%;background: #ff8003; border: 0px;padding: 5px 41px;color: #fff;transition: all ease-in-out 0.2s 0s;font-size:26px;}
+	.btn-search-3:hover{background:#697bff;color:#eaecff;}
 	.radius0{border-radius:0px;}
 	.display-list > li {
     width: 158px;
