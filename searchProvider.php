@@ -350,7 +350,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <div class="clearfix"></div>
   </div>
   <!-- set Degree-->
-  <div class="box-2">
+  <div class="box-2 moveDegree">
     <div class="col-md-3 col-xs-5 text-center">
     <div class="back-ground">
     <p class="title-name-2">Degree</p>
@@ -407,7 +407,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
    
   
   
-  <div class="box-2">
+  <div class="box-2 moveLang">
     <div class="col-md-3 col-xs-5 text-center">
     <div class="back-ground">
     <p class="title-name-2">Language</p>
@@ -438,7 +438,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
   </div>
  
  
-<div class="box-2">
+<div class="box-2 moveExper">
     <div class="col-md-3 col-xs-5 text-center">
     <span id="js-outputExperience" style="font-size:25px; color:#fb7f1e;"></span><span style="font-size:25px; color:#fb7f1e;"> Year</span>
     <div class="back-ground">
@@ -455,7 +455,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
     <div class="clearfix"></div>
   </div>
   
-  <div class="box-2">
+  <div class="box-2 moveRPH">
     <div class="col-md-3 col-xs-5 text-center">
     	<span style="font-size:25px; color:#fb7f1e;">$ </span><span id="js-output" style="font-size:25px; color:#fb7f1e;"></span>
     <div class="back-ground">
