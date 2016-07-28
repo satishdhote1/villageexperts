@@ -1,5 +1,5 @@
 $(document).ready(function(){
-		$(document).on("click",".btn-search-3",function(){
+		$(document).on("click",".btn-search-3-newProvider",function(){
 		
 		$("#search").submit();
 	});
