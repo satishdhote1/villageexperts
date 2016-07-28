@@ -1,7 +1,7 @@
 <?php
 if(isset($_REQUEST['params']))
 {
-	echo "{email:null,name:null,subject:null,body:null}";
+	echo '{"email":null,"name":null,"subject":null,"body":null}';
 }
 else
 {
