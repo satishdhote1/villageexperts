@@ -135,8 +135,8 @@ $("input:checkbox").on('click', function() {
                    });
 		//	alert( $(".removeExp").offset().top);
                       $('.setSubSpecialData').html(resultData);
-                     
-                      $('html,body').animate({scrollTop: parseInt($(".specialData").offset().top,10)+460}, 500,'swing');
+                     //alert();
+                      $('html,body').animate({scrollTop: parseInt($(".specialData").offset().top,10)+420}, 500,'swing');
 					 $(".removeExp").each(function(index, element) {
 					 
 					  if($(this).hasClass("over"))
