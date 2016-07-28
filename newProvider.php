@@ -153,8 +153,8 @@ input[type="text"]{color:#f93;}
 	.sear-section{padding-top:260px;}
 	.btn-search-2{background:#ff8003;border:0px;padding:7px 45px;color:#fff;transition:all ease-in-out 0.2s 0s;margin-top:28%;}
 	.btn-search-2:hover{background:#697bff;color:#eaecff;}
-	.btn-search-3 {width:50%;background: #ff8003; border: 0px;padding: 5px 41px;color: #fff;transition: all ease-in-out 0.2s 0s;font-size:26px;}
-	.btn-search-3:hover{background:#697bff;color:#eaecff;}
+	.btn-search-3-newProvider {width:50%;background: #ff8003; border: 0px;padding: 5px 41px;color: #fff;transition: all ease-in-out 0.2s 0s;font-size:26px;}
+	.btn-search-3-newProvider:hover{background:#697bff;color:#eaecff;}
 	.radius0{border-radius:0px;}
 	.display-list > li {
     width: 158px;
@@ -261,7 +261,7 @@ input[type="text"]{color:#f93;}
 </div>
 <div class="col-ms-2 col-sm-2 col-xs-6">
 <div class="text-center">
-<button type="submit" class="btn btn-default btn-search-2">Search</button>
+<button type="submit" class="btn btn-default btn-search-3">Search</button>
 </div>
 </div>
 </form>
@@ -453,7 +453,7 @@ input[type="text"]{color:#f93;}
     <div class="row marginTOP">
     <div class="col-md-12">
       <div class="text-center">
-      <button type="submit" class="btn btn-default btn-search-3">Search</button>
+      <button type="submit" class="btn btn-default btn-search-3-newProvider">Search</button>
       </div>
     </div>
     </div>
