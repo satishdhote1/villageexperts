@@ -1,4 +1,8 @@
 $(document).ready(function(){
+		$(document).on("click",".btn-search-3",function(){
+		
+		$("#search").submit();
+	});
 var $document = $(document);
      var selector = '[data-rangeslider]';
      var $inputRange = $(selector); 
