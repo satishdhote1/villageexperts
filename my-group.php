@@ -295,13 +295,13 @@ echo "Friends & Family";
    <!-- ONLINE GROUP MEMBERS LISTS-->
   
     <div class="col-md-4 text-center">
-    
+	 <?php
+   	if($onlneMembers == 1)
+	{
+		$groupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
+	?>
       <div class="grop-part rightGMpanelOnline">
-       <?php
-   		if($onlneMembers == 1)
-		{
-			$groupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
-		?>
+      
         <h2 class="my-group-members membersPanelTitle"><?php echo $groupName; ?> Members</h2>
         <div class="padding-right0">
 		<?php   
@@ -331,11 +331,11 @@ echo "Friends & Family";
 			?>
           </ul>
         </div>
-        <?php
+       
+      </div>
+       <?php
 		}
 		?>
-      </div>
-      
      </div>
      
     
@@ -345,14 +345,14 @@ echo "Friends & Family";
      
     <div class="col-md-4 text-center">
     <!-- OFFLINE GROUP MEMBERS LISTS-->
-    
-      <div class="grop-part rightGMpanelOffline" >
-       <?php
+      <?php
 	   
-   		if($offlineMembers == 1)
-		{
-			$groupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
-		?>
+   	if($offlineMembers == 1)
+	{
+		$groupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
+	?>
+      <div class="grop-part rightGMpanelOffline" >
+       
         <h2 class="my-group-members"><?php echo $groupName; ?> Members</h2>
         <div class="padding-left0 opacity-half">
           <p class="on-line-member">Offline <span class="active-id"><i class="fa fa-circle" aria-hidden="true"></i> </span></p>
@@ -376,11 +376,11 @@ echo "Friends & Family";
 			?>
           </ul>
         </div>
-         <?php
+        
+      </div>
+      <?php
 		  }
 		 ?>
-      </div>
-     
       
       <!-- //OFFLINE GROUP MEMBERS LISTS-->
     </div>
