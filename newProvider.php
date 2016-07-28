@@ -261,7 +261,7 @@ input[type="text"]{color:#f93;}
 </div>
 <div class="col-ms-2 col-sm-2 col-xs-6">
 <div class="text-center">
-<button type="submit" class="btn btn-default btn-search-3">Search</button>
+<button type="submit" class="btn btn-default btn-search-2">Search</button>
 </div>
 </div>
 </form>
@@ -276,7 +276,7 @@ input[type="text"]{color:#f93;}
 <section class="sear-section">
 <div class="container">
 
-//This IS for Expertise
+<!--This IS for Expertise-->
 
   <div class="row marginTOP">
     <div class="col-md-12">
@@ -304,7 +304,7 @@ input[type="text"]{color:#f93;}
     </div>
   </div>
   
-  //This IS for Sub Specialization
+  <!--This is for Sub Specialization-->
   
   <div class="row marginTOP">
     <div class="col-md-12">
@@ -330,7 +330,7 @@ input[type="text"]{color:#f93;}
     </div>
   </div>
   
- //This IS for Degree
+ <!--This IS for Degree-->
  
   <div class="row marginTOP">
     <div class="col-md-12">
@@ -378,7 +378,7 @@ input[type="text"]{color:#f93;}
       </div>
     </div>
     </div><?php */?>
- //This IS for Language
+ <!--This IS for Language-->
  
     <div class="row marginTOP">
     <div class="col-md-12">
@@ -406,7 +406,7 @@ input[type="text"]{color:#f93;}
     
   </div>
   
- //This IS for Experience
+ <!--This IS for Experience-->
  
    <div class="row marginTOP">
     <div class="col-md-12">
@@ -427,7 +427,7 @@ input[type="text"]{color:#f93;}
     </div>
     </div>
     
- //This is for Rate per Hour
+<!--This is for Rate per Hour-->
  
    <div class="row marginTOP">
     <div class="col-md-12">
@@ -448,7 +448,7 @@ input[type="text"]{color:#f93;}
     </div>
     </div>
     
- //This is for submit button
+ <!--This is for submit button-->
  
     <div class="row marginTOP">
     <div class="col-md-12">
