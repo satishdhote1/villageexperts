@@ -403,8 +403,8 @@ input[type="text"]{color:#f93;}
     
   </div>
   
-  
-      <div class="row marginTOP">
+  //This IS for Experience
+   <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Experience</h1>
       <div class="background-blue">
@@ -422,7 +422,7 @@ input[type="text"]{color:#f93;}
       </div>
     </div>
     </div>
-   
+  //This is for Rate per Hour
    <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Rate per Hour</h1>
@@ -434,6 +434,26 @@ input[type="text"]{color:#f93;}
          <div class="seclect-box" style="width:100%!important">
          <input type="range" min="0" max="100" step="1" value="1" data-rangeslider>
 	</div>
+          </ul>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+    </div>
+    //This is for submit button
+    <div class="row marginTOP">
+    <div class="col-md-12">
+     
+      <div class="background-blue">
+        <div class="row setExperienceData">
+          <div class="col-md-12">
+            <ul class="list-inline search-list">
+	         <div class="seclect-box" style="width:100%!important">
+	         <div class="text-center">
+		 <button type="submit" class="btn btn-default btn-search-2">Search</button>
+		  </div>
+		 </div>
           </ul>
           </div>
         
