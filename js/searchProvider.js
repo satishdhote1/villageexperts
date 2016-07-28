@@ -173,6 +173,7 @@ $("input:checkbox").on('click', function() {
 					  }
 					  });
 		 $(".setHooverSubExprt"+expertId).addClass("over");
+		 alert(parseInt($(".moveDegree").offset().top)- parseInt($(".moveDegree").height()));
 		  $('html,body').animate({scrollTop:  parseInt($(".moveDegree").offset().top)- parseInt($(".moveDegree").height())}, 500,'swing');
 	  });
         //SETTING UP degreeLabel
