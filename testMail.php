@@ -16,7 +16,7 @@ else
 	$mailSent = $emailObject->sendMail($Email, $memberName,$subject,$body);
 	if($mailSent)
 	{
-	  echo "<center><h2 style='color:gold;'>Hello mail sent succesful !</h2></center>";
+	  echo "<center><h2 style='color:gold;'>Hello E-mail sent succesfully to ".$Email." !</h2></center>";
 	}
 }
 
