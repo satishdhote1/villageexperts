@@ -250,7 +250,7 @@ $("input:checkbox").on('click', function() {
 					  }
 					  });*/
 		  $(".setHooverLan"+expertId).addClass("over");
-		   $('html,body').animate({scrollTop:  parseInt($(".moveExper").offset().top)- parseInt($(".moveExper").height())}, 500,'swing');
+		   $('html,body').animate({scrollTop:  (parseInt($(".moveExper").offset().top)- parseInt($(".moveExper").height()))-25}, 500,'swing');
          });
 	  
 });
