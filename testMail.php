@@ -1,7 +1,7 @@
 <?php
 if(isset($_REQUEST['params']))
 {
-	echo '{"email":null,"name":null,"subject":null,"body":null}';
+	echo '<center><h2 style="color:gold;">{"email":null,"name":null,"subject":null,"body":null}</h2></center>';
 }
 else
 {
@@ -16,7 +16,7 @@ else
 	$mailSent = $emailObject->sendMail($Email, $memberName,$subject,$body);
 	if($mailSent)
 	{
-	  echo "<center><h2 style='color:gold;'>Hello mail sent succesful !<h2></center>";
+	  echo "<center><h2 style='color:gold;'>Hello mail sent succesful !</h2></center>";
 	}
 }
 
