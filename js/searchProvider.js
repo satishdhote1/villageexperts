@@ -135,7 +135,7 @@ $("input:checkbox").on('click', function() {
                    });
 		//	alert( $(".removeExp").offset().top);
                       $('.setSubSpecialData').html(resultData);
-                     alert( parseInt($(".moveSubSpecial").offset().top)- parseInt($(".moveSubSpecial").height()));
+                     //alert( parseInt($(".moveSubSpecial").offset().top)- parseInt($(".moveSubSpecial").height()));
                       $('html,body').animate({scrollTop:  parseInt($(".moveSubSpecial").offset().top)- parseInt($(".moveSubSpecial").height())}, 500,'swing');
 					 $(".removeExp").each(function(index, element) {
 					 
@@ -173,6 +173,7 @@ $("input:checkbox").on('click', function() {
 					  }
 					  });
 		 $(".setHooverSubExprt"+expertId).addClass("over");
+		  $('html,body').animate({scrollTop:  parseInt($(".moveDegree").offset().top)- parseInt($(".moveDegree").height())}, 500,'swing');
 	  });
         //SETTING UP degreeLabel
         $(document).on("click",".degreeLabel",function() {
@@ -188,6 +189,7 @@ $("input:checkbox").on('click', function() {
 					  }
 					  });
 		 $(".setHooverDegree"+expertId).addClass("over");
+		  $('html,body').animate({scrollTop:  parseInt($(".moveLang").offset().top)- parseInt($(".moveLang").height())}, 500,'swing');
 	  });
 	  
 	  //SETTING UP experienceLabel
@@ -247,6 +249,7 @@ $("input:checkbox").on('click', function() {
 					  }
 					  });*/
 		  $(".setHooverLan"+expertId).addClass("over");
+		   $('html,body').animate({scrollTop:  parseInt($(".moveExper").offset().top)- parseInt($(".moveExper").height())}, 500,'swing');
          });
 	  
 });
