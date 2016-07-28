@@ -173,8 +173,8 @@ $("input:checkbox").on('click', function() {
 					  }
 					  });
 		 $(".setHooverSubExprt"+expertId).addClass("over");
-		 alert(parseInt($(".moveDegree").offset().top)- parseInt($(".moveDegree").height()));
-		  $('html,body').animate({scrollTop:  (parseInt($(".moveDegree").offset().top)- parseInt($(".moveDegree").height()))+250}, 500,'swing');
+		 alert(parseInt($(".moveDegree").offset().top));
+		  $('html,body').animate({scrollTop:  (parseInt($(".moveDegree").offset().top)- parseInt($(".moveDegree").height()))+300}, 500,'swing');
 	  });
         //SETTING UP degreeLabel
         $(document).on("click",".degreeLabel",function() {
