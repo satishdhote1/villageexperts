@@ -136,7 +136,7 @@ $("input:checkbox").on('click', function() {
 		//	alert( $(".removeExp").offset().top);
                       $('.setSubSpecialData').html(resultData);
                      
-                      $('html,body').animate({scrollTop: parseInt($(".specialData").offset().top,10)+200}, 500,'swing');
+                      $('html,body').animate({scrollTop: parseInt($(".specialData").offset().top,10)+300}, 500,'swing');
 					 $(".removeExp").each(function(index, element) {
 					 
 					  if($(this).hasClass("over"))
