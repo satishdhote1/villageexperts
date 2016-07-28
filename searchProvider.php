@@ -457,7 +457,7 @@ input[type="radio"] + label span, input[type="radio"]:checked + label span {
   
   <div class="box-2 moveRPH">
     <div class="col-md-3 col-xs-5 text-center">
-    	<span style="font-size:25px; color:#fb7f1e;">$ </span><span id="js-output" style="font-size:25px; color:#fb7f1e;"></span>
+    	<span style="font-size:25px; color:#00ff00;">$ </span><span id="js-output" style="font-size:25px; color:#00ff00;"></span>
     <div class="back-ground">
     <span id="js-output"></span>
     <p class="title-name-2">rate per hour</p>
