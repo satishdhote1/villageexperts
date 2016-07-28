@@ -273,6 +273,9 @@ input[type="text"]{color:#f93;}
 
 <section class="sear-section">
 <div class="container">
+
+//This IS for Expertise
+
   <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Expertise</h1>
@@ -297,11 +300,10 @@ input[type="text"]{color:#f93;}
         </div>
       </div>
     </div>
-    
-    
-    
-     
   </div>
+  
+  //This IS for Sub Specialization
+  
   <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Sub Specialization</h1>
@@ -324,12 +326,10 @@ input[type="text"]{color:#f93;}
         </div>
       </div>
     </div>
-    
-    
-    
-    
-    
   </div>
+  
+ //This IS for Degree
+ 
   <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Degree</h1>
@@ -376,7 +376,8 @@ input[type="text"]{color:#f93;}
       </div>
     </div>
     </div><?php */?>
-
+ //This IS for Language
+ 
     <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Language</h1>
@@ -403,7 +404,8 @@ input[type="text"]{color:#f93;}
     
   </div>
   
-  //This IS for Experience
+ //This IS for Experience
+ 
    <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Experience</h1>
@@ -422,7 +424,9 @@ input[type="text"]{color:#f93;}
       </div>
     </div>
     </div>
-  //This is for Rate per Hour
+    
+ //This is for Rate per Hour
+ 
    <div class="row marginTOP">
     <div class="col-md-12">
       <h1 class="search-title">Rate per Hour</h1>
@@ -441,23 +445,13 @@ input[type="text"]{color:#f93;}
       </div>
     </div>
     </div>
-    //This is for submit button
+    
+ //This is for submit button
+ 
     <div class="row marginTOP">
     <div class="col-md-12">
-     
-      <div class="background-blue">
-        <div class="row setExperienceData">
-          <div class="col-md-12">
-            <ul class="list-inline search-list">
-	         <div class="seclect-box" style="width:100%!important">
-	         <div class="text-center">
-		 <button type="submit" class="btn btn-default btn-search-2">Search</button>
-		  </div>
-		 </div>
-          </ul>
-          </div>
-        
-        </div>
+      <div class="text-center">
+      <button type="submit" class="btn btn-default btn-search-3">Search</button>
       </div>
     </div>
     </div>
