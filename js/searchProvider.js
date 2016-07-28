@@ -135,8 +135,8 @@ $("input:checkbox").on('click', function() {
                    });
 		//	alert( $(".removeExp").offset().top);
                       $('.setSubSpecialData').html(resultData);
-                     alert( parseInt($(".moveSubSpecial").position().top)- parseInt($(".moveSubSpecial").height()));
-                      $('html,body').animate({scrollTop: parseInt($(".specialData").offset().top,10)+320}, 500,'swing');
+                     alert( parseInt($(".moveSubSpecial").offset().top)- parseInt($(".moveSubSpecial").height()));
+                      $('html,body').animate({scrollTop:  parseInt($(".moveSubSpecial").offset().top)- parseInt($(".moveSubSpecial").height())}, 500,'swing');
 					 $(".removeExp").each(function(index, element) {
 					 
 					  if($(this).hasClass("over"))
