@@ -129,6 +129,7 @@ $getgroupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 <script src="js/connectMe.js"></script> 
+<script src="js/formSubmission.js"></script> 
 <!--<script src="js/instantImageShow.js"></script>-->
 
 </body>
