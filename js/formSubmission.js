@@ -906,6 +906,67 @@ $(document).ready(function(){
 
 				});
 
+				//Group Member validation & existing email checking
+			$("#newMember").validate({
+				
+					rules: {
+							memberName: "required",
+							Email: {
+										required: true,
+										email: true
+									},
+							mobileNo: {minlength: 10},
+						   },
+						   messages: {
+									   memberName: "Please enter your  name",
+									   mobileNo: {
+										    minlength: "Your Phone Number must be at least 10 digit long"
+									   },
+									   Email: "Please enter a valid email address",
+						   }
+			});
+			
+			$(document).on("click",".group-submit",function(event){
+					if($("#newMember").valid() == true)
+					{
+						event.preventDefault();
+						var GMemail = $(".GMemail").val();
+						$.ajax({
+
+									url:'ajax.php',
+
+									type: 'POST',
+
+									dataType: "json",
+									cache:"false",
+									data: {email:$.trim(GMemail),userType:"group_member",tag:"checkEmail"},  
+
+									success: function(dataSR)    // A function to be called if request succeeds
+									{
+										if(dataSR.success == 1)
+										{
+											alert("Email already exist !");
+											
+										}
+										else
+										{
+											$('#newMember').unbind('submit').submit();
+										}
+										
+									},      
+									error: function () {
+
+										alert("Email Checking Error!");
+
+									}  
+
+									 });
+					
+
+                               }
+					
+				});
+				
 			//SP upload
 
 	 	$(document).on("click",".SPupload",function(){
