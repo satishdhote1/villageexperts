@@ -848,7 +848,7 @@ include("initialDBdata.php");//registration for data
 
                 <div class="col-sm-9">
 
-                  <input type="text" value="" id="member-Name" placeholder="Member-Name" class="form-control dorder0" name="member-Name">
+                  <input type="text" value="" id="member-Name" placeholder="Member Name" class="form-control dorder0" name="memberName">
 
                 </div>
 
