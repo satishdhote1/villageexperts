@@ -107,7 +107,7 @@ $getgroupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
               <div class="form-group form-group-gap">
                 <label class="col-sm-3 control-label" for="firstname">Email *</label>
                 <div class="col-sm-9">
-                  <input type="text" value="" id="email" placeholder="Email" class="form-control dorder0 email" name="Email">
+                  <input type="text" value="" id="GMemail" placeholder="Email" class="form-control dorder0 GMemail" name="Email">
                 </div>
                 <div class="clearfix"></div>
               </div>
