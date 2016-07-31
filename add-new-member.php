@@ -93,7 +93,7 @@ $getgroupName = isset($_REQUEST['groupName'])? $_REQUEST['groupName'] : '';
                 <input type="hidden" class="groupName" name="groupName" value="<?php echo $getgroupName; ?>">
                 <label class="col-sm-3 control-label" for="firstname">Member Name *</label>
                 <div class="col-sm-9">
-                  <input type="text" value="" id="member-Name" placeholder="Member-Name" class="form-control dorder0" name="member-Name">
+                  <input type="text" value="" id="member-Name" placeholder="Member Name" class="form-control dorder0" name="memberName">
                 </div>
                 <div class="clearfix"></div>
               </div>
