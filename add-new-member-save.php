@@ -24,7 +24,7 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
  if(isset($_REQUEST['submit'])){
 
 	 
-	$memberName = isset($_REQUEST['member-Name'])?$_REQUEST['member-Name']:'';
+	$memberName = isset($_REQUEST['memberName'])?$_REQUEST['memberName']:'';
 
 	$mobileNo = isset($_REQUEST['mobileNo'])?$_REQUEST['mobileNo']:'';
 
