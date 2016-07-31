@@ -163,22 +163,22 @@ $imageUpload = new imageUpload();
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 
 	  if($userTypess == "provider")
-
 	  {
-
+		  $userTypess = "service_".$userTypess;
 		$fieldName = "sp";  
-
 	  }
-
-	  else
-
+	  if($userTypess == "requestor"){
+		  $userTypess = "service_".$userTypess;
 	    $fieldName = "sr";
-
+	  }
+	  if($userTypess == "group_member"){
+		  $userTypess = $userTypess;
+	    $fieldName = "gm";
+	  }
 	  if(!empty($email))
-
 	  {
 
-		 $sql="select * from service_".$userTypess." where  ".$fieldName."_email='".$email."'";
+		 $sql="select * from ".$userTypess." where  ".$fieldName."_email='".$email."'";
 
 			  
 
