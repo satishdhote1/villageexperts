@@ -179,7 +179,7 @@ $imageUpload = new imageUpload();
 	  {
 
 		 $sql="select * from ".$userTypess." where  ".$fieldName."_email='".$email."'";
-
+echo $sql;die();
 			  
 
 			$tableResult = mysqli_query($conn, $sql);
