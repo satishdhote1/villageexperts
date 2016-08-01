@@ -77,7 +77,7 @@ if(isset($_REQUEST['submitCategory']))
 					$resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
 							
 					//call the function (when passing path to pic)
-					if (smart_resize_image($file , null, "125" , "125" , false , $resizedFile , false , false ,100 )){	
+					if (smart_resize_image($file , null, "300" , "300" , false , $resizedFile , false , false ,100 )){	
 					
 							//$uploaded_file = $target_fileName;
 							
