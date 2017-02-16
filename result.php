@@ -12,8 +12,8 @@ include("config/connection.php");
 
 session_start();
 
-if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
-{
+/*if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
+{*/
 
 $user_id = $_SESSION['logged_user_id'];
 
@@ -183,27 +183,19 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 
 	{
 
-		$where.=" AND sp_language_id=1";
+		$where.=" AND sp_language_id in(".$_REQUEST['LanguageIDS'].")";
 
 	}
 
 	else
 
-	$where.='sp_language_id=1';
+	$where.="sp_language_id in(".$_REQUEST['LanguageIDS'].")";
 
 }
 
   $sql="select * from 	service_provider where ".$where;
-
-
-
-
-
-  
-
-
-
-			$tableResult = mysqli_query($conn, $sql);
+  //die($sql);
+$tableResult = mysqli_query($conn, $sql);
 
 
 
@@ -306,19 +298,24 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 /*	display: none !important */
 
 }
+.main_body_box_one{
+    background: url(img/normal/Experts-1.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
 
 </style>
 
 <body class="bodybg">
 
 
-<div class="loader-exp" style="display:none;">
+<div class="loader-exp" style="display:none;"> 
 
 <p><img src="images/ajax-loader.gif"></p>
 
 </div>
 
-<div class="container-fluid header-part">
+<div class="container-fluid header-part" style="background-color: #ccccfe;">
 
   <div class="row">
 
@@ -328,7 +325,7 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 
       <div class="over-lap">
 
-        <div class="profile pull-left"> <img src="images/<?php echo $imagePath; ?><?php echo (!empty($user_pic))?$user_pic:"img-3.jpg"; ?>" class="img-responsive"> </div>
+        <div class="profile pull-left"> <img src="<?php echo (!empty($user_pic))?$user_pic:"img/img-3.jpg"; ?>" class="img-responsive"> </div>
 
         <div class="pull-right">
 
@@ -419,7 +416,7 @@ foreach($specialData as $specialDatas)
 
   <div class="select_left_box">
 
-  <div class="select_image"><img src="images/SP_Photos/<?php  echo $specialDatas['sp_image'] ?>" alt="image"></div>
+  <div class="select_image"><img src="<?php  echo $specialDatas['sp_image'] ?>" alt="image"></div>
 
   <span class="select_image_text"><?php  echo $specialDatas['sp_name'] ?></span>
 
@@ -557,7 +554,7 @@ mins</div>
 }
 else{
 	$source = isset($_REQUEST['source']) && ($_REQUEST['source']=="newProvider" || $_REQUEST['source'] == "searchProvider")?$_REQUEST['source'].".php":"index.php";
-	echo "<center><h1 style='color:red'>Sorry! No results found.</h1></center>";
+	echo "<center><h3 style='color:red'>Sorry - No Experts matching your following Criteria were found in our Database.</h3></center>";
 	header("Refresh:2; url=".$source);
 }
 
@@ -650,14 +647,14 @@ else{
 </html>
 
 <?php
-}
+/*}
 else
 {
 	$passStr = 'You are not authorized.Redirecting....';
 	$passImg = 'groupPhotos/img-3.jpg';
 	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
 }
-
+*/
 function getData($conn,$tableName,$id,$selectField,$whereField)
 {
 	 $sql="SELECT $selectField FROM $tableName where $whereField = $id";

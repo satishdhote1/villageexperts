@@ -16,7 +16,7 @@ $phone = '';
 $expertID='';
 if(!empty($email) && !empty($isexpert) && $isexpert == "yes")
 {
-    $sql="select * from   friendsRegister where email = '$email' and (isexpert = 1 OR isexpert = 2)";
+    $sql="select * from   friendsRegister where email = '$email' and isexpert = 1 ";
     //die($sql);
       $tableResult = mysqli_query($conn, $sql);
       //print_r($tableResult);
@@ -40,7 +40,7 @@ if(!empty($email) && !empty($isexpert) && $isexpert == "yes")
 }
 if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes")
 {
-    $sql="select * from   friendsRegister where email = '$email' and (isexpert = 0 OR isexpert = 2)";
+    $sql="select * from   friendsRegister where email = '$email' and isexpert = 0";
     //die($sql);
       $tableResult = mysqli_query($conn, $sql);
       //print_r($tableResult);
@@ -60,7 +60,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes")
       $lname = $expertData[0]['lname'];
       $country = $expertData[0]['country'];
       $city = $expertData[0]['city'];
-      $phone = ($expertData[0]['phone'] == 0)?'':$expertData[0]['phone'];
+      $phone = $expertData[0]['phone'];
 }
 
 ?>
@@ -94,7 +94,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes")
 <style>
 .modi-img{width:80px;border:5px solid #FFF;border-radius:10px;}
 .font-20 {
-    font-size: 19px !important; /*change font size*/
+    font-size: 25px !important;
     font-weight: 700;
 }.ICON-holder img {
     background: #7b7bfc;
@@ -119,7 +119,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes")
 }
 .upload-panel-box input.pImage {
     margin: 0px 0 0 5px;
-  padding:5px 0px;
+	padding:5px 0px;
     width: 100%;border:0px;
 }
 input[type='file'] {
@@ -146,31 +146,15 @@ padding:4px;
     background-color: #9595f9 !important;}
 .btn-danger:focus, .btn-danger:hover{    background-color: #9595f9 !important;}
 .button{padding:10px 10px 5px;}
-
-
-.btn2{
-    border-radius: 4px;
-    border: 0;
-    color: #fff;
-    margin: 10px 0px 0px -2px;
-    white-space: normal !important;
-    height: 59px !important;
-    line-height: 40px !important;
-}
-.modify-btn-1{
-  margin-left: 47px !important;
-}
-
-.col-md-chang{ width: 34.667%; !important;}
-.border-box-item1{
- margin-right:238px !important;
-}
 </style>
 
 <body style="background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;background-size:cover;background-attachment:fixed;">
     
 
     <!-- Start your project here-->
+
+ 
+ 
 
 
     <!--Navbar-->
@@ -189,38 +173,60 @@ padding:4px;
             <!--/.Collapse content-->
 
         </div>
+
     </nav>
     <!--/.Navbar-->
 
     <!--Mask-->
-    <div class="view hm-black-strong-1 p-b-2" style="height:auto;">
-        <div class="full-bg-img" style="min-height:310px;position:relative;">
+    <div class="view hm-black-strong-1 p-b-2" style="height:auto; ">
+        <div class="full-bg-img" style="min-height:460px;position:relative;">
             <div class="container-fluid">
                 <div class="row" id="">
-                   <div class="col-md-12">
-                     <h2 class="white-text text-uppercase text-xs-center m-t-2">A KNOWLEDGE EXCHANGE PLATFORM THAT ALLOWS YOU TO</h2>
-                   </div>
-                <div class="col-md-5 col-md-chang">
-                  <div class="m-b-0">
-                      <a class="btn btn-danger  modify-btn-1 text-xs-right btn-lg modal__trigger loginModal" id="display-form" data-toggle="modal"  href="" data-target="#myModal"><span class="ICON-holder"><img src="images/icon-1.png"></span>Connect with Friends and Family</a>
-                   </div>
-                  <div class="m-b-0">
-                    <a class="btn btn-lg btn-danger  waves-light text-xs-right modify-btn-1 modal__trigger" href="newProvider.php"><span class="ICON-holder"><img class="img-fluid img-rounded" src="images/icon-2.png"></span>Search for and Connect with an Expert</a>
-                  </div>
-                  <div class="m-b-0">
-                    <a class="btn btn-lg btn-danger  text-xs-right modify-btn-1" href="ExpertRegistration.php"><span class="ICON-holder"><img class="img-fluid img-rounded" src="images/icon-3.png"></span>Sign up as an Expert</a>
-                  </div>
-                   <!--  <div class="text-xs-right m-b-1">
-                       <a class="white-text bg-inverse p-l-1 p-t-1 p-b-1 p-r-1"><i class="fa fa-sign-in" style="padding-right:5px;"></i>Sign up as an Expert</a>
+<div class="col-md-12">
 
-                    </div>-->                    
+<h2 class="white-text text-uppercase text-xs-center m-t-2">A KNOWLEDGE EXCHANGE PLATFORM THAT ALLOWS YOU TO</h2>
+
+
+ 
+</div>
+<div class="col-md-5 ">
+
+
+
+                   
+                    <div class="m-b-0">
+   
+   <br>
+   <a class="btn btn-danger  modify-btn-1 text-xs-right btn-lg modal__trigger loginModal" id="display-form" data-toggle="modal"   href=""
+   data-target="#myModal"><span class="ICON-holder"><img src="images/icon-1.png"></span>Connect with Friends and Family</a>
+  
+                    </div>
+            
+           
+                    <div class="m-b-0">
+<a class="btn btn-lg btn-danger  waves-light text-xs-right modify-btn-1 modal__trigger" href="newProvider.php"><span class="ICON-holder"><img class="img-fluid img-rounded" src="images/icon-2.png"></span>Search for and Connect with an Expert</a>
+
+                    </div>
+                  
+         
+          <div class="">
+<a class="btn btn-lg btn-danger  text-xs-right modify-btn-1" href="ExpertRegistration.php"><span class="ICON-holder"><img class="img-fluid img-rounded" src="images/icon-3.png"></span>Sign up as an Expert</a>
+
+                    </div>
+         
+                   <!--  <div class="text-xs-right m-b-1">
+<a class="white-text bg-inverse p-l-1 p-t-1 p-b-1 p-r-1"><i class="fa fa-sign-in" style="padding-right:5px;"></i>Sign up as an Expert</a>
+
+                    </div>-->
+                    
+                    
                 </div>
                 
-        <!---RIGHT BLOCK-->
+                <!--------RIGHT BLOCK-------------->
            <div class="col-md-5 col-xs-offset-1">
-             <div id="" class="m-t-3">
+          <div id="" class="m-t-3">
                   <div class="box-modal" style="display: none;">
-                  <!-- Modal content-->
+                    <!-- Modal content-->
                     <div class="modal-content">
                       <div class="modal-header">
                         <p class="close backLogin" ><img src="images/Left.png" class="" style="cursor:pointer"></p>
@@ -232,7 +238,7 @@ padding:4px;
                             <div class="text-xs-right col-xs-4">
                                   <!--<a class="text-info teal-text m-r-2 backLogin" style="font-size:20px;font-family:Arial, Helvetica, sans-serif"></a>--> 
                                   
-                              </div>
+                                </div>
                                 <div class="col-xs-8 SPloginLoader" style="padding-right:0;display:none;"> <hr>
                                 <img src="images/ajax-loader.gif" id="" class="" style="">
                                 <center><span class="SPerrors" style="display:none;color: red;" ></span></center>
@@ -319,10 +325,10 @@ padding:4px;
                         <div class="col-md-4 col-xs-12">
 
                              <div class="main-block">
-                                <?php /*if(!empty($email) && $isFriendreg == "yes")*/ ?>
-                                <i class="fa fa-phone prefix"> <?php if(!empty($email) && $isexpert == "yes"){echo "Experties";}else {echo "Phone";}?></i>
 
-                                <input id="form7 phone" class="form-control phone" name="phone" tabindex="3" type="text" value="<?php echo $phone; ?>">
+                                <i class="fa fa-phone prefix"> <?php if(!empty($email) && $isexpert == "yes"){echo "Experties";}else if(!empty($email) && $isFriendreg == "yes"){echo "Phone";}?></i>
+
+                                <input id="form7 phone" class="form-control phone" name="phone" tabindex="3" type="text" value="<?php echo ($phone == 0)?'':$phone; ?>">
                                 <label for="form4"></label>
                                 
 
@@ -432,82 +438,105 @@ padding:4px;
     </div>
     </div>
     <!--/.Mask-->
-  <!-- end MODAL  -->
+	<!-----MODAL  ------>
     <section class=" p-t-0 p-b-3 hm-black-strong-1">
-         <div class="container">
-           <div class="row" style="float: left;">
-              <div class="">
-                 <h5 class="text-xs-center p-a-1 p-b-1" style="width:100%; margin:auto;color:#fff;font-weight:bold; font-size:26px;line-height:40px;">CONNECTION IS ENABLED THROUGH A VIRTUAL OFFICE, POWERED BY OUR PROPRIETARY COMMUNICATION PLATFORM THAT ALLOWS YOU TO:</h5>
-                <div class="row row m-b-0 border-box-item border-box-item1">
-                  <div class="col-md-3 col-xs-1 text-xs-right">
-                     <img src="images/see and talk.jpg" class="modi-img">
-                  </div>
-                  <div class="col-md-9 p-t-0 p-b-0">
-                   <p class="btn btn2 font-20 text-xs-left" style="width: 800px">SEE AND TALK TO EACH OTHER</p>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="row m-b-0 border-box-item border-box-item1">
-                  <div class="col-md-3 col-xs-1 text-xs-right">
-                    <img src="images/Message.jpg" class="modi-img">
-                  </div>
-                  <div class="col-md-9 p-t-0 p-b-0">
-                    <p class="btn btn2 font-20 text-xs-left" style="width: 800px">CHAT - INTERACTIVE TEXT MESSAGE</p>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="row m-b-0 border-box-item border-box-item1">
-                  <div class="col-md-3 col-xs-1 text-xs-right">
-                    <img src="images/documet.jpg" class="modi-img">
-                  </div>
-                  <div class="col-md-7 p-b-0">
-                    <label class="btn btn2 font-20 text-xs-left" style="width: 800px">SHARE PDF DOCUMENTS, PICTURES, MOVIES IN OUR FILE VIEWER</label>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="row m-b-0 border-box-item border-box-item1">
-                  <div class="col-md-3 col-xs-1 text-xs-right">
-                    <img src="images/share screen.jpg" class="modi-img">
-                  </div>
-                  <div class="col-md-7 p-t-0 p-b-0">
-                    <label class="btn btn2 font-20 text-xs-left" style="width: 800px">SHARE ANY OTHER DOCUMENTS THROUGH OUR SCREEN SHARE FEATURE</label>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="row m-b-0 border-box-item border-box-item1">
-                  <div class="col-md-3 col-xs-1 text-xs-right">
-                    <img src="images/record.png" class="modi-img">
-                  </div>
-                  <div class="col-md-7 p-t-0 p-b-0">
-                         <label class="btn btn2 font-20 text-xs-left" style="width: 800px">RECORD INDIVIDUAL VOICE, VIDEO CLIPS</label>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-                <div class="row m-b-0 border-box-item border-box-item1">
-                   <div class="col-md-3 col-xs-1 text-xs-right">
-                    <img src="images/recording.jpg" class="modi-img">
-                   </div>
-                   <div class="col-md-7 p-t-0 p-b-0">
-                    <label class="btn btn2 font-20 text-xs-left" style="width: 800px">RECORD ENTIRE SESSIONS INCLUDING VOICE, VIDEO, ALL SHARED DOCUMENTS</label>
-                   </div>
-                   <div class="clearfix"></div>
-                </div>
-                <div class="row m-b-0 border-box-item border-box-item1">
-                  <div class="col-md-3 col-xs-1 text-xs-right">
-                   <img src="images/Listen  in.jpg" class="modi-img" style="min-height:100px;">
-                  </div>
-                  <div class="col-md-7 p-t-0 p-b-0">
-                   <p class="btn btn2 font-20 text-xs-left " style="width: 800px">INVITE A THIRD PARTY TO 'LISTEN IN' AND VIEW ENTIRE SESSION</p>
-                  </div>
-                  <div class="clearfix"></div>
-                </div>
-              </div>
-            </div>    
-            <div class="clearfix"></div>
-        </div>
+    <div class="container">
+    <div class="row">
+    <div class="">
+    <h5 class="text-xs-center p-a-1 p-b-1" style="width:100%; margin:auto;color:#fff;font-weight:bold; font-size:28px;line-height:48px;">CONNECTION IS ENABLED THROUGH A VIRTUAL OFFICE, POWERED BY OUR PROPRIETARY COMMUNICATION PLATFORM THAT ALLOWS YOU TO:</h5>
+    
+    <div class="row m-b-0 border-box-item">
+
+    <div class="col-md-3 col-xs-1 text-xs-right">
+    <img src="images/see and talk.jpg" class="modi-img">
+    </div>
+     <div class="col-md-8 p-t-0 p-b-0">
+    <p class="btn  font-20 text-xs-left ">SEE AND TALK TO EACH OTHER</p>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="row m-b-0 border-box-item">
+    <div class="col-md-3 col-xs-1 text-xs-right">
+    <img src="images/Message.jpg" class="modi-img">
+    </div>
+     <div class="col-md-7 p-t-0 p-b-0">
+     <p class="btn   font-20 text-xs-left">CHAT - INTERACTIVE TEXT MESSAGE</p>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="row m-b-0 border-box-item">
+    <div class="col-md-3 col-xs-1 text-xs-right">
+    <img src="images/documet.jpg" class="modi-img">
+    </div>
+     <div class="col-md-7 p-b-0">
+   <label class="btn  m-t-0 font-20 text-xs-left">SHARE PDF DOCUMENTS, PICTURES, MOVIES IN OUR FILE VIEWER
+</label>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="row m-b-0 border-box-item">
+    <div class="col-md-3 col-xs-1 text-xs-right">
+    <img src="images/share screen.jpg" class="modi-img">
+    </div>
+     <div class="col-md-7 p-t-0 p-b-0">
+     <label class="btn  btn-sm  m-t-0 font-20 text-xs-left">SHARE ANY OTHER DOCUMENTS THROUGH OUR SCREEN SHARE FEATURE
+</label>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="row m-b-0 border-box-item">
+    <div class="col-md-3 col-xs-1 text-xs-right">
+    <img src="images/record.png" class="modi-img">
+    </div>
+     <div class="col-md-7 p-t-0 p-b-0">
+   <label class="btn  btn-sm m-t-0 text-xs-left font-20">RECORD INDIVIDUAL VOICE, VIDEO CLIPS
+</label>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="row m-b-0 border-box-item">
+    <div class="col-md-3 col-xs-1 text-xs-right">
+    <img src="images/recording.jpg" class="modi-img">
+    </div>
+     <div class="col-md-7 p-t-0 p-b-0">
+    <label class="btn  m-t-0  font-20 text-xs-left">RECORD ENTIRE SESSIONS INCLUDING VOICE, VIDEO, ALL SHARED DOCUMENTS
+</label>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    <div class="row m-b-0 border-box-item">
+    <div class="col-md-3 col-xs-1 text-xs-right">
+    <img src="images/Listen  in.jpg" class="modi-img" style="min-height:100px;">
+    </div>
+     <div class="col-md-7 p-t-0 p-b-0">
+    <p class="btn font-20 text-xs-left ">INVITE A THIRD PARTY TO 'LISTEN IN' AND VIEW ENTIRE SESSION</p>
+    </div>
+    <div class="clearfix"></div>
+    </div>
+    </div>
+    
+    </div>
+    
+    
+    
+    <div class="clearfix"></div>
+    </div>
     </section>
     <!--Main container-->
-   
+    
+        
+        
+        
+        
+         
+
+
+  
+
+
+
+
+
     <!-- /Start your project here-->
     
 
@@ -516,7 +545,7 @@ padding:4px;
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
-  <script src="js/formSubmission.js"></script>
+	<script src="js/formSubmission.js"></script>
     <script src="js/connectMe.js"></script>
     <script src="js/instantImageShow.js"></script>
     <!-- Bootstrap tooltips -->
@@ -528,65 +557,65 @@ padding:4px;
     <!-- MDB core JavaScript -->
     <script type="text/javascript" src="js/mdb.min.js"></script>
     <script type="text/javascript">
-  $(function(){
-    $(".backLogin").hide();
-    
-    $(document).on("click","#display-form",function(){//if login is hidden due to register in url
-      $(".box-modal").show();
-      $(".backLogin").show("medium");
-      
-    });
-    
-    if(window.location.hash == "#login")
-    {
-      $(".loginModal").click();
-      $(".backLogin").show("medium");
-      $(".loginbut").hide("medium");
-      $(".loginSec").show("medium");
+	$(function(){
+		$(".backLogin").hide();
+		
+		$(document).on("click","#display-form",function(){//if login is hidden due to register in url
+			$(".box-modal").show();
+			$(".backLogin").show("medium");
+			
+		});
+		
+		if(window.location.hash == "#login")
+		{
+			$(".loginModal").click();
+			$(".backLogin").show("medium");
+			$(".loginbut").hide("medium");
+			$(".loginSec").show("medium");
       $(".hideFirstSection").css("display","none");
-    }
-    if(window.location.hash == "#register")
-    {
-      $(".loginModal").click();
-      $(".loginClick").hide();
+		}
+		if(window.location.hash == "#register")
+		{
+			$(".loginModal").click();
+			$(".loginClick").hide();
       $(".hideFirstSection").css("display","none");
 
-      //$(".regClick").css("margin-left","25%");
+			//$(".regClick").css("margin-left","25%");
       $(".backLogin").show("medium");
       $(".loginbut").hide("medium");
       $(".loginSec").hide("medium");
       $(".resSec").show("medium");
-      
-    }
-    $(document).on("click",".loginModal",function(){//if login is hidden due to register in url
-      $(".loginClick").show();
+			
+		}
+		$(document).on("click",".loginModal",function(){//if login is hidden due to register in url
+			$(".loginClick").show();
       $(".hideFirstSection").css("display","block");
-      $(".regClick").css("margin-left","0px");
-    });
-    
-    $(document).on("click",".loginClick",function(){
-      $(".backLogin").show("medium");
-      $(".loginbut").hide("medium");
-      $(".loginSec").show("medium");
+			$(".regClick").css("margin-left","0px");
+		});
+		
+		$(document).on("click",".loginClick",function(){
+			$(".backLogin").show("medium");
+			$(".loginbut").hide("medium");
+			$(".loginSec").show("medium");
       $(".hideFirstSection").css("display","none");
-    });
-    $(document).on("click",".regClick",function(){
-      //window.location.href = "index -2.html";
-      $(".backLogin").show("medium");
-      $(".loginbut").hide("medium");
-      $(".loginSec").hide("medium");
-      $(".resSec").show("medium");
+		});
+		$(document).on("click",".regClick",function(){
+			//window.location.href = "index -2.html";
+			$(".backLogin").show("medium");
+			$(".loginbut").hide("medium");
+			$(".loginSec").hide("medium");
+			$(".resSec").show("medium");
       $(".hideFirstSection").css("display","none");
-  
-    });
-    
-    
-    $(document).on("click",".backLogin",function(){
-      $(".backLogin").hide("medium");
-      $(".loginbut").show("medium");
-      $(".loginSec").hide("medium");
-      $(".resSec").hide("medium");
-      $(".backLogin").show("medium");
+	
+		});
+		
+		
+		$(document).on("click",".backLogin",function(){
+			$(".backLogin").hide("medium");
+			$(".loginbut").show("medium");
+			$(".loginSec").hide("medium");
+			$(".resSec").hide("medium");
+			$(".backLogin").show("medium");
       $(".loginClick").show("medium");
       //$(".hideFirstSection").show();
       //alert($('.loginbut').css('display'));
@@ -597,8 +626,8 @@ padding:4px;
         {
           $(".hideFirstSection").css("display","block");
         }
-    });
-    
+		});
+		
 
 function getCurrentScroll() {
  return window.pageYOffset;

@@ -27,33 +27,20 @@ $getDataOf = isset($_REQUEST['getDataOf'])?$_REQUEST['getDataOf']:'';
 			//print_r($tableResult);
 
 				$result['success'] = 0;
-
 				$result['error']=1;
-
 				$specialData = array();
-
-				
-
 			if (mysqli_num_rows($tableResult) > 0)  
-
 			{
 
 				while($row = mysqli_fetch_assoc($tableResult)) {
-
-							
-
 							$specialData[] = $row;
 
 						}
 
 						$result['success'] = 1;
-
 						$result['error']=0;
-
 						$result['datas']=$specialData;
-
 						echo json_encode($result);
-
 			}
 
 			else

@@ -1,8 +1,19 @@
 <?php
-
+//error_reporting(E_ALL);
 session_start();
-?>
 
+?>
+<?php
+if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
+   header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExperts//#login");
+ }
+
+ if(isset($_GET['redirect']) && $_GET['redirect'] == 'friends-family'){
+	 header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExperts/#login");
+ }
+ if(isset($_GET['redirect']) && ($_GET['redirect'] == 'index' || $_GET['redirect'] == 'home')){
+	 header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExperts/");
+ }?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,19 +31,19 @@ session_start();
 </head>
 <style>
 .over-lap {
-	display: none !important
+	display: block !important
 }
 </style>
-<body class="bodybg">
+<body class="bodybg" background="img/normal/family.jpg">
 <div class="container-fluid header-part">
   <div class="row">
     <div class="col-md-12 text-center">
       <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
       <div class="over-lap">
-        <div class="profile pull-left"> <img src="images/img-3.jpg" class="img-responsive"> </div>
+        <div class="profile pull-left"> <img src="images/placeholder/male2.jpg" class="img-responsive"> </div>
         <div class="pull-right">
-          <p class="loginname"></p>
-          <button class="btn btn-info bg-blue">Login</button>
+          <p class="loginname">Wellcome <?php echo $_SESSION['logged_user_fname']; ?></p>
+          <button class="btn btn-info bg-blue">Logout</button>
         </div>
         <div class="clearfix"></div>
       </div>
@@ -46,65 +57,48 @@ session_start();
 <div class="row">
 <div class="col-md-6 col-md-offset-3">
 <div class="wellcome-text">
-<?php if(isset($_GET['redirect']) && $_GET['redirect'] == 'my-group'){?>
+<?php
+ if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
+   ?>
 <div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
 <p><?php  echo  $_GET['passStr']; ?></p>
 <?php
-if($_GET['tag'] == "existing")
-{
-	header("Refresh: 4; url=".$_GET['redirect'].".php?tag=fetchmembers&gmID=".$_GET['gmID']."&groupName=".$_GET['groupName']."&created_by_id=".$_SESSION['logged_user_id']."&created_by_user_role=".$_SESSION['logged_role_code']);
+
+//echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
+exit;
 }
-else
-header("Refresh: 4; url=".$_GET['redirect'].".php");
-}
-else if(isset($_GET['redirect']) && $_GET['redirect'] == 'index'){?>
+?>
+<?php
+ if(isset($_GET['redirect']) && $_GET['redirect'] == 'friends-family'){
+	 ?>
 <div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
 <p><?php  echo  $_GET['passStr']; ?></p>
 <?php
-header("Refresh: 4; url=".$_GET['redirect'].".php");
+
+//echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
+exit;
 }
-else if(isset($_GET['redirect']) && $_GET['redirect'] == 'SPsuccess'){?>
+?>
+<?php
+ if(isset($_GET['redirect']) && $_GET['redirect'] == 'index'){
+	 ?>
 <div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
 <p><?php  echo  $_GET['passStr']; ?></p>
 <?php
-header("Refresh: 3; url="."index.php?success=1&type=SP&email=".$_GET['email']);
+
+//echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
+exit;
 }
-else if(isset($_GET['redirect']) && $_GET['redirect'] == 'SPerror'){?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
+?>
+<?php
+ if(isset($_GET['redirect']) && $_GET['redirect'] == 'home'){
+	 ?>
+<div class="wellcome-img"><img src="<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
 <p><?php  echo  $_GET['passStr']; ?></p>
 <?php
-header("Refresh: 3; url="."index.php?error=1&type=SP");
-}
-else if(isset($_GET['redirect']) && $_GET['redirect'] == 'SRsuccess'){?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
-header("Refresh: 3; url="."index.php?success=1&type=SR&email=".$_GET['email']);
-}
-else if(isset($_GET['redirect']) && $_GET['redirect'] == 'SRerror'){?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
-header("Refresh: 3; url="."index.php?error=1&type=SR");
-}
-else if(isset($_GET['redirect']) && $_GET['redirect'] == 'add-new-member'){?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
-header("Refresh: 3; url="."index.php?success=1&gmID=".$_GET['gmID']."&tag=".$_GET['tag']);
-/*header("Refresh: 3; url="."my-group.php?success=1&gmID=".$_GET['gmID']."&groupName=".$_GET['groupName']."&tag=".$_GET['tag']);*/
-}
-else if(isset($_GET['redirect']) && $_GET['redirect'] == 'add-new-member-next'){?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
-header("Refresh: 3; url="."index.php?success=1&type=GM&email=".$_GET['email']);
-}
-else if(isset($_GET['redirect']) && $_GET['redirect'] == 'connect'){?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
-header("Refresh: 3; url="."index.php");
+
+//echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
+exit;
 }
 ?>
 </div>
@@ -114,8 +108,8 @@ header("Refresh: 3; url="."index.php");
 
 
 <!-- jQuery Version 1.11.1 --> 
-<script src="js/jquery.js"></script> 
-
+<script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
+<script src="js/connectMe.js"></script>
 <!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 </body>

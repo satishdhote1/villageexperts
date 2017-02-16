@@ -20,7 +20,7 @@ $sql="select * from   sp_specialisation order by specialisation";
       }
       
 //Get Sub specialization Data
-$sql2="select * from  sp_sub_specialisation where specialisation_id = 1 order by sub_specialisation";
+$sql2="select * from  sp_sub_specialisation where specialisation_id = 5 order by sub_specialisation";
       $tableResult2 = mysqli_query($conn, $sql2);
       //print_r($tableResult);
 
@@ -33,7 +33,7 @@ $sql2="select * from  sp_sub_specialisation where specialisation_id = 1 order by
       }
       
           //Get Sub Degree Data
-$sql3="select * from  education  order by priority asc";
+$sql3="select * from  education ORDER BY EducationID";
       $tableResult3 = mysqli_query($conn, $sql3);
       //print_r($tableResult);
 
@@ -48,7 +48,7 @@ $sql3="select * from  education  order by priority asc";
 
 
       //Get Sub specialization Data
-$sql4="select * from  experience";
+$sql4="select * from  experience ORDER BY ExperienceID";
       $tableResult4 = mysqli_query($conn, $sql4);
       //print_r($tableResult);
 
@@ -61,7 +61,7 @@ $sql4="select * from  experience";
       }
       
       //Get Sub Language Data
-$sql5="select * from  sp_language order by languages";
+$sql5="select * from  sp_language ORDER BY languages";
       $tableResult5 = mysqli_query($conn, $sql5);
       //print_r($tableResult);
 
@@ -200,11 +200,6 @@ input[type="text"] {
 .porovider-title {
 	margin: 5px 0;
 }
-
-.search-list li.bg-gray{
-  /*width: 37% !important;*/
-  width: auto !important;
-}
 </style>
 <body style="background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;background-size:cover;background-attachment:fixed;">
 <div class="over-lap">
@@ -242,7 +237,7 @@ input[type="text"] {
           <ul class="list-inline display-list">
             <li>
               <label class="providerLabel">EXPERTISE</label>
-              <input type="text" placeholder="Expertise" readonly class="form-control radius0 specialisation" value="Computers" name="specialisation">
+              <input type="text" placeholder="Expertise" readonly class="form-control radius0 specialisation" value="" name="specialisation">
               <input type="hidden" readonly class="SpecialisationIDS" value="" name="SpecialisationIDS">
             </li>
             <li>
@@ -251,7 +246,7 @@ input[type="text"] {
               <input type="hidden" readonly class="SubSpecialIDS" value="" name="SubSpecialIDS">
             </li>
             <li>
-              <label class="providerLabel">EDUCATION</label>
+              <label class="providerLabel">DEGREE</label>
               <input type="text" placeholder="Degree" readonly class="degree form-control radius0" value="" name="degree">
               <input type="hidden" readonly class="DegreeIDS" value="" name="DegreeIDS">
             </li>
@@ -267,9 +262,9 @@ input[type="text"] {
             </li>
             <li>
               <label class="providerLabel">RATE PER HOUR</label>
-              <input type="text"  placeholder="Rate Per Hour" readonly class="rate form-control radius0" value="" name="rate">
+              <input type="text"  placeholder="Rate Per Hour"readonly class="rate form-control radius0" value="" name="rate">
               <input type="hidden" readonly class="RateIDS" value="" name="RateIDS">
-            </li> 
+            </li>
             <div class="clearfix"></div>
           </ul>
         </div>
@@ -282,7 +277,7 @@ input[type="text"] {
       <div class="clearfix"></div>
     </div>
     <div class="col-xs-12 text-xs-center">
-    <!--<div ><label class="providerLabel" style="text-transform:uppercase;">Matching Experts<span style="border:1px solid #000;border-radius:50%;   display: inline-block; margin-left: 10px;padding: 9px;font-size:20px;font-weight:bold;margin-bottom: 2px;">999</span></label></div>-->
+    <div ><label class="providerLabel" style="text-transform:uppercase;">Matching Experts<span style="border:1px solid #000;border-radius:50%;   display: inline-block; margin-left: 10px;padding: 9px;font-size:20px;font-weight:bold;margin-bottom: 2px;">999</span></label></div>
     </div>
   </div>
 </section>
@@ -341,7 +336,7 @@ input[type="text"] {
     
     <div class="row marginTOP">
       <div class="col-md-12">
-        <h1 class="search-title">Education</h1>
+        <h1 class="search-title">Degree</h1>
         <div class="background-blue">
           <div class="row">
             <div class="col-md-12 right-radius">
@@ -360,21 +355,22 @@ input[type="text"] {
       </div>
     </div>
        <!--This IS for Language-->
-       <!--This IS for Degree-->
     
     <div class="row marginTOP">
       <div class="col-md-12">
-        <h1 class="search-title">LANGUAGE</h1>
+        <h1 class="search-title">Language</h1>
         <div class="background-blue">
           <div class="row">
             <div class="col-md-12 right-radius">
               <ul class="list-inline search-list languageData ">
               <?php foreach($language as $languageDatas) { ?>
-                <li class="bg-gray exp removeExp languageLabel" id="<?php echo $languageDatas['language_id']; ?>" for="<?php echo $languageDatas['language_id']; ?>" dir="<?php echo $languageDatas['languages']; ?>">
+                <li class="bg-gray exp removeExp  languageLabel" id="<?php echo $languageDatas['language_id']; ?>" for="<?php echo $languageDatas['language_id']; ?>" dir="<?php echo $languageDatas['languages']; ?>>
                  <p class="porovider-title"><a href="#" class="search-parson-position text-center "><?php echo $languageDatas['languages']; ?>
-                  </a></p>
+</a></p>
                 </li>
-                <?php  } ?>
+                <?php } ?>
+                
+               
                
               </ul>
             </div>
@@ -382,9 +378,6 @@ input[type="text"] {
         </div>
       </div>
     </div>
-       <!--This IS for Language-->
-    
-    
     
     <!--This IS for Experience-->
     

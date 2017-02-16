@@ -1,23 +1,57 @@
 <?php
-if(isset($_REQUEST['params']))
-{
-	echo '<center><h2 style="color:gold;">[{"email":null,"name":null,"subject":null,"body":null},{"str":"?email=&name=&subject=&body="}]</h2></center>';
-}
-else
-{
-	include("phpSendMail.php");
-	//Create Email instance for sending mail
-	$emailObject=new phpSendMail();
-	$Email = isset($_REQUEST['email'])?$_REQUEST['email']:"dassamtest@gmail.com";
-	$memberName = isset($_REQUEST['name'])?$_REQUEST['name']:"Test Member";
-	$subject = isset($_REQUEST['subject'])?$_REQUEST['subject']:"Village-Expert Group Test!";
-	$body = isset($_REQUEST['body'])?$_REQUEST['body']:"TestBody";
+require("phpMailer/class.phpmailer.php");
+require("phpMailer/PHPMailerAutoload.php");
+mail("dassamtest2@gmail.com","hi","hello");
+
+
+	$mail = new PHPMailer();
+	$mail->SMTPDebug = 1;
+	$mail->isSMTP();
+		$mail->Host = 'sg2plcpnl0137.prod.sin2.secureserver.net';
+		$mail->Port = 465;
+		$mail->SMTPAuth = true;
+		$mail->SMTPSecure = "ssl";
+        $mail->IsSMTP();
+        $mail->Mailer = "smtp";
+        //$mail->Host = "smtp.gmail.com";//"smtp.gmail.com";
+       // $mail->Port = "587";
+       // $mail->SMTPAuth = true;
+       // $mail->SMTPSecure = 'tls';
+    $mail->Username = "villageexperts@otoman.net";
+	$mail->Password = "WebRTC123";
+	$mail->From     = "villageexperts@otoman.net";
 	
-	$mailSent = $emailObject->sendMail($Email, $memberName,$subject,$body);
-	if($mailSent)
-	{
-	  echo "<center><h2 style='color:gold;'>Hello E-mail sent succesfully to ".$Email." !</h2></center>";
-	}
-}
+	//$mail->Username = "dassamtest2@gmail.com";
+	//$mail->Password = "dassamtest253";
+	//$mail->From     = "dassamtest2@gmail.com";
+   	
+   	$mail->FromName = "Village Expert";
+   	$mail->AddAddress("dassamtest2@gmail.com", "hello");
+  	// $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
+   	$mail->Subject = "test2";
+   	$mail->Body    = "also test22";
+   	$mail->WordWrap = 50;  
+   	$mail->IsHTML(true);
+   	if(!$mail->Send())
+   	{
+   		echo "Mailer Error: " . $mail->ErrorInfo;
+   		
+   	}
+   	else
+   	{
+   		echo "success!";
+   	}
+
+
+
+
+
+
+
+
+
+
+
+
 
 ?>
