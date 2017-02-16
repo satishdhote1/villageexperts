@@ -5,21 +5,21 @@ $(document).ready(function(){
 
 				//Provider Click
 
-				$(document).on("click",".SPloginSubmit",function(){
+				$(document).on("click",".friendLoginButton",function(){
 
 					//alert();
 
-					var email = $(".SPloginEmail").val();
+					var email = $(".friendEmail").val();
 
-					var pwd = $(".SPloginPwd").val();
+					var pwd = $(".friendPwd").val();
 
-					var userType = $(".SPLoginHidden").val();
+					var userType = $(".friendLoginHidden").val();
 
 					if(email == "")
 
 					{
 
-						$(".SPerrors").css({"display":"block","color":"red"});
+						$(".SPerrors").css({"dilay":"block","color":"red"});
 
 						$(".SPerrors").text("Email can't be blank!");
 
@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 					{
 
-						$(".SPerrors").css({"display":"block","color":"red"});
+						$(".SPerrors").css({"dilay":"block","color":"red"});
 
 						$(".SPerrors").text("Password can't be blank!");
 
@@ -42,7 +42,7 @@ $(document).ready(function(){
 
 					{
 
-						 $(".loader-exp").show();
+						 $(".SPloginLoader").show();
 
 							$.ajax({
 
@@ -66,9 +66,9 @@ $(document).ready(function(){
 
 								 {
 
-                                                                           $(".loader-exp").hide();
+                                                                           $(".SPloginLoader").hide();
 
-									 $(".SPerrors").css({"display":"block","color":"green"});
+									 $(".SPerrors").css({"dilay":"block","color":"green"});
 
 									 $(".SPerrors").text(data.msg+" Please Wait! You are Redrecting..");
 
@@ -76,9 +76,9 @@ $(document).ready(function(){
 
 										// alert();
 
-									 location.href="centre-announcements.php";
+									 location.href="friends-family.php";
 
-									}, 2000);
+									}, 1000);
 
 								 }
 
@@ -86,15 +86,15 @@ $(document).ready(function(){
 
 								 {
 
- $(".loader-exp").hide();
-
-									  $(".SPerrors").css({"display":"block","color":"red"});
-
+									 $(".SPloginLoader").hide();
+										alert(data.msg);
+									  $(".SPerrors").css({"dilay":"block","color":"red"});
+										$(".friendPwd").val("");
 									 $(".SPerrors").text(data.msg);
 
 									 $('html, body').animate({
 
-													scrollTop: $(".SPerrors").offset().top
+													scrollTop: $(".errors").offset().top
 
 												}, 2000);
 
@@ -104,7 +104,7 @@ $(document).ready(function(){
 
 								 error: function () {
 
- $(".loader-exp").hide();
+ $(".SPloginLoader").hide();
 
 									alert("Login not Successful!");
 
@@ -120,265 +120,38 @@ $(document).ready(function(){
 
 				
 
-				//requester Click
-
-				$(document).on("click",".SRLoginSubmit",function(){
-
-				 
-
-				var email = $(".SRLoginEmail").val();
-
-				var pwd = $(".SRLoginPwd").val();
-
-				var userType = $(".SRLoginHidden").val();
-
-				//alert(email+pwd);
-
-				if(email == "")
-
-				{
-
-					$(".SRerrors").css({"display":"block","color":"red"});
-
-					$(".SRerrors").text("Email can't be blank!");
-
-					
-
-				}
-
-				else if(pwd == "")
-
-				{
-
-					$(".SRerrors").css({"display":"block","color":"red"});
-
-					$(".SRerrors").text("Password can't be blank!");
-
-					
-
-				}
-
-				else
-
-				{
-
-						$(".loader-exp").show();
-
-						$.ajax({
-
-							url:'ajax.php',
-
-							type: 'POST',
-
-							dataType: "json",
-
-							data: {email:email,pwd:pwd,userType:userType,tag:"login"},  
-
-							success: function(data)    // A function to be called if request succeeds
-
-							{
-
-								$(".loader-exp").hide();
-
-							console.log(data);
-
-							 if(data.success == 1)
-
-							 {
-
-								 $(".SRerrors").css({"display":"block","color":"green"});
-
-								 $(".SRerrors").text(data.msg+" Please Wait! You are Redrecting..");
-
-								 setTimeout(function(){
-
-									// alert();
-
-								 location.href="centre-announcements.php";
-
-								}, 2000);
-
-							 }
-
-							 else
-
-							 {
-
-								  $(".SRerrors").css({"display":"block","color":"red"});
-
-								 $(".SRerrors").text(data.msg);
-
-							 }
-
-							} ,      
-
-							 error: function () {
-
-								$(".loader-exp").hide();
-
-								alert("Login not Successful!");
-
-							}  
-
-							 });
-
-					 }
-
-				 
-
-				});
-
-	 		
-
-			//General Member Click
-
-				$(document).on("click",".GMLoginSubmit",function(){
-
-				//alert();
-
-				var email = $(".GMLoginEmail").val();
-
-				var pwd = $(".GMLoginPwd").val();
-
-				var userType = $(".GMLoginHidden").val();
-
-				if(email == "")
-
-				{
-
-					$(".GMerrors").css({"display":"block","color":"red"});
-
-					$(".GMerrors").text("Email can't be blank!");
-
-					
-
-				}
-
-				else if(pwd == "")
-
-				{
-
-					$(".GMerrors").css({"display":"block","color":"red"});
-
-					$(".GMerrors").text("Password can't be blank!");
-
-					
-
-				}
-
-				else
-
-				{
-
-					$(".loader-exp").show();
-
-						$.ajax({
-
-							url:'ajax.php',
-
-							type: 'POST',
-
-							dataType: "json",
-
-							data: {email:email,pwd:pwd,userType:userType,tag:"login"},  
-
-							success: function(data)    // A function to be called if request succeeds
-
-							{
-
-								 $(".loader-exp").hide();
-
-							console.log(data);
-
-							 if(data.success == 1)
-
-							 {
-
-								
-
-								 $(".GMerrors").css({"display":"block","color":"green"});
-
-								 $(".GMerrors").text(data.msg+" Please Wait! You are Redrecting..");
-
-								 setTimeout(function(){
-
-									// alert();
-
-								 location.href="centre-announcements.php";
-
-								}, 2000);
-
-							 }
-
-							 else
-
-							 {
-
-								  $(".GMerrors").css({"display":"block","color":"red"});
-
-								 $(".GMerrors").text(data.msg);
-
-							 }
-
-							} ,      
-
-							 error: function () {
-
- $(".loader-exp").hide();
-
-								alert("Login not Successful!");
-
-							}  
-
-							 });
-
-					 }
-
-				 
-
-				});
-
-				
-
-				//form vlidation of service provider
-
-					
-
-					    $("#SPform").validate({
+				//Add friend validation
+				 $("#addFriend").validate({
 
     
 
-								// Specify the validation rules
+								// ecify the validation rules
 
 								rules: {
 
-									SPname: "required",
+									fname: "required",
 
-									SPaddress: "required",
+									lname: "required",
 
-									SPcity: "required",
+									//city: "required",
 
-									SPcountry: "required",
+									//country: "required",
 
-									SPpin: "required",
+									pin: "required",
+									 pwds: {
+										required: true,
+										//minlength: 5
+									},
+									cpwd: {
+										required: true,
+										//minlength: 5,
+										equalTo: ".pwds"
+									},
 
-									SPmobile: "required",
+									
 
-									sex: "required",
-
-									SPpassword: "required",
-
-									SPexperience: "required",
-
-									SPrateType1: "required",
-
-									SPrateType2: "required",
-
-									SPrateType3: "required",
-									SPdegree:"required",
-									SPinstitute: "required",
-									SPyop:"required",
-									SPemail: {
+									
+									email: {
 
 										required: true,
 
@@ -386,79 +159,37 @@ $(document).ready(function(){
 
 									},
 
-									SPpassword: {
+									phone: {
 
-										required: true,
+										//required: true,
 
-										minlength: 5
+										//minlength: 10,
+										//digits:true
 
-									},
-
-									SPcpassword: {
-										//equalTo: "#SPpassword"
-
-									},
-
-									SPmobile: {
-
-										required: true,
-
-										minlength: 10
-
-									},
-
-									agree: "required"
+									}
 
 								},
 
 								
 
-								// Specify the validation error messages
+								// ecify the validation error messages
 
 								messages: {
 
-									SPname: "Please enter your  name",
-
-									SPaddress: "Please enter your Address",
-
-									SPcity: "Please enter your City",
-
-									SPcountry: "Please enter your Country",
-
-									SPpin: "Please enter your Pin",
-
-									sex: "Please select your Gender",
-
-									//SPexperience: "Please enter the Expirience Field",,
-
-									SPrateType1: "Please enter your RateType1",
-
-									SPrateType2: "Please enter your RateType2",
-
-									SPrateType3: "Please enter your RateType3",
-									SPdegree:"Please select your Degree",
-									SPinstitute: "Please enter your Institution",
-									SPyop:"Please select year of passing",
+									fname: "First name required",
+									lname: "Last name required",
 									
-									SPpassword: {
 
-										required: "Please provide a password",
+									//city: "Please enter your City",
 
-										minlength: "Your password must be at least 5 characters long"
+									//country: "Please enter your Country",
 
-									},
+									
 
-									SPmobile: {
+									
 
-										required: "Please provide Your Phone Number",
-
-										minlength: "Your Phone Number must be at least 10 digit long"
-
-									},
-
-									SPemail: "Please enter a valid email address",
-
-									agree: "Please accept our policy"
+									email: "email address invalid ",
+									pwds: "Enter Password",
 
 								}
 
@@ -469,21 +200,20 @@ $(document).ready(function(){
 								}*/
 
 							});
+							
+				
+				//Add friend Submission
+				$(document).on("click",".addFriendSubmit",function(event){
 
 					
 
-					//end for service provider validation
-
-				//service provider reg
-
-				$(document).on("click",".SPsubmit",function(event){
-
-					
-
-					if($("#SPform").valid() == true)
+					if($("#addFriend").valid() == true)
 					{
 						event.preventDefault();
-						var SPemail = $(".SPemail").val();
+						var email = $(".email").val();
+						var isexpertreg = $(".isexpertreg").val();
+						if(isexpertreg == "")
+						{
 						$.ajax({
 
 									url:'ajax.php',
@@ -492,7 +222,7 @@ $(document).ready(function(){
 
 									dataType: "json",
 									cache:"false",
-									data: {email:$.trim(SPemail),userType:"provider",tag:"checkEmail"},  
+									data: {email:$.trim(email),userType:"addFriend",tag:"checkEmail"},  
 
 									success: function(dataSR)    // A function to be called if request succeeds
 									{
@@ -503,8 +233,14 @@ $(document).ready(function(){
 										}
 										else
 										{
-											$('#SPform').unbind('submit').submit();
-										}
+											//alert("fgdfgdf");
+											$('#addFriend').unbind('submit').submit();
+										
+				
+
+                               }
+									//}
+							   //}
 										
 									},      
 									error: function () {
@@ -514,59 +250,129 @@ $(document).ready(function(){
 									}  
 
 									 });
-					/*
-
-					var SPname = $(".SPname").val();
-
-					var SPaddress = $(".SPaddress").val();
-
-					var SPcity = $(".SPcity").val();
-
-					var SPcountry = $(".SPcountry").val();
-
-					var SPpin = $(".SPpin").val();
-
-					var SPmobile = $(".SPmobile").val();
-
-					var SPemail = $(".SPemail").val();
-
-					var SPsex = $("input[name='sex']:checked").val();
-
-					var SPspecialisation_id = $(".SPspecialisation_id").val();
-
-					var SPsubSpecialisation_id = $(".SPsubSpecialisation_id").val();
-
-					var SPexperience = $(".SPexperience").val();
-
-					var SPlaunguages = $(".SPlaunguages").val();
-
-					var SPtimezone = $(".SPtimezone").val();
-
-					var SPpassword = $(".SPpassword").val();
-
-					var SPcpassword = $(".SPcpassword").val();
-
-					var SPrateType1 = $(".SPrateType1").val();
-
-					var SPrateType2 = $(".SPrateType2").val();
-
-					var SPrateType3 = $(".SPrateType3").val();
-
-					
-
-					 if(SPpassword!=SPcpassword)
-
-					{
-
-						alert("Passwrd did't matched Cnfirm Password!");
-
 					}
-
 					else
-
 					{
+						$('#addFriend').unbind('submit').submit();
+					}
+			}
 
-						 $(".SPloader").show();
+				});
+
+
+				//Add expertise  validation
+				 $("#SPform").validate({
+
+    
+
+								// ecify the validation rules
+
+								rules: {
+
+									fname: "required",
+
+									lname: "required",
+
+									SPexpertise: "required",
+									SP_Sub_Expertise: "required",
+
+									pin: "required",
+									 pwds: {
+										required: true,
+										//minlength: 5
+									},
+									cpwd: {
+										required: true,
+										//minlength: 5,
+										equalTo: ".pwds"
+									},
+
+									
+
+									
+									email: {
+
+										required: true,
+
+										email: true
+
+									},
+
+									phone: {
+
+										//required: true,
+
+										//minlength: 10,
+										//digits:true
+
+									}
+
+								},
+
+								
+
+								// ecify the validation error messages
+
+								messages: {
+
+									fname: "First name required",
+									lname: "Last name required",
+									SPexpertise: "Please Select Expertise",
+									SP_Sub_Expertise: "Please Select Sub_Expertise",
+
+									//country: "Please enter your Country",
+
+									email: "email address invalid ",
+									pwds: "Enter Password",
+
+								}
+
+								/*,submitHandler: function(form) {
+
+									form.submit();
+
+								}*/
+
+							});
+				 //add expertise registration
+				 $(document).on("click",".SPsubmit",function(event){
+				 if($("#SSPform").valid() == true)
+					{
+						event.preventDefault();
+						var email = $(".email").val();
+						$.ajax({
+
+									url:'ajax.php',
+
+									type: 'POST',
+
+									dataType: "json",
+									cache:"false",
+									data: {email:$.trim(email),userType:"addFriend",tag:"checkEmail"},  
+
+									success: function(dataSR)    // A function to be called if request succeeds
+									{
+										if(dataSR.success == 1)
+										{
+											alert("Email already exist !");
+											
+										}
+										else
+										{
+											//alert("fgdfgdf");
+											$('#addFriend').unbind('submit').submit();
+										
+					
+/*
+					var fname = $(".fname").val();
+					var lname = $(".lname").val();
+					var city = $(".city").val();
+					var country = $(".country").val();
+					var phone = $(".phone").val();
+					var email = $(".email").val();
+
+					 
+						 $(".loader").show();
 
 							$.ajax({
 
@@ -576,31 +382,31 @@ $(document).ready(function(){
 
 									dataType: "json",
 
-									data: {SPname:SPname,SPaddress:SPaddress,SPcity:SPcity,SPcountry:SPcountry,SPpin:SPpin,SPmobile:SPmobile,SPemail:SPemail,SPsex:SPsex,SPspecialisation_id:SPspecialisation_id,SPsubSpecialisation_id:SPsubSpecialisation_id,SPexperience:SPexperience,SPlaunguages:SPlaunguages,SPtimezone:SPtimezone,SPrateType1:SPrateType1,SPrateType2:SPrateType2,SPrateType3:SPrateType3,SPpassword:SPpassword,SPcpassword:SPcpassword,userType:"SPreister",tag:"register"},  
+									data: {fname:fname,lname:lname,city:city,country:country,phone:phone,email:email,userType:"addFriend",tag:"register"},  
 
-									success: function(dataSP)    // A function to be called if request succeeds
+									success: function(data)    // A function to be called if request succeeds
 
 									{
 
-										 $(".SPloader").hide();
+										 $(".loader").hide();
 
-									console.log(dataSP);
+									console.log(data);
 
-									 if(dataSP.success == 1)
+									 if(data.success == 1)
 
 									 {
 
-										 $(".SPregErrors").css({"display":"block","color":"green"});
+										 $(".regErrors").css({"dilay":"block","color":"green"});
 
-										 $(".SPregErrors").text(dataSP.msg);
+										 $(".regErrors").text(data.msg);
 
-										  $('body').scrollTo('.SPregErrors',{duration:'slow', offsetTop : '50'});
+										  $('body').scrollTo('.regErrors',{duration:'slow', offsetTop : '50'});
 
 										 setTimeout(function(){
 
 											
 
-											// alert();
+											 alert("Friends Added Succesfully!");
 
 										// location.href="centre-announcements.php";
 
@@ -612,11 +418,11 @@ $(document).ready(function(){
 
 									 {
 
-										  $(".SPregErrors").css({"display":"block","color":"red"});
+										  $(".regErrors").css({"dilay":"block","color":"red"});
 
-										 $(".SPregErrors").text(dataSP.msg);
+										 $(".regErrors").text(data.msg);
 
-										 $('body').scrollTo('.SPregErrors',{duration:'slow', offsetTop : '50'});
+										 $('body').scrollTo('.regErrors',{duration:'slow', offsetTop : '50'});
 
 									 }
 
@@ -630,161 +436,14 @@ $(document).ready(function(){
 
 									 });
 
-					}
+					
+					//}
 
 					*/
 
                                }
-
-				});
-
-				
-
-				 $("#SRform").validate({
-
-    
-
-								// Specify the validation rules
-
-								rules: {
-
-									SRname: "required",
-
-									SRaddress: "required",
-
-									SRcity: "required",
-
-									SRcountry: "required",
-
-									SRpin: "required",
-
-									SRmobile: "required",
-
-									sex: "required",
-
-									SRpassword: "required",
-
-									
-
-									SRemail: {
-
-										required: true,
-
-										email: true
-
-									},
-
-									SRpassword: {
-
-										required: true,
-
-										minlength: 5
-
-									},
-
-									SRcpassword: {
-
-		
-
-									  equalTo: "#SRpassword"
-
-									},
-
-									SRmobile: {
-
-										required: true,
-
-										minlength: 10
-
-									},
-
-									agree: "required"
-
-								},
-
-								
-
-								// Specify the validation error messages
-
-								messages: {
-
-									SRname: "Please enter your  name",
-
-									SRaddress: "Please enter your Address",
-
-									SRcity: "Please enter your City",
-
-									SRcountry: "Please enter your Country",
-
-									SRpin: "Please enter your Pin",
-
-									sex: "Please select your Gender",
-
-									//SPexperience: "Please enter the Expirience Field",,
-
-									
-
-									SRpassword: {
-
-										required: "Please provide a password",
-
-										minlength: "Your password must be at least 5 characters long"
-
-									},
-
-									SRmobile: {
-
-										required: "Please provide Your Phone Number",
-
-										minlength: "Your Phone Number must be at least 10 digit long"
-
-									},
-
-									SRemail: "Please enter a valid email address",
-
-									agree: "Please accept our policy"
-
-								}
-
-								/*,submitHandler: function(form) {
-
-									form.submit();
-
-								}*/
-
-							});
-
-					
-
-				//service requester reg
-
-				$(document).on("click",".SRsubmit",function(event){
-
-				   if($("#SRform").valid() == true)
-					{
-						event.preventDefault();
-						var SRemail = $(".SRemail").val();
-						$.ajax({
-
-									url:'ajax.php',
-
-									type: 'POST',
-
-									dataType: "json",
-
-									data: {email:$.trim(SRemail),userType:"requestor",tag:"checkEmail"},  
-
-									success: function(dataSR)    // A function to be called if request succeeds
-									{
-										if(dataSR.success == 1)
-										{
-											alert("Email already exist !");
-											
-										}
-										else
-										{
-											$('#SRform').unbind('submit').submit();
-										}
+									//}
+							   //}
 										
 									},      
 									error: function () {
@@ -794,509 +453,10 @@ $(document).ready(function(){
 									}  
 
 									 });
-					/*
+			//}
 
-					var SRname = $(".SRname").val();
-
-					var SRaddress = $(".SRaddress").val();
-
-					var SRcity = $(".SRcity").val();
-
-					var SRcountry = $(".SRcountry").val();
-
-					var SRpin = $(".SRpin").val();
-
-					var SRmobile = $(".SRmobile").val();
-
-					var SRemail = $(".SRemail").val();
-
-					var SRsex = $("input[name='sex']:checked").val();
-
-					var SRpassword = $(".SRpassword").val();
-
-					var SRcpassword = $(".SRcpassword").val();
-
-					if(SRemail=="")
-
-					{
-
-						alert("Email can't be blank!!");
-
-					}
-
-					else if(SRpassword!=SRcpassword)
-
-					{
-
-						alert("Passwrd did't matched Cnfirm Password!");
-
-					}
-
-					else
-
-					{
-
-						 $(".SRloader").show();
-
-							$.ajax({
-
-									url:'ajax.php',
-
-									type: 'POST',
-
-									dataType: "json",
-
-									data: {SRname:SRname,SRaddress:SRaddress,SRcity:SRcity,SRcountry:SRcountry,SRpin:SRpin,SRmobile:SRmobile,SRemail:SRemail,SRsex:SRsex,SRSRecialisation_id:SRSRecialisation_id,SRsubSRecialisation_id:SRsubSRecialisation_id,SRexperience:SRexperience,SRlaunguages:SRlaunguages,SRtimezone:SRtimezone,SRrph:SRrph,SRpassword:SRpassword,SRcpassword:SRcpassword,userType:"SRreister",tag:"register"},  
-
-									success: function(dataSR)    // A function to be called if request succeeds
-
-									{
-
-										 $(".SRloader").hide();
-
-									console.log(dataSR);
-
-									 if(dataSR.success == 1)
-
-									 {
-
-										 $(".SRregErrors").css({"display":"block","color":"green"});
-
-										 $(".SRregErrors").text(dataSR.msg);
-
-										 setTimeout(function(){
-
-											  $('body').scrollTo('.SRregErrors',{duration:'slow', offsetTop : '50'});
-
-											// alert();
-
-										// location.href="centre-announcements.php";
-
-										}, 4000);
-
-									 }
-
-									 else
-
-									 {
-
-										  $(".SRregErrors").css({"display":"block","color":"red"});
-
-										 $(".SRregErrors").text(dataSR.msg);
-
-										 $('body').scrollTo('.SRregErrors',{duration:'slow', offsetTop : '50'});
-
-									 }
-
-									} ,      
-
-									 error: function () {
-
-										alert("Login not Successful!");
-
-									}  
-
-									 });
-
-					}
-
-					*/
-
-                               }
-
-				});
-
-				//Group Member validation & existing email checking
-			$("#newMember").validate({
+				};
 				
-					rules: {
-							memberName: "required",
-							Email: {
-										required: true,
-										email: true
-									},
-							mobileNo: {minlength: 10},
-						   },
-						   messages: {
-									   memberName: "Please enter your  name",
-									   mobileNo: {
-										    minlength: "Your Phone Number must be at least 10 digit long"
-									   },
-									   Email: "Please enter a valid email address",
-						   }
-			});
-			
-			$(document).on("click",".group-submit",function(event){
-					if($("#newMember").valid() == true)
-					{
-						event.preventDefault();
-						var GMemail = $(".GMemail").val();
-						$.ajax({
-
-									url:'ajax.php',
-
-									type: 'POST',
-
-									dataType: "json",
-									cache:"false",
-									data: {email:$.trim(GMemail),userType:"group_member",tag:"checkEmail"},  
-
-									success: function(dataSR)    // A function to be called if request succeeds
-									{
-										if(dataSR.success == 1)
-										{
-											alert("Email already exist !");
-											
-										}
-										else
-										{
-											$('#newMember').unbind('submit').submit();
-										}
-										
-									},      
-									error: function () {
-
-										alert("Email Checking Error!");
-
-									}  
-
-									 });
-					
-
-                               }
-					
-				});
+		});	
 				
-			//SP upload
-
-	 	$(document).on("click",".SPupload",function(){
-
-			
-
-			
-
-		var formData = new FormData();
-
-        var file = document.getElementById("SPimage").files[0];
-
-
-
-        //formData.append("companyname", $("#companyname").val());
-
-        //formData.append("country", $("#country").val());
-
-        formData.append("file", file);
-
-         $(".SPimageloader").show();
-
-        $.ajax({
-
-            type: "POST",
-
-            url: 'ajax.php',
-
-            data: formData,
-
-            dataType: 'json',
-
-            contentType: false,
-
-            processData: false,
-
-			cache: false,
-
-   			 global: false,
-
-            success: function (dataSPupload) {
-
-				 $(".SPimageloader").hide();
-
-				if(dataSPupload.success == 1)
-
-				 {
-
-					 $(".SPimageErrors").css({"display":"block","color":"green"});
-
-					 $(".SPimageErrors").text(dataSPupload.msg);
-
-					 $('body').scrollTo('.SPimageErrors',{duration:'slow', offsetTop : '50'});
-
-					 $(".SPshowImage").attr("src","images/uploads/"+ dataSPupload.imageName);
-
-					 setTimeout(function(){
-
-						  $(".SPimageErrors").css("display","none");
-
-						  dataSPupload = '';
-
-						 
-
-						// alert();
-
-					// location.href="centre-announcements.php";
-
-					}, 5000);
-
-				 }
-
-				 else
-
-				 {
-
-					 $(".SPimageErrors").css({"display":"block","color":"green"});
-
-					 $(".SPimageErrors").text(dataSPupload.msg);
-
-					  $('body').scrollTo('.SPimageErrors',{duration:'slow', offsetTop : '50'});
-
-					 setTimeout(function(){
-
-						 $(".SPimageErrors").css("display","none");
-
-						 dataSPupload = '';
-
-						// alert();
-
-					// location.href="centre-announcements.php";
-
-					}, 5000);
-
-				 }
-
-              // alert(data);
-
-            },
-
-            error: function (error) {
-
-                
-
-            }
-
-        });
-
-			return false;
-
-				
-
-			//console.log(formdata);	
-
-		
-
-	 
-
-	
-
-	 
-
-	 });
-
-	 
-
-	 
-
-	 //SP upload
-
-	 	$(document).on("click",".SRupload",function(){
-
-			
-
-			
-
-		var formData = new FormData();
-
-        var file = document.getElementById("SRimage").files[0];
-
-
-
-        //formData.append("companyname", $("#companyname").val());
-
-        //formData.append("country", $("#country").val());
-
-        formData.append("file", file);
-
-        $(".SRloginLoader").show();
-
-        $.ajax({
-
-            type: "POST",
-
-            url: 'ajax.php',
-
-            data: formData,
-
-            dataType: 'json',
-
-            contentType: false,
-
-            processData: false,
-
-			cache: false,
-
-   			 global: false,
-
-            success: function (dataSRupload) {
-
-				$(".SRloginLoader").hide();
-
-				if(dataSRupload.success == 1)
-
-				 {
-
-					 $(".SRimageErrors").css({"display":"block","color":"green"});
-
-					 $(".SRimageErrors").text(dataSRupload.msg);
-
-					 $('body').scrollTo('.SRimageErrors',{duration:'slow', offsetTop : '50'});
-
-					 $(".SRshowImage").attr("src","images/uploads/"+ dataSRupload.imageName);
-
-					 setTimeout(function(){
-
-						  $(".SRimageErrors").css("display","none");
-
-						  dataSRupload = '';
-
-						// alert();
-
-					// location.href="centre-announcements.php";
-
-					}, 5000);
-
-				 }
-
-				 else
-
-				 {
-
-					 
-
-					 $(".SRimageErrors").css({"display":"block","color":"red"});
-
-					 $(".SRimageErrors").text(dataSRupload.msg);
-
-					 // $('body').scrollTo('.SRimageErrors',{duration:'slow', offsetTop : '50'});
-
-					 setTimeout(function(){
-
-						 $(".SRimageErrors").css("display","none");
-
-						 dataSRupload = '';
-
-						// alert();
-
-					// location.href="centre-announcements.php";
-
-					}, 5000);
-
-				 }
-
-              // alert(data);
-
-            },
-
-            error: function (error) {
-
-                alert("Image Upload Error!");
-
-            }
-
-        });
-
-			return false;
-
-				
-
-			//console.log(formdata);	
-
-		
-
-	 
-
-	
-
-	 
-
-	 });
-	    $(document).on("change","#SPspecialisation_id",function(){
-			var id = $(".SPspecialisation_id").val();
-			//alert(id);
-			$(".loader-exp").show();
-			$.ajax({
-
-					url:'getSubSpecialization.php',
-
-					type: 'POST',
-
-					dataType: "json",
-
-					data: {id:$.trim(id)},  
-
-					success: function(data)    // A function to be called if request succeeds
-					{
-						$(".loader-exp").hide();
-						if(data.success == 1)
-						{
-							var appendData = '';
-							$.each(data.result,function(key,value){
-								appendData+="<option value='"+value.sub_specialisation_id+"'>"+value.sub_specialisation+"</option>";
-								
-								});
-								$(".SPsubSpecialisation_id").html(appendData);
-							
-						}
-						else
-						{
-							alert("No data found for Sub-Specialization");
-						}
-						
-					},      
-					error: function () {
-						$(".loader-exp").hide();
-						
-
-						alert("Network Error!");
-
-					}  
-
-					 });
-		
-		
-		});
-	
-
-});	
-$( window ).load(function() {	
-
-	if($(".sploginModalshow").val() == "1")
-	{
-		
-		$('#SPLogin').modal('show');
-		$('#SPLogin').on('shown', function() {
-			$("#SPLoginPwd").focus();
-		
-		});
-	 }
-	
-	
-		if($(".srloginModalshow").val() == "1")
-		{
-			$('#SRLogin').modal('show');
-			$('#SRLogin').on('shown', function() {
-				$("#SRLoginPwd").focus();
-			
-			});
-		 }
-	
-	
-		 if($(".gmloginModalshow").val() == "1")
-		{
-			
-			$('#GMLogin').modal('show');
-			$('#GMLogin').on('shown', function() {
-				$("#GMLoginPwd").focus();
-			
-			});
-		 }
-
 	});	

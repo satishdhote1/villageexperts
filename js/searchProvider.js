@@ -3,54 +3,68 @@ $(document).ready(function(){
 		
 		$("#search").submit();
 	});
-var $document = $(document);
-     var selector = '[data-rangeslider]';
-     var $inputRange = $(selector); 
+	 //rate per hour range slider
+	 //*******************************************
 	 
-     function valueOutput(element) {
-		// alert(element.value);
-         var value = element.value;
-         var output = $("#js-output");//element.parentNode.getElementsByTagName('output')[0];
-         output.text(value);
-		 if(value!=parseInt(1))
-		 $(".rate").val(value);
-     } /** * Initial value output */
-     for (var i = $inputRange.length - 1; i >= 0; i--) {
-         valueOutput($inputRange[i]);
-     } /** * Update value output */
-     $document.on('input', selector, function (e) {
-         valueOutput(e.target);
-     }); /** * Initialize the elements */
-     $inputRange.rangeslider({
-         polyfill: false,
-		 fillClass: 'rangeslider__fill'
-     });
+	var $element = $('[data-rangeslider]');
+	var $handle;
+	 $element .rangeslider({
+      polyfill: false,
+      onInit: function() {
+      $handle = $('.rangeslider__handle', this.$range);
+      updateHandle($handle[0], this.value);
+     }
+     }).on('input', function() {
+      updateHandle($handle[0], this.value);
+    });
+
+    function updateHandle(el, val) {
+      el.textContent = val;
+      var output = $("#js-output");//element.parentNode.getElementsByTagName('output')[0];
+      output.text(val);
+	  if(val!=parseInt(0))
+	  {
+	  $(".rate").val(val);
+	$(".RateIDS").val(val);
+	}
+	/*else if(val==parseInt(1)){console.log("sam--"+val);
+		$(".rate").val("10");
+	$(".RateIDS").val(val);
+	}*/
+	 }
+	 /*else{
+	 	$(".rate").val("0");
+		$(".RateIDS").val("0");
+	 }*/
+ //End of rate per hour range slider
+
+ //**********************************************
+
+ //Experience range slider
+
+   var $element2 = $('[data-rangeslider2]');
+   var $handle2;
+   $element2.rangeslider({
+     polyfill: false,
+	 fillClass: 'rangeslider__fill2',
+     onInit: function() {
+     $handle2 = $('.rangeslider__handle', this.$range);
+     updateHandle2($handle2[0], this.value);
+     }
+    }).on('input', function() {
+     updateHandle2($handle2[0], this.value);
+    });
+
+  function updateHandle2(el2, val2) {
+    el2.textContent = val2;
+    var output2 = $("#js-outputExperience");//element.parentNode.getElementsByTagName('output')[0];
+         output2.text(getExpCat(val2));
+		 if(val2!=parseInt(0))
+		 $(".experience").val(val2);
+		 $(".ExperienceIDS").val(getExpID(val2));
+   }
 	 
-	 //Experience range slider
-	 var selectorExp = '[data-rangeslider2]';
-     var $inputRange2 = $(selectorExp); 
-	 
-     function valueOutput2(element) {
-		// alert(element.value);
-         var value = element.value;
-         var output = $("#js-outputExperience");//element.parentNode.getElementsByTagName('output')[0];
-         output.text(getExpCat(value));
-		 if(value!=parseInt(1))
-		 $(".experience").val(value);
-		 $(".ExperienceIDS").val(getExpID(value));
-     } /** * Initial value output */
-     for (var i = $inputRange2.length - 1; i >= 0; i--) {
-         valueOutput2($inputRange2[i]);
-     } /** * Update value output */
-     $document.on('input', selectorExp, function (e) {
-         valueOutput2(e.target);
-     }); /** * Initialize the elements */
-     $inputRange2.rangeslider({
-         polyfill: false,
-		 fillClass: 'rangeslider__fill2'
-     });
-     function getExpID(value){
-		 
+	     function getExpID(value){
 		 if(value <=5)
 		 return 1
 		 else if(value <=10)
@@ -63,10 +77,8 @@ var $document = $(document);
 		 return 4
 		 else
 		 return 5
-		 
 	 }
 	  function getExpCat(value){
-		 
 		 if(value <=5)
 		 return "1-5";
 		 else if(value <=10)
@@ -79,8 +91,10 @@ var $document = $(document);
 		 return "20-25";
 		 else
 		 return "25+";
-		 
 	 }
+ // End of Experience range slider	 
+	 
+	 
      //chckbox group check
      // the selector will match all input controls of type :checkbox
 // and attach a click event handler 
@@ -110,7 +124,7 @@ $("input:checkbox").on('click', function() {
      	     $(".loader-exp").show();
 			 console.log($(this).attr("for"));
             var expertId = $(this).attr("for");
-	    var expertValue = $(this).attr("dir");
+	    	var expertValue = $(this).attr("dir");
 	      $(".specialisation").val(expertValue);
 	      $(".SpecialisationIDS").val(expertId);
 			$.ajax({
@@ -134,13 +148,14 @@ $("input:checkbox").on('click', function() {
                /*
 			    resultData = resultData + '<li class="modifi-list-item-2" id="'+id+'"><div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/'+images+'"></div></div><div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="col-xs-12 text-center"><div class="checkbox padding30" id="checkdiv" style="display:block;margin:7px 0px"><input type="checkbox" name="subSpecial[1][]" id="subSpecial" value="1" class="no-styles"><label for="subSpecial'+id+'" class="my-label"><span class="subExpertiesLabel" id="subExpertiesLabel" for="'+id+'" dir="'+values+'"></span></label><input type="hidden" name="paymentnonce" id="paymentnonce" value="" /></div></div><div class="setHooverSubExprt'+id+' removeSubExp" id=""></div></li>';
 			   */
-			   resultData = resultData + '<li class="modifi-list-item-2 subExpertiesLabel" id="'+id+'"  for="'+id+'" dir="'+values+'"><div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/'+images+'"></div></div><div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="setHooverSubExprt'+id+' removeSubExp" id=""></div></li>';
-
+			   
+			   resultData = resultData + '<li class="bg-gray exp removeExp subExpertiesLabel" id="'+id+'"  for="'+id+'" dir="'+values+'"><p class="porovider-title"><a href="#" class="search-parson-position text-center ">'+values+'</a></p></li>';
+			   
                    });
 		//	alert( $(".removeExp").offset().top);
-                      $('.setSubSpecialData').html(resultData);
-                     //alert( parseInt($(".moveSubSpecial").offset().top)- parseInt($(".moveSubSpecial").height()));
-                      $('html,body').animate({scrollTop:  parseInt($(".moveSubSpecial").offset().top)- parseInt($(".moveSubSpecial").height())}, 500,'swing');
+                      $('.SUBspecialData').html(resultData);
+                     //alert(  parseInt($(".moveExperties").height()));
+                      //$('html,body').animate({scrollTop:  parseInt($(".moveSubSpecial").offset().top)-100}, 500,'swing');
 					 $(".removeExp").each(function(index, element) {
 					 
 					  if($(this).hasClass("over"))
@@ -148,7 +163,7 @@ $("input:checkbox").on('click', function() {
 						 $(this).removeClass("over");
 					  }
 					  });
-					  $(".setHooverExprt"+expertId).addClass("over");
+					 // $(".setHooverExprt"+expertId).addClass("overDisplay");
     					
 						  }
 						 else
@@ -173,28 +188,23 @@ $("input:checkbox").on('click', function() {
 					 
 					  if($(this).hasClass("over"))
 					  {
-						 $(this).removeClass("over");
+						 //$(this).removeClass("over");
 					  }
 					  });
-		 $(".setHooverSubExprt"+expertId).addClass("over");
+		 //$(".setHooverSubExprt"+expertId).addClass("over");
 		
-		  $('html,body').animate({scrollTop:  (parseInt($(".moveDegree").offset().top)- parseInt($(".moveDegree").height()))+300}, 500,'swing');
+		  //$('html,body').animate({scrollTop:  (parseInt($(".moveDegree").offset().top)- 100)}, 500,'swing');
 	  });
         //SETTING UP degreeLabel
         $(document).on("click",".degreeLabel",function() {
 		var expertId = $(this).attr("for");
 		var expertValue = $(this).attr("dir");
+		//alert(expertId+"=="+expertValue);
 		$(".degree").val(expertValue);
 		$(".DegreeIDS").val(expertId);
-		 $(".removeDeg").each(function(index, element) {
-					 
-					  if($(this).hasClass("over"))
-					  {
-						 $(this).removeClass("over");
-					  }
-					  });
-		 $(".setHooverDegree"+expertId).addClass("over");
-		  $('html,body').animate({scrollTop:  parseInt($(".moveLang").offset().top)- parseInt($(".moveLang").height())}, 500,'swing');
+		 
+		// $(".setHooverDegree"+expertId).addClass("over");
+		 // $('html,body').animate({scrollTop:  parseInt($(".moveLang").offset().top)- 100}, 500,'swing');
 	  });
 	  
 	  //SETTING UP experienceLabel
@@ -253,8 +263,9 @@ $("input:checkbox").on('click', function() {
 						 $(this).removeClass("over");
 					  }
 					  });*/
-		  $(".setHooverLan"+expertId).addClass("over");
-		   $('html,body').animate({scrollTop:  (parseInt($(".moveExper").offset().top)- parseInt($(".moveExper").height()))}, 500,'swing');
+		 // $(".setHooverLan"+expertId).addClass("checkbox-icon:hover over");
+		   //$('html,body').animate({scrollTop:  (parseInt($(".moveExper").offset().top)- parseInt($(".moveExper").height()))}, 500,'swing');
          });
 	  
 });
+

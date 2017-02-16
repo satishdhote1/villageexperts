@@ -20,7 +20,7 @@ $(document).ready(function(e) {
           success: function (result) {
 			  if(result.success == 1)
 				{		
-				 window.location.href=document.location.origin+":8084/?s=1#/";//https://www.villageexperts.com
+				 window.location.href="https://www.villageexperts.com:8084/?s=1#/"+result.timestamp;//document.location.origin+
 				 console.log("if: "+result);
 				}
 					else{
