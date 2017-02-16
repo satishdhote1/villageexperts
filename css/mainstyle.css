@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 /* CSS Document */
-.providerLabel{font-size:13px;}
-
 
 .bodybg{background:url(../images/background.jpg) 100% 100%;background-size:cover;font-family:Arial, Helvetica, sans-serif;background-attachment:fixed;}
 
@@ -55,7 +53,7 @@
 
 .wellcome-text > p {
 
-    color: white;
+    color: black;
 
     font-family: helvetica;
 
@@ -79,7 +77,7 @@
 
     margin: 20px auto;
 
-    overflow: hidden;
+   /* overflow: hidden;*/
 
     width: 150px;
 
@@ -88,7 +86,7 @@
 }
 
 .over-lap {
-
+z-index:1040;
     position: absolute;
 
     right: 50px;
@@ -115,7 +113,7 @@
 
 .profile.pull-left img{height:100%;width:100%;}
 
-.loginname{font-size:12px;color:#000;font-family:Arial, Helvetica, sans-serif;}
+.loginname{font-size:18px;color:#fff;font-family:Arial, Helvetica, sans-serif;margin:0;}
 
 .bg-blue{background:#0078ac;border:0px;}
 
@@ -124,8 +122,6 @@
 .header-bg {
 
     background: #60567d;
-	 border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
 
 }
 
@@ -224,7 +220,6 @@
     min-height: 67px;
 
     padding:15px 25px 0px 0px;
-	border-radius:5px;
 
     text-align: right;
 
@@ -352,7 +347,7 @@ label.control-label {
 
 
 
-.bg-off-white{background:#E8E8E8;margin-top:80px; padding-bottom: 30px;margin-bottom:30px;border-radius:5px;}
+.bg-off-white{background:#E8E8E8;margin-top:80px; padding-bottom: 30px;margin-bottom:30px;}
 
 
 
@@ -365,8 +360,6 @@ label.control-label {
     padding: 3px 0 10px 0px;
 
     transition: all 0.5s ease-in-out 0s;
-	 border-bottom-left-radius: 5px;
-	  border-bottom-right-radius: 5px;
 
 }	
 
@@ -410,7 +403,7 @@ label.control-label {
 
     font-family: helvetica;
 
-    font-size: 20px;
+    font-size: 25px;
 
     margin: 0;
 
@@ -438,7 +431,7 @@ label.control-label {
 
 /*-------------MY GROUP---------------*/
 
-.grop-part{background:#fff;margin:40px auto;border-radius:3px;overflow:hidden;height:500px;}
+.grop-part{background:#fff;margin:40px auto;border-radius:3px;overflow:hidden;}
 
 .my-group{   background: #ad8a62 ;
 
@@ -900,45 +893,27 @@ label.control-label {
 
 .search-background{background:rgba(255,255,255,0.2);margin-top:25px;padding-bottom:20px;border:solid 1px #666;}
 
-.background-blue{background:rgba(171,171,255,0.5); border-bottom-left-radius: 10px;
+
+.background-blue{background:rgba(171,171,255,0.8); border-bottom-left-radius: 10px;
 
     border-bottom-right-radius: 10px}
-
 h1.search-title {
-
-    background: #b0acff;
-
+    background: #7d71a3;
     border-top-left-radius: 15px;
-
     border-top-right-radius: 15px;
-
-    color:red/*#fff*/;
-
-    font-family: "helvetica";
-
-    font-size: 30px /*20px*/;
-
-    font-weight: 500;
-
+    color: #fff;
+    font-family: helvetica;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 0;
     padding: 11px;
-
     text-align: center;
-	
- text-shadow: 1px 1px 1px #666
     text-transform: uppercase;
-
-    width: 36%;
-
-	margin-bottom: 0;
-
-   
-
+    width: 27%;min-width:200px;
 }
-
 .border4side{border:1px solid #eee;}
 
-.bg-gray{background:#faf8ff;}
-.search-profile{}
+
 .search-profile > img {
 
     height: 100%;
@@ -961,36 +936,18 @@ h1.search-title {
 
 }
 
-.search-list li.bg-gray:hover {
-      background:#ed9100;}
-
-
 .search-list li.bg-gray {
-
-    border: 1px solid #EEE;
-
+ border-radius: 10px 5px;
     margin: 10px;
-
-    width: 22.5%;
-	border-radius:7px;
-	
+    min-width: 170px;
+    width: 15%;
 
 }
 
-.search-parson-position{  background: #7d71a3;
-    border-radius: 5px;
-    color: #fff;
-    display: inherit;
-    font-family: georgia;
-    font-size: 18px;
-   overflow:hidden;
-    letter-spacing: 1px;
-    margin: 5px 0;
-    padding: 10px 0;
-    text-transform: uppercase;
-    transition: all 0.3s ease-in-out 0s;}
+.onButtonSelect{background:#7d71a3;color:#fff;text-decoration:none;}
+.search-parson-position{background:#ccccff;color:#000;font-family:Arial, Helvetica, sans-serif;font-size:15px;padding:10px 15px;margin:5px 0px;display: inherit;transition:all 0.3s ease-in-out 0s;font-weight:bold;}
 
-.search-parson-position:hover{background:#c0b3e6;color:#000;text-decoration:none;}
+.search-parson-position:hover{background:#7d71a3;color:#fff;text-decoration:none;}
 
 .col-sm-2.pull-right.count {
 
@@ -1044,7 +1001,7 @@ h1.search-title {
 
     font-family:;
 
-    font-size: 17px;
+    font-size: 16px;
 
     padding: 10px 0 !important;
 
