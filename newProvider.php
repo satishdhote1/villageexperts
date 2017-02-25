@@ -33,7 +33,7 @@ $sql2="select * from  sp_sub_specialisation where specialisation_id = 1 order by
       }
       
           //Get Sub Degree Data
-$sql3="select * from  education  order by priority asc";
+$sql3="select * from  education where specialisation_id = 1 order by priority asc";
       $tableResult3 = mysqli_query($conn, $sql3);
       //print_r($tableResult);
 

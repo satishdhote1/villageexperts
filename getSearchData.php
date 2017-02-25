@@ -53,64 +53,49 @@ $getDataOf = isset($_REQUEST['getDataOf'])?$_REQUEST['getDataOf']:'';
 
 	}
 
-	else if($getDataOf == 'subSpecial')
+else if($getDataOf == 'subSpecial')
+{
+$id = isset($_REQUEST['id'])?$_REQUEST['id']:'';
 
-	{
+$sql="select * from 	sp_sub_specialisation where specialisation_id = ".$id." order by sub_specialisation";
+$tableResult = mysqli_query($conn, $sql);
+//print_r($tableResult);
+$result['success'] = 0;
+$result['error']=1;
+$subSpecialData = array();
+if (mysqli_num_rows($tableResult) > 0)  
+{
+while($row = mysqli_fetch_assoc($tableResult)) {
+$subSpecialData[] = $row;
+}
+}
+//Education irrespective of Specialisation
 
-		$id = isset($_REQUEST['id'])?$_REQUEST['id']:'';
+$sql2="select * from education where specialisation_id = ".$id." order by priority asc";
+$tableResult2 = mysqli_query($conn, $sql2);
 
-		
+$educationData = array();
+if (mysqli_num_rows($tableResult2) > 0)  
+{
+while($row2 = mysqli_fetch_assoc($tableResult2)) {
+$educationData[] = $row2;
+}
+}
 
-		$sql="select * from 	sp_sub_specialisation where specialisation_id = ".$id." order by sub_specialisation";
-
-  
-
-			$tableResult = mysqli_query($conn, $sql);
-
-			//print_r($tableResult);
-
-				$result['success'] = 0;
-
-				$result['error']=1;
-
-				$subSpecialData = array();
-
-				
-
-			if (mysqli_num_rows($tableResult) > 0)  
-
-			{
-
-				while($row = mysqli_fetch_assoc($tableResult)) {
-
-							
-
-							$subSpecialData[] = $row;
-
-						}
-
+/*print_r($subSpecialData);
+print_r($educationData);
+die("gddgf");
+*/
 						$result['success'] = 1;
 
 						$result['error']=0;
 
 						$result['datas']=$subSpecialData;
+						$result['educationData']=$educationData;
 
 						echo json_encode($result);
 
-			}
-
-			else
-
-			{
-
-				echo json_encode($result);
-
-			}
-
-		
-
-	}
-
+}
 else if($getDataOf == 'experience')
 
 	{
