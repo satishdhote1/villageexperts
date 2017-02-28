@@ -56,8 +56,15 @@ $getDataOf = isset($_REQUEST['getDataOf'])?$_REQUEST['getDataOf']:'';
 else if($getDataOf == 'subSpecial')
 {
 $id = isset($_REQUEST['id'])?$_REQUEST['id']:'';
+if($id == 6)
+{
+	$sql="select * from  sp_sub_specialisation where specialisation_id = ".$id." order by specialisation_id";
+}
+else
+{
+	$sql="select * from  sp_sub_specialisation where specialisation_id = ".$id." order by sub_specialisation";
+}
 
-$sql="select * from 	sp_sub_specialisation where specialisation_id = ".$id." order by sub_specialisation";
 $tableResult = mysqli_query($conn, $sql);
 //print_r($tableResult);
 $result['success'] = 0;
