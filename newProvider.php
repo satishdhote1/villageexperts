@@ -20,7 +20,9 @@ $sql="select * from   sp_specialisation order by specialisation";
       }
       
 //Get Sub specialization Data
-$sql2="select * from  sp_sub_specialisation where specialisation_id = 1 order by sub_specialisation";
+
+		$sql2="select * from  sp_sub_specialisation where specialisation_id = 1 order by sub_specialisation";
+	
       $tableResult2 = mysqli_query($conn, $sql2);
       //print_r($tableResult);
 

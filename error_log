@@ -250,3 +250,9 @@ Stack trace:
 #1 /home/satishdhote/public_html/villageExperts/connectMe.php(6): connections->connect()
 #2 {main}
   thrown in /home/satishdhote/public_html/villageExperts/config/connection.php on line 62
+[21-Feb-2017 05:44:23 UTC] PHP Fatal error:  Uncaught exception 'mysqli_sql_exception' with message 'Can't connect to local MySQL server through socket '/var/lib/mysql/mysql.sock' (2)' in /home/satishdhote/public_html/villageExperts/config/connection.php:62
+Stack trace:
+#0 /home/satishdhote/public_html/villageExperts/config/connection.php(62): mysqli_connect('localhost', 'villageExperts', 'WebRTC123', 'b7_15994620_crm')
+#1 /home/satishdhote/public_html/villageExperts/connectMe.php(6): connections->connect()
+#2 {main}
+  thrown in /home/satishdhote/public_html/villageExperts/config/connection.php on line 62

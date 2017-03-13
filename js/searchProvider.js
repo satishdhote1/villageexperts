@@ -125,6 +125,7 @@ $("input:checkbox").on('click', function() {
 			 console.log($(this).attr("for"));
             var expertId = $(this).attr("for");
 	    	var expertValue = $(this).attr("dir");
+	    	
 	      $(".specialisation").val(expertValue);
 	      $(".SpecialisationIDS").val(expertId);
 			$.ajax({

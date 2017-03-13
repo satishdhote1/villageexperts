@@ -1,6 +1,4 @@
 <?php
-echo "==testSam==";
-die("hello die()");
 include("config/connection.php");
 
 session_start();
