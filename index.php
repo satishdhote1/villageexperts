@@ -1,4 +1,5 @@
 <?php
+echo "==testSam==";
 include("config/connection.php");
 
 session_start();
