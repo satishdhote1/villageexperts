@@ -1,4 +1,5 @@
 <?php
+echo "test====";
 include("config/connection.php");
 
 session_start();
