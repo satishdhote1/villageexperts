@@ -42,14 +42,9 @@ date_default_timezone_set($xxx);*/
    
     <!--  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" rel="stylesheet">
 	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">-->
-<link href="css/mdb.min.css" rel="stylesheet"> 
- <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
+    <link href="css/mdb.min.css" rel="stylesheet">
+    <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
     <!-- Material Design Bootstrap -->
-
-    
-
-   
-
 
 
     <!-- Your custom styles (optional) -->
@@ -129,10 +124,6 @@ background-color: #4d4dff;
 
 
     <!-- Start your project here-->
-
-
-
- 
 
 
 
@@ -226,36 +217,34 @@ background-color: #4d4dff;
 </div>
 </div>
 </section>
-            <div class="card-block text-xs-center">
+    <div class="card-block text-xs-center">
 
-            
+                <!--Title-->
+    <div class="clearfix"></div>
+    <div class="loader"></div>
+    <div class="alert alert-success connSuccess" style="display:none;margin-top: 10px;">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <span></span> Time Selected!
+    </div>
+    <div class="alert alert-warning connDanger" style="display:none;margin-top: 10px;">
+      <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+      <span></span>
+    </div>
 
-           
+    <div class="col-md-6 col-md-offset-2" style="padding-left:0">
+        <div class="text-xs-right pull-xs-left"><p class="white-text"><strong style="font-size: 30px;">Available =</strong> <label class="simbel" style="background-color: #FC6; color: #000; border: none;">A</label></p></div>
+        <div class="text-xs-left pull-xs-right"><p class="white-text"><strong style="font-size: 30px;">Confirmed =</strong> <label class="simbel" style="background-color:#9595f9; color: #000; border: none;">C</label></p></div>
+    </div>
 
-                            <!--Title-->
-<div class="clearfix"></div>
-<div class="loader"></div>
-<div class="alert alert-success connSuccess" style="display:none;margin-top: 10px;">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <span></span> Time Selected!
-</div>
-<div class="alert alert-warning connDanger" style="display:none;margin-top: 10px;">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <span></span> 
-</div>
-                  <div class="col-md-6 col-md-offset-2" style="padding-left:0">          
-<div class="text-xs-right pull-xs-left"><p class="white-text"><strong style="font-size: 30px;">Available =</strong> <label class="simbel" style="background-color: #FC6; color: #000; border: none;">A</label></p></div>
-<div class="text-xs-left pull-xs-right"><p class="white-text"><strong style="font-size: 30px;">Confirmed =</strong> <label class="simbel" style="background-color:#9595f9; color: #000; border: none;">C</label></p></div>
-</div>
-<div class="col-xs-3"><button class="btn btn-danger modify-btn-1 text-xs-right btn-lg modal__trigger btnDone" style="width: 90px; margin-top: 0px;">Done</button>
+    <div class="col-xs-3"><button class="btn btn-danger modify-btn-1 text-xs-right btn-lg modal__trigger btnDone" style="width: 90px; margin-top: 0px;">Done</button>
       
 </div>
 <div class="clearfix"></div>
                             
 
-                              <div class="" style="background:#eee;border-radius:10px;overflow:hidden;max-width:950px;margin:auto;">
+        <div class="" style="background:#eee;border-radius:10px;overflow:hidden;max-width:950px;margin:auto;">
 
-                            <table class="table-bordered table table-hover" align="center" > 
+            <table class="table-bordered table table-hover" align="center" >
 
    <thead> 
 <!---------------------------------NEW TABLE ADD ON 12-11-2016--------------------------->
@@ -355,15 +344,6 @@ background-color: #4d4dff;
 
                 </div>
 
-                
-                  
-                
-
-                
-
-                
-
-             
 
                 <div class="clearfix"></div>
 

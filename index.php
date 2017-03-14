@@ -170,11 +170,8 @@ padding:4px;
 </style>
 
 <body style="background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;background-size:cover;background-attachment:fixed;">
-    
 
     <!-- Start your project here-->
-
-
     <!--Navbar-->
     <nav class="navbar navbar-dark scrolling-navbar logo-scroll">
 
@@ -202,7 +199,8 @@ padding:4px;
                    <div class="col-md-12">
                      <h2 class="white-text text-uppercase text-xs-center m-t-2">A KNOWLEDGE EXCHANGE PLATFORM THAT ALLOWS YOU TO</h2>
                    </div>
-                <div class="col-md-5 col-md-chang">
+
+                    <div class="col-md-5 col-md-chang">
                   <div class="m-b-0">
                       <a class="btn btn-danger  modify-btn-1 text-xs-right btn-lg modal__trigger loginModal" <?php echo (isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))?'href="friends-family.php" id="" data-toggle="" ':'href="" id="display-form" data-toggle="modal"' ?> data-target="#myModal"><span class="ICON-holder"><img src="images/icon-1.png"></span>Connect with Friends and Family</a>
                    </div>
@@ -213,8 +211,7 @@ padding:4px;
                     <a class="btn btn-lg btn-danger  text-xs-right modify-btn-1" href="ExpertRegistration.php"><span class="ICON-holder"><img class="img-fluid img-rounded" src="images/icon-3.png"></span>Sign up as an Expert</a>
                   </div>
                    <!--  <div class="text-xs-right m-b-1">
-                       <a class="white-text bg-inverse p-l-1 p-t-1 p-b-1 p-r-1"><i class="fa fa-sign-in" style="padding-right:5px;"></i>Sign up as an Expert</a>
-
+                       <a class="white-text bg-inverse p-l-1 p-t-1 p-b-1 p-r-1"><i class="fa fa-sign-in" style="padding-right:5px;"></i>Sign up as an Expert</a
                     </div>-->                    
                 </div>
                 
@@ -232,28 +229,35 @@ padding:4px;
                       </div>
                       <div class="modal-body">
                             <div class="text-xs-right col-xs-4">
-                                  <!--<a class="text-info teal-text m-r-2 backLogin" style="font-size:20px;font-family:Arial, Helvetica, sans-serif"></a>--> 
-                                  
-                              </div>
-                                <div class="col-xs-8 SPloginLoader" style="padding-right:0;display:none;"> <hr>
+                                  <!--<a class="text-info teal-text m-r-2 backLogin" style="font-size:20px;font-family:Arial, Helvetica, sans-serif"></a>-->
+                            </div>
+
+                            <div class="col-xs-8 SPloginLoader" style="padding-right:0;display:none;"> <hr>
                                 <img src="images/ajax-loader.gif" id="" class="" style="">
                                 <center><span class="SPerrors" style="display:none;color: red;" ></span></center>
-                                </div>
-                               <div class="clearfix"></div>
-                               <div class="loginbut" style="padding:0px 0;width:100%;margin:auto;" >
-                               <div class="col-md-6 text-xs-center">
-                               <span class="hideFirstSection"></span>
-                                <button class="button loginClick" style="width:150px;background-color:#cdcdcd;"><strong>LOGIN</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">Returning User</p></button></div> <div class="col-md-6 text-xs-center">
-                 <button class="button button2 regClick"  style="width:150px; background-color:#9595f9;">
-                                 <strong>REGISTER</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">New User</p></button></div><div class="clearfix"></div>
+                            </div>
+
+                                <div class="clearfix"></div>
+                                   <div class="loginbut" style="padding:0px 0;width:100%;margin:auto;" >
+                                   <div class="col-md-6 text-xs-center">
+                                   <span class="hideFirstSection"></span>
+                                    <button class="button loginClick" style="width:150px;background-color:#cdcdcd;">
+                                        <strong>LOGIN</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">Returning User</p>
+                                    </button>
+                               </div>
+
+                                       <div class="col-md-6 text-xs-center">
+                                    <button class="button button2 regClick"  style="width:150px; background-color:#9595f9;">
+                                    <strong>REGISTER</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">New User</p></button></div><div class="clearfix"></div>
                                  </div>
-                <div  class="loginSec" style="padding:0px 25px;width:80%;margin:auto;display:none;" >
+
+                                <div  class="loginSec" style="padding:0px 25px;width:80%;margin:auto;display:none;" >
                         
                        
                                 <!--Body-->
                                <div class="text-success main-block">
                                     <i class="fa fa-envelope prefix"> Email</i>
-                              <input type="text" class="form-control friendEmail" id="friendEmail">
+                                    <input type="text" class="form-control friendEmail" id="friendEmail">
                                     <label for="form6"  class=""></label>
                                 </div>
                                 
@@ -262,7 +266,8 @@ padding:4px;
                                     <input type="password" class="form-control friendPwd" id="friendPwd">
                                     <label for="form4"  class=""></label>
                                 </div>
-                <input type="hidden" id="friendLoginHidden" class="friendLoginHidden" value="friendsLogin">
+
+                        <input type="hidden" id="friendLoginHidden" class="friendLoginHidden" value="friendsLogin">
        
                    <div class="text-xs-center"> 
                        <button class="btn log  modal__trigger friendLoginButton"
