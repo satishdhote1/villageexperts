@@ -301,7 +301,7 @@ $conn=$conn->connect();
 
 				$passImg = (empty($target_fileName))?'placeholder/male2.jpg':"SP_Photos/".$target_fileName;//.$imageName;
 
-										header("location:http://".$_SERVER['SERVER_NAME']."/villageExperts/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
+										header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
 
 	  
 
@@ -393,7 +393,7 @@ $conn=$conn->connect();
 				 //----------------------------Email Body Texts------------------------
 //mail("dassamtest2@gmail.com","hi","test");
 			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/logo.png" /></div>';
+			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 
 			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 
@@ -402,7 +402,7 @@ $conn=$conn->connect();
 // $body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  www.VillageExperts.com.<br><br> His convenient timings are: <br><br>'.date('l', strtotime($appointTime[0]))." at ".$appointTime[0].'<br>'.date('l', strtotime($appointTime[1]))." at ".$appointTime[1].'<br>'.date('l', strtotime($appointTime[2]))." at ".$appointTime[2].'<br>'.date('l', strtotime($appointTime[3]))." at ".$appointTime[3].'<br>'.date('l', strtotime($appointTime[4]))." at ".$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
 
 
-			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/villageExperts/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';
+			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';
 
 			//echo $body;die("dgd==");
 			
@@ -466,14 +466,14 @@ $conn=$conn->connect();
 				 //----------------------------Email Body Texts------------------------
 //mail("dassamtest2@gmail.com","hi","test");
 			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/logo.png" /></div>';
+			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 
 			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 
-		$body.='<img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/placeholder/image1.PNG" style="width:600px;" /><br/><br/><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/placeholder/image2.PNG" style="width:600px;" /></p>';
+		$body.='<img src="http://'.$_SERVER['SERVER_NAME'].'/images/placeholder/image1.PNG" style="width:600px;" /><br/><br/><img src="http://'.$_SERVER['SERVER_NAME'].'/images/placeholder/image2.PNG" style="width:600px;" /></p>';
 
 
-			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'/villageExperts#register" style="color:#fff;">Visit villageexperts.com</a></p></div></div>';
+			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'#register" style="color:#fff;">Visit villageexperts.com</a></p></div></div>';
 			
 			
 
@@ -551,7 +551,7 @@ $conn=$conn->connect();
 				 //----------------------------Email Body Texts------------------------
 //mail("dassamtest2@gmail.com","hi","test");
 			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/logo.png" /></div>';
+			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 
 			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 
@@ -560,7 +560,7 @@ $conn=$conn->connect();
 
 		//second email..
 		$body2 = '';
-			$body2 = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/logo.png" /></div>';
+			$body2 = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 
 			$body2.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 
@@ -673,7 +673,7 @@ $conn=$conn->connect();
 				 //----------------------------Email Body Texts------------------------
 //mail("dassamtest2@gmail.com","hi","test");
 			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/logo.png" /></div>';
+			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 
 			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 
@@ -1208,7 +1208,7 @@ print_r($_POST);die();*/
 
 				$passImg = (empty($target_fileName))?'placeholder/male2.jpg':$target_fileName;//.$imageName;
 
-										header("location:http://".$_SERVER['SERVER_NAME']."/villageExperts/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
+										header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
 										
 				}
 				else if ($tableResult  == false && $userType == "SPregister") 
@@ -1496,7 +1496,7 @@ print_r($_POST);die();*/
 				$body = '';
 				$body = '
 					<div style="width:100%;max-width:660px;margin:0px auto">
-     <div style="text-align:center"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/logo.png">
+     <div style="text-align:center"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png">
      </div>
      <div style="border:solid 1px #eee;text-align:center;margin-bottom:3px;margin-top:10px;background:#f3f3f3">      <p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia,\'Times New Roman\',Times,serif;padding:10px 15px;line-height:15px;text-align:left">Dear '.ucwords($fname).',<br><br>'.ucwords($loggedINuser).' has invited you to join his/her Friends and Family Group at Village Experts Site. </p>
 <p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia,\'Times New Roman\',Times,serif;padding:10px 15px;line-height:15px;text-align:left">Village Experts is a knowledge exchange platform that enables you to:</p>
@@ -1522,16 +1522,16 @@ print_r($_POST);die();*/
     {
 		    if(!empty($isexpert) && $isexpert == "yes")
 						{
-							$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'/villageExperts?email='.$m_email.'&isexpert=yes#register" style="color:#fff;">Visit villageexperts.com to set new password</a></p></div></div>';
+							$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'?email='.$m_email.'&isexpert=yes#register" style="color:#fff;">Visit villageexperts.com to set new password</a></p></div></div>';
 						}
 						else
 						{
-							$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'/villageExperts?email='.$m_email.'&isFriendreg=yes#register" style="color:#fff;">Visit villageexperts.com to set new password</a></p></div></div>';
+							$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'?email='.$m_email.'&isFriendreg=yes#register" style="color:#fff;">Visit villageexperts.com to set new password</a></p></div></div>';
 						}
     }
     else
     {
-    	$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'/villageExperts" style="color:#fff;">Visit villageexperts.com to interact with new friends</a></p></div></div>';
+    	$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'" style="color:#fff;">Visit villageexperts.com to interact with new friends</a></p></div></div>';
     }
 
     $body.='</div></div></div>';
