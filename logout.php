@@ -1,7 +1,7 @@
 <?php
 
 error_reporting(E_ALL);
- header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExperts");
+ header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/");
 include("config/connection.php");
 session_start();
 ?>
