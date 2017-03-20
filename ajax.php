@@ -1388,7 +1388,7 @@ print_r($_POST);die();*/
 				if (mysqli_num_rows($tableResult) > 0)  
 				{
 				  $GMLoginData = mysqli_fetch_assoc($tableResult2);
-				  //print_r($GMLoginData);
+				  print_r($GMLoginData);
 				  
 				  $userID =$GMLoginData['id'];
 				  $parentID =$GMLoginData['parentID'];
