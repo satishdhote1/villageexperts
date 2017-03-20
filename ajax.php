@@ -1380,15 +1380,16 @@ print_r($_POST);die();*/
 				/*print_r($_FILES);
 				print_r($_POST);die();*/
 				$alreadyFrnd = 0;
-				echo $sqlChk="select id,parentID,isexpert from friendsExpertInfo where  email ='".$m_email."'";
-				echo $sqlChk2="select id from friendsRegister where  email ='".$m_email."'";
-				die("jhfhvj");
+				$sqlChk="select id,parentID,isexpert from friendsExpertInfo where  email ='".$m_email."'";
+				 $sqlChk2="select id from friendsRegister where  email ='".$m_email."'";
+				
+				
 				$tableResult = mysqli_query($conn, $sqlChk);
 				$tableResult2 = mysqli_query($conn, $sqlChk2);
-				if (mysqli_num_rows($tableResult) > 0)  
+				if (mysqli_num_rows($tableResult2) > 0)  
 				{
 				  $GMLoginData = mysqli_fetch_assoc($tableResult2);
-				  print_r($GMLoginData);
+				 //print_r($GMLoginData);
 				  
 				  $userID =$GMLoginData['id'];
 				  $parentID =$GMLoginData['parentID'];
