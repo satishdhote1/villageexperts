@@ -26,7 +26,7 @@ if(!empty($user_id)){
 	$search = isset($_REQUEST['search'])?$_REQUEST['search']:'';
 	$imagePath = isset($_REQUEST['imagePath'])?$_REQUEST['imagePath']:'';
 	$my_groups = isset($_REQUEST['my_groups'])?$_REQUEST['my_groups']:'';
-    $imagePath = empty($imagePath)?"http://".$_SERVER['SERVER_NAME'].'/villageExperts/images/placeholder/male2.jpg':"http://".$_SERVER['SERVER_NAME']."/villageExperts/".$imagePath;
+    $imagePath = empty($imagePath)?"http://".$_SERVER['SERVER_NAME'].'/images/placeholder/male2.jpg':"http://".$_SERVER['SERVER_NAME']."/".$imagePath;
 	
 	
 	$currentTimestamp = strtotime("now");
@@ -40,10 +40,10 @@ if(!empty($user_id)){
 			
 			//die($tableResults);
 			$body = '';						
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/logo.png" /></div>';
+			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 			$body.='<div style="border:solid 1px#EEE;text-align:center;margin-bottom:3px;margin-top:10px;background:#F3F3F3;"><p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia,\'Times New Roman\',Times,serif;padding:10px 15px;line-height:25px;text-align:left;">';
 			$body.='<div style="text-align:center;"><img width="200" height="200" src="'.$imagePath.'" /></div><br><br>';
-			$body.='Dear '.$memberName.',<br /><br/>'.$user_name.' has iinitiated a connect session with you . <br/> Please login to villageexperts.com to connect<br/><br/></p></div></div>';
+			$body.='Dear '.$memberName.',<br /><br/>'.$user_name.' has iinitiated a connect session with you . <br/> Please login to '.$_SERVER['SERVER_NAME'].' to connect<br/><br/></p></div></div>';
 			/*$body.='<p style="width:200px;margin:20px auto;
 			background:#F00;color:#fff;padding:12px 0px;font-family:Georgia, \'Times New Roman\', Times,
 			 serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;">
@@ -63,11 +63,13 @@ if(!empty($user_id)){
 			$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
 			if($mailSent)
 			{
-				header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
+				header("location:".$_SERVER['SERVER_NAME'].":8084/?s=1#/".$currentTimestamp);
+				//header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 			}
 			else
 			{
-				header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
+				header("location:".$_SERVER['SERVER_NAME'].":8084/?s=1#/".$currentTimestamp);
+				//header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 			}
 			
 		
@@ -101,7 +103,8 @@ if(!empty($user_id)){
 			$mailSent = $emailObject->sendMail($row['sp_email'],$row['sp_name'],"Village-Expert connection between members!",$body);
 			if($mailSent)
 			{*/
-				header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
+				header("location:".$_SERVER['SERVER_NAME'].":8084/?s=1#/".$currentTimestamp);
+				//header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 		//	}
 		}
 		else
