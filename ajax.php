@@ -1380,9 +1380,8 @@ print_r($_POST);die();*/
 				/*print_r($_FILES);
 				print_r($_POST);die();*/
 				$alreadyFrnd = 0;
-				$sqlChk="select id,parentID,isexpert from friendsExpertInfo where  email ='".$m_email."'";
-				 $sqlChk2="select id from friendsRegister where  email ='".$m_email."'";
-				
+				echo $sqlChk="select id,parentID,isexpert from friendsExpertInfo where  email ='".$m_email."'";
+				echo $sqlChk2="select id from friendsRegister where  email ='".$m_email."'";
 				
 				$tableResult = mysqli_query($conn, $sqlChk);
 				$tableResult2 = mysqli_query($conn, $sqlChk2);
