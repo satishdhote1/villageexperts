@@ -1382,7 +1382,7 @@ print_r($_POST);die();*/
 				$alreadyFrnd = 0;
 				echo $sqlChk="select id,parentID,isexpert from friendsExpertInfo where  email ='".$m_email."'";
 				echo $sqlChk2="select id from friendsRegister where  email ='".$m_email."'";
-				
+				die("jhfhvj");
 				$tableResult = mysqli_query($conn, $sqlChk);
 				$tableResult2 = mysqli_query($conn, $sqlChk2);
 				if (mysqli_num_rows($tableResult) > 0)  
