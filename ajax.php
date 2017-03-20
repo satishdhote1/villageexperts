@@ -1399,12 +1399,12 @@ print_r($_POST);die();*/
 				  	if(!empty($isexpert) && $isexpert == "yes")
 					{
 						$expertAdd= 1;
-						$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$userID."','".$m_email."' , ".$loggedID.",1)" ;
+						$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$userID.",'".$m_email."' , ".$loggedID.",1)" ;
 					}
 					else
 					{
 						$expertAdd = 0;
-						$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$userID."','".$m_email."' , ".$loggedID.",0)" ;
+						$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$userID.",'".$m_email."' , ".$loggedID.",0)" ;
 					}
 
 
@@ -1435,7 +1435,7 @@ print_r($_POST);die();*/
 					  $tableResult = mysqli_query($conn, $sql);
 					$member_id = mysqli_insert_id($conn);
 
-					  $sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$member_id."','".$m_email."' , ".$loggedID.",1)" ;
+					  $sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$member_id.",'".$m_email."' , ".$loggedID.",1)" ;
 					}
 					else
 					{
@@ -1444,7 +1444,7 @@ print_r($_POST);die();*/
 					  $tableResult = mysqli_query($conn, $sql);
 					$member_id = mysqli_insert_id($conn);
 
-					  $sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$member_id."','".$m_email."' , ".$loggedID.",0)" ;
+					  $sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$member_id.",'".$m_email."' , ".$loggedID.",0)" ;
 					}
 					//echo $sql;exit();
 	
