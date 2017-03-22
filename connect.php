@@ -60,6 +60,7 @@ if(!empty($user_id)){
 			$headers .= 'From: Village Experts<dassamtest2@gmail.com>' . "\r\n";
             $mailSent = mail($memberEmail,"Village-Expert Connection b/w friends.",$body,$headers);
 			*/
+			die("location:".$_SERVER['SERVER_NAME'].":8084/?s=1#/".$currentTimestamp);
 			$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
 			if($mailSent)
 			{
