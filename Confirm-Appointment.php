@@ -221,7 +221,7 @@ background-color: #4d4dff;
 <div class="container">
 <div class="row">
 <div class="col-md-12 p-t-1 p-b-1">
-<h3 class=""><b>Confirm Appointment  </b><a href="/villageExperts"> <img src="images/Left.png" class="" style="cursor:pointer;position:relative;float:right;right:150px;"/></a> </h3>
+<h3 class=""><b>Confirm Appointment  </b><a href="/"> <img src="images/Left.png" class="" style="cursor:pointer;position:relative;float:right;right:150px;"/></a> </h3>
 
 </div>
 </div>
@@ -664,7 +664,7 @@ function getCurrentScroll() {
                     if(data.success == 1)
                     {
                       alert("Appointment Confirmed Successfuly!");
-                      setTimeout(function(){ window.location.href="/villageExperts"; }, 2000);
+                      setTimeout(function(){ window.location.href="/"; }, 2000);
                     }
                     else
                     {
@@ -706,7 +706,7 @@ function getCurrentScroll() {
                     if(data.success == 1)
                     {
                       alert("Appointment Declined Successfuly!");
-                      setTimeout(function(){ window.location.href="/villageExperts"; }, 2000);
+                      setTimeout(function(){ window.location.href="/"; }, 2000);
                     }
                     else
                     {
