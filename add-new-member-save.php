@@ -69,7 +69,7 @@ $tag =isset($_REQUEST['tag'])?$_REQUEST['tag']:'';
 
 			$body.='Dear '.$memberName.',<br /><br/>
 
-			Your have been added as a Group member to VillageExperts.com site: '.' <br><br>
+			Your have been added as a Group member to '.$_SERVER['SERVER_NAME'].' site: '.' <br><br>
 
 			</p>';
 

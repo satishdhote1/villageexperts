@@ -99,7 +99,7 @@ die();*/
 					<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 					$body.='Dear '.$memberName.',<br/><br/>	Congratulations ! <br/><br/>';
 					$body.='<div style="text-align:center;"><img width="200" height="200" src="http://'.$_SERVER['SERVER_NAME'].'/images/memberPhotos/'.$uploaded_file.'" /></div><br><br>';
-					$body.='<div align="left">Your Registration as a Group Member to VillageExperts.com site is successful.</div><br><br>';
+					$body.='<div align="left">Your Registration as a Group Member to '.$_SERVER['SERVER_NAME'].' site is successful.</div><br><br>';
 					/*$body.='You are now a member of Group:'.$groupName.'.</p>';
 					if(!empty($groupImage)){
 					$body.='<div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/groupPhotos/'.$groupImage.'" /></div><br><br>';
