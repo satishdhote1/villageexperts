@@ -20,7 +20,7 @@ $(document).ready(function(e) {
           success: function (result) {
 			  if(result.success == 1)
 				{		
-				 window.location.href="https://".$_SERVER['SERVER_NAME'].":8084/?s=1#/"+result.timestamp;//document.location.origin+
+				 window.location.href="https://"+window.location.hostname+":8084/?s=1#/"+result.timestamp;//document.location.origin+
 				 console.log("if: "+result);
 				}
 					else{
