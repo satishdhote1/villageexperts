@@ -63,12 +63,12 @@ if(!empty($user_id)){
 			$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
 			if($mailSent)
 			{
-				header("location:https://".$_SERVER['SERVER_NAME'].":8084/?s=1#/".$currentTimestamp);
+				header("location:https://".$_SERVER['SERVER_NAME'].":8084/#".$currentTimestamp);
 				//header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 			}
 			else
 			{
-				header("location:https://".$_SERVER['SERVER_NAME'].":8084/?s=1#/".$currentTimestamp);
+				header("location:https://".$_SERVER['SERVER_NAME'].":8084/#".$currentTimestamp);
 				//header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 			}
 			
@@ -103,7 +103,7 @@ if(!empty($user_id)){
 			$mailSent = $emailObject->sendMail($row['sp_email'],$row['sp_name'],"Village-Expert connection between members!",$body);
 			if($mailSent)
 			{*/
-				header("location:https://".$_SERVER['SERVER_NAME'].":8084/?s=1#/".$currentTimestamp);
+				header("location:https://".$_SERVER['SERVER_NAME'].":8084/#".$currentTimestamp);
 				//header("location:https://www.villageexperts.com:8084/?s=1#/".$currentTimestamp);
 		//	}
 		}
