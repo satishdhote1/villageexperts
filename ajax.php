@@ -170,151 +170,73 @@ $conn=$conn->connect();
 	  	$appointTime = json_decode($appointTimes);
 	  	$sql="insert into appointment (aptmakeremail,aptconfirmemail,aptmakername,aptconfirmname,aptdate1,aptdate2,aptdate3,aptdate4,aptdate5,aptconfirmdate) values ('".$email."','".$senderEmail."','".$recieverFname."', '".$senderName."','".$appointTime[0]."','".$appointTime[1]."','".$appointTime[2]."','".$appointTime[3]."','".$appointTime[4]."','')" ;//echo $sql;exit();
 
-					//print_r($conn);die();
-					$tableResult = mysqli_query($conn, $sql);
-					$member_id = mysqli_insert_id($conn);
+		$tableResult = mysqli_query($conn, $sql);
+		$member_id = mysqli_insert_id($conn);
 		//Create Email instance for sending mail
-				$emailObject=new phpSendMail();
+		$emailObject=new phpSendMail();
 				
-				 //----------------------------Email Body Texts------------------------
-//mail("dassamtest2@gmail.com","hi","test");
-			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
-
-			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-
+		//----------------------------Email Body Texts------------------------
+		$body = '';
+		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
+		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 		$body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  '.$_SERVER['SERVER_NAME'].'.<br><br> His convenient timings are: <br><br>'.$appointTime[0].'<br>'.$appointTime[1].'<br>'.$appointTime[2].'<br>'.$appointTime[3].'<br>'.$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
+		// $body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  www.VillageExperts.com.<br><br> His convenient timings are: <br><br>'.date('l', strtotime($appointTime[0]))." at ".$appointTime[0].'<br>'.date('l', strtotime($appointTime[1]))." at ".$appointTime[1].'<br>'.date('l', strtotime($appointTime[2]))." at ".$appointTime[2].'<br>'.date('l', strtotime($appointTime[3]))." at ".$appointTime[3].'<br>'.date('l', strtotime($appointTime[4]))." at ".$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
+                $body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';
 
-// $body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  www.VillageExperts.com.<br><br> His convenient timings are: <br><br>'.date('l', strtotime($appointTime[0]))." at ".$appointTime[0].'<br>'.date('l', strtotime($appointTime[1]))." at ".$appointTime[1].'<br>'.date('l', strtotime($appointTime[2]))." at ".$appointTime[2].'<br>'.date('l', strtotime($appointTime[3]))." at ".$appointTime[3].'<br>'.date('l', strtotime($appointTime[4]))." at ".$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
-
-
-			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';
-
-			//echo $body;die("dgd==");
-			
-
-		//echo "bodyyy====\n".$body;
-
-		   //----------------------------//Email Body Texts------------------------
-		  
+		 //----------------------------//Email Body Texts------------------------ 
 		$mailSent = $emailObject->sendMail($email,$recieverFname,"Village-Expert Request for Appointment.",$body);
 		//if(mail($email,"Village-Expert Request for Appointment.",$body))
-		if($mailSent)
-		{
-
-
-				$result['success'] = 1;
-
-				$result['error'] = 0;
-
-			}
-
-			else
-
-			{
-
-				 $result['success'] = 0;
-
-				$result['error'] = 1;
-
-			}
-
-			
-
-	  }
-	  else
-	  {
+		if($mailSent){
+		    $result['success'] = 1;
+		    $result['error'] = 0;
+                }else{
+		    $result['success'] = 0;
+                    $result['error'] = 1;
+		}
+	  }else{
 		  $result['success'] = 0;
 		  $result['error'] = 1;
 	  }
-
-	  
 
 	  echo json_encode($result);
 	  exit(0);
 
-  }
-   else if($tag == "requestMail")
-  {
-//die($tag);
-	  
+  } else if($tag == "requestMail"){
 
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	  
-	 
-
-	  if(!empty($email))
-	  {
+	  if(!empty($email)){
 
 		//Create Email instance for sending mail
-				$emailObject=new phpSendMail();
+		$emailObject=new phpSendMail();
 				
-				 //----------------------------Email Body Texts------------------------
-//mail("dassamtest2@gmail.com","hi","test");
-			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
-
-			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-
+		 //----------------------------Email Body Texts------------------------
+		$body = '';
+		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
+		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 		$body.='<img src="http://'.$_SERVER['SERVER_NAME'].'/images/placeholder/image1.PNG" style="width:600px;" /><br/><br/><img src="http://'.$_SERVER['SERVER_NAME'].'/images/placeholder/image2.PNG" style="width:600px;" /></p>';
-
-
-			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'#register" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].'</a></p></div></div>';
+		$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'#register" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].'</a></p></div></div>';
 			
-			
-
-		//echo "bodyyy====\n".$body;
 
 		   //----------------------------//Email Body Texts------------------------
-		   /*       
-            $headers='';
-            $headers = "MIME-Version: 1.0" . "\r\n";
-			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-			// Additional headers
-			$headers .= 'From: Village Experts<dassamtest2@gmail.com>' . "\r\n";
-            //$mailSent = mail($m_email,"Village-Expert Membership Verification.",$body,$headers);
-		*/
 		$mailSent = $emailObject->sendMail($email,$fname,"Village-Expert Requests for Registration.",$body);
-		if($mailSent)
-		{
+		if($mailSent){
+		    $result['success'] = 1;
+		    $result['error'] = 0;
+		}else{
+		    $result['success'] = 0;
+         	    $result['error'] = 1;
+		}			
 
-
-				$result['success'] = 1;
-
-				$result['error'] = 0;
-
-			}
-
-			else
-
-			{
-
-				 $result['success'] = 0;
-
-				$result['error'] = 1;
-
-			}
-
-			
-
-	  }
-	  else
-	  {
+	  }else{
 		  $result['success'] = 0;
 		  $result['error'] = 1;
 	  }
 
-	  
-
 	  echo json_encode($result);
 
-  }
-  else if($tag == "ConfirmAppointment")
-  {
-//die($tag);
-	  
+  }else if($tag == "ConfirmAppointment"){
 
-	  
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	  $recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	  $senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
@@ -324,189 +246,107 @@ $conn=$conn->connect();
 
 	  if(!empty($email) && !empty($appointTimes))
 	  {
-	  	//$appointTime = json_decode($appointTimes);
-
-	  	//print_r($appointTime);
 	  	
 	  	$sql="update appointment set apptstatus=1,aptconfirmdate='".$appointTimes."' where apptstatus=0 and aptconfirmemail='".$senderEmail."' and aptmakeremail='".$email."'" ;//echo $sql;exit();
 		//die($sql);
 		$tableResult = mysqli_query($conn, $sql);
 		//Create Email instance for sending mail
-				$emailObject=new phpSendMail();
+		$emailObject=new phpSendMail();
 				
-				 //----------------------------Email Body Texts------------------------
-//mail("dassamtest2@gmail.com","hi","test");
-			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
-
-			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-
+		//----------------------------Email Body Texts------------------------
+		$body = '';
+		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
+		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 		$body.='Dear '.$senderName.',<br /><br/>'.$recieverFname.' has confirmed your Appointment Request at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timing is: <br>'.$appointTimes.'<br>'.'Please mark your Calendar for this appointment..<br><br></p>';
-
-
 		//second email..
 		$body2 = '';
-			$body2 = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
-
-			$body2.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-
+		$body2 = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
+		$body2.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 		$body2.='Dear '.$recieverFname.',<br /><br/> You  have  confirmed an Appointment  with '.$senderName.'at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timings are: <br>'.$appointTimes.'<br>'.'<br><br></p>';
 
-
-			/*$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/villageExperts/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';*/
-
-			//echo $body;die("dgd==");
-			
-
-		//echo "bodyyy====\n".$body;
-
-		   //----------------------------//Email Body Texts------------------------
+		 //----------------------------//Email Body Texts------------------------
 		  
 		$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Confirmation for Appointment.",$body);
 
 		//if(mail($email,"Village-Expert Request for Appointment.",$body))
-		if($mailSent)
-		{
+		if($mailSent){
+			$mailSent2 = $emailObject->sendMail($_SESSION['logged_user_email'],$recieverFname,"Village-Expert Confirmation for Appointment.",$body2);
+			$result['success'] = 1;
+			$result['error'] = 0;
 
-				$mailSent2 = $emailObject->sendMail($_SESSION['logged_user_email'],$recieverFname,"Village-Expert Confirmation for Appointment.",$body2);
-				$result['success'] = 1;
+		}else{
+			$result['success'] = 0;
+			$result['error'] = 1;
+		}
 
-				$result['error'] = 0;
-
-			}
-
-			else
-
-			{
-
-				 $result['success'] = 0;
-
-				$result['error'] = 1;
-
-			}
-
-			
-
-	  }
-	  else
-	  {
+	  } else{
 		  $result['success'] = 0;
 		  $result['error'] = 1;
 	  }
 
-	  
-
 	  echo json_encode($result);
 	  exit(0);
 
-  }
-  else if($tag == "notConfirmAppointment")//If not suitable dates found
-  {
-//die($tag);
-	  
+  }else if($tag == "notConfirmAppointment"){
 
-	  
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	  $recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	  $senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
 	  $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 	  
 	  $apptData = '';
-                $sql="select * from appointment where  aptmakeremail='".$email."' and aptconfirmemail='".$senderEmail."' and apptstatus=0 order by id desc limit 1";
-                //die($sql);
-                $tableResult = mysqli_query($conn, $sql);
-                //print_r($tableResult);
-                if (mysqli_num_rows($tableResult) > 0)  
-                {//$apptData['fname']
-                //die("test2");
+          $sql="select * from appointment where  aptmakeremail='".$email."' and aptconfirmemail='".$senderEmail."' and apptstatus=0 order by id desc limit 1";
+          $tableResult = mysqli_query($conn, $sql);
+          if (mysqli_num_rows($tableResult) > 0){//$apptData['fname']
                 $apptData = mysqli_fetch_assoc($tableResult);
-                }
-                //print_r($apptData);
+           }
+           $appt1 = isset($apptData['aptdate1'])?$apptData['aptdate1']:'';
+           $appt2 = isset($apptData['aptdate2'])?$apptData['aptdate2']:'';
+           $appt3 = isset($apptData['aptdate3'])?$apptData['aptdate3']:'';
+           $appt4 = isset($apptData['aptdate4'])?$apptData['aptdate4']:'';
+           $appt5 = isset($apptData['aptdate5'])?$apptData['aptdate5']:'';
+	     
+           $decliendFname = '';
+           $declinedLname = '';
+           $sql2="select fname,lname from friendsRegister where  email='".$email."' order by id desc limit 1";
 
-             $appt1 = isset($apptData['aptdate1'])?$apptData['aptdate1']:'';
-             $appt2 = isset($apptData['aptdate2'])?$apptData['aptdate2']:'';
-             $appt3 = isset($apptData['aptdate3'])?$apptData['aptdate3']:'';
-            $appt4 = isset($apptData['aptdate4'])?$apptData['aptdate4']:'';
-            $appt5 = isset($apptData['aptdate5'])?$apptData['aptdate5']:'';
+           $tableResult2 = mysqli_query($conn, $sql2);
 
-            $decliendFname = '';
-            $declinedLname = '';
-            $sql2="select fname,lname from friendsRegister where  email='".$email."' order by id desc limit 1";
-                //die($sql);
-                $tableResult2 = mysqli_query($conn, $sql2);
-                //print_r($tableResult);
-                if (mysqli_num_rows($tableResult2) > 0)  
-                {//$apptData['fname']
-                //die("test2");
+           if (mysqli_num_rows($tableResult2) > 0)  {
                 $apptData2 = mysqli_fetch_assoc($tableResult2);
                 $decliendFname = $apptData2['fname'];
                 $declinedLname = $apptData2['lname'];                }
 
-	 //print_r(json_decode($appointTimes));
-
-	  if(!empty($senderEmail))
-	  {
+	  	if(!empty($senderEmail)){
 	  	//$appointTime = json_decode($appointTimes);
-
 	  	//print_r($appointTime);
-	  	
 	  	$sql="update appointment set apptstatus=1 where apptstatus=0 and aptconfirmemail='".$senderEmail."' and aptmakeremail='".$email."'" ;//echo $sql;exit();
 		//die($sql);
 		$tableResult = mysqli_query($conn, $sql);
 		//Create Email instance for sending mail
-				$emailObject=new phpSendMail();
+		$emailObject=new phpSendMail();
 				
-				 //----------------------------Email Body Texts------------------------
-//mail("dassamtest2@gmail.com","hi","test");
-			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
-
-			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-
+		//----------------------------Email Body Texts------------------------
+		$body = '';
+		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
+		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 		$body.='Dear '.$senderName.',<br /><br/>'.$decliendFname.' '.$declinedLname.' has declined your Appointment Dates at Village Experts for the following proposed dates.: <br><br>'.$appt1.'<br>'.$appt2.'<br>'.$appt3.'<br>'.$appt4.'<br>'.$appt5.'<br><br>'.'You are requested to initiate a New Appoitment Request with '.$decliendFname.' '.$declinedLname;
 
-
-			/*$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/villageExperts/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';*/
-
-			//echo $body;die("dgd==");
-			
-
-		//echo "bodyyy====\n".$body;
-
-		   //----------------------------//Email Body Texts------------------------
-		  
+         	//----------------------------//Email Body Texts------------------------  
 		$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Confirmation for Appointment.",$body);
 
 		//if(mail($email,"Village-Expert Request for Appointment.",$body))
-		if($mailSent)
-		{
-
-				$result['success'] = 1;
-
-				$result['error'] = 0;
-
-			}
-
-			else
-
-			{
-
-				 $result['success'] = 0;
-
-				$result['error'] = 1;
-
-			}
-
-			
-
-	  }
-	  else
-	  {
+		if($mailSent){
+		    $result['success'] = 1;
+                    $result['error'] = 0;
+		}else{
+		    $result['success'] = 0;
+                    $result['error'] = 1;
+		}
+	  }else{
 		  $result['success'] = 0;
 		  $result['error'] = 1;
 	  }
-
-	  
 
 	  echo json_encode($result);
 	  exit(0);
@@ -527,62 +367,45 @@ $conn=$conn->connect();
 
 	  {
 
-		  $sql="select * from friendsRegister where  email='".$email."' and pwd=md5('".$pwd."')";
+		$sql="select * from friendsRegister where  email='".$email."' and pwd=md5('".$pwd."')";
+		$tableResult = mysqli_query($conn, $sql);
 
-		  
+		//print_r($tableResult);
 
-					$tableResult = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($tableResult) > 0)  {
 
-					//print_r($tableResult);
+		    $SPLoginData = mysqli_fetch_assoc($tableResult);			
 
-	
+			$_SESSION['logged_user_id']=$SPLoginData['id'];
 
-					if (mysqli_num_rows($tableResult) > 0)  
+			$_SESSION['logged_role_code']='friendsLogin';
 
-					{
+			$_SESSION['logged_user_fname']=isset($SPLoginData['fname'])?$SPLoginData['fname']:'';
+			$_SESSION['logged_user_lname']=isset($SPLoginData['lname'])?$SPLoginData['lname']:'';
 
-						//die("test2");
+			$_SESSION['logged_user_email']=isset($SPLoginData['email'])?$SPLoginData['email']:'';
 
-							$SPLoginData = mysqli_fetch_assoc($tableResult);
-
-						
-
-						$_SESSION['logged_user_id']=$SPLoginData['id'];
-
-						$_SESSION['logged_role_code']='friendsLogin';
-
-						$_SESSION['logged_user_fname']=isset($SPLoginData['fname'])?$SPLoginData['fname']:'';
-						$_SESSION['logged_user_lname']=isset($SPLoginData['lname'])?$SPLoginData['lname']:'';
-
-						$_SESSION['logged_user_email']=isset($SPLoginData['email'])?$SPLoginData['email']:'';
-
-						$_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
+			$_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
 
 						
+			$sqlUpdate="update friendsRegister set loginStatus='YES' where id=".$SPLoginData['id'];
 
-						$sqlUpdate="update friendsRegister set loginStatus='YES' where id=".$SPLoginData['id'];
+			$rsUpdate=mysqli_query($conn, $sqlUpdate);
+			
 
-						$rsUpdate=mysqli_query($conn, $sqlUpdate);
+			 $result['success'] = 1;
 
-						
+			 $result['error'] = 0;
 
-						 $result['success'] = 1;
+          		 $result['msg'] = "Welcome ".$SPLoginData['sp_name']." !";
 
-  						 $result['error'] = 0;
+		}else{
 
-						  $result['msg'] = "Welcome ".$SPLoginData['sp_name']." !";
+			$result['msg'] = "Sorry! Invalid Credential Provided.";
 
-					}
+		}
 
-					else
-
-					{
-
-						  $result['msg'] = "Sorry! Invalid Credential Provided.";
-
-					}
-
-					echo json_encode($result);
+		echo json_encode($result);
 
 					
 
@@ -986,7 +809,7 @@ print_r($_POST);die();*/
 
 				if ($tableResult  == true) {
 					
-				$result['msg'] = $MSG;
+					$result['msg'] = $MSG;
 
 				//echo json_encode($result);
 
@@ -994,147 +817,22 @@ print_r($_POST);die();*/
 
 				$passImg = (empty($target_fileName))?'placeholder/male2.jpg':$target_fileName;//.$imageName;
 
-										header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
+				    header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
 										
 				}
 				else if ($tableResult  == false && $userType == "SPregister") 
 				{
 
-					//echo json_encode($result);
 
-			//header("Refresh: 3; url=index.php?error=1&type=SP");
-
-		//echo '<center><h1 style="color:red">Registration Unsuccessful ! Redirecting....</h1></center>';
-
-		$passStr = 'Registration not successful ! Redirecting....<br>'.json_encode($result);
-
-		$passImg = 'img-3.jpg';
-
-		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=SPerror");
+				    $passStr = 'Registration not successful ! Redirecting....<br>'.json_encode($result);
+				    $passImg = 'img-3.jpg';
+				    header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=SPerror");
 
 				}	
-					
-				//Create Email instance for sending mail
-				/*$emailObject=new phpSendMail();
-				
-				 //----------------------------Email Body Texts------------------------
-//mail("dassamtest2@gmail.com","hi","test");
-			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/images/logo.png" /></div>';
 
-			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
+	}else if($tag == 'addFriendss'){
 
-		$body.='Dear '.$fname.',<br /><br/>Your have been added as a Group member to VillageExperts.com site: '.' <br><br></p>';
-
-			$body.='<p>You are requested to complete your Registration By clicking the link below:</p>';
-
-			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/addMemberNext.php?member_id='.$last_id.'&memberName='.$fname.'&email='.$m_email.'"style="color:#fff;">Click here to Complete Registration</a></p></div></div>';
-			
-			$body.='<p>This Connection will be enabled only if you are using Chrome or Mozilla as your Browser.</p>';
-			
-			$body.='<p><a href="http://'.$_SERVER['SERVER_NAME'].'/villageExperts/addMemberNext.php?member_id='.$last_id.'&memberName='.$fname.'&email='.$m_email.'">http://'.$_SERVER['SERVER_NAME'].'/villageExperts/addMemberNext.php?member_id='.$last_id.'&memberName='.$fname.'&email='.$m_email.'</a></p>';
-			$body.='<p>If you are not using Chrome or Mozilla as your Browser - you are requested to manually open Chrome or Mozilla Browser and copy the above link and paste it in the address bar.</p>';
-
-		//echo "bodyyy====\n".$body;
-
-		   //----------------------------//Email Body Texts------------------------
-		   /*       
-            $headers='';
-            $headers = "MIME-Version: 1.0" . "\r\n";
-			$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-			// Additional headers
-			$headers .= 'From: Village Experts<dassamtest2@gmail.com>' . "\r\n";
-            //$mailSent = mail($m_email,"Village-Expert Membership Verification.",$body,$headers);
-		*/
-		/*$mailSent = $emailObject->sendMail($m_email,$fname,"Village-Expert Membership Verification.",$body);
-		if($mailSent)
-		{
-				$result['msg'] = $MSG;
-
-				//echo json_encode($result);
-
-				$passStr = "$fname has been added successfully ! Redirecting....";
-
-				$passImg = 'placeholder/male2.jpg';//.$imageName;
-
-										header("location:http://".$_SERVER['SERVER_NAME']."/villageExperts/well-come.php?passStr=$passStr&passImg=$passImg&redirect=friends-family&email=$m_email");
-		}
-		else
-		{
-			$passStr = "$fname has not been added successfully ! Redirecting....";
-
-				$passImg = '/images/placeholder/male2.jpg';//.$imageName;
-
-										header("location:http://".$_SERVER['SERVER_NAME']."/villageExperts/well-come.php?passStr=$passStr&passImg=$passImg&redirect=dashboard&email=$m_email");
-		}
-
-			//header("Refresh: 3; url=index.php?success=1&type=SP");
-
-		//echo '<center><h1 style="color:red">Registration Successful ! Redirecting....</h1></center>';
-
-				}
-
-				else if ($tableResult  == false && $userType == "SPregister") 
-
-				{
-
-					//echo json_encode($result);
-
-			//header("Refresh: 3; url=index.php?error=1&type=SP");
-
-		//echo '<center><h1 style="color:red">Registration Unsuccessful ! Redirecting....</h1></center>';
-
-		$passStr = 'Registration not successful ! Redirecting....<br>'.json_encode($result);
-
-		$passImg = 'img-3.jpg';
-
-		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=SPerror");
-
-				}
-
-				else if ($tableResult  == true && $userType ==  "SRregister") {
-
-				$result['msg'] = $MSG;
-
-				//echo json_encode($result);
-
-			//header("Refresh: 3; url=index.php?success=1&type=SR");
-
-		//echo '<center><h1 style="color:red">Registration Successful ! Redirecting....</h1></center>';
-
-		$passStr = "$m_name has been added successfully ! Redirecting....";
-
-										$passImg = 'SR_Photos/'.$imageName;
-
-										header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=SRsuccess&email=$m_email");
-
-				}
-
-				else if ($tableResult  == false && $userType ==  "SRregister") 
-
-				{
-
-					//echo json_encode($result);
-
-			//header("Refresh: 3; url=index.php?error=1&type=SR");
-
-		//echo '<center><h1 style="color:red">Registration Unsuccessful ! Redirecting....</h1></center>';
-
-		$passStr = 'Registration Unsuccessful ! Redirecting....<br>'.json_encode($result);
-
-		$passImg = 'img-3.jpg';
-
-		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=SRerror");
-
-				}
-
-		*/
-
-	}
-			else if($tag == 'addFriendss')
-			{
-
-				$loggedINuser = $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname'];
+		$loggedINuser = $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname'];
 				$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
 
 				$isexpert = isset($_REQUEST['isexpert'])?$_REQUEST['isexpert']:'';
