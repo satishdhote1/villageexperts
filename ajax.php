@@ -530,86 +530,68 @@ $conn=$conn->connect();
 }else if($tag == 'addFriendss'){
 
 		$loggedINuser = $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname'];
-				$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
+		$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
 
-				$isexpert = isset($_REQUEST['isexpert'])?$_REQUEST['isexpert']:'';
+		$isexpert = isset($_REQUEST['isexpert'])?$_REQUEST['isexpert']:'';
 
-				$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:(isset($_REQUEST['fname'])?$_REQUEST['fname']:'');
+		$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:(isset($_REQUEST['fname'])?$_REQUEST['fname']:'');
 
-				$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:(isset($_REQUEST['lname'])?$_REQUEST['lname']:'');
+		$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:(isset($_REQUEST['lname'])?$_REQUEST['lname']:'');
 
-				$m_city=isset($_REQUEST['city'])?$_REQUEST['city']:(isset($_REQUEST['city'])?$_REQUEST['city']:'');
+		$m_city=isset($_REQUEST['city'])?$_REQUEST['city']:(isset($_REQUEST['city'])?$_REQUEST['city']:'');
 
-				$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:(isset($_REQUEST['country'])?$_REQUEST['country']:'');
+		$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:(isset($_REQUEST['country'])?$_REQUEST['country']:'');
 
-				$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');
+		$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');
 
-				$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:(isset($_REQUEST['email'])?$_REQUEST['email']:'');
+		$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:(isset($_REQUEST['email'])?$_REQUEST['email']:'');
 
-				$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:(isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'');
-				$loggedID = isset($_REQUEST['loggedID'])?$_REQUEST['loggedID']:(isset($_REQUEST['loggedID'])?$_REQUEST['loggedID']:'');
-				$IsemailExists = 0;
+		$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:(isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'');
+		$loggedID = isset($_REQUEST['loggedID'])?$_REQUEST['loggedID']:(isset($_REQUEST['loggedID'])?$_REQUEST['loggedID']:'');
+		$IsemailExists = 0;
 
-				$imageName = '';
-				$member_id = '';
+		$imageName = '';
+		$member_id = '';
 
-				//first, into main student table
+		//first, into main student table
 
-				$tableResult = '';
+		$tableResult = '';
 
-				if ($userType=="addFriend"){
-				/*print_r($_FILES);
-				print_r($_POST);die();*/
-				$alreadyFrnd = 0;
-				$sqlChk="select id,parentID,isexpert from friendsExpertInfo where  email ='".$m_email."'";
-				$sqlChk2="select id from friendsRegister where  email ='".$m_email."'";
-				
-				$tableResult = mysqli_query($conn, $sqlChk);
-				$tableResult2 = mysqli_query($conn, $sqlChk2);
-				if (mysqli_num_rows($tableResult2) > 0)  
-				{
+		if ($userType=="addFriend"){
+			$alreadyFrnd = 0;
+			$sqlChk="select id,parentID,isexpert from friendsExpertInfo where  email ='".$m_email."'";
+			$sqlChk2="select id from friendsRegister where  email ='".$m_email."'";
+
+			$tableResult = mysqli_query($conn, $sqlChk);
+			$tableResult2 = mysqli_query($conn, $sqlChk2);
+			
+			if (mysqli_num_rows($tableResult2) > 0)  {
 				  $GMLoginData = mysqli_fetch_assoc($tableResult2);
-				 //print_r($GMLoginData);
-				  
 				  $userID =$GMLoginData['id'];
 				  $parentID =$GMLoginData['parentID'];
-				 $isexpertDB =$GMLoginData['isexpert'];
-				 
+				  $isexpertDB =$GMLoginData['isexpert'];
 				  $sql = '';
-				$expertAdd = '';
-				  	if(!empty($isexpert) && $isexpert == "yes")
-					{
+				  $expertAdd = '';
+				  if(!empty($isexpert) && $isexpert == "yes"){
 						$expertAdd= 1;
 						$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$userID.",'".$m_email."' , ".$loggedID.",1)" ;
-					}
-					else
-					{
+				  }else{
 						$expertAdd = 0;
 						$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$userID.",'".$m_email."' , ".$loggedID.",0)" ;
-					}
+				  }
 
-
-					  
-					if($parentID != $loggedID && $isexpertDB != $expertAdd)
-					{
-					  $tableResult = mysqli_query($conn, $sql);
-					  $member_id = $userID;
-					}
-					else
-					{
-						$alreadyFrnd = 1;
-					}
-
-
-				  
-				  			
+				if($parentID != $loggedID && $isexpertDB != $expertAdd){
+				  $tableResult = mysqli_query($conn, $sql);
+				  $member_id = $userID;
+				} else {
+					$alreadyFrnd = 1;
 				}
-				else
-				{
+	  			
+			}else {
 					
-					$target_fileName = '';
-					$target_file = '';
-					if(!empty($isexpert) && $isexpert == "yes")
+				$target_fileName = '';
+				$target_file = '';
+				if(!empty($isexpert) && $isexpert == "yes")
 					{
 					  $sql="insert into friendsRegister (fname,lname,city,country,experties,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;
 
