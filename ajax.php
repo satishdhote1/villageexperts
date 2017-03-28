@@ -17,80 +17,38 @@ $conn=$conn->connect();
 
 
  if($tag == "SPregister")  {
-
   $m_password=isset($_REQUEST['pwds'])?$_REQUEST['pwds']:(isset($_REQUEST['SRpassword'])?$_REQUEST['SRpassword']:'');
   $m_confirm_password=isset($_REQUEST['SPcpassword'])?$_REQUEST['SPcpassword']:(isset($_REQUEST['SRcpassword'])?$_REQUEST['SRcpassword']:'');
-
   $m_name=isset($_REQUEST['SPfname'])?$_REQUEST['SPfname']:(isset($_REQUEST['SRname'])?$_REQUEST['SRname']:'');
-
   $l_name=isset($_REQUEST['SPlname'])?$_REQUEST['SPlname']:(isset($_REQUEST['SRlname'])?$_REQUEST['SRlname']:'');
-
   $m_address=isset($_REQUEST['SPaddress'])?$_REQUEST['SPaddress']:(isset($_REQUEST['SRaddress'])?$_REQUEST['SRaddress']:'');
-
   $m_city=isset($_REQUEST['SPcity'])?$_REQUEST['SPcity']:(isset($_REQUEST['SRcity'])?$_REQUEST['SRcity']:'');
-
   $m_country=isset($_REQUEST['SPcountry'])?$_REQUEST['SPcountry']:(isset($_REQUEST['SRcountry'])?$_REQUEST['SRcountry']:'');
+  $m_pin=isset($_REQUEST['SPpin'])?$_REQUEST['SPpin']:(isset($_REQUEST['SRpin'])?$_REQUEST['SRpin']:'');
+  $m_mobile=isset($_REQUEST['SPmobile'])?$_REQUEST['SPmobile']:(isset($_REQUEST['SRmobile'])?$_REQUEST['SRmobile']:'');
+  $m_email=isset($_REQUEST['SPemail'])?$_REQUEST['SPemail']:(isset($_REQUEST['SRemail'])?$_REQUEST['SRemail']:'');
+  $m_sex=isset($_REQUEST['sex'])?$_REQUEST['sex']:(isset($_REQUEST['sex'])?$_REQUEST['sex']:'');
+  $m_specialisation_id=isset($_REQUEST['SPexpertise'])?$_REQUEST['SPexpertise']:(isset($_REQUEST['SRspecialisation_id'])?$_REQUEST['SRspecialisation_id']:'');
+  $m_sub_specialisation_id=isset($_REQUEST['SP_Sub_Expertise'])?$_REQUEST['SP_Sub_Expertise']:(isset($_REQUEST['SRsubSpecialisation_id'])?$_REQUEST['SRsubSpecialisation_id']:'');
+  $m_year_of_experience=isset($_REQUEST['SPExperience'])?$_REQUEST['SPExperience']:(isset($_REQUEST['SRexperience'])?$_REQUEST['SRexperience']:'');
+  $m_rate_type1=isset($_REQUEST['SPrateType1'])?$_REQUEST['SPrateType1']:(isset($_REQUEST['SRrateType1'])?$_REQUEST['SRrateType1']:'');
+  $m_rate_type2=isset($_REQUEST['SPrateType2'])?$_REQUEST['SPrateType2']:(isset($_REQUEST['SRrateType2'])?$_REQUEST['SRrateType2']:'');
+  $m_rate_type3=isset($_REQUEST['SPrateType3'])?$_REQUEST['SPrateType3']:(isset($_REQUEST['SRrateType3'])?$_REQUEST['SRrateType3']:'');
+  $m_degree=isset($_REQUEST['SPEducation'])?$_REQUEST['SPEducation']:(isset($_REQUEST['SRdegree'])?$_REQUEST['SRdegree']:'');
+  $m_institute=isset($_REQUEST['SPinstitute'])?$_REQUEST['SPinstitute']:(isset($_REQUEST['SRinstitute'])?$_REQUEST['SRinstitute']:'');
+  $m_yop=isset($_REQUEST['SPyop'])?$_REQUEST['SPyop']:(isset($_REQUEST['SRyop'])?$_REQUEST['SRyop']:'');
+  $m_language_id=isset($_REQUEST['SPlanguage'])?$_REQUEST['SPlanguage']:(isset($_REQUEST['SRlaunguages'])?$_REQUEST['SRlaunguages']:'');
+  $m_ammount=isset($_REQUEST['ammount'])?$_REQUEST['ammount']:(isset($_REQUEST['ammount'])?$_REQUEST['ammount']:'');
+  $m_accNo=isset($_REQUEST['accNo'])?$_REQUEST['accNo']:(isset($_REQUEST['accNo'])?$_REQUEST['accNo']:'');
+  $m_bankRoutingNo=isset($_REQUEST['bankRoutingNo'])?$_REQUEST['bankRoutingNo']:(isset($_REQUEST['bankRoutingNo'])?$_REQUEST['bankRoutingNo']:'');
 
- $m_pin=isset($_REQUEST['SPpin'])?$_REQUEST['SPpin']:(isset($_REQUEST['SRpin'])?$_REQUEST['SRpin']:'');
+  $valid=1;
 
- $m_mobile=isset($_REQUEST['SPmobile'])?$_REQUEST['SPmobile']:(isset($_REQUEST['SRmobile'])?$_REQUEST['SRmobile']:'');
-
- $m_email=isset($_REQUEST['SPemail'])?$_REQUEST['SPemail']:(isset($_REQUEST['SRemail'])?$_REQUEST['SRemail']:'');
-
- $m_sex=isset($_REQUEST['sex'])?$_REQUEST['sex']:(isset($_REQUEST['sex'])?$_REQUEST['sex']:'');
-
- $m_specialisation_id=isset($_REQUEST['SPexpertise'])?$_REQUEST['SPexpertise']:(isset($_REQUEST['SRspecialisation_id'])?$_REQUEST['SRspecialisation_id']:'');
-
- $m_sub_specialisation_id=isset($_REQUEST['SP_Sub_Expertise'])?$_REQUEST['SP_Sub_Expertise']:(isset($_REQUEST['SRsubSpecialisation_id'])?$_REQUEST['SRsubSpecialisation_id']:'');
-
- $m_year_of_experience=isset($_REQUEST['SPExperience'])?$_REQUEST['SPExperience']:(isset($_REQUEST['SRexperience'])?$_REQUEST['SRexperience']:'');
-
- $m_rate_type1=isset($_REQUEST['SPrateType1'])?$_REQUEST['SPrateType1']:(isset($_REQUEST['SRrateType1'])?$_REQUEST['SRrateType1']:'');
- $m_rate_type2=isset($_REQUEST['SPrateType2'])?$_REQUEST['SPrateType2']:(isset($_REQUEST['SRrateType2'])?$_REQUEST['SRrateType2']:'');
- $m_rate_type3=isset($_REQUEST['SPrateType3'])?$_REQUEST['SPrateType3']:(isset($_REQUEST['SRrateType3'])?$_REQUEST['SRrateType3']:'');
- $m_degree=isset($_REQUEST['SPEducation'])?$_REQUEST['SPEducation']:(isset($_REQUEST['SRdegree'])?$_REQUEST['SRdegree']:'');
- $m_institute=isset($_REQUEST['SPinstitute'])?$_REQUEST['SPinstitute']:(isset($_REQUEST['SRinstitute'])?$_REQUEST['SRinstitute']:'');
- $m_yop=isset($_REQUEST['SPyop'])?$_REQUEST['SPyop']:(isset($_REQUEST['SRyop'])?$_REQUEST['SRyop']:'');
- $m_language_id=isset($_REQUEST['SPlanguage'])?$_REQUEST['SPlanguage']:(isset($_REQUEST['SRlaunguages'])?$_REQUEST['SRlaunguages']:'');
- $m_ammount=isset($_REQUEST['ammount'])?$_REQUEST['ammount']:(isset($_REQUEST['ammount'])?$_REQUEST['ammount']:'');
- $m_accNo=isset($_REQUEST['accNo'])?$_REQUEST['accNo']:(isset($_REQUEST['accNo'])?$_REQUEST['accNo']:'');
- $m_bankRoutingNo=isset($_REQUEST['bankRoutingNo'])?$_REQUEST['bankRoutingNo']:(isset($_REQUEST['bankRoutingNo'])?$_REQUEST['bankRoutingNo']:'');
-
-			$valid=1;
-			/*$MSG="";
-			if($m_name==""){
-			$valid=0;
-			$MSG .= "Please enter Name.";
-			}
-			if($m_address==""){
-			$valid=0;
-			$MSG .= "Please enter address .";
-			}
-			if($m_mobile==""){
-			$valid=0;
-			$MSG .= "Please enter Mobile No .";
-			}
-			if($m_email==""){
-			$valid=0;
-			$MSG .= "Please enter email .";
-			}
-			if($m_sex==""){
-			$valid=0;
-			$MSG .= "Please enter sex .";
-			}
-			if($m_password==""){
-			$valid=0;
-			$MSG .= "Please enter password .";
-			}
-			if(trim($m_password)!=trim($m_confirm_password)){
-			$valid=0;
-			$MSG .= "Password and confirm Password Does not match .";
-			}
-			*/
   $target_fileName = '';
   $target_file = '';
+  
   if ($valid==1){
-    $sql="insert into service_provider (sp_name,sp_sex,sp_address,sp_city,sp_pincode,sp_country,sp_phone,sp_email,sp_password,sp_specialisation_id,sp_sub_specialisation_id,sp_year_of_experience,sp_rate_type1,sp_rate_type2,sp_rate_type3,degree,SPinstitute,SPyop,sp_language_id,ammount, accNo, bankRoutingNo) values ('".$m_name." ".$l_name."','".$m_sex."', '".$m_address."','".$m_city."','".$m_pin."', '".$m_country."', '".$m_mobile."', '".$m_email."', '".md5($m_password)."', '".$m_specialisation_id."', '".$m_sub_specialisation_id."', '".$m_year_of_experience."', '".$m_rate_type1."', '".$m_rate_type2."', '".$m_rate_type3."', '".$m_degree."' , '".$m_institute."' , '".$m_yop."', '".$m_language_id."','".$m_ammount."','".$m_accNo."','".$m_bankRoutingNo."')" ;
+     $sql="insert into service_provider (sp_name,sp_sex,sp_address,sp_city,sp_pincode,sp_country,sp_phone,sp_email,sp_password,sp_specialisation_id,sp_sub_specialisation_id,sp_year_of_experience,sp_rate_type1,sp_rate_type2,sp_rate_type3,degree,SPinstitute,SPyop,sp_language_id,ammount, accNo, bankRoutingNo) values ('".$m_name." ".$l_name."','".$m_sex."', '".$m_address."','".$m_city."','".$m_pin."', '".$m_country."', '".$m_mobile."', '".$m_email."', '".md5($m_password)."', '".$m_specialisation_id."', '".$m_sub_specialisation_id."', '".$m_year_of_experience."', '".$m_rate_type1."', '".$m_rate_type2."', '".$m_rate_type3."', '".$m_degree."' , '".$m_institute."' , '".$m_yop."', '".$m_language_id."','".$m_ammount."','".$m_accNo."','".$m_bankRoutingNo."')" ;
      $tableResult = mysqli_query($conn, $sql);
      $MSG = "Registered Sucessfully!";
      $result['success'] = 1;
@@ -98,9 +56,7 @@ $conn=$conn->connect();
 
      $MSG.='Registration Successful';
      $last_id = mysqli_insert_id($conn);
-
-					
-					//$member_id = 0;
+	  
      $sql="";
      $uploaded_file = '';
      if(isset($_FILES) && is_array($_FILES)){
@@ -148,7 +104,6 @@ $conn=$conn->connect();
         }else{
 	    $result['success'] = 0;
 	    $result['error'] = 1;
-
 	}
     }else{
 	$result['success'] = 0;
@@ -216,9 +171,6 @@ $conn=$conn->connect();
 		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 		$body.='<img src="http://'.$_SERVER['SERVER_NAME'].'/images/placeholder/image1.PNG" style="width:600px;" /><br/><br/><img src="http://'.$_SERVER['SERVER_NAME'].'/images/placeholder/image2.PNG" style="width:600px;" /></p>';
 		$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'#register" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].'</a></p></div></div>';
-			
-
-		   //----------------------------//Email Body Texts------------------------
 		$mailSent = $emailObject->sendMail($email,$fname,"Village-Expert Requests for Registration.",$body);
 		if($mailSent){
 		    $result['success'] = 1;
@@ -227,7 +179,6 @@ $conn=$conn->connect();
 		    $result['success'] = 0;
          	    $result['error'] = 1;
 		}			
-
 	  }else{
 		  $result['success'] = 0;
 		  $result['error'] = 1;
@@ -264,11 +215,8 @@ $conn=$conn->connect();
 		$body2.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 		$body2.='Dear '.$recieverFname.',<br /><br/> You  have  confirmed an Appointment  with '.$senderName.'at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timings are: <br>'.$appointTimes.'<br>'.'<br><br></p>';
 
-		 //----------------------------//Email Body Texts------------------------
-		  
+		 //----------------------------//Email Body Texts------------------------		  
 		$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Confirmation for Appointment.",$body);
-
-		//if(mail($email,"Village-Expert Request for Appointment.",$body))
 		if($mailSent){
 			$mailSent2 = $emailObject->sendMail($_SESSION['logged_user_email'],$recieverFname,"Village-Expert Confirmation for Appointment.",$body2);
 			$result['success'] = 1;
@@ -354,404 +302,203 @@ $conn=$conn->connect();
   }
   else if($tag == 'login')
   {
-
 	  $userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
-
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-
 	  $pwd = isset($_REQUEST['pwd'])?$_REQUEST['pwd']:'';
 
-	 
-
-	  if($userType == 'friendsLogin')
-
-	  {
+	  if($userType == 'friendsLogin'){
 
 		$sql="select * from friendsRegister where  email='".$email."' and pwd=md5('".$pwd."')";
 		$tableResult = mysqli_query($conn, $sql);
 
-		//print_r($tableResult);
-
 		if (mysqli_num_rows($tableResult) > 0)  {
 
 		    $SPLoginData = mysqli_fetch_assoc($tableResult);			
+		    $_SESSION['logged_user_id']=$SPLoginData['id'];
+		    $_SESSION['logged_role_code']='friendsLogin';
 
-			$_SESSION['logged_user_id']=$SPLoginData['id'];
+                    $_SESSION['logged_user_fname']=isset($SPLoginData['fname'])?$SPLoginData['fname']:'';
+		    $_SESSION['logged_user_lname']=isset($SPLoginData['lname'])?$SPLoginData['lname']:'';
+		    $_SESSION['logged_user_email']=isset($SPLoginData['email'])?$SPLoginData['email']:'';
+		    $_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
+		    $sqlUpdate="update friendsRegister set loginStatus='YES' where id=".$SPLoginData['id'];
 
-			$_SESSION['logged_role_code']='friendsLogin';
-
-			$_SESSION['logged_user_fname']=isset($SPLoginData['fname'])?$SPLoginData['fname']:'';
-			$_SESSION['logged_user_lname']=isset($SPLoginData['lname'])?$SPLoginData['lname']:'';
-
-			$_SESSION['logged_user_email']=isset($SPLoginData['email'])?$SPLoginData['email']:'';
-
-			$_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
-
-						
-			$sqlUpdate="update friendsRegister set loginStatus='YES' where id=".$SPLoginData['id'];
-
-			$rsUpdate=mysqli_query($conn, $sqlUpdate);
-			
-
-			 $result['success'] = 1;
-
-			 $result['error'] = 0;
-
-          		 $result['msg'] = "Welcome ".$SPLoginData['sp_name']." !";
+		    $rsUpdate=mysqli_query($conn, $sqlUpdate);
+		    $result['success'] = 1;
+	            $result['error'] = 0;
+          	    $result['msg'] = "Welcome ".$SPLoginData['sp_name']." !";
 
 		}else{
-
-			$result['msg'] = "Sorry! Invalid Credential Provided.";
-
+		   $result['msg'] = "Sorry! Invalid Credential Provided.";
 		}
 
 		echo json_encode($result);
-
-					
-
-	  }
-
-	  else if($userType == 'SRLoginHidden')
-	  {
+	  }else if($userType == 'SRLoginHidden'){
 
 		  $sql="select * from service_requestor where  sr_email='".$email."' and sr_password=md5('".$pwd."')";
 
 		  $tableResult = mysqli_query($conn, $sql);
 
-	
+		  if (mysqli_num_rows($tableResult) > 0)  {
 
-					if (mysqli_num_rows($tableResult) > 0)  
+			$SRLoginData = mysqli_fetch_assoc($tableResult);
+			$_SESSION['logged_user_id']=$SRLoginData['sr_id'];
+			$_SESSION['logged_role_code']='SR';
+			$_SESSION['logged_user_name']=isset($SRLoginData['sr_name'])?$SRLoginData['sr_name']:'';
+			$_SESSION['logged_user_email']=isset($SRLoginData['sr_email'])?$SRLoginData['sr_email']:'';
+			$_SESSION['logged_user_image']=isset($SRLoginData['sr_image'])?$SRLoginData['sr_image']:'';
+			$sqlUpdate="update service_requestor set sr_logged_in='Y' where sr_id=".$SRLoginData['sr_id'];
+			$rsUpdate=mysqli_query($conn, $sqlUpdate);
+			 $result['success'] = 1;
+			 $result['error'] = 0;
+         		 $result['msg'] = "Welcome ".$SRLoginData['sr_name']." !";
+		}else{
+			$result['success'] = 0;
+			$result['error'] = 1;
+		        $result['msg'] = "Sorry! Invalid Credential Provided.";
+		}
+		echo json_encode($result);
 
-					{
-
-							$SRLoginData = mysqli_fetch_assoc($tableResult);
-
-						
-
-						$_SESSION['logged_user_id']=$SRLoginData['sr_id'];
-
-						$_SESSION['logged_role_code']='SR';
-
-						$_SESSION['logged_user_name']=isset($SRLoginData['sr_name'])?$SRLoginData['sr_name']:'';
-
-						$_SESSION['logged_user_email']=isset($SRLoginData['sr_email'])?$SRLoginData['sr_email']:'';
-
-						$_SESSION['logged_user_image']=isset($SRLoginData['sr_image'])?$SRLoginData['sr_image']:'';
-
-
-
-						$sqlUpdate="update service_requestor set sr_logged_in='Y' where sr_id=".$SRLoginData['sr_id'];
-
-						$rsUpdate=mysqli_query($conn, $sqlUpdate);
-
-						
-
-						 $result['success'] = 1;
-
-  						 $result['error'] = 0;
-
-						  $result['msg'] = "Welcome ".$SRLoginData['sr_name']." !";
-
-					}
-
-					else
-
-					{
-
-						$result['success'] = 0;
-
-  						 $result['error'] = 1;
-
-						  $result['msg'] = "Sorry! Invalid Credential Provided.";
-
-					}
-
-					echo json_encode($result);
-
-	  }
-
-	  else if($userType == 'GMLoginHidden')
-
-	  {
+	  }else if($userType == 'GMLoginHidden'){
 
 		  $sql="select * from group_member where  gm_email='".$email."' and gm_password=md5('".$pwd."')";
+		  $tableResult = mysqli_query($conn, $sql);
 
-		  
+		if (mysqli_num_rows($tableResult) > 0)  
 
-		   $tableResult = mysqli_query($conn, $sql);
+		{
+			$GMLoginData = mysqli_fetch_assoc($tableResult);
+			$_SESSION['logged_user_id']=$GMLoginData['gm_id'];
+			$_SESSION['logged_role_code']='GM';
+			$_SESSION['logged_user_name']=isset($GMLoginData['gm_name'])?$GMLoginData['gm_name']:'';
+			$_SESSION['logged_user_email']=isset($GMLoginData['gm_email'])?$GMLoginData['gm_email']:'';
+			$_SESSION['logged_user_image']=isset($GMLoginData['gm_image'])?$GMLoginData['gm_image']:'';
+			$_SESSION['logged_user_groups']=isset($GMLoginData['group_ids'])?$GMLoginData['group_ids']:'';
+			$sqlUpdate="update group_member set gm_logged_in='Y' where gm_id=".$GMLoginData['gm_id'];
+			$gmUpdate=mysqli_query($conn, $sqlUpdate);
+			 $result['success'] = 1;
+			 $result['error'] = 0;
+			  $result['msg'] = "Welcome ".$GMLoginData['gm_name']." !";
+		}else{
 
-	
+			$result['success'] = 0;
+			 $result['error'] = 1;
+			  $result['msg'] = "Sorry! Invalid Credential Provided.";
 
-					if (mysqli_num_rows($tableResult) > 0)  
+		}
 
-					{
+		echo json_encode($result);
 
-							$GMLoginData = mysqli_fetch_assoc($tableResult);
-
-						
-
-						$_SESSION['logged_user_id']=$GMLoginData['gm_id'];
-
-						$_SESSION['logged_role_code']='GM';
-
-						$_SESSION['logged_user_name']=isset($GMLoginData['gm_name'])?$GMLoginData['gm_name']:'';
-
-						$_SESSION['logged_user_email']=isset($GMLoginData['gm_email'])?$GMLoginData['gm_email']:'';
-
-						$_SESSION['logged_user_image']=isset($GMLoginData['gm_image'])?$GMLoginData['gm_image']:'';
-
-						$_SESSION['logged_user_groups']=isset($GMLoginData['group_ids'])?$GMLoginData['group_ids']:'';
-
-						$sqlUpdate="update group_member set gm_logged_in='Y' where gm_id=".$GMLoginData['gm_id'];
-
-						$gmUpdate=mysqli_query($conn, $sqlUpdate);
-
-						
-
-						 $result['success'] = 1;
-
-  						 $result['error'] = 0;
-
-						  $result['msg'] = "Welcome ".$GMLoginData['gm_name']." !";
-
-					}
-
-					else
-
-					{
-
-						$result['success'] = 0;
-
-  						 $result['error'] = 1;
-
-						  $result['msg'] = "Sorry! Invalid Credential Provided.";
-
-					}
-
-					echo json_encode($result);
-
-	  }
-
-	  else
-
-	  {
-
+	  }else{
 		   $result['msg'] = "UserType Not  Provided";
-
 		   echo json_encode($result);
-
 	  }
 
-	  
+   } else if($tag == 'register') {
 
-   }
-
-   else if($tag == 'register')
-   {
-
-	  /*print_r($_REQUEST);
-
- echo "<br>";
-
- print_r($_FILES);
-
- die();*/
-
-	  $userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
-
-	 
-
-	   /* if($userType == 'SPreister')
-
-	  	{
-
-		*/	
-
-		
-	  			$isexpertreg=isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:(isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:'');
-	  			$isFriendreg=isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:(isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:'');
-	  			$expertID=isset($_REQUEST['expertID'])?$_REQUEST['expertID']:(isset($_REQUEST['expertID'])?$_REQUEST['expertID']:'');
-
-				$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:(isset($_REQUEST['fname'])?$_REQUEST['fname']:'');
+	$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
+	$isexpertreg=isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:(isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:'');
+	$isFriendreg=isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:(isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:'');
+	$expertID=isset($_REQUEST['expertID'])?$_REQUEST['expertID']:(isset($_REQUEST['expertID'])?$_REQUEST['expertID']:'');
+	$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:(isset($_REQUEST['fname'])?$_REQUEST['fname']:'');
+	$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:(isset($_REQUEST['lname'])?$_REQUEST['lname']:'');
+	$m_city=isset($_REQUEST['city'])?$_REQUEST['city']:(isset($_REQUEST['city'])?$_REQUEST['city']:'');
+	$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:(isset($_REQUEST['country'])?$_REQUEST['country']:'');
+	$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');
+	$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:(isset($_REQUEST['email'])?$_REQUEST['email']:'');
+	$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:(isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'');
 				
-				$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:(isset($_REQUEST['lname'])?$_REQUEST['lname']:'');
-
-				$m_city=isset($_REQUEST['city'])?$_REQUEST['city']:(isset($_REQUEST['city'])?$_REQUEST['city']:'');
-
-				$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:(isset($_REQUEST['country'])?$_REQUEST['country']:'');
-
-				$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');
-
-				$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:(isset($_REQUEST['email'])?$_REQUEST['email']:'');
-				
-				$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:(isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'');
-				
-				
+	$valid=1;
+	$MSG="";
 
 
-			/*
+	if($fname==""){
+		$valid=0;
+		$MSG .= "Please enter First Name.";
+	}
 
-			$_SESSION['file_name3']=$_FILES['photo']['name'];
-
-		
-
-		//echo $tmpfile;exit();
-
-		$temp_file=$photo_upload_temp_path.$_SESSION['file_name3'];
-
-		move_uploaded_file($_FILES['photo']['tmp_name'], $temp_file);
-
-				
-
-		chmod ($new_file1,0777);
-
-		*/
-
-				$valid=1;
-
-				$MSG="";
-
-				
-
-				if($fname==""){
-
-	
-
-				$valid=0;
-
-				$MSG .= "Please enter First Name.";
-
-	
-
-			}
-			if($lname==""){
-
-	
-
-				$valid=0;
-
-				$MSG .= "Please enter last Name.";
-
-	
-
-			}
+	  if($lname==""){
+		$valid=0;
+		$MSG .= "Please enter last Name.";
+	}
 			
 
-			/*if($m_mobile==""){
+	/*if($m_mobile==""){
+		$valid=0;
+		$MSG .= "Please enter Mobile No .";
+	}*/
 
-		
+	if($m_email==""){
+		$valid=0;
+		$MSG .= "Please enter email .";
+	}
 
-				$valid=0;
+	$imageName = '';
 
-				$MSG .= "Please enter Mobile No .";
+	if ($valid==1){
+		//first, into main student table
 
-		
+		$tableResult = '';
 
-			}*/
+		if ($userType=="addFriend"){
 
-			if($m_email==""){
-
-		
-
-				$valid=0;
-
-				$MSG .= "Please enter email .";
-
-		
-
-			}
-
-			$imageName = '';
-
-			//echo $valid."<br>".$MSG;
-
-				//insert record
-
-			if ($valid==1){
-
-	
-
-	
-
-			//first, into main student table
-
-			$tableResult = '';
-
-			if ($userType=="addFriend"){
-/*print_r($_FILES);
-print_r($_POST);die();*/
-	
-	$target_fileName = '';
-	$target_file = '';
-	$member_id = 0;
-	$sql="";
-					if(!empty($isexpertreg) && $isexpertreg == "yes")
-                     {
-
-                     	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',experties = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
-
-                     	$tableResult = mysqli_query($conn, $sql);
-                     	$member_id = $expertID;
-                     }
-                     else if(!empty($isFriendreg) && $isFriendreg == "yes")
-                     {
-
+			$target_fileName = '';
+			$target_file = '';
+			$member_id = 0;
+			$sql="";
+			
+		     if(!empty($isexpertreg) && $isexpertreg == "yes") {
+			$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',experties = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
+			$tableResult = mysqli_query($conn, $sql);
+			$member_id = $expertID;
+                      } else if(!empty($isFriendreg) && $isFriendreg == "yes") {
                      	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',phone = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
-
                      	$tableResult = mysqli_query($conn, $sql);
                      	$member_id = $expertID;
-                     }
-                     else
-                     {
-					 $sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;//echo $sql;exit();
+                     } else {
+			 $sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;//echo $sql;exit();
 
-					 $tableResult = mysqli_query($conn, $sql);
-					 $member_id = mysqli_insert_id($conn);
+			 $tableResult = mysqli_query($conn, $sql);
+			 $member_id = mysqli_insert_id($conn);
 
-					 $sql2="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$member_id."','".$m_email."' , 0 ,0)" ;
+			 $sql2="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$member_id."','".$m_email."' , 0 ,0)" ;
 
-					 $tableResult2 = mysqli_query($conn, $sql2);
-					}
-					//echo $sql;exit();
-					//print_r($conn);die();
-					
-					
-					//die($member_id."--test");
-					$uploaded_file = '';
-						 if(isset($_FILES) && is_array($_FILES))
-						{
-							//print_r($_FILES);
-							//die($sql);
-							// die("test");
-							$target_dir = "images/friendsFamily/";
-							$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);
-		
-							$target_file = $target_dir.$member_id.'.'.$imageFileType;
-							$target_fileName = "friendsFamily/".$member_id.'.'.$imageFileType;
-							
-							//die($target_file);
-							$uploadOk = 1;
-							
-							//indicate which file to resize (can be any type jpg/png/gif/etc...)
-							$file = $_FILES['pImage']["tmp_name"];//'your_path_to_file/file.png';
+			 $tableResult2 = mysqli_query($conn, $sql2);
+		     }
+
+                     $uploaded_file = '';
+		     
+		     if(isset($_FILES) && is_array($_FILES)) {
+
+			$target_dir = "images/friendsFamily/";
+			$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);
+
+			$target_file = $target_dir.$member_id.'.'.$imageFileType;
+			$target_fileName = "friendsFamily/".$member_id.'.'.$imageFileType;
+
+			//die($target_file);
+			$uploadOk = 1;
+
+			//indicate which file to resize (can be any type jpg/png/gif/etc...)
+			$file = $_FILES['pImage']["tmp_name"];//'your_path_to_file/file.png';
+
+			//indicate the path and name for the new resized file
+			$resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
 									
-							//indicate the path and name for the new resized file
-							$resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
-									
-							//call the function (when passing path to pic)
-							if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
-							
-									$uploaded_file = $target_file;
-									
-									$result['msg'] = "The Image ".$member_id. $target_fileName. " has been uploaded.";
-									$result['imageName'] = $target_fileName;
-									$sqlUpdate="update friendsRegister set image='".$target_file."' where id=".$member_id;
-										$rsUpdate=mysqli_query($conn, $sqlUpdate);
-									
-							} else {
-									$passStr="Sorry, there was an error uploading your Image.<br/>";
-							}
-						}
+				//call the function (when passing path to pic)
+				if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
+
+						$uploaded_file = $target_file;
+
+						$result['msg'] = "The Image ".$member_id. $target_fileName. " has been uploaded.";
+						$result['imageName'] = $target_fileName;
+						$sqlUpdate="update friendsRegister set image='".$target_file."' where id=".$member_id;
+						$rsUpdate=mysqli_query($conn, $sqlUpdate);
+
+				} else {
+						$passStr="Sorry, there was an error uploading your Image.<br/>";
+				}
+			}
 					
 
 					$MSG = "Registered Sucessfully!";
@@ -760,77 +507,27 @@ print_r($_POST);die();*/
 
    					$result['error'] = 0;
 
-					
-
-					//$imageName = $imageUpload->imageUploads($_FILES,'SR_Photos',$last_id,'service_requestor','sr_image','sr_id');
-					
-					/*$target_dir = "images/SR_Photos/";
-					$target_file = $target_dir .time(). basename($_FILES['file']["name"]);
-					
-					
-					//die($target_file);
-					$uploadOk = 1;
-					$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-					$target_file = $target_dir .$last_id.'.'.$imageFileType;
-					$original_file = $last_id.'.'.$imageFileType;
-					
-					//indicate which file to resize (can be any type jpg/png/gif/etc...)
-								  $file = $_FILES['file']["tmp_name"];//'your_path_to_file/file.png';
-							
-								  //indicate the path and name for the new resized file
-								  $resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
-							
-								  //call the function (when passing path to pic)
-								  if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
-								  $imageName = $last_id.'.'.$imageFileType;
-								  $sql1 = "update service_requestor set sr_image ='".$original_file."' where sr_id=".$last_id;
-								
-								$rs1 =mysqli_query($conn, $sql1);
-								  }
-					
-*/
 					$MSG.='Registration Successful';
 
-				}
+		}
+	}else	{
+		echo $MSG;	
+	}
 
-			
+	if ($tableResult  == true) {
+		$result['msg'] = $MSG;
 
-					
-
-				/*echo "<script language='javascript'>alert('Registration Successful.');window.location='index.php?msg=register&code=".$_POST['centre_code_prefix'].$_POST['recognition_code_prefix'].$_POST['student_serial']."';</script>";	*/		
-
-			}
-			else
-			{
-				echo $MSG;	
-			}
-
-		
-
-				if ($tableResult  == true) {
-					
-					$result['msg'] = $MSG;
-
-				//echo json_encode($result);
-
-				$passStr = "$fname, You have been Registered successfully to Village Experts Community! Redirecting....";
-
-				$passImg = (empty($target_fileName))?'placeholder/male2.jpg':$target_fileName;//.$imageName;
-
-				    header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
+		$passStr = "$fname, You have been Registered successfully to Village Experts Community! Redirecting....";
+		$passImg = (empty($target_fileName))?'placeholder/male2.jpg':$target_fileName;//.$imageName;
+		header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
 										
-				}
-				else if ($tableResult  == false && $userType == "SPregister") 
-				{
+	} else if ($tableResult  == false && $userType == "SPregister") {
+		    $passStr = 'Registration not successful ! Redirecting....<br>'.json_encode($result);
+		    $passImg = 'img-3.jpg';
+		    header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=SPerror");
+	}	
 
-
-				    $passStr = 'Registration not successful ! Redirecting....<br>'.json_encode($result);
-				    $passImg = 'img-3.jpg';
-				    header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=SPerror");
-
-				}	
-
-	}else if($tag == 'addFriendss'){
+}else if($tag == 'addFriendss'){
 
 		$loggedINuser = $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname'];
 				$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
