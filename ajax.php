@@ -87,7 +87,8 @@ if($tag == "SPregister")  {
 	$passImg = (empty($target_fileName))?'placeholder/male2.jpg':"SP_Photos/".$target_fileName;//.$imageName;
 
 	header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
-
+     }
+  }
 }else if($tag == "checkEmail"){
     $userTypess = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
     $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
