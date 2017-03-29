@@ -17,23 +17,17 @@ $country = '';
 $city = '';
 $phone = '';
 $expertID='';
-if(!empty($email) && !empty($isexpert) && $isexpert == "yes")
-{
+	   
+if(!empty($email) && !empty($isexpert) && $isexpert == "yes"){
     $sql="select * from   friendsRegister where email = '$email' and (isexpert = 1 OR isexpert = 2)";
-    //die($sql);
-      $tableResult = mysqli_query($conn, $sql);
-      //print_r($tableResult);
+    $tableResult = mysqli_query($conn, $sql);
 
-        
-      if (mysqli_num_rows($tableResult) > 0)  
-      {
+    if (mysqli_num_rows($tableResult) > 0)  {
         while($row = mysqli_fetch_assoc($tableResult)) {
-        $expertData[] = $row;
+        	$expertData[] = $row;
         }
       }
-      //print_r($expertData);
-      //echo "tedst==".$expertData[0]['fname'];
-     // die();
+
       $expertID = $expertData[0]['id'];
       $fname = $expertData[0]['fname'];
       $lname = $expertData[0]['lname'];
@@ -41,23 +35,17 @@ if(!empty($email) && !empty($isexpert) && $isexpert == "yes")
       $city = $expertData[0]['city'];
       $phone = $expertData[0]['experties'];
 }
-if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes")
-{
-    $sql="select * from   friendsRegister where email = '$email' and (isexpert = 0 OR isexpert = 2)";
-    //die($sql);
-      $tableResult = mysqli_query($conn, $sql);
-      //print_r($tableResult);
 
+if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
+    $sql="select * from   friendsRegister where email = '$email' and (isexpert = 0 OR isexpert = 2)";
+    $tableResult = mysqli_query($conn, $sql);
         
-      if (mysqli_num_rows($tableResult) > 0)  
-      {
+      if (mysqli_num_rows($tableResult) > 0)  {
         while($row = mysqli_fetch_assoc($tableResult)) {
-        $expertData[] = $row;
+        	$expertData[] = $row;
         }
       }
-      //print_r($expertData);
-      //echo "tedst==".$expertData[0]['fname'];
-     // die();
+
       $expertID = $expertData[0]['id'];
       $fname = $expertData[0]['fname'];
       $lname = $expertData[0]['lname'];
@@ -67,8 +55,6 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes")
 }
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -150,7 +136,6 @@ padding:4px;
 .btn-danger:focus, .btn-danger:hover{    background-color: #9595f9 !important;}
 .button{padding:10px 10px 5px;}
 
-
 .btn2{
     border-radius: 4px;
     border: 0;
@@ -175,10 +160,8 @@ padding:4px;
 
     <!-- Start your project here-->
 
-
     <!--Navbar-->
     <nav class="navbar navbar-dark scrolling-navbar logo-scroll">
-
        
         <div class="container">
 
@@ -215,7 +198,6 @@ padding:4px;
                   </div>
                    <!--  <div class="text-xs-right m-b-1">
                        <a class="white-text bg-inverse p-l-1 p-t-1 p-b-1 p-r-1"><i class="fa fa-sign-in" style="padding-right:5px;"></i>Sign up as an Expert</a>
-
                     </div>-->                    
                 </div>
                 
@@ -235,27 +217,27 @@ padding:4px;
                             <div class="text-xs-right col-xs-4">
                                   <!--<a class="text-info teal-text m-r-2 backLogin" style="font-size:20px;font-family:Arial, Helvetica, sans-serif"></a>--> 
                                   
-                              </div>
-                                <div class="col-xs-8 SPloginLoader" style="padding-right:0;display:none;"> <hr>
+                             </div>
+                             <div class="col-xs-8 SPloginLoader" style="padding-right:0;display:none;"> <hr>
                                 <img src="images/ajax-loader.gif" id="" class="" style="">
                                 <center><span class="SPerrors" style="display:none;color: red;" ></span></center>
-                                </div>
-                               <div class="clearfix"></div>
-                               <div class="loginbut" style="padding:0px 0;width:100%;margin:auto;" >
+                             </div>
+                             <div class="clearfix"></div>
+                             <div class="loginbut" style="padding:0px 0;width:100%;margin:auto;" >
                                <div class="col-md-6 text-xs-center">
-                               <span class="hideFirstSection"></span>
-                                <button class="button loginClick" style="width:150px;background-color:#cdcdcd;"><strong>LOGIN</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">Returning User</p></button></div> <div class="col-md-6 text-xs-center">
-                 <button class="button button2 regClick"  style="width:150px; background-color:#9595f9;">
-                                 <strong>REGISTER</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">New User</p></button></div><div class="clearfix"></div>
-                                 </div>
-                <div  class="loginSec" style="padding:0px 25px;width:80%;margin:auto;display:none;" >
-                        
+                               		<span class="hideFirstSection"></span>
+                                	<button class="button loginClick" style="width:150px;background-color:#cdcdcd;"><strong>LOGIN</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">Returning User</p></button></div> <div class="col-md-6 text-xs-center">
+                 			<button class="button button2 regClick"  style="width:150px; background-color:#9595f9;">
+                                	<strong>REGISTER</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">New User</p></button></div><div class="clearfix"></div>
+                                </div>
+                		
+			      	<div  class="loginSec" style="padding:0px 25px;width:80%;margin:auto;display:none;" >
                        
                                 <!--Body-->
                                <div class="text-success main-block">
-                                    <i class="fa fa-envelope prefix"> Email</i>
-                              <input type="text" class="form-control friendEmail" id="friendEmail">
-                                    <label for="form6"  class=""></label>
+                                    	<i class="fa fa-envelope prefix"> Email</i>
+                              		<input type="text" class="form-control friendEmail" id="friendEmail">
+                                    	<label for="form6"  class=""></label>
                                 </div>
                                 
                                 <div class="text-success main-block">
@@ -263,18 +245,19 @@ padding:4px;
                                     <input type="password" class="form-control friendPwd" id="friendPwd">
                                     <label for="form4"  class=""></label>
                                 </div>
-                <input type="hidden" id="friendLoginHidden" class="friendLoginHidden" value="friendsLogin">
+					
+                		<input type="hidden" id="friendLoginHidden" class="friendLoginHidden" value="friendsLogin">
        
-                   <div class="text-xs-center"> 
-                       <button class="btn log  modal__trigger friendLoginButton"
-                               id="friendLoginButton">LOGIN</button>
-                     </div>
+                   		<div class="text-xs-center"> 
+                       			<button class="btn log  modal__trigger friendLoginButton" id="friendLoginButton">LOGIN</button>
+                     		</div>
                          </div>
+			      
             <center><span class="regErrors" style="display:none;color: red;" ></span></center>
             <form id="addFriend" class="addFriend" action="ajax.php" method="post"  enctype="multipart/form-data">
-                          <input type="hidden" name="tag" value="register">
-                         <input type="hidden" name="userType" value="addFriend">
-                         <?php 
+            	<input type="hidden" name="tag" value="register">
+                <input type="hidden" name="userType" value="addFriend">
+                <?php 
                               if(!empty($email) && $isexpert == "yes")
                                 {
                                   ?>
@@ -291,42 +274,36 @@ padding:4px;
                                 }
                          ?>
                          
-                         <div class="row resSec" style="display: none;">
+                <div class="row resSec" style="display: none;">
                          
-                         <div style="border-bottom:1px solid #ccccfe;padding-bottom:15px">                            
+                	<div style="border-bottom:1px solid #ccccfe;padding-bottom:15px">                            
                                                       
-                          <div class="col-md-4 col-xs-12">
+                		<div class="col-md-4 col-xs-12">
 
-                             <div class=" main-block">
+                             		<div class=" main-block">
+                                		<i class="fa fa-user prefix"> First Name <span style="color:#F00;font-size:18px">*</span></i>
+                                		<input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $fname;?>">
+                                		<label for="fname"></label>
+                             		</div>
+                          	</div>
+                        
+				<div class="col-md-4 col-xs-12">
 
-                                <i class="fa fa-user prefix"> First Name <span style="color:#F00;font-size:18px">*</span></i>
+                            		<div class=" main-block">
+                                		<i class="fa fa-user prefix"> Last Name <span style="color:#F00;font-size:18px">*</span></i>
+                                		<input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $lname;?>">
+						<label for="form4"></label>
+                            		</div>
+                        	</div>
+                        
+				<div class="col-md-4 col-xs-12">
 
-                                <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $fname;?>">
-
-                                <label for="fname"></label>
-
-                             </div>
-                          </div>
-                        <div class="col-md-4 col-xs-12">
-
-                            <div class=" main-block">
-
-                                <i class="fa fa-user prefix"> Last Name <span style="color:#F00;font-size:18px">*</span></i>
-
-                                <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $lname;?>">
-
-                                <label for="form4"></label>
-
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-xs-12">
-
-                             <div class="main-block">
-                                <?php /*if(!empty($email) && $isFriendreg == "yes")*/ ?>
-                                <i class="fa fa-phone prefix"> <?php if(!empty($email) && $isexpert == "yes"){echo "Experties";}else {echo "Phone";}?></i>
-
-                                <input id="form7 phone" class="form-control phone" name="phone" tabindex="3" type="text" value="<?php echo $phone; ?>">
-                                <label for="form4"></label>
+                             		<div class="main-block">
+                                
+					<?php /*if(!empty($email) && $isFriendreg == "yes")*/ ?>
+                                		<i class="fa fa-phone prefix"> <?php if(!empty($email) && $isexpert == "yes"){echo "Experties";}else {echo "Phone";}?></i>
+                                		<input id="form7 phone" class="form-control phone" name="phone" tabindex="3" type="text" value="<?php echo $phone; ?>">
+                                		<label for="form4"></label>
                                 
 
                              </div>
