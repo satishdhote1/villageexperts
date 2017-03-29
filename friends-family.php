@@ -16,61 +16,50 @@ $curUserParentId = '';
 $curUserParentIdArr = array(); 
 $sql = '';
 $sql2 = '';
-        $gotFriendParent = 0;
-      $sqlParent = "select parentID from friendsExpertInfo where userid = $userID AND isexpert = 0";
-       $tableResultParent = mysqli_query($conn, $sqlParent);
-       $resultParentData = array();
-       $resultParent = '';
-       if (mysqli_num_rows($tableResultParent) > 0)  
-      {
+$gotFriendParent = 0;
+
+$sqlParent = "select parentID from friendsExpertInfo where userid = $userID AND isexpert = 0";
+$tableResultParent = mysqli_query($conn, $sqlParent);
+$resultParentData = array();
+$resultParent = '';
+if (mysqli_num_rows($tableResultParent) > 0)  {
         while($row = mysqli_fetch_assoc($tableResultParent)) {
-        $resultParentData[] = $row['parentID'];
+                $resultParentData[] = $row['parentID'];
         }
         $resultParent = implode(',', $resultParentData);
         $gotFriendParent = 1;
-      }
+}
 
-      $sqlParent2 = "select userid from friendsExpertInfo where parentID = $userID AND isexpert = 0";
-       $tableResultParent2 = mysqli_query($conn, $sqlParent2);
-       $resultParentData = array();
-       if (mysqli_num_rows($tableResultParent2) > 0)  
-      {
+$sqlParent2 = "select userid from friendsExpertInfo where parentID = $userID AND isexpert = 0";
+$tableResultParent2 = mysqli_query($conn, $sqlParent2);
+$resultParentData = array();
+if (mysqli_num_rows($tableResultParent2) > 0)  {
         while($row = mysqli_fetch_assoc($tableResultParent2)) {
-        $resultParentData[] = $row['userid'];
+                $resultParentData[] = $row['userid'];
         }
         if($gotFriendParent == 1)
-         $resultParent = $resultParent . "," . implode(',', $resultParentData);
+                $resultParent = $resultParent . "," . implode(',', $resultParentData);
         else
           $resultParent = implode(',', $resultParentData);
-        
-      }
+}
 
-
-       $sql="select * from   friendsRegister where id in($resultParent)"; 
-      //friendsExpertInfo.userid = $userID OR 
-      //die($sql);
-      $tableResult = mysqli_query($conn, $sql);
-      //print_r($tableResult);
-
-        $userData = array();
-      if (mysqli_num_rows($tableResult) > 0)  
-      {
+$sql="select * from   friendsRegister where id in($resultParent)"; 
+$tableResult = mysqli_query($conn, $sql);
+$userData = array();
+if (mysqli_num_rows($tableResult) > 0)  {
         while($row = mysqli_fetch_assoc($tableResult)) {
         $userData[] = $row;
         }
       }
 
 
-      //expert data
-
-
-        $sqlParent3 = "select parentID from friendsExpertInfo where userid = $userID AND isexpert = 1";
-       $tableResultParent3 = mysqli_query($conn, $sqlParent3);
-       $resultParentData3 = array();
-       $resultParent3 = '';
-       $gotExpertParent = 0;
-       if (mysqli_num_rows($tableResultParent3) > 0)  
-      {
+//expert data
+$sqlParent3 = "select parentID from friendsExpertInfo where userid = $userID AND isexpert = 1";
+$tableResultParent3 = mysqli_query($conn, $sqlParent3);
+$resultParentData3 = array();
+$resultParent3 = '';
+$gotExpertParent = 0;
+if (mysqli_num_rows($tableResultParent3) > 0)  {
         while($row = mysqli_fetch_assoc($tableResultParent3)) {
         $resultParentData3[] = $row['parentID'];
         }
@@ -92,26 +81,18 @@ $sql2 = '';
           $resultParent3 = implode(',', $resultParentData4);
 
       }
-      //die($resultParent3);
 
-       $sql4="select * from   friendsRegister where id in($resultParent3)"; 
-      //friendsExpertInfo.userid = $userID OR 
-      //die($sql);
-      $tableResult4 = mysqli_query($conn, $sql4);
-      //print_r($tableResult);
 
-        $expertData = array();
-      if (mysqli_num_rows($tableResult4) > 0)  
-      {
+$sql4="select * from   friendsRegister where id in($resultParent3)"; 
+$tableResult4 = mysqli_query($conn, $sql4);
+$expertData = array();
+if (mysqli_num_rows($tableResult4) > 0)  {
         while($row = mysqli_fetch_assoc($tableResult4)) {
         $expertData[] = $row;
         }
       }
 
-
-      
-  //print_r($expertData);
-      ?>
+?>
 
 
 
@@ -122,38 +103,26 @@ $sql2 = '';
 
 <head>
 
-    
-
     <meta charset="utf-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    
-
     <title>Village Expert</title>
 
-  
-
     <!-- Font Awesome -->
-
-   
-
 
     <!-- Bootstrap core CSS -->
 
     <link href="css/bootstrap.min.css" rel="stylesheet">
-   
      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" rel="stylesheet">
-  <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
 
- <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
-    <!-- Material Design Bootstrap -->
+     <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
+     <!-- Material Design Bootstrap -->
 
-    <!-- <link href="css/mdb.min.css" rel="stylesheet"> -->
-
-       <!-- Your custom styles (optional) -->
+     <!-- Your custom styles (optional) -->
 
     <link href="css/style.css" rel="stylesheet">
 </head>
@@ -255,10 +224,6 @@ table td input[type="text"]{color: #000;font-weight:bold;}
 
 <body>
 
-    
-
-
-
     <!-- Start your project here-->
 
     <!--Navbar-->
@@ -289,25 +254,13 @@ table td input[type="text"]{color: #000;font-weight:bold;}
        
 
         <div class="container">
-
-
-
             <!--Collapse content-->
-
             <div class="logo-modify">
-
                 <!--Navbar Brand-->
-
                 <a class="navbar-brand" href="#" target="_blank"><img src="img/normal/logo.png"><p class="brand-text">VILLAGE EXPERTS</p></a>
- <label class="modify-badge-2" style="margin-left:-46px;font-size:23px;padding:0px;color:#495775">My Home Page</label>
+                <label class="modify-badge-2" style="margin-left:-46px;font-size:23px;padding:0px;color:#495775">My Home Page</label>
              </div>   
-
-             </div>
-
-                
-
-
-
+        </div>
     </nav>
 
     <!--/.Navbar-->
@@ -317,8 +270,6 @@ table td input[type="text"]{color: #000;font-weight:bold;}
     <!--Mask-->
 
    <section class="friend-family">
-
-    
 
         <div class="">
 
@@ -348,7 +299,7 @@ table td input[type="text"]{color: #000;font-weight:bold;}
                             <!--Text-->
                             <!--<label class="modify-badge pull-left">Friends Online</label>-->
                      <div class="clearfix"></div>
-                     <div <div style="border-top:1px solid #E6E9ED; margin-top:3px;"></div>
+                     <div style="border-top:1px solid #E6E9ED; margin-top:3px;"></div>
                      <p></p>
            <div class="wrap-table">
               <table class="head" width="101%" style="background: #ccccff; color: #000;">
@@ -450,58 +401,44 @@ table td input[type="text"]{color: #000;font-weight:bold;}
 
 <hr class="distance">
 <p></p>
-    <div>
+        <div>
+                <div class="top-part">
+                <!--Title-->
 
-                   <div class="top-part">
-                            <!--Title-->
+                <div class="col-md-8 text-xs-left"><label class="modify-badge-2" style="color:#495775;">My Experts List</label>
 
-                            <div class="col-md-8 text-xs-left"><label class="modify-badge-2" style="color:#495775;">My Experts List</label>
-
-                           <!-- <h4 class="card-title bg-danger" style="padding:15px 0px;border-radius:5px;">Connect with my Friends and Family</h4>--></div>
-
-
-                             <div class="col-md-1 clearRequestMailData text-xs-left elBtnAdd" style="padding:0" id="elBtnAdd"><button class="btn btn-width btn-mdb pull-right">Add</button></div>
-                             <div class="col-md-1 clearRequestMailData elSave" id="elSave" style="padding-left:0;text-align:right !important;"><button class="btn btn-width btn-mdb pull-right">Save</button></div>
-                              <div class="col-md-1 clearRequestMailData elDelete" id="elDelete" style="padding-left:0;text-align:right !important;"><button class="btn btn-width btn-mdb pull-right">Delete</button></div>
-                              <div class="col-md-1 clearRequestMailData text-xs-center elCancel" id="elCancel" style="padding:0;"><button class="btn btn-width btn-mdb">Cancel</button></div>
-
-
-
+                <!-- <h4 class="card-title bg-danger" style="padding:15px 0px;border-radius:5px;">Connect with my Friends and Family</h4>--></div>
+                <div class="col-md-1 clearRequestMailData text-xs-left elBtnAdd" style="padding:0" id="elBtnAdd"><button class="btn btn-width btn-mdb pull-right">Add</button></div>
+                <div class="col-md-1 clearRequestMailData elSave" id="elSave" style="padding-left:0;text-align:right !important;"><button class="btn btn-width btn-mdb pull-right">Save</button></div>
+                <div class="col-md-1 clearRequestMailData elDelete" id="elDelete" style="padding-left:0;text-align:right !important;"><button class="btn btn-width btn-mdb pull-right">Delete</button></div>
+                <div class="col-md-1 clearRequestMailData text-xs-center elCancel" id="elCancel" style="padding:0;"><button class="btn btn-width btn-mdb">Cancel</button></div>
                           
-</div>
-                            <div class="clearfix"></div>
+                </div>
+                <div class="clearfix"></div>
+        </div>
+         <div class="clearfix"></div>     
+          <!--<label class="modify-badge pull-left">Friends Online</label>-->
+          <div class="clearfix"></div>
 
-</div>
-                            <div class="clearfix"></div>
-
-                            
-
-                            <!--Text-->
-
-                           
-              
-                            <!--<label class="modify-badge pull-left">Friends Online</label>-->
-
-                            <div class="clearfix"></div>
-
-                            <div <div style="border-top:1px solid #E6E9ED; margin-top:3px;"></div>
+          <div style="border-top:1px solid #E6E9ED; margin-top:3px;"></div>
                      <p></p>
-                            <div class="wrap-table">
+           <div class="wrap-table">
 
-<table class="head" width="101%" style="background: #ccccff; color: #000;">
-        <tr>
-         <th style="width:24px;text-align:center;"> <span class="glyphicon glyphicon-edit elBtnEdit" title="Click to Edit" data-toggle="tooltip"></th>
-            <th style="padding:10px 0px;">First Name</th>
-            <th>Last Name</th>
-            <th style="width: 200px !important;">Email</th>
-            <th>Expertise</th>
-            <th>City</th>
-             <th>Country</th>
-            <th>Status</th>
-            <th></th>
-        
-        </tr>
-    </table>
+                <table class="head" width="101%" style="background: #ccccff; color: #000;">
+                        <tr>
+                         <th style="width:24px;text-align:center;"> <span class="glyphicon glyphicon-edit elBtnEdit" title="Click to Edit" data-toggle="tooltip"></th>
+                            <th style="padding:10px 0px;">First Name</th>
+                            <th>Last Name</th>
+                            <th style="width: 200px !important;">Email</th>
+                            <th>Expertise</th>
+                            <th>City</th>
+                             <th>Country</th>
+                            <th>Status</th>
+                            <th></th>
+
+                        </tr>
+                </table>
+                                    
     <div class="inner_table">
         <table width="101%" style="text-align: left;background: #7b7bfc;color:#fff;" class="elTable">
         <!-- this is to add an empty row at the top -->
@@ -583,54 +520,34 @@ table td input[type="text"]{color: #000;font-weight:bold;}
 </table>
     </div>
 
-
-
-
+                <div class="clearfix"></div>
                             
-                            <div class="clearfix"></div>
-                            
-                             </div>
-                             <hr class="distance"><div class="col-md-12">
-<div style="width:50%;margin:0 auto 30px auto;">
-        <div class="text-xs-center">
-          <button type="submit" class="btn btn-lg btn-papl" style="width:100%;"><a href="ExpertRegistration.php">Expert Registration – Sign Up as An Expert</a></button>
-        </div>
-        </div>
-      </div>
-</div>
+                </div>
+                <hr class="distance"><div class="col-md-12">
+                <div style="width:50%;margin:0 auto 30px auto;">
+                      <div class="text-xs-center">
+                          <button type="submit" class="btn btn-lg btn-papl" style="width:100%;"><a href="ExpertRegistration.php">Expert Registration – Sign Up as An Expert</a></button>
+                        </div>
+                        </div>
+                      </div>
+                </div>
                               
 
-                        </div>
+           </div>
 
-                </div>
+           </div>  
 
-                
-
-                
-
-                
-
-                
-
-             
-
-                <div class="clearfix"></div>
-
-               <!-- <div class="col-md-12 col-xs-12">
-
-                <button class="btn btn-lg btn-mdb pull-right"><i class="fa fa-user-plus" style="padding-right:5px"></i>Add a Friend</button>
-
-                </div>-->
+           <div class="clearfix"></div>
 
             </div>
 
-            <div class="clearfix"></div>
-      <div class="alert alert-success connSuccess" style="display:none;margin-top: 10px;">
-  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-  <strong>Connected ! </strong> successfully Connected to <span></span>.
-  Redirecting...
-</div>
-            </div>
+        <div class="clearfix"></div>
+        <div class="alert alert-success connSuccess" style="display:none;margin-top: 10px;">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>Connected ! </strong> successfully Connected to <span></span>.
+                Redirecting...
+        </div>
+        </div>
 
         </div>
 
