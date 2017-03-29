@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <link href="js/rangeslider.js-2.1.1/rangeslider.css" rel="stylesheet">
 <script src="js/jquery.js"></script> 
 <script src="js/rangeslider.js-2.1.1/rangeslider.min.js"></script> 
@@ -52,3 +53,9 @@
 
 <section id="top"> <input type="range" min="0" max="100" step="1" value="" data-rangeslider>
  <output id="js-output"></output></section>
+=======
+<form method="post" action="uploadsrp.php">
+<input type="file" name="file" />
+<input type="submit" />
+</form>
+>>>>>>> 4008c735ab917a2272e16fb62849aa617a073480

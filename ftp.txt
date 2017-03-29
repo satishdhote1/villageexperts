@@ -1,0 +1,3 @@
+host : movingpixels.co.in
+username : movingpi
+password : MovingSmart@5102

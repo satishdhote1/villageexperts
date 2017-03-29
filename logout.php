@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 
 error_reporting(E_ALL);
@@ -106,3 +107,13 @@ $conn=$conn->connect();
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
+=======
+<?php 
+session_start();
+session_destroy();
+session_unset();
+$_SESSION["SESS_ID"] = "";
+$_SESSION["SESS_SR_ID"] = "";
+			header('location:index.php');
+?>
+>>>>>>> 4008c735ab917a2272e16fb62849aa617a073480

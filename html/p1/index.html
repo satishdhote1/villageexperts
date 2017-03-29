@@ -1,0 +1,42 @@
+<!DOCTYPE HTML">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>Html5 ROAP Live Video Chat</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        <script type="text/javascript" src="js/action.js"></script>
+       
+    </head>
+    
+    <body id="body">
+    	
+    	<div id="main">
+    	
+    		<div id="header" >
+    			</div>
+    			
+    			
+    		<div id="livevideodiv" >
+	    		<video id="liveVideo" autoplay="true" width="360px" height="270px">
+	    			
+	    		</video>
+	    		<br><br>
+	    		<input type="button" name="Start" width="50px" value="Start" onclick="fetchVideo()"/>
+	    		<input type="button" name="Stream" width="30px" value="Stream" onclick="connect()"/>
+	    		<input type="button" name="Stop" width="30px" value="Stop" onclick="fetchVideo()"/>
+	    		
+    		</div>
+    		<div id="anim" style="visibility:hidden;">
+    			<img id="animation" src="images/anim.gif" width="210px" />
+    		</div>
+    	
+    		<div id="remotevideodiv" >
+	    		<video id="remotevideo" autoplay="true" width="360px" height="270px">
+	    			
+	    		</video>
+	    		
+    		</div>	
+    	</div>
+    </body>
+    
+</html>
