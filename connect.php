@@ -1,18 +1,18 @@
 <?php
 include("config/connection.php");
-
 include("phpSendMail.php");
 
 session_start();
 
 $user_id  = isset($_SESSION['logged_user_id'])?$_SESSION['logged_user_id']:'';
-
 $conn=new connections();
 $conn=$conn->connect();
 
 //Create Email instance for sending mail
 $emailObject=new phpSendMail();
-
+$hostname = $_SERVER['SERVER_NAME'];
+$port = 8084;
+$currentTimestamp = strtotime("now");
 $end_time = isset($_REQUEST['endTime'])?$_REQUEST['endTime']:'';
 
 if(!empty($user_id)){
@@ -27,7 +27,6 @@ if(!empty($user_id)){
 	$imagePath = isset($_REQUEST['imagePath'])?$_REQUEST['imagePath']:'';
 	$my_groups = isset($_REQUEST['my_groups'])?$_REQUEST['my_groups']:'';
 	$imagePath = empty($imagePath)?"http://".$_SERVER['SERVER_NAME'].'/images/placeholder/male2.jpg':"http://".$_SERVER['SERVER_NAME']."/".$imagePath;
-	$currentTimestamp = strtotime("now");
 	
 	if(!empty($search) && $search == 'FaF'){
 		$sql2="INSERT INTO connect (sr_id,sp_id,start_date_time)values($user_id,$memberId,'".$currentTimestamp."')";
@@ -41,22 +40,21 @@ if(!empty($user_id)){
 
 		$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
 		if($mailSent){
-			header("location:https://".$_SERVER['SERVER_NAME'].":8084/#".$currentTimestamp);
+			header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
 		}else{
-			header("location:https://".$_SERVER['SERVER_NAME'].":8084/#".$currentTimestamp);
+			header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
 		}
 	
 	}else if(!empty($search) && $search == 'findsp'){
 		$sql="select sp_name,sp_email from service_provider where sp_id=$memberId" ;//echo $ sql;exit();
-
 		$tableResult = mysqli_query($conn, $sql);
 		$row=array();
 		
 		if (mysqli_num_rows($tableResult) > 0) {
 		   	$row = mysqli_fetch_assoc($tableResult);
-	        	$sql2="INSERT INTO connect (sr_id,sp_id,start_date_time)values($user_id,$memberId,'".$currentTimestamp."')" ;
-		    	$tableResults = mysqli_query($conn, $sql2);
-			header("location:https://".$_SERVER['SERVER_NAME'].":8084/#".$currentTimestamp);		
+			$sql2="INSERT INTO connect (sr_id,sp_id,start_date_time)values($user_id,$memberId,'".$currentTimestamp."')" ;
+			$tableResults = mysqli_query($conn, $sql2);
+            header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
 		}else{
 			header("location:well-come.php?redirect=connect&passImg=img-3.jpg&passStr=You are not authorized to connect.<br>Redirecting....");
 		}
