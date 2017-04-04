@@ -7,77 +7,68 @@ session_start();
 $user_pic = $_SESSION['logged_user_image'];
 $user_name  = $_SESSION['logged_user_name'];
 //Get specialization Data
-$sql="select * from   sp_specialisation order by specialisation";
-      $tableResult = mysqli_query($conn, $sql);
-      //print_r($tableResult);
-
-        $specialData = array();
-      if (mysqli_num_rows($tableResult) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult)) {
-        $specialData[] = $row;
-        }
-      }
+$sql="select * from sp_specialisation order by specialisation";
+$tableResult = mysqli_query($conn, $sql);
+//print_r($tableResult);
+$specialData = array();
+if (mysqli_num_rows($tableResult) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult)) {
+    $specialData[] = $row;
+    }
+}
       
 //Get Sub specialization Data
+$sql2="select * from  sp_sub_specialisation where specialisation_id = 1 order by sub_specialisation";
+$tableResult2 = mysqli_query($conn, $sql2);
+//print_r($tableResult);
+$subspecialData = array();
+if (mysqli_num_rows($tableResult2) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult2)) {
+    $subspecialData[] = $row;
+    }
+}
 
-		$sql2="select * from  sp_sub_specialisation where specialisation_id = 1 order by sub_specialisation";
-	
-      $tableResult2 = mysqli_query($conn, $sql2);
-      //print_r($tableResult);
-
-        $subspecialData = array();
-      if (mysqli_num_rows($tableResult2) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult2)) {
-        $subspecialData[] = $row;
-        }
-      }
-      
-          //Get Sub Degree Data
+//Get Sub Degree Data
 $sql3="select * from  education where specialisation_id = 1 order by priority asc";
-      $tableResult3 = mysqli_query($conn, $sql3);
-      //print_r($tableResult);
+$tableResult3 = mysqli_query($conn, $sql3);
+//print_r($tableResult);
 
-        $education = array();
-      if (mysqli_num_rows($tableResult3) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult3)) {
-        $education[] = $row;
-        }
-      }
+$education = array();
+if (mysqli_num_rows($tableResult3) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult3)) {
+    $education[] = $row;
+    }
+}
 
-
-
-      //Get Sub specialization Data
+//Get Sub specialization Data
 $sql4="select * from  experience";
-      $tableResult4 = mysqli_query($conn, $sql4);
-      //print_r($tableResult);
+$tableResult4 = mysqli_query($conn, $sql4);
+//print_r($tableResult);
 
-        $experience = array();
-      if (mysqli_num_rows($tableResult4) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult4)) {
-        $experience[] = $row;
-        }
-      }
+$experience = array();
+if (mysqli_num_rows($tableResult4) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult4)) {
+    $experience[] = $row;
+    }
+}
       
-      //Get Sub Language Data
+//Get Sub Language Data
 $sql5="select * from  sp_language order by languages";
-      $tableResult5 = mysqli_query($conn, $sql5);
-      //print_r($tableResult);
-
-        $language = array();
-      if (mysqli_num_rows($tableResult5) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult5)) {
-        $language[] = $row;
-        }
-      }
+$tableResult5 = mysqli_query($conn, $sql5);
+//print_r($tableResult);
+$language = array();
+if (mysqli_num_rows($tableResult5) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult5)) {
+    $language[] = $row;
+    }
+}
 
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -88,7 +79,6 @@ $sql5="select * from  sp_language order by languages";
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Village Expert</title>
-
 <!-- Bootstrap Core CSS -->
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -99,6 +89,9 @@ $sql5="select * from  sp_language order by languages";
 <script src="js/rangeslider.js"></script> -->
 </head>
 <style>
+    body{
+        background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;background-size:cover;background-attachment:fixed;
+    }
 .top-10{top:122px;}
 .top-0{top:0px;}
 .btn-search-2{margin-top:21% !important;}
@@ -205,18 +198,20 @@ input[type="text"] {
   width: auto !important;
 }
 </style>
-<body style="background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;background-size:cover;background-attachment:fixed;">
+<body>
 <div class="over-lap">
-        <div class="profile pull-left"> <img src="<?php echo $user_pic; ?>" class="img-responsive"> </div>
+    <div class="profile pull-left"> <img src="<?php echo $user_pic; ?>" class="img-responsive"> </div>
         <div class="pull-right">
-          <p class="loginname">
-
-       <?php  echo $user_name; ?>
-          </p>
-           <div class=""><a href="index.php" class="back-to"><img src="images/Left.png" class="" style="cursor:pointer"></a></div>
+            <p class="loginname">
+                <?php  echo $user_name; ?>
+            </p>
+            <div class="">
+                <a href="index.php" class="back-to"><img src="images/Left.png" class="" style="cursor:pointer"></a>
+            </div>
         </div>
         <div class="clearfix"></div>
-      </div>
+</div>
+
 <nav class="navbar navbar-dark scrolling-navbar logo-scroll">
   <div class="container"> 
     
@@ -424,8 +419,6 @@ input[type="text"] {
     </div>
     
 <!--This is for Rate per Hour-->
- 
-    <!--This is for Rate per Hour-->
   
     
     <!--This is for submit button-->

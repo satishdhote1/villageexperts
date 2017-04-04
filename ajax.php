@@ -14,40 +14,40 @@ $result['success'] = 0;
 $result['error'] = 1;
 
 if($tag == "SPregister")  {
-	  $m_password=isset($_REQUEST['pwds'])?$_REQUEST['pwds']:(isset($_REQUEST['SRpassword'])?$_REQUEST['SRpassword']:'');
-	  $m_confirm_password=isset($_REQUEST['SPcpassword'])?$_REQUEST['SPcpassword']:(isset($_REQUEST['SRcpassword'])?$_REQUEST['SRcpassword']:'');
-	  $m_name=isset($_REQUEST['SPfname'])?$_REQUEST['SPfname']:(isset($_REQUEST['SRname'])?$_REQUEST['SRname']:'');
-	  $l_name=isset($_REQUEST['SPlname'])?$_REQUEST['SPlname']:(isset($_REQUEST['SRlname'])?$_REQUEST['SRlname']:'');
-	  $m_address=isset($_REQUEST['SPaddress'])?$_REQUEST['SPaddress']:(isset($_REQUEST['SRaddress'])?$_REQUEST['SRaddress']:'');
-	  $m_city=isset($_REQUEST['SPcity'])?$_REQUEST['SPcity']:(isset($_REQUEST['SRcity'])?$_REQUEST['SRcity']:'');
-	  $m_country=isset($_REQUEST['SPcountry'])?$_REQUEST['SPcountry']:(isset($_REQUEST['SRcountry'])?$_REQUEST['SRcountry']:'');
-	  $m_pin=isset($_REQUEST['SPpin'])?$_REQUEST['SPpin']:(isset($_REQUEST['SRpin'])?$_REQUEST['SRpin']:'');
-	  $m_mobile=isset($_REQUEST['SPmobile'])?$_REQUEST['SPmobile']:(isset($_REQUEST['SRmobile'])?$_REQUEST['SRmobile']:'');
-	  $m_email=isset($_REQUEST['SPemail'])?$_REQUEST['SPemail']:(isset($_REQUEST['SRemail'])?$_REQUEST['SRemail']:'');
-	  $m_sex=isset($_REQUEST['sex'])?$_REQUEST['sex']:(isset($_REQUEST['sex'])?$_REQUEST['sex']:'');
-	  $m_specialisation_id=isset($_REQUEST['SPexpertise'])?$_REQUEST['SPexpertise']:(isset($_REQUEST['SRspecialisation_id'])?$_REQUEST['SRspecialisation_id']:'');
-	  $m_sub_specialisation_id=isset($_REQUEST['SP_Sub_Expertise'])?$_REQUEST['SP_Sub_Expertise']:(isset($_REQUEST['SRsubSpecialisation_id'])?$_REQUEST['SRsubSpecialisation_id']:'');
-	  $m_year_of_experience=isset($_REQUEST['SPExperience'])?$_REQUEST['SPExperience']:(isset($_REQUEST['SRexperience'])?$_REQUEST['SRexperience']:'');
-	  $m_rate_type1=isset($_REQUEST['SPrateType1'])?$_REQUEST['SPrateType1']:(isset($_REQUEST['SRrateType1'])?$_REQUEST['SRrateType1']:'');
-	  $m_rate_type2=isset($_REQUEST['SPrateType2'])?$_REQUEST['SPrateType2']:(isset($_REQUEST['SRrateType2'])?$_REQUEST['SRrateType2']:'');
-	  $m_rate_type3=isset($_REQUEST['SPrateType3'])?$_REQUEST['SPrateType3']:(isset($_REQUEST['SRrateType3'])?$_REQUEST['SRrateType3']:'');
-	  $m_degree=isset($_REQUEST['SPEducation'])?$_REQUEST['SPEducation']:(isset($_REQUEST['SRdegree'])?$_REQUEST['SRdegree']:'');
-	  $m_institute=isset($_REQUEST['SPinstitute'])?$_REQUEST['SPinstitute']:(isset($_REQUEST['SRinstitute'])?$_REQUEST['SRinstitute']:'');
-	  $m_yop=isset($_REQUEST['SPyop'])?$_REQUEST['SPyop']:(isset($_REQUEST['SRyop'])?$_REQUEST['SRyop']:'');
-	  $m_language_id=isset($_REQUEST['SPlanguage'])?$_REQUEST['SPlanguage']:(isset($_REQUEST['SRlaunguages'])?$_REQUEST['SRlaunguages']:'');
-	  $m_ammount=isset($_REQUEST['ammount'])?$_REQUEST['ammount']:(isset($_REQUEST['ammount'])?$_REQUEST['ammount']:'');
-	  $m_accNo=isset($_REQUEST['accNo'])?$_REQUEST['accNo']:(isset($_REQUEST['accNo'])?$_REQUEST['accNo']:'');
-	  $m_bankRoutingNo=isset($_REQUEST['bankRoutingNo'])?$_REQUEST['bankRoutingNo']:(isset($_REQUEST['bankRoutingNo'])?$_REQUEST['bankRoutingNo']:'');
+	$m_password=isset($_REQUEST['pwds'])?$_REQUEST['pwds']:(isset($_REQUEST['SRpassword'])?$_REQUEST['SRpassword']:'');
+	$m_confirm_password=isset($_REQUEST['SPcpassword'])?$_REQUEST['SPcpassword']:(isset($_REQUEST['SRcpassword'])?$_REQUEST['SRcpassword']:'');
+	$m_name=isset($_REQUEST['SPfname'])?$_REQUEST['SPfname']:(isset($_REQUEST['SRname'])?$_REQUEST['SRname']:'');
+	$l_name=isset($_REQUEST['SPlname'])?$_REQUEST['SPlname']:(isset($_REQUEST['SRlname'])?$_REQUEST['SRlname']:'');
+	$m_address=isset($_REQUEST['SPaddress'])?$_REQUEST['SPaddress']:(isset($_REQUEST['SRaddress'])?$_REQUEST['SRaddress']:'');
+	$m_city=isset($_REQUEST['SPcity'])?$_REQUEST['SPcity']:(isset($_REQUEST['SRcity'])?$_REQUEST['SRcity']:'');
+	$m_country=isset($_REQUEST['SPcountry'])?$_REQUEST['SPcountry']:(isset($_REQUEST['SRcountry'])?$_REQUEST['SRcountry']:'');
+	$m_pin=isset($_REQUEST['SPpin'])?$_REQUEST['SPpin']:(isset($_REQUEST['SRpin'])?$_REQUEST['SRpin']:'');
+	$m_mobile=isset($_REQUEST['SPmobile'])?$_REQUEST['SPmobile']:(isset($_REQUEST['SRmobile'])?$_REQUEST['SRmobile']:'');
+	$m_email=isset($_REQUEST['SPemail'])?$_REQUEST['SPemail']:(isset($_REQUEST['SRemail'])?$_REQUEST['SRemail']:'');
+	$m_sex=isset($_REQUEST['sex'])?$_REQUEST['sex']:(isset($_REQUEST['sex'])?$_REQUEST['sex']:'');
+	$m_specialisation_id=isset($_REQUEST['SPexpertise'])?$_REQUEST['SPexpertise']:(isset($_REQUEST['SRspecialisation_id'])?$_REQUEST['SRspecialisation_id']:'');
+	$m_sub_specialisation_id=isset($_REQUEST['SP_Sub_Expertise'])?$_REQUEST['SP_Sub_Expertise']:(isset($_REQUEST['SRsubSpecialisation_id'])?$_REQUEST['SRsubSpecialisation_id']:'');
+	$m_year_of_experience=isset($_REQUEST['SPExperience'])?$_REQUEST['SPExperience']:(isset($_REQUEST['SRexperience'])?$_REQUEST['SRexperience']:'');
+	$m_rate_type1=isset($_REQUEST['SPrateType1'])?$_REQUEST['SPrateType1']:(isset($_REQUEST['SRrateType1'])?$_REQUEST['SRrateType1']:'');
+	$m_rate_type2=isset($_REQUEST['SPrateType2'])?$_REQUEST['SPrateType2']:(isset($_REQUEST['SRrateType2'])?$_REQUEST['SRrateType2']:'');
+	$m_rate_type3=isset($_REQUEST['SPrateType3'])?$_REQUEST['SPrateType3']:(isset($_REQUEST['SRrateType3'])?$_REQUEST['SRrateType3']:'');
+	$m_degree=isset($_REQUEST['SPEducation'])?$_REQUEST['SPEducation']:(isset($_REQUEST['SRdegree'])?$_REQUEST['SRdegree']:'');
+	$m_institute=isset($_REQUEST['SPinstitute'])?$_REQUEST['SPinstitute']:(isset($_REQUEST['SRinstitute'])?$_REQUEST['SRinstitute']:'');
+	$m_yop=isset($_REQUEST['SPyop'])?$_REQUEST['SPyop']:(isset($_REQUEST['SRyop'])?$_REQUEST['SRyop']:'');
+	$m_language_id=isset($_REQUEST['SPlanguage'])?$_REQUEST['SPlanguage']:(isset($_REQUEST['SRlaunguages'])?$_REQUEST['SRlaunguages']:'');
+	$m_ammount=isset($_REQUEST['ammount'])?$_REQUEST['ammount']:(isset($_REQUEST['ammount'])?$_REQUEST['ammount']:'');
+	$m_accNo=isset($_REQUEST['accNo'])?$_REQUEST['accNo']:(isset($_REQUEST['accNo'])?$_REQUEST['accNo']:'');
+	$m_bankRoutingNo=isset($_REQUEST['bankRoutingNo'])?$_REQUEST['bankRoutingNo']:(isset($_REQUEST['bankRoutingNo'])?$_REQUEST['bankRoutingNo']:'');
 
-	  $valid=1;
+	$valid=1;
 
-	  $target_fileName = '';
-	  $target_file = '';
+	$target_fileName = '';
+	$target_file = '';
   
-  if ($valid==1){
+	if ($valid==1){
      $sql="insert into service_provider (sp_name,sp_sex,sp_address,sp_city,sp_pincode,sp_country,sp_phone,sp_email,sp_password,sp_specialisation_id,sp_sub_specialisation_id,sp_year_of_experience,sp_rate_type1,sp_rate_type2,sp_rate_type3,degree,SPinstitute,SPyop,sp_language_id,ammount, accNo, bankRoutingNo) values ('".$m_name." ".$l_name."','".$m_sex."', '".$m_address."','".$m_city."','".$m_pin."', '".$m_country."', '".$m_mobile."', '".$m_email."', '".md5($m_password)."', '".$m_specialisation_id."', '".$m_sub_specialisation_id."', '".$m_year_of_experience."', '".$m_rate_type1."', '".$m_rate_type2."', '".$m_rate_type3."', '".$m_degree."' , '".$m_institute."' , '".$m_yop."', '".$m_language_id."','".$m_ammount."','".$m_accNo."','".$m_bankRoutingNo."')" ;
      $tableResult = mysqli_query($conn, $sql);
-     $MSG = "Registered Sucessfully!";
+     $MSG = "Registered Successfully!";
      $result['success'] = 1;
      $result['error'] = 0;
 
@@ -89,72 +89,79 @@ if($tag == "SPregister")  {
 	header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
      }
   }
-}else if($tag == "checkEmail"){
+
+}
+
+else if($tag == "checkEmail"){
     $userTypess = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
     $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	  
     if(!empty($email)){
         $sql="select * from friendsRegister where  email='".$email."'";
         $tableResult = mysqli_query($conn, $sql);
-	if (mysqli_num_rows($tableResult) > 0) {
-            $result['success'] = 1;
-            $result['error'] = 0;
+		if (mysqli_num_rows($tableResult) > 0) {
+			$result['success'] = 1;
+			$result['error'] = 0;
         }else{
-	    $result['success'] = 0;
-	    $result['error'] = 1;
-	}
+			$result['success'] = 0;
+			$result['error'] = 1;
+		}
     }else{
-	$result['success'] = 0;
-	$result['error'] = 1;
+		$result['success'] = 0;
+		$result['error'] = 1;
     }
 
     echo json_encode($result);
 
-}else if($tag == "makeAppointment"){
+}
+
+else if($tag == "makeAppointment"){
   
-	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	  $recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
-	  $senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	  $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
-	  $appointTimes = isset($_REQUEST['appointTime'])?$_REQUEST['appointTime']:'';
+	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
+	$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	$senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
+	$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
+	$appointTimes = isset($_REQUEST['appointTime'])?$_REQUEST['appointTime']:'';
 
-	  if(!empty($email) && !empty($appointTimes))
-	  {
-	  	$appointTime = json_decode($appointTimes);
-	  	$sql="insert into appointment (aptmakeremail,aptconfirmemail,aptmakername,aptconfirmname,aptdate1,aptdate2,aptdate3,aptdate4,aptdate5,aptconfirmdate) values ('".$email."','".$senderEmail."','".$recieverFname."', '".$senderName."','".$appointTime[0]."','".$appointTime[1]."','".$appointTime[2]."','".$appointTime[3]."','".$appointTime[4]."','')" ;//echo $sql;exit();
+	if(!empty($email) && !empty($appointTimes))
+	{
+			$appointTime = json_decode($appointTimes);
+			$sql="insert into appointment (aptmakeremail,aptconfirmemail,aptmakername,aptconfirmname,aptdate1,aptdate2,aptdate3,aptdate4,aptdate5,aptconfirmdate) values ('".$email."','".$senderEmail."','".$recieverFname."', '".$senderName."','".$appointTime[0]."','".$appointTime[1]."','".$appointTime[2]."','".$appointTime[3]."','".$appointTime[4]."','')" ;//echo $sql;exit();
 
-		$tableResult = mysqli_query($conn, $sql);
-		$member_id = mysqli_insert_id($conn);
-		//Create Email instance for sending mail
-		$emailObject=new phpSendMail();
-				
-		//----------------------------Email Body Texts------------------------
-		$body = '';
-		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
-		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-		$body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  '.$_SERVER['SERVER_NAME'].'.<br><br> His convenient timings are: <br><br>'.$appointTime[0].'<br>'.$appointTime[1].'<br>'.$appointTime[2].'<br>'.$appointTime[3].'<br>'.$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
-		// $body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  www.VillageExperts.com.<br><br> His convenient timings are: <br><br>'.date('l', strtotime($appointTime[0]))." at ".$appointTime[0].'<br>'.date('l', strtotime($appointTime[1]))." at ".$appointTime[1].'<br>'.date('l', strtotime($appointTime[2]))." at ".$appointTime[2].'<br>'.date('l', strtotime($appointTime[3]))." at ".$appointTime[3].'<br>'.date('l', strtotime($appointTime[4]))." at ".$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
-                $body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';
+			$tableResult = mysqli_query($conn, $sql);
+			$member_id = mysqli_insert_id($conn);
+			//Create Email instance for sending mail
+			$emailObject=new phpSendMail();
 
-		 //----------------------------//Email Body Texts------------------------ 
-		$mailSent = $emailObject->sendMail($email,$recieverFname,"Village-Expert Request for Appointment.",$body);
-		//if(mail($email,"Village-Expert Request for Appointment.",$body))
-		if($mailSent){
-		    $result['success'] = 1;
-		    $result['error'] = 0;
-                }else{
-		    $result['success'] = 0;
-                    $result['error'] = 1;
-		}
-	  }else{
-		  $result['success'] = 0;
-		  $result['error'] = 1;
-	  }
+			//----------------------------Email Body Texts------------------------
+			$body = '';
+			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
+			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
+			$body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  '.$_SERVER['SERVER_NAME'].'.<br><br> His convenient timings are: <br><br>'.$appointTime[0].'<br>'.$appointTime[1].'<br>'.$appointTime[2].'<br>'.$appointTime[3].'<br>'.$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
+			// $body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  www.VillageExperts.com.<br><br> His convenient timings are: <br><br>'.date('l', strtotime($appointTime[0]))." at ".$appointTime[0].'<br>'.date('l', strtotime($appointTime[1]))." at ".$appointTime[1].'<br>'.date('l', strtotime($appointTime[2]))." at ".$appointTime[2].'<br>'.date('l', strtotime($appointTime[3]))." at ".$appointTime[3].'<br>'.date('l', strtotime($appointTime[4]))." at ".$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
+			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';
 
-	  echo json_encode($result);
-	  exit(0);
+			 //----------------------------//Email Body Texts------------------------
+			$mailSent = $emailObject->sendMail($email,$recieverFname,"Village-Expert Request for Appointment.",$body);
+			//if(mail($email,"Village-Expert Request for Appointment.",$body))
+			if($mailSent){
+				$result['success'] = 1;
+				$result['error'] = 0;
+					}else{
+				$result['success'] = 0;
+						$result['error'] = 1;
+			}
+	}else{
+	  $result['success'] = 0;
+	  $result['error'] = 1;
+	}
 
-} else if($tag == "requestMail"){
+	echo json_encode($result);
+	exit(0);
+
+}
+
+else if($tag == "requestMail"){
 
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	  
@@ -184,7 +191,9 @@ if($tag == "SPregister")  {
 
 	  echo json_encode($result);
 
-}else if($tag == "ConfirmAppointment"){
+}
+
+else if($tag == "ConfirmAppointment"){
 
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	  $recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
@@ -232,35 +241,37 @@ if($tag == "SPregister")  {
 	  echo json_encode($result);
 	  exit(0);
 
-}else if($tag == "notConfirmAppointment"){
+}
 
-	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	  $recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
-	  $senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	  $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
-	  
-	  $apptData = '';
-          $sql="select * from appointment where  aptmakeremail='".$email."' and aptconfirmemail='".$senderEmail."' and apptstatus=0 order by id desc limit 1";
-          $tableResult = mysqli_query($conn, $sql);
-          if (mysqli_num_rows($tableResult) > 0){//$apptData['fname']
-                $apptData = mysqli_fetch_assoc($tableResult);
-           }
-           $appt1 = isset($apptData['aptdate1'])?$apptData['aptdate1']:'';
-           $appt2 = isset($apptData['aptdate2'])?$apptData['aptdate2']:'';
-           $appt3 = isset($apptData['aptdate3'])?$apptData['aptdate3']:'';
-           $appt4 = isset($apptData['aptdate4'])?$apptData['aptdate4']:'';
-           $appt5 = isset($apptData['aptdate5'])?$apptData['aptdate5']:'';
-	     
-           $decliendFname = '';
-           $declinedLname = '';
-           $sql2="select fname,lname from friendsRegister where  email='".$email."' order by id desc limit 1";
+else if($tag == "notConfirmAppointment"){
 
-           $tableResult2 = mysqli_query($conn, $sql2);
+	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
+	$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	$senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
+	$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 
-           if (mysqli_num_rows($tableResult2) > 0)  {
-                $apptData2 = mysqli_fetch_assoc($tableResult2);
-                $decliendFname = $apptData2['fname'];
-                $declinedLname = $apptData2['lname'];                }
+	$apptData = '';
+	$sql="select * from appointment where  aptmakeremail='".$email."' and aptconfirmemail='".$senderEmail."' and apptstatus=0 order by id desc limit 1";
+	$tableResult = mysqli_query($conn, $sql);
+	if (mysqli_num_rows($tableResult) > 0){//$apptData['fname']
+		$apptData = mysqli_fetch_assoc($tableResult);
+	}
+	$appt1 = isset($apptData['aptdate1'])?$apptData['aptdate1']:'';
+	$appt2 = isset($apptData['aptdate2'])?$apptData['aptdate2']:'';
+	$appt3 = isset($apptData['aptdate3'])?$apptData['aptdate3']:'';
+	$appt4 = isset($apptData['aptdate4'])?$apptData['aptdate4']:'';
+	$appt5 = isset($apptData['aptdate5'])?$apptData['aptdate5']:'';
+
+	$decliendFname = '';
+	$declinedLname = '';
+	$sql2="select fname,lname from friendsRegister where  email='".$email."' order by id desc limit 1";
+
+	$tableResult2 = mysqli_query($conn, $sql2);
+
+   if (mysqli_num_rows($tableResult2) > 0)  {
+		$apptData2 = mysqli_fetch_assoc($tableResult2);
+		$decliendFname = $apptData2['fname'];
+		$declinedLname = $apptData2['lname'];                }
 
 	  	if(!empty($senderEmail)){
 	  	//$appointTime = json_decode($appointTimes);
@@ -296,7 +307,9 @@ if($tag == "SPregister")  {
 	  echo json_encode($result);
 	  exit(0);
 
-} else if($tag == 'login') {
+}
+
+else if($tag == 'login') {
 	  $userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	  $pwd = isset($_REQUEST['pwd'])?$_REQUEST['pwd']:'';
@@ -388,7 +401,9 @@ if($tag == "SPregister")  {
 		   echo json_encode($result);
 	  }
 
-} else if($tag == 'register') {
+}
+
+else if($tag == 'register') {
 
 	$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
 	$isexpertreg=isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:(isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:'');
@@ -511,17 +526,19 @@ if($tag == "SPregister")  {
 		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=SPerror");
 	}	
 
-}else if($tag == 'addFriendss'){
+}
+
+else if($tag == 'addFriendss'){
 
 	$loggedINuser = $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname'];
 	$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
 	$isexpert = isset($_REQUEST['isexpert'])?$_REQUEST['isexpert']:'';
-	$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:(isset($_REQUEST['fname'])?$_REQUEST['fname']:'');
-	$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:(isset($_REQUEST['lname'])?$_REQUEST['lname']:'');
-	$m_city=isset($_REQUEST['city'])?$_REQUEST['city']:(isset($_REQUEST['city'])?$_REQUEST['city']:'');
-	$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:(isset($_REQUEST['country'])?$_REQUEST['country']:'');
-	$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');
-	$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:(isset($_REQUEST['email'])?$_REQUEST['email']:'');
+	$fname = isset($_REQUEST['fname'])?$_REQUEST['fname']:(isset($_REQUEST['fname'])?$_REQUEST['fname']:'');
+	$lname = isset($_REQUEST['lname'])?$_REQUEST['lname']:(isset($_REQUEST['lname'])?$_REQUEST['lname']:'');
+	$m_city = isset($_REQUEST['city'])?$_REQUEST['city']:(isset($_REQUEST['city'])?$_REQUEST['city']:'');
+	$m_country = isset($_REQUEST['country'])?$_REQUEST['country']:(isset($_REQUEST['country'])?$_REQUEST['country']:'');
+	$m_mobile = isset($_REQUEST['phone'])?$_REQUEST['phone']:(isset($_REQUEST['phone'])?$_REQUEST['phone']:'');
+	$m_email = isset($_REQUEST['email'])?$_REQUEST['email']:(isset($_REQUEST['email'])?$_REQUEST['email']:'');
 	$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:(isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'');
 	$loggedID = isset($_REQUEST['loggedID'])?$_REQUEST['loggedID']:(isset($_REQUEST['loggedID'])?$_REQUEST['loggedID']:'');
 	$IsemailExists = 0;
@@ -645,7 +662,9 @@ if($tag == "SPregister")  {
 		echo json_encode($result);
 	}
 	     
-}else if($tag == 'editFriendss') {
+}
+
+else if($tag == 'editFriendss') {
 	$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
 	$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:(isset($_REQUEST['fname'])?$_REQUEST['fname']:'');
 	$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:(isset($_REQUEST['lname'])?$_REQUEST['lname']:'');
@@ -665,7 +684,9 @@ if($tag == "SPregister")  {
 	$result['error'] = 0;
 	echo json_encode($result);
 	     
-}  else if($tag == 'deleteFriendss') {
+}
+
+else if($tag == 'deleteFriendss') {
 	$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:'';
 	$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:'';

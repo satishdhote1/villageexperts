@@ -3,16 +3,15 @@ require("phpMailer/class.phpmailer.php");
 require("phpMailer/PHPMailerAutoload.php");
 mail("dassamtest2@gmail.com","hi","hello");
 
-
 	$mail = new PHPMailer();
 	$mail->SMTPDebug = 1;
 	$mail->isSMTP();
-		$mail->Host = 'sg2plcpnl0137.prod.sin2.secureserver.net';
-		$mail->Port = 465;
-		$mail->SMTPAuth = true;
-		$mail->SMTPSecure = "ssl";
-        $mail->IsSMTP();
-        $mail->Mailer = "smtp";
+    $mail->Host = 'sg2plcpnl0137.prod.sin2.secureserver.net';
+    $mail->Port = 465;
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = "ssl";
+    $mail->IsSMTP();
+    $mail->Mailer = "smtp";
         //$mail->Host = "smtp.gmail.com";//"smtp.gmail.com";
        // $mail->Port = "587";
        // $mail->SMTPAuth = true;

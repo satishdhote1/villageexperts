@@ -12,10 +12,15 @@ class connections
 	private $password="byethost";
 	private $dbname="b7_15994620_crm";*/
 
-	private $servername="localhost";
+/*	private $servername="localhost";
 	private $uname="root";
 	private $password="mysqlroot";
-	private $dbname="villageexpertsdb";
+	private $dbname="villageexpertsdb";*/
+
+    private $servername="localhost";
+    private $uname="root";
+    private $password="altanaimysql";
+    private $dbname="villageexpertsdb";
 
 	//email cnfig
 /*		
@@ -32,6 +37,7 @@ class connections
 	private $emailPassword ="Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni";
 	private $host= "email-smtp.us-west-2.amazonaws.com";
 	private $from ="villageexpert.info@gmail.com";//"dassamtest2@gmail.com";
+
 	public function connect()
 	{	
 		$con=mysqli_connect($this->servername,$this->uname,$this->password,$this->dbname);
