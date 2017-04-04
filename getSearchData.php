@@ -5,146 +5,100 @@ include("config/connection.php");
 session_start();
 
 $conn=new connections();
-
 $conn=$conn->connect();
-
-
 
 $getDataOf = isset($_REQUEST['getDataOf'])?$_REQUEST['getDataOf']:'';
 
-	if($getDataOf == 'Special')
-
-	{
-
-		
+	if($getDataOf == 'Special') {
 
 		$sql="select * from 	sp_specialisation order by specialisation";
+        $tableResult = mysqli_query($conn, $sql);
 
-  
+        $result['success'] = 0;
+        $result['error']=1;
+        $specialData = array();
+        if (mysqli_num_rows($tableResult) > 0)
+        {
+            while($row = mysqli_fetch_assoc($tableResult)) {
+                        $specialData[] = $row;
+            }
 
-			$tableResult = mysqli_query($conn, $sql);
+            $result['success'] = 1;
+            $result['error']=0;
+            $result['datas']=$specialData;
+            echo json_encode($result);
+        } else {
 
-			//print_r($tableResult);
+            echo json_encode($result);
 
-				$result['success'] = 0;
-				$result['error']=1;
-				$specialData = array();
-			if (mysqli_num_rows($tableResult) > 0)  
-			{
+        }
 
-				while($row = mysqli_fetch_assoc($tableResult)) {
-							$specialData[] = $row;
+	} else if($getDataOf == 'subSpecial')  {
+        $id = isset($_REQUEST['id'])?$_REQUEST['id']:'';
+        if($id == 6) {
+            $sql="select * from  sp_sub_specialisation where specialisation_id = ".$id." order by specialisation_id";
+        } else {
+            $sql="select * from  sp_sub_specialisation where specialisation_id = ".$id." order by sub_specialisation";
+        }
 
-						}
+        $tableResult = mysqli_query($conn, $sql);
+        //print_r($tableResult);
+        $result['success'] = 0;
+        $result['error']=1;
+        $subSpecialData = array();
 
-						$result['success'] = 1;
-						$result['error']=0;
-						$result['datas']=$specialData;
-						echo json_encode($result);
-			}
+        if (mysqli_num_rows($tableResult) > 0) {
+            while($row = mysqli_fetch_assoc($tableResult)) {
+            $subSpecialData[] = $row;
+            }
+        }
 
-			else
+    //Education irrespective of Specialisation
 
-			{
+    $sql2="select * from education where specialisation_id = ".$id." order by priority asc";
+    $tableResult2 = mysqli_query($conn, $sql2);
 
-				echo json_encode($result);
+    $educationData = array();
+    if (mysqli_num_rows($tableResult2) > 0) {
+        while($row2 = mysqli_fetch_assoc($tableResult2)) {
+        $educationData[] = $row2;
+        }
+    }
 
-			}
+    $result['success'] = 1;
 
-	}
+    $result['error']=0;
 
-else if($getDataOf == 'subSpecial')
-{
-$id = isset($_REQUEST['id'])?$_REQUEST['id']:'';
-if($id == 6)
-{
-	$sql="select * from  sp_sub_specialisation where specialisation_id = ".$id." order by specialisation_id";
-}
-else
-{
-	$sql="select * from  sp_sub_specialisation where specialisation_id = ".$id." order by sub_specialisation";
-}
+    $result['datas']=$subSpecialData;
+    $result['educationData']=$educationData;
 
-$tableResult = mysqli_query($conn, $sql);
-//print_r($tableResult);
-$result['success'] = 0;
-$result['error']=1;
-$subSpecialData = array();
-if (mysqli_num_rows($tableResult) > 0)  
-{
-while($row = mysqli_fetch_assoc($tableResult)) {
-$subSpecialData[] = $row;
-}
-}
-//Education irrespective of Specialisation
+    echo json_encode($result);
 
-$sql2="select * from education where specialisation_id = ".$id." order by priority asc";
-$tableResult2 = mysqli_query($conn, $sql2);
-
-$educationData = array();
-if (mysqli_num_rows($tableResult2) > 0)  
-{
-while($row2 = mysqli_fetch_assoc($tableResult2)) {
-$educationData[] = $row2;
-}
-}
-
-/*print_r($subSpecialData);
-print_r($educationData);
-die("gddgf");
-*/
-						$result['success'] = 1;
-
-						$result['error']=0;
-
-						$result['datas']=$subSpecialData;
-						$result['educationData']=$educationData;
-
-						echo json_encode($result);
-
-}
-else if($getDataOf == 'experience')
-
-	{
-
-		
+} else if($getDataOf == 'experience') {
 
 		$sql="select * from 	experience ORDER BY ExperienceID";
 
-  
+        $tableResult = mysqli_query($conn, $sql);
 
-			$tableResult = mysqli_query($conn, $sql);
 
-			//print_r($tableResult);
+        $result['success'] = 0;
 
-				$result['success'] = 0;
+        $result['error']=1;
 
-				$result['error']=1;
-
-				$subSpecialData = array();
+        $subSpecialData = array();
 
 				
 
-			if (mysqli_num_rows($tableResult) > 0)  
-
-			{
+			if (mysqli_num_rows($tableResult) > 0) {
 
 				while($row = mysqli_fetch_assoc($tableResult)) {
+                    $subSpecialData[] = $row;
+                }
+                $result['success'] = 1;
+                $result['error']=0;
+                $result['datas']=$subSpecialData;
 
-							
-
-							$subSpecialData[] = $row;
-
-						}
-
-						$result['success'] = 1;
-
-						$result['error']=0;
-
-						$result['datas']=$subSpecialData;
-
-						echo json_encode($result);
-
+                echo json_encode($result);
 			}
 
 			else
@@ -155,7 +109,6 @@ else if($getDataOf == 'experience')
 
 			}
 
-		
 
 	}
 

@@ -3,17 +3,13 @@
 class imageUpload
 {
 	 public function imageUploads($files,$uploadDirectory,$lastId,$tableName,$fieldName1,$fieldName2){
-	 $_FILES = $files;
-	 $conn=new connections();
-	$conn=$conn->connect();
+	    $_FILES = $files;
+	    $conn=new connections();
+	    $conn=$conn->connect();
 
-	
-	 
-	
-  $target_dir = "images/".$uploadDirectory."/";
+        $target_dir = "images/".$uploadDirectory."/";
 		$target_file = $target_dir .time(). basename($_FILES['file']["name"]);
-		
-		
+
 		//die($target_file);
 		$uploadOk = 1;
 		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -22,8 +18,8 @@ class imageUpload
 		
 		
 		//echo $uploadDirectory."--".$lastId."--".$tableName."--".$fieldName1."--".$fieldName2."<br>";//die();
-	//echo  $sql1 = "update ".$tableName." set ".$fieldName1." ='".$original_file."' where ".$fieldName2."=".$lastId;
-	//die();
+	    //echo  $sql1 = "update ".$tableName." set ".$fieldName1." ='".$original_file."' where ".$fieldName2."=".$lastId;
+	    //die();
 		// Check if image file is a actual image or fake image
 		/*
 		if(isset($_POST["submit"])) {
@@ -61,16 +57,10 @@ class imageUpload
 		// if everything is ok, try to upload file
 		} else {
 			if (move_uploaded_file($_FILES['file']["tmp_name"], $target_file)) {
-				
-				
-				
 				//$_SESSION['uploaded_file']= time().basename( $_FILES['file']["name"]);
-				
 				$sql1 = "update ".$tableName." set ".$fieldName1." ='".$original_file."' where ".$fieldName2."=".$lastId;
-				
 				$rs1 =mysqli_query($conn, $sql1);
 				//echo $sql1;die("test");
-				
 			} else {
 				$result['msg'] = "Sorry, there was an error uploading your file.";
 			}

@@ -5,76 +5,66 @@ $conn=new connections();
 $conn=$conn->connect();
 //print_r($conn);die();
 //Get specialization Data
- $sql="select * from   sp_specialisation order by specialisation";
-      $tableResult = mysqli_query($conn, $sql);
-      //print_r($tableResult);
+$sql="select * from   sp_specialisation order by specialisation";
+$tableResult = mysqli_query($conn, $sql);
+//print_r($tableResult);
 
-        $specialData = array();
-      if (mysqli_num_rows($tableResult) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult)) {
-        $specialData[] = $row;
-        }
-      }
+$specialData = array();
+if (mysqli_num_rows($tableResult) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult)) {
+    $specialData[] = $row;
+    }
+}
     
 //Get Sub specialization Data
 $sql2="select * from  sp_sub_specialisation where specialisation_id = ".$specialData[0]['specialisation_id']." order by sub_specialisation";
-      $tableResult2 = mysqli_query($conn, $sql2);
-      //print_r($tableResult);
+$tableResult2 = mysqli_query($conn, $sql2);
+//print_r($tableResult);
 
-        $subspecialData = array();
-      if (mysqli_num_rows($tableResult2) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult2)) {
-        $subspecialData[] = $row;
-       
-        }
-         //print_r($subspecialData);die();
-       }
+$subspecialData = array();
+if (mysqli_num_rows($tableResult2) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult2)) {
+    $subspecialData[] = $row;
+    }
+}
     
-          //Get Sub Degree Data
+  //Get Sub Degree Data
 $sql3="select * from  education ORDER BY EducationID";
-      $tableResult3 = mysqli_query($conn, $sql3);
-      //print_r($tableResult);
+$tableResult3 = mysqli_query($conn, $sql3);
+//print_r($tableResult);
 
-        $education = array();
-      if (mysqli_num_rows($tableResult3) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult3)) {
-        $education[] = $row;
-        }
-      }
-      //print_r($education);
+$education = array();
+if (mysqli_num_rows($tableResult3) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult3)) {
+    $education[] = $row;
+    }
+}
 
- 
-
-      //Get Sub specialization Data
+//Get Sub specialization Data
 $sql4="select * from  experience ORDER BY ExperienceID";
-      $tableResult4 = mysqli_query($conn, $sql4);
-      //print_r($tableResult);
+$tableResult4 = mysqli_query($conn, $sql4);
 
-        $experience = array();
-      if (mysqli_num_rows($tableResult4) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult4)) {
-        $experience[] = $row;
-        }
-      }
-      //print_r($experience);
-      /* */
+$experience = array();
+if (mysqli_num_rows($tableResult4) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult4)) {
+    $experience[] = $row;
+    }
+}
+
   //Get Sub Language Data
 $sql5="select * from  sp_language ORDER BY languages";
-      $tableResult5 = mysqli_query($conn, $sql5);
-      //print_r($tableResult);
-
-        $language = array();
-      if (mysqli_num_rows($tableResult5) > 0)  
-      {
-        while($row = mysqli_fetch_assoc($tableResult5)) {
-        $language[] = $row;
-        }
-      }
-      //print_r($language);die("dssfsd");
+$tableResult5 = mysqli_query($conn, $sql5);
+$language = array();
+if (mysqli_num_rows($tableResult5) > 0)
+{
+    while($row = mysqli_fetch_assoc($tableResult5)) {
+    $language[] = $row;
+    }
+}
       
 ?>  
 
@@ -98,28 +88,28 @@ $sql5="select * from  sp_language ORDER BY languages";
 
     <!-- Material Design Bootstrap -->
     <link href="css/mdb.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
    
 
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
     <style>
-	.md-form.main-block > label, .main-block-2 label {
-    font-family: arial;
-    font-size: 15px;
-    line-height: 35px;
-    text-transform: capitalize;
-	
-}
-.upload-img{width:170px; height:170px;overflow:hidden;margin:auto;border-radius:10px;padding:10px;border:1px solid #eee; box-shadow:0px 0px 10px rgba(0,0,0,0.5)}
-.main-block fieldset.form-group {
-    height: 54px;
-    margin-top: 10px;
-}
-.btn-amber:focus, .btn-amber:hover {
-    background-color: #9595f9 !important;
-}
-</style>
+        .md-form.main-block > label, .main-block-2 label {
+        font-family: arial;
+        font-size: 15px;
+        line-height: 35px;
+        text-transform: capitalize;
+        }
+        .upload-img{
+            width:170px; height:170px;overflow:hidden;margin:auto;border-radius:10px;padding:10px;border:1px solid #eee; box-shadow:0px 0px 10px rgba(0,0,0,0.5)}
+        .main-block fieldset.form-group {
+            height: 54px;
+            margin-top: 10px;
+        }
+        .btn-amber:focus, .btn-amber:hover {
+            background-color: #9595f9 !important;
+        }
+    </style>
  <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
 </head>
 
@@ -143,7 +133,6 @@ $sql5="select * from  sp_language ORDER BY languages";
                 <!--Navbar Brand-->
                 <a class="navbar-brand" href="#" target="_blank"><img src="img/normal/logo.png"><p>VILLAGE EXPERTS</p></a>
                 <!--Links-->
-                
             </div>
             <!--/.Collapse content-->
 
@@ -161,10 +150,7 @@ $sql5="select * from  sp_language ORDER BY languages";
            <a href="index.php" class="back-to"><p class="close backLogin" ><img src="images/Left.png" class="" style="cursor:pointer;padding-top:11px;margin-right: 15px;"></p></a>
           <!--Header-->
           <div class="text-xs-center text-danger">
-          <h3 style="line-height:60px; color:#000;background:#CCCCFF  ;font-weight:bold;"><img width="50px" style="float:left;padding:3px;" src="img/normal/logo.png">
-                                  Expert Registration</h3>
-
-           
+          <h3 style="line-height:60px; color:#000;background:#CCCCFF  ;font-weight:bold;"><img width="50px" style="float:left;padding:3px;" src="img/normal/logo.png">Expert Registration</h3>
             <div class="clearfix"></div>
           </div>
           <div style="padding:0px 25px;"> 
@@ -253,88 +239,77 @@ $sql5="select * from  sp_language ORDER BY languages";
                           <select id="SP_Sub_Expertise" class="form-control SP_Sub_Expertise" name="SP_Sub_Expertise">
                             <option value="">Select Sub-Expertise </option>
                             <?php foreach($subspecialData as $subspecialDatas) { ?>
-                            
                             <option value="<?php echo $subspecialDatas['sub_specialisation_id']; ?>"><?php echo $subspecialDatas['sub_specialisation']; ?></option>
                             <?php }?>
-                            
                           </select>
                         </fieldset>
                       </div>
-                      <div class="md-form main-block">
-                        <fieldset class="form-group">
-                          <select id="SPEducation" class="form-control SPEducation" name="SPEducation">
-                            <option>Select Degree</option>
-                            <?php foreach($education as $educations) { ?>
-                            
-                            <option value="<?php echo $educations['EducationID']; ?>"><?php echo $educations['Education']; ?></option>
-                            <?php }?>
-                          </select>
-                        </fieldset>
-                      </div>
-                      <div class="md-form main-block">
-                        <fieldset class="form-group">
-                          <select id="SPExperience" class="form-control SPExperience" name="SPExperience">
-                            <option>Year Of Experience</option>
-                            <?php foreach($experience as $experiences) { ?>
-                            
-                            <option value="<?php echo $experiences['ExperienceID']; ?>"><?php echo $experiences['Experience']; ?></option>
-                            <?php }?>
-                          </select>
-                        </fieldset>
-                      </div>
-                      <div class="md-form main-block">
-                        <input type="text" id="form10 SPRate" class="form-control SPRate" name="SPrateType1">
-                        <label for="form10" style="padding-left:15px;">Hourly Rate (US $)</label>
-                      </div>
-                      <div class="md-form main-block">
-                        <fieldset class="form-group">
-                          <select id="SPsrvcTime" class="form-control SPsrvcTime" name="SPsrvcTime">
-                            <option>Offer Free Service</option>
-                            <option>10 mins</option>
-                            <option>20 mins</option>
-                             <option>30 mins</option>
-                          </select>
-                        </fieldset>
-                      </div>
-
-                      <div class="md-form main-block" style="margin-bottom:0px;">
-                        <fieldset class="form-group form-control" style="padding:0;height:38px;">
-                           <div class="col-xs-5" style="padding:5px 0 0 15px">Choose Language/s</div>
-                            <div class="col-xs-7" style="padding-right:0;">
-                              <select id="example-getting-started" multiple="multiple" class="form-control SPlanguage" name="SPlanguage">
-                               <?php foreach($language as $languageDatas) { ?>
-                                 <option value="<?php echo $languageDatas['language_id']; ?>"><?php echo $languageDatas['languages']; ?></option>
+                          <div class="md-form main-block">
+                            <fieldset class="form-group">
+                              <select id="SPEducation" class="form-control SPEducation" name="SPEducation">
+                                <option>Select Degree</option>
+                                <?php foreach($education as $educations) { ?>
+                                <option value="<?php echo $educations['EducationID']; ?>"><?php echo $educations['Education']; ?></option>
                                 <?php }?>
                               </select>
-                            </div>
-                        </fieldset>
-                      </div>
-                      <div class="md-form main-block">
-                        <input type="text" id="" class="form-control ammount" name="ammount">
-                        <label for="11" style="padding-left:15px;">Payment Deposit to Bank:</label>
-                      </div>
-                      
-                      <div class="md-form main-block">
-                        <input type="text" id="" class="form-control accNo"  name="accNo">
-                        <label for="12" style="padding-left:15px;">Bank Account Number:</label>
-                      </div>
-                      <div class="md-form main-block">
-                        <input type="text" id="" class="form-control bankRoutingNo"  name="bankRoutingNo">
-                        <label for="13" style="padding-left:15px;">Bank Routing Number:</label>
-                      </div>
+                            </fieldset>
+                          </div>
+                          <div class="md-form main-block">
+                            <fieldset class="form-group">
+                              <select id="SPExperience" class="form-control SPExperience" name="SPExperience">
+                                <option>Year Of Experience</option>
+                                <?php foreach($experience as $experiences) { ?>
 
+                                <option value="<?php echo $experiences['ExperienceID']; ?>"><?php echo $experiences['Experience']; ?></option>
+                                <?php }?>
+                              </select>
+                            </fieldset>
+                          </div>
+                          <div class="md-form main-block">
+                            <input type="text" id="form10 SPRate" class="form-control SPRate" name="SPrateType1">
+                            <label for="form10" style="padding-left:15px;">Hourly Rate (US $)</label>
+                          </div>
+                          <div class="md-form main-block">
+                            <fieldset class="form-group">
+                              <select id="SPsrvcTime" class="form-control SPsrvcTime" name="SPsrvcTime">
+                                <option>Offer Free Service</option>
+                                <option>10 mins</option>
+                                <option>20 mins</option>
+                                 <option>30 mins</option>
+                              </select>
+                            </fieldset>
+                          </div>
+                          <div class="md-form main-block" style="margin-bottom:0px;">
+                            <fieldset class="form-group form-control" style="padding:0;height:38px;">
+                               <div class="col-xs-5" style="padding:5px 0 0 15px">Choose Language/s</div>
+                                <div class="col-xs-7" style="padding-right:0;">
+                                  <select id="example-getting-started" multiple="multiple" class="form-control SPlanguage" name="SPlanguage">
+                                   <?php foreach($language as $languageDatas) { ?>
+                                     <option value="<?php echo $languageDatas['language_id']; ?>"><?php echo $languageDatas['languages']; ?></option>
+                                    <?php }?>
+                                  </select>
+                                </div>
+                            </fieldset>
+                          </div>
+                          <div class="md-form main-block">
+                            <input type="text" id="" class="form-control ammount" name="ammount">
+                            <label for="11" style="padding-left:15px;">Payment Deposit to Bank:</label>
+                          </div>
+                          <div class="md-form main-block">
+                            <input type="text" id="" class="form-control accNo"  name="accNo">
+                            <label for="12" style="padding-left:15px;">Bank Account Number:</label>
+                          </div>
+                          <div class="md-form main-block">
+                            <input type="text" id="" class="form-control bankRoutingNo"  name="bankRoutingNo">
+                            <label for="13" style="padding-left:15px;">Bank Routing Number:</label>
+                          </div>
                       </div>
                       
-                      
-                      <div class="">
-                      <div class="upload-img"> <img id="preview" class="SPshowImage" src="images/placeholder/maleDummy.png" style="max-width:200px;width:100%;"> </div>
+                        <div class="">
+                            <div class="upload-img"> <img id="preview" class="SPshowImage" src="images/placeholder/maleDummy.png" style="max-width:200px;width:100%;"> </div>
+                        </div>
                     </div>
-                      
-                      
-                      
-                    </div>
-                    
-                    
+
                     <div class="clearfix"></div>
                     <div class="col-md-2"><p class="m-a-0 small" style=" padding-top: 33px;"><span style="color:#F00;font-size:18px">*</span>Required Fields</p></div>
                     <div class="col-md-8">
@@ -354,18 +329,6 @@ $sql5="select * from  sp_language ORDER BY languages";
  </div>
     <!--Main container-->
     
-        
-        
-        
-        
-         
-
-
-  
-
-
-
-
 
     <!-- /Start your project here-->
     
@@ -415,14 +378,10 @@ $sql5="select * from  sp_language ORDER BY languages";
                       var values = item.sub_specialisation;
                       var images = item.SubSpImages;
       
-          resultData = resultData + '<option value="'+id+'">'+values+'</option>';
-
-         /*resultData = resultData + '<option value="'+id+'">'+values+' </option>'+<li class="modifi-list-item-2 subExpertiesLabel" id="'+id+'"  for="'+id+'" dir="'+values+'"><div class="col-xs-12  text-center" style="padding:0;"><div class="checkbox-icon"><img  src="images/SubSpecialization/'+images+'"></div></div><div class="col-xs-12 text-center" style="padding:0"><p class="block-text"><a href="javascript:void(0);" class="text-center">'+values+'</a></p></div><div class="setHooverSubExprt'+id+' removeSubExp" id=""></div></li>';*/
-
+                        resultData = resultData + '<option value="'+id+'">'+values+'</option>';
                    });
                   console.log("resultData=="+resultData);
-    //  alert( $(".removeExp").offset().top);
-                      $('.SP_Sub_Expertise').html(resultData);
+                    $('.SP_Sub_Expertise').html(resultData);
                 }
               },
               error: function (error) {
@@ -432,7 +391,6 @@ $sql5="select * from  sp_language ORDER BY languages";
               });
           }
             });
-         
 
     });
 </script>
