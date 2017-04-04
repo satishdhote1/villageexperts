@@ -1,11 +1,10 @@
 <?php
-	session_start();
+session_start();
 require('config.php');
 $spid=$_GET['spid'];
 $srid=$_GET['srid'];
 $timnestart=date('ymdhis');
-//echo $spid;
-//echo "<br>";
+
 
 $sel_qry="SELECT * FROM current_communication WHERE SPID='$spid'";
 $mem_sel=mysqli_query($bd,$sel_qry);

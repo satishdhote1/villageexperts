@@ -75,9 +75,6 @@ $sql5="select * from  sp_language order by languages";
         }
       }
 
-
-
-
 ?>
 
 

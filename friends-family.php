@@ -35,12 +35,12 @@ $tableResultParent2 = mysqli_query($conn, $sqlParent2);
 $resultParentData = array();
 if (mysqli_num_rows($tableResultParent2) > 0)  {
         while($row = mysqli_fetch_assoc($tableResultParent2)) {
-                $resultParentData[] = $row['userid'];
+            $resultParentData[] = $row['userid'];
         }
         if($gotFriendParent == 1)
-                $resultParent = $resultParent . "," . implode(',', $resultParentData);
+            $resultParent = $resultParent . "," . implode(',', $resultParentData);
         else
-          $resultParent = implode(',', $resultParentData);
+            $resultParent = implode(',', $resultParentData);
 }
 
 $sql="select * from   friendsRegister where id in($resultParent)"; 
@@ -48,9 +48,9 @@ $tableResult = mysqli_query($conn, $sql);
 $userData = array();
 if (mysqli_num_rows($tableResult) > 0)  {
         while($row = mysqli_fetch_assoc($tableResult)) {
-        $userData[] = $row;
+            $userData[] = $row;
         }
-      }
+}
 
 
 //expert data
@@ -93,8 +93,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
       }
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -565,42 +563,33 @@ table td input[type="text"]{color: #000;font-weight:bold;}
          </div>
     
 
-  
-
-    <!-- /Start your project here-->
-
-    
-
-
-
-    
+    <!-- /Start your project here
     <!-- SCRIPTS -->
-
-
 
     <!-- JQuery -->
 
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
- <!-- Bootstrap tooltips -->
-  <!-- <script type="text/javascript" src="js/tether.min.js"></script> -->
-<!-- Bootstrap core JavaScript -->
-  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <!-- <script type="text/javascript" src="js/tether.min.js"></script> -->
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
-  <script src="js/connectMe.js"></script>
+    <script src="js/connectMe.js"></script>
     <!-- MDB core JavaScript -->
-   <!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+    <!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
   
   <script type="text/javascript">
 
 
   $(function(){
-         $('[data-toggle="tooltip"]').tooltip(); 
+
+      $('[data-toggle="tooltip"]').tooltip();
     //****************************************Friends manipulation*****************************************
-var i = 0;
-var FLeditFlag = 0;
-$('.flBtnEdit').attr('disabled','disabled');
-$('.flSave >button').attr('disabled','disabled');
-$('.flDelete >button').attr('disabled','disabled');
+    var i = 0;
+    var FLeditFlag = 0;
+    $('.flBtnEdit').attr('disabled','disabled');
+    $('.flSave >button').attr('disabled','disabled');
+    $('.flDelete >button').attr('disabled','disabled');
 
    //friendlist check button click
     $(document).on("change",".flChk",function(){
@@ -612,7 +601,7 @@ $('.flDelete >button').attr('disabled','disabled');
       $('.flChk').attr('disabled','disabled');
       curOBJ.removeAttr('disabled');
     //$('.flBtnEdit').removeAttr('disabled');
-    $('.flBtnAdd >button').attr('disabled','disabled');
+        $('.flBtnAdd >button').attr('disabled','disabled');
     }
     else
     {
@@ -656,10 +645,10 @@ $('.flDelete >button').attr('disabled','disabled');
       var country = '';
 
       //disable expert panel
-       $('.elBtnAdd >button').attr('disabled','disabled');
+        $('.elBtnAdd >button').attr('disabled','disabled');
         //$('.elDelete >button').attr('disabled','disabled');
         // $('.elSave >button').attr('disabled','disabled');
-          $('.elCancel >button').attr('disabled','disabled');
+        $('.elCancel >button').attr('disabled','disabled');
 
         $('.flChk:checked').each(function (item) {
           var cur = $(this).parent();
@@ -671,9 +660,9 @@ $('.flDelete >button').attr('disabled','disabled');
           city = cur.next().next().next().next().next().text();
           country = cur.next().next().next().next().next().next().text();*/
           i++;
-          //alert("fdrewe");          
         });
-                $("#flRow"+flID).css("background-color", "#7851f7");
+
+        $("#flRow"+flID).css("background-color", "#7851f7");
         //alert(fname+lname+email+mobile+city+country);
         if(i== 0){
           if ($(".flChk").length > 0) {
@@ -692,186 +681,140 @@ $('.flDelete >button').attr('disabled','disabled');
           $("#flEmail"+flID).attr("readonly", "readonly"); 
           $('.flSave >button').removeAttr('disabled');
           FLeditFlag = 1;
-          
         }
        });
 
       //save friend
     $(document).on("click",".flSave",function(){
-      $('.flSave >button').attr('disabled','disabled');
-      $('.flDelete >button').removeAttr('disabled');
-      $('.flBtnAdd >button').removeAttr('disabled');
+        $('.flSave >button').attr('disabled','disabled');
+        $('.flDelete >button').removeAttr('disabled');
+        $('.flBtnAdd >button').removeAttr('disabled');
 
-      //expert panel
-          $('.elBtnAdd >button').removeAttr('disabled');
-          $('.elDelete >button').removeAttr('disabled');
-          $('.elSave >button').removeAttr('disabled');
-          $('.elCancel >button').removeAttr('disabled');
+        //expert panel
+        $('.elBtnAdd >button').removeAttr('disabled');
+        $('.elDelete >button').removeAttr('disabled');
+        $('.elSave >button').removeAttr('disabled');
+        $('.elCancel >button').removeAttr('disabled');
 
 
-      i=0;
-      var checkExists = 0;
-            var flID = '';
-            var fname = '';
-            var lname = '';
-            var email = '';
-            var mobile = '';
-            var city = '';
-            var country = '';
-            var loggedID = $(".loggedID").val();
+        i=0;
+        var checkExists = 0;
+        var flID = '';
+        var fname = '';
+        var lname = '';
+        var email = '';
+        var mobile = '';
+        var city = '';
+        var country = '';
+        var loggedID = $(".loggedID").val();
                 
-      var tag = '';
+        var tag = '';
       
-                if(FLeditFlag == 1)
-                {
-                  tag = "editFriendss"
+        if(FLeditFlag == 1) {
+          tag = "editFriendss"
+          $('.flChk:checked').each(function (item) {
+                var cur = $(this).parent();
+                var curOBJ = $(this);
+                curOBJ.removeAttr('disabled');
+                flID = $(this).attr("id");
+                fname = $('#flFname'+flID).val();
+                lname =  $('#flLname'+flID).val();
+                email = $('#flEmail'+flID).val();
+                mobile = $('#flMobile'+flID).val();
+                city = $('#flCity'+flID).val();
+                country = $('#flCountry'+flID).val();
+                i++;
+          });
 
-                  $('.flChk:checked').each(function (item) {
-                    var cur = $(this).parent();
-                    var curOBJ = $(this);
-                    curOBJ.removeAttr('disabled');
-                    flID = $(this).attr("id");
-                    fname = $('#flFname'+flID).val();
-                    lname =  $('#flLname'+flID).val();
-                    email = $('#flEmail'+flID).val();
-                    mobile = $('#flMobile'+flID).val();
-                    city = $('#flCity'+flID).val();
-                    country = $('#flCountry'+flID).val();
-                    i++;
-                    //alert("fdrewe");
+        }
+        else if(FLeditFlag == 0) {
+           tag = "addFriendss"
+           $( ".addNewRow" ).hide("slow");
+            fname = $('.fladdFname').val();
+            lname =  $('.fladdLname').val();
+            email = $('.fladdEmail').val();
+            mobile = $('.fladdMobile').val();
+            city = $('.fladdCity').val();
+            country = $('.fladdCountry').val();
+        }
 
-                         
-                  });
-                }
-                else if(FLeditFlag == 0)
-                {
-                   tag = "addFriendss"
-                   $( ".addNewRow" ).hide("slow");
+        if(email != ""  && isEmail(email))
+        {
 
-                   fname = $('.fladdFname').val();
-                    lname =  $('.fladdLname').val();
-                    email = $('.fladdEmail').val();
-                    mobile = $('.fladdMobile').val();
-                    city = $('.fladdCity').val();
-                    country = $('.fladdCountry').val();
+              if(parseInt(checkExists) == 0)
+              {
+                          checkExists = 0;
+                          $.ajax({
+                                url:'ajax.php',
+                                type: 'POST',
+                                dataType: "json",
+                                data: {loggedID:loggedID,flID:flID,fname:fname,lname:lname,phone:mobile,email:email,city:city,country:country,userType:"addFriend",tag:tag},
+                                success: function(data)    // A function to be called if request succeeds
+                                {
+                                    FLeditFlag = 0;
+                                    console.log(data);
+                                    if(data.success == 1)
+                                    {
+                                    alert(data.msg);
+                                    window.location.reload();
+                                    }
+                                    else
+                                    {
+                                    //alert();
+                                    }
+                                } ,
+                                error: function () {
+                                    FLeditFlag = 0;
+                                    alert("Failed to Save!");
+                                }
+                            });
+               }
 
-                    /*$.ajax({
-
-                            url:'ajax.php',
-                            type: 'POST',
-                            dataType: "json",
-                            cache:"false",
-                            async:false,
-                            data: {email:$.trim(email),userType:"provider",tag:"checkEmail"},  
-                            success: function(dataSR)    // A function to be called if request succeeds
-                            {
-                              if(dataSR.success == 1)
-                              {
-                                alert("Email already exist !");
-                                checkExists = 1;
-                                return false;
-                                
-                              }
-                              else
-                              {     
-                                
-                              }
-                              
-                            },      
-                            error: function () {
-
-                              alert("Email Checking Error!");
-
-                            }  
-
-                         }); 
-                         */
-
-                }
-                if(email != ""  && isEmail(email))
-                {
-
-                      if(parseInt(checkExists) == 0)
-                      {
-                                  checkExists = 0;
-                                  $.ajax({
-                                        url:'ajax.php',
-                                        type: 'POST',
-                                        dataType: "json",
-                                        data: {loggedID:loggedID,flID:flID,fname:fname,lname:lname,phone:mobile,email:email,city:city,country:country,userType:"addFriend",tag:tag},  
-                                        success: function(data)    // A function to be called if request succeeds
-                                        {
-                                            FLeditFlag = 0;
-                                            console.log(data);
-                                            if(data.success == 1)
-                                            {
-                                            alert(data.msg);
-                                            window.location.reload();
-                                            }
-                                            else
-                                            {
-                                            //alert();
-                                            }
-                                        } ,      
-                                        error: function () {
-                                            FLeditFlag = 0;
-                                            alert("Failed to Save!");
-                                        }  
-                                    });
-                       }
-                              
-
-
-
-
-                    
-    }
+}
     else
     {
-    $('.flSave >button').removeAttr('disabled');
-    alert("Valid Email Must be prvided!");
+        $('.flSave >button').removeAttr('disabled');
+        alert("Valid Email Must be provided!");
     }
   });
 
     //Friends Delete
     $(document).on("click",".flDelete",function(){
-      i=0;
-      var fname = '';
-      var lname = '';
-      var email = '';
-      var mobile = '';
-      var city = '';
-      var country = '';
-      var loggedID = $('.loggedID').val();
-      //expert panel
-          $('.elBtnAdd >button').removeAttr('disabled');
-          //$('.elDelete >button').removeAttr('disabled');
-          //$('.elSave >button').removeAttr('disabled');
-          $('.elCancel >button').removeAttr('disabled');
+        i=0;
+        var fname = '';
+        var lname = '';
+        var email = '';
+        var mobile = '';
+        var city = '';
+        var country = '';
+        var loggedID = $('.loggedID').val();
+        //expert panel
+        $('.elBtnAdd >button').removeAttr('disabled');
+        //$('.elDelete >button').removeAttr('disabled');
+        //$('.elSave >button').removeAttr('disabled');
+        $('.elCancel >button').removeAttr('disabled');
+        //$( "#flFname" ).focus();
+        $('.flChk:checked').each(function (item) {
+            var cur = $(this).parent();
+            flID = $(this).attr("id");
+            email = $('#flEmail'+flID).val();
+            fname = $('#flFname'+flID).val();
+            lname = $('#flLname'+flID).val();
+            i++;
+        });
 
-      //$( "#flFname" ).focus();
-      $('.flChk:checked').each(function (item) {
-        var cur = $(this).parent();
-        flID = $(this).attr("id");
-                email = $('#flEmail'+flID).val();
-                fname = $('#flFname'+flID).val();
-                lname = $('#flLname'+flID).val();
-        i++;
-        //alert("fdrewe");          
-      });
-      //alert(fname+lname+email+mobile+city+country);
-      if(i== 0){alert("Please select atleast one checkbox!");}
-      else if (i>1) {alert("Please select  one checkbox at a time to edit!");}
-      else{
-      var r = confirm("Are you Sure - You want to Delete "+fname+" "+lname+"?");
-      if (r == true) {
-          $.ajax({
-          url:'ajax.php',
-          type: 'POST',
-          dataType: "json",
-          data: {fname:fname,lname:lname,email:email,tag:"deleteFriendss",isExpertss:"NO",loggedID:loggedID},  
-          success: function(data)    // A function to be called if request succeeds
-          {
+        if(i== 0){alert("Please select atleast one checkbox!");}
+        else if (i>1) {alert("Please select  one checkbox at a time to edit!");}
+        else{
+            var r = confirm("Are you Sure - You want to Delete "+fname+" "+lname+"?");
+            if (r == true) {
+            $.ajax({
+            url:'ajax.php',
+            type: 'POST',
+            dataType: "json",
+            data: {fname:fname,lname:lname,email:email,tag:"deleteFriendss",isExpertss:"NO",loggedID:loggedID},
+            success: function(data)    // A function to be called if request succeeds
+            {
             console.log(data);
             if(data.success == 1)
             {
@@ -882,36 +825,35 @@ $('.flDelete >button').attr('disabled','disabled');
             {
             //alert();
             }
-          } ,      
-          error: function () {
+            } ,
+            error: function () {
             alert("Failed to Save!");
-          }  
+            }
 
-          });
-       } else {
-        // txt = "You pressed Cancel!";
-       }
-      }
+            });
+            }
+            else {
+            // txt = "You pressed Cancel!";
+            }
+        }
     });
 
     //friends cancel button click
     $(document).on("click",".flCancel",function(){
         FLeditFlag = 0 ;
         //expert panel
-          $('.elBtnAdd >button').removeAttr('disabled');
-          //$('.elDelete >button').removeAttr('disabled');
-          //$('.elSave >button').removeAttr('disabled');
-          $('.elCancel >button').removeAttr('disabled');
-
+        $('.elBtnAdd >button').removeAttr('disabled');
+        //$('.elDelete >button').removeAttr('disabled');
+        //$('.elSave >button').removeAttr('disabled');
+        $('.elCancel >button').removeAttr('disabled');
         $('.flSave >button').attr('disabled','disabled');
         $('.flChk:checked').each(function (item) {
-                    var cur = $(this).parent();
-                    var curOBJ = $(this);
-                    curOBJ.removeAttr("checked");
-                    curOBJ.removeAttr('disabled');
-                    //alert("fdrewe");          
-                  });
-            location.reload();
+            var cur = $(this).parent();
+            var curOBJ = $(this);
+            curOBJ.removeAttr("checked");
+            curOBJ.removeAttr('disabled');
+        });
+        location.reload();
     });
 
 
@@ -922,63 +864,58 @@ $('.elBtnEdit').attr('disabled','disabled');
 $('.elSave >button').attr('disabled','disabled');
 $('.elDelete >button').attr('disabled','disabled');
  
-   //friendlist check button click
-
-
-$(document).on("click",".elCancel",function(){
-    ELeditFlag = 0 ;
-    //expert panel
-          $('.elBtnAdd >button').removeAttr('disabled');
-          //$('.elDelete >button').removeAttr('disabled');
-          //$('.elSave >button').removeAttr('disabled');
-          $('.elCancel >button').removeAttr('disabled');
+        //friendlist check button click
+        $(document).on("click",".elCancel",function(){
+            ELeditFlag = 0 ;
+            //expert panel
+            $('.elBtnAdd >button').removeAttr('disabled');
+            //$('.elDelete >button').removeAttr('disabled');
+            //$('.elSave >button').removeAttr('disabled');
+            $('.elCancel >button').removeAttr('disabled');
             $('.elSave >button').attr('disabled','disabled');
-    $('.elChk:checked').each(function (item) {
-                    var cur = $(this).parent();
-                    var curOBJ = $(this);
-                    curOBJ.removeAttr("checked");
-                    //alert("fdrewe");          
-                  });
+            $('.elChk:checked').each(function (item) {
+                var cur = $(this).parent();
+                var curOBJ = $(this);
+                curOBJ.removeAttr("checked");
+            });
             location.reload();
-});
+        });
 
-    //friendlist check button click
+        //friendlist check button click
         $(document).on("change",".elChk",function(){
             elID = $(this).attr("id");
             curOBJ = $(this);
               
-        if(this.checked) {
-          $('.elDelete >button').removeAttr('disabled');
-          $('.elChk').attr('disabled','disabled');
-            curOBJ.removeAttr('disabled');
-        //$('.flBtnEdit').removeAttr('disabled');
-        $('.elBtnAdd >button').attr('disabled','disabled');
-        }
-        else
-        {
-          $('.elChk').removeAttr('disabled');
-            $(".rmvReadonly"+elID).attr("readonly", "readonly"); 
-        $('.elSave >button').attr('disabled','disabled');
-        $('.elBtnAdd >button').removeAttr('disabled');
-        $('.elDelete >button').attr('disabled','disabled');
-        //$('.flBtnEdit').attr('disabled','disabled');
-        }
+            if(this.checked) {
+                $('.elDelete >button').removeAttr('disabled');
+                $('.elChk').attr('disabled','disabled');
+                curOBJ.removeAttr('disabled');
+                //$('.flBtnEdit').removeAttr('disabled');
+                $('.elBtnAdd >button').attr('disabled','disabled');
+            }
+            else
+            {
+                $('.elChk').removeAttr('disabled');
+                $(".rmvReadonly"+elID).attr("readonly", "readonly");
+                $('.elSave >button').attr('disabled','disabled');
+                $('.elBtnAdd >button').removeAttr('disabled');
+                $('.elDelete >button').attr('disabled','disabled');
+                //$('.flBtnEdit').attr('disabled','disabled');
+            }
         });
 
         //friends add button click
         $(document).on("click",".elBtnAdd",function(){
-          $('.elDelete >button').attr('disabled','disabled');
-         $('.elBtnAdd >button').attr('disabled','disabled');
+            $('.elDelete >button').attr('disabled','disabled');
+            $('.elBtnAdd >button').attr('disabled','disabled');
             $( ".ELaddNewRow" ).show("slow");
             $( "#eladdFname" ).focus();
             $('.elSave >button').removeAttr('disabled');
-
             //disable expert panel
-       $('.flBtnAdd >button').attr('disabled','disabled');
-        //$('.elDelete >button').attr('disabled','disabled');
-         //$('.elSave >button').attr('disabled','disabled');
-          $('.flCancel >button').attr('disabled','disabled');
-
+            $('.flBtnAdd >button').attr('disabled','disabled');
+            //$('.elDelete >button').attr('disabled','disabled');
+            //$('.elSave >button').attr('disabled','disabled');
+            $('.flCancel >button').attr('disabled','disabled');
         });
 
         //friends edit button click
@@ -993,10 +930,10 @@ $(document).on("click",".elCancel",function(){
             var country = '';
 
             //disable expert panel
-       $('.flBtnAdd >button').attr('disabled','disabled');
-        //$('.elDelete >button').attr('disabled','disabled');
-         //$('.elSave >button').attr('disabled','disabled');
-          $('.flCancel >button').attr('disabled','disabled');
+            $('.flBtnAdd >button').attr('disabled','disabled');
+            //$('.elDelete >button').attr('disabled','disabled');
+            //$('.elSave >button').attr('disabled','disabled');
+            $('.flCancel >button').attr('disabled','disabled');
 
                 $('.elChk:checked').each(function (item) {
                     var cur = $(this).parent();
@@ -1008,10 +945,9 @@ $(document).on("click",".elCancel",function(){
                     city = cur.next().next().next().next().next().text();
                     country = cur.next().next().next().next().next().next().text();*/
                     i++;
-                    //alert("fdrewe");          
                 });
                 $("#elRow"+elID).css("background-color", "#7851f7");
-                //alert(fname+lname+email+mobile+city+country);
+
                 if(i== 0){
                     if ($(".flChk").length > 0) {
                         alert("Please select atleast one checkbox!");
@@ -1034,16 +970,16 @@ $(document).on("click",".elCancel",function(){
                 }
            });
 
-            //save friend
+        //save friend
         $(document).on("click",".elSave",function(){
             $('.elSave >button').attr('disabled','disabled');
             $('.elDelete >button').removeAttr('disabled');
             $('.elBtnAdd >button').removeAttr('disabled');
             //expert panel
-          $('.flBtnAdd >button').removeAttr('disabled');
-          //$('.elDelete >button').removeAttr('disabled');
-          //$('.elSave >button').removeAttr('disabled');
-          $('.flCancel >button').removeAttr('disabled');
+            $('.flBtnAdd >button').removeAttr('disabled');
+            //$('.elDelete >button').removeAttr('disabled');
+            //$('.elSave >button').removeAttr('disabled');
+            $('.flCancel >button').removeAttr('disabled');
             i=0;
             var checkExists = 0;
             var elID = '';
@@ -1057,104 +993,103 @@ $(document).on("click",".elCancel",function(){
                 
             var tag = '';
             
-                if(ELeditFlag == 1)
-                {
-                  tag = "editFriendss"
+            if(ELeditFlag == 1)
+            {
+              tag = "editFriendss"
 
-                  $('.elChk:checked').each(function (item) {
-                    var cur = $(this).parent();
-                    var curOBJ = $(this);
-                    elID = $(this).attr("id");
-                    fname = $('#elFname'+elID).val();
-                    lname =  $('#elLname'+elID).val();
-                    email = $('#elEmail'+elID).val();
-                    mobile = $('#elMobile'+elID).val();
-                    city = $('#elCity'+elID).val();
-                    country = $('#elCountry'+elID).val();
-                    i++;
-                    //alert("fdrewe");          
-                  });
+              $('.elChk:checked').each(function (item) {
+                var cur = $(this).parent();
+                var curOBJ = $(this);
+                elID = $(this).attr("id");
+                fname = $('#elFname'+elID).val();
+                lname =  $('#elLname'+elID).val();
+                email = $('#elEmail'+elID).val();
+                mobile = $('#elMobile'+elID).val();
+                city = $('#elCity'+elID).val();
+                country = $('#elCountry'+elID).val();
+                i++;
+                //alert("fdrewe");
+              });
 
-                  
-                }
-                else if(FLeditFlag == 0)
-                {
-                   tag = "addFriendss"
-                   $( ".ELaddNewRow" ).hide("slow");
 
-                   fname = $('.eladdFname').val();
-                    lname =  $('.eladdLname').val();
-                    email = $('.eladdEmail').val();
-                    mobile = $('.eladdMobile').val();
-                    city = $('.eladdCity').val();
-                    country = $('.eladdCountry').val();
+            }
+            else if(FLeditFlag == 0)
+            {
+               tag = "addFriendss"
+               $( ".ELaddNewRow" ).hide("slow");
 
-                    /*$.ajax({
-                            url:'ajax.php',
-                            type: 'POST',
-                            dataType: "json",
-                            cache:"false",
-                            async:false,
-                            data: {email:$.trim(email),userType:"provider",tag:"checkEmail"},  
-                            success: function(dataSR)    // A function to be called if request succeeds
-                            {
-                              if(dataSR.success == 1)
-                              {
-                                alert("Email already exist !");
-                                checkExists = 1;
-                                return false;
-                                
-                              }
-                              else
-                              {
-                                  
-                              }
-                           },      
-                            error: function () {
-                                FLeditFlag = 0;
-                                alert("Failed to Save!");
-                            }  
-                        });*/
+                fname = $('.eladdFname').val();
+                lname =  $('.eladdLname').val();
+                email = $('.eladdEmail').val();
+                mobile = $('.eladdMobile').val();
+                city = $('.eladdCity').val();
+                country = $('.eladdCountry').val();
 
-                }
+                /*$.ajax({
+                        url:'ajax.php',
+                        type: 'POST',
+                        dataType: "json",
+                        cache:"false",
+                        async:false,
+                        data: {email:$.trim(email),userType:"provider",tag:"checkEmail"},
+                        success: function(dataSR)    // A function to be called if request succeeds
+                        {
+                          if(dataSR.success == 1)
+                          {
+                            alert("Email already exist !");
+                            checkExists = 1;
+                            return false;
+
+                          }
+                          else
+                          {
+
+                          }
+                       },
+                        error: function () {
+                            FLeditFlag = 0;
+                            alert("Failed to Save!");
+                        }
+                    });*/
+
+            }
+
             if(email != "" && isEmail(email))
             {
-                            if(parseInt(checkExists) == 0)
+                if(parseInt(checkExists) == 0)
+                {
+
+                        checkExists = 0;
+                        $.ajax({
+                        url:'ajax.php',
+                        type: 'POST',
+                        dataType: "json",
+                        data: {loggedID:loggedID,flID:elID,fname:fname,lname:lname,phone:mobile,email:email,city:city,country:country,userType:"addFriend",tag:tag,isexpert:"yes"},
+                        success: function(data)    // A function to be called if request succeeds
+                        {
+                            FLeditFlag = 0;
+                            console.log(data);
+                            if(data.success == 1)
                             {
-                        
-                                    checkExists = 0;  
-                                    $.ajax({
-                                    url:'ajax.php',
-                                    type: 'POST',
-                                    dataType: "json",
-                                    data: {loggedID:loggedID,flID:elID,fname:fname,lname:lname,phone:mobile,email:email,city:city,country:country,userType:"addFriend",tag:tag,isexpert:"yes"},  
-                                    success: function(data)    // A function to be called if request succeeds
-                                    {
-                                        FLeditFlag = 0;
-                                        console.log(data);
-                                        if(data.success == 1)
-                                        {
-                                        alert(data.msg);
-                                        window.location.reload();
-                                        }
-                                        else
-                                        {
-                                        //alert();
-                                        }
-                                    } ,      
-                                    error: function () {
-                                        FLeditFlag = 0;
-                                        alert("Failed to Save!");
-                                    }  
-                                    });
-                              }
-                              
-        }
-        else
-        {
-        $('.elSave >button').removeAttr('disabled');
-        alert("Valid Email Must be prvided!");
-        }
+                            alert(data.msg);
+                            window.location.reload();
+                            }
+                            else
+                            {
+                            //alert();
+                            }
+                        } ,
+                        error: function () {
+                            FLeditFlag = 0;
+                            alert("Failed to Save!");
+                        }
+                        });
+                  }
+
+            } else {
+            $('.elSave >button').removeAttr('disabled');
+            alert("Valid Email Must be prvided!");
+            }
     });
 
         //Friends Delete
@@ -1168,107 +1103,98 @@ $(document).on("click",".elCancel",function(){
             var country = '';
             var loggedID = $('.loggedID').val();
             $('.flBtnAdd >button').removeAttr('disabled');
-          //$('.elDelete >button').removeAttr('disabled');
-          //$('.elSave >button').removeAttr('disabled');
-          $('.flCancel >button').removeAttr('disabled');
+            //$('.elDelete >button').removeAttr('disabled');
+            //$('.elSave >button').removeAttr('disabled');
+            $('.flCancel >button').removeAttr('disabled');
 
-           
 
             //$( "#flFname" ).focus();
             $('.elChk:checked').each(function (item) {
                 var cur = $(this).parent();
                 flID = $(this).attr("id");
                 email = $('#elEmail'+flID).val();
-                 fname = $('#elFname'+flID).val();
+                fname = $('#elFname'+flID).val();
                 lname = $('#elLname'+flID).val();
                 i++;
-                //alert("fdrewe");          
             });
-          //alert(fname+lname+email+mobile+city+country);
-          if(i== 0){alert("Please select atleast one checkbox!");}
-          else if (i>1) {alert("Please select  one checkbox at a time to edit!");}
-          else{
-            var r = confirm("Are you Sure - You want to Delete "+fname+" "+lname+"?");
-            if (r == true) {
-                    $.ajax({
-                    url:'ajax.php',
-                    type: 'POST',
-                    dataType: "json",
-                    data: {fname:fname,lname:lname,email:email,tag:"deleteFriendss",isExpertss:"YES",loggedID:loggedID},  
-                    success: function(data)    // A function to be called if request succeeds
-                    {
-                        console.log(data);
-                        if(data.success == 1)
-                        {
-                            alert(data.msg);
-                            window.location.reload();
-                        }
-                        else
-                        {
-                        //alert();
-                        }
-                    } ,      
-                    error: function () {
-                        alert("Failed to Save!");
-                    }  
 
-                    });
-             } else {
-                // txt = "You pressed Cancel!";
-             }
-          }
+            if(i== 0){    alert("Please select atleast one checkbox!");}
+            else if (i>1){    alert("Please select  one checkbox at a time to edit!");}
+            else{
+                var r = confirm("Are you Sure - You want to Delete "+fname+" "+lname+"?");
+                if (r == true) {
+                        $.ajax({
+                        url:'ajax.php',
+                        type: 'POST',
+                        dataType: "json",
+                        data: {fname:fname,lname:lname,email:email,tag:"deleteFriendss",isExpertss:"YES",loggedID:loggedID},
+                        success: function(data)    // A function to be called if request succeeds
+                        {
+                            console.log(data);
+                            if(data.success == 1)
+                            {
+                                alert(data.msg);
+                                window.location.reload();
+                            }
+                            else
+                            {
+                            //alert();
+                            }
+                        } ,
+                        error: function () {
+                            alert("Failed to Save!");
+                        }
+
+                        });
+                 } else {
+                    // txt = "You pressed Cancel!";
+                }
+            }
         });
 
+        //Connection code
+        $(document).on("click",".FLconnectMember",function(){
+              var memberName= $(this).attr("dir");
+              $(".connSuccess > span").text(memberName);
+              $(".connSuccess").css("display","block");
+              //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
+              var memberId =  $(this).attr("for");
+              var imagePath =  $(this).attr("memberImage");
+              var memberEmail= $(this).attr("memberEmail");
+              $('html,body').animate({ scrollTop: 9999 }, 1000);
+               setTimeout(function(){
+               location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
 
-//Connection code
-$(document).on("click",".FLconnectMember",function(){
-      //alert("test");
-      var memberName= $(this).attr("dir");
-      $(".connSuccess > span").text(memberName);
-      $(".connSuccess").css("display","block");
-      //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
-      var memberId =  $(this).attr("for"); 
-      var imagePath =  $(this).attr("memberImage");
-      var memberEmail= $(this).attr("memberEmail"); 
-      $('html,body').animate({ scrollTop: 9999 }, 1000);
-       setTimeout(function(){
-       location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
+              }, 4000);
 
-      }, 4000);
+            });
 
+        $(document).on("click",".ELconnectMember",function(){
+          var memberName= $(this).attr("dir");
+          $(".connSuccess > span").text(memberName);
+          $(".connSuccess").css("display","block");
+          //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
+          var memberId =  $(this).attr("for");
+          var imagePath =  $(this).attr("memberImage");
+          var memberEmail= $(this).attr("memberEmail");
+          $('html,body').animate({ scrollTop: 9999 }, 1000);
+          setTimeout(function(){
+                location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
+          }, 4000);
     });
 
-$(document).on("click",".ELconnectMember",function(){
-      //alert("test");
-      var memberName= $(this).attr("dir");
-      $(".connSuccess > span").text(memberName);
-      $(".connSuccess").css("display","block");
-      //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
-      var memberId =  $(this).attr("for"); 
-      var imagePath =  $(this).attr("memberImage");
-      var memberEmail= $(this).attr("memberEmail"); 
-      $('html,body').animate({ scrollTop: 9999 }, 1000);
-       setTimeout(function(){
-       location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
-
-      }, 4000);
-
-    });
-    //Make APPOINTMENT button click
-    $(document).on("click",".appoint",function(){
-            var email = $(this).attr("emails");
-            var recieverFname = $(this).attr("names");
-            var senderEmail = $(this).attr("seekerEmail");
-            var senderName = $(this).attr("seekerName");
-            //var appointTime =  $(this).val();
-       window.location.href = "Make-Appointment.php?email="+email+"&recieverFname="+recieverFname+"&senderEmail="+senderEmail+"&senderName="+senderName;
-    });
-
-              
-              
-              
+        //Make APPOINTMENT button click
+        $(document).on("click",".appoint",function(){
+                var email = $(this).attr("emails");
+                var recieverFname = $(this).attr("names");
+                var senderEmail = $(this).attr("seekerEmail");
+                var senderName = $(this).attr("seekerName");
+                //var appointTime =  $(this).val();
+                window.location.href = "Make-Appointment.php?email="+email+"&recieverFname="+recieverFname+"&senderEmail="+senderEmail+"&senderName="+senderName;
+        });
 
 });
+
 function isEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
@@ -1276,16 +1202,7 @@ function isEmail(email) {
 
 </script>
 
-  
-
-   
-
-
-
-
-
 </body>
-
 
 
 </html>

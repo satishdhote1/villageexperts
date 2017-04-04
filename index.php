@@ -81,81 +81,113 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 
 </head>
 <style>
-.modi-img{width:80px;border:5px solid #FFF;border-radius:10px;}
-.font-20 {
-    font-size: 19px !important; /*change font size*/
-    font-weight: 700;
-}.ICON-holder img {
-    background: #7b7bfc;
-    border: 3px solid rgba(0,0,0,0);
-    height: 100%;
-    width: 100%;
-}
-.border-box-item {
-    padding: 10px 0 0px 0px;
-}
-.container-fluid{max-width:1250px;}
-.error{margin-top:20px;}
-.upload-img-block {
-    float: left;
-    height: auto;
-}
-.upload-panel-box {
-    float: left;
-    margin: 0;
-    padding: 0;
-    width: 70%;
-}
-.upload-panel-box input.pImage {
-    margin: 0px 0 0 5px;
-  padding:5px 0px;
-    width: 100%;border:0px;
-}
-input[type='file'] {
-  color: transparent;
-}
-.form-control{
-padding:4px;
-}
-.upload-img-block > img {
-    width: 100%;
-}
-.col-md-5 .md-form.main-block .fa {
-    color: #7b7bfc;
-}
-.resSec .fa {
-    color: #008cba;
-}
-.log{width: 120px;background:#cdcdcd;text-align:center; font-weight:bolder}
-.log:hover{background:#a6a6a6 !important}
-.loginSec .fa {
-    color: #008cba;
-}
-.btn-papl:hover, .btn-papl:focus {
-    background-color: #9595f9 !important;}
-.btn-danger:focus, .btn-danger:hover{    background-color: #9595f9 !important;}
-.button{padding:10px 10px 5px;}
+    .body{
+        background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;
+        background-size:cover;
+        background-attachment:fixed;
+    }
+    .modi-img {
+        width: 80px;
+        border: 5px solid #FFF;
+        border-radius: 10px;
+    }
+    .font-20 {
+        font-size: 19px !important;
+        /*change font size*/
 
-.btn2{
-    border-radius: 4px;
-    border: 0;
-    color: #fff;
-    margin: 10px 0px 0px -2px;
-    white-space: normal !important;
-    height: 59px !important;
-    line-height: 40px !important;
-}
-.modify-btn-1{
-  margin-left: 47px !important;
-}
-
-.col-md-chang{ width: 34.667%; !important;}
-.border-box-item1{
- margin-right:238px !important;
-}
+        font-weight: 700;
+    }
+    .ICON-holder img {
+        background: #7b7bfc;
+        border: 3px solid rgba(0, 0, 0, 0);
+        height: 100%;
+        width: 100%;
+    }
+    .border-box-item {
+        padding: 10px 0 0px 0px;
+    }
+    .container-fluid {
+        max-width: 1250px;
+    }
+    .error {
+        margin-top: 20px;
+    }
+    .upload-img-block {
+        float: left;
+        height: auto;
+    }
+    .upload-panel-box {
+        float: left;
+        margin: 0;
+        padding: 0;
+        width: 70%;
+    }
+    .upload-panel-box input.pImage {
+        margin: 0px 0 0 5px;
+        padding: 5px 0px;
+        width: 100%;
+        border: 0px;
+    }
+    input[type='file'] {
+        color: transparent;
+    }
+    .form-control {
+        padding: 4px;
+    }
+    .upload-img-block > img {
+        width: 100%;
+    }
+    .col-md-5 .md-form.main-block .fa {
+        color: #7b7bfc;
+    }
+    .resSec .fa {
+        color: #008cba;
+    }
+    .log {
+        width: 120px;
+        background: #cdcdcd;
+        text-align: center;
+        font-weight: bolder
+    }
+    .log:hover {
+        background: #a6a6a6 !important
+    }
+    .loginSec .fa {
+        color: #008cba;
+    }
+    .btn-papl:hover,
+    .btn-papl:focus {
+        background-color: #9595f9 !important;
+    }
+    .btn-danger:focus,
+    .btn-danger:hover {
+        background-color: #9595f9 !important;
+    }
+    .button {
+        padding: 10px 10px 5px;
+    }
+    .btn2 {
+        border-radius: 4px;
+        border: 0;
+        color: #fff;
+        margin: 10px 0px 0px -2px;
+        white-space: normal !important;
+        height: 59px !important;
+        line-height: 40px !important;
+    }
+    .modify-btn-1 {
+        margin-left: 47px !important;
+    }
+    .col-md-chang {
+        width: 34.667%;
+    !important;
+    }
+    .border-box-item1 {
+        margin-right: 238px !important;
+    }
 </style>
 
-<body style="background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;background-size:cover;background-attachment:fixed;">
+<body>
     
 
     <!-- Start your project here-->
@@ -227,11 +259,11 @@ padding:4px;
                                <div class="col-md-6 text-xs-center">
                                		<span class="hideFirstSection"></span>
                                 	<button class="button loginClick" style="width:150px;background-color:#cdcdcd;"><strong>LOGIN</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">Returning User</p></button></div> <div class="col-md-6 text-xs-center">
-                 			<button class="button button2 regClick"  style="width:150px; background-color:#9595f9;">
+                 			        <button class="button button2 regClick"  style="width:150px; background-color:#9595f9;">
                                 	<strong>REGISTER</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">New User</p></button></div><div class="clearfix"></div>
-                                </div>
+                             </div>
                 		
-			      	<div  class="loginSec" style="padding:0px 25px;width:80%;margin:auto;display:none;" >
+                                <div  class="loginSec" style="padding:0px 25px;width:80%;margin:auto;display:none;" >
                        
                                 <!--Body-->
                                <div class="text-success main-block">
@@ -256,9 +288,9 @@ padding:4px;
 	<center><span class="regErrors" style="display:none;color: red;" ></span></center>
           
 	<form id="addFriend" class="addFriend" action="ajax.php" method="post"  enctype="multipart/form-data">
-            	<input type="hidden" name="tag" value="register">
-                <input type="hidden" name="userType" value="addFriend">
-                <?php 
+        <input type="hidden" name="tag" value="register">
+        <input type="hidden" name="userType" value="addFriend">
+        <?php
 		      if(!empty($email) && $isexpert == "yes")
 			{
 			  ?>
