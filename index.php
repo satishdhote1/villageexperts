@@ -81,7 +81,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 
 </head>
 <style>
-    .body{
+    body{
         background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;
         background-size:cover;
         background-attachment:fixed;
@@ -188,7 +188,6 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 </style>
 
 <body>
-    
 
     <!-- Start your project here-->
 
