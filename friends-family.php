@@ -120,36 +120,92 @@ if (mysqli_num_rows($tableResult4) > 0)  {
 </head>
 
 <style>
-
+    .btn-online {
+        font-size: 12px;
+        font-weight:normal;
+    }
     .bg-primary > th {
         padding: 10px 0;
     }
-    .bg-primary > th,
-    td {
+    .bg-primary > th, td {
         height: auto !important;
         max-width: none !important;
         width: auto !important;
-        font-size: 18px;
+        font-size:18px;
     }
+    .btn-width {
+        min-width: 81px;
+    }
+
+    .wrap-table {
+
+    }
+
     .wrap-table table {
+
         table-layout: fixed;
     }
+
     table tr td {
         padding: 5px;
         border: 1px solid #eee;
         word-wrap: break-word;
     }
+
     table.head tr td {
         background: #eee;
     }
-    th {
+    th{
         text-align: center;
         border: 1px solid #eee;
         font: bold;
     }
-    table td input[type="text"] {
+
+    .inner_table {
+        overflow-y: auto;
+    }
+    .distance{
+        border-top:2px solid;
+        margin-top: 0px;
+        width: 106.5%;
+        margin-left:-35px;
+    }
+    .apponment {
+        background: darkgray none repeat scroll 0 0;
         color: #000;
-        font-weight: bold;
+        font-size: 13px !important;
+        font-weight: bold !important;
+        height: 35px;
+        line-height: 15px;
+        padding: 0 !important;
+        width: auto;
+    }
+
+    .edit_text{
+        width: 100%;
+        background: rgba(0,0,0,0);
+        border: 0px;
+        /*color: #fff !important;*/
+    }
+    .apponment:hover{background:#4f5e7e}
+    table td input[type="text"]{color: #000;font-weight:bold;}
+    .connectMember{background:#41f541;color:#000;width:107px;height:36px;}
+    .connectMember:hover{background:#10510e;color:#fff;}
+    .btn-mdb:focus, .btn-mdb:hover{background-color:#9595f9 !important}
+    .btn-papl:hover{background-color:#9595f9 !important}
+    .wrap-table {
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .over-lap {
+        display: block;position: absolute;z-index: 8888888888;float: right;;
+        /*  display: none !important */
+
+    }
+    .main_body_box_one{
+        background: url(img/normal/Experts-1.jpg);
+        background-size: cover;
+        background-attachment: fixed;
     }
     .topBtn .tooltip-inner {
         max-width: 350px;
@@ -166,7 +222,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
     <div class="login-profile">
     <a href="/" data-toggle="tooltip" data-placement="bottom" title="Back"><img src="images/Left.png" class="topBtn" style="cursor:pointer;"/></a>                
     <a href="logout.php" data-toggle="tooltip" data-placement="bottom" title="Log out!"><img src="images/logout.png" class="topBtn" style="cursor:pointer;"/></a>
-
     </div>
 
     <nav class="navbar navbar-dark" style="background:#ccccff;">
@@ -610,7 +665,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
         }
        });
 
-      //save friend
+    //save friend
     $(document).on("click",".flSave",function(){
         $('.flSave >button').attr('disabled','disabled');
         $('.flDelete >button').removeAttr('disabled');
@@ -621,7 +676,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
         $('.elDelete >button').removeAttr('disabled');
         $('.elSave >button').removeAttr('disabled');
         $('.elCancel >button').removeAttr('disabled');
-
 
         i=0;
         var checkExists = 0;
@@ -665,7 +719,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
 
         if(email != ""  && isEmail(email))
         {
-
               if(parseInt(checkExists) == 0) {
                   checkExists = 0;
                   $.ajax({
@@ -686,13 +739,13 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                         },
                         success: function(data) {
                             FLeditFlag = 0;
-                            console.log(data);
+                            console.log(" Adding a frind response " , data);
                             if(data.success == 1) {
                                 alert(data.msg);
                                 window.location.reload();
                             }
                             else {
-                                alert("Failed to Save!");
+                                alert("Failed to Save "+ data.msg);
                             }
                         } ,
                         error: function () {
@@ -747,19 +800,19 @@ if (mysqli_num_rows($tableResult4) > 0)  {
             data: {fname:fname,lname:lname,email:email,tag:"deleteFriendss",isExpertss:"NO",loggedID:loggedID},
             success: function(data)    // A function to be called if request succeeds
             {
-            console.log(data);
-            if(data.success == 1)
-            {
-              alert(data.msg);
-              window.location.reload();
-            }
-            else
-            {
-            //alert();
-            }
+                console.log(data);
+                if(data.success == 1)
+                {
+                  alert(data.msg);
+                  window.location.reload();
+                }
+                else
+                {
+                //alert();
+                }
             } ,
             error: function () {
-            alert("Failed to Save!");
+                alert("Failed to Save!");
             }
 
             });

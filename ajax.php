@@ -558,47 +558,52 @@ else if($tag == 'addFriendss'){
 		$tableResult2 = mysqli_query($conn, $sqlChk2);
 
 		if (mysqli_num_rows($tableResult2) > 0)  {
-			  $GMLoginData = mysqli_fetch_assoc($tableResult2);
-			  $userID =$GMLoginData['id'];
-			  $parentID =$GMLoginData['parentID'];
-			  $isexpertDB =$GMLoginData['isexpert'];
-			  $sql = '';
-			  $expertAdd = '';
-			  if(!empty($isexpert) && $isexpert == "yes"){
+			$GMLoginData = mysqli_fetch_assoc($tableResult2);
+			$userID =$GMLoginData['id'];
+			$parentID =$GMLoginData['parentID'];
+			$isexpertDB =$GMLoginData['isexpert'];
+			$sql = '';
+			$expertAdd = '';
+			if(!empty($isexpert) && $isexpert == "yes"){
 				$expertAdd= 1;
 				$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$userID.",'".$m_email."' , ".$loggedID.",1)" ;
-			  }else{
+			}else{
 				$expertAdd = 0;
 				$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$userID.",'".$m_email."' , ".$loggedID.",0)" ;
-			  }
+			}
 
-			if($parentID != $loggedID && $isexpertDB != $expertAdd){
-			  	$tableResult = mysqli_query($conn, $sql);
-			  	$member_id = $userID;
+            if($parentID != $loggedID){
+                $tableResult = mysqli_query($conn, $sql);
+                $member_id = $userID;
+            } else {
+                $alreadyFrnd = 1;
+            }
+/*			if($parentID != $loggedID && $isexpertDB != $expertAdd){
+				$tableResult = mysqli_query($conn, $sql);
+				$member_id = $userID;
 			} else {
 				$alreadyFrnd = 1;
-			}
-
-		}else {
-
-			$target_fileName = '';
-			$target_file = '';
-			if(!empty($isexpert) && $isexpert == "yes"){
-				$sql="insert into friendsRegister (fname,lname,city,country,experties,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;
-				$tableResult = mysqli_query($conn, $sql);
-				$member_id = mysqli_insert_id($conn);
-				$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$member_id.",'".$m_email."' , ".$loggedID.",1)" ;
-			} else	{
-				$sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;
-				$tableResult = mysqli_query($conn, $sql);
-				$member_id = mysqli_insert_id($conn);
-				$sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$member_id.",'".$m_email."' , ".$loggedID.",0)" ;
-			}
-
-			$tableResult = mysqli_query($conn, $sql);
-			$uploaded_file = '';
-
+			}*/
 		}
+
+        else {
+            $target_fileName = '';
+            $target_file = '';
+            if(!empty($isexpert) && $isexpert == "yes"){
+                $sql="insert into friendsRegister (fname,lname,city,country,experties,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;
+                $tableResult = mysqli_query($conn, $sql);
+                $member_id = mysqli_insert_id($conn);
+                $sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$member_id.",'".$m_email."' , ".$loggedID.",1)" ;
+            } else	{
+                $sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;
+                $tableResult = mysqli_query($conn, $sql);
+                $member_id = mysqli_insert_id($conn);
+                $sql="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."',".$member_id.",'".$m_email."' , ".$loggedID.",0)" ;
+            }
+
+            $tableResult = mysqli_query($conn, $sql);
+            $uploaded_file = '';
+        }
 
 		//Create Email instance for sending mail
 		$emailObject=new phpSendMail();
@@ -607,18 +612,20 @@ else if($tag == 'addFriendss'){
 
 		$body = '';
 		$body = '<div style="width:100%;max-width:660px;margin:0px auto">
-			     <div style="text-align:center"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png">
-			     </div>
-			     <div style="border:solid 1px #eee;text-align:center;margin-bottom:3px;margin-top:10px;background:#f3f3f3">      <p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia,\'Times New Roman\',Times,serif;padding:10px 15px;line-height:15px;text-align:left">Dear '.ucwords($fname).',<br><br>'.ucwords($loggedINuser).' has invited you to join his/her Friends and Family Group at Village Experts Site. </p>
+			<div style="text-align:center"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png"></div>
+			
+			<div style="border:solid 1px #eee;text-align:center;margin-bottom:3px;margin-top:10px;background:#f3f3f3"> <p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia,\'Times New Roman\',Times,serif;padding:10px 15px;line-height:15px;text-align:left">Dear '.ucwords($fname).',<br><br>'.ucwords($loggedINuser).' has invited you to join his/her Friends and Family Group at Village Experts Site. </p>
+			
 			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia,\'Times New Roman\',Times,serif;padding:10px 15px;line-height:15px;text-align:left">Village Experts is a knowledge exchange platform that enables you to:</p>
 			<ul style="padding:0px 60px;">
 			     <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">Connect to Friends and Family,</li>
 			     <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">Search for and connect to an expert in various fields,</li> 
 			     <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">Connect to a previously connected expert, and/or </li>
 			     <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">Sign up as an expert and monetize your expertise. </li>
-			   </ul> 
-			   <p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia,\'Times New Roman\',Times,serif;padding:10px 15px;line-height:15px;text-align:left">The connection is enabled through a virtual office, conference room like exchange, powered by our proprietary communication platform that enables you to:</p>
-			   <ul style="padding:0px 60px;">
+			</ul> 
+			 
+			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia,\'Times New Roman\',Times,serif;padding:10px 15px;line-height:15px;text-align:left">The connection is enabled through a virtual office, conference room like exchange, powered by our proprietary communication platform that enables you to:</p>
+			<ul style="padding:0px 60px;">
 			    <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">SEE AND TALK TO EACH OTHER</li>
 			    <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">CHAT</li>
 			    <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">SHARE PDF DOCUMENTS, PICTURES, MOVIES IN OUR FILE VIEWER</li>
@@ -626,8 +633,8 @@ else if($tag == 'addFriendss'){
 			    <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">RECORD INDIVIDUAL VOICE, VIDEO CLIPS</li>
 			    <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">RECORD ENTIRE SESSIONS INCLUDING VOICE, VIDEO, ALL SHARED DOCUMENTS</li>
 			    <li style="font-size:16px;color:#036;margin:5px;font-family:Georgia,\'Times New Roman\',Times,serif;padding:1px 5px;line-height:15px;text-align:left">INVITE A THIRD PARTY ‘LISTEN IN’ TO VIEW ENTIRE SESSION</li>
-			   <ul>
-			    <br>';
+			<ul>
+			<br>';
 
 		if($IsemailExists == 0) {
 			if(!empty($isexpert) && $isexpert == "yes"){
@@ -653,7 +660,7 @@ else if($tag == 'addFriendss'){
 			if(!empty($isexpert) && $isexpert == "yes") {
 				$result['msg'] = "$fname $lname has been Added as an Expert Successfully!";
 			} else {
-				 $result['msg'] = "$fname $lname has been Added as a Friend Successfully!";
+				$result['msg'] = "$fname $lname has been Added as a Friend Successfully!";
 			}
 		}
 
