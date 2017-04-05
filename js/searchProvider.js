@@ -219,7 +219,7 @@ $("input:checkbox").on('click', function() {
 	  });
         //SETTING UP degreeLabel
         $(document).on("click",".degreeLabel",function() {
-		var expertId = $(this).attr("for");
+		var expertId = $(this).attr("id");
 		var expertValue = $(this).attr("dir");
 		//alert(expertId+"=="+expertValue);
 		$(".degree").val(expertValue);
