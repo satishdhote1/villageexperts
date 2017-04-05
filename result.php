@@ -194,7 +194,7 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 }
 
   $sql="select * from 	service_provider where ".$where;
-  die($sql);
+  //die($sql);
 $tableResult = mysqli_query($conn, $sql);
 
 
