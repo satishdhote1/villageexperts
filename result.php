@@ -83,13 +83,13 @@ if(isset($_REQUEST['DegreeIDS']) && !empty($_REQUEST['DegreeIDS']))
 
 	{
 
-		$where.=" AND degree >= ".$_REQUEST['DegreeIDS'];
+		$where.=" AND (degree >= ".$_REQUEST['DegreeIDS']." AND specialisation_id = ".$_REQUEST['SpecialisationIDS'].")";
 
 	}
 
 	else
 
-	$where.="degree >= ".$_REQUEST['DegreeIDS'];
+	$where.="(degree >= ".$_REQUEST['DegreeIDS']." AND specialisation_id = ".$_REQUEST['SpecialisationIDS'].")";
 
 }
 
