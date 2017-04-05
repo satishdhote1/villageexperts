@@ -391,7 +391,7 @@ if (mysqli_num_rows($tableResult5) > 0)
       
                         resultData2 = resultData2 + '<option value="'+id+'">'+values+'</option>';
                    });
-                  console.log("resultData=="+resultData2);
+                  console.log("resultData2=="+resultData2);
                     $('.SPEducation').html(resultData2);
 			
                 }
