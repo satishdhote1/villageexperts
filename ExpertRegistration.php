@@ -361,6 +361,7 @@ if (mysqli_num_rows($tableResult5) > 0)
           var expertId = $(this).val();
          // alert(expertId);
           resultData = "<option value=''>Select Sub-Expertise </option>";
+	 resultData2 = "<option value=''>Select Degree </option>";
           if(expertId !="")
           {
              // alert(expertId);
