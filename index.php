@@ -78,43 +78,114 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
 
+    <style>
+        body{
+            background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;
+            background-size:cover;
+            background-attachment:fixed;
+        }
+        .modi-img {
+            width: 80px;
+            border: 5px solid #FFF;
+            border-radius: 10px;
+        }
+        .font-20 {
+            font-size: 19px !important;
+            /*change font size*/
+
+            font-weight: 700;
+        }
+        .ICON-holder img {
+            background: #7b7bfc;
+            border: 3px solid rgba(0, 0, 0, 0);
+            height: 100%;
+            width: 100%;
+        }
+        .border-box-item {
+            padding: 10px 0 0px 0px;
+        }
+        .container-fluid {
+            max-width: 1250px;
+        }
+        .error {
+            margin-top: 20px;
+        }
+        .upload-img-block {
+            float: left;
+            height: auto;
+        }
+        .upload-panel-box {
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: 70%;
+        }
+        .upload-panel-box input.pImage {
+            margin: 0px 0 0 5px;
+            padding: 5px 0px;
+            width: 100%;
+            border: 0px;
+        }
+        input[type='file'] {
+            color: transparent;
+        }
+        .form-control {
+            padding: 4px;
+        }
+        .upload-img-block > img {
+            width: 100%;
+        }
+        .col-md-5 .md-form.main-block .fa {
+            color: #7b7bfc;
+        }
+        .resSec .fa {
+            color: #008cba;
+        }
+        .log {
+            width: 120px;
+            background: #cdcdcd;
+            text-align: center;
+            font-weight: bolder
+        }
+        .log:hover {
+            background: #a6a6a6 !important
+        }
+        .loginSec .fa {
+            color: #008cba;
+        }
+        .btn-papl:hover,
+        .btn-papl:focus {
+            background-color: #9595f9 !important;
+        }
+        .btn-danger:focus,
+        .btn-danger:hover {
+            background-color: #9595f9 !important;
+        }
+        .button {
+            padding: 10px 10px 5px;
+        }
+        .btn2 {
+            border-radius: 4px;
+            border: 0;
+            color: #fff;
+            margin: 10px 0px 0px -2px;
+            white-space: normal !important;
+            height: 59px !important;
+            line-height: 40px !important;
+        }
+        .modify-btn-1 {
+            margin-left: 47px !important;
+        }
+        .col-md-chang {
+            width: 34.667%;
+        !important;
+        }
+        .border-box-item1 {
+            margin-right: 238px !important;
+        }
+    </style>
 </head>
-<style>
-    body{
-        background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;
-        background-size:cover;
-        background-attachment:fixed;
-    }
-    .ICON-holder img {
-        background: #7b7bfc;
-        border: 3px solid rgba(0, 0, 0, 0);
-        height: 100%;
-        width: 100%;
-    }
-    .upload-panel-box input.pImage {
-        margin: 0px 0 0 5px;
-        padding: 5px 0px;
-        width: 100%;
-        border: 0px;
-    }
-    input[type='file'] {
-        color: transparent;
-    }
 
-    .upload-img-block > img {
-        width: 100%;
-    }
-    .col-md-5 .md-form.main-block .fa {
-        color: #7b7bfc;
-    }
-    .resSec .fa {
-        color: #008cba;
-    }
-    .loginSec .fa {
-        color: #008cba;
-    }
-
-</style>
 
 <body>
 
