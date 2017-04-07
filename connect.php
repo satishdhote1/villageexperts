@@ -11,6 +11,7 @@ $conn=$conn->connect();
 //Create Email instance for sending mail
 $emailObject=new phpSendMail();
 $hostname = $_SERVER['SERVER_NAME'];
+//$hostname = "localhost";
 $port = 8084;
 $currentTimestamp = strtotime("now");
 $end_time = isset($_REQUEST['endTime'])?$_REQUEST['endTime']:'';

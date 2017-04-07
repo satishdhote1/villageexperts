@@ -220,7 +220,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
     <div class="login-profile">
     <a href="/" data-toggle="tooltip" data-placement="bottom" title="Back"><img src="images/Left.png" class="topBtn" style="cursor:pointer;"/></a>                
     <a href="logout.php" data-toggle="tooltip" data-placement="bottom" title="Log out!"><img src="images/logout.png" class="topBtn" style="cursor:pointer;"/></a>
-
     </div>
 
     <nav class="navbar navbar-dark" style="background:#ccccff;">
@@ -664,7 +663,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
         }
        });
 
-      //save friend
+    //save friend
     $(document).on("click",".flSave",function(){
         $('.flSave >button').attr('disabled','disabled');
         $('.flDelete >button').removeAttr('disabled');
@@ -675,7 +674,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
         $('.elDelete >button').removeAttr('disabled');
         $('.elSave >button').removeAttr('disabled');
         $('.elCancel >button').removeAttr('disabled');
-
 
         i=0;
         var checkExists = 0;
@@ -719,7 +717,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
 
         if(email != ""  && isEmail(email))
         {
-
               if(parseInt(checkExists) == 0) {
                   checkExists = 0;
                   $.ajax({
@@ -740,13 +737,13 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                         },
                         success: function(data) {
                             FLeditFlag = 0;
-                            console.log(data);
+                            console.log(" Adding a frind response " , data);
                             if(data.success == 1) {
                                 alert(data.msg);
                                 window.location.reload();
                             }
                             else {
-                                alert("Failed to Save!");
+                                alert("Failed to Save "+ data.msg);
                             }
                         } ,
                         error: function () {
@@ -801,19 +798,19 @@ if (mysqli_num_rows($tableResult4) > 0)  {
             data: {fname:fname,lname:lname,email:email,tag:"deleteFriendss",isExpertss:"NO",loggedID:loggedID},
             success: function(data)    // A function to be called if request succeeds
             {
-            console.log(data);
-            if(data.success == 1)
-            {
-              alert(data.msg);
-              window.location.reload();
-            }
-            else
-            {
-            //alert();
-            }
+                console.log(data);
+                if(data.success == 1)
+                {
+                  alert(data.msg);
+                  window.location.reload();
+                }
+                else
+                {
+                //alert();
+                }
             } ,
             error: function () {
-            alert("Failed to Save!");
+                alert("Failed to Save!");
             }
 
             });

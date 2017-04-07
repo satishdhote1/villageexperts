@@ -12,15 +12,15 @@ class connections
 	private $password="byethost";
 	private $dbname="b7_15994620_crm";*/
 
-/*	private $servername="localhost";
+	private $servername="localhost";
 	private $uname="root";
 	private $password="mysqlroot";
-	private $dbname="villageexpertsdb";*/
+	private $dbname="villageexpertsdb";
 
-    private $servername="localhost";
+/*    private $servername="localhost";
     private $uname="root";
     private $password="altanaimysql";
-    private $dbname="villageexpertsdb";
+    private $dbname="villageexpertsdb";*/
 
 	//email cnfig
 /*		
