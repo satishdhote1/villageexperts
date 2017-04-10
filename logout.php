@@ -53,32 +53,32 @@ session_start();
 if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 {
 	$conn=new connections();
-$conn=$conn->connect();
+	$conn=$conn->connect();
+	$sqlUpdate="update friendsRegister set loginStatus='NO' where id=".$_SESSION['logged_user_id'];
+	$rsUpdate=mysqli_query($conn, $sqlUpdate);
 
-		//if($_SESSION['logged_role_code']=='SP'){
-			$sqlUpdate="update friendsRegister set loginStatus='NO' where id=".$_SESSION['logged_user_id'];
-			$rsUpdate=mysqli_query($conn, $sqlUpdate);
-	
-		/*}
-		else if($_SESSION['logged_role_code']=='SR'){
-			$sqlUpdate="update service_requestor set sr_logged_in='N' where sr_id=".$_SESSION['logged_user_id'];
-			$rsUpdate=mysqli_query($conn, $sqlUpdate);
-			//echo $ssql;exit();
-		}
+	/*if($_SESSION['logged_role_code']=='SP'){
+		$sqlUpdate="update friendsRegister set loginStatus='NO' where id=".$_SESSION['logged_user_id'];
+		$rsUpdate=mysqli_query($conn, $sqlUpdate);
+	}
+	else if($_SESSION['logged_role_code']=='SR'){
+		$sqlUpdate="update service_requestor set sr_logged_in='N' where sr_id=".$_SESSION['logged_user_id'];
+		$rsUpdate=mysqli_query($conn, $sqlUpdate);
+		//echo $ssql;exit();
+	}
 
-		else if($_SESSION['logged_role_code']=='GM'){
-			$sqlUpdate="update group_member set gm_logged_in='N' where gm_id=".$_SESSION['logged_user_id'];
-			$rsUpdate=mysqli_query($conn, $sqlUpdate);
-			//echo $ssql;exit();
-		}*/
+	else if($_SESSION['logged_role_code']=='GM'){
+		$sqlUpdate="update group_member set gm_logged_in='N' where gm_id=".$_SESSION['logged_user_id'];
+		$rsUpdate=mysqli_query($conn, $sqlUpdate);
+		//echo $ssql;exit();
+	}*/
 
-		foreach ($_SESSION as $key=>$value){
-			//if (substr($key,0,strlen($session_prefix))==$session_prefix){
-				unset($_SESSION[$key]);
-			
-		}
-		 //header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExpert");
-		//header("Refresh: 3; url=index.php");
+	foreach ($_SESSION as $key=>$value){
+		//if (substr($key,0,strlen($session_prefix))==$session_prefix){
+		unset($_SESSION[$key]);
+	}
+	//header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExpert");
+	//header("Refresh: 3; url=index.php");
 ?>
 <p>Logged Out successfully.  Redirecting....</p>
 <?php

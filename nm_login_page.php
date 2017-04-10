@@ -138,10 +138,10 @@ else {
   
   <span class="connect_text">Connect with:</span>
   <div class="social_media_box">
-  <a href="#"><div class="face_book_icon"><img src="images/face_book_icon.jpg" alt="icon"></div></a>
+  <a href="#"><div class="face_book_icon"><img src="images/socilaNetworks/face_book_icon.jpg" alt="icon"></div></a>
   <a href="#"><div class="face_book_icon"><img src="images/twitter.jpg" alt="icon"></div></a>
   <a href="#"><div class="face_book_icon"><img src="images/rss.jpg" alt="rss"></div></a>
-  <a href="#"><div class="face_book_icon"><img src="images/google_plus.jpg" alt="google_plus"></div></a>
+  <a href="#"><div class="face_book_icon"><img src="images/socilaNetworks/google_plus.jpg" alt="google_plus"></div></a>
   <a href="#"><div class="face_book_icon"><img src="images/printset.jpg" alt="printset"></div></a>
   <a href="#"><div class="face_book_icon"><img src="images/link_din.jpg" alt="link_din"></div></a>
   <a href="#"><div class="face_book_icon"><img src="images/capther.jpg" alt="icon"></div></a>
