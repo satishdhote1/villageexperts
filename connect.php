@@ -9,7 +9,7 @@ $conn=new connections();
 $conn=$conn->connect();
 
 //Create Email instance for sending mail
-$emailObject=new phpSendMail();
+$emailObject = new phpSendMail();
 $hostname = $_SERVER['SERVER_NAME'];
 //$hostname = "localhost";
 $port = 8084;
@@ -39,7 +39,6 @@ if(!empty($user_id)){
 		$body.='<div style="text-align:center;"><img width="200" height="200" src="'.$imagePath.'" /></div><br><br>';
 		$body.='Dear '.$memberName.',<br /><br/>'.$user_name.' has initiated a connect session with you . <br/> Please login to '.$_SERVER['SERVER_NAME'].' to connect<br/><br/></p></div></div>';
 
-		die(" hello");
 		$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
 		if($mailSent){
 			$conn= new connections();
