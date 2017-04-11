@@ -164,6 +164,15 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                 foreach($userData as $userDatas) { ?>
                                 <tr class="flRow" id="flRow<?php echo $userDatas['id']; ?>">
                                     <td style="width:24px !important;text-align:center;">
+                                        <?php if( $userDatas['registerStatus']=='NO'){ ?>
+                                        <button class="btn btnUserInactive" title="Inactive"></button>
+                                        <?php } else if( $userDatas['loginStatus']=='NO'){ ?>
+                                        <button class="btn btnUserOffline" title="Offline"></button>
+                                        <?php } else if( $userDatas['loginStatus']=='BUSY'){ ?>
+                                        <button class="btn btnUserBusy" title="Busy"></button>
+                                        <?php } else{?>
+                                        <button class="btn btnUserOnline" title="Online"></button>
+                                        <?php }?>
                                         <input type="hidden" value="<?php echo $userDatas['id']; ?>" name="flID" class="flID">
                                         <input type="hidden" value="<?php echo $userID; ?>" name="loggedID" class="loggedID">
                                         <input type="checkbox" class="flChk" id="<?php echo $userDatas['id']; ?>">
@@ -186,18 +195,15 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                     </td>
 
                                     <?php if( $userDatas['registerStatus']=='NO'){ ?>
-                                    <td><button class="btn btnUserInactive" title="Inactive"></button></td>
+                                    <td></td>
                                     
                                     <?php } else if( $userDatas['loginStatus']=='NO'){ ?>
-                                    <td><button class="btn btnUserOffline" title="Offline"></button></td>
                                     <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $expertDatas['email']; ?>" names="<?php echo $expertDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
                                     
                                     <?php } else if( $userDatas['loginStatus']=='BUSY'){ ?>
-                                    <td><button class="btn btnUserBusy" title="Busy"></button></td>
                                     <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $userDatas['email']; ?>" names="<?php echo $userDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
                                     
                                     <?php } else{?>
-                                    <td><button class="btn btnUserOnline" title="Online"></button></td>
                                     <td><button class="btn-online btn FLconnectMember" for="<?php echo $userDatas['id']; ?>" dir="<?php echo $userDatas['fname']." ".$userDatas['lname']; ?> " memberImage="<?php echo $userDatas['image']; ?>" memberEmail="<?php echo $userDatas['email']; ?>">Connect</button></td>
                                     <?php }?>
 
@@ -266,10 +272,8 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                 <input type="checkbox" class="elChk" id="<?php echo $expertDatas['id']; ?>">
                             </td>
                             <td>
-                                <input style="width: 100%;" type="text" class="edit_text elFname rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="elFname<?php echo $expertDatas['id']; ?>" name="elFname"  value="<?php echo $expertDatas['fname']; ?>">
-                           </td>
-                            <td>
-                                <input style="width: 100%;" type="text" class="edit_text elLname rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="elLname<?php echo $expertDatas['id']; ?>" name="elLname"  value="<?php echo $expertDatas['lname']; ?>">
+                                <input style="width: 50%;float:left" type="text" class="edit_text elFname rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="elFname<?php echo $expertDatas['id']; ?>" name="elFname"  value="<?php echo $expertDatas['fname']; ?>">
+                                <input style="width: 50%;float:right" type="text" class="edit_text elLname rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="elLname<?php echo $expertDatas['id']; ?>" name="elLname"  value="<?php echo $expertDatas['lname']; ?>">
                             </td>
                             <td style="width: 200px !important;">
                                 <input style="width: 100%;" type="text" class="edit_text elEmail rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="elEmail<?php echo $expertDatas['id']; ?>" name="elEmail"  value="<?php echo $expertDatas['email']; ?>">
