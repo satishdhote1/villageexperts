@@ -41,9 +41,17 @@ if(!empty($user_id)){
 
 		$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
 		if($mailSent){
-			header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+			$conn= new connections();
+	        $conn= $conn->connect();
+	        $sqlUpdate= "update friendsRegister set loginStatus='BUSY' where id=".$_SESSION['logged_user_id'];
+	        $rsUpdate= mysqli_query($conn, $sqlUpdate);
+    		$link = "<script>window.open('https://'.$hostname.':'.$port.'/#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
+			echo $link;
+			//header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
 		}else{
-			header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+			$link = "<script> alert(' email not send ' ); window.open('https://'.$hostname.':'.$port.'/#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
+			echo $link;
+			//header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
 		}
 	
 	}else if(!empty($search) && $search == 'findsp'){

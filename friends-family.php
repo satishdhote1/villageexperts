@@ -930,15 +930,9 @@ $(function(){
         var imagePath =  $(this).attr("memberImage");
         var memberEmail= $(this).attr("memberEmail");
         $('html,body').animate({ scrollTop: 9999 }, 1000);
-        /*
         setTimeout(function(){
             location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
-        }, 4000);*/
-        $conn= new connections();
-        $conn= $conn->connect();
-        $sqlUpdate= "update friendsRegister set loginStatus='BUSY' where id=".$_SESSION['logged_user_id'];
-        $rsUpdate= mysqli_query($conn, $sqlUpdate);
-        window.open("connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail);
+        }, 4000);
     });
 
     //Make APPOINTMENT button click
