@@ -15,21 +15,10 @@ $conn=$conn->connect();
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Confirm Appointment</title>
 
-    <!-- Font Awesome -->
-
-    <!-- Bootstrap core CSS -->
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" rel="stylesheet">
-	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
-
- <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
-    <!-- Material Design Bootstrap -->
-
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
-
-    <!-- Your custom styles (optional) -->
-
     <link href="css/style.css" rel="stylesheet">
 
 </head>

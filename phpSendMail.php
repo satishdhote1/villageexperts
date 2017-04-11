@@ -3,13 +3,14 @@ require("phpMailer/class.phpmailer.php");
 require("phpMailer/PHPMailerAutoload.php");
 class phpSendMail
 {
-/*
+
 private $emailUsername ="AKIAJDE2TN3CRH5SMSVQ";
 private $emailPassword ="Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni";
 private $host= "email-smtp.us-west-2.amazonaws.com";
-private $from ="dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
+private $from ="villageexpert.info@gmail.com";//dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
 private $port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
-*/
+private $from_name ="Village Expert";
+private $smtpSecure = 'ssl';
 /*
 private $emailUsername ="dassamtest2@gmail.com";
 private $emailPassword ="dassamtest253";
@@ -26,13 +27,13 @@ private $from ="villageexperts@kidzeeweb.com";//"villageexpert.info@gmail.com";
 private $port = "26"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 */
 //otoman.net
-private $emailUsername ="villageexperts@otoman.net";
+/*private $emailUsername ="villageexperts@otoman.net";
 private $emailPassword ="WebRTC123";
-private $host= "sg2plcpnl0137.prod.sin2.secureserver.net";
+private $host= "otoman.net" ;//sg2plcpnl0137.prod.sin2.secureserver.net";
 private $from ="villageexperts@otoman.net";//"villageexpert.info@gmail.com";
 private $port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 private $from_name ="Village Expert";
-private $smtpSecure = 'ssl';
+private $smtpSecure = 'ssl';*/
 public function geEmailConfig()
 {
 		$emailData['uname'] = $this->emailUsername;
