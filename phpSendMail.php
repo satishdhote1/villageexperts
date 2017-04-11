@@ -48,7 +48,7 @@ public function sendMail($email,$memberName,$subject,$body)
 {
   	//echo "email-$email--=name:$memberName*-----body---$body=====$this->emailUsername===$this->emailPassword===$this->host";
   	$mail = new PHPMailer();
-  	//$mail->SMTPDebug = 1;
+  	$mail->SMTPDebug = 1;
     $mail->IsSMTP();
     $mail->Mailer = "smtp";
     $mail->Host = $this->host;//"smtp.gmail.com";
@@ -65,6 +65,8 @@ public function sendMail($email,$memberName,$subject,$body)
     $mail->Body    = $body;
     $mail->WordWrap = 50;  
     $mail->IsHTML(true);
+
+    die($mail);
    	if(!$mail->Send())
    	{
    		echo "Mailer Error: " . $mail->ErrorInfo;

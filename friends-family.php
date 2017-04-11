@@ -584,36 +584,36 @@ $(function(){
         else{
             var r = confirm("Are you Sure - You want to Delete "+fname+" "+lname+"?");
             if (r == true) {
-            $.ajax({
-            url:'ajax.php',
-            type: 'POST',
-            dataType: "json",
-            data: {
-                fname:fname,
-                lname:lname,
-                email:email,
-                tag:"deleteFriendss",
-                isExpertss:"NO",
-                loggedID:loggedID
-            },
-            success: function(data)    // A function to be called if request succeeds
-            {
-                console.log(data);
-                if(data.success == 1)
-                {
-                  alert(data.msg);
-                  window.location.reload();
-                }
-                else
-                {
-                //alert();
-                }
-            } ,
-            error: function () {
-                alert("Failed to Save!");
-            }
+                $.ajax({
+                    url:'ajax.php',
+                    type: 'POST',
+                    dataType: "json",
+                    data: {
+                        fname:fname,
+                        lname:lname,
+                        email:email,
+                        tag:"deleteFriendss",
+                        isExpertss:"NO",
+                        loggedID:loggedID
+                    },
+                    success: function(data)    // A function to be called if request succeeds
+                    {
+                        console.log(data);
+                        if(data.success == 1)
+                        {
+                          alert(data.msg);
+                          window.location.reload();
+                        }
+                        else
+                        {
+                        //alert();
+                        }
+                    } ,
+                    error: function () {
+                        alert("Failed to Save!");
+                    }
 
-            });
+                });
             }
             else {
             // txt = "You pressed Cancel!";
@@ -743,13 +743,11 @@ $(function(){
             }
             else if (i>1) {alert("Please select  one checkbox at a time to edit!");}
             else{
-
                 $( "#elFname" ).focus();
                 $(".rmvReadonly"+elID).removeAttr("readonly"); 
                 $("#elEmail"+elID).attr("readonly", "readonly"); 
                 $(".elSave >button").removeAttr("disabled");
-                ELeditFlag = 1;
-                
+                ELeditFlag = 1; 
             }
        });
 
@@ -797,7 +795,6 @@ $(function(){
         {
            tag = "addFriendss"
            $( ".ELaddNewRow" ).hide("slow");
-
             fname = $('.eladdFname').val();
             lname =  $('.eladdLname').val();
             email = $('.eladdEmail').val();
@@ -875,11 +872,18 @@ $(function(){
         else{
             var r = confirm("Are you Sure - You want to Delete "+fname+" "+lname+"?");
             if (r == true) {
-                    $.ajax({
+                $.ajax({
                     url:'ajax.php',
                     type: 'POST',
                     dataType: "json",
-                    data: {fname:fname,lname:lname,email:email,tag:"deleteFriendss",isExpertss:"YES",loggedID:loggedID},
+                    data: {
+                        fname:fname,
+                        lname:lname,
+                        email:email,
+                        tag:"deleteFriendss",
+                        isExpertss:"YES",
+                        loggedID:loggedID
+                    },
                     success: function(data)    // A function to be called if request succeeds
                     {
                         console.log(data);
@@ -897,7 +901,7 @@ $(function(){
                         alert("Failed to Save!");
                     }
 
-                    });
+                });
              } else {
                 // txt = "You pressed Cancel!";
             }
