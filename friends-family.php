@@ -152,7 +152,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                 <th>Mobile</th>
                                 <th>City</th>
                                 <th>Country</th>
-                                <th>Status</th>
                                 <th></th>
                             </tr>
                         </table>
@@ -254,7 +253,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                             <th>Expertise</th>
                             <th>City</th>
                             <th>Country</th>
-                            <th>Status</th>
                             <th></th>
                         </tr>
                     </table>
@@ -355,12 +353,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
 
     </div>
 
-    <!-- JQuery -->
-
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <!-- <script type="text/javascript" src="js/tether.min.js"></script> -->
-    <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/bootstrap-datetimepicker.min.js"></script>
     <script src="js/connectMe.js"></script>
@@ -921,23 +914,31 @@ $(function(){
         var imagePath =  $(this).attr("memberImage");
         var memberEmail= $(this).attr("memberEmail");
         $('html,body').animate({ scrollTop: 9999 }, 1000);
+        /*
         setTimeout(function(){
             location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
-        }, 4000);
+        }, 4000);*/
+        window.open("connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail);
     });
 
     $(document).on("click",".ELconnectMember",function(){
-          var memberName= $(this).attr("dir");
-          $(".connSuccess > span").text(memberName);
-          $(".connSuccess").css("display","block");
-          //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
-          var memberId =  $(this).attr("for");
-          var imagePath =  $(this).attr("memberImage");
-          var memberEmail= $(this).attr("memberEmail");
-          $('html,body').animate({ scrollTop: 9999 }, 1000);
-          setTimeout(function(){
-                location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
-          }, 4000);
+        var memberName= $(this).attr("dir");
+        $(".connSuccess > span").text(memberName);
+        $(".connSuccess").css("display","block");
+        //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
+        var memberId =  $(this).attr("for");
+        var imagePath =  $(this).attr("memberImage");
+        var memberEmail= $(this).attr("memberEmail");
+        $('html,body').animate({ scrollTop: 9999 }, 1000);
+        /*
+        setTimeout(function(){
+            location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
+        }, 4000);*/
+        $conn=new connections();
+        $conn=$conn->connect();
+        $sqlUpdate="update friendsRegister set loginStatus='BUSY' where id=".$_SESSION['logged_user_id'];
+        $rsUpdate=mysqli_query($conn, $sqlUpdate);
+        window.open("connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail);
     });
 
     //Make APPOINTMENT button click

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 
 error_reporting(E_ALL);
@@ -31,89 +30,71 @@ session_start();
   <div class="row">
     <div class="col-md-12 text-center">
       <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
-      <div class="over-lap">
-        <div class="profile pull-left"> <img src="images/placeholder/male2.jpg" class="img-responsive"> </div>
-        <div class="pull-right">
-          <p class="loginname">Wellcome <?php echo $_SESSION['logged_user_fname']; ?></p>
-          <button class="btn btn-info bg-blue">Logout</button>
-        </div>
-        <div class="clearfix"></div>
-      </div>
+			<div class="over-lap">
+				<div class="profile pull-left"> <img src="images/placeholder/male2.jpg" class="img-responsive"> </div>
+					<div class="pull-right">
+					  <p class="loginname">Wellcome <?php echo $_SESSION['logged_user_fname']; ?></p>
+					  <button class="btn btn-info bg-blue">Logout</button>
+					</div>
+				<div class="clearfix"></div>
+			</div>
     </div>
   </div>
 </div>
 
 
-
 <div class="container">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-<div class="wellcome-text">
-<?php
-if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
-{
-	$conn=new connections();
-	$conn=$conn->connect();
-	$sqlUpdate="update friendsRegister set loginStatus='NO' where id=".$_SESSION['logged_user_id'];
-	$rsUpdate=mysqli_query($conn, $sqlUpdate);
+	<div class="row">
+		<div class="col-md-6 col-md-offset-3">
+			<div class="wellcome-text">
+			<?php
+			if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
+			{
+				$conn=new connections();
+				$conn=$conn->connect();
+				$sqlUpdate="update friendsRegister set loginStatus='NO' where id=".$_SESSION['logged_user_id'];
+				$rsUpdate=mysqli_query($conn, $sqlUpdate);
 
-	/*if($_SESSION['logged_role_code']=='SP'){
-		$sqlUpdate="update friendsRegister set loginStatus='NO' where id=".$_SESSION['logged_user_id'];
-		$rsUpdate=mysqli_query($conn, $sqlUpdate);
-	}
-	else if($_SESSION['logged_role_code']=='SR'){
-		$sqlUpdate="update service_requestor set sr_logged_in='N' where sr_id=".$_SESSION['logged_user_id'];
-		$rsUpdate=mysqli_query($conn, $sqlUpdate);
-		//echo $ssql;exit();
-	}
+				/*if($_SESSION['logged_role_code']=='SP'){
+					$sqlUpdate="update friendsRegister set loginStatus='NO' where id=".$_SESSION['logged_user_id'];
+					$rsUpdate=mysqli_query($conn, $sqlUpdate);
+				}
+				else if($_SESSION['logged_role_code']=='SR'){
+					$sqlUpdate="update service_requestor set sr_logged_in='N' where sr_id=".$_SESSION['logged_user_id'];
+					$rsUpdate=mysqli_query($conn, $sqlUpdate);
+					//echo $ssql;exit();
+				}
+				else if($_SESSION['logged_role_code']=='GM'){
+					$sqlUpdate="update group_member set gm_logged_in='N' where gm_id=".$_SESSION['logged_user_id'];
+					$rsUpdate=mysqli_query($conn, $sqlUpdate);
+					//echo $ssql;exit();
+				}*/
 
-	else if($_SESSION['logged_role_code']=='GM'){
-		$sqlUpdate="update group_member set gm_logged_in='N' where gm_id=".$_SESSION['logged_user_id'];
-		$rsUpdate=mysqli_query($conn, $sqlUpdate);
-		//echo $ssql;exit();
-	}*/
-
-	foreach ($_SESSION as $key=>$value){
-		//if (substr($key,0,strlen($session_prefix))==$session_prefix){
-		unset($_SESSION[$key]);
-	}
-	//header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExpert");
-	//header("Refresh: 3; url=index.php");
-?>
-<p>Logged Out successfully.  Redirecting....</p>
-<?php
-		}
-		else
-		{
-			//header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExpert");
-			//echo '<center><h1 style="color:red">You are not autorized.  Redirecting....</h1></center>';
+				foreach ($_SESSION as $key=>$value){
+					//if (substr($key,0,strlen($session_prefix))==$session_prefix){
+					unset($_SESSION[$key]);
+				}
+				//header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExpert");
+				//header("Refresh: 3; url=index.php");
 			?>
-            <p>You are not autorized.  Redirecting....</p>
-            <?php
-		}
-		
-?>
+			<p>Logged Out successfully.  Redirecting....</p>
+			<?php
+					}
+					else
+					{
+						//header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/villageExpert");
+						//echo '<center><h1 style="color:red">You are not autorized.  Redirecting....</h1></center>';
+						?>
+			            <p>You are not autorized.  Redirecting....</p>
+			            <?php
+					}		
+			?>
+			</div>
+		</div>
+	</div>
+</div>
 
-</div>
-</div>
-</div>
-</div>
-
-
-<!-- jQuery Version 1.11.1 --> 
 <script src="js/jquery.js"></script> 
-
-<!-- Bootstrap Core JavaScript --> 
 <script src="js/bootstrap.min.js"></script>
 </body>
 </html>
-=======
-<?php 
-session_start();
-session_destroy();
-session_unset();
-$_SESSION["SESS_ID"] = "";
-$_SESSION["SESS_SR_ID"] = "";
-			header('location:index.php');
-?>
->>>>>>> 4008c735ab917a2272e16fb62849aa617a073480
