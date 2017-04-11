@@ -184,14 +184,23 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                     <td>
                                         <input style="width: 100%;" type="text" class="edit_text flCountry rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flCountry<?php echo $userDatas['id']; ?>" name="flCountry"  value="<?php echo $userDatas['country']; ?>">
                                     </td>
-                                    <?php if( $userDatas['loginStatus']=='NO'){ ?>
-                                    <td><button class="btn" >Offline</button></td>
+
+                                    <?php if( $userDatas['registerStatus']=='NO'){ ?>
+                                    <td><button class="btn btnUserInactive" title="Inactive"></button></td>
+                                    
+                                    <?php } else if( $userDatas['loginStatus']=='NO'){ ?>
+                                    <td><button class="btn btnUserOffline" title="Offline"></button></td>
+                                    <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $expertDatas['email']; ?>" names="<?php echo $expertDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
+                                    
+                                    <?php } else if( $userDatas['loginStatus']=='BUSY'){ ?>
+                                    <td><button class="btn btnUserBusy" title="Busy"></button></td>
                                     <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $userDatas['email']; ?>" names="<?php echo $userDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
-                                    <?php }
-                                    else{?>
-                                    <td><button class="btn" >Online</button></td>
+                                    
+                                    <?php } else{?>
+                                    <td><button class="btn btnUserOnline" title="Online"></button></td>
                                     <td><button class="btn-online btn FLconnectMember" for="<?php echo $userDatas['id']; ?>" dir="<?php echo $userDatas['fname']." ".$userDatas['lname']; ?> " memberImage="<?php echo $userDatas['image']; ?>" memberEmail="<?php echo $userDatas['email']; ?>">Connect</button></td>
                                     <?php }?>
+
                                 </tr>
                                 <?php }
                                 }
@@ -275,18 +284,18 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                  <input style="width: 100%;" type="text" class="edit_text elCountry rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="elCountry<?php echo $expertDatas['id']; ?>" name="elCountry"  value="<?php echo $expertDatas['country']; ?>">
                             </td>
                             <?php if( $expertDatas['registerStatus']=='NO'){ ?>
-                            <td><button class="btn btnUserInactive" >Inactive</button></td>
+                            <td><button class="btn btnUserInactive" title="Inactive"></button></td>
                             
                             <?php } else if( $expertDatas['loginStatus']=='NO'){ ?>
-                            <td><button class="btn btnUserOffline" >Offline</button></td>
+                            <td><button class="btn btnUserOffline" title="Offline"></button></td>
                             <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $expertDatas['email']; ?>" names="<?php echo $expertDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
                             
                             <?php } else if( $expertDatas['loginStatus']=='BUSY'){ ?>
-                            <td><button class="btn btnUserBusy" >Busy</button></td>
+                            <td><button class="btn btnUserBusy" title="Busy"></button></td>
                             <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $expertDatas['email']; ?>" names="<?php echo $expertDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
                             
                             <?php } else{?>
-                            <td><button class="btn btnUserOnline" >Online</button></td>
+                            <td><button class="btn btnUserOnline" title="Online"></button></td>
                             <td><button class="btn-online btn ELconnectMember" for="<?php echo $expertDatas['id']; ?>" dir="<?php echo $expertDatas['fname']." ".$expertDatas['lname']; ?> " memberImage="<?php echo $expertDatas['image']; ?>" memberEmail="<?php echo $expertDatas['email']; ?>">Connect</button></td>
                             <?php }?>
                         </tr>
