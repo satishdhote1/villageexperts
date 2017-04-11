@@ -67,7 +67,6 @@ public function sendMail($email,$memberName,$subject,$body)
     $mail->WordWrap = 50;  
     $mail->IsHTML(true);
 
-    die($mail->Host);
    	if(!$mail->Send())
    	{
    		echo "Mailer Error: " . $mail->ErrorInfo;
