@@ -755,7 +755,8 @@ input[type='range'] {
     font-weight: normal;
 }
 .btnUserOnline {
-    width: 20px;
+    max-width: 20px;
+    width: 10%;
     height: 20px;
     border-radius: 8px;
     padding: 7px 7px;
@@ -767,7 +768,8 @@ input[type='range'] {
     font-weight: bold;
 }
 .btnUserInactive {
-    width: 20px;
+    max-width: 20px;
+    width: 10%;
     height: 20px;
     border-radius: 8px;
     padding: 7px 7px;
@@ -779,7 +781,8 @@ input[type='range'] {
     font-weight: bold;
 }
 .btnUserBusy {
-    width: 20px;
+    max-width: 20px;
+    width: 10%;
     height: 20px;
     border-radius: 8px;
     padding: 7px 7px;
@@ -791,7 +794,8 @@ input[type='range'] {
     font-weight: bold;
 }
 .btnUserOffline {
-    width: 20px;
+    max-width: 20px;
+    width: 10%;
     height: 20px;
     border-radius: 8px;
     padding: 7px 7px;

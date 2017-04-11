@@ -163,6 +163,11 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                 foreach($userData as $userDatas) { ?>
                                 <tr class="flRow" id="flRow<?php echo $userDatas['id']; ?>">
                                     <td style="width:24px !important;text-align:center;">
+                                        <input type="hidden" value="<?php echo $userDatas['id']; ?>" name="flID" class="flID">
+                                        <input type="hidden" value="<?php echo $userID; ?>" name="loggedID" class="loggedID">
+                                        <input type="checkbox" class="flChk" id="<?php echo $userDatas['id']; ?>">
+                                    </td>
+                                    <td>
                                         <?php if( $userDatas['registerStatus']=='NO'){ ?>
                                         <button class="btn btnUserInactive" title="Inactive"></button>
                                         <?php } else if( $userDatas['loginStatus']=='NO'){ ?>
@@ -172,13 +177,8 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                         <?php } else{?>
                                         <button class="btn btnUserOnline" title="Online"></button>
                                         <?php }?>
-                                        <input type="hidden" value="<?php echo $userDatas['id']; ?>" name="flID" class="flID">
-                                        <input type="hidden" value="<?php echo $userID; ?>" name="loggedID" class="loggedID">
-                                        <input type="checkbox" class="flChk" id="<?php echo $userDatas['id']; ?>">
-                                    </td>
-                                    <td>
-                                        <input style="width: 50%; float:left" type="text" class="edit_text flFname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flFname<?php echo $userDatas['id']; ?>" name="flFname"  value="<?php echo $userDatas['fname']; ?>">
-                                        <input style="width: 50%; float:right" type="text" class="edit_text flLname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flLname<?php echo $userDatas['id']; ?>" name="flLname"  value="<?php echo $userDatas['lname']; ?>">
+                                        <input style="width: 45%; float:left ; padding-left:10px;" type="text" class="edit_text flFname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flFname<?php echo $userDatas['id']; ?>" name="flFname"  value="<?php echo $userDatas['fname']; ?>">
+                                        <input style="width: 45%; float:right" type="text" class="edit_text flLname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flLname<?php echo $userDatas['id']; ?>" name="flLname"  value="<?php echo $userDatas['lname']; ?>">
                                     </td>
                                     <td style="width: 200px !important;">
                                         <input style="width: 100%;" type="text" class="edit_text flEmail rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flEmail<?php echo $userDatas['id']; ?>" name="flEmail"  value="<?php echo $userDatas['email']; ?>">
@@ -934,10 +934,10 @@ $(function(){
         setTimeout(function(){
             location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
         }, 4000);*/
-        $conn=new connections();
-        $conn=$conn->connect();
-        $sqlUpdate="update friendsRegister set loginStatus='BUSY' where id=".$_SESSION['logged_user_id'];
-        $rsUpdate=mysqli_query($conn, $sqlUpdate);
+        $conn= new connections();
+        $conn= $conn->connect();
+        $sqlUpdate= "update friendsRegister set loginStatus='BUSY' where id=".$_SESSION['logged_user_id'];
+        $rsUpdate= mysqli_query($conn, $sqlUpdate);
         window.open("connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail);
     });
 
