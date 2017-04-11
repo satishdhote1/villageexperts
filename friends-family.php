@@ -291,31 +291,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                         </table>
                         <div class="inner_table">
                             <table width="101%" style="text-align: left;background: #7b7bfc;color:#fff;" class="flTable">
-                                <!-- this is to add an empty row at the top -->
-                                <tr class="flRow addNewRow" style="display: none;">
-                                    <td width="24px" style="width: 24px !important;">
-                                        <input type="hidden" value="<?php echo $userID; ?>" name="loggedID" class="loggedID">
-                                    </td>
-                                    <td>
-                                        <input style="width: 50%;" type="text" class="edit_text fladdFname " placeholder="First Name" id="fladdFname" name="fladdFname"  value="">
-                                        <input style="width: 50%;" type="text" class="edit_text fladdLname" placeholder="Last Name" id="fladdLname<?php echo $userDatas['id']; ?>" name="fladdLname"  value="">
-                                    </td>
-                                    <td style="width: 200px !important;">
-                                        <input style="width: 100%;" type="text" class="edit_text fladdEmail" id="fladdEmail<?php echo $userDatas['id']; ?>" placeholder="Email" name="fladdEmail"  value="">
-                                    </td>
-                                    <td>
-                                        <input style="width: 100%;" type="text" class="edit_text fladdMobile" id="fladdMobile<?php echo $userDatas['id']; ?>" name="fladdMobile"  value="" placeholder="Mobile No.">
-                                    </td>
-                                    <td>
-                                        <input style="width: 100%;" type="text" class="edit_text fladdCity"  id="fladdCity<?php echo $userDatas['id']; ?>" name="fladdCity"  value="" placeholder="City">
-                                    </td>
-                                    <td>
-                                        <input style="width: 100%;" type="text" class="edit_text fladdCountry"  id="fladdCountry<?php echo $userDatas['id']; ?>" name="fladdCountry"  value="" placeholder="Country">
-                                    </td>
-                                    <td></td>
-                                    <td></td>
-                                </tr>
-                                <!-- end of //this is to add an empty row at the top -->
                                 <?php
                                 if(!empty($userData))
                                 {
@@ -327,8 +302,8 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                         <input type="checkbox" class="flChk" id="<?php echo $userDatas['id']; ?>">
                                     </td>
                                     <td>
-                                        <input style="width: 50%;" type="text" class="edit_text flFname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flFname<?php echo $userDatas['id']; ?>" name="flFname"  value="<?php echo $userDatas['fname']; ?>">
-                                        <input style="width: 50%;" type="text" class="edit_text flLname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flLname<?php echo $userDatas['id']; ?>" name="flLname"  value="<?php echo $userDatas['lname']; ?>">
+                                        <input style="width: 50%; float:left" type="text" class="edit_text flFname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flFname<?php echo $userDatas['id']; ?>" name="flFname"  value="<?php echo $userDatas['fname']; ?>">
+                                        <input style="width: 50%; float:right" type="text" class="edit_text flLname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flLname<?php echo $userDatas['id']; ?>" name="flLname"  value="<?php echo $userDatas['lname']; ?>">
                                     </td>
                                     <td style="width: 200px !important;">
                                         <input style="width: 100%;" type="text" class="edit_text flEmail rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flEmail<?php echo $userDatas['id']; ?>" name="flEmail"  value="<?php echo $userDatas['email']; ?>">
@@ -403,34 +378,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                     </table>
 
                     <table width="101%" class="elTable expertsTableBodyClass">
-                    <!-- this is to add an empty row at the top -->
 
-                        <tr class="elRow ELaddNewRow" style="display: none;">
-
-                            <td width="24px" style="width: 24px !important;">
-                                <input type="hidden" value="<?php echo $userID; ?>" name="loggedID" class="loggedID">
-                            </td>
-                            <td>
-                                <input style="width: 100%;" type="text" class="edit_text eladdFname" placeholder="First Name" id="eladdFname" name="eladdFname"  value="">
-                                <input style="width: 100%;" type="text" class="edit_text eladdLname" placeholder="Last Name" id="eladdLname" name="eladdLname"  value="">
-                            </td>
-                            <td style="width: 200px !important;">
-                                <input style="width: 100%;" type="text" class="edit_text eladdEmail" id="eladdEmail" placeholder="Email" name="eladdEmail"  value="">
-                            </td>
-                            <td>
-                                <input style="width: 100%;" type="text" class="edit_text eladdMobile" id="eladdMobile" name="eladdMobile"  value="" placeholder="Expertise">
-                            </td>
-                            <td>
-                                <input style="width: 100%;" type="text" class="edit_text eladdCity" id="eladdCity" name="eladdCity"  value="" placeholder="City">
-                            </td>
-                            <td>
-                                 <input style="width: 100%;" type="text" class="edit_text eladdCountry" id="eladdCountry" name="eladdCountry"  value="" placeholder="Country">
-                            </td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
-                    <!-- end of //this is to add an empty row at the top -->
                     <?php
                      if(!empty($expertData))
                     {
