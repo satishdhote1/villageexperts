@@ -755,6 +755,7 @@ input[type='range'] {
     font-weight: normal;
 }
 .btnUserOnline {
+        float:left;
     max-width: 20px;
     width: 10%;
     height: 20px;
@@ -768,6 +769,7 @@ input[type='range'] {
     font-weight: bold;
 }
 .btnUserInactive {
+    float:left;
     max-width: 20px;
     width: 10%;
     height: 20px;
@@ -781,6 +783,7 @@ input[type='range'] {
     font-weight: bold;
 }
 .btnUserBusy {
+        float:left;
     max-width: 20px;
     width: 10%;
     height: 20px;
@@ -794,6 +797,7 @@ input[type='range'] {
     font-weight: bold;
 }
 .btnUserOffline {
+        float:left;
     max-width: 20px;
     width: 10%;
     height: 20px;
@@ -924,6 +928,6 @@ table td input[type="text"] {
     text-align: left;background: #7b7bfc;color:#fff;
 }
 
-.userTableRowClass tr:hover{
+.userTableRowClass tr:hover td{
     background: rgb(179, 123, 252);
 }
