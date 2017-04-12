@@ -7,13 +7,13 @@ include("phpSendMail.php");
 $emailObject=new phpSendMail();
 
 $mailSent = $emailObject->sendMail('dassamtest2@gmail.com', 'Sam',"Village-Expert Group Member Registration successful!",'hello!');
-				if($mailSent)
-				{
-					echo "Sent";
-				}
-				else
-				{
-					echo "Not sent";
-				}
+if($mailSent)
+{
+	echo "Sent";
+}
+else
+{
+	echo "Not sent";
+}
 
 ?>

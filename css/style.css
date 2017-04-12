@@ -924,6 +924,6 @@ table td input[type="text"] {
     text-align: left;background: #7b7bfc;color:#fff;
 }
 
-.userTableRowClass :hover{
+.userTableRowClass tr:hover{
     background: rgb(179, 123, 252);
 }

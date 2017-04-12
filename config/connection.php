@@ -8,7 +8,6 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 class connections
 {
 
-
 	private $servername="localhost";
 	private $uname="root";
 	private $password="mysqlroot";

@@ -371,6 +371,10 @@ $(function(){
     $('.flSave >button').attr('disabled','disabled');
     $('.flDelete >button').attr('disabled','disabled');
 
+    function submitUserRow{
+        alert("clicked ");
+    }
+
    //friendlist check button click
     $(document).on("change",".flChk",function(){
         flID = $(this).attr("id");
@@ -956,9 +960,7 @@ function isEmail(email) {
   return regex.test(email);
 }
 
-function submitUserRow{
-    alert("clicked ");
-}
+
 </script>
 
 
