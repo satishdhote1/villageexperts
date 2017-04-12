@@ -371,7 +371,7 @@ $(function(){
     $('.flSave >button').attr('disabled','disabled');
     $('.flDelete >button').attr('disabled','disabled');
 
-    function submitUserRow{
+    function submitUserRow(){
         alert("clicked ");
     }
 

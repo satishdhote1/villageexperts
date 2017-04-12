@@ -928,6 +928,6 @@ table td input[type="text"] {
     text-align: left;background: #7b7bfc;color:#fff;
 }
 
-.userTableRowClass tr:hover td{
+.userTableRowClass :hover{
     background: rgb(179, 123, 252);
 }
