@@ -5,15 +5,17 @@ session_start();
 ?>
 <?php
 if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
-   header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
- }
+ header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
+}
 
- if(isset($_GET['redirect']) && $_GET['redirect'] == 'friends-family'){
-	 header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
- }
- if(isset($_GET['redirect']) && ($_GET['redirect'] == 'index' || $_GET['redirect'] == 'home')){
-	 header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/");
- }?>
+if(isset($_GET['redirect']) && $_GET['redirect'] == 'friends-family'){
+ header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
+}
+
+if(isset($_GET['redirect']) && ($_GET['redirect'] == 'index' || $_GET['redirect'] == 'home')){
+ header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/");
+}?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +36,7 @@ if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
 	display: block !important
 }
 </style>
+
 <body class="bodybg" background="img/normal/family.jpg">
 <div class="container-fluid header-part">
   <div class="row">
@@ -54,56 +57,55 @@ if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
 
 
 <div class="container">
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-<div class="wellcome-text">
-<?php
- if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
-   ?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="wellcome-text">
+            <?php
+             if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
+            ?>
+                <div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
+                <p><?php  echo  $_GET['passStr']; ?></p>
+            <?php
+            //echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
+            exit;
+            }
+            ?>
 
-//echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
-exit;
-}
-?>
-<?php
- if(isset($_GET['redirect']) && $_GET['redirect'] == 'friends-family'){
-	 ?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
+            <?php
+             if(isset($_GET['redirect']) && $_GET['redirect'] == 'friends-family'){
+            ?>
+                <div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
+                <p><?php  echo  $_GET['passStr']; ?></p>
+            <?php
+            //echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
+            exit;
+            }
+            ?>
 
-//echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
-exit;
-}
-?>
-<?php
- if(isset($_GET['redirect']) && $_GET['redirect'] == 'index'){
-	 ?>
-<div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
+            <?php
+            if(isset($_GET['redirect']) && $_GET['redirect'] == 'index'){
+            ?>
+                <div class="wellcome-img"><img src="images/<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
+                <p><?php  echo  $_GET['passStr']; ?></p>
+            <?php
+            //echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
+            exit;
+            }
+            ?>
 
-//echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
-exit;
-}
-?>
-<?php
- if(isset($_GET['redirect']) && $_GET['redirect'] == 'home'){
-	 ?>
-<div class="wellcome-img"><img src="<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
-<p><?php  echo  $_GET['passStr']; ?></p>
-<?php
-
-//echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
-exit;
-}
-?>
-</div>
-</div>
-</div>
+            <?php
+             if(isset($_GET['redirect']) && $_GET['redirect'] == 'home'){
+            ?>
+                <div class="wellcome-img"><img src="<?php  echo $_GET['passImg']; ?>" width="200" height="200"></div>
+                <p><?php  echo  $_GET['passStr']; ?></p>
+            <?php
+            //echo "http://".$_SERVER['SERVER_NAME']."/villageExperts/".$_GET['redirect'].".php";
+            exit;
+            }
+            ?>
+            </div>
+        </div>
+    </div>
 </div>
 
 

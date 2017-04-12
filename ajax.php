@@ -45,51 +45,50 @@ if($tag == "SPregister")  {
 	$target_file = '';
   
 	if ($valid==1){
-     $sql="insert into service_provider (sp_name,sp_sex,sp_address,sp_city,sp_pincode,sp_country,sp_phone,sp_email,sp_password,sp_specialisation_id,sp_sub_specialisation_id,sp_year_of_experience,sp_rate_type1,sp_rate_type2,sp_rate_type3,degree,SPinstitute,SPyop,sp_language_id,ammount, accNo, bankRoutingNo) values ('".$m_name." ".$l_name."','".$m_sex."', '".$m_address."','".$m_city."','".$m_pin."', '".$m_country."', '".$m_mobile."', '".$m_email."', '".md5($m_password)."', '".$m_specialisation_id."', '".$m_sub_specialisation_id."', '".$m_year_of_experience."', '".$m_rate_type1."', '".$m_rate_type2."', '".$m_rate_type3."', '".$m_degree."' , '".$m_institute."' , '".$m_yop."', '".$m_language_id."','".$m_ammount."','".$m_accNo."','".$m_bankRoutingNo."')" ;
-     $tableResult = mysqli_query($conn, $sql);
-     $MSG = "Registered Successfully!";
-     $result['success'] = 1;
-     $result['error'] = 0;
+		$sql="insert into service_provider (sp_name,sp_sex,sp_address,sp_city,sp_pincode,sp_country,sp_phone,sp_email,sp_password,sp_specialisation_id,sp_sub_specialisation_id,sp_year_of_experience,sp_rate_type1,sp_rate_type2,sp_rate_type3,degree,SPinstitute,SPyop,sp_language_id,ammount, accNo, bankRoutingNo) values ('".$m_name." ".$l_name."','".$m_sex."', '".$m_address."','".$m_city."','".$m_pin."', '".$m_country."', '".$m_mobile."', '".$m_email."', '".md5($m_password)."', '".$m_specialisation_id."', '".$m_sub_specialisation_id."', '".$m_year_of_experience."', '".$m_rate_type1."', '".$m_rate_type2."', '".$m_rate_type3."', '".$m_degree."' , '".$m_institute."' , '".$m_yop."', '".$m_language_id."','".$m_ammount."','".$m_accNo."','".$m_bankRoutingNo."')" ;
+		$tableResult = mysqli_query($conn, $sql);
+		$MSG = "Registered Successfully!";
+		$result['success'] = 1;
+		$result['error'] = 0;
 
-     $MSG.='Registration Successful';
-     $last_id = mysqli_insert_id($conn);
-	  
-     $sql="";
-     $uploaded_file = '';
-     if(isset($_FILES) && is_array($_FILES)){
-	$target_dir = "images/SP_Photos/";
-	$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);	
-	$target_file = $target_dir.$last_id.'.'.$imageFileType;
-	$target_fileName = $last_id.'.'.$imageFileType;
-	$uploadOk = 1;
+		$MSG.='Registration Successful';
+		$last_id = mysqli_insert_id($conn);
+
+		$sql="";
+		$uploaded_file = '';
+     	if(isset($_FILES) && is_array($_FILES)){
+			$target_dir = "images/SP_Photos/";
+			$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);	
+			$target_file = $target_dir.$last_id.'.'.$imageFileType;
+			$target_fileName = $last_id.'.'.$imageFileType;
+			$uploadOk = 1;
 							
-	//indicate which file to resize (can be any type jpg/png/gif/etc...)
-	$file = $_FILES['pImage']["tmp_name"];//'your_path_to_file/file.png';
+			//indicate which file to resize (can be any type jpg/png/gif/etc...)
+			$file = $_FILES['pImage']["tmp_name"];//'your_path_to_file/file.png';
+											
+			//indicate the path and name for the new resized file
+			$resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
 									
-	//indicate the path and name for the new resized file
-	$resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
-									
-	//call the function (when passing path to pic)
-	if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
-	    $uploaded_file = $target_file;							
-	    $result['msg'] = "The Image ". $target_fileName. " has been uploaded.";
-	    $result['imageName'] = $target_fileName;
-	    $sqlUpdate="update service_provider set sp_image='".$target_file."' where sp_id=".$last_id;
-	    $rsUpdate=mysqli_query($conn, $sqlUpdate);								
-	} else {
-	    $passStr="Sorry, there was an error uploading your Image.<br/>";
-	    $MSG = "Registered Sucessfully!";
-            $result['success'] = 1;
-            $result['error'] = 0;
-	}
+			//call the function (when passing path to pic)
+			if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
+			    $uploaded_file = $target_file;							
+			    $result['msg'] = "The Image ". $target_fileName. " has been uploaded.";
+			    $result['imageName'] = $target_fileName;
+			    $sqlUpdate="update service_provider set sp_image='".$target_file."' where sp_id=".$last_id;
+			    $rsUpdate=mysqli_query($conn, $sqlUpdate);								
+			} else {
+			    $passStr="Sorry, there was an error uploading your Image.<br/>";
+			    $MSG = "Registered Sucessfully!";
+		        $result['success'] = 1;
+		        $result['error'] = 0;
+			}
 	
-        $passStr = "$m_name, You have been Registered successfully to Village Experts Community! Redirecting....";
-	$passImg = (empty($target_fileName))?'placeholder/male2.jpg':"SP_Photos/".$target_fileName;//.$imageName;
+        	$passStr = "$m_name, You have been Registered successfully to Village Experts Community! Redirecting....";
+			$passImg = (empty($target_fileName))?'placeholder/male3.jpg':"SP_Photos/".$target_fileName;//.$imageName;
 
-	header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
-     }
-  }
-
+			header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
+     	}
+  	}
 }
 
 else if($tag == "checkEmail"){
@@ -125,32 +124,32 @@ else if($tag == "makeAppointment"){
 
 	if(!empty($email) && !empty($appointTimes))
 	{
-			$appointTime = json_decode($appointTimes);
-			$sql="insert into appointment (aptmakeremail,aptconfirmemail,aptmakername,aptconfirmname,aptdate1,aptdate2,aptdate3,aptdate4,aptdate5,aptconfirmdate) values ('".$email."','".$senderEmail."','".$recieverFname."', '".$senderName."','".$appointTime[0]."','".$appointTime[1]."','".$appointTime[2]."','".$appointTime[3]."','".$appointTime[4]."','')" ;//echo $sql;exit();
+		$appointTime = json_decode($appointTimes);
+		$sql="insert into appointment (aptmakeremail,aptconfirmemail,aptmakername,aptconfirmname,aptdate1,aptdate2,aptdate3,aptdate4,aptdate5,aptconfirmdate) values ('".$email."','".$senderEmail."','".$recieverFname."', '".$senderName."','".$appointTime[0]."','".$appointTime[1]."','".$appointTime[2]."','".$appointTime[3]."','".$appointTime[4]."','')" ;//echo $sql;exit();
 
-			$tableResult = mysqli_query($conn, $sql);
-			$member_id = mysqli_insert_id($conn);
-			//Create Email instance for sending mail
-			$emailObject=new phpSendMail();
+		$tableResult = mysqli_query($conn, $sql);
+		$member_id = mysqli_insert_id($conn);
+		//Create Email instance for sending mail
+		$emailObject=new phpSendMail();
 
-			//----------------------------Email Body Texts------------------------
-			$body = '';
-			$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
-			$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-			$body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  '.$_SERVER['SERVER_NAME'].'.<br><br> His convenient timings are: <br><br>'.$appointTime[0].'<br>'.$appointTime[1].'<br>'.$appointTime[2].'<br>'.$appointTime[3].'<br>'.$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
-			// $body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  www.VillageExperts.com.<br><br> His convenient timings are: <br><br>'.date('l', strtotime($appointTime[0]))." at ".$appointTime[0].'<br>'.date('l', strtotime($appointTime[1]))." at ".$appointTime[1].'<br>'.date('l', strtotime($appointTime[2]))." at ".$appointTime[2].'<br>'.date('l', strtotime($appointTime[3]))." at ".$appointTime[3].'<br>'.date('l', strtotime($appointTime[4]))." at ".$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
-			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';
+		//----------------------------Email Body Texts------------------------
+		$body = '';
+		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
+		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
+		$body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  '.$_SERVER['SERVER_NAME'].'.<br><br> His convenient timings are: <br><br>'.$appointTime[0].'<br>'.$appointTime[1].'<br>'.$appointTime[2].'<br>'.$appointTime[3].'<br>'.$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
+		// $body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  www.VillageExperts.com.<br><br> His convenient timings are: <br><br>'.date('l', strtotime($appointTime[0]))." at ".$appointTime[0].'<br>'.date('l', strtotime($appointTime[1]))." at ".$appointTime[1].'<br>'.date('l', strtotime($appointTime[2]))." at ".$appointTime[2].'<br>'.date('l', strtotime($appointTime[3]))." at ".$appointTime[3].'<br>'.date('l', strtotime($appointTime[4]))." at ".$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
+		$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/Confirm-Appointment.php?confirm=yes&senderName='.$senderName.'&appointTime1='.$appointTime[0].'&appointTime2='.$appointTime[1].'&appointTime3='.$appointTime[2].'&appointTime4='.$appointTime[3].'&appointTime5='.$appointTime[4].'&recieverFname='.$recieverFname.'&email='.$email.'&senderEmail='.$senderEmail.'" style="color:#fff;">Please Confirm</a></p></div></div>';
 
-			 //----------------------------//Email Body Texts------------------------
-			$mailSent = $emailObject->sendMail($email,$recieverFname,"Village-Expert Request for Appointment.",$body);
-			//if(mail($email,"Village-Expert Request for Appointment.",$body))
-			if($mailSent){
-				$result['success'] = 1;
-				$result['error'] = 0;
-					}else{
-				$result['success'] = 0;
-						$result['error'] = 1;
-			}
+		 //----------------------------//Email Body Texts------------------------
+		$mailSent = $emailObject->sendMail($email,$recieverFname,"Village-Expert Request for Appointment.",$body);
+		//if(mail($email,"Village-Expert Request for Appointment.",$body))
+		if($mailSent){
+			$result['success'] = 1;
+			$result['error'] = 0;
+		}else{
+			$result['success'] = 0;
+			$result['error'] = 1;
+		}
 	}else{
 	  $result['success'] = 0;
 	  $result['error'] = 1;
@@ -163,9 +162,9 @@ else if($tag == "makeAppointment"){
 
 else if($tag == "requestMail"){
 
-	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	  
-	  if(!empty($email)){
+	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
+
+	if(!empty($email)){
 
 		//Create Email instance for sending mail
 		$emailObject=new phpSendMail();
@@ -182,14 +181,14 @@ else if($tag == "requestMail"){
 		    $result['error'] = 0;
 		}else{
 		    $result['success'] = 0;
-         	    $result['error'] = 1;
+		 	$result['error'] = 1;
 		}			
-	  }else{
-		  $result['success'] = 0;
-		  $result['error'] = 1;
-	  }
+	}else{
+	  $result['success'] = 0;
+	  $result['error'] = 1;
+	}
 
-	  echo json_encode($result);
+	echo json_encode($result);
 
 }
 
@@ -356,13 +355,13 @@ else if($tag == 'login') {
 			$_SESSION['logged_user_image']=isset($SRLoginData['sr_image'])?$SRLoginData['sr_image']:'';
 			$sqlUpdate="update service_requestor set sr_logged_in='Y' where sr_id=".$SRLoginData['sr_id'];
 			$rsUpdate=mysqli_query($conn, $sqlUpdate);
-			 $result['success'] = 1;
-			 $result['error'] = 0;
-         		 $result['msg'] = "Welcome ".$SRLoginData['sr_name']." !";
+			$result['success'] = 1;
+			$result['error'] = 0;
+			$result['msg'] = "Welcome ".$SRLoginData['sr_name']." !";
 		}else{
 			$result['success'] = 0;
 			$result['error'] = 1;
-		        $result['msg'] = "Sorry! Invalid Credential Provided.";
+		    $result['msg'] = "Sorry! Invalid Credential Provided.";
 		}
 		echo json_encode($result);
 
@@ -372,7 +371,6 @@ else if($tag == 'login') {
 		  $tableResult = mysqli_query($conn, $sql);
 
 		if (mysqli_num_rows($tableResult) > 0)  
-
 		{
 			$GMLoginData = mysqli_fetch_assoc($tableResult);
 			$_SESSION['logged_user_id']=$GMLoginData['gm_id'];
@@ -383,14 +381,13 @@ else if($tag == 'login') {
 			$_SESSION['logged_user_groups']=isset($GMLoginData['group_ids'])?$GMLoginData['group_ids']:'';
 			$sqlUpdate="update group_member set gm_logged_in='Y' where gm_id=".$GMLoginData['gm_id'];
 			$gmUpdate=mysqli_query($conn, $sqlUpdate);
-			 $result['success'] = 1;
-			 $result['error'] = 0;
-			  $result['msg'] = "Welcome ".$GMLoginData['gm_name']." !";
+			$result['success'] = 1;
+			$result['error'] = 0;
+			$result['msg'] = "Welcome ".$GMLoginData['gm_name']." !";
 		}else{
-
 			$result['success'] = 0;
-			 $result['error'] = 1;
-			  $result['msg'] = "Sorry! Invalid Credential Provided.";
+			$result['error'] = 1;
+			$result['msg'] = "Sorry! Invalid Credential Provided.";
 
 		}
 
@@ -456,42 +453,42 @@ else if($tag == 'register') {
 			$sql="";
 			
 		     if(!empty($isexpertreg) && $isexpertreg == "yes") {
-			$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',experties = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
-			$tableResult = mysqli_query($conn, $sql);
-			$member_id = $expertID;
-                      } else if(!empty($isFriendreg) && $isFriendreg == "yes") {
-                     	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',phone = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
-                     	$tableResult = mysqli_query($conn, $sql);
-                     	$member_id = $expertID;
-                     } else {
-			 $sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;//echo $sql;exit();
+				$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',experties = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
+				$tableResult = mysqli_query($conn, $sql);
+				$member_id = $expertID;
+            } else if(!empty($isFriendreg) && $isFriendreg == "yes") {
+             	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',phone = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
+             	$tableResult = mysqli_query($conn, $sql);
+             	$member_id = $expertID;
+            } else {
+				$sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;//echo $sql;exit();
 
-			 $tableResult = mysqli_query($conn, $sql);
-			 $member_id = mysqli_insert_id($conn);
+				$tableResult = mysqli_query($conn, $sql);
+				$member_id = mysqli_insert_id($conn);
 
-			 $sql2="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$member_id."','".$m_email."' , 0 ,0)" ;
+				$sql2="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$member_id."','".$m_email."' , 0 ,0)" ;
 
-			 $tableResult2 = mysqli_query($conn, $sql2);
-		     }
+				$tableResult2 = mysqli_query($conn, $sql2);
+		    }
 
-                     $uploaded_file = '';
+            $uploaded_file = '';
 		     
-		     if(isset($_FILES) && is_array($_FILES)) {
+		    if(isset($_FILES) && is_array($_FILES)) {
 
-			$target_dir = "images/friendsFamily/";
-			$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);
+				$target_dir = "images/friendsFamily/";
+				$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);
 
-			$target_file = $target_dir.$member_id.'.'.$imageFileType;
-			$target_fileName = "friendsFamily/".$member_id.'.'.$imageFileType;
+				$target_file = $target_dir.$member_id.'.'.$imageFileType;
+				$target_fileName = "friendsFamily/".$member_id.'.'.$imageFileType;
 
-			//die($target_file);
-			$uploadOk = 1;
+				//die($target_file);
+				$uploadOk = 1;
 
-			//indicate which file to resize (can be any type jpg/png/gif/etc...)
-			$file = $_FILES['pImage']["tmp_name"];//'your_path_to_file/file.png';
+				//indicate which file to resize (can be any type jpg/png/gif/etc...)
+				$file = $_FILES['pImage']["tmp_name"];//'your_path_to_file/file.png';
 
-			//indicate the path and name for the new resized file
-			$resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
+				//indicate the path and name for the new resized file
+				$resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
 									
 				//call the function (when passing path to pic)
 				if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
@@ -705,22 +702,22 @@ else if($tag == 'deleteFriendss') {
 	$tableResult = mysqli_query($conn, $sqlChk);
 	//$tableResult2 = mysqli_query($conn, $sqlChk2);
 	if (mysqli_num_rows($tableResult) > 1)  {
-		  $GMLoginData = mysqli_fetch_assoc($tableResult2);
-		  $parentID =$GMLoginData['parentID'];
-		  $isexpertDB =$GMLoginData['isexpert'];
-		  if($isExpertss == "YES") {
+		$GMLoginData = mysqli_fetch_assoc($tableResult2);
+		$parentID =$GMLoginData['parentID'];
+		$isexpertDB =$GMLoginData['isexpert'];
+		if($isExpertss == "YES") {
 			$sqlUPDT="delete from friendsExpertInfo where email='".$m_email."' AND isexpert = 1 AND parentID = ".$loggedID ;
 			$tableResults = mysqli_query($conn, $sqlUPDT);
 			$result['success'] = 1;
 			$result['error'] = 0;
 			$result['msg'] = "$fname $lname has been deleted successfully.";
-		  }  else {
+		}  else {
 			$sqlUPDT="delete from friendsExpertInfo where email='".$m_email."' AND isexpert = 0 AND parentID = ".$loggedID ;
 			$tableResults = mysqli_query($conn, $sqlUPDT);
 			$result['success'] = 1;
 			$result['error'] = 0;
 			$result['msg'] = "$fname $lname has been deleted successfully.";
-		  }
+		}
 	} else if (mysqli_num_rows($tableResult) == 1)   {
 		$sqlUPDT="delete from friendsExpertInfo where email='".$m_email."' AND  parentID = ".$loggedID ;
 		$tableResults = mysqli_query($conn, $sqlUPDT);

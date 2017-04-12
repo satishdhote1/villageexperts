@@ -4,11 +4,11 @@ require("phpMailer/PHPMailerAutoload.php");
 class phpSendMail
 {
 
-private $emailUsername ="AKIAJDE2TN3CRH5SMSVQ";
-private $emailPassword ="Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni";
-private $host= "email-smtp.us-west-2.amazonaws.com";
+private $emailUsername ="AKIAJS5RO7AG7F3EVNPQ";//AKIAJDE2TN3CRH5SMSVQ";
+private $emailPassword ="At9FVtp2FDNVe10jMlTpK0A++42fYbB/CBdsf7/JELwk";//Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni";
+private $host= "ses-smtp-user.20170412-020531";//"email-smtp.us-west-2.amazonaws.com";
 private $from ="villageexpert.info@gmail.com";//dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
-private $port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
+private $port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 private $from_name ="Village Expert";
 private $smtpSecure = 'ssl';
 /*
@@ -26,6 +26,8 @@ private $host= "mail.kidzeeweb.com";
 private $from ="villageexperts@kidzeeweb.com";//"villageexpert.info@gmail.com";
 private $port = "26"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 */
+
+
 //otoman.net
 /*private $emailUsername ="villageexperts@otoman.net";
 private $emailPassword ="WebRTC123";
@@ -34,6 +36,7 @@ private $from ="villageexperts@otoman.net";//"villageexpert.info@gmail.com";
 private $port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 private $from_name ="Village Expert";
 private $smtpSecure = 'ssl';*/
+
 public function geEmailConfig()
 {
 		$emailData['uname'] = $this->emailUsername;

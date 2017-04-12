@@ -509,7 +509,14 @@ $(document).on("click",".makeApptConf",function(){
                     url:'ajax.php',
                     type: 'POST',
                     dataType: "json",
-                    data: {email:email,tag:"ConfirmAppointment",recieverFname:recieverFname,senderEmail:senderEmail,senderName:senderName,appointTime:appointTime},  
+                    data: {
+                        email:email,
+                        tag:"ConfirmAppointment",
+                        recieverFname:recieverFname,
+                        senderEmail:senderEmail,
+                        senderName:senderName,
+                        appointTime:appointTime
+                    },  
                     success: function(data)    // A function to be called if request succeeds
                     {
                       $(".loader").hide();

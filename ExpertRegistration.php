@@ -3,12 +3,10 @@ include("config/connection.php");
 //session_start();
 $conn=new connections();
 $conn=$conn->connect();
-//print_r($conn);die();
+
 //Get specialization Data
 $sql="select * from   sp_specialisation order by specialisation";
 $tableResult = mysqli_query($conn, $sql);
-//print_r($tableResult);
-
 $specialData = array();
 if (mysqli_num_rows($tableResult) > 0)
 {
@@ -20,8 +18,6 @@ if (mysqli_num_rows($tableResult) > 0)
 //Get Sub specialization Data
 $sql2="select * from  sp_sub_specialisation where specialisation_id = ".$specialData[0]['specialisation_id']." order by sub_specialisation";
 $tableResult2 = mysqli_query($conn, $sql2);
-//print_r($tableResult);
-
 $subspecialData = array();
 if (mysqli_num_rows($tableResult2) > 0)
 {
@@ -30,11 +26,9 @@ if (mysqli_num_rows($tableResult2) > 0)
     }
 }
     
-  //Get Sub Degree Data
+//Get Sub Degree Data
 $sql3="select * from  education ORDER BY EducationID";
 $tableResult3 = mysqli_query($conn, $sql3);
-//print_r($tableResult);
-
 $education = array();
 if (mysqli_num_rows($tableResult3) > 0)
 {
@@ -46,7 +40,6 @@ if (mysqli_num_rows($tableResult3) > 0)
 //Get Sub specialization Data
 $sql4="select * from  experience ORDER BY ExperienceID";
 $tableResult4 = mysqli_query($conn, $sql4);
-
 $experience = array();
 if (mysqli_num_rows($tableResult4) > 0)
 {
@@ -55,7 +48,7 @@ if (mysqli_num_rows($tableResult4) > 0)
     }
 }
 
-  //Get Sub Language Data
+//Get Sub Language Data
 $sql5="select * from  sp_language ORDER BY languages";
 $tableResult5 = mysqli_query($conn, $sql5);
 $language = array();
@@ -67,8 +60,6 @@ if (mysqli_num_rows($tableResult5) > 0)
 }
       
 ?>  
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -90,7 +81,6 @@ if (mysqli_num_rows($tableResult5) > 0)
     <link href="css/mdb.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
    
-
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
     <style>
@@ -116,11 +106,7 @@ if (mysqli_num_rows($tableResult5) > 0)
 
 <body style="background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;background-size:cover;background-attachment:fixed;">
 
-    
-
     <!-- Start your project here-->
-
- 
 
     <!--Navbar-->
     <nav class="navbar navbar-dark scrolling-navbar logo-scroll">
@@ -193,11 +179,10 @@ if (mysqli_num_rows($tableResult5) > 0)
                         <label for="form15">Confirm Password</label>
                       </div>
                      <!--  <div class="file-field">
-                        <div class="btn btn-papl" style="height:40px;margin-left:0; padding: 10px 0;
-    width: 125px;float:left;">
-    <input type="file" style="opacity:0;" id="pImage" class="pImage" name="pImage" onchange="previewImage(this)" accept="image/*">
-                      <i class="fa fa-upload white-text"></i> 
-                      <span>Browse<span style="color:#F00;font-size:18px">*</span></span>
+                        <div class="btn btn-papl" style="height:40px;margin-left:0; padding: 10px 0;width: 125px;float:left;">
+                        <input type="file" style="opacity:0;" id="pImage" class="pImage" name="pImage" onchange="previewImage(this)" accept="image/*">
+                        <i class="fa fa-upload white-text"></i> 
+                        <span>Browse<span style="color:#F00;font-size:18px">*</span></span>
                         
                         </div>
                         <div class="file-path-wrapper">
@@ -206,8 +191,7 @@ if (mysqli_num_rows($tableResult5) > 0)
                       </div>
                       <div class="clearfix"></div> -->
                     <div class="file-field">
-                        <div class="btn btn-papl" style="height:40px;margin-left:0; padding: 10px 0;
-    width: 125px;float:left;"><i class="fa fa-upload white-text"></i> <span>Browse</span>
+                        <div class="btn btn-papl" style="height:40px;margin-left:0; padding: 10px 0;width: 125px;float:left;"><i class="fa fa-upload white-text"></i> <span>Browse</span>
                           <input type="file" style="opacity:0;position: absolute;top:0;height: 40px;left: 0;" id="pImage" class="pImage" name="pImage" onchange="previewImage(this)" accept="image/*">
                         </div>
                         <div class="file-path-wrapper">
@@ -227,8 +211,7 @@ if (mysqli_num_rows($tableResult5) > 0)
                         <fieldset class="form-group">
                           <select id="SPexpertise expertiesLabel" class="form-control SPexpertise expertiesLabel" name="SPexpertise">
                           <option value="">Select Expertise </option>
-                          <?php foreach($specialData as $specialDatas) { ?>
-                            
+                            <?php foreach($specialData as $specialDatas) { ?>
                             <option value="<?php echo $specialDatas['specialisation_id']; ?>"><?php echo $specialDatas['specialisation']; ?></option>
                             <?php }?>
                           </select>
@@ -338,8 +321,8 @@ if (mysqli_num_rows($tableResult5) > 0)
     <!-- JQuery -->
     <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
     <script src="js/jquery.validate.min.js"></script>
-  
-  <script src="js/formSubmission.js"></script>
+
+    <script src="js/formSubmission.js"></script>
     <script src="js/connectMe.js"></script>
     <script src="js/instantImageShow.js"></script>
     <script type="text/javascript" src="js/bootstrap-multiselect.js"></script>
@@ -354,53 +337,46 @@ if (mysqli_num_rows($tableResult5) > 0)
     <script type="text/javascript">
 	
     $(function(){
-      //alert();
+
         $('#example-getting-started').multiselect();
 
         $(document).on("change",".expertiesLabel",function() {
           var expertId = $(this).val();
-         // alert(expertId);
-          resultData = "<option value=''>Select Sub-Expertise </option>";
-	 resultData2 = "<option value=''>Select Degree </option>";
+            resultData = "<option value=''>Select Sub-Expertise </option>";
+            resultData2 = "<option value=''>Select Degree </option>";
           if(expertId !="")
           {
-             // alert(expertId);
-              $.ajax({
-              type:"POST",
-              url:"getSearchData.php",
-              data:{getDataOf:"subSpecial",id:expertId},
-              dataType:'json',
-              success: function (result) {
-              console.log(result);
-                if(result.success == 1)
-                {
-                  $.each(result.datas, function(i, item) {
-              		  var id = item.sub_specialisation_id;
-                      var values = item.sub_specialisation;
-                      var images = item.SubSpImages;
-      
-                        resultData = resultData + '<option value="'+id+'">'+values+'</option>';
-                   });
-                  console.log("resultData=="+resultData);
-                    $('.SP_Sub_Expertise').html(resultData);
-		
-		$.each(result.educationData, function(i, item) {
-              		  var id = item.EducationID;
-                      var values = item.Education;
-                      var specialisation_id = item.specialisation_id;
-      
-                        resultData2 = resultData2 + '<option value="'+id+'">'+values+'</option>';
-                   });
-                  console.log("resultData2=="+resultData2);
-                    $('.SPEducation').html(resultData2);
-			
-                }
-              },
-              error: function (error) {
-              //$(".loader-exp").hide();
-              alert("Not Succesful !");
-              }
-              });
+                $.ajax({
+                    type:"POST",
+                    url:"getSearchData.php",
+                    data:{getDataOf:"subSpecial",id:expertId},
+                    dataType:'json',
+                    success: function (result) {
+                    if(result.success == 1)
+                    {
+                        $.each(result.datas, function(i, item) {
+                            var id = item.sub_specialisation_id;
+                            var values = item.sub_specialisation;
+                            var images = item.SubSpImages;
+                            resultData = resultData + '<option value="'+id+'">'+values+'</option>';
+                        });
+                        console.log("getSearchData resultData=="+resultData);
+                        $('.SP_Sub_Expertise').html(resultData);
+                        $.each(result.educationData, function(i, item) {
+                            var id = item.EducationID;
+                            var values = item.Education;
+                            var specialisation_id = item.specialisation_id;
+                            resultData2 = resultData2 + '<option value="'+id+'">'+values+'</option>';
+                        });
+                        console.log("resultData2=="+resultData2);
+                        $('.SPEducation').html(resultData2);
+                    }
+                    },
+                    error: function (error) {
+                    //$(".loader-exp").hide();
+                    alert("Not Succesful !");
+                    }
+                });
           }
             });
 
