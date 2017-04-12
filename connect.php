@@ -39,7 +39,8 @@ if(!empty($user_id)){
 		$body.='<div style="text-align:center;"><img width="200" height="200" src="'.$imagePath.'" /></div><br><br>';
 		$body.='Dear '.$memberName.',<br /><br/>'.$user_name.' has initiated a connect session with you . <br/> Please login to '.$_SERVER['SERVER_NAME'].' to connect<br/><br/></p></div></div>';
 
-		$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
+		//$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
+		$mailSent=false;
 		if($mailSent){
 			$conn= new connections();
 	        $conn= $conn->connect();

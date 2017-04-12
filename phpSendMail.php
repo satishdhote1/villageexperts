@@ -11,6 +11,7 @@ private $from ="villageexpert.info@gmail.com";//dassamtest2@gmail.com";//"villag
 private $port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 private $from_name ="Village Expert";
 private $smtpSecure = 'ssl';
+
 /*
 private $emailUsername ="dassamtest2@gmail.com";
 private $emailPassword ="dassamtest253";
@@ -18,6 +19,7 @@ private $host= "smtp.gmail.com";
 private $from ="dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
 private $port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 */
+
 //kidzeeweb
 /*
 private $emailUsername ="villageexperts@kidzeeweb.com";
@@ -26,7 +28,6 @@ private $host= "mail.kidzeeweb.com";
 private $from ="villageexperts@kidzeeweb.com";//"villageexpert.info@gmail.com";
 private $port = "26"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 */
-
 
 //otoman.net
 /*private $emailUsername ="villageexperts@otoman.net";

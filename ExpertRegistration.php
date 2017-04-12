@@ -341,44 +341,44 @@ if (mysqli_num_rows($tableResult5) > 0)
         $('#example-getting-started').multiselect();
 
         $(document).on("change",".expertiesLabel",function() {
-          var expertId = $(this).val();
+            var expertId = $(this).val();
             resultData = "<option value=''>Select Sub-Expertise </option>";
             resultData2 = "<option value=''>Select Degree </option>";
-          if(expertId !="")
-          {
-                $.ajax({
-                    type:"POST",
-                    url:"getSearchData.php",
-                    data:{getDataOf:"subSpecial",id:expertId},
-                    dataType:'json',
-                    success: function (result) {
-                    if(result.success == 1)
-                    {
-                        $.each(result.datas, function(i, item) {
-                            var id = item.sub_specialisation_id;
-                            var values = item.sub_specialisation;
-                            var images = item.SubSpImages;
-                            resultData = resultData + '<option value="'+id+'">'+values+'</option>';
-                        });
-                        console.log("getSearchData resultData=="+resultData);
-                        $('.SP_Sub_Expertise').html(resultData);
-                        $.each(result.educationData, function(i, item) {
-                            var id = item.EducationID;
-                            var values = item.Education;
-                            var specialisation_id = item.specialisation_id;
-                            resultData2 = resultData2 + '<option value="'+id+'">'+values+'</option>';
-                        });
-                        console.log("resultData2=="+resultData2);
-                        $('.SPEducation').html(resultData2);
-                    }
-                    },
-                    error: function (error) {
-                    //$(".loader-exp").hide();
-                    alert("Not Succesful !");
-                    }
-                });
-          }
-            });
+              if(expertId !="")
+              {
+                    $.ajax({
+                        type:"POST",
+                        url:"getSearchData.php",
+                        data:{getDataOf:"subSpecial",id:expertId},
+                        dataType:'json',
+                        success: function (result) {
+                        if(result.success == 1)
+                        {
+                            $.each(result.datas, function(i, item) {
+                                var id = item.sub_specialisation_id;
+                                var values = item.sub_specialisation;
+                                var images = item.SubSpImages;
+                                resultData = resultData + '<option value="'+id+'">'+values+'</option>';
+                            });
+                            console.log("getSearchData resultData=="+resultData);
+                            $('.SP_Sub_Expertise').html(resultData);
+                            $.each(result.educationData, function(i, item) {
+                                var id = item.EducationID;
+                                var values = item.Education;
+                                var specialisation_id = item.specialisation_id;
+                                resultData2 = resultData2 + '<option value="'+id+'">'+values+'</option>';
+                            });
+                            console.log("resultData2=="+resultData2);
+                            $('.SPEducation').html(resultData2);
+                        }
+                        },
+                        error: function (error) {
+                        //$(".loader-exp").hide();
+                        alert("Not Succesful !");
+                        }
+                    });
+              }
+        });
 
     });
 </script>
