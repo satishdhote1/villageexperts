@@ -112,6 +112,12 @@ if (mysqli_num_rows($tableResult4) > 0)  {
      <!-- Your custom styles (optional) -->
 
     <link href="css/style.css" rel="stylesheet">
+
+    <script type="text/javascript">
+    function submitUserRow(){
+        alert("clicked ");
+    }
+    </script>
 </head>
 
 <body>
@@ -370,10 +376,6 @@ $(function(){
     $('.flBtnEdit').attr('disabled','disabled');
     $('.flSave >button').attr('disabled','disabled');
     $('.flDelete >button').attr('disabled','disabled');
-
-    function submitUserRow(){
-        alert("clicked ");
-    }
 
    //friendlist check button click
     $(document).on("change",".flChk",function(){
