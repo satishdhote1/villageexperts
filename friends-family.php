@@ -161,7 +161,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                                 if(!empty($userData))
                                 {
                                 foreach($userData as $userDatas) { ?>
-                                <tr class="flRow userTableRowClass" id="flRow<?php echo $userDatas['id']; ?>" onclick="submitUserRow">
+                                <tr class="flRow userTableRowClass" id="flRow<?php echo $userDatas['id']; ?>" onclick="submitUserRow()">
                                     <td style="width:24px !important;text-align:center;" >
                                         <input type="hidden" value="<?php echo $userDatas['id']; ?>" name="flID" class="flID">
                                         <input type="hidden" value="<?php echo $userID; ?>" name="loggedID" class="loggedID">
