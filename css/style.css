@@ -914,3 +914,16 @@ table td input[type="text"] {
     background: #7b7bfc;
     color: #fff;
 }
+
+.userTableHeadClass{
+    background: #ccccff; color: #000;
+    
+    }
+
+.userTableBodyClass{
+    text-align: left;background: #7b7bfc;color:#fff;
+}
+
+.userTableRowClass :hover{
+    background: rgb(179, 123, 252);
+}

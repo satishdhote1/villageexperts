@@ -144,7 +144,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                         <div style="border-top:1px solid #E6E9ED; margin-top:3px;"></div>
                         <p></p>
                         <div class="wrap-table">
-                        <table class="head" width="101%" style="background: #ccccff; color: #000;">
+                        <table class="head userTableHeadClass" width="101%">
                             <tr>
                                 <th style="width:24px;text-align:center;"> <span class="glyphicon glyphicon-edit flBtnEdit" title="Click to Edit" data-toggle="tooltip"></th>
                                 <th style="padding:10px 0px;">Name</th>
@@ -156,13 +156,13 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                             </tr>
                         </table>
                         <div class="inner_table">
-                            <table width="101%" style="text-align: left;background: #7b7bfc;color:#fff;" class="flTable">
+                            <table width="101%" class="flTable userTableBodyClass">
                                 <?php
                                 if(!empty($userData))
                                 {
                                 foreach($userData as $userDatas) { ?>
-                                <tr class="flRow" id="flRow<?php echo $userDatas['id']; ?>">
-                                    <td style="width:24px !important;text-align:center;">
+                                <tr class="flRow userTableRowClass" id="flRow<?php echo $userDatas['id']; ?>" onclick="submitUserRow">
+                                    <td style="width:24px !important;text-align:center;" >
                                         <input type="hidden" value="<?php echo $userDatas['id']; ?>" name="flID" class="flID">
                                         <input type="hidden" value="<?php echo $userID; ?>" name="loggedID" class="loggedID">
                                         <input type="checkbox" class="flChk" id="<?php echo $userDatas['id']; ?>">
@@ -621,7 +621,7 @@ $(function(){
         }
     });
 
-    //friends cancel button click
+    //Friends cancel button click
     $(document).on("click",".flCancel",function(){
         FLeditFlag = 0 ;
         //expert panel
@@ -956,6 +956,9 @@ function isEmail(email) {
   return regex.test(email);
 }
 
+function submitUserRow{
+    alert("clicked ");
+}
 </script>
 
 
