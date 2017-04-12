@@ -1,7 +1,7 @@
 <?php
 require("phpMailer/class.phpmailer.php");
 require("phpMailer/PHPMailerAutoload.php");
-mail("dassamtest2@gmail.com","hi","hello");
+
 
 $mail = new PHPMailer();
 $mail->SMTPDebug = 1;
@@ -25,7 +25,7 @@ $mail->From     = "villageexperts@otoman.net";
 //$mail->From     = "dassamtest2@gmail.com";
 
 $mail->FromName = "Village Expert";
-$mail->AddAddress("dassamtest2@gmail.com", "hello");
+$mail->AddAddress("", "hello");
 // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
 $mail->Subject = "test2";
 $mail->Body    = "also test22";

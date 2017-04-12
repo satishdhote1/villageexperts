@@ -7,10 +7,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 
 class connections
 {
-/*	private $servername="sql207.byethost7.com";
-	private $uname="b7_15994620";
-	private $password="byethost";
-	private $dbname="b7_15994620_crm";*/
+
 
 	private $servername="localhost";
 	private $uname="root";
@@ -23,10 +20,7 @@ class connections
     private $dbname="villageexpertsdb";*/
 
 	//email cnfig
-/*		
-	private $emailUsername ='dassamtest2@gmail.com';
-	private $emailPassword ='dassamtest253';
-	private $host= 'smtp.gmail.com';*/
+
 
 	/*private $emailUsername ='AKIAJRGMUMZO76PAE7VQ';
 	private $emailPassword ='AvwImGIsRCL1uE0NVdqErPxo3P8FOhg0RUIWoRoMdvx6';
