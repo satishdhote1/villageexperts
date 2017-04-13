@@ -5,8 +5,8 @@ include("phpSendMail.php");
 session_start();
 
 $user_id  = isset($_SESSION['logged_user_id'])?$_SESSION['logged_user_id']:'';
-$conn=new connections();
-$conn=$conn->connect();
+$conn = new connections();
+$conn = $conn->connect();
 
 //Create Email instance for sending mail
 $emailObject = new phpSendMail();
@@ -39,20 +39,20 @@ if(!empty($user_id)){
 		$body.='<div style="text-align:center;"><img width="200" height="200" src="'.$imagePath.'" /></div><br><br>';
 		$body.='Dear '.$memberName.',<br /><br/>'.$user_name.' has initiated a connect session with you . <br/> Please login to '.$_SERVER['SERVER_NAME'].' to connect<br/><br/></p></div></div>';
 
+		// update db with BUSY
+		$sqlUpdate= "update friendsRegister set loginStatus='BUSY' where id=".$_SESSION['logged_user_id'];
+	    $rsUpdate= mysqli_query($conn, $sqlUpdate);
+
 		//$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
 		$mailSent=false;
 		if($mailSent){
-			$conn= new connections();
-	        $conn= $conn->connect();
-	        $sqlUpdate= "update friendsRegister set loginStatus='BUSY' where id=".$_SESSION['logged_user_id'];
-	        $rsUpdate= mysqli_query($conn, $sqlUpdate);
-    		$link = "<script>window.open('https://'.$hostname.':'.$port.'/#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
-			echo $link;
-			//header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+    		//$link = "<script>window.open('https://'.$hostname.':'.$port.'/#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
+			//echo $link;
+			header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
 		}else{
-			$link = "<script> alert(' email not send ' ); window.open('https://'.$hostname.':'.$port.'/#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
-			echo $link;
-			//header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+			//$link = "<script> alert(' email not send ' ); window.open('https://'.$hostname.':'.$port.'/#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
+			//echo $link;
+			header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
 		}
 	
 	}else if(!empty($search) && $search == 'findsp'){
