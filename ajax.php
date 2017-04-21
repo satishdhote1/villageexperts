@@ -653,7 +653,7 @@ else if($tag == 'addFriendss'){
 				$result['msg'] = "Sorry! $fname $lname has been already Added as a Friend.";
 			}
 		} else {
-			//$mailSent = $emailObject->sendMail($m_email,$fname,"Village-Expert New User Registration!",$body);
+			$mailSent = $emailObject->sendMail($m_email,$fname,"Village-Expert New User Registration!",$body);
 			if(!empty($isexpert) && $isexpert == "yes") {
 				$result['msg'] = "$fname $lname has been Added as an Expert Successfully!";
 			} else {
