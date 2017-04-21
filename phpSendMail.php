@@ -8,9 +8,9 @@ private $emailUsername ="AKIAJ45NCQD6ODRRNXSQ";//AKIAJDE2TN3CRH5SMSVQ";
 private $emailPassword ="Alqm+rrqw+HcQIJcVNZmkkWB0zjOob+O7KpBP4tDfVCU";//Ah9ElPU5hKXb/28bQAdkeiTT1+YZ8JZMQwElIGt8ygni";
 private $host= "ses-smtp-user.20170412-120640";//"email-smtp.us-west-2.amazonaws.com";
 private $from ="villageexpert.info@gmail.com";//dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
-private $port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
+private $port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 private $from_name ="Village Expert";
-private $smtpSecure = 'tls';//'ssl';
+private $smtpSecure = 'ssl';
 
 /*
 private $emailUsername ="dassamtest2@gmail.com";
@@ -65,6 +65,7 @@ public function sendMail($email,$memberName,$subject,$body)
     $mail->Password = $this->emailPassword;
     $mail->From     = $this->from;
     $mail->FromName = $this->from_name;
+    $mail->SMTPDebug = 1;
     $mail->AddAddress($email, $memberName);
     // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
     $mail->Subject = $subject;
