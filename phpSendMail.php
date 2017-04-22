@@ -15,8 +15,8 @@ private $emailUsername ="dassamtest2@gmail.com";
 private $emailPassword ="dassamtest253";
 private $host= "smtp.gmail.com";
 private $from ="dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
-private $port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
-private $smtpSecure = 'ssl';
+private $port = "587"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
+private $smtpSecure = 'tls';
 //kidzeeweb
 /*
 private $emailUsername ="villageexperts@kidzeeweb.com";
@@ -54,11 +54,10 @@ public function sendMail($email,$memberName,$subject,$body)
   //$mail->SMTPDebug = 1;
         $mail->IsSMTP();
         $mail->Mailer = "smtp";
-        $mail->Host = 'tls://smtp.gmail.com:587';
-        //$mail->Host = $this->host;//"smtp.gmail.com";
-        //$mail->Port = $this->port;
+        $mail->Host = $this->host;//"smtp.gmail.com";
+        $mail->Port = $this->port;
         $mail->SMTPAuth = true;
-       // $mail->SMTPSecure = $this->smtpSecure;
+        $mail->SMTPSecure = $this->smtpSecure;
       $mail->Username = $this->emailUsername;
   $mail->Password = $this->emailPassword;
     $mail->From     = $this->from;
