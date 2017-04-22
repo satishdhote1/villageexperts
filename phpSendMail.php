@@ -53,7 +53,7 @@ public function sendMail($email,$memberName,$subject,$body)
   $mail = new PHPMailer();
   //$mail->SMTPDebug = 1;
         $mail->IsSMTP();
-        $mail->SMTPDebug = 2;
+        //$mail->SMTPDebug = 2;
         $mail->Mailer = "smtp";
         $mail->Host = $this->host;//"smtp.gmail.com";
         $mail->Port = $this->port;
