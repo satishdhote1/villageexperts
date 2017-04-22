@@ -603,7 +603,7 @@ else{
 
 
 <!-- jQuery Version 1.11.1 --> 
-<script src="js/jquery-2.2.3.min"></script> 
+<script src="js/jquery-2.2.3.js"></script> 
 
 
 
