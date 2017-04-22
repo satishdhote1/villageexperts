@@ -10,7 +10,7 @@ private $host= "ses-smtp-user.20170412-120640";//"email-smtp.us-west-2.amazonaws
 private $from ="villageexpert.info@gmail.com";//dassamtest2@gmail.com";//"villageexpert.info@gmail.com";
 private $port = "25"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 private $from_name ="Village Expert";
-private $smtpSecure = 'tls';
+private $smtpSecure = 'ssl';
 
 /*
 private $emailUsername ="dassamtest2@gmail.com";
@@ -63,7 +63,7 @@ public function sendMail($email,$memberName,$subject,$body)
     $mail->SMTPSecure = $this->smtpSecure;
     $mail->Username = $this->emailUsername;
     $mail->Password = $this->emailPassword;
-    $mail->From     = $this->from;
+    $mail->setFrom     = $this->from;
     $mail->FromName = $this->from_name;
     
     $mail->AddAddress($email, $memberName);
