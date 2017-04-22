@@ -25,10 +25,8 @@ private $from ="villageexperts@kidzeeweb.com";//"villageexpert.info@gmail.com";
 private $port = "26"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
 */
 //otoman.net
-//private $emailUsername ="villageexperts@otoman.net";
-//private $emailPassword ="WebRTC123";
-private $emailUsername ="dassamtest2@gmail.com";
-private $emailPassword ="dassamtest";
+private $emailUsername ="villageexperts@otoman.net";
+private $emailPassword ="WebRTC123";
 private $host= "sg2plcpnl0137.prod.sin2.secureserver.net";
 private $from ="villageexperts@otoman.net";//"villageexpert.info@gmail.com";
 private $port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL
