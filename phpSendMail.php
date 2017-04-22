@@ -54,10 +54,11 @@ public function sendMail($email,$memberName,$subject,$body)
   //$mail->SMTPDebug = 1;
         $mail->IsSMTP();
         $mail->Mailer = "smtp";
-        $mail->Host = $this->host;//"smtp.gmail.com";
-        $mail->Port = $this->port;
+        $mail->Host = 'tls://smtp.gmail.com:587';
+        //$mail->Host = $this->host;//"smtp.gmail.com";
+        //$mail->Port = $this->port;
         $mail->SMTPAuth = true;
-        $mail->SMTPSecure = $this->smtpSecure;
+       // $mail->SMTPSecure = $this->smtpSecure;
       $mail->Username = $this->emailUsername;
   $mail->Password = $this->emailPassword;
     $mail->From     = $this->from;
