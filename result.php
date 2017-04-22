@@ -121,13 +121,13 @@ if(isset($_REQUEST['rate']) && !empty($_REQUEST['rate']))
 
 	{
 
-		$where.=" AND sp_rate_type3 <= ".$_REQUEST['rate'];
+		$where.=" AND sp_rate_type1 <= ".$_REQUEST['rate'];
 
 	}
 
 	else
 
-	$where.="sp_rate_type3 <= ".$_REQUEST['rate'];
+	$where.="sp_rate_type1 <= ".$_REQUEST['rate'];
 
 	
 
