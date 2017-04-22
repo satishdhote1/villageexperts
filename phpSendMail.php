@@ -54,7 +54,7 @@ public function sendMail($email,$memberName,$subject,$body)
 {
   	//echo "email-$email--=name:$memberName*-----body---$body=====$this->emailUsername===$this->emailPassword===$this->host";
   	$mail = new PHPMailer();
-  	$mail->SMTPDebug = 1;
+  	$mail->SMTPDebug = 2;
     $mail->IsSMTP();
     $mail->Mailer = "smtp";
     $mail->Host = $this->host;//"smtp.gmail.com";
@@ -65,7 +65,7 @@ public function sendMail($email,$memberName,$subject,$body)
     $mail->Password = $this->emailPassword;
     $mail->From     = $this->from;
     $mail->FromName = $this->from_name;
-    $mail->SMTPDebug = 2;
+    
     $mail->AddAddress($email, $memberName);
     // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
     $mail->Subject = $subject;
