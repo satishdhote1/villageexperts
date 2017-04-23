@@ -377,7 +377,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 				
 				  <div class="col-md-4 col-xs-12">
 					  <div class=" main-block">
-					      <div class="upload-img-block"> <img src="images/placeholder/male3.jpg" id="preview" width="40" height="40">
+					      <div class="upload-img-block"> <img src="images/placeholder/male3.jpg" id="preview" width="10%" height="10%">
 						</div>    
 						<div class=" main-block upload-panel-box">
 							<i class="fa prefix"></i>
