@@ -223,7 +223,7 @@ else if($tag == "ConfirmAppointment"){
 		 //----------------------------//Email Body Texts------------------------		  
 		$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Confirmation for Appointment.",$body);
 		if($mailSent){
-			$mailSent2 = $emailObject->sendMail($_SESSION['logged_user_email'],$recieverFname,"Village-Expert Confirmation for Appointment.",$body2);
+			$mailSent2 = $emailObject->sendMail($email,$recieverFname,"Village-Expert Confirmation for Appointment.",$body2);
 			$result['success'] = 1;
 			$result['error'] = 0;
 
