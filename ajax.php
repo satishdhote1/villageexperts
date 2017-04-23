@@ -243,7 +243,7 @@ else if($tag == "ConfirmAppointment"){
 }
 
 else if($tag == "notConfirmAppointment"){
-
+	$result = array();
 	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 	$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	$senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
