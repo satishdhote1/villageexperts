@@ -40,8 +40,8 @@ if(!empty($email) && !empty($isexpert) && $isexpert == "yes"){
 
 if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
     //$sql="select * from   friendsRegister where email = '$email' and (isexpert = 0 OR isexpert = 2)";
-    $sql="select * from   friendsRegister where email = '$email' and id in (select userid from friendsExpertInfo where isexpert = 0";
-    die($sql);
+    $sql="select * from   friendsRegister where email = '$email' and id in (select userid from friendsExpertInfo where isexpert = 0)";
+    //die($sql);
     $tableResult = mysqli_query($conn, $sql);
         
       if (mysqli_num_rows($tableResult) > 0)  {
