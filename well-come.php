@@ -5,15 +5,15 @@ session_start();
 ?>
 <?php
 if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
- //header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
+ header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
 }
 
 if(isset($_GET['redirect']) && $_GET['redirect'] == 'friends-family'){
- //header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
+ header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
 }
 
 if(isset($_GET['redirect']) && ($_GET['redirect'] == 'index' || $_GET['redirect'] == 'home')){
- //header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/");
+ header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/");
 }?>
 
 <!DOCTYPE html>
