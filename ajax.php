@@ -213,7 +213,7 @@ else if($tag == "ConfirmAppointment"){
 		$body = '';
 		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-		$body.='Dear '.$senderName.',<br /><br/>'.$recieverFname.' has confirmed your Appointment Request at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timing is: <br>'.$appointTimes.'<br>'.'Please mark your Calendar for this appointment..<br><br></p>';
+		$body.='Dear '.$senderName.',<br /><br/>'.$recieverFname.' has confirmed your Appointment Request at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timing is: <br>'.$appointTimes.'<br>'.'Please mark your Calendar for this appointment.<br><br></p>';
 		//second email..
 		$body2 = '';
 		$body2 = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
@@ -324,7 +324,7 @@ else if($tag == 'login') {
 		    $_SESSION['logged_user_id']=$SPLoginData['id'];
 		    $_SESSION['logged_role_code']='friendsLogin';
 
-                    $_SESSION['logged_user_fname']=isset($SPLoginData['fname'])?$SPLoginData['fname']:'';
+            $_SESSION['logged_user_fname']=isset($SPLoginData['fname'])?$SPLoginData['fname']:'';
 		    $_SESSION['logged_user_lname']=isset($SPLoginData['lname'])?$SPLoginData['lname']:'';
 		    $_SESSION['logged_user_email']=isset($SPLoginData['email'])?$SPLoginData['email']:'';
 		    $_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';

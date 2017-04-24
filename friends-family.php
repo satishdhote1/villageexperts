@@ -425,7 +425,7 @@ table td input[type="text"]{color: #000;font-weight:bold;}
                 </td>
               <?php if( $userDatas['loginStatus']=='NO'){ ?>
             <td><button class="btn" style="padding:7px 7px;background:lightgray;border-radius:3px;font-size:14px;color:#000;text-align:center;width:107px;margin:auto;font-weight:bold;">Offline</button></td>
-              <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $userDatas['email']; ?>" names="<?php echo $userDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
+              <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $userDatas['email']; ?>" names="<?php echo $userDatas['fname']." ".$userDatas['lname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname']; ?>">Make Appointment</button></td>
             <?php }
             else{?>
               <td><button class="btn" style="padding:7px 7px;background:lightgreen;border-radius:3px;font-size:14px;color:#000;text-align:center;width:107px;margin:auto;font-weight:bold;">Online</button></td>
@@ -565,7 +565,7 @@ table td input[type="text"]{color: #000;font-weight:bold;}
                 </td>
                 <?php if( $expertDatas['loginStatus']=='NO'){ ?>
                 <td><button class="btn" style="padding:7px 7px;background:lightgray;border-radius:3px;font-size:14px;color:#000;text-align:center;width:107px;margin:auto;font-weight:bold;">Offline</button></td>
-                <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $expertDatas['email']; ?>" names="<?php echo $expertDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
+                <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $expertDatas['email']; ?>" names="<?php echo $expertDatas['fname']." ".$expertDatas['lname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname']; ?>">Make Appointment</button></td>
                 <?php }
                 else{?>
                     <td><button class="btn" style="padding:7px 7px;background:lightgreen;border-radius:3px;font-size:14px;color:#000;text-align:center;width:107px;margin:auto;font-weight:bold;">Online</button></td>
