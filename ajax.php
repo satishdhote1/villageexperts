@@ -128,7 +128,7 @@ else if($tag == "makeAppointment"){
     $senderResult = mysql_fetch_assoc($tableResult2);
     print_r($recieverResult);
     print_r($senderResult);
-die();
+
     $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
 	$senderName = $senderResult['fname']." ".$senderResult['lname'];
 
