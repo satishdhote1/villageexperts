@@ -130,7 +130,8 @@ input[type="text"] {
 	padding-top: 100px;
 }
 .btn-search-2 {
-	background: #ff8003;
+  background: rgba(171,171,255,0.8);
+	/*background: #ff8003;*/
 	border: 0px;
 	padding: 7px 45px;
 	color: #fff;
