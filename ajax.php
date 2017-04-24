@@ -117,9 +117,21 @@ else if($tag == "checkEmail"){
 else if($tag == "makeAppointment"){
   
 	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	$senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
+
+	$sql="select * from friendsRegister where  email='".$email."'";
+    $tableResult = mysqli_query($conn, $sql);
+    $recieverResult = mysql_fetch_assoc($tableResult);
+
+    $sql2="select * from friendsRegister where  email='".$senderEmail."'";
+    $tableResult2 = mysqli_query($conn, $sql2);
+    $senderResult = mysql_fetch_assoc($tableResult2);
+
+    $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
+	$senderName = $senderResult['fname']." ".$senderResult['lname'];
+
+	//$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	//$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 	$appointTimes = isset($_REQUEST['appointTime'])?$_REQUEST['appointTime']:'';
 
 	if(!empty($email) && !empty($appointTimes))
@@ -144,6 +156,7 @@ else if($tag == "makeAppointment"){
 		$mailSent = $emailObject->sendMail($email,$recieverFname,"Village-Expert Request for Appointment.",$body);
 		//if(mail($email,"Village-Expert Request for Appointment.",$body))
 		if($mailSent){
+			$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Request for Appointment.",$body);//This is just a Cc email..
 			$result['success'] = 1;
 			$result['error'] = 0;
 		}else{
@@ -195,10 +208,23 @@ else if($tag == "requestMail"){
 else if($tag == "ConfirmAppointment"){
 
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	  $recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	  $senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	  $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 	  $appointTimes = isset($_REQUEST['appointTime'])?$_REQUEST['appointTime']:'';
+
+	$sql="select * from friendsRegister where  email='".$email."'";
+    $tableResult = mysqli_query($conn, $sql);
+    $recieverResult = mysql_fetch_assoc($tableResult);
+
+    $sql2="select * from friendsRegister where  email='".$senderEmail."'";
+    $tableResult2 = mysqli_query($conn, $sql2);
+    $senderResult = mysql_fetch_assoc($tableResult2);
+
+    $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
+	$senderName = $senderResult['fname']." ".$senderResult['lname'];
+
+
+	 //$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	 // $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 	 //print_r(json_decode($appointTimes));
 
 	  if(!empty($email) && !empty($appointTimes)){
@@ -245,9 +271,23 @@ else if($tag == "ConfirmAppointment"){
 else if($tag == "notConfirmAppointment"){
 	$result = array();
 	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	$senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
+
+
+	$sql="select * from friendsRegister where  email='".$email."'";
+    $tableResult = mysqli_query($conn, $sql);
+    $recieverResult = mysql_fetch_assoc($tableResult);
+
+    $sql2="select * from friendsRegister where  email='".$senderEmail."'";
+    $tableResult2 = mysqli_query($conn, $sql2);
+    $senderResult = mysql_fetch_assoc($tableResult2);
+
+    $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
+	$senderName = $senderResult['fname']." ".$senderResult['lname'];
+
+
+	//$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	//$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 
 	$apptData = '';
 	$sql="select * from appointment where  aptmakeremail='".$email."' and aptconfirmemail='".$senderEmail."' and apptstatus=0 order by id desc limit 1";
