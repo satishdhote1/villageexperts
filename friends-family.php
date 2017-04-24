@@ -83,6 +83,7 @@ $sql2 = '';
        $resultParentData4 = array();
        if (mysqli_num_rows($tableResultParent4) > 0)  
       {
+        die("yuujv--");
         while($row = mysqli_fetch_assoc($tableResultParent4)) {
         $resultParentData4[] = $row['userid'];
         }
