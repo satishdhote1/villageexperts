@@ -83,7 +83,7 @@ $sql2 = '';
        $resultParentData4 = array();
        if (mysqli_num_rows($tableResultParent4) > 0)  
       {
-        
+
         while($row = mysqli_fetch_assoc($tableResultParent4)) {
         $resultParentData4[] = $row['userid'];
         }
@@ -913,7 +913,7 @@ $('.flDelete >button').attr('disabled','disabled');
     else
     {
     $('.flSave >button').removeAttr('disabled');
-    alert("Valid Email Must be prvided!");
+    alert("Valid Email Must be provided!");
     }
   });
 
@@ -1237,7 +1237,7 @@ $(document).on("click",".elCancel",function(){
         else
         {
         $('.elSave >button').removeAttr('disabled');
-        alert("Valid Email Must be prvided!");
+        alert("Valid Email Must be provided!");
         }
     });
 
