@@ -19,8 +19,9 @@ $phone = '';
 $expertID='';
 	   
 if(!empty($email) && !empty($isexpert) && $isexpert == "yes"){
-    $sql="select * from   friendsRegister where email = '$email' and (isexpert = 1 OR isexpert = 2)";
-    echo $sql;die();
+    //$sql="select * from   friendsRegister where email = '$email' and (isexpert = 1 OR isexpert = 2)";
+    $sql="select * from   friendsRegister where email = '$email' and id in (select userid from friendsExpertInfo where isexpert = 1)";
+    //echo $sql;die();
     $tableResult = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($tableResult) > 0)  {
@@ -38,7 +39,8 @@ if(!empty($email) && !empty($isexpert) && $isexpert == "yes"){
 }
 
 if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
-    $sql="select * from   friendsRegister where email = '$email' and (isexpert = 0 OR isexpert = 2)";
+    //$sql="select * from   friendsRegister where email = '$email' and (isexpert = 0 OR isexpert = 2)";
+    $sql="select * from   friendsRegister where email = '$email' and id in (select userid from friendsExpertInfo where isexpert = 0";
     $tableResult = mysqli_query($conn, $sql);
         
       if (mysqli_num_rows($tableResult) > 0)  {
