@@ -436,7 +436,7 @@ input[type="text"] {
     <div class="row marginTOP">
       <div class="col-md-12">
         <div class="text-xs-center">
-          <button  class="btn btn-default btn-search-3-searchProvider" style="text-transform:uppercase;">Search</button>
+          <button  class="btn btn-default btn-search-2 btn-search-3-searchProvider" style="text-transform:uppercase;">Search</button>
         </div>
       </div>
     </div>
