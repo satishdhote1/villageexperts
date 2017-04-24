@@ -126,7 +126,9 @@ else if($tag == "makeAppointment"){
     $sql2="select * from friendsRegister where  email='".$senderEmail."'";
     $tableResult2 = mysqli_query($conn, $sql2);
     $senderResult = mysql_fetch_assoc($tableResult2);
-
+    print_r($recieverResult);
+    print_r($senderResult);
+die();
     $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
 	$senderName = $senderResult['fname']." ".$senderResult['lname'];
 
