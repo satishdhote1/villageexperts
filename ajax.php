@@ -218,7 +218,7 @@ else if($tag == "ConfirmAppointment"){
 		$body2 = '';
 		$body2 = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 		$body2.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-		$body2.='Dear '.$recieverFname.',<br /><br/> You  have  confirmed an Appointment  with '.$senderName.'at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timings are: <br>'.$appointTimes.'<br>'.'<br><br></p>';
+		$body2.='Dear '.$recieverFname.',<br /><br/> You  have  confirmed an Appointment  with '.$senderName.' at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timings are: <br>'.$appointTimes.'<br>'.'<br><br></p>';
 
 		 //----------------------------//Email Body Texts------------------------		  
 		$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Confirmation for Appointment.",$body);
