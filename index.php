@@ -19,7 +19,9 @@ $phone = '';
 $expertID='';
 	   
 if(!empty($email) && !empty($isexpert) && $isexpert == "yes"){
-    $sql="select * from   friendsRegister where email = '$email' and (isexpert = 1 OR isexpert = 2)";
+    //$sql="select * from   friendsRegister where email = '$email' and (isexpert = 1 OR isexpert = 2)";
+    $sql="select * from   friendsRegister where email = '$email' and id in (select userid from friendsExpertInfo where isexpert = 1)";
+    //echo $sql;die();
     $tableResult = mysqli_query($conn, $sql);
 
     if (mysqli_num_rows($tableResult) > 0)  {
@@ -37,7 +39,9 @@ if(!empty($email) && !empty($isexpert) && $isexpert == "yes"){
 }
 
 if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
-    $sql="select * from   friendsRegister where email = '$email' and (isexpert = 0 OR isexpert = 2)";
+    //$sql="select * from   friendsRegister where email = '$email' and (isexpert = 0 OR isexpert = 2)";
+    $sql="select * from   friendsRegister where email = '$email' and id in (select userid from friendsExpertInfo where isexpert = 0)";
+    //die($sql);
     $tableResult = mysqli_query($conn, $sql);
         
       if (mysqli_num_rows($tableResult) > 0)  {
@@ -377,7 +381,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 				
 				  <div class="col-md-4 col-xs-12">
 					  <div class=" main-block">
-					      <div class="upload-img-block"> <img src="images/placeholder/male3.jpg" id="preview" width="40" height="40">
+					      <div class="upload-img-block"> <img src="images/placeholder/male3.jpg" id="preview" width="10%" height="10%">
 						</div>    
 						<div class=" main-block upload-panel-box">
 							<i class="fa prefix"></i>

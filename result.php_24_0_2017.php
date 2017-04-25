@@ -603,7 +603,8 @@ else{
 
 
 <!-- jQuery Version 1.11.1 --> 
-<script src="js/jquery-2.2.3.js"></script> 
+
+<script src="js/jquery.js"></script> 
 
 
 
@@ -611,7 +612,7 @@ else{
 
 <script src="js/bootstrap.min.js"></script>
 
-<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="js/connectMe.js"></script>
   <script src="js/jquery.flipster.js"></script>
 

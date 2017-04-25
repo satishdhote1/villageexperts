@@ -117,9 +117,23 @@ else if($tag == "checkEmail"){
 else if($tag == "makeAppointment"){
   
 	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	$senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
+
+	$sql="select * from friendsRegister where  email='".$email."'";
+    $tableResult = mysqli_query($conn, $sql);
+    $recieverResult = mysqli_fetch_assoc($tableResult);
+
+    $sql2="select * from friendsRegister where  email='".$senderEmail."'";
+    $tableResult2 = mysqli_query($conn, $sql2);
+    $senderResult = mysqli_fetch_assoc($tableResult2);
+    //print_r($recieverResult);
+    //print_r($senderResult);
+//die();
+    $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
+	$senderName = $senderResult['fname']." ".$senderResult['lname'];
+
+	//$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	//$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 	$appointTimes = isset($_REQUEST['appointTime'])?$_REQUEST['appointTime']:'';
 
 	if(!empty($email) && !empty($appointTimes))
@@ -144,6 +158,7 @@ else if($tag == "makeAppointment"){
 		$mailSent = $emailObject->sendMail($email,$recieverFname,"Village-Expert Request for Appointment.",$body);
 		//if(mail($email,"Village-Expert Request for Appointment.",$body))
 		if($mailSent){
+			$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Request for Appointment.",$body);//This is just a Cc email..
 			$result['success'] = 1;
 			$result['error'] = 0;
 		}else{
@@ -195,10 +210,23 @@ else if($tag == "requestMail"){
 else if($tag == "ConfirmAppointment"){
 
 	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	  $recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	  $senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	  $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 	  $appointTimes = isset($_REQUEST['appointTime'])?$_REQUEST['appointTime']:'';
+
+	$sql="select * from friendsRegister where  email='".$email."'";
+    $tableResult = mysqli_query($conn, $sql);
+    $recieverResult = mysqli_fetch_assoc($tableResult);
+
+    $sql2="select * from friendsRegister where  email='".$senderEmail."'";
+    $tableResult2 = mysqli_query($conn, $sql2);
+    $senderResult = mysqli_fetch_assoc($tableResult2);
+
+    $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
+	$senderName = $senderResult['fname']." ".$senderResult['lname'];
+
+
+	 //$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	 // $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 	 //print_r(json_decode($appointTimes));
 
 	  if(!empty($email) && !empty($appointTimes)){
@@ -213,17 +241,17 @@ else if($tag == "ConfirmAppointment"){
 		$body = '';
 		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-		$body.='Dear '.$senderName.',<br /><br/>'.$recieverFname.' has confirmed your Appointment Request at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timing is: <br>'.$appointTimes.'<br>'.'Please mark your Calendar for this appointment..<br><br></p>';
+		$body.='Dear '.$senderName.',<br /><br/>'.$recieverFname.' has confirmed your Appointment Request at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timing is: <br>'.$appointTimes.'<br>'.'Please mark your Calendar for this appointment.<br><br></p>';
 		//second email..
 		$body2 = '';
 		$body2 = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
 		$body2.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
-		$body2.='Dear '.$recieverFname.',<br /><br/> You  have  confirmed an Appointment  with '.$senderName.'at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timings are: <br>'.$appointTimes.'<br>'.'<br><br></p>';
+		$body2.='Dear '.$recieverFname.',<br /><br/> You  have  confirmed an Appointment  with '.$senderName.' at  '.$_SERVER['SERVER_NAME'].'<br><br> The confirmed timings are: <br>'.$appointTimes.'<br>'.'<br><br></p>';
 
 		 //----------------------------//Email Body Texts------------------------		  
 		$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Confirmation for Appointment.",$body);
 		if($mailSent){
-			$mailSent2 = $emailObject->sendMail($_SESSION['logged_user_email'],$recieverFname,"Village-Expert Confirmation for Appointment.",$body2);
+			$mailSent2 = $emailObject->sendMail($email,$recieverFname,"Village-Expert Confirmation for Appointment.",$body2);
 			$result['success'] = 1;
 			$result['error'] = 0;
 
@@ -243,11 +271,25 @@ else if($tag == "ConfirmAppointment"){
 }
 
 else if($tag == "notConfirmAppointment"){
-
+	$result = array();
 	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
 	$senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
+
+
+	$sql="select * from friendsRegister where  email='".$email."'";
+    $tableResult = mysqli_query($conn, $sql);
+    $recieverResult = mysqli_fetch_assoc($tableResult);
+
+    $sql2="select * from friendsRegister where  email='".$senderEmail."'";
+    $tableResult2 = mysqli_query($conn, $sql2);
+    $senderResult = mysqli_fetch_assoc($tableResult2);
+
+    $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
+	$senderName = $senderResult['fname']." ".$senderResult['lname'];
+
+
+	//$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	//$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 
 	$apptData = '';
 	$sql="select * from appointment where  aptmakeremail='".$email."' and aptconfirmemail='".$senderEmail."' and apptstatus=0 order by id desc limit 1";
@@ -324,7 +366,7 @@ else if($tag == 'login') {
 		    $_SESSION['logged_user_id']=$SPLoginData['id'];
 		    $_SESSION['logged_role_code']='friendsLogin';
 
-                    $_SESSION['logged_user_fname']=isset($SPLoginData['fname'])?$SPLoginData['fname']:'';
+            $_SESSION['logged_user_fname']=isset($SPLoginData['fname'])?$SPLoginData['fname']:'';
 		    $_SESSION['logged_user_lname']=isset($SPLoginData['lname'])?$SPLoginData['lname']:'';
 		    $_SESSION['logged_user_email']=isset($SPLoginData['email'])?$SPLoginData['email']:'';
 		    $_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
@@ -653,6 +695,7 @@ else if($tag == 'addFriendss'){
 				$result['msg'] = "Sorry! $fname $lname has been already Added as a Friend.";
 			}
 		} else {
+			
 			$mailSent = $emailObject->sendMail($m_email,$fname,"Village-Expert New User Registration!",$body);
 			if(!empty($isexpert) && $isexpert == "yes") {
 				$result['msg'] = "$fname $lname has been Added as an Expert Successfully!";
