@@ -125,7 +125,8 @@ $sql="select * from 	sp_specialisation order by specialisation";
 <link href="../css/mainstyle.css" rel="stylesheet">
 <style>
 body{
-color:#F93	
+    color:#F93
+    background: url(../img/normal/Experts-1.jpg) no-repeat 100% 100%;
 }
 .over-lap {
 	display: block !important

@@ -26,20 +26,21 @@ if(isset($_REQUEST['DeleteTables']))
 	//$sql="TRUNCATE TABLE ".$selectTable;
 	$sql="delete from friendsRegister where id not in(99,101,102) ";
 	//echo $sql;die();
-				$tableResult = mysqli_query($conn, $sql);
-				$specialData = array();
-				if (mysqli_num_rows($tableResult) > 0)  
-				{
-					echo "<br>Sorry, there was an error during Truncating table data.<br/>";
-					
-					//header("location:delete.php?error=".$error);
-							
-					
-				}
-				else {
-							echo  "<br>Truncated Sucessfully";
-							//header("location:delete.php?error=".$error);
-					}
+	$tableResult = mysqli_query($conn, $sql);
+	$sqlFriendsExpertInfo="delete from friendsExpertInfo where userid not in(99,101,102) ";
+	$tableResult2 = mysqli_query($conn, $sqlFriendsExpertInfo);
+
+	$specialData = array();
+	if (mysqli_num_rows($tableResult) > 0)  
+	{
+		echo "<br>Sorry, there was an error during Truncating table data.<br/>";
+		//header("location:delete.php?error=".$error);
+	}
+	else 
+	{
+		echo  "<br>Truncated Sucessfully";
+		//header("location:delete.php?error=".$error);
+	}
 	
 }
 

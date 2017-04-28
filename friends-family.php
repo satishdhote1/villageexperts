@@ -83,6 +83,7 @@ $sql2 = '';
        $resultParentData4 = array();
        if (mysqli_num_rows($tableResultParent4) > 0)  
       {
+
         while($row = mysqli_fetch_assoc($tableResultParent4)) {
         $resultParentData4[] = $row['userid'];
         }
@@ -264,7 +265,7 @@ table td input[type="text"]{color: #000;font-weight:bold;}
     <!--Navbar-->
 
     <div class="login-profile">
-    <a href="/villageExperts" data-toggle="tooltip" data-placement="bottom" title="Back"><img src="images/Left.png" class="topBtn" style="cursor:pointer;"/></a>                
+    <a href="/" data-toggle="tooltip" data-placement="bottom" title="Back"><img src="images/Left.png" class="topBtn" style="cursor:pointer;"/></a>                
     <a href="logout.php" data-toggle="tooltip" data-placement="bottom" title="Log out!"><img src="images/logout.png" class="topBtn" style="cursor:pointer;"/></a>
 
     </div>
@@ -424,7 +425,7 @@ table td input[type="text"]{color: #000;font-weight:bold;}
                 </td>
               <?php if( $userDatas['loginStatus']=='NO'){ ?>
             <td><button class="btn" style="padding:7px 7px;background:lightgray;border-radius:3px;font-size:14px;color:#000;text-align:center;width:107px;margin:auto;font-weight:bold;">Offline</button></td>
-              <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $userDatas['email']; ?>" names="<?php echo $userDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
+              <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $userDatas['email']; ?>" names="<?php echo $userDatas['fname']." ".$userDatas['lname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname']; ?>">Make Appointment</button></td>
             <?php }
             else{?>
               <td><button class="btn" style="padding:7px 7px;background:lightgreen;border-radius:3px;font-size:14px;color:#000;text-align:center;width:107px;margin:auto;font-weight:bold;">Online</button></td>
@@ -564,7 +565,7 @@ table td input[type="text"]{color: #000;font-weight:bold;}
                 </td>
                 <?php if( $expertDatas['loginStatus']=='NO'){ ?>
                 <td><button class="btn" style="padding:7px 7px;background:lightgray;border-radius:3px;font-size:14px;color:#000;text-align:center;width:107px;margin:auto;font-weight:bold;">Offline</button></td>
-                <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $expertDatas['email']; ?>" names="<?php echo $expertDatas['fname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']; ?>">Make Appointment</button></td>
+                <td><button id='tdv' class="btn-online appoint apponment btn" emails="<?php echo $expertDatas['email']; ?>" names="<?php echo $expertDatas['fname']." ".$expertDatas['lname']; ?>" seekerEmail="<?php echo $_SESSION['logged_user_email']; ?>" seekerName="<?php echo $_SESSION['logged_user_fname']." ".$_SESSION['logged_user_lname']; ?>">Make Appointment</button></td>
                 <?php }
                 else{?>
                     <td><button class="btn" style="padding:7px 7px;background:lightgreen;border-radius:3px;font-size:14px;color:#000;text-align:center;width:107px;margin:auto;font-weight:bold;">Online</button></td>
@@ -912,7 +913,7 @@ $('.flDelete >button').attr('disabled','disabled');
     else
     {
     $('.flSave >button').removeAttr('disabled');
-    alert("Valid Email Must be prvided!");
+    alert("Valid Email Must be provided!");
     }
   });
 
@@ -1236,7 +1237,7 @@ $(document).on("click",".elCancel",function(){
         else
         {
         $('.elSave >button').removeAttr('disabled');
-        alert("Valid Email Must be prvided!");
+        alert("Valid Email Must be provided!");
         }
     });
 

@@ -1,4 +1,5 @@
 <?php
+ini_set('memory_limit', '-1');
 /**
  * easy image resize function
  * @param  $file - file name to resize

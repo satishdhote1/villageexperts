@@ -2,6 +2,7 @@
 include("config/connection.php");
 session_start();
 
+
 if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 {
 $user_id = $_SESSION['logged_user_id'];
