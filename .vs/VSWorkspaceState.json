@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\phpMailer"
+    "\\config"
   ],
-  "SelectedNode": "\\myGroups.js",
+  "SelectedNode": "\\config\\connection.php",
   "PreviewInSolutionExplorer": false
 }

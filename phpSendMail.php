@@ -49,26 +49,26 @@ public function geEmailConfig()
 }
 public function sendMail($email,$memberName,$subject,$body)
 {
-  //echo "email-$email--=name:$memberName*-----body---$body=====$this->emailUsername===$this->emailPassword===$this->host";
-  $mail = new PHPMailer();
-  //$mail->SMTPDebug = 1;
-        $mail->IsSMTP();
-        //$mail->SMTPDebug = 2;
-        $mail->Mailer = "smtp";
-        $mail->Host = $this->host;//"smtp.gmail.com";
-        $mail->Port = $this->port;
-        $mail->SMTPAuth = true;
-        $mail->SMTPSecure = $this->smtpSecure;
-      $mail->Username = $this->emailUsername;
-  $mail->Password = $this->emailPassword;
-    $mail->From     = $this->from;
-    $mail->FromName = $this->from_name;
-    $mail->AddAddress($email, $memberName);
-    // $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
-    $mail->Subject = $subject;
-    $mail->Body    = $body;
-    $mail->WordWrap = 50;  
-    $mail->IsHTML(true);
+	//echo "email-$email--=name:$memberName*-----body---$body=====$this->emailUsername===$this->emailPassword===$this->host";
+	$mail = new PHPMailer();
+	//$mail->SMTPDebug = 1;
+	$mail->IsSMTP();
+	//$mail->SMTPDebug = 2;
+	$mail->Mailer = "smtp";
+	$mail->Host = $this->host;//"smtp.gmail.com";
+	$mail->Port = $this->port;
+	$mail->SMTPAuth = true;
+	$mail->SMTPSecure = $this->smtpSecure;
+	$mail->Username = $this->emailUsername;
+	$mail->Password = $this->emailPassword;
+	$mail->From     = $this->from;
+	$mail->FromName = $this->from_name;
+	$mail->AddAddress($email, $memberName);
+	// $mail->AddReplyTo("Your Reply-to Address", "Sender's Name");
+	$mail->Subject = $subject;
+	$mail->Body    = $body;
+	$mail->WordWrap = 50;  
+	$mail->IsHTML(true);
     if(!$mail->Send())
     {
       echo "Mailer Error: " . $mail->ErrorInfo;

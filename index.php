@@ -20,7 +20,7 @@ $expertID='';
 	   
 if(!empty($email) && !empty($isexpert) && $isexpert == "yes"){
     //$sql="select * from   friendsRegister where email = '$email' and (isexpert = 1 OR isexpert = 2)";
-    $sql="select * from   friendsRegister where email = '$email' and id in (select userid from friendsExpertInfo where isexpert = 1)";
+    $sql="select * from friendsRegister where email = '$email' and id in (select userid from friendsExpertInfo where isexpert = 1)";
     //echo $sql;die();
     $tableResult = mysqli_query($conn, $sql);
 

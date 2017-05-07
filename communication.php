@@ -24,8 +24,6 @@ else{
 <div class="bottm_box"><a href="index.php"><div class="home_button">Home</div></a>
   </div>
 <iframe id="myiframe" height="90%" width="100%"></iframe> 
-
-
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
@@ -34,28 +32,24 @@ else{
 document.getElementById('myiframe').src="https://54.218.28.216:8084/#/<?php echo $spid; ?>?s=1";
 </script>
 <script>
-//setInterval(function(){ alert("Hello"); }, 3000);
  setInterval("comm_update()", 10000); // Update every 10 seconds 
 
 function comm_update() 
 {
-	//alert("hi");
-$.post("comm_update.php"); // Sends request to update.php 
-//alert("sd");
+	$.post("comm_update.php"); // Sends request to update.php 
 } 
 </script>
 
-  <?php
+ <?php
 if(isset($_SESSION['SESS_ID'])) {
-	?>
+111?>
   <script>
   setInterval("update()", 10000); // Update every 10 seconds 
 
-function update() 
-{ 
-$.post("updatestatus.php"); // Sends request to update.php 
-//alert("sd");
-} 
+	function update() 
+	{ 
+	$.post("updatestatus.php"); // Sends request to update.php 
+	} 
 </script>
 
 <?php } ?>
