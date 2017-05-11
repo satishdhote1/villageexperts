@@ -1,24 +1,40 @@
 
   $(function(){
-         $('[data-toggle="tooltip"]').tooltip(); 
+    $('[data-toggle="tooltip"]').tooltip(); 
     //****************************************Friends manipulation*****************************************
-var i = 0;
-var FLeditFlag = 0;
-$('.flBtnEdit').attr('disabled','disabled');
-$('.flSave >button').attr('disabled','disabled');
-$('.flDelete >button').attr('disabled','disabled');
+    var i = 0;
+    var FLeditFlag = 0;
+    $('.flBtnEdit').attr('disabled','disabled');
+    $('.flSave >button').attr('disabled','disabled');
+    $('.flDelete >button').attr('disabled','disabled');
+
+    //friends add button click
+    $(document).on("click", ".flBtnConferenece", function () {
+
+        $('.flDelete >button').attr('disabled', 'disabled');
+        $('.flBtnAdd >button').attr('disabled', 'disabled');
+        $(".addNewRow").show("slow");
+        $("#fladdFname").focus();
+        $('.flSave >button').removeAttr('disabled');
+
+        //disable expert panel
+        $('.elBtnAdd >button').attr('disabled', 'disabled');
+        //$('.elDelete >button').attr('disabled','disabled');
+        //$('.elSave >button').attr('disabled','disabled');
+        $('.elCancel >button').attr('disabled', 'disabled');
+    });
 
    //friendlist check button click
     $(document).on("change",".flChk",function(){
-            flID = $(this).attr("id");
-            curOBJ = $(this);
+    flID = $(this).attr("id");
+    curOBJ = $(this);
         
     if(this.checked) {
-      $('.flDelete >button').removeAttr('disabled'); 
-      $('.flChk').attr('disabled','disabled');
-      curOBJ.removeAttr('disabled');
-    //$('.flBtnEdit').removeAttr('disabled');
-    $('.flBtnAdd >button').attr('disabled','disabled');
+        $('.flDelete >button').removeAttr('disabled'); 
+        $('.flChk').attr('disabled','disabled');
+        curOBJ.removeAttr('disabled');
+        //$('.flBtnEdit').removeAttr('disabled');
+        $('.flBtnAdd >button').attr('disabled','disabled');
     }
     else
     {
@@ -33,23 +49,20 @@ $('.flDelete >button').attr('disabled','disabled');
 
     //friends add button click
     $(document).on("click",".flBtnAdd",function(){
-      $('.flDelete >button').attr('disabled','disabled');
-      $('.flBtnAdd >button').attr('disabled','disabled');
-            $( ".addNewRow" ).show("slow");
-      $( "#fladdFname" ).focus();
-      $('.flSave >button').removeAttr('disabled');
+        $('.flDelete >button').attr('disabled','disabled');
+        $('.flBtnAdd >button').attr('disabled','disabled');
+        $( ".addNewRow" ).show("slow");
+        $( "#fladdFname" ).focus();
+        $('.flSave >button').removeAttr('disabled');
 
-
-      //disable expert panel
-       $('.elBtnAdd >button').attr('disabled','disabled');
+        //disable expert panel
+        $('.elBtnAdd >button').attr('disabled','disabled');
         //$('.elDelete >button').attr('disabled','disabled');
-         //$('.elSave >button').attr('disabled','disabled');
-          $('.elCancel >button').attr('disabled','disabled');
-
-
-
+        //$('.elSave >button').attr('disabled','disabled');
+        $('.elCancel >button').attr('disabled','disabled');
     });
 
+    
     //friends edit button click
     $(document).on("click",".flBtnEdit",function(){
       i=0;

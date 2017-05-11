@@ -27,16 +27,7 @@ $imagePath = "/";
 
 //Get specialization Data
 $sql="select specialisation_id,specialisation	 from 	sp_specialisation order by specialisation";
-	$tableResult = mysqli_query($conn, $sql);
-	//print_r($tableResult);
-
-		$specialData = array();
-	if (mysqli_num_rows($tableResult) > 0)  
-	{
-		while($row = mysqli_fetch_assoc($tableResult)) {
-		$specialData[] = $row;
-		}
-	}
+ 
 
 //Get Sub specialization Data
 $sql2="select sub_specialisation_id,sub_specialisation from 	sp_sub_specialisation order by sub_specialisation";
@@ -255,7 +246,6 @@ $sql="select user.start_date_time,user.end_date_time,user.ammount,sp.sp_id, sp.s
 	  
 	  foreach($language as $languageDatas)
 	  {
-		 // print_r($connectDatas);
 		 //echo $educationDatas['EducationID']."--".$connectDatas['degree']."<br>";
 		  if($languageDatas['language_id'] == $connectDatas['sp_language_id'])
 		  {
