@@ -176,7 +176,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
 										if(!empty($userData))
 										{
 										foreach($userData as $userDatas) { ?>
-										<tr class="flRow userTableRowClass" id="flRow<?php echo $userDatas['id']; ?>" onclick="submitUserRow()">
+										<tr class="flRow userTableRowClass" id="flRow<?php echo $userDatas['id']; ?>" onclick="submitUserRow()"  for="<?php echo $userDatas['id']; ?>" dir="<?php echo $userDatas['fname']." ".$userDatas['lname']; ?> " memberImage="<?php echo $userDatas['image']; ?>" memberEmail="<?php echo $userDatas['email']; ?>">
 											<td style="width:24px !important;text-align:center;" >
 												<input type="hidden" value="<?php echo $userDatas['id']; ?>" name="flID" class="flID">
 												<input type="hidden" value="<?php echo $userID; ?>" name="loggedID" class="loggedID">
@@ -369,6 +369,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                             <div class="clearfix"></div>
                             
 						</div>
+
                         <hr class="distance"><div class="col-md-12">
 						<div style="width:50%;margin:0 auto 30px auto;">
 							<div class="text-xs-center">

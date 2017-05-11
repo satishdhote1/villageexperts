@@ -10,18 +10,41 @@
 
     //friends add button click
     $(document).on("click", ".flBtnConferenece", function () {
+        i = 0;
+        var flID = '';
+        var memberName, memberId, imagePath, memberEmail;
+        $('.flChk:checked').each(function (item) {
+            var cur = $(this).parent().parent();
+            flID = $(this).attr("id");
+            memberName = cur.attr("dir");
+            memberId = cur.attr("for");
+            imagePath = cur.attr("memberImage");
+            memberEmail = cur.attr("memberEmail");
+            i++;        
+        });
 
-        $('.flDelete >button').attr('disabled', 'disabled');
-        $('.flBtnAdd >button').attr('disabled', 'disabled');
-        $(".addNewRow").show("slow");
-        $("#fladdFname").focus();
-        $('.flSave >button').removeAttr('disabled');
+        $("#flRow" + flID).css("background-color", "#7851f7");
+        if (i == 0) {
+            if ($(".flChk").length > 0) {
+                alert("Please select atleast one checkbox!");
+            }
+            else {
+                alert("No one selected for conference");
+            }
+        }
+        //else if (i > 1) { alert("Please select  one checkbox at a time to edit!"); }
+        else {
+            $(".flFname").focus();
 
-        //disable expert panel
-        $('.elBtnAdd >button').attr('disabled', 'disabled');
-        //$('.elDelete >button').attr('disabled','disabled');
-        //$('.elSave >button').attr('disabled','disabled');
-        $('.elCancel >button').attr('disabled', 'disabled');
+            $(".connSuccess > span").text(memberName);
+            $(".connSuccess").css("display", "block");
+            //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
+
+            $('html,body').animate({ scrollTop: 9999 }, 1000);
+            setTimeout(function () {
+                location.href = "connect.php?memberId=" + memberId + "&search=FaF&imagePath=" + imagePath + "&memberName=" + memberName + "&memberEmail=" + memberEmail + "&type=conference";
+            }, 4000);
+        }
     });
 
    //friendlist check button click
@@ -38,11 +61,11 @@
     }
     else
     {
-      $('.flChk').removeAttr('disabled');
-    $(".rmvReadonly"+flID).attr("readonly", "readonly"); 
-    $('.flSave >button').attr('disabled','disabled');
-    $('.flBtnAdd >button').removeAttr('disabled');
-    $('.flDelete >button').attr('disabled','disabled');
+        $('.flChk').removeAttr('disabled');
+        $(".rmvReadonly"+flID).attr("readonly", "readonly"); 
+        $('.flSave >button').attr('disabled','disabled');
+        $('.flBtnAdd >button').removeAttr('disabled');
+        $('.flDelete >button').attr('disabled','disabled');
     //$('.flBtnEdit').attr('disabled','disabled');
     }
     });
@@ -65,20 +88,20 @@
     
     //friends edit button click
     $(document).on("click",".flBtnEdit",function(){
-      i=0;
-      var flID = '';
-      var fname = '';
-      var lname = '';
-      var email = '';
-      var mobile = '';
-      var city = '';
-      var country = '';
+        i=0;
+        var flID = '';
+        var fname = '';
+        var lname = '';
+        var email = '';
+        var mobile = '';
+        var city = '';
+        var country = '';
 
-      //disable expert panel
-       $('.elBtnAdd >button').attr('disabled','disabled');
+        //disable expert panel
+        $('.elBtnAdd >button').attr('disabled','disabled');
         //$('.elDelete >button').attr('disabled','disabled');
         // $('.elSave >button').attr('disabled','disabled');
-          $('.elCancel >button').attr('disabled','disabled');
+        $('.elCancel >button').attr('disabled','disabled');
 
         $('.flChk:checked').each(function (item) {
           var cur = $(this).parent();
@@ -92,7 +115,8 @@
           i++;
           //alert("fdrewe");          
         });
-                $("#flRow"+flID).css("background-color", "#7851f7");
+
+        $("#flRow"+flID).css("background-color", "#7851f7");
         //alert(fname+lname+email+mobile+city+country);
         if(i== 0){
           if ($(".flChk").length > 0) {
@@ -104,42 +128,42 @@
           }
 
         }
-        else if (i>1) {alert("Please select  one checkbox at a time to edit!");}
+        else if (i>1) { alert("Please select  one checkbox at a time to edit!"); }
         else{
-          $( ".flFname" ).focus();
-          $(".rmvReadonly"+flID).removeAttr("readonly"); 
-          $("#flEmail"+flID).attr("readonly", "readonly"); 
-          $('.flSave >button').removeAttr('disabled');
-          FLeditFlag = 1;
-          
+            $( ".flFname" ).focus();
+            $(".rmvReadonly"+flID).removeAttr("readonly"); 
+            $("#flEmail"+flID).attr("readonly", "readonly"); 
+            $('.flSave >button').removeAttr('disabled');
+            FLeditFlag = 1;
         }
-       });
+
+    });
 
       //save friend
     $(document).on("click",".flSave",function(){
-      $('.flSave >button').attr('disabled','disabled');
-      $('.flDelete >button').removeAttr('disabled');
-      $('.flBtnAdd >button').removeAttr('disabled');
+        $('.flSave >button').attr('disabled','disabled');
+        $('.flDelete >button').removeAttr('disabled');
+        $('.flBtnAdd >button').removeAttr('disabled');
 
-      //expert panel
-          $('.elBtnAdd >button').removeAttr('disabled');
-          $('.elDelete >button').removeAttr('disabled');
-          $('.elSave >button').removeAttr('disabled');
-          $('.elCancel >button').removeAttr('disabled');
+        //expert panel
+        $('.elBtnAdd >button').removeAttr('disabled');
+        $('.elDelete >button').removeAttr('disabled');
+        $('.elSave >button').removeAttr('disabled');
+        $('.elCancel >button').removeAttr('disabled');
 
 
-      i=0;
-      var checkExists = 0;
-            var flID = '';
-            var fname = '';
-            var lname = '';
-            var email = '';
-            var mobile = '';
-            var city = '';
-            var country = '';
-            var loggedID = $(".loggedID").val();
+        i=0;
+        var checkExists = 0;
+        var flID = '';
+        var fname = '';
+        var lname = '';
+        var email = '';
+        var mobile = '';
+        var city = '';
+        var country = '';
+        var loggedID = $(".loggedID").val();
                 
-      var tag = '';
+        var tag = '';
       
                 if(FLeditFlag == 1)
                 {
@@ -272,9 +296,9 @@
       $('.flChk:checked').each(function (item) {
         var cur = $(this).parent();
         flID = $(this).attr("id");
-                email = $('#flEmail'+flID).val();
-                fname = $('#flFname'+flID).val();
-                lname = $('#flLname'+flID).val();
+        email = $('#flEmail'+flID).val();
+        fname = $('#flFname'+flID).val();
+        lname = $('#flLname'+flID).val();
         i++;
         //alert("fdrewe");          
       });
@@ -324,13 +348,13 @@
 
         $('.flSave >button').attr('disabled','disabled');
         $('.flChk:checked').each(function (item) {
-                    var cur = $(this).parent();
-                    var curOBJ = $(this);
-                    curOBJ.removeAttr("checked");
-                    curOBJ.removeAttr('disabled');
-                    //alert("fdrewe");          
-                  });
-            location.reload();
+        var cur = $(this).parent();
+        var curOBJ = $(this);
+        curOBJ.removeAttr("checked");
+        curOBJ.removeAttr('disabled');
+        //alert("fdrewe");          
+        });
+        location.reload();
     });
 
 
@@ -641,19 +665,17 @@ $(document).on("click",".elCancel",function(){
 
 //Connection code
 $(document).on("click",".FLconnectMember",function(){
-      //alert("test");
-      var memberName= $(this).attr("dir");
-      $(".connSuccess > span").text(memberName);
-      $(".connSuccess").css("display","block");
-      //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
-      var memberId =  $(this).attr("for"); 
-      var imagePath =  $(this).attr("memberImage");
-      var memberEmail= $(this).attr("memberEmail"); 
-      $('html,body').animate({ scrollTop: 9999 }, 1000);
-       setTimeout(function(){
-       location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
-
-      }, 4000);
+        var memberName= $(this).attr("dir");
+        $(".connSuccess > span").text(memberName);
+        $(".connSuccess").css("display","block");
+        //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
+        var memberId =  $(this).attr("for"); 
+        var imagePath =  $(this).attr("memberImage");
+        var memberEmail= $(this).attr("memberEmail"); 
+        $('html,body').animate({ scrollTop: 9999 }, 1000);
+        setTimeout(function(){
+            location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
+        }, 4000);
 
     });
 
@@ -691,4 +713,8 @@ $(document).on("click",".ELconnectMember",function(){
 function isEmail(email) {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
+}
+
+function submitUserRow() {
+
 }

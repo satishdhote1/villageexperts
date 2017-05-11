@@ -10,8 +10,7 @@ $conn = $conn->connect();
 
 //Create Email instance for sending mail
 $emailObject = new phpSendMail();
-$hostname = $_SERVER['SERVER_NAME'];
-//$hostname = "localhost";
+$hostname = $_SERVER['SERVER_NAME']; //$hostname = "localhost";
 $port = 8084;
 $currentTimestamp = strtotime("now");
 $end_time = isset($_REQUEST['endTime'])?$_REQUEST['endTime']:'';
@@ -28,7 +27,8 @@ if(!empty($user_id)){
 	$imagePath = isset($_REQUEST['imagePath'])?$_REQUEST['imagePath']:'';
 	$my_groups = isset($_REQUEST['my_groups'])?$_REQUEST['my_groups']:'';
 	$imagePath = empty($imagePath)?"http://".$_SERVER['SERVER_NAME'].'/images/placeholder/male2.jpg':"http://".$_SERVER['SERVER_NAME']."/".$imagePath;
-	
+	$type = isset($_REQUEST['type'])?$_REQUEST['type']:'';
+
 	if(!empty($search) && $search == 'FaF'){
 		$sql2="INSERT INTO connect (sr_id,sp_id,start_date_time)values($user_id,$memberId,'".$currentTimestamp."')";
 		$tableResults = mysqli_query($conn, $sql2);
@@ -43,16 +43,25 @@ if(!empty($user_id)){
 		$sqlUpdate= "update friendsRegister set loginStatus='BUSY' where id=".$_SESSION['logged_user_id'];
 	    $rsUpdate= mysqli_query($conn, $sqlUpdate);
 
-		//$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
-		$mailSent=false;
+		$mailSent = $emailObject->sendMail($memberEmail,$memberName,"Village-Expert connection between members!",$body);
+
 		if($mailSent){
-    		//$link = "<script>window.open('https://'.$hostname.':'.$port.'/#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
-			//echo $link;
-			header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+			if(!empty($type) && $type == 'conference'){
+				//header("location:https://".$hostname.":".$port."/conf.html#".$currentTimestamp);
+				$link = "<script>window.open('https://'.$hostname.':'.$port.'/conf.html#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
+				echo $link;
+			}else{
+				header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+			}
 		}else{
-			//$link = "<script> alert(' email not send ' ); window.open('https://'.$hostname.':'.$port.'/#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
-			//echo $link;
-			header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+
+			if(!empty($type) && $type == 'conference'){
+				header("location:https://".$hostname.":".$port."/conf.html#".$currentTimestamp);
+				//$link = "<script>alert(' email not send ' ); window.open('https://'.$hostname.':'.$port.'/conf.html#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
+				//echo $link;
+			}else{
+				header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+			}
 		}
 	
 	}else if(!empty($search) && $search == 'findsp'){
