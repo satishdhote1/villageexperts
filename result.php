@@ -1,14 +1,6 @@
 <?php
 
-
-
-//print_r($_POST);//die();
-
-
-
 include("config/connection.php");
-
-
 
 session_start();
 
@@ -24,26 +16,21 @@ $user_pic = $_SESSION['logged_user_image'];
 $user_type = $_SESSION['logged_role_code'];
 
 if($_SESSION['logged_role_code']=='SP')
-
 {
-
 	$imagePath = "SP_Photos/";
-
 }
 
 else if($_SESSION['logged_role_code']=='SR')
-
 {
-
 	$imagePath = "SR_Photos/";
-
 }
 else if($_SESSION['logged_role_code']=='GM')
 {
 	$imagePath = "memberPhotos/";
 }
-else
-$imagePath = "/";
+else{
+	$imagePath = "/";
+}
 
 $conn=new connections();
 $conn=$conn->connect();
@@ -52,37 +39,26 @@ $where = '';
 
 if(isset($_REQUEST['SpecialisationIDS']) && !empty($_REQUEST['SpecialisationIDS']))
 {
-
 	$where.="sp_specialisation_id=".$_REQUEST['SpecialisationIDS'];
-
 }
 
 if(isset($_REQUEST['SubSpecialIDS']) && !empty($_REQUEST['SubSpecialIDS']))
-
 {
-
 	if(!empty($where))
-
 	{
-
 		$where.=" AND sp_sub_specialisation_id=".$_REQUEST['SubSpecialIDS'];
-
 	}
-
 	else
-
-	$where.="sp_sub_specialisation_id=".$_REQUEST['SubSpecialIDS'];
-
+	{
+		$where.="sp_sub_specialisation_id=".$_REQUEST['SubSpecialIDS'];
+	}
 }
 
 if(isset($_REQUEST['DegreeIDS']) && !empty($_REQUEST['DegreeIDS']))
-
 {
 
 	if(!empty($where))
-
 	{
-
 		$where.=" AND degree >= ".$_REQUEST['DegreeIDS'];
 
 	}
@@ -112,10 +88,7 @@ if(isset($_REQUEST['ExperienceIDS']) && !empty($_REQUEST['ExperienceIDS']))
 }
 
 if(isset($_REQUEST['rate']) && !empty($_REQUEST['rate']))
-
 {
-
-	
 
 	if(!empty($where))
 
@@ -129,16 +102,11 @@ if(isset($_REQUEST['rate']) && !empty($_REQUEST['rate']))
 
 	$where.="sp_rate_type1 <= ".$_REQUEST['rate'];
 
-	
-
 }
 
 if(isset($_REQUEST['LanguageIDS']) && !empty($_REQUEST['LanguageIDS']))
 
 {
-
-
-
 	$temp = '';
 
 	$LanguageIDS = explode(",",$_REQUEST['LanguageIDS']);$i=0;
@@ -193,35 +161,14 @@ else if(isset($_REQUEST['LanguageIDS']) && empty($_REQUEST['LanguageIDS']))
 
 }
 
-  $sql="select * from 	service_provider where ".$where;
-  //die($sql);
+$sql="select * from service_provider where ".$where;
 $tableResult = mysqli_query($conn, $sql);
 
-
-
-			//print_r($tableResult);
-
-
-
-				$result['success'] = 0;
-
-
-
-				$result['error']=1;
-
-
-
-				$specialData = array();
-
-
-
-				
-
-
+$result['success'] = 0;
+$result['error']=1;
+$specialData = array();
 
 			if (mysqli_num_rows($tableResult) > 0)  
-
-
 
 			{
 
@@ -232,22 +179,13 @@ $tableResult = mysqli_query($conn, $sql);
 				while($row = mysqli_fetch_assoc($tableResult)) {
 
 
-
-							
-
-
-
-							$specialData[] = $row;
+				$specialData[] = $row;
 
 
 
-						}
+				}
 
 			}
-
-			//print_r($specialData);die();
-
-
 
 ?>
 

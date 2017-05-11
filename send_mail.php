@@ -7,7 +7,7 @@ function amazonSesEmail($to, $subject, $message)
         'key' => 'AKIAIMT5T3NIZUY2PKYQ',
         'secret' => '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'
     ));
- 	//$amazonSes->verify_email_address('villageexpert.info@gmail.com');
+
     $response = $amazonSes->send_email('villageexpert.info@gmail.com',
         array('ToAddresses' => array($to)),
         array(

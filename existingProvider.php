@@ -24,20 +24,19 @@ else if($_SESSION['logged_role_code']=='GM')
 else
 $imagePath = "/";
 
-//echo $user_id;
 
 //Get specialization Data
 $sql="select specialisation_id,specialisation	 from 	sp_specialisation order by specialisation";
-			$tableResult = mysqli_query($conn, $sql);
-			//print_r($tableResult);
+	$tableResult = mysqli_query($conn, $sql);
+	//print_r($tableResult);
 
-				$specialData = array();
-			if (mysqli_num_rows($tableResult) > 0)  
-			{
-				while($row = mysqli_fetch_assoc($tableResult)) {
-				$specialData[] = $row;
-				}
-			}
+		$specialData = array();
+	if (mysqli_num_rows($tableResult) > 0)  
+	{
+		while($row = mysqli_fetch_assoc($tableResult)) {
+		$specialData[] = $row;
+		}
+	}
 
 //Get Sub specialization Data
 $sql2="select sub_specialisation_id,sub_specialisation from 	sp_sub_specialisation order by sub_specialisation";
