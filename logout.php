@@ -48,6 +48,12 @@ session_start();
 		<div class="col-md-6 col-md-offset-3">
 			<div class="wellcome-text">
 			<?php
+
+			if(isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "")
+			{
+				$_COOKIE['VEemail'] = '';
+				unset($_COOKIE['VEemail']);
+			}
 			if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 			{
 				$conn=new connections();
