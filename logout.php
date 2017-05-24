@@ -52,6 +52,8 @@ session_start();
 			if(isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "")
 			{
 				$_COOKIE['VEemail'] = '';
+				$expire = strtotime(date('Y-m-d'));
+				setcookie('VEemail', '', $expire, "/");
 				unset($_COOKIE['VEemail']);
 			}
 			if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
