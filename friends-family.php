@@ -12,7 +12,7 @@ session_start();
             $_SESSION['logged_user_lname']=isset($_COOKIE['VEuser_lname'])?$_COOKIE['VEuser_lname']:'';
             $_SESSION['logged_user_email']=isset($_COOKIE['VEemail'])?$_COOKIE['VEemail']:'';
             //$_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
-        echo "em==".$_COOKIE['VEemail'];
+       
 
 $conn=new connections();
 $conn=$conn->connect();
