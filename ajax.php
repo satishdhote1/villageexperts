@@ -375,10 +375,10 @@ else if($tag == 'login') {
 		    $_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
 		    $sqlUpdate="update friendsRegister set loginStatus='YES' where id=".$SPLoginData['id'];
 
-		    if(!isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "") {
+		    //if(!isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "") {
 		    	$expire = strtotime(date('Y-m-d', strtotime('+1 years')));//cur time +1 year
 		    	setcookie('VEemail', $_SESSION['logged_user_email'], $expire, "/");
-		    }
+		   // }
 
 
 		    $rsUpdate=mysqli_query($conn, $sqlUpdate);
