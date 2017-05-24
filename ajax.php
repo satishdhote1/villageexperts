@@ -362,7 +362,10 @@ else if($tag == 'login') {
 
 		if (mysqli_num_rows($tableResult) > 0)  {
 
-		    $SPLoginData = mysqli_fetch_assoc($tableResult);			
+		    $SPLoginData = mysqli_fetch_assoc($tableResult);	
+
+
+
 		    $_SESSION['logged_user_id']=$SPLoginData['id'];
 		    $_SESSION['logged_role_code']='friendsLogin';
 
@@ -371,6 +374,12 @@ else if($tag == 'login') {
 		    $_SESSION['logged_user_email']=isset($SPLoginData['email'])?$SPLoginData['email']:'';
 		    $_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
 		    $sqlUpdate="update friendsRegister set loginStatus='YES' where id=".$SPLoginData['id'];
+
+		    if(!isset($_COOKIE['email']) && $_COOKIE['email'] != $_SESSION['logged_user_email']) {
+		    	$expire = strtotime(date('Y-m-d', strtotime('+1 years')));//cur time +1 year
+		    	setcookie('email', $_SESSION['logged_user_email'], $expire, "/");
+		    }
+
 
 		    $rsUpdate=mysqli_query($conn, $sqlUpdate);
 		    $result['success'] = 1;
