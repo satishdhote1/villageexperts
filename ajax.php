@@ -373,11 +373,15 @@ else if($tag == 'login') {
 		    $_SESSION['logged_user_lname']=isset($SPLoginData['lname'])?$SPLoginData['lname']:'';
 		    $_SESSION['logged_user_email']=isset($SPLoginData['email'])?$SPLoginData['email']:'';
 		    $_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
+		    
 		    $sqlUpdate="update friendsRegister set loginStatus='YES' where id=".$SPLoginData['id'];
 
 		    //if(!isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "") {
 		    	$expire = strtotime(date('Y-m-d', strtotime('+1 years')));//cur time +1 year
 		    	setcookie('VEemail', $_SESSION['logged_user_email'], $expire, "/");
+		    	setcookie('VEuser_id', $_SESSION['logged_user_id'], $expire, "/");
+		    	setcookie('VEuser_fname', $_SESSION['logged_user_fname'], $expire, "/");
+		    	setcookie('VEuser_lname', $_SESSION['logged_user_lname'], $expire, "/");
 		   // }
 
 

@@ -51,10 +51,16 @@ session_start();
 
 			if(isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "")
 			{
-				$_COOKIE['VEemail'] = '';
+				
 				$expire = strtotime(date('Y-m-d'));
 				setcookie('VEemail', '', $expire, "/");
+		    	setcookie('VEuser_id', '', $expire, "/");
+		    	setcookie('VEuser_fname', '', $expire, "/");
+		    	setcookie('VEuser_lname', '', $expire, "/");
 				unset($_COOKIE['VEemail']);
+				unset($_COOKIE['VEuser_id']);
+				unset($_COOKIE['VEuser_fname']);
+				unset($_COOKIE['VEuser_lname']);
 			}
 			if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 			{
