@@ -266,6 +266,7 @@
 <script type="text/javascript">
   
 $(document).on("click","backTo",function(){
+  alert("df");
 window.history.back();
 });
 
