@@ -156,7 +156,7 @@
         <button class="btn btn-cyan backTo" >My Home Page</button>
       </div>
        <div class="col-xs-12 col-sm-2 deco">
-        <button class="btn btn-close btn-blue-grey"><i class="fa fa-close"></i></button>
+        <button class="btn btn-close btn-blue-grey backTo"><i class="fa fa-close"></i></button>
       </div>
        <div class="clearfix"></div>
        <div class="m-t-2"></div>
