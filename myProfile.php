@@ -230,12 +230,12 @@
        <div class="col-xs-12 col-sm-6">
         <div class="main-block row">
            <div class="col-xs-5">
-            <div class="userpro"> <img src="images/profile.jpg"> </div>
+            <div class="userpro"> <img src="images/profile.jpg" id="preview"> </div>
           </div>
            <div class="col-xs-7">
             <div class=""> <i class="fa prefix"></i>
                <p class="chang-text">Change Image </p>
-               <input placeholder="upload-img" id="" class="form-control pImage " name="pImage" type="file">
+               <input placeholder="upload-img" id="pImage" class="form-control pImage " name="pImage" type="file">
              </div>
           </div>
          </div>
