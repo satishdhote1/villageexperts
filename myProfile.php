@@ -265,7 +265,7 @@
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript">
   
-$(document).on("click","backTo",function(){
+$(document).on("click",".backTo",function(){
   alert("df");
 window.history.back();
 });
