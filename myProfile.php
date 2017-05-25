@@ -119,7 +119,7 @@
 
 <header>
    <div class="container">
-   <div class="logo-modify"><img src="images/logo.jpg"></div>
+   <div class="logo-modify"><img src="images/logo.png"></div>
    
    <!--<div class="user-profile-block">
     
