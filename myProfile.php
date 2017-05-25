@@ -266,8 +266,7 @@
 <script type="text/javascript">
   
 $(document).on("click","backTo",function(){
-
-  history().back();
+window.history.back();
 });
 
 </script>
