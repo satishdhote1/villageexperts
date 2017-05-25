@@ -273,7 +273,7 @@ table td input[type="text"]{color: #000;font-weight:bold;}
     <!--Navbar-->
 
     <div class="login-profile">
-    <a href="myProfile.php" data-toggle="tooltip" data-placement="bottom" title="My Profile"><img src="images/logout.png" class="topBtn" style="cursor:pointer;"/></a>
+    <a href="myProfile.php" data-toggle="tooltip" data-placement="bottom" title="My Profile"><img src="images/icon-2.png" class="topBtn" style="cursor:pointer;"/></a>
     <a href="/" data-toggle="tooltip" data-placement="bottom" title="Back"><img src="images/Left.png" class="topBtn" style="cursor:pointer;"/></a>                
     <a href="logout.php" data-toggle="tooltip" data-placement="bottom" title="Log out!"><img src="images/logout.png" class="topBtn" style="cursor:pointer;"/></a>
 
