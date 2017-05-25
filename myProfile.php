@@ -7,7 +7,7 @@
  <title>Village Expert</title>
 
  <!-- Font Awesome -->
- <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet">
+ <link href="fonts/css/font-awesome.min.css" rel="stylesheet">
 
  <!-- Bootstrap core CSS -->
  <link href="css/bootstrap.min.css" rel="stylesheet">
