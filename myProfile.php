@@ -1,3 +1,23 @@
+<?php
+include("config/connection.php");
+session_start();
+$conn=new connections();
+$conn=$conn->connect();
+
+$sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_user_email']."'";
+       $tableResultParent = mysqli_query($conn, $sqlParent);
+       $resultParentData = array();
+       $resultParent = '';
+       if (mysqli_num_rows($tableResultParent) > 0)  
+      {
+        $resultParentData  = mysqli_fetch_assoc($tableResultParent);
+      }
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
  <head>
@@ -162,37 +182,37 @@
        <div class="m-t-2"></div>
        <div class="col-md-6 col-xs-12">
         <div class=" main-block"> <i class="fa fa-user prefix"> <span>First Name </span></i>
-           <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="" placeholder="Data">
+           <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $resultParentData['fname'] ;?>" placeholder="Data">
            <label for="fname"></label>
          </div>
       </div>
        <div class="col-md-6 col-xs-12">
         <div class=" main-block"> <i class="fa fa-user prefix"> <span> Last Name</span> </i>
-           <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="" placeholder="Data">
+           <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $resultParentData['lname'] ;?>" placeholder="Data">
            <label for="form4"></label>
          </div>
       </div>
        <div class="col-md-6 col-xs-12">
         <div class=" main-block"> <i class="fa fa-envelope prefix"> <span>email</span> </i>
-           <input id="email" class="form-control email" name="email" tabindex="3" type="text" value="" placeholder="Data">
+           <input id="email" class="form-control email" name="email" tabindex="3" type="text" value="<?php echo $resultParentData['email'] ;?>" placeholder="Data">
            <label for="email"></label>
          </div>
       </div>
        <div class="col-md-6 col-xs-12">
         <div class="main-block"> <i class="fa fa-phone prefix"><span> Mobile</span></i>
-           <input id="form7 mobile" class="form-control mobile" name="mobile" tabindex="4" type="text" value="" placeholder="Data">
+           <input id="form7 mobile" class="form-control mobile" name="mobile" tabindex="4" type="text" value="<?php echo $resultParentData['phone'] ;?>" placeholder="Data">
            <label for="form7"></label>
          </div>
       </div>
        <div class="col-md-6 col-xs-12">
         <div class=" main-block"> <i class="fa fa-map-marker prefix"><span> City</span></i>
-           <input id="form5 city" class="form-control city" name="city" tabindex="5" type="text" value="" placeholder="Data">
+           <input id="form5 city" class="form-control city" name="city" tabindex="5" type="text" value="<?php echo $resultParentData['city'] ;?>" placeholder="Data">
            <label for="form5"></label>
          </div>
       </div>
        <div class="col-md-6 col-xs-12">
         <div class=" main-block"> <i class="fa fa-flag prefix"><span> country</span></i>
-           <input id="form6 city" class="form-control city" name="Country" tabindex="6" type="text" value="" placeholder="Data">
+           <input id="form6 city" class="form-control city" name="Country" tabindex="6" type="text" value="<?php echo $resultParentData['country'] ;?>" placeholder="Data">
            <label for="form6"></label>
          </div>
       </div>
@@ -230,7 +250,7 @@
        <div class="col-xs-12 col-sm-6">
         <div class="main-block row">
            <div class="col-xs-5">
-            <div class="userpro"> <img src="images/profile.jpg" id="preview"> </div>
+            <div class="userpro"> <img src="<?php echo !empty($resultParentData['image'])?$resultParentData['image']:'images/profile.jpg' ;?>" id="preview"> </div>
           </div>
            <div class="col-xs-7">
             <div class=""> <i class="fa prefix"></i>
