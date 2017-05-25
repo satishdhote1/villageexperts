@@ -153,7 +153,7 @@
         <p class="hder">My Profile Page</p>
       </div>
        <div class="col-xs-12 col-sm-4 deco">
-        <button class="btn btn-cyan" >My Home Page</button>
+        <button class="btn btn-cyan backTo" >My Home Page</button>
       </div>
        <div class="col-xs-12 col-sm-2 deco">
         <button class="btn btn-close btn-blue-grey"><i class="fa fa-close"></i></button>
@@ -263,5 +263,13 @@
 
 <!-- MDB core JavaScript --> 
 <script type="text/javascript" src="js/mdb.min.js"></script>
+<script type="text/javascript">
+  
+$(document).on("click","backTo",function(){
+
+  history().back();
+});
+
+</script>
 </body>
 </html>
