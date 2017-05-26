@@ -297,7 +297,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
       </div>
        <div class="clearfix"></div>
        <div class="m-t-2"></div>
-       <form class="profile" autocomplete="off" id="profile" action="" method="post" enctype="multipart/form-data">
+       <form class="profile" autocomplete="false" id="profile" action="" method="post" enctype="multipart/form-data">
        <input type="hidden" name="uid" value="<?php echo $resultParentData['id'] ;?>">
        <input type="hidden" name="passwordChanged" class="passwordChanged" value="<?php echo ($tableResult == 1 && $changePWD == 1)?"1":"0"; ?>">
        
