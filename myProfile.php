@@ -341,11 +341,11 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		        <div class="radio">
 		           <p>Listed as Expert<span class="check1"
 		             <input type="radio" name="exp" id="Y" tabindex="7" <?php echo ($isexpertUser == 1)?"checked='checked'":"" ?>>
-		             <label for="Y" style="margin-right:20px">YES</label>
+		             <label for="Y" >YES</label>
 		             <input type="radio" id="N" name="exp" tabindex="8" <?php echo ($isexpertUser == 0)?"checked='checked'":"" ?>>
-		             <label for="N">NO </label>
-		             <input type="radio" id="N" name="exp" tabindex="9" <?php echo ($isexpertUser == 2)?"checked='checked'":"" ?>>
-		             <label for="N">BOTH </label>
+		             <label for="N" style="margin-right:20px">NO </label>
+		             <input type="radio" id="B" name="exp" tabindex="9" <?php echo ($isexpertUser == 2)?"checked='checked'":"" ?>>
+		             <label for="B">BOTH </label>
 		             </span></p>
 		         </div>
 		        <div class=" main-block" style="padding-top:20px;">
