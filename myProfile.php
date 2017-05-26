@@ -30,6 +30,42 @@ else
 	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."' where id = ".$uid;
 }
     $tableResult = mysqli_query($conn, $sql);
+
+    if($tableResult == 1)
+    {
+    	$uploaded_file = '';
+    	$member_id = $uid;
+		     
+		    if(isset($_FILES) && is_array($_FILES)) {
+
+				$target_dir = "images/friendsFamily/";
+				$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);
+
+				$target_file = $target_dir.$member_id.'.'.$imageFileType;
+				$target_fileName = "friendsFamily/".$member_id.'.'.$imageFileType;
+
+				//die($target_file);
+				$uploadOk = 1;
+
+				//indicate which file to resize (can be any type jpg/png/gif/etc...)
+				$file = $_FILES['pImage']["tmp_name"];//'your_path_to_file/file.png';
+
+				//indicate the path and name for the new resized file
+				$resizedFile = $target_file;//'your_path_to_file/resizedFile.png';
+									
+				//call the function (when passing path to pic)
+				if (smart_resize_image($file , null, "200" , "200" , false , $resizedFile , false , false ,100 )){	
+					$uploaded_file = $target_file;
+					$result['msg'] = "The Image ".$member_id. $target_fileName. " has been uploaded.";
+					$result['imageName'] = $target_fileName;
+					$sqlUpdate="update friendsRegister set image='".$target_file."' where id=".$member_id;
+					$rsUpdate=mysqli_query($conn, $sqlUpdate);
+				} else {
+					$passStr="Sorry, there was an error uploading your Image.<br/>";
+				}
+			}
+    }
+
     //print_r($tableResult);
 }
 
