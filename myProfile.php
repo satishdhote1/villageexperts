@@ -63,7 +63,7 @@ else
 					$result['imageName'] = $target_fileName;
 					$sqlUpdate="update friendsRegister set image='".$target_file."' where id=".$member_id;
 					$rsUpdate=mysqli_query($conn, $sqlUpdate);
-					$passStr="Image Upload Successful.<br/>";
+					$passStr="Image Upload Successful.<br/>".$result['msg'];
 				} else {
 					$passStr="Sorry, there was an error uploading your Image.<br/>";
 				}
