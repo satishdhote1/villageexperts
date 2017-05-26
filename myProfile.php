@@ -290,7 +290,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
         <p class="hder">My Profile Page</p>
       </div>
        <div class="col-xs-12 col-sm-4 deco">
-        <button class="btn btn-cyan backTo" >My Home Page</button>
+        <button class="btn btn-cyan backToHome" >My Home Page</button>
       </div>
        <div class="col-xs-12 col-sm-2 deco">
         <button class="btn btn-close btn-blue-grey backTo"><i class="fa fa-close"></i></button>
@@ -414,6 +414,9 @@ $(document).ready(function(){
 	{setTimeout(function(){location.href="logout.php"}, 2000);}
 $(document).on("click",".backTo",function(){
 window.history.back();
+});
+$(document).on("click",".backToHome",function(){
+location.href="friends-family.php"
 });
 });
 
