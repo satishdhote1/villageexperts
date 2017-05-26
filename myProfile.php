@@ -4,6 +4,30 @@ session_start();
 $conn=new connections();
 $conn=$conn->connect();
 
+
+if(isset($_REQUEST['profileSubmit']))
+{
+
+	$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
+	$isexpertreg=isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:(isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:'');
+	$isFriendreg=isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:(isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:'');
+	$uid=isset($_REQUEST['uid'])?$_REQUEST['uid']:'');
+	$expertID=isset($_REQUEST['expertID'])?$_REQUEST['expertID']:'');
+	$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:'');
+	$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:'');
+	$m_city=isset($_REQUEST['city'])?$_REQUEST['city']:'');
+	$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:'');
+	$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:'');
+	$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:'');
+	$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'');
+
+	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."',pwd = '".md5($pwd)."' where id = ".$uid;
+    $tableResult = mysqli_query($conn, $sql);
+    print_r($tableResult);
+}
+
+
+
 $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_user_email']."'";
        $tableResultParent = mysqli_query($conn, $sqlParent);
        $resultParentData = array();
@@ -168,6 +192,11 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 <!--Navbar-->
 <div class="container">
    <div class="row">
+   <div class="alert alert-success connSuccess" style="display:none;margin-top: 10px;">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  <span>Profile Updated Successfuly!</span> 
+	</div>
+	<div class="clearfix"></div>
     <div class="box-new-page">
        <div class="col-sm-6 text-xs-left">
         <p class="hder">My Profile Page</p>
@@ -180,89 +209,92 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
       </div>
        <div class="clearfix"></div>
        <div class="m-t-2"></div>
-       <div class="col-md-6 col-xs-12">
-        <div class=" main-block"> <i class="fa fa-user prefix"> <span>First Name </span></i>
-           <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $resultParentData['fname'] ;?>" placeholder="Data">
-           <label for="fname"></label>
-         </div>
-      </div>
-       <div class="col-md-6 col-xs-12">
-        <div class=" main-block"> <i class="fa fa-user prefix"> <span> Last Name</span> </i>
-           <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $resultParentData['lname'] ;?>" placeholder="Data">
-           <label for="form4"></label>
-         </div>
-      </div>
-       <div class="col-md-6 col-xs-12">
-        <div class=" main-block"> <i class="fa fa-envelope prefix"> <span>email</span> </i>
-           <input id="email" class="form-control email" name="email" tabindex="3" type="text" value="<?php echo $resultParentData['email'] ;?>" placeholder="Data">
-           <label for="email"></label>
-         </div>
-      </div>
-       <div class="col-md-6 col-xs-12">
-        <div class="main-block"> <i class="fa fa-phone prefix"><span> Mobile</span></i>
-           <input id="form7 mobile" class="form-control mobile" name="mobile" tabindex="4" type="text" value="<?php echo $resultParentData['phone'] ;?>" placeholder="Data">
-           <label for="form7"></label>
-         </div>
-      </div>
-       <div class="col-md-6 col-xs-12">
-        <div class=" main-block"> <i class="fa fa-map-marker prefix"><span> City</span></i>
-           <input id="form5 city" class="form-control city" name="city" tabindex="5" type="text" value="<?php echo $resultParentData['city'] ;?>" placeholder="Data">
-           <label for="form5"></label>
-         </div>
-      </div>
-       <div class="col-md-6 col-xs-12">
-        <div class=" main-block"> <i class="fa fa-flag prefix"><span> country</span></i>
-           <input id="form6 city" class="form-control city" name="Country" tabindex="6" type="text" value="<?php echo $resultParentData['country'] ;?>" placeholder="Data">
-           <label for="form6"></label>
-         </div>
-      </div>
-       <div class="col-md-6 col-xs-12">
-        <div class="radio">
-           <p>Listed as Expert<span class="check1">
-             <input type="radio" name="exp" id="Y" tabindex="7">
-             <label for="Y" style="margin-right:20px">YES</label>
-             <input type="radio" id="N" name="exp" tabindex="8">
-             <label for="N">NO </label>
-             </span></p>
-         </div>
-        <div class=" main-block" style="padding-top:20px;">
-           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:20px;"> Expertise Listed As </div>
-           <div class="col-xs-6" style="padding-left:0">
-            <input id="form7 " class="form-control Ldate" name="" tabindex="9" type="text" value="" placeholder="Data" style="margin:0;height:auto;">
-            <label for="form7"></label>
-          </div>
-         </div>
-        <div class=" main-block">
-           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> User Name </div>
-           <div class="col-xs-6" style="padding-left:0">
-            <input id="form7 Ldate" class="form-control " name="" tabindex="10" type="text" value="" placeholder="Data" style="margin:0;height:auto;">
-            <label for="form7"></label>
-          </div>
-         </div>
-        <div class=" main-block">
-           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> Password </div>
-           <div class="col-xs-6" style="padding-left:0">
-            <input id="form7 " class="form-control Ldate" name="" tabindex="11" type="password" value="" placeholder="Data" style="margin:0;height:auto;">
-            <label for="form7"></label>
-          </div>
-         </div>
-      </div>
-       <div class="col-xs-12 col-sm-6">
-        <div class="main-block row">
-           <div class="col-xs-5">
-            <div class="userpro"> <img src="<?php echo !empty($resultParentData['image'])?$resultParentData['image']:'images/profile.jpg' ;?>" id="preview"> </div>
-          </div>
-           <div class="col-xs-7">
-            <div class=""> <i class="fa prefix"></i>
-               <p class="chang-text">Change Image </p>
-               <input placeholder="upload-img" id="pImage" class="form-control pImage " name="pImage" type="file">
-             </div>
-          </div>
-         </div>
-      </div>
-       <div class="col-xs-6 ">
-        <button class="btn btn-cyan text-xs-center pull-right" style="width:55%; margin:34px auto 0 auto" >Save</button>
-      </div>
+       <form class="profile" id="profile" action="" method="post" enctype="multipart/form-data">
+       <input type="hidden" name="uid" value="<?php echo $resultParentData['id'] ;?>">
+		       <div class="col-md-6 col-xs-12">
+		        <div class=" main-block"> <i class="fa fa-user prefix"> <span>First Name </span></i>
+		           <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $resultParentData['fname'] ;?>" placeholder="Data">
+		           <label for="fname"></label>
+		         </div>
+		      </div>
+		       <div class="col-md-6 col-xs-12">
+		        <div class=" main-block"> <i class="fa fa-user prefix"> <span> Last Name</span> </i>
+		           <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $resultParentData['lname'] ;?>" placeholder="Data">
+		           <label for="form4"></label>
+		         </div>
+		      </div>
+		       <div class="col-md-6 col-xs-12">
+		        <div class=" main-block"> <i class="fa fa-envelope prefix"> <span>email</span> </i>
+		           <input id="email" class="form-control email" name="email" tabindex="3" type="text" value="<?php echo $resultParentData['email'] ;?>" placeholder="Data">
+		           <label for="email"></label>
+		         </div>
+		      </div>
+		       <div class="col-md-6 col-xs-12">
+		        <div class="main-block"> <i class="fa fa-phone prefix"><span> Mobile</span></i>
+		           <input id="form7 phone" class="form-control mobile" name="phone" tabindex="4" type="text" value="<?php echo $resultParentData['phone'] ;?>" placeholder="Data">
+		           <label for="form7"></label>
+		         </div>
+		      </div>
+		       <div class="col-md-6 col-xs-12">
+		        <div class=" main-block"> <i class="fa fa-map-marker prefix"><span> City</span></i>
+		           <input id="form5 city" class="form-control city" name="city" tabindex="5" type="text" value="<?php echo $resultParentData['city'] ;?>" placeholder="Data">
+		           <label for="form5"></label>
+		         </div>
+		      </div>
+		       <div class="col-md-6 col-xs-12">
+		        <div class=" main-block"> <i class="fa fa-flag prefix"><span> country</span></i>
+		           <input id="form6 city" class="form-control city" name="country" tabindex="6" type="text" value="<?php echo $resultParentData['country'] ;?>" placeholder="Data">
+		           <label for="form6"></label>
+		         </div>
+		      </div>
+		       <div class="col-md-6 col-xs-12">
+		        <div class="radio">
+		           <p>Listed as Expert<span class="check1">
+		             <input type="radio" name="exp" id="Y" tabindex="7">
+		             <label for="Y" style="margin-right:20px">YES</label>
+		             <input type="radio" id="N" name="exp" tabindex="8">
+		             <label for="N">NO </label>
+		             </span></p>
+		         </div>
+		        <div class=" main-block" style="padding-top:20px;">
+		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:20px;"> Expertise Listed As </div>
+		           <div class="col-xs-6" style="padding-left:0">
+		            <input id="form7 " class="form-control Ldate" name="" tabindex="9" type="text" value="" placeholder="Data" style="margin:0;height:auto;">
+		            <label for="form7"></label>
+		          </div>
+		         </div>
+		        <div class=" main-block">
+		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> User Name </div>
+		           <div class="col-xs-6" style="padding-left:0">
+		            <input id="form7 Ldate" class="form-control " name="" tabindex="10" type="text" value="" placeholder="Data" style="margin:0;height:auto;">
+		            <label for="form7"></label>
+		          </div>
+		         </div>
+		        <div class=" main-block">
+		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> Password </div>
+		           <div class="col-xs-6" style="padding-left:0">
+		            <input id="form7 " class="form-control Ldate" name="pwds" tabindex="11" type="password" value="" placeholder="Data" style="margin:0;height:auto;">
+		            <label for="form7"></label>
+		          </div>
+		         </div>
+		      </div>
+		       <div class="col-xs-12 col-sm-6">
+		        <div class="main-block row">
+		           <div class="col-xs-5">
+		            <div class="userpro"> <img src="<?php echo !empty($resultParentData['image'])?$resultParentData['image']:'images/profile.jpg' ;?>" id="preview"> </div>
+		          </div>
+		           <div class="col-xs-7">
+		            <div class=""> <i class="fa prefix"></i>
+		               <p class="chang-text">Change Image </p>
+		               <input placeholder="upload-img" id="pImage" class="form-control pImage " name="pImage" type="file">
+		             </div>
+		          </div>
+		         </div>
+		      </div>
+		       <div class="col-xs-6 ">
+		        <button class="btn btn-cyan text-xs-center pull-right" type="submit" name="profileSubmit" style="width:55%; margin:34px auto 0 auto" >Save</button>
+		      </div>
+      </form>
        <div class="clearfix"></div>
      </div>
   </div>
