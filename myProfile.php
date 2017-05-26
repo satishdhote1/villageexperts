@@ -199,11 +199,13 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 <!--Navbar-->
 <div class="container">
    <div class="row">
-   <div class="alert alert-success connSuccess" style="display:block;margin-top: 10px;">
+   <?php if($tableResult == 1){?>
+   <div class="alert alert-success connSuccess" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	  <span>Profile Updated Successfuly!</span> 
 	</div>
-	
+	<?php }?>
+	<div class="clearfix"></div>
     <div class="box-new-page">
        <div class="col-sm-6 text-xs-left">
         <p class="hder">My Profile Page</p>
