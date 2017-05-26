@@ -373,7 +373,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
   
 $(document).ready(function(){
 	if($(".passwordChanged").val() == 1)
-	{alert("hi1");setTimeout(function(){location.href="logout.php"}, 1000);}
+	{setTimeout(function(){location.href="logout.php"}, 2000);}
 $(document).on("click",".backTo",function(){
 window.history.back();
 });
