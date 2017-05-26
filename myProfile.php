@@ -8,6 +8,18 @@ $conn=$conn->connect();
 if(isset($_REQUEST['profileSubmit']))
 {
 
+	$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
+	$isexpertreg=isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:'';
+	$isFriendreg=isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:'';
+	$uid=isset($_REQUEST['uid'])?$_REQUEST['uid']:'';
+	$expertID=isset($_REQUEST['expertID'])?$_REQUEST['expertID']:'';
+	$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:'';
+	$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:'';
+	$m_city=isset($_REQUEST['city'])?$_REQUEST['city']:'';
+	$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:'';
+	$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:'';
+	$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:'';
+	$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'';
 $sql="";
 if(!empty($pwd))
 {
