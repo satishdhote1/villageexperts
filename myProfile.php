@@ -20,8 +20,15 @@ if(isset($_REQUEST['profileSubmit']))
 	$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:'');
 	$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:'');
 	$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'');
-
+$sql="";
+if(!empty($pwd))
+{
 	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."',pwd = '".md5($pwd)."' where id = ".$uid;
+}
+else
+{
+	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."' where id = ".$uid;
+}
     $tableResult = mysqli_query($conn, $sql);
     print_r($tableResult);
 }
