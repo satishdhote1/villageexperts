@@ -23,17 +23,18 @@ if(isset($_REQUEST['profileSubmit']))
 	$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:'';
 	$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:'';
 	$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:'';
+	$expertiesData = isset($_REQUEST['expertiesData'])?$_REQUEST['expertiesData']:'';
 	$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'';
 $sql="";
 if(!empty($pwd))
 {
 	$changePWD = 1;
-	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."',pwd = '".md5($pwd)."' where id = ".$uid;
+	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."',pwd = '".md5($pwd)."',experties = '".$expertiesData."' where id = ".$uid;
 }
 else
 {
 	$changePWD = 0;
-	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."' where id = ".$uid;
+	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."',experties = '".$expertiesData."' where id = ".$uid;
 }
     $tableResult = mysqli_query($conn, $sql);
 
@@ -313,7 +314,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		        <div class=" main-block" style="padding-top:20px;">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:20px;"> Expertise Listed As </div>
 		           <div class="col-xs-6" style="padding-left:0">
-		            <input id="form7 " class="form-control Ldate" name="" tabindex="9" type="text" value="" placeholder="Data" style="margin:0;height:auto;">
+		            <input id="form7 " class="form-control Ldate" name="expertiesData" tabindex="9" type="text" value="<?php echo $resultParentData['experties'] ;?>" placeholder="Data" style="margin:0;height:auto;">
 		            <label for="form7"></label>
 		          </div>
 		         </div>
