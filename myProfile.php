@@ -37,7 +37,7 @@ else
     if($tableResult == 1)
     {
     	$uploaded_file = '';
-    	$member_id = 102;//$uid;
+    	$member_id = $uid;
 		     
 		    if(isset($_FILES) && is_array($_FILES)) {
 
@@ -45,6 +45,7 @@ else
 				$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);
 
 				$target_file = $target_dir.$member_id.'.'.$imageFileType;
+				unlink($target_file);
 				$target_fileName = "friendsFamily/".$member_id.'.'.$imageFileType;
 
 				//die($target_file);
