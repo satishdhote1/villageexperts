@@ -8,6 +8,7 @@ $conn=$conn->connect();
 
 $tableResult = 0;
 $passStr="";
+$changePWD = 0;
 if(isset($_REQUEST['profileSubmit']))
 {
 
@@ -26,10 +27,12 @@ if(isset($_REQUEST['profileSubmit']))
 $sql="";
 if(!empty($pwd))
 {
+	$changePWD = 1;
 	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."',pwd = '".md5($pwd)."' where id = ".$uid;
 }
 else
 {
+	$changePWD = 0;
 	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."' where id = ".$uid;
 }
     $tableResult = mysqli_query($conn, $sql);
@@ -74,7 +77,10 @@ else
     //print_r($tableResult);
 }
 
-
+ if($tableResult == 1 && $changePWD == 1)
+{
+	header('Location: logout.php');
+}
 
 $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_user_email']."'";
        $tableResultParent = mysqli_query($conn, $sqlParent);
