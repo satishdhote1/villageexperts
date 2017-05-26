@@ -7,6 +7,7 @@ $conn=new connections();
 $conn=$conn->connect();
 
 $tableResult = 0;
+$passStr="";
 if(isset($_REQUEST['profileSubmit']))
 {
 
@@ -62,6 +63,7 @@ else
 					$result['imageName'] = $target_fileName;
 					$sqlUpdate="update friendsRegister set image='".$target_file."' where id=".$member_id;
 					$rsUpdate=mysqli_query($conn, $sqlUpdate);
+					$passStr="Image Upload Successful.<br/>";
 				} else {
 					$passStr="Sorry, there was an error uploading your Image.<br/>";
 				}
@@ -240,9 +242,9 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
    <?php if($tableResult == 1){?>
    <div class="alert alert-success connSuccess" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	  <span>Profile Updated Successfuly!</span> 
+	  <span>Profile Updated Successfuly!</br></span> 
 	</div>
-	<?php }?>
+	<?php echo $passStr;}?>
 	<div class="clearfix"></div>
     <div class="box-new-page">
        <div class="col-sm-6 text-xs-left">
