@@ -1,5 +1,7 @@
 <?php
 include("config/connection.php");
+include("imageresize/smart_resize_image.function.php");
+include("phpSendMail.php");
 session_start();
 $conn=new connections();
 $conn=$conn->connect();
