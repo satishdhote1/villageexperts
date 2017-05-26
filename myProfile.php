@@ -4,7 +4,7 @@ session_start();
 $conn=new connections();
 $conn=$conn->connect();
 
-
+$tableResult = 0;
 if(isset($_REQUEST['profileSubmit']))
 {
 
@@ -30,7 +30,7 @@ else
 	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."' where id = ".$uid;
 }
     $tableResult = mysqli_query($conn, $sql);
-    print_r($tableResult);
+    //print_r($tableResult);
 }
 
 
@@ -199,7 +199,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 <!--Navbar-->
 <div class="container">
    <div class="row">
-   <div class="alert alert-success connSuccess" style="display:none;margin-top: 10px;">
+   <div class="alert alert-success connSuccess" style="display:block;margin-top: 10px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	  <span>Profile Updated Successfuly!</span> 
 	</div>
