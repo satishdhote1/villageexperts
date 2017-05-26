@@ -9,6 +9,7 @@ $conn=$conn->connect();
 $tableResult = 0;
 $passStr="";
 $changePWD = 0;
+$isexpertUser = 0;
 if(isset($_REQUEST['profileSubmit']))
 {
 
@@ -86,7 +87,41 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
        if (mysqli_num_rows($tableResultParent) > 0)  
       {
         $resultParentData  = mysqli_fetch_assoc($tableResultParent);
+
+			$sqlParent2 = "select * from friendsExpertInfo where userid = '".$resultParentData['id']."'";
+			$tableResultParent2 = mysqli_query($conn, $sqlParent2);
+			$resultParentData2 = array();
+
+			if (mysqli_num_rows($tableResultParent2) > 0)  
+			{
+				$flag1 = 0;
+				$flag2 = 0;
+				while ($row = mysqli_fetch_assoc($tableResultParent2)) {
+					if($row['isexpert'] == 1)
+					{
+						$flag1 = 1;				
+					}
+					else{
+						$flag2 = 1;
+					}
+				}
+				if($flag1 == 1 && $flag2 == 1)
+				{
+					$isexpertUser = 2;	
+				}
+				else if($flag1 == 1 && $flag2 != 1)
+				{
+					$isexpertUser = 1;	
+				}
+				else if($flag1 != 1 && $flag2 == 1)
+				{
+					$isexpertUser = 0;	
+				}
+				
+			}
       }
+
+      
 
 
 
@@ -304,27 +339,29 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class="radio">
-		           <p>Listed as Expert<span class="check1">
-		             <input type="radio" name="exp" id="Y" tabindex="7">
+		           <p>Listed as Expert<span class="check1"
+		             <input type="radio" name="exp" id="Y" tabindex="7" <?php echo ($isexpertUser == 1)?"checked='checked'":"" ?>>
 		             <label for="Y" style="margin-right:20px">YES</label>
-		             <input type="radio" id="N" name="exp" tabindex="8">
+		             <input type="radio" id="N" name="exp" tabindex="8" <?php echo ($isexpertUser == 0)?"checked='checked'":"" ?>>
 		             <label for="N">NO </label>
+		             <input type="radio" id="N" name="exp" tabindex="9" <?php echo ($isexpertUser == 2)?"checked='checked'":"" ?>>
+		             <label for="N">BOTH </label>
 		             </span></p>
 		         </div>
 		        <div class=" main-block" style="padding-top:20px;">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:20px;"> Expertise Listed As </div>
 		           <div class="col-xs-6" style="padding-left:0">
-		            <input id="form7 " class="form-control Ldate" name="expertiesData" tabindex="9" type="text" value="<?php echo $resultParentData['experties'] ;?>" placeholder="Data" style="margin:0;height:auto;">
+		            <input id="form7 " class="form-control Ldate" name="expertiesData" tabindex="10" type="text" value="<?php echo $resultParentData['experties'] ;?>" placeholder="Data" style="margin:0;height:auto;">
 		            <label for="form7"></label>
 		          </div>
 		         </div>
-		        <div class=" main-block">
+		        <!-- <div class=" main-block">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> User Name </div>
 		           <div class="col-xs-6" style="padding-left:0">
 		            <input id="form7 Ldate" class="form-control " name="" tabindex="10" type="text" value="" placeholder="Data" style="margin:0;height:auto;">
 		            <label for="form7"></label>
 		          </div>
-		         </div>
+		         </div> -->
 		        <div class=" main-block">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> Password </div>
 		           <div class="col-xs-6" style="padding-left:0">
