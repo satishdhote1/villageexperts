@@ -77,10 +77,6 @@ else
     //print_r($tableResult);
 }
 
- if($tableResult == 1 && $changePWD == 1)
-{
-	header('Location: logout.php');
-}
 
 $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_user_email']."'";
        $tableResultParent = mysqli_query($conn, $sqlParent);
@@ -249,7 +245,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
    <?php if($tableResult == 1){?>
    <div class="alert alert-success connSuccess" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	  <span>Profile Updated Successfuly!</br></span> 
+	  <span>Profile Updated Successfuly!</br> <?php if($tableResult == 1 && $changePWD == 1){echo "Password changed!Logging you out..</br>"}?></span> 
 	</div>
 	<?php }?>
 	<div class="clearfix"></div>
@@ -267,6 +263,8 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
        <div class="m-t-2"></div>
        <form class="profile" id="profile" action="" method="post" enctype="multipart/form-data">
        <input type="hidden" name="uid" value="<?php echo $resultParentData['id'] ;?>">
+       <input type="hidden" name="passwordChanged" class="passwordChanged" value="<?php echo ($tableResult == 1 && $changePWD == 1)?"1":"0"; ?>">
+       
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-user prefix"> <span>First Name </span></i>
 		           <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $resultParentData['fname'] ;?>" placeholder="Data">
@@ -373,8 +371,12 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 <script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript">
   
+$(document).ready(function(){
+	if($(".passwordChanged").val() == 1)
+	{setTimeout(function(){window.Location.href="logout.php"}, 1000);}
 $(document).on("click",".backTo",function(){
 window.history.back();
+});
 });
 
 </script>
