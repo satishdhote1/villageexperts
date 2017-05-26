@@ -37,7 +37,7 @@ else
     if($tableResult == 1)
     {
     	$uploaded_file = '';
-    	$member_id = $uid;
+    	$member_id = 102;//$uid;
 		     
 		    if(isset($_FILES) && is_array($_FILES)) {
 
