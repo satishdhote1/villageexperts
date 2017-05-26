@@ -297,7 +297,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
       </div>
        <div class="clearfix"></div>
        <div class="m-t-2"></div>
-       <form class="profile" autocomplete="false" id="profile" action="" method="post" enctype="multipart/form-data">
+       <form class="profile" id="profile" action="" method="post" enctype="multipart/form-data">
        <input type="hidden" name="uid" value="<?php echo $resultParentData['id'] ;?>">
        <input type="hidden" name="passwordChanged" class="passwordChanged" value="<?php echo ($tableResult == 1 && $changePWD == 1)?"1":"0"; ?>">
        
@@ -351,7 +351,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		        <div class=" main-block" style="padding-top:20px;">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:20px;"> Expertise Listed As </div>
 		           <div class="col-xs-6" style="padding-left:0">
-		            <input id="form7 "  class="form-control Ldate" name="expertiesData" tabindex="10" type="text" value="<?php echo $resultParentData['experties'] ;?>" placeholder="Data" style="margin:0;height:auto;">
+		            <input id="form7 " readonly onfocus="this.removeAttribute('readonly');" class="form-control Ldate" name="expertiesData" tabindex="10" type="text" value="<?php echo $resultParentData['experties'] ;?>" placeholder="Data" style="margin:0;height:auto;">
 		            <label for="form7"></label>
 		          </div>
 		         </div>
@@ -365,7 +365,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		        <div class=" main-block">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> Password </div>
 		           <div class="col-xs-6" style="padding-left:0">
-		            <input id="form7 " autocomplete="false" class="form-control Ldate" name="pwds" tabindex="11" type="password" value="" placeholder="Data" style="margin:0;height:auto;">
+		            <input id="form7 " readonly onfocus="this.removeAttribute('readonly');" class="form-control Ldate" name="pwds" tabindex="11" type="password" value="" placeholder="Data" style="margin:0;height:auto;">
 		            <label for="form7"></label>
 		          </div>
 		         </div>
