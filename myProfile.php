@@ -245,7 +245,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	  <span>Profile Updated Successfuly!</br></span> 
 	</div>
-	<?php echo $passStr;}?>
+	<?php }?>
 	<div class="clearfix"></div>
     <div class="box-new-page">
        <div class="col-sm-6 text-xs-left">
@@ -336,7 +336,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		           <div class="col-xs-7">
 		            <div class=""> <i class="fa prefix"></i>
 		               <p class="chang-text">Change Image </p>
-		               <input placeholder="upload-img" id="pImage" class="form-control pImage " name="pImage" type="file">
+		               <input placeholder="upload-img" id="pImage" class="form-control pImage " name="pImage"onchange="previewImage(this)" accept="image/*" type="file">
 		             </div>
 		          </div>
 		         </div>
