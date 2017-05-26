@@ -203,7 +203,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	  <span>Profile Updated Successfuly!</span> 
 	</div>
-	<div class="clearfix"></div>
+	
     <div class="box-new-page">
        <div class="col-sm-6 text-xs-left">
         <p class="hder">My Profile Page</p>
