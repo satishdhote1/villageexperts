@@ -245,7 +245,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
    <?php if($tableResult == 1){?>
    <div class="alert alert-success connSuccess" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	  <span>Profile Updated Successfuly!</br> <?php if($tableResult == 1 && $changePWD == 1){echo "Password changed!Logging you out..</br>"}?></span> 
+	  <span>Profile Updated Successfuly!</br> <?php if($tableResult == 1 && $changePWD == 1){echo "Password changed!Logging you out..</br>";}?></span> 
 	</div>
 	<?php }?>
 	<div class="clearfix"></div>
