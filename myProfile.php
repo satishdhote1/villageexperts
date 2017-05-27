@@ -314,7 +314,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		         </div>
 		      </div>
 		       <div class="col-md-6 col-xs-12">
-		        <div class=" main-block"> <i class="fa fa-envelope prefix"> <span>email</span> </i>
+		        <div class=" main-block"> <i class="fa fa-envelope prefix"> <span>Username(email)</span> </i>
 		           <input id="email" class="form-control email" name="email" tabindex="3" type="text" value="<?php echo $resultParentData['email'] ;?>" placeholder="Enter Your Email">
 		           <label for="email"></label>
 		         </div>
