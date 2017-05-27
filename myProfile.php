@@ -321,7 +321,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class="main-block"> <i class="fa fa-phone prefix"><span> Mobile</span></i>
-		           <input id="form7 phone" class="form-control mobile" name="phone" tabindex="4" type="text" value="<?php echo $resultParentData['phone'] ;?>" placeholder="Enter Your phone number">
+		           <input id="form7 phone" class="form-control mobile" name="phone" tabindex="4" type="text" value="<?php echo ($resultParentData['phone'] == 0)?"":$resultParentData['phone'] ;?>" placeholder="Enter Your phone number">
 		           <label for="form7"></label>
 		         </div>
 		      </div>
@@ -348,13 +348,13 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		             <label for="B">BOTH </label>
 		             </span></p>
 		         </div> -->
-		        <div class=" main-block" style="padding-top:20px;">
+		        <!-- <div class=" main-block" style="padding-top:20px;">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:20px;"> Expertise Listed As </div>
 		           <div class="col-xs-6" style="padding-left:0">
 		            <input id="form7 " readonly onfocus="this.removeAttribute('readonly');" class="form-control Ldate" name="expertiesData" tabindex="10" type="text" value="<?php echo $resultParentData['experties'] ;?>" placeholder="Data" style="margin:0;height:auto;">
 		            <label for="form7"></label>
 		          </div>
-		         </div>
+		         </div> -->
 		        <!-- <div class=" main-block">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> User Name </div>
 		           <div class="col-xs-6" style="padding-left:0">
