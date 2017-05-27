@@ -309,7 +309,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-user prefix"> <span> Last Name</span> </i>
-		           <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $resultParentData['lname'] ;?>" placeholder="Enter Your last name">
+		           <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $resultParentData['lname'] ;?>" placeholder="Enter your last name">
 		           <label for="form4"></label>
 		         </div>
 		      </div>
