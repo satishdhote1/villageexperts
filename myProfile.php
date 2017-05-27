@@ -303,25 +303,25 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
        
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-user prefix"> <span>First Name </span></i>
-		           <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $resultParentData['fname'] ;?>" placeholder="Data">
+		           <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $resultParentData['fname'] ;?>" placeholder="Enter Your first name">
 		           <label for="fname"></label>
 		         </div>
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-user prefix"> <span> Last Name</span> </i>
-		           <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $resultParentData['lname'] ;?>" placeholder="Data">
+		           <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $resultParentData['lname'] ;?>" placeholder="Enter Your last name">
 		           <label for="form4"></label>
 		         </div>
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-envelope prefix"> <span>email</span> </i>
-		           <input id="email" class="form-control email" name="email" tabindex="3" type="text" value="<?php echo $resultParentData['email'] ;?>" placeholder="Data">
+		           <input id="email" class="form-control email" name="email" tabindex="3" type="text" value="<?php echo $resultParentData['email'] ;?>" placeholder="Enter Your Email">
 		           <label for="email"></label>
 		         </div>
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class="main-block"> <i class="fa fa-phone prefix"><span> Mobile</span></i>
-		           <input id="form7 phone" class="form-control mobile" name="phone" tabindex="4" type="text" value="<?php echo $resultParentData['phone'] ;?>" placeholder="Data">
+		           <input id="form7 phone" class="form-control mobile" name="phone" tabindex="4" type="text" value="<?php echo $resultParentData['phone'] ;?>" placeholder="Enter Your phone number">
 		           <label for="form7"></label>
 		         </div>
 		      </div>
@@ -333,12 +333,12 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-flag prefix"><span> country</span></i>
-		           <input id="form6 city" class="form-control city" name="country" tabindex="6" type="text" value="<?php echo $resultParentData['country'] ;?>" placeholder="Data">
+		           <input id="form6 city" class="form-control city" name="country" tabindex="6" type="text" value="<?php echo $resultParentData['country'] ;?>" placeholder="Enter your country name">
 		           <label for="form6"></label>
 		         </div>
 		      </div>
 		       <div class="col-md-6 col-xs-12">
-		        <div class="radio">
+		        <!-- <div class="radio">
 		           <p>Listed as Expert<span class="check1"
 		             <input type="radio" name="exp" id="Y" tabindex="7" <?php echo ($isexpertUser == 1)?"checked='checked'":"" ?>>
 		             <label for="Y" >YES</label>
@@ -347,7 +347,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		             <input type="radio" id="B" name="exp" tabindex="9" <?php echo ($isexpertUser == 2)?"checked='checked'":"" ?>>
 		             <label for="B">BOTH </label>
 		             </span></p>
-		         </div>
+		         </div> -->
 		        <div class=" main-block" style="padding-top:20px;">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:20px;"> Expertise Listed As </div>
 		           <div class="col-xs-6" style="padding-left:0">
