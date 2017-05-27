@@ -321,7 +321,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class="main-block"> <i class="fa fa-phone prefix"><span> Mobile</span></i>
-		           <input id="form7 phone" class="form-control mobile" name="phone" tabindex="4" type="text" value="<?php echo $resultParentData['phone'] ;?>" placeholder="Enter Your phone number">
+		           <input id="form7 phone" class="form-control mobile" name="phone" tabindex="4" type="text" value="<?php echo ($resultParentData['phone'] == 0)?"":$resultParentData['phone'] ;?>" placeholder="Enter Your phone number">
 		           <label for="form7"></label>
 		         </div>
 		      </div>
