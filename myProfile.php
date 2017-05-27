@@ -327,7 +327,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		      </div>
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-map-marker prefix"><span> City</span></i>
-		           <input id="form5 city" class="form-control city" name="city" tabindex="5" type="text" value="<?php echo $resultParentData['city'] ;?>" placeholder="Data">
+		           <input id="form5 city" class="form-control city" name="city" tabindex="5" type="text" value="<?php echo $resultParentData['city'] ;?>" placeholder="Enter your city">
 		           <label for="form5"></label>
 		         </div>
 		      </div>
