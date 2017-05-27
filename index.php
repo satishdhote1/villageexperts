@@ -271,13 +271,13 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
                                 <!--Body-->
                                <div class="text-success main-block">
                                     	<i class="fa fa-envelope prefix"> Email</i>
-                              		<input type="text" class="form-control friendEmail" id="friendEmail">
+                              		<input type="text" class="form-control friendEmail" id="friendEmail" readonly onfocus="this.removeAttribute('readonly');">
                                     	<label for="form6"  class=""></label>
                                 </div>
                                 
                                 <div class="text-success main-block">
                                     <i class="fa fa-lock prefix"> Password</i>
-                                    <input type="password" class="form-control friendPwd" id="friendPwd">
+                                    <input type="password" class="form-control friendPwd" id="friendPwd" readonly onfocus="this.removeAttribute('readonly');">
                                     <label for="form4"  class=""></label>
                                 </div>
 					
@@ -334,7 +334,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
                              		<div class="main-block">
 					<?php /*if(!empty($email) && $isFriendreg == "yes")*/ ?>
                                 		<i class="fa fa-phone prefix"> <?php if(!empty($email) && $isexpert == "yes"){echo "Experties";}else {echo "Phone";}?></i>
-                                		<input id="form7 phone" class="form-control phone" name="phone" tabindex="3" type="text" value="<?php echo $phone; ?>">
+                                		<input id="form7 phone" class="form-control phone" name="phone" tabindex="3" type="text" value="<?php echo $phone; ?>" >
                                 		<label for="form4"></label>
                              		</div>
                         	</div>
@@ -342,7 +342,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 				 <div class="col-md-4 col-xs-12">
 				     <div class=" main-block">
 					     <i class="fa fa-envelope prefix"> email<span style="color:#F00;font-size:18px">*</span></i>
-					    <input id="email" class="form-control email" name="email" tabindex="4" type="text" value="<?php echo $email;?>">
+					    <input id="email" class="form-control email" name="email" tabindex="4" type="text" value="<?php echo $email;?>" readonly onfocus="this.removeAttribute('readonly');">
 					    <label for="email"></label>
 				      </div>
 				  </div>
@@ -350,7 +350,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 				  <div class="col-md-4 col-xs-12">
 				     <div class=" main-block">
 					    <i class="fa fa-location-arrow prefix"> Password<span style="color:#F00;font-size:18px">*</span></i>
-					    <input id="form8 pwds" class="form-control pwds" name="pwds" tabindex="5" type="password">
+					    <input id="form8 pwds" class="form-control pwds" name="pwds" tabindex="5" type="password" readonly onfocus="this.removeAttribute('readonly');">
 					    <label for="form8"></label>
 				      </div>
 				  </div>
