@@ -7,6 +7,35 @@ session_start();
 $conn=new connections();
 $conn=$conn->connect();
 
+$_SESSION['logged_user_email']=isset($_COOKIE['VEemail'])?$_COOKIE['VEemail']:$_SESSION['logged_user_email'];
+if(!empty($_SESSION['logged_user_email']))
+{
+       $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_user_email']."'";
+       $tableResultParent = mysqli_query($conn, $sqlParent);
+       $resultParentData = array();
+       $resultParent = '';
+       if (mysqli_num_rows($tableResultParent) > 0)  
+      {
+        $resultParentData  = mysqli_fetch_assoc($tableResultParent);
+        $_SESSION['logged_role_code']='friendsLogin';
+        $_SESSION['logged_user_id']=$resultParentData['id'];
+        $_SESSION['logged_user_fname']=$resultParentData['fname'];
+        $_SESSION['logged_user_lname']=$resultParentData['lname'];
+
+      }
+      else{
+        $expire = strtotime(date('Y-m-d'));
+        setcookie('VEemail', '', $expire, "/");
+        unset($_COOKIE['VEemail']);
+        session_destroy();
+        foreach ($_SESSION as $key=>$value){
+          unset($_SESSION[$key]);
+        }
+      }
+}
+
+
+
 $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
 $isexpert = isset($_REQUEST['isexpert'])?$_REQUEST['isexpert']:'';
 $isFriendreg = isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:'';

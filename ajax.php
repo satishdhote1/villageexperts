@@ -379,9 +379,6 @@ else if($tag == 'login') {
 		    //if(!isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "") {
 		    	$expire = strtotime(date('Y-m-d', strtotime('+1 years')));//cur time +1 year
 		    	setcookie('VEemail', $_SESSION['logged_user_email'], $expire, "/");
-		    	setcookie('VEuser_id', $_SESSION['logged_user_id'], $expire, "/");
-		    	setcookie('VEuser_fname', $_SESSION['logged_user_fname'], $expire, "/");
-		    	setcookie('VEuser_lname', $_SESSION['logged_user_lname'], $expire, "/");
 		   // }
 
 

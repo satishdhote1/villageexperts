@@ -5,15 +5,7 @@ session_start();
 //echo $_SESSION['logged_user_id'];
 // if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 // {
-
-            $_SESSION['logged_role_code']='friendsLogin';
-            $_SESSION['logged_user_id']=isset($_COOKIE['VEuser_id'])?$_COOKIE['VEuser_id']:$_SESSION['logged_user_id'];
-            $_SESSION['logged_user_fname']=isset($_COOKIE['VEuser_fname'])?$_COOKIE['VEuser_fname']:$_SESSION['logged_user_fname'];
-            $_SESSION['logged_user_lname']=isset($_COOKIE['VEuser_lname'])?$_COOKIE['VEuser_lname']:$_SESSION['logged_user_lname'];
-            $_SESSION['logged_user_email']=isset($_COOKIE['VEemail'])?$_COOKIE['VEemail']:$_SESSION['logged_user_email'];
-            //$_SESSION['logged_user_image']=isset($SPLoginData['image'])?$SPLoginData['image']:'';
-       
-
+            
 $conn=new connections();
 $conn=$conn->connect();
 
