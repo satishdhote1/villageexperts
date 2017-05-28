@@ -12,7 +12,6 @@ $_SESSION['logged_user_email']=isset($_COOKIE['VEem'])?$_COOKIE['VEem']:$_SESSIO
 if(!empty($_SESSION['logged_user_email']))
 {
        $sqlParent = "select * from friendsRegister where email = '".base64_decode($_COOKIE['VEem'])."'";
-($_SESSION['logged_user_email']."'";
        $tableResultParent = mysqli_query($conn, $sqlParent);
        $resultParentData = array();
        $resultParent = '';
@@ -255,7 +254,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
                    </div>
                 <div class="col-md-5 col-md-chang">
                   <div class="m-b-0">
-                      <a class="btn btn-danger  modify-btn-1 text-xs-right btn-lg modal__trigger loginModal" <?php echo (isset($_SESSION['logged_user_id'] && !empty($_SESSION['logged_user_id']))?'href="friends-family.php" id="" data-toggle="" ':'href="" id="display-form" data-toggle="modal"' ?> data-target="#myModal"><span class="ICON-holder"><img src="images/icon-1.png"></span>Connect with Friends and Family</a>
+                      <a class="btn btn-danger  modify-btn-1 text-xs-right btn-lg modal__trigger loginModal" <?php echo (isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))?'href="friends-family.php" id="" data-toggle="" ':'href="" id="display-form" data-toggle="modal"'; ?> data-target="#myModal"><span class="ICON-holder"><img src="images/icon-1.png"></span>Connect with Friends and Family</a>
                    </div>
                   <div class="m-b-0">
                     <a class="btn btn-lg btn-danger  waves-light text-xs-right modify-btn-1 modal__trigger" href="newProvider.php"><span class="ICON-holder"><img class="img-fluid img-rounded" src="images/icon-2.png"></span>Search for and Connect with an Expert</a>
