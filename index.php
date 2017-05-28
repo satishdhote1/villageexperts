@@ -10,7 +10,8 @@ $conn=$conn->connect();
 $_SESSION['logged_user_email']=isset($_COOKIE['VEemail'])?$_COOKIE['VEemail']:$_SESSION['logged_user_email'];
 if(!empty($_SESSION['logged_user_email']))
 {
-       $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_user_email']."'";
+       $sqlParent = "select * from friendsRegister where email = '".base64_decode($_COOKIE['VEemail'])."'";
+($_SESSION['logged_user_email']."'";
        $tableResultParent = mysqli_query($conn, $sqlParent);
        $resultParentData = array();
        $resultParent = '';
