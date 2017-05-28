@@ -376,9 +376,9 @@ else if($tag == 'login') {
 		    
 		    $sqlUpdate="update friendsRegister set loginStatus='YES' where id=".$SPLoginData['id'];
 
-		    //if(!isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "") {
+		    //if(!isset($_COOKIE['VEem']) && $_COOKIE['VEem'] != "") {
 		    	$expire = strtotime(date('Y-m-d', strtotime('+1 years')));//cur time +1 year
-		    	setcookie('VEemail', base64_encode($_SESSION['logged_user_email']), $expire, "/");
+		    	setcookie('VEem', base64_encode($_SESSION['logged_user_email']), $expire, "/");
 		   // }
 
 
