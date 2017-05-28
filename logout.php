@@ -49,12 +49,12 @@ session_start();
 			<div class="wellcome-text">
 			<?php
 
-			if(isset($_COOKIE['VEemail']) && $_COOKIE['VEemail'] != "")
+			if(isset($_COOKIE['VEem']) && $_COOKIE['VEem'] != "")
 			{
 				
 				$expire = strtotime(date('Y-m-d'));
-				setcookie('VEemail', '', $expire, "/");
-				unset($_COOKIE['VEemail']);
+				setcookie('VEem', '', $expire, "/");
+				unset($_COOKIE['VEem']);
 			}
 			if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 			{
