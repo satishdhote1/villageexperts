@@ -308,6 +308,13 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 			    <input type="hidden" name="expertID" value="<?php echo $expertID;  ?>">
 			  <?php 
 			}
+      else
+      {
+        ?>
+         <input type="hidden" name="isexpertreg" value="" class="isexpertreg">
+          <input type="hidden" name="expertID" value="">
+        <?php
+      }
 		 ?>
                          
                 <div class="row resSec" style="display: none;">
