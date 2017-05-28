@@ -365,7 +365,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		        <div class=" main-block">
 		           <div class="col-xs-5" style="padding-right:0;padding-left:0;padding-top:10px;"> Password </div>
 		           <div class="col-xs-6" style="padding-left:0">
-		            <input id="form7 " readonly onfocus="this.removeAttribute('readonly');" class="form-control Ldate" name="pwds" tabindex="11" type="password" value="" placeholder="Password Data" style="margin:0;height:auto;">
+		            <input id="form7 " readonly onfocus="this.removeAttribute('readonly');" class="form-control Ldate" name="pwds" tabindex="11" type="password" value="" placeholder="Change password" style="margin:0;height:auto;">
 		            <label for="form7"></label>
 		          </div>
 		         </div>
