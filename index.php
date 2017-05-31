@@ -119,6 +119,9 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
             background-size:cover;
             background-attachment:fixed;
         }
+        p.btn.btn2.font-20.text-xs-left.waves-effect.waves-light:hover {
+		    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+		}
         .modi-img {
             width: 80px;
             border: 5px solid #FFF;
