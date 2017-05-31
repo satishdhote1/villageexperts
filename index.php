@@ -120,7 +120,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
             background-attachment:fixed;
         }
         p.btn.btn2.font-20.text-xs-left.waves-effect.waves-light:hover {
-		    box-shadow: 0 0 8px rgba(0,0,0,0.25);
+		    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
 		    cursor: default;
 		}
         .modi-img {
