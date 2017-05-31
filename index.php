@@ -108,7 +108,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <!-- <link href="css/mdb.min.css" rel="stylesheet"> -->
+    <link href="css/mdb.min.css" rel="stylesheet">
 
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
@@ -547,7 +547,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 <!-- MDB core JavaScript -->
-<!-- <script type="text/javascript" src="js/mdb.min.js"></script> -->
+<script type="text/javascript" src="js/mdb.min.js"></script>
 <script type="text/javascript">
   $(function(){
     $(".backLogin").hide();
