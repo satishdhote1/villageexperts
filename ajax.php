@@ -126,9 +126,7 @@ else if($tag == "makeAppointment"){
     $sql2="select * from friendsRegister where  email='".$senderEmail."'";
     $tableResult2 = mysqli_query($conn, $sql2);
     $senderResult = mysqli_fetch_assoc($tableResult2);
-    //print_r($recieverResult);
-    //print_r($senderResult);
-//die();
+
     $recieverFname = $recieverResult['fname']." ".$recieverResult['lname'];
 	$senderName = $senderResult['fname']." ".$senderResult['lname'];
 
@@ -225,9 +223,9 @@ else if($tag == "ConfirmAppointment"){
 	$senderName = $senderResult['fname']." ".$senderResult['lname'];
 
 
-	 //$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
-	 // $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
-	 //print_r(json_decode($appointTimes));
+	//$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
+	// $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
+	//print_r(json_decode($appointTimes));
 
 	  if(!empty($email) && !empty($appointTimes)){
 	  	
@@ -329,7 +327,7 @@ else if($tag == "notConfirmAppointment"){
 		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
 		$body.='Dear '.$senderName.',<br /><br/>'.$decliendFname.' '.$declinedLname.' has declined your Appointment Dates at Village Experts for the following proposed dates.: <br><br>'.$appt1.'<br>'.$appt2.'<br>'.$appt3.'<br>'.$appt4.'<br>'.$appt5.'<br><br>'.'You are requested to initiate a New Appoitment Request with '.$decliendFname.' '.$declinedLname;
 
-         	//----------------------------//Email Body Texts------------------------  
+        //----------------------------//Email Body Texts------------------------  
 		$mailSent = $emailObject->sendMail($senderEmail,$senderName,"Village-Expert Confirmation for Appointment.",$body);
 
 		//if(mail($email,"Village-Expert Request for Appointment.",$body))
@@ -469,7 +467,6 @@ else if($tag == 'register') {
 		$MSG .= "Please enter last Name.";
 	}
 			
-
 	/*if($m_mobile==""){
 		$valid=0;
 		$MSG .= "Please enter Mobile No .";
@@ -484,7 +481,6 @@ else if($tag == 'register') {
 
 	if ($valid==1){
 		//first, into main student table
-
 		$tableResult = '';
 
 		if ($userType=="addFriend"){
@@ -494,7 +490,7 @@ else if($tag == 'register') {
 			$member_id = 0;
 			$sql="";
 			
-		     if(!empty($isexpertreg) && $isexpertreg == "yes") {
+		    if(!empty($isexpertreg) && $isexpertreg == "yes") {
 				$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',experties = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
 				$tableResult = mysqli_query($conn, $sql);
 				$member_id = $expertID;
@@ -503,13 +499,10 @@ else if($tag == 'register') {
              	$tableResult = mysqli_query($conn, $sql);
              	$member_id = $expertID;
             } else {
-				$sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;//echo $sql;exit();
-
+				$sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;
 				$tableResult = mysqli_query($conn, $sql);
 				$member_id = mysqli_insert_id($conn);
-
 				$sql2="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$member_id."','".$m_email."' , 0 ,0)" ;
-
 				$tableResult2 = mysqli_query($conn, $sql2);
 		    }
 
@@ -523,7 +516,6 @@ else if($tag == 'register') {
 				$target_file = $target_dir.$member_id.'.'.$imageFileType;
 				$target_fileName = "friendsFamily/".$member_id.'.'.$imageFileType;
 
-				//die($target_file);
 				$uploadOk = 1;
 
 				//indicate which file to resize (can be any type jpg/png/gif/etc...)
@@ -546,11 +538,11 @@ else if($tag == 'register') {
 					
 
 			$MSG = "Registered Sucessfully!";
-		        $result['success'] = 1;
+		    $result['success'] = 1;
 			$result['error'] = 0;
 			$MSG.='Registration Successful';
 		}
-	}else	{
+	}else{
 		echo $MSG;	
 	}
 

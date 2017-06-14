@@ -10,7 +10,7 @@
                 <img src="img/normal/logo.png">
                 <p class="brand-text">VILLAGE EXPERTS</p>
             </a>
-            <label class="modify-badge-2" style="margin-left:-46px;font-size:23px;padding:0px;color:#495775">My Home Page <?php echo $_SESSION['logged_user_id']; ?></label>
+            <label class="modify-badge-2" style="margin-left:-46px;font-size:23px;padding:0px;color:#495775">My Home Page - <?php echo $_SESSION['logged_user_fname']; ?></label>
          </div>   
     </div>
 </nav>

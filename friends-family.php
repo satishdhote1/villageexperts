@@ -371,6 +371,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
 						</div>
 
                         <hr class="distance"><div class="col-md-12">
+
 						<div style="width:50%;margin:0 auto 30px auto;">
 							<div class="text-xs-center">
 							  <button type="submit" class="btn btn-lg btn-papl" style="width:100%;"><a href="ExpertRegistration.php">Expert Registration – Sign Up as An Expert</a></button>
