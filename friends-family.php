@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 include("config/connection.php");
 session_start();
+echo $_SESSION['logged_user_id'];
 if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 {
 $conn=new connections();
@@ -428,5 +429,4 @@ else
 	$passStr = 'You are not authorized.Redirecting....';
 	$passImg = 'groupPhotos/img-3.jpg';
 	header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=index");
-  
 }

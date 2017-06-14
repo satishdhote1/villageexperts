@@ -48,6 +48,14 @@ session_start();
 		<div class="col-md-6 col-md-offset-3">
 			<div class="wellcome-text">
 			<?php
+
+			if(isset($_COOKIE['VEem']) && $_COOKIE['VEem'] != "")
+			{
+				
+				$expire = strtotime(date('Y-m-d'));
+				setcookie('VEem', '', $expire, "/");
+				unset($_COOKIE['VEem']);
+			}
 			if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 			{
 				$conn=new connections();

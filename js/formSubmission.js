@@ -212,6 +212,7 @@ $(document).ready(function(){
 						event.preventDefault();
 						var email = $(".email").val();
 						var isexpertreg = $(".isexpertreg").val();
+						
 						if(isexpertreg == "")
 						{
 						$.ajax({

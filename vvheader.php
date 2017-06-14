@@ -1,4 +1,5 @@
 <div class="login-profile">
+    <a href="myProfile.php" data-toggle="tooltip" data-placement="bottom" title="My Profile">My Profile</a>
     <a href="/" data-toggle="tooltip" data-placement="bottom" title="Back"><img src="images/Left.png" class="topBtn" style="cursor:pointer;"/></a>                
     <a href="logout.php" data-toggle="tooltip" data-placement="bottom" title="Log out!"><img src="images/logout.png" class="topBtn" style="cursor:pointer;"/></a>
 </div>
