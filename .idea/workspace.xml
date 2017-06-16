@@ -1,143 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="000a793a-d379-4aab-8d28-4f0e4802e9ff" name="Default" comment="login reguster modal">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/.scrutinizer.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/.travis.yml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/PHPMailerAutoload.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/VERSION" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/changelog.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/class.phpmailer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/class.phpmaileroauth.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/class.phpmaileroauthgoogle.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/class.pop3.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/class.smtp.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/composer.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/composer.lock" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/code_generator.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/contents.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/contentsutf8.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/exceptions.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/gmail.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/gmail_xoauth.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/images/phpmailer.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/images/phpmailer_mini.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/mail.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/mailing_list.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/pop_before_smtp.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/scripts/XRegExp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/scripts/shAutoloader.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/scripts/shBrushPhp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/scripts/shCore.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/scripts/shLegacy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/send_file_upload.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/sendmail.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/signed-mail.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/smtp.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/smtp_check.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/smtp_no_auth.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/ssl_options.phps" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCore.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCoreDefault.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCoreDjango.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCoreEclipse.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCoreEmacs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCoreFadeToGrey.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCoreMDUltra.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCoreMidnight.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shCoreRDark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeAppleScript.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeDefault.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeDjango.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeEclipse.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeEmacs.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeFadeToGrey.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeMDUltra.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeMidnight.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeRDark.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/shThemeVisualStudio.css" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/examples/styles/wrapping.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/extras/EasyPeasyICS.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/extras/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/extras/htmlfilter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/extras/ntlm_sasl_client.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/get_oauth_token.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-am.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ar.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-az.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-be.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-bg.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-br.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ca.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ch.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-cz.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-de.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-dk.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-el.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-eo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-es.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-et.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-fa.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-fi.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-fo.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-fr.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-gl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-he.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-hr.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-hu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-id.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-it.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ja.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ka.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ko.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-lt.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-lv.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ms.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-nl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-no.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-pl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-pt.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ro.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-ru.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-se.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-si.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-sk.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-sl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-sr.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-tr.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-uk.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-vi.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-zh.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/language/phpmailer.lang-zh_cn.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/old/class.phpmailer.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/old/class.pop3.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/old/class.smtp.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/test/bootstrap.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/test/fakepopserver.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/test/fakesendmail.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/test/phpmailerLangTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/test/phpmailerTest.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/test/runfakepopserver.sh" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/test/test_callback.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/test/testbootstrap-dist.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/phpMailerOOOLLLDD/travis.phpunit.xml.dist" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/var/www/html/index.php" afterPath="" />
+    <list default="true" id="000a793a-d379-4aab-8d28-4f0e4802e9ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Make-Appointment.php" afterPath="$PROJECT_DIR$/Make-Appointment.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ajax.php" afterPath="$PROJECT_DIR$/ajax.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/communication.php" afterPath="$PROJECT_DIR$/communication.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.php" afterPath="$PROJECT_DIR$/config.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/connection.php" afterPath="$PROJECT_DIR$/config/connection.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/formSubmission.js" afterPath="$PROJECT_DIR$/js/formSubmission.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpMailer/class.pop3.php" afterPath="$PROJECT_DIR$/phpMailer/class.pop3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/testMail.php" afterPath="$PROJECT_DIR$/testMail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vvheader.php" afterPath="$PROJECT_DIR$/vvheader.php" />
     </list>
     <ignored path="villageExpert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -162,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/phpSendMail.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1156">
-              <caret line="68" column="43" lean-forward="true" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+              <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -171,7 +40,7 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="349">
+            <state relative-caret-position="17714">
               <caret line="1042" column="15" lean-forward="false" selection-start-line="1042" selection-start-column="15" selection-end-line="1042" selection-end-column="15" />
               <folding />
             </state>
@@ -181,8 +50,8 @@
       <file leaf-file-name="ajax.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ajax.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1168">
-              <caret line="518" column="32" lean-forward="false" selection-start-line="518" selection-start-column="32" selection-end-line="518" selection-end-column="32" />
+            <state relative-caret-position="1925">
+              <caret line="562" column="42" lean-forward="false" selection-start-line="562" selection-start-column="42" selection-end-line="562" selection-end-column="42" />
               <folding>
                 <element signature="e#326#41782#0#PHP" expanded="false" />
                 <element signature="e#6124#41782#0#PHP" expanded="false" />
@@ -290,11 +159,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="testMail.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/testMail.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connection.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/connection.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="formSubmission.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="217" column="37" lean-forward="true" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
+            <state relative-caret-position="170">
+              <caret line="190" column="44" lean-forward="false" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="44" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formSubmission.js" pinned="true" current-in-tab="false">
+        <entry file="remoteDeploymentFS://&lt;edf90b6e-36bd-482f-be2a-e12f100e309e&gt;/js/formSubmission.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="205" column="56" lean-forward="false" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="56" />
               <folding />
             </state>
           </provider>
@@ -310,17 +209,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="397">
-              <caret line="216" column="33" lean-forward="false" selection-start-line="216" selection-start-column="33" selection-end-line="216" selection-end-column="33" />
+            <state relative-caret-position="261">
+              <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
               <folding>
-                <marker date="1497615303900" expanded="true" signature="300:381" ph="select * fro... friendsRegister" />
-                <marker date="1497615303900" expanded="true" signature="596:716" ph="select * fro... friendsRegister" />
-                <marker date="1497615303900" expanded="true" signature="660:715" ph="select useri... friendsExpertInfo" />
-                <marker date="1497615303900" expanded="true" signature="1374:1496" ph="select * fro... friendsRegister" />
-                <marker date="1497615303900" expanded="true" signature="1440:1495" ph="select useri... friendsExpertInfo" />
+                <marker date="1497636256465" expanded="true" signature="300:381" ph="select * fro... friendsRegister" />
+                <marker date="1497636256465" expanded="true" signature="596:716" ph="select * fro... friendsRegister" />
+                <marker date="1497636256465" expanded="true" signature="660:715" ph="select useri... friendsExpertInfo" />
+                <marker date="1497636256465" expanded="true" signature="1374:1496" ph="select * fro... friendsRegister" />
+                <marker date="1497636256465" expanded="true" signature="1440:1495" ph="select useri... friendsExpertInfo" />
               </folding>
             </state>
           </provider>
@@ -330,7 +229,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>connect</find>
       <find>$alreadyFrnd</find>
       <find>connect.php</find>
       <find>modi</find>
@@ -349,17 +247,18 @@
       <find>loginbut</find>
       <find>button2</find>
       <find>loginsec</find>
-      <find>login</find>
       <find>imagecreatefrompng</find>
       <find>imagecreatefromgif</find>
       <find>imagecreatefromjpeg</find>
-      <find>addFriend</find>
       <find>regist</find>
       <find>notify</find>
       <find>register</find>
       <find>mail</find>
-      <find>addFriendSubmit</find>
       <find>isexpertreg</find>
+      <find>login</find>
+      <find>addFriendSubmit</find>
+      <find>friendLoginButton</find>
+      <find>addFriend</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -379,7 +278,6 @@
         <option value="$PROJECT_DIR$/schedulecommunication.php" />
         <option value="$PROJECT_DIR$/Confirm-Appointment.php" />
         <option value="$PROJECT_DIR$/newProvider.php" />
-        <option value="$PROJECT_DIR$/config/connection.php" />
         <option value="&lt;eeac7ac4-6393-4131-9089-f7c352d4de3d&gt;/config/connection.php" />
         <option value="&lt;eeac7ac4-6393-4131-9089-f7c352d4de3d&gt;/ajax.php" />
         <option value="&lt;eeac7ac4-6393-4131-9089-f7c352d4de3d&gt;/connect.php" />
@@ -395,8 +293,10 @@
         <option value="$PROJECT_DIR$/testMail.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/ajax.php" />
-        <option value="$PROJECT_DIR$/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="&lt;edf90b6e-36bd-482f-be2a-e12f100e309e&gt;/js/formSubmission.js" />
+        <option value="$PROJECT_DIR$/js/formSubmission.js" />
+        <option value="$PROJECT_DIR$/config/connection.php" />
       </list>
     </option>
   </component>
@@ -439,6 +339,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -489,13 +390,26 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHPmainproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHPmainproject" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="admin" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -634,7 +548,8 @@
       <workItem from="1496854300643" duration="1821000" />
       <workItem from="1497025962540" duration="617000" />
       <workItem from="1497458171678" duration="2983000" />
-      <workItem from="1497601445899" duration="10735000" />
+      <workItem from="1497601445899" duration="10908000" />
+      <workItem from="1497632583316" duration="2441000" />
     </task>
     <task id="LOCAL-00001" summary="added style css to head also admin index">
       <created>1491539809659</created>
@@ -657,36 +572,43 @@
       <option name="project" value="LOCAL" />
       <updated>1497459839226</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="isexpertreg">
+      <created>1497615648378</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1497615648378</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51122000" />
+    <option name="totallyTimeSpent" value="53736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16414523" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22995462" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07528642" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06382979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20785597" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36824876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16488549" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22692889" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.016366612" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06382979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36824876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28477904" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07528642" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13747954" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20785597" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.016366612" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28477904" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -699,7 +621,8 @@
     <MESSAGE value="added style css to head also admin index" />
     <MESSAGE value="added header name" />
     <MESSAGE value="login reguster modal" />
-    <option name="LAST_COMMIT_MESSAGE" value="login reguster modal" />
+    <MESSAGE value="isexpertreg" />
+    <option name="LAST_COMMIT_MESSAGE" value="isexpertreg" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -714,11 +637,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/images/Message_old.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/images/img-1.jpg">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -828,7 +746,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -929,14 +846,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test.txt" />
     <entry file="file://$PROJECT_DIR$/vvheader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -957,25 +867,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/var/www/html/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5202">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/var/www/html/index.php" />
     <entry file="file://$PROJECT_DIR$/js/newProvider.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -983,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1016,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
           <caret line="19" column="29" lean-forward="true" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1024,7 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1032,7 +928,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1054,7 +949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1086,7 +979,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1108,34 +1000,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testMail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phpSendMail.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
-          <caret line="68" column="43" lean-forward="true" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
+          <caret line="68" column="43" lean-forward="false" selection-start-line="68" selection-start-column="43" selection-end-line="68" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="349">
+        <state relative-caret-position="17714">
           <caret line="1042" column="15" lean-forward="false" selection-start-line="1042" selection-start-column="15" selection-end-line="1042" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
+          <folding>
+            <marker date="1497636256465" expanded="true" signature="300:381" ph="select * fro... friendsRegister" />
+            <marker date="1497636256465" expanded="true" signature="596:716" ph="select * fro... friendsRegister" />
+            <marker date="1497636256465" expanded="true" signature="660:715" ph="select useri... friendsExpertInfo" />
+            <marker date="1497636256465" expanded="true" signature="1374:1496" ph="select * fro... friendsRegister" />
+            <marker date="1497636256465" expanded="true" signature="1440:1495" ph="select useri... friendsExpertInfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="190" column="44" lean-forward="false" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="518" column="32" lean-forward="false" selection-start-line="518" selection-start-column="32" selection-end-line="518" selection-end-column="32" />
+        <state relative-caret-position="1925">
+          <caret line="562" column="42" lean-forward="false" selection-start-line="562" selection-start-column="42" selection-end-line="562" selection-end-column="42" />
           <folding>
             <element signature="e#326#41782#0#PHP" expanded="false" />
             <element signature="e#6124#41782#0#PHP" expanded="false" />
@@ -1242,25 +1148,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
+    <entry file="file://$PROJECT_DIR$/testMail.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="217" column="37" lean-forward="true" selection-start-line="217" selection-start-column="37" selection-end-line="217" selection-end-column="37" />
+        <state relative-caret-position="119">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/config/connection.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="397">
-          <caret line="216" column="33" lean-forward="false" selection-start-line="216" selection-start-column="33" selection-end-line="216" selection-end-column="33" />
-          <folding>
-            <marker date="1497615303900" expanded="true" signature="300:381" ph="select * fro... friendsRegister" />
-            <marker date="1497615303900" expanded="true" signature="596:716" ph="select * fro... friendsRegister" />
-            <marker date="1497615303900" expanded="true" signature="660:715" ph="select useri... friendsExpertInfo" />
-            <marker date="1497615303900" expanded="true" signature="1374:1496" ph="select * fro... friendsRegister" />
-            <marker date="1497615303900" expanded="true" signature="1440:1495" ph="select useri... friendsExpertInfo" />
-          </folding>
+        <state relative-caret-position="221">
+          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>

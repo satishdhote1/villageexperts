@@ -3,17 +3,10 @@ $(document).ready(function() {
     //Provider Click
 
     $(document).on("click", ".friendLoginButton", function() {
-
-        //alert();
-
         var email = $(".friendEmail").val();
-
         var pwd = $(".friendPwd").val();
-
         var userType = $(".friendLoginHidden").val();
-
         if (email == "")
-
         {
 
             $(".SPerrors").css({
@@ -23,11 +16,7 @@ $(document).ready(function() {
 
             $(".SPerrors").text("Email can't be blank!");
 
-
-
-        } else if (pwd == "")
-
-        {
+        } else if (pwd == "") {
 
             $(".SPerrors").css({
                 "dilay": "block",
@@ -36,22 +25,14 @@ $(document).ready(function() {
 
             $(".SPerrors").text("Password can't be blank!");
 
-
-
-        } else
-
-        {
+        } else {
 
             $(".SPloginLoader").show();
 
             $.ajax({
-
                 url: 'ajax.php',
-
                 type: 'POST',
-
                 dataType: "json",
-
                 data: {
                     email: email,
                     pwd: pwd,
@@ -60,44 +41,35 @@ $(document).ready(function() {
                 },
 
                 success: function(data) // A function to be called if request succeeds
-
                 {
 
                     $(".SPloginLoader").hide();
 
                     console.log(data);
 
-                    if (data.success == 1)
-
+                    if(data.success == 1)
                     {
 
                         $(".SPloginLoader").hide();
 
-                        $(".SPerrors").css({
-                            "dilay": "block",
-                            "color": "green"
-                        });
+                        $(".SPerrors").css({"dilay":"block","color":"green"});
 
-                        $(".SPerrors").text(data.msg + " Please Wait! You are Redrecting..");
+                        $(".SPerrors").text(data.msg+" Please Wait! You are Redrecting..");
 
-                        setTimeout(function() {
-
-                            // alert();
-
-                            location.href = "friends-family.php";
+                        setTimeout(function(){
+                            location.href="friends-family.php";
 
                         }, 1000);
 
-                    } else
+                    }
+
+                    else
 
                     {
 
                         $(".SPloginLoader").hide();
                         alert(data.msg);
-                        $(".SPerrors").css({
-                            "dilay": "block",
-                            "color": "red"
-                        });
+                        $(".SPerrors").css({"dilay":"block","color":"red"});
                         $(".friendPwd").val("");
                         $(".SPerrors").text(data.msg);
 
@@ -131,9 +103,6 @@ $(document).ready(function() {
 
     //Add friend validation
     $("#addFriend").validate({
-
-
-
         // ecify the validation rules
 
         rules: {
@@ -228,7 +197,7 @@ $(document).ready(function() {
                         if (dataSR.success == 1) {
                             alert("Email already exist !");
                         } else {
-                            alert("Could not Register");
+                            //alert("Could not Register");
                             $('#addFriend').unbind('submit').submit();
                         }
                     },
@@ -248,15 +217,13 @@ $(document).ready(function() {
     //Add expertise  validation
     $("#SPform").validate({
 
-        // recify the validation rules
+        // rectify the validation rules
 
         rules: {
-
             fname: "required",
             lname: "required",
             SPexpertise: "required",
             SP_Sub_Expertise: "required",
-
             pin: "required",
             pwds: {
                 required: true,
@@ -267,35 +234,23 @@ $(document).ready(function() {
                 //minlength: 5,
                 equalTo: ".pwds"
             },
-
-
-
-
             email: {
-
                 required: true,
-
                 email: true
-
             },
-
             phone: {
-
                 //required: true,
-
                 //minlength: 10,
                 //digits:true
-
             }
 
         },
 
 
 
-        // ecify the validation error messages
+        // rectify the validation error messages
 
         messages: {
-
             fname: "First name required",
             lname: "Last name required",
             SPexpertise: "Please Select Expertise",
@@ -303,14 +258,7 @@ $(document).ready(function() {
             //country: "Please enter your Country",
             email: "email address invalid ",
             pwds: "Enter Password",
-
         }
-
-		/*,submitHandler: function(form) {
-
-		 form.submit();
-
-		 }*/
 
     });
     //add expertise registration
@@ -337,8 +285,6 @@ $(document).ready(function() {
                     } else {
                         //alert("fgdfgdf");
                         $('#addFriend').unbind('submit').submit();
-
-
 						/*
 						 var fname = $(".fname").val();
 						 var lname = $(".lname").val();
@@ -346,8 +292,6 @@ $(document).ready(function() {
 						 var country = $(".country").val();
 						 var phone = $(".phone").val();
 						 var email = $(".email").val();
-
-
 						 $(".loader").show();
 
 						 $.ajax({

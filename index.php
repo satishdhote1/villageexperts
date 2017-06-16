@@ -173,7 +173,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 
                                             <div class="text-xs-center row">
                                                 <button class="btn log  modal__trigger friendLoginButton" id="friendLoginButton">LOGIN</button>
-                                                <button class="btn log  " id="friendForgetPasswordButtonButton">Forgot Password</button>
+                                                <button class="btn log" id="friendForgetPasswordButtonButton">Forgot Password</button>
                                                 <button class="col-md-4 button button2 regClick">
                                                     <strong>REGISTER</strong>
                                                     <p class="button2subheading">New User</p>
