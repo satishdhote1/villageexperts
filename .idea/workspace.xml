@@ -5,7 +5,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpMailer/class.pop3.php" afterPath="$PROJECT_DIR$/phpMailer/class.pop3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vvheader.php" afterPath="$PROJECT_DIR$/vvheader.php" />
     </list>
     <ignored path="villageExpert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+            <state relative-caret-position="323">
+              <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -56,43 +55,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="formSubmission.js" pinned="true" current-in-tab="false">
-        <entry file="remoteDeploymentFS://&lt;edf90b6e-36bd-482f-be2a-e12f100e309e&gt;/js/formSubmission.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="205" column="56" lean-forward="false" selection-start-line="205" selection-start-column="41" selection-end-line="205" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="class.pop3.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/phpMailer/class.pop3.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="311" column="0" lean-forward="true" selection-start-line="311" selection-start-column="0" selection-end-line="311" selection-end-column="0" />
-              <folding>
-                <marker date="1497636256465" expanded="true" signature="300:381" ph="select * fro... friendsRegister" />
-                <marker date="1497636256465" expanded="true" signature="596:716" ph="select * fro... friendsRegister" />
-                <marker date="1497636256465" expanded="true" signature="660:715" ph="select useri... friendsExpertInfo" />
-                <marker date="1497636256465" expanded="true" signature="1374:1496" ph="select * fro... friendsRegister" />
-                <marker date="1497636256465" expanded="true" signature="1440:1495" ph="select useri... friendsExpertInfo" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="vvheader.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vvheader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vvheader.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -172,8 +135,8 @@
         <option value="&lt;edf90b6e-36bd-482f-be2a-e12f100e309e&gt;/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/config/connection.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/vvheader.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -440,7 +403,7 @@
       <workItem from="1497025962540" duration="617000" />
       <workItem from="1497458171678" duration="2983000" />
       <workItem from="1497601445899" duration="10908000" />
-      <workItem from="1497632583316" duration="5599000" />
+      <workItem from="1497632583316" duration="5959000" />
     </task>
     <task id="LOCAL-00001" summary="added style css to head also admin index">
       <created>1491539809659</created>
@@ -498,11 +461,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497640242113</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="style header">
+      <created>1497640877690</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1497640877690</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56894000" />
+    <option name="totallyTimeSpent" value="57254000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1070,18 +1040,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vvheader.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="31" lean-forward="true" selection-start-line="9" selection-start-column="31" selection-end-line="9" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="17" lean-forward="false" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
           <folding />
         </state>
       </provider>

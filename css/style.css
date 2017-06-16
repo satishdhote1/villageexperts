@@ -18,9 +18,6 @@ body {
 }
 .logoSection {
     margin: auto;
-    text-align: center;
-    width: 100%;
-    position: fixed;
 }
 .logoSection a {
     margin: 0px;
