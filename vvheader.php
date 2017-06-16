@@ -8,8 +8,8 @@
             </a>
 
             <a class="col-md-2 navbar-brand" href="#" target="_blank">
-                <a class="col-md-2" href="myProfile.php" data-toggle="tooltip" data-placement="bottom" title="My Profile">My Profile <?php echo $_SESSION['logged_user_fname']; ?> </a>
-                <label class="col-md-1 modify-badge-2">My Home Page </label>
+                <a href="myProfile.php" data-toggle="tooltip" data-placement="bottom" title="My Profile">My Profile <?php echo $_SESSION['logged_user_fname']; ?> </a>
+                <p class=" modify-badge-2">My Home Page </p>
             </a>
 
 
