@@ -82,112 +82,6 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
     <!-- Your custom styles (optional) -->
     <link href="css/style.css" rel="stylesheet">
 
-    <style>
-        body{
-            background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;
-            background-size:cover;
-            background-attachment:fixed;
-        }
-        .modi-img {
-            width: 80px;
-            border: 5px solid #FFF;
-            border-radius: 10px;
-        }
-        .font-20 {
-            font-size: 19px !important;
-            /*change font size*/
-
-            font-weight: 700;
-        }
-        .ICON-holder img {
-            background: #7b7bfc;
-            border: 3px solid rgba(0, 0, 0, 0);
-            height: 100%;
-            width: 100%;
-        }
-        .border-box-item {
-            padding: 10px 0 0px 0px;
-        }
-        .container-fluid {
-            max-width: 1250px;
-        }
-        .error {
-            margin-top: 20px;
-        }
-        .upload-img-block {
-            float: left;
-            height: auto;
-        }
-        .upload-panel-box {
-            float: left;
-            margin: 0;
-            padding: 0;
-            width: 70%;
-        }
-        .upload-panel-box input.pImage {
-            margin: 0px 0 0 5px;
-            padding: 5px 0px;
-            width: 100%;
-            border: 0px;
-        }
-        input[type='file'] {
-            color: transparent;
-        }
-        .form-control {
-            padding: 4px;
-        }
-        .upload-img-block > img {
-            width: 100%;
-        }
-        .col-md-5 .md-form.main-block .fa {
-            color: #7b7bfc;
-        }
-        .resSec .fa {
-            color: #008cba;
-        }
-        .log {
-            width: 120px;
-            background: #cdcdcd;
-            text-align: center;
-            font-weight: bolder
-        }
-        .log:hover {
-            background: #a6a6a6 !important
-        }
-        .loginSec .fa {
-            color: #008cba;
-        }
-        .btn-papl:hover,
-        .btn-papl:focus {
-            background-color: #9595f9 !important;
-        }
-        .btn-danger:focus,
-        .btn-danger:hover {
-            background-color: #9595f9 !important;
-        }
-        .button {
-            padding: 10px 10px 5px;
-        }
-        .btn2 {
-            border-radius: 4px;
-            border: 0;
-            color: #fff;
-            margin: 10px 0px 0px -2px;
-            white-space: normal !important;
-            height: 59px !important;
-            line-height: 40px !important;
-        }
-        .modify-btn-1 {
-            margin-left: 47px !important;
-        }
-        .col-md-chang {
-            width: 34.667%;
-        !important;
-        }
-        .border-box-item1 {
-            margin-right: 238px !important;
-        }
-    </style>
 </head>
 
 
@@ -249,164 +143,179 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
                         </div>
                       </div>
                       <div class="modal-body">
-                            <div class="text-xs-right col-xs-4">
-                                  <!--<a class="text-info teal-text m-r-2 backLogin" style="font-size:20px;font-family:Arial, Helvetica, sans-serif"></a>--> 
-                                  
-                             </div>
-                             <div class="col-xs-8 SPloginLoader" style="padding-right:0;display:none;"> <hr>
-                                <img src="images/ajax-loader.gif" id="" class="" style="">
-                                <center><span class="SPerrors" style="display:none;color: red;" ></span></center>
-                             </div>
-                             <div class="clearfix"></div>
-                             <div class="loginbut" style="padding:0px 0;width:100%;margin:auto;" >
-                               <div class="col-md-6 text-xs-center">
-                               		<span class="hideFirstSection"></span>
-                                	<button class="button loginClick" style="width:150px;background-color:#cdcdcd;"><strong>LOGIN</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">Returning User</p></button></div> <div class="col-md-6 text-xs-center">
-                 			        <button class="button button2 regClick"  style="width:150px; background-color:#9595f9;">
-                                	<strong>REGISTER</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">New User</p></button></div><div class="clearfix"></div>
-                             </div>
-                		
-                                <div  class="loginSec" style="padding:0px 25px;width:80%;margin:auto;display:none;" >
-                       
-                                <!--Body-->
-                               <div class="text-success main-block">
-                                    	<i class="fa fa-envelope prefix"> Email</i>
-                              		<input type="text" class="form-control friendEmail" id="friendEmail">
-                                    	<label for="form6"  class=""></label>
+                            <div class="text-xs-right">
+                              <!--<a class="text-info teal-text m-r-2 backLogin" style="font-size:20px;font-family:Arial, Helvetica, sans-serif"></a>-->
+                                <div class="loginbut" style="padding:0px 0;width:100%;margin:auto;" >
+                                    <div class="text-xs-center">
+                                        <span class="hideFirstSection"></span>
+
+                                        <div class="col-xs-8 SPloginLoader" style="padding-right:0;display:none;"> <hr>
+                                            <img src="images/ajax-loader.gif" id="" class="" style="">
+                                            <center><span class="SPerrors" style="display:none;color: red;" ></span></center>
+                                        </div>
+
+                                        <div  class="loginSec" >
+
+                                            <!--Body-->
+                                            <div class="text-success main-block">
+                                                <i class="fa fa-envelope prefix"> Email</i>
+                                                <input type="text" class="form-control friendEmail" id="friendEmail">
+                                                <label for="form6"  class=""></label>
+                                            </div>
+
+                                            <div class="text-success main-block">
+                                                <i class="fa fa-lock prefix"> Password</i>
+                                                <input type="password" class="form-control friendPwd" id="friendPwd">
+                                                <label for="form4"  class=""></label>
+                                            </div>
+
+                                            <input type="hidden" id="friendLoginHidden" class="friendLoginHidden" value="friendsLogin">
+
+                                            <div class="text-xs-center row">
+                                                <button class="btn log  modal__trigger friendLoginButton" id="friendLoginButton">LOGIN</button>
+                                                <button class="btn log  " id="friendForgetPasswordButtonButton">Forgot Password</button>
+                                                <button class="col-md-4 button button2 regClick">
+                                                    <strong>REGISTER</strong>
+                                                    <p class="button2subheading">New User</p>
+                                                </button>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
                                 </div>
-                                
-                                <div class="text-success main-block">
-                                    <i class="fa fa-lock prefix"> Password</i>
-                                    <input type="password" class="form-control friendPwd" id="friendPwd">
-                                    <label for="form4"  class=""></label>
+                            </div>
+
+                            <div class="clearfix"></div>
+
+                            <center><span class="regErrors" style="display:none;color: red;" ></span></center>
+
+                            <form id="addFriend" class="addFriend" action="ajax.php" method="post"  enctype="multipart/form-data">
+                                <input type="hidden" name="tag" value="register">
+                                <input type="hidden" name="userType" value="addFriend">
+                                <?php
+                                if(!empty($email) && $isexpert == "yes")
+                                {
+                                    ?>
+                                    <input type="hidden" name="isexpertreg" value="yes" class="isexpertreg">
+                                    <input type="hidden" name="expertID" value="<?php echo $expertID;  ?>">
+                                    <?php
+                                }
+                                if(!empty($email) && $isFriendreg == "yes")
+                                {
+                                    ?>
+                                    <input type="hidden" name="isFriendreg" value="yes" class="isFriendreg">
+                                    <input type="hidden" name="expertID" value="<?php echo $expertID;  ?>">
+                                    <?php
+                                }
+                                else
+                                {
+                                    ?>
+                                    <input type="hidden" name="isexpertreg" value="" class="isexpertreg">
+                                    <input type="hidden" name="expertID" value="">
+                                    <?php
+                                }
+                                 ?>
+
+                                <div class="row resSec" style="display: none;">
+
+                                    <div style="border-bottom:1px solid #ccccfe;padding-bottom:15px">
+
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class=" main-block">
+                                                <i class="fa fa-user prefix"> First Name <span style="color:#F00;font-size:18px">*</span></i>
+                                                <input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $fname;?>">
+                                                <label for="fname"></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class=" main-block">
+                                                <i class="fa fa-user prefix"> Last Name <span style="color:#F00;font-size:18px">*</span></i>
+                                                <input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $lname;?>">
+                                                <label for="form4"></label>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 col-xs-12">
+                                            <div class="main-block">
+                                            <?php /*if(!empty($email) && $isFriendreg == "yes")*/ ?>
+                                                <i class="fa fa-phone prefix"> <?php if(!empty($email) && $isexpert == "yes"){echo "Experties";}else {echo "Phone";}?></i>
+                                                <input id="form7 phone" class="form-control phone" name="phone" tabindex="3" type="text" value="<?php echo $phone; ?>">
+                                                <label for="form4"></label>
+                                            </div>
+                                        </div>
+
+                                         <div class="col-md-4 col-xs-12">
+                                             <div class=" main-block">
+                                                 <i class="fa fa-envelope prefix"> Email<span style="color:#F00;font-size:18px">*</span></i>
+                                                <input id="email" class="form-control email" name="email" tabindex="4" type="text" value="<?php echo $email;?>">
+                                                <label for="email"></label>
+                                              </div>
+                                          </div>
+
+                                          <div class="col-md-4 col-xs-12">
+                                             <div class=" main-block">
+                                                <i class="fa fa-location-arrow prefix"> Password<span style="color:#F00;font-size:18px">*</span></i>
+                                                <input id="form8 pwds" class="form-control pwds" name="pwds" tabindex="5" type="password">
+                                                <label for="form8"></label>
+                                              </div>
+                                          </div>
+
+                                          <div class="col-md-4 col-xs-12">
+                                             <div class=" main-block">
+                                                <i class="fa fa-location-arrow prefix"> Confirm Password<span style="color:#F00;font-size:18px">*</span></i>
+                                                <input id="form9 cpwd" class="form-control cpwd" name="cpwd" tabindex="6" type="password">
+                                                <label for="form9" style="line-height:11px;"></label>
+                                            </div>
+                                          </div>
+
+                                         <div class="col-md-4 col-xs-12">
+                                             <div class=" main-block">
+                                                <i class="fa fa-flag prefix"> City</i>
+                                                <input id="form8 city" class="form-control city" name="city" tabindex="7" type="text" value="<?php echo $city;?>">
+                                                <label for="form8"></label>
+                                              </div>
+                                          </div>
+
+                                          <div class="col-md-4 col-xs-12">
+                                             <div class=" main-block">
+                                                <i class="fa fa-flag prefix"> Country</i>
+                                                <input id="form9 country" class="form-control country" name="country" tabindex="8" type="text" value="<?php echo $country;?>">
+                                                <label for="form9"></label>
+                                              </div>
+                                           </div>
+
+                                          <div class="col-md-4 col-xs-12">
+                                              <div class=" main-block">
+                                                  <div class="upload-img-block"> <img src="images/placeholder/male3.jpg" id="preview" width="10%" height="10%">
+                                                </div>
+                                                <div class=" main-block upload-panel-box">
+                                                    <i class="fa prefix"></i>
+                                                    <p style="margin:0;font-size:12px;">Upload Image<span style="color:#F00;font-size:18px">*</span></p>
+                                                    <input placeholder="upload-img" id="form2 pImage" class="form-control pImage" name="pImage" onchange="previewImage(this)" accept="image/*"  type="file">
+                                                   </div>
+                                               </div>
+                                          </div>
+
+                                         <div class="clearfix"></div>
+                                    </div>
+
+                                     <div class="m-t-1">
+                                         <div class="col-xs-3"><p class="m-a-0 small" style="padding-top:17px;"><span style="color:#F00;font-size:18px">*</span> Required Fields</p></div>
+                                         <div class="text-xs-center row ">
+                                            <button class="btn log  modal__trigger addFriendSubmit waves-effect waves-light" id="addFriendSubmit" style="margin-right:150px;text-transform:uppercase" type="submit">Register</button>
+                                            <button class="col-md-4 button loginClick" style="width:150px;background-color:#cdcdcd;"><strong>LOGIN</strong><p style="font-size:12px;border-top:1px solid #fff;margin:0;padding-top:9px;">Returning User</p></button></div> <div class="col-md-6 text-xs-center">
+                                         </div>
+
+                                     </div>
+
                                 </div>
-					
-                		<input type="hidden" id="friendLoginHidden" class="friendLoginHidden" value="friendsLogin">
-       
-                   		<div class="text-xs-center"> 
-                       			<button class="btn log  modal__trigger friendLoginButton" id="friendLoginButton">LOGIN</button>
-                     		</div>
-                         </div>
-			    
-	<center><span class="regErrors" style="display:none;color: red;" ></span></center>
-          
-	<form id="addFriend" class="addFriend" action="ajax.php" method="post"  enctype="multipart/form-data">
-        <input type="hidden" name="tag" value="register">
-        <input type="hidden" name="userType" value="addFriend">
-        <?php
-		      if(!empty($email) && $isexpert == "yes")
-			{
-			  ?>
-			    <input type="hidden" name="isexpertreg" value="yes" class="isexpertreg">
-			    <input type="hidden" name="expertID" value="<?php echo $expertID;  ?>">
-			  <?php 
-			}
-			if(!empty($email) && $isFriendreg == "yes")
-			{
-			  ?>
-			    <input type="hidden" name="isFriendreg" value="yes" class="isFriendreg">
-			    <input type="hidden" name="expertID" value="<?php echo $expertID;  ?>">
-			  <?php 
-			}
-		 ?>
-                         
-                <div class="row resSec" style="display: none;">
-                         
-                	<div style="border-bottom:1px solid #ccccfe;padding-bottom:15px">                            
-                                                      
-                		<div class="col-md-4 col-xs-12">
-                             		<div class=" main-block">
-                                		<i class="fa fa-user prefix"> First Name <span style="color:#F00;font-size:18px">*</span></i>
-                                		<input id="fname" class="form-control fname" name="fname" tabindex="1" type="text" value="<?php echo $fname;?>">
-                                		<label for="fname"></label>
-                             		</div>
-                          	</div>
-                        
-				<div class="col-md-4 col-xs-12">
-                            		<div class=" main-block">
-                                		<i class="fa fa-user prefix"> Last Name <span style="color:#F00;font-size:18px">*</span></i>
-                                		<input id="form4 lname" class="form-control lname" name="lname" tabindex="2" type="text" value="<?php echo $lname;?>">
-						<label for="form4"></label>
-                            		</div>
-                        	</div>
-                        
-				<div class="col-md-4 col-xs-12">
-                             		<div class="main-block">
-					<?php /*if(!empty($email) && $isFriendreg == "yes")*/ ?>
-                                		<i class="fa fa-phone prefix"> <?php if(!empty($email) && $isexpert == "yes"){echo "Experties";}else {echo "Phone";}?></i>
-                                		<input id="form7 phone" class="form-control phone" name="phone" tabindex="3" type="text" value="<?php echo $phone; ?>">
-                                		<label for="form4"></label>
-                             		</div>
-                        	</div>
-
-				 <div class="col-md-4 col-xs-12">
-				     <div class=" main-block">
-					     <i class="fa fa-envelope prefix"> email<span style="color:#F00;font-size:18px">*</span></i>
-					    <input id="email" class="form-control email" name="email" tabindex="4" type="text" value="<?php echo $email;?>">
-					    <label for="email"></label>
-				      </div>
-				  </div>
-				
-				  <div class="col-md-4 col-xs-12">
-				     <div class=" main-block">
-					    <i class="fa fa-location-arrow prefix"> Password<span style="color:#F00;font-size:18px">*</span></i>
-					    <input id="form8 pwds" class="form-control pwds" name="pwds" tabindex="5" type="password">
-					    <label for="form8"></label>
-				      </div>
-				  </div>
-				
-				  <div class="col-md-4 col-xs-12">
-				     <div class=" main-block">
-					    <i class="fa fa-location-arrow prefix"> Confirm Password<span style="color:#F00;font-size:18px">*</span></i>
-					    <input id="form9 cpwd" class="form-control cpwd" name="cpwd" tabindex="6" type="password">
-					    <label for="form9" style="line-height:11px;"></label>
-					</div>
-				  </div>
-
-				 <div class="col-md-4 col-xs-12">
-				     <div class=" main-block">
-					    <i class="fa fa-flag prefix"> City</i>
-					    <input id="form8 city" class="form-control city" name="city" tabindex="7" type="text" value="<?php echo $city;?>">
-					    <label for="form8"></label>
-				      </div>
-				  </div>
-
-				  <div class="col-md-4 col-xs-12">
-				     <div class=" main-block">
-					    <i class="fa fa-flag prefix"> Country</i>
-					    <input id="form9 country" class="form-control country" name="country" tabindex="8" type="text" value="<?php echo $country;?>">
-					    <label for="form9"></label>
-				      </div>
-				   </div>
-				
-				  <div class="col-md-4 col-xs-12">
-					  <div class=" main-block">
-					      <div class="upload-img-block"> <img src="images/placeholder/male3.jpg" id="preview" width="10%" height="10%">
-						</div>    
-						<div class=" main-block upload-panel-box">
-							<i class="fa prefix"></i>
-							<p style="margin:0;font-size:12px;">Upload Image<span style="color:#F00;font-size:18px">*</span></p>
-							<input placeholder="upload-img" id="form2 pImage" class="form-control pImage" name="pImage" onchange="previewImage(this)" accept="image/*"  type="file">
-					       </div>
-					   </div>
-				  </div>
-				
-                          	<div class="clearfix"></div>
-                         </div>
-                         <div class="m-t-1">                           
-                             <div class="col-xs-3"><p class="m-a-0 small" style="padding-top:17px;"><span style="color:#F00;font-size:18px">*</span> Required Fields</p></div>
-                             <div class="col-xs-9 text-xs-center">
-                             <button class="btn log  modal__trigger addFriendSubmit waves-effect waves-light" id="addFriendSubmit" style="margin-right:150px;text-transform:uppercase" type="submit">Register</button></div>
-                         </div>
-                           
-                         </div>
-                       </form>
+                            </form>
 
 
                       </div>
-                      <!--<div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                      </div>-->
+
                     </div>
                   </div>
                 </div>

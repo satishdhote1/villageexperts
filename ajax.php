@@ -207,9 +207,9 @@ else if($tag == "requestMail"){
 
 else if($tag == "ConfirmAppointment"){
 
-	  $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	  $senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
-	  $appointTimes = isset($_REQUEST['appointTime'])?$_REQUEST['appointTime']:'';
+	$email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
+	$senderEmail = isset($_REQUEST['senderEmail'])?$_REQUEST['senderEmail']:'';
+	$appointTimes = isset($_REQUEST['appointTime'])?$_REQUEST['appointTime']:'';
 
 	$sql="select * from friendsRegister where  email='".$email."'";
     $tableResult = mysqli_query($conn, $sql);
@@ -224,7 +224,7 @@ else if($tag == "ConfirmAppointment"){
 
 
 	//$recieverFname = isset($_REQUEST['recieverFname'])?$_REQUEST['recieverFname']:'';
-	// $senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
+	//$senderName = isset($_REQUEST['senderName'])?$_REQUEST['senderName']:'';
 	//print_r(json_decode($appointTimes));
 
 	  if(!empty($email) && !empty($appointTimes)){
@@ -556,6 +556,7 @@ else if($tag == 'register') {
 		echo $MSG;	
 	}
 
+
 	if ($tableResult  == true) {
 		$result['msg'] = $MSG;
 		$passStr = "$fname, You have been Registered successfully to Village Experts Community! Redirecting....";
@@ -679,12 +680,12 @@ else if($tag == 'addFriendss'){
 
 		if($IsemailExists == 0) {
 			if(!empty($isexpert) && $isexpert == "yes"){
-				$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'?email='.$m_email.'&isexpert=yes#register" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].' to set new password</a></p></div></div>';
+				$body.='<p class="notify"><a href="http://'.$_SERVER['SERVER_NAME'].'?email='.$m_email.'&isexpert=yes#register" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].' to set new password</a></p></div></div>';
 			} else {
-				$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'?email='.$m_email.'&isFriendreg=yes#register" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].' to set new password</a></p></div></div>';
+				$body.='<p class="notify"><a href="http://'.$_SERVER['SERVER_NAME'].'?email='.$m_email.'&isFriendreg=yes#register" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].' to set new password</a></p></div></div>';
 			}
 		} else {
-			$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER['SERVER_NAME'].'" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].' to interact with new friends</a></p></div></div>';
+			$body.='<p class="notify"><a href="http://'.$_SERVER['SERVER_NAME'].'" style="color:#fff;">Visit '.$_SERVER['SERVER_NAME'].' to interact with new friends</a></p></div></div>';
 		}
 
 		$body.='</div></div></div>';

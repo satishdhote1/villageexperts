@@ -101,8 +101,6 @@ date_default_timezone_set($xxx);*/
 
 .box-table-1:hover{
 background-color: #b38f00;
-
-
 	}
 .box-table-2:hover{
 background-color: #4d4dff;
