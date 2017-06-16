@@ -11,25 +11,23 @@ body {
     background: #ccccff;
     min-height: 100%;
 }
-.logo-modify {
+.logoSection {
     margin: auto;
     text-align: center;
     width: 100%;
     position: fixed;
-
 }
-.logo-modify a {
+.logoSection a {
     margin: 0px;
 }
-.logo-modify p {
+.logoSection p {
     margin: 0px;
     font-size: 25px;
     font-weight: bold;
     color: #FFF;
     width: 100%;
 }
-.logo-modify img {
-    width: 80px;
+.logoSection img {
     margin: auto;
 }
 .button {
@@ -78,12 +76,12 @@ body {
     background: #ffae00;
 }
 .modify-badge-2 {
-    padding: 10px 35px;
+
     color: #FF0000;
-    font-size: 20px;
+
     text-transform: uppercase;
     font-weight: bold;
-    margin-left:-46px;font-size:23px;padding:0px;color:#495775
+    font-size:23px;padding:0px;
 }
 .table td,
 .table th {
@@ -174,11 +172,8 @@ body {
     font-size: 15px;
     font-weight: 600;
     overflow: visible;
-    padding: 10px 20px 10px 0;
     white-space: nowrap !important;
     text-transform: uppercase;
-    width: 100%;
-    margin-top: 30px;
 }
 .modify-btn-1:hover {
     background: #a6a6a6 !important;
@@ -1034,9 +1029,7 @@ input[type='file'] {
     height: 59px !important;
     line-height: 40px !important;
 }
-.modify-btn-1 {
-    margin-left: 47px !important;
-}
+
 .col-md-chang {
     width: 34.667%;  !important;
 }

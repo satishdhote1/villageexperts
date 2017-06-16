@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-113">
-              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+            <state relative-caret-position="380">
+              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -178,11 +178,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vvheader.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="vvheader.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vvheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="28" />
+            <state relative-caret-position="170">
+              <caret line="10" column="183" lean-forward="false" selection-start-line="10" selection-start-column="183" selection-end-line="10" selection-end-column="183" />
               <folding />
             </state>
           </provider>
@@ -238,8 +238,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>modi-img</find>
-      <find>online</find>
       <find>loginStatus</find>
       <find>status</find>
       <find>Online</find>
@@ -268,6 +266,8 @@
       <find>logo-modify</find>
       <find>abs</find>
       <find>addFriend</find>
+      <find>.modify-btn-1</find>
+      <find>logo-mo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -304,8 +304,8 @@
         <option value="&lt;edf90b6e-36bd-482f-be2a-e12f100e309e&gt;/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/config/connection.php" />
-        <option value="$PROJECT_DIR$/vvheader.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/vvheader.php" />
       </list>
     </option>
   </component>
@@ -572,7 +572,7 @@
       <workItem from="1497025962540" duration="617000" />
       <workItem from="1497458171678" duration="2983000" />
       <workItem from="1497601445899" duration="10908000" />
-      <workItem from="1497632583316" duration="3935000" />
+      <workItem from="1497632583316" duration="4966000" />
     </task>
     <task id="LOCAL-00001" summary="added style css to head also admin index">
       <created>1491539809659</created>
@@ -616,11 +616,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497637831635</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="style header">
+      <created>1497639198139</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1497639198139</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55230000" />
+    <option name="totallyTimeSpent" value="56261000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1188,18 +1195,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vvheader.php">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="28" />
+        <state relative-caret-position="380">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/vvheader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-113">
-          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        <state relative-caret-position="170">
+          <caret line="10" column="183" lean-forward="false" selection-start-line="10" selection-start-column="183" selection-end-line="10" selection-end-column="183" />
           <folding />
         </state>
       </provider>
