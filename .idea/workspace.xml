@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="000a793a-d379-4aab-8d28-4f0e4802e9ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpMailer/class.pop3.php" afterPath="$PROJECT_DIR$/phpMailer/class.pop3.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vvheader.php" afterPath="$PROJECT_DIR$/vvheader.php" />
     </list>
@@ -35,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17714">
-              <caret line="1042" column="15" lean-forward="false" selection-start-line="1042" selection-start-column="15" selection-end-line="1042" selection-end-column="15" />
+            <state relative-caret-position="-113">
+              <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -177,11 +178,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="vvheader.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="vvheader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vvheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+            <state relative-caret-position="34">
+              <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -237,9 +238,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$alreadyFrnd</find>
-      <find>connect.php</find>
-      <find>modi</find>
       <find>modi-img</find>
       <find>online</find>
       <find>loginStatus</find>
@@ -266,6 +264,9 @@
       <find>login</find>
       <find>addFriendSubmit</find>
       <find>friendLoginButton</find>
+      <find>modify-badge</find>
+      <find>logo-modify</find>
+      <find>abs</find>
       <find>addFriend</find>
     </findStrings>
   </component>
@@ -298,13 +299,13 @@
         <option value="$PROJECT_DIR$/config.php" />
         <option value="$PROJECT_DIR$/communication.php" />
         <option value="$PROJECT_DIR$/testMail.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/ajax.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="&lt;edf90b6e-36bd-482f-be2a-e12f100e309e&gt;/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/config/connection.php" />
         <option value="$PROJECT_DIR$/vvheader.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
       </list>
     </option>
   </component>
@@ -385,6 +386,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="friendsandfamily" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHPmainproject" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PHPmainproject" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="css" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -557,7 +572,7 @@
       <workItem from="1497025962540" duration="617000" />
       <workItem from="1497458171678" duration="2983000" />
       <workItem from="1497601445899" duration="10908000" />
-      <workItem from="1497632583316" duration="2918000" />
+      <workItem from="1497632583316" duration="3935000" />
     </task>
     <task id="LOCAL-00001" summary="added style css to head also admin index">
       <created>1491539809659</created>
@@ -594,11 +609,18 @@
       <option name="project" value="LOCAL" />
       <updated>1497637372373</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="header&#10;">
+      <created>1497637831635</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1497637831635</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54213000" />
+    <option name="totallyTimeSpent" value="55230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -638,7 +660,9 @@
     <MESSAGE value="login reguster modal" />
     <MESSAGE value="isexpertreg" />
     <MESSAGE value="db conn credentails" />
-    <option name="LAST_COMMIT_MESSAGE" value="db conn credentails" />
+    <MESSAGE value="header&#10;" />
+    <MESSAGE value="style header" />
+    <option name="LAST_COMMIT_MESSAGE" value="style header" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1016,14 +1040,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17714">
-          <caret line="1042" column="15" lean-forward="false" selection-start-line="1042" selection-start-column="15" selection-end-line="1042" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
@@ -1042,6 +1058,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="190" column="44" lean-forward="false" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/testMail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/connection.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -1156,26 +1188,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/testMail.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="25" column="41" lean-forward="true" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/connection.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vvheader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="12" lean-forward="false" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="12" />
+        <state relative-caret-position="34">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113">
+          <caret line="14" column="17" lean-forward="true" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
           <folding />
         </state>
       </provider>

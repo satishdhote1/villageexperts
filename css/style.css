@@ -14,7 +14,9 @@ body {
 .logo-modify {
     margin: auto;
     text-align: center;
-    width: 290px;
+    width: 100%;
+    position: fixed;
+
 }
 .logo-modify a {
     margin: 0px;
@@ -32,8 +34,6 @@ body {
 }
 .button {
     background-color: #4CAF50;
-    /* Green */
-    
     border: none;
     border-radius: 5px;
     color: white;
@@ -83,6 +83,7 @@ body {
     font-size: 20px;
     text-transform: uppercase;
     font-weight: bold;
+    margin-left:-46px;font-size:23px;padding:0px;color:#495775
 }
 .table td,
 .table th {
