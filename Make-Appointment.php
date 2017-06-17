@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 /*$x =  file_get_contents('http://ip-api.com/json/' . $_SERVER['REMOTE_ADDR']);
 $xx = json_decode($x);
 //print_r($xx);
@@ -16,187 +16,23 @@ date_default_timezone_set($xxx);*/
 
 
 <head>
-
-    
-
     <meta charset="utf-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
-    
-
     <title>Make an Appointment</title>
-
-
-
-    <!-- Font Awesome -->
-
-   
-
-
-    <!-- Bootstrap core CSS -->
-
     <link href="css/bootstrap.min.css" rel="stylesheet">
-   
-    <!--  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css" rel="stylesheet">
-	<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">-->
     <link href="css/mdb.min.css" rel="stylesheet">
-    <!--<link href="css/font-awesome.min.css" rel="stylesheet">-->
-    <!-- Material Design Bootstrap -->
-
-
-    <!-- Your custom styles (optional) -->
-
     <link href="css/style.css" rel="stylesheet">
-
-
 
 </head>
 
-<style>
-.cngBGC1{
-  background-color: #b38f00;
-}
-.cngBGC2{
-  background-color: #ffcc66;
-}
-.loader {
-  border: 16px solid #f3f3f3;
-  border-radius: 50%;
-  border-top: 16px solid blue;
-  border-bottom: 16px solid blue;
-  margin-left:50%;
-  width: 120px;
-  height: 120px;
-  -webkit-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-.box-table-2.conform > span {
-    line-height: 30px;
-    margin: 0;
-    padding: 0;
-}
-.btn-online {
-    font-size: 12px;
-	font-weight:normal;
-}
-.friend-family .row {
-    margin: 0 !important;
-}
-.bg-gry{background:#d2d2d2;}
-.bg-yellow{background:#ffcc66;}
-.done-btn{font-weight:bold;font-size:25px;border-radius:5px;}
-
-.box-table-1:hover{
-background-color: #b38f00;
-	}
-.box-table-2:hover{
-background-color: #4d4dff;
-	}
-.box-table-1{
-	 border:none;
-}	
-.box-table-2{
-	 border:none;
-}
-.conform{background-color:#7b7bfc;}	
-
-</style>
-
 <body>
 
-    
-
-
-
-    <!-- Start your project here-->
-
-
-
-    <!--Navbar-->
-
-   <!-- <div class="login-profile">
-
-                <img class="img-circle" src="images/placeholder/male2.jpg">
-
-                <div class="btn-group">
-
-                <p class="font-weight-normal"><!--?php echo "Welcome ".$_SESSION['logged_user_fname']." !";  ?</p>
-
-<a class="modify-btn-1 text-xs-right btn-lg modal__trigger" style="padding:11px;" href="logout.php">Logout</a>
-<p>Farook Afsare</p>
-                <!--<button class="btn btn-cyan" type="button" >
-
-                Log Out
-
-                </button>-->
-
-               
-
-                <!--Links--
-
-                
-
-            </div>
-
-            <!--/.Collapse content--
-
-
-
-        </div> -->
-
- 
-
-
-    <nav class="navbar navbar-dark  " style="background:#ccccff;">
-
-
-
-       
-
-        <div class="container">
-
-
-
-            <!--Collapse content-->
-
-            <div class="logo-modify">
-
-                <!--Navbar Brand-->
-
-                <a class="navbar-brand" href="#" target="_blank"><img src="img/normal/logo.png"><p class="brand-text">VILLAGE EXPERTS</p></a>
-
-             </div>   
-
-             </div>
-
-                
-
-
-
-    </nav>
-
-    <!--/.Navbar-->
-
-
+    <?php include 'vvheader.php';?>
 
     <!--Mask-->
 
    <section class="friend-family">
-
-    
 
         <div class="p-t-0">
 
@@ -205,16 +41,16 @@ background-color: #4d4dff;
             <div class="row">
 
             <div class="col-md-12  m-t-0" style="padding:0px;">
-<section class="bg-yellow text-xs-center">
-<div class="container">
-<div class="row">
-<div class="col-md-12 p-t-1 p-b-1">
-<h3 class=""><b>Request An Appointment with <?php echo $_REQUEST['recieverFname'];  ?> </b><a href="friends-family.php"> <img src="images/Left.png" class="" style="cursor:pointer;position:relative;float:right;right:150px;"/></a> </h3>
-
-</div>
-</div>
-</div>
-</section>
+            <section class="bg-yellow text-xs-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 p-t-1 p-b-1">
+                        <h3 class=""><b>Request An Appointment with <?php echo $_REQUEST['recieverFname'];  ?> </b>
+                            <a href="friends-family.php"> <img src="images/Left.png" class="" style="cursor:pointer;position:relative;float:right;right:150px;"/></a> </h3>
+                        </div>
+                    </div>
+                </div>
+            </section>
     <div class="card-block text-xs-center">
 
                 <!--Title-->

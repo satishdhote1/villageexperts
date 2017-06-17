@@ -1035,3 +1035,61 @@ input[type='file'] {
 .notify{
     width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,'Times New Roman', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;
 }
+
+
+.cngBGC1{
+    background-color: #b38f00;
+}
+.cngBGC2{
+    background-color: #ffcc66;
+}
+.loader {
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid blue;
+    border-bottom: 16px solid blue;
+    margin-left:50%;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.box-table-2.conform > span {
+    line-height: 30px;
+    margin: 0;
+    padding: 0;
+}
+.btn-online {
+    font-size: 12px;
+    font-weight:normal;
+}
+.friend-family .row {
+    margin: 0 !important;
+}
+.bg-gry{background:#d2d2d2;}
+.bg-yellow{background:#ffcc66;}
+.done-btn{font-weight:bold;font-size:25px;border-radius:5px;}
+
+.box-table-1:hover{
+    background-color: #b38f00;
+}
+.box-table-2:hover{
+    background-color: #4d4dff;
+}
+.box-table-1{
+    border:none;
+}
+.box-table-2{
+    border:none;
+}
+.conform{background-color:#7b7bfc;}
