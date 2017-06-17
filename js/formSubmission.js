@@ -179,7 +179,7 @@ $(document).ready(function() {
             event.preventDefault();
             var email = $(".email").val();
             var isexpertreg = $(".isexpertreg").val();
-            console.log("addFriend " ,email ,  isexpertreg);
+
             if (isexpertreg == "") {
                 $.ajax({
                     url: 'ajax.php',
@@ -197,7 +197,6 @@ $(document).ready(function() {
                         if (dataSR.success == 1) {
                             alert("Email already exist !");
                         } else {
-                            //alert("Could not Register");
                             $('#addFriend').unbind('submit').submit();
                         }
                     },
@@ -283,88 +282,10 @@ $(document).ready(function() {
                         alert("Email already exist !");
 
                     } else {
-                        //alert("fgdfgdf");
+
                         $('#addFriend').unbind('submit').submit();
-						/*
-						 var fname = $(".fname").val();
-						 var lname = $(".lname").val();
-						 var city = $(".city").val();
-						 var country = $(".country").val();
-						 var phone = $(".phone").val();
-						 var email = $(".email").val();
-						 $(".loader").show();
-
-						 $.ajax({
-
-						 url:'ajax.php',
-
-						 type: 'POST',
-
-						 dataType: "json",
-
-						 data: {fname:fname,lname:lname,city:city,country:country,phone:phone,email:email,userType:"addFriend",tag:"register"},
-
-						 success: function(data)    // A function to be called if request succeeds
-
-						 {
-
-						 $(".loader").hide();
-
-						 console.log(data);
-
-						 if(data.success == 1)
-
-						 {
-
-						 $(".regErrors").css({"dilay":"block","color":"green"});
-
-						 $(".regErrors").text(data.msg);
-
-						 $('body').scrollTo('.regErrors',{duration:'slow', offsetTop : '50'});
-
-						 setTimeout(function(){
-
-
-
-						 alert("Friends Added Succesfully!");
-
-						 // location.href="centre-announcements.php";
-
-						 }, 4000);
-
-						 }
-
-						 else
-
-						 {
-
-						 $(".regErrors").css({"dilay":"block","color":"red"});
-
-						 $(".regErrors").text(data.msg);
-
-						 $('body').scrollTo('.regErrors',{duration:'slow', offsetTop : '50'});
-
-						 }
-
-						 } ,
-
-						 error: function () {
-
-						 alert("Registration Error!");
-
-						 }
-
-						 });
-
-
-						 //}
-
-						 */
 
                     }
-                    //}
-                    //}
-
                 },
                 error: function() {
 

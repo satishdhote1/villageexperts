@@ -5,9 +5,10 @@ body {
     background-attachment:fixed;
 }
 .navbar {
-    background-color: transparent;
+    background-color: #ccccfe;
     padding: 0px 0px;
     position: fixed;
+    top: 0px;
     width: 100%;
     z-index: 100000;
     transition: all 0.2s ease-in-out 0s;
@@ -15,6 +16,7 @@ body {
 .friend-family {
     background: #ccccff;
     min-height: 100%;
+    margin-top: 130px;
 }
 .logoSection {
     margin: auto;
@@ -74,9 +76,6 @@ body {
     background: #ffae00;
 }
 .modify-badge-2 {
-
-    color: #FF0000;
-
     text-transform: uppercase;
     font-weight: bold;
     font-size:23px;padding:0px;
@@ -351,7 +350,7 @@ body,
 
 .view {} .hm-black-strong-1 {
     background: rgba(255, 193, 70, 0);
-    padding-top: 50px;
+             padding-top: 130px;
 }
 .opacity-less {
     opacity: 0.3;
@@ -572,9 +571,7 @@ input[type="text"] {
 .bg-primary > th {
     font-size: 15px;
 }
-.friend-family .container-fluid {
-    width: 1280px;
-}
+
 .rangeslider,
 .rangeslider__fill,
 .rangeslider__fill2 {

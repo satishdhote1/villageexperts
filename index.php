@@ -2,6 +2,7 @@
 <?php
 include("config/connection.php");
 
+
 session_start();
 
 $conn=new connections();
@@ -99,7 +100,8 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
                 <!--Navbar Brand-->
                 <a class="navbar-brand" href="#" target="_blank"><img src="img/normal/logo.png"><p>VILLAGE EXPERTS</p></a>
                 <!--Links-->
-                
+                <div class="btn-primary col-md-2" href="#" target="_blank" style="background: transparent;padding: 10px;float: right;">About</div>
+                <div class="btn-primary col-md-2" href="#" target="_blank" style="background: transparent;padding: 10px;float: right;">Contact US</div>
             </div>
             <!--/.Collapse content-->
 

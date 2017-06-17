@@ -16,15 +16,9 @@ $getDataOf = isset($_REQUEST['getDataOf'])?$_REQUEST['getDataOf']:'';
 
 	{
 
-		
-
 		$sql="select * from 	sp_specialisation order by specialisation";
 
-  
-
-			$tableResult = mysqli_query($conn, $sql);
-
-			//print_r($tableResult);
+        $tableResult = mysqli_query($conn, $sql);
 
 				$result['success'] = 0;
 				$result['error']=1;

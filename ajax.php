@@ -86,7 +86,7 @@ if($tag == "SPregister")  {
         	$passStr = "$m_name, You have been Registered successfully to Village Experts Community! Redirecting....";
 			$passImg = (empty($target_fileName))?'placeholder/male3.jpg':"SP_Photos/".$target_fileName;//.$imageName;
 
-			header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
+			header("location:/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
      	}
   	}
 }
@@ -109,9 +109,8 @@ else if($tag == "checkEmail"){
 		$result['success'] = 0;
 		$result['error'] = 1;
     }
-
     echo json_encode($result);
-
+	die();
 }
 
 else if($tag == "makeAppointment"){
@@ -360,10 +359,7 @@ else if($tag == 'login') {
 
 		if (mysqli_num_rows($tableResult) > 0)  {
 
-		    $SPLoginData = mysqli_fetch_assoc($tableResult);	
-
-
-
+		    $SPLoginData = mysqli_fetch_assoc($tableResult);
 		    $_SESSION['logged_user_id']=$SPLoginData['id'];
 		    $_SESSION['logged_role_code']='friendsLogin';
 
@@ -490,7 +486,7 @@ else if($tag == 'register') {
 	$imageName = '';
 
 	if ($valid==1){
-		//first, into main student table
+
 		$tableResult = '';
 
 		if ($userType=="addFriend"){
@@ -504,13 +500,15 @@ else if($tag == 'register') {
 				$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',experties = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
 				$tableResult = mysqli_query($conn, $sql);
 				$member_id = $expertID;
+
             } else if(!empty($isFriendreg) && $isFriendreg == "yes") {
              	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '$m_city',country = '$m_country',phone = '$m_mobile',email = '$m_email',registerStatus= 'YES',loginStatus = 'NO',pwd = '".md5($pwd)."' where id = $expertID";
              	$tableResult = mysqli_query($conn, $sql);
              	$member_id = $expertID;
+
             } else {
-				$sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;
-				$tableResult = mysqli_query($conn, $sql);
+                $sql="insert into friendsRegister (fname,lname,city,country,phone,email,registerStatus,pwd,loginStatus) values ('".ucwords($fname)."','".ucwords($lname)."','".$m_city."', '".$m_country."', '".$m_mobile."', '".$m_email."','YES','".md5($pwd)."','NO')" ;
+                $tableResult = mysqli_query($conn, $sql);
 				$member_id = mysqli_insert_id($conn);
 				$sql2="insert into friendsExpertInfo (fname,lname,userid,email,parentID,isexpert) values ('".ucwords($fname)."','".ucwords($lname)."','".$member_id."','".$m_email."' , 0 ,0)" ;
 				$tableResult2 = mysqli_query($conn, $sql2);
@@ -519,13 +517,10 @@ else if($tag == 'register') {
             $uploaded_file = '';
 		     
 		    if(isset($_FILES) && is_array($_FILES)) {
-
 				$target_dir = "images/friendsFamily/";
 				$imageFileType = pathinfo($_FILES['pImage']["name"],PATHINFO_EXTENSION);
-
 				$target_file = $target_dir.$member_id.'.'.$imageFileType;
 				$target_fileName = "friendsFamily/".$member_id.'.'.$imageFileType;
-
 				$uploadOk = 1;
 
 				//indicate which file to resize (can be any type jpg/png/gif/etc...)
@@ -545,7 +540,6 @@ else if($tag == 'register') {
 					$passStr="Sorry, there was an error uploading your Image.<br/>";
 				}
 			}
-					
 
 			$MSG = "Registered Sucessfully!";
 		    $result['success'] = 1;
@@ -561,7 +555,7 @@ else if($tag == 'register') {
 		$result['msg'] = $MSG;
 		$passStr = "$fname, You have been Registered successfully to Village Experts Community! Redirecting....";
 		$passImg = (empty($target_fileName))?'placeholder/male2.jpg':$target_fileName;//.$imageName;
-		header("location:http://".$_SERVER['SERVER_NAME']."/well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");		
+		header("location:well-come.php?passStr=$passStr&passImg=$passImg&redirect=register_dashboard&email=$m_email");
 	} else if ($tableResult  == false && $userType == "SPregister") {
 		$passStr = 'Registration not successful ! Redirecting....<br>'.json_encode($result);
 		$passImg = 'img-3.jpg';

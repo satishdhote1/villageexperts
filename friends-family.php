@@ -2,7 +2,6 @@
 error_reporting(E_ALL);
 include("config/connection.php");
 session_start();
-echo $_SESSION['logged_user_id'];
 if(isset($_SESSION['logged_user_id']) && !empty($_SESSION['logged_user_id']))
 {
 $conn=new connections();
@@ -108,7 +107,6 @@ if (mysqli_num_rows($tableResult4) > 0)  {
    <section class="friend-family">
 
         <div class="">
-
             <div class="container">
 
 				<div class="row">
@@ -389,25 +387,16 @@ if (mysqli_num_rows($tableResult4) > 0)  {
                <div class="clearfix"></div>
 
             </div>
-
 				<div class="clearfix"></div>
 				<div class="alert alert-success connSuccess" style="display:none;margin-top: 10px;">
 				  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 				  <strong>Connected ! </strong> successfully Connected to <span></span>.
 				  Redirecting...
 				</div>
-            </div>
-
         </div>
 
-    </section>
-    
- 
-         </div>
+   </section>
 
-   
-    </div>
-    
 
 <script type="text/javascript" src="js/jquery-2.2.3.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>

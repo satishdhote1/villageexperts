@@ -1,19 +1,17 @@
 <?php
-//error_reporting(E_ALL);
 session_start();
-
 ?>
 <?php
 if(isset($_GET['redirect']) && $_GET['redirect'] == 'register_dashboard'){
- header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
+ header("Refresh: 4; url= /#login");
 }
 
 if(isset($_GET['redirect']) && $_GET['redirect'] == 'friends-family'){
- header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/#login");
+ header("Refresh: 4; url= /#login");
 }
 
 if(isset($_GET['redirect']) && ($_GET['redirect'] == 'index' || $_GET['redirect'] == 'home')){
- header("Refresh: 4; url= http://".$_SERVER['SERVER_NAME']."/");
+ header("Refresh: 4; url= /");
 }?>
 
 <!DOCTYPE html>
@@ -38,23 +36,7 @@ if(isset($_GET['redirect']) && ($_GET['redirect'] == 'index' || $_GET['redirect'
 </style>
 
 <body class="bodybg" background="img/normal/family.jpg">
-<div class="container-fluid header-part">
-  <div class="row">
-    <div class="col-md-12 text-center">
-      <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
-      <div class="over-lap">
-        <div class="profile pull-left"> <img src="images/placeholder/male2.jpg" class="img-responsive"> </div>
-        <div class="pull-right">
-          <p class="loginname">Wellcome <?php echo $_SESSION['logged_user_fname']; ?></p>
-          <button class="btn btn-info bg-blue">Logout</button>
-        </div>
-        <div class="clearfix"></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+<?php include 'vvheader.php';?>
 
 <div class="container">
     <div class="row">
