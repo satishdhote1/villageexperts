@@ -216,7 +216,8 @@ $sqlParent = "select * from friendsRegister where email = '".$_REQUEST['email'].
 	  </span> 
 	</div>
 <?php 
-	<?php if($isError == 2){?>
+}
+	 if($isError == 2){?>
 	<div class="alert alert-danger" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	  <span>Sorry! Password and Confirm password doesn't match!</br></span> 
