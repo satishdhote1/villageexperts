@@ -209,15 +209,32 @@ $sqlParent = "select * from friendsRegister where email = '".$_REQUEST['email'].
 <!--Navbar-->
 <div class="container">
    <div class="row">
-   <?php if($tableResult == 1){?>
+   <?php if($isError == 1){?>
    <div class="alert alert-danger" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	  <span><?php if($isError == 1){echo "Sorry! Link is not valid or email id no longer exists!</br>";}
-	  else if($isError == 2){echo "Sorry! Password and Confirm password doesn't match!</br>";}
-	  else if($isError == 100){echo "Password reset successful!</br>";}
-	  ?></span> 
+	  <span>Sorry! Link is not valid or email id no longer exists!</br>
+	  </span> 
+	</div>
+<?php 
+	<?php if($isError == 2){?>
+	<div class="alert alert-danger" style="display:block;margin-top: 5px;">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  <span>Sorry! Password and Confirm password doesn't match!</br></span> 
+	</div>
+<?php }?>
+<?php if($isError == 100){?>
+	<div class="alert alert-danger" style="display:block;margin-top: 5px;">
+	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+	  <span>Password reset successful!</br></span> 
 	</div>
 	<?php }?>
+
+
+
+
+
+
+
 	<div class="clearfix"></div>
     <div class="box-new-page">
        <div class="col-sm-6 text-xs-left">
