@@ -18,7 +18,7 @@ if(isset($_REQUEST['profileSubmit']))
 $sql="";
 if(!empty($pwd) &&($pwd == $cpwd))
 {
-	$sql="update friendsRegister set pwd = '".md5($pwd)."',ResetPWDtoken = '".rand()."' where email = ".$email;
+	$sql="update friendsRegister set pwd = '".md5($pwd)."',ResetPWDtoken = '".rand()."' where email = '".$email."'";
 	$tableResult = mysqli_query($conn, $sql);
 	if($tableResult == 1)
     {
