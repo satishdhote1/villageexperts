@@ -224,7 +224,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_REQUEST['email'].
 	</div>
 <?php }?>
 <?php if($isError == 100){?>
-	<div class="alert alert-danger" style="display:block;margin-top: 5px;">
+	<div class="alert alert-success" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	  <span>Password reset successful!</br></span> 
 	</div>
