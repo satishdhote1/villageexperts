@@ -213,7 +213,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_REQUEST['email'].
    <div class="alert alert-danger connSuccess" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 	  <span><?php if($isError == 1){echo "Sorry! Link is not valid or email id no longer exists!</br>";}
-	  else if($isError == 1){echo "Sorry! Password and Confirm password doesn't match!</br>";}
+	  else if($isError == 2){echo "Sorry! Password and Confirm password doesn't match!</br>";}
 	  else if($isError == 100){echo "Password reset successful!</br>";}
 	  ?></span> 
 	</div>
