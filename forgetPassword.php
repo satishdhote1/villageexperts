@@ -252,7 +252,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_REQUEST['email'].
        <form class="profile" id="profile" action="" method="post" >
        <input type="hidden" name="email" value="<?php echo $_REQUEST['email'] ;?>">
        <input type="hidden" name="token" value="<?php echo $_REQUEST['token'] ;?>">
-       <input type="hidden" name="passwordChanged" value="<?php echo $isError;?>">
+       <input type="hidden" name="passwordChanged" class="passwordChanged" id="passwordChanged" value="<?php echo $isError;?>">
        
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-user prefix"> <span>Password </span></i>
