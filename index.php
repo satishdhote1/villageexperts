@@ -545,7 +545,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
   <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center"></h1>
+          <h1 class="text-center">What's My Password?</h1>
       </div>
       <div class="modal-body">
           <div class="col-md-12">
@@ -576,7 +576,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
   </div>
 </div>
 
-
+    
 
     <!-- SCRIPTS -->
 
