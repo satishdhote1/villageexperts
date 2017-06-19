@@ -2,7 +2,7 @@ $(document).ready(function(){
 
 
 				$(document).on("click",".submitFP",function(){
-					var email = $(".friendEmail").val();
+					var email = $(".emailFP").val();
 					if(email == "")
 					{
 						alert("Emial can not be empty!");
