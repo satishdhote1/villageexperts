@@ -1,7 +1,47 @@
 $(document).ready(function(){
 
 
+				$(document).on("click",".submitFP",function(){
+					var email = $(".friendEmail").val();
+					if(email == "")
+					{
+						alert("Emial can not be empty!");
+					}
+					else
+					{
+						$.ajax({
 
+								url:'ajax.php',
+
+								type: 'POST',
+
+								dataType: "json",
+
+								data: {email:email,tag:"forgetPWD"},  
+
+								success: function(data)    // A function to be called if request succeed
+								{
+								  console.log(data);
+								 if(data.success == 1)
+								 {
+
+
+								 }
+								 else
+
+								 {
+								 	alert("Sorry ! No account is associated with this email!");
+
+								 }
+								} ,      
+								 error: function () {
+									alert("Network error Occured!");
+								}  
+
+								 });
+					}
+
+				});
 
 				//Provider Click
 
