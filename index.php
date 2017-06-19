@@ -114,6 +114,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
     <link href="css/style.css" rel="stylesheet">
 
     <style>
+    .modal-footer {   border-top: 0px; }
         body{
             background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;
             background-size:cover;
@@ -576,7 +577,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
   </div>
 </div>
 
-    
+
 
     <!-- SCRIPTS -->
 
