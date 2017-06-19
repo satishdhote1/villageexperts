@@ -6,87 +6,51 @@ $conn=new connections();
 $conn=$conn->connect();
 
 $tableResult = 0;
+$isError = 0;
 $passStr="";
 $changePWD = 0;
 $isexpertUser = 0;
 if(isset($_REQUEST['profileSubmit']))
 {
-
-	$userType = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
-	$isexpertreg=isset($_REQUEST['isexpertreg'])?$_REQUEST['isexpertreg']:'';
-	$isFriendreg=isset($_REQUEST['isFriendreg'])?$_REQUEST['isFriendreg']:'';
-	$uid=isset($_REQUEST['uid'])?$_REQUEST['uid']:'';
-	$expertID=isset($_REQUEST['expertID'])?$_REQUEST['expertID']:'';
-	$fname=isset($_REQUEST['fname'])?$_REQUEST['fname']:'';
-	$lname=isset($_REQUEST['lname'])?$_REQUEST['lname']:'';
-	$m_city=isset($_REQUEST['city'])?$_REQUEST['city']:'';
-	$m_country=isset($_REQUEST['country'])?$_REQUEST['country']:'';
-	$m_mobile=isset($_REQUEST['phone'])?$_REQUEST['phone']:'';
-	$m_email=isset($_REQUEST['email'])?$_REQUEST['email']:'';
-	$expertiesData = isset($_REQUEST['expertiesData'])?$_REQUEST['expertiesData']:'';
-	$pwd = isset($_REQUEST['pwds'])?$_REQUEST['pwds']:'';
+	$email=isset($_REQUEST['email'])?$_REQUEST['email']:'';
+	$cpwd = isset($_REQUEST['cpwd'])?$_REQUEST['cpwd']:'';
+	$pwd = isset($_REQUEST['pwd'])?$_REQUEST['pwd']:'';
 $sql="";
-if(!empty($pwd))
+if(!empty($pwd) &&($pwd == $cpwd))
 {
-	$changePWD = 1;
-	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."',pwd = '".md5($pwd)."',experties = '".$expertiesData."' where id = ".$uid;
+	$sql="update friendsRegister set pwd = '".md5($pwd)."',ResetPWDtoken = '".rand()."' where email = ".$email;
+	$tableResult = mysqli_query($conn, $sql);
+	if($tableResult == 1)
+    {
+    	$isError = 100;
+    }
 }
 else
 {
-	$changePWD = 0;
-	$sql="update friendsRegister set fname = '".ucwords($fname)."',lname = '".ucwords($lname)."', city = '".$m_city."',country = '".$m_country."',phone = '".$m_mobile."',email = '".$m_email."',experties = '".$expertiesData."' where id = ".$uid;
+	$isError = 2;
 }
-    $tableResult = mysqli_query($conn, $sql);
-
-    if($tableResult == 1)
-    {
-    	
-    }
+   
 
     //print_r($tableResult);
 }
 
 
-$sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_user_email']."'";
+$sqlParent = "select * from friendsRegister where email = '".$_REQUEST['email']."'";
        $tableResultParent = mysqli_query($conn, $sqlParent);
        $resultParentData = array();
        $resultParent = '';
        if (mysqli_num_rows($tableResultParent) > 0)  
       {
-        $resultParentData  = mysqli_fetch_assoc($tableResultParent);
-
-			$sqlParent2 = "select * from friendsExpertInfo where userid = '".$resultParentData['id']."'";
-			$tableResultParent2 = mysqli_query($conn, $sqlParent2);
-			$resultParentData2 = array();
-
-			if (mysqli_num_rows($tableResultParent2) > 0)  
-			{
-				$flag1 = 0;
-				$flag2 = 0;
-				while ($row = mysqli_fetch_assoc($tableResultParent2)) {
-					if($row['isexpert'] == 1)
-					{
-						$flag1 = 1;				
-					}
-					else{
-						$flag2 = 1;
-					}
-				}
-				if($flag1 == 1 && $flag2 == 1)
-				{
-					$isexpertUser = 2;	
-				}
-				else if($flag1 == 1 && $flag2 != 1)
-				{
-					$isexpertUser = 1;	
-				}
-				else if($flag1 != 1 && $flag2 == 1)
-				{
-					$isexpertUser = 0;	
-				}
-				
-			}
-      }
+        $row  = mysqli_fetch_assoc($tableResultParent);
+        if($row['ResetPWDtoken'] == $_REQUEST['token'])
+        {
+			$isError = 1;
+      	}
+       }
+       else
+       {
+       	 $isError = 1;
+       }
 
       
 
@@ -246,15 +210,18 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 <div class="container">
    <div class="row">
    <?php if($tableResult == 1){?>
-   <div class="alert alert-success connSuccess" style="display:block;margin-top: 5px;">
+   <div class="alert alert-danger connSuccess" style="display:block;margin-top: 5px;">
 	  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-	  <span>Profile Updated Successfuly!</br> <?php if($tableResult == 1 && $changePWD == 1){echo "Password changed!Logging you out..</br>";}?></span> 
+	  <span><?php if($isError == 1){echo "Sorry! Link is not valid or email id no longer exists!</br>";}
+	  else if($isError == 1){echo "Sorry! Password and Confirm password doesn't match!</br>";}
+	  else if($isError == 100){echo "Password reset successful!</br>";}
+	  ?></span> 
 	</div>
 	<?php }?>
 	<div class="clearfix"></div>
     <div class="box-new-page">
        <div class="col-sm-6 text-xs-left">
-        <p class="hder">My Profile Page</p>
+        <p class="hder">Password Reset</p>
       </div>
        <div class="col-xs-12 col-sm-4 deco">
         <button class="btn btn-cyan backToHome" >My Home Page</button>
@@ -264,9 +231,10 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
       </div>
        <div class="clearfix"></div>
        <div class="m-t-2"></div>
-       <form class="profile" id="profile" action="" method="post" enctype="multipart/form-data">
-       <input type="hidden" name="uid" value="<?php echo $resultParentData['id'] ;?>">
-       <input type="hidden" name="passwordChanged" class="passwordChanged" value="<?php echo ($tableResult == 1 && $changePWD == 1)?"1":"0"; ?>">
+       <form class="profile" id="profile" action="" method="post" >
+       <input type="hidden" name="email" value="<?php echo $_REQUEST['email'] ;?>">
+       <input type="hidden" name="token" value="<?php echo $_REQUEST['token'] ;?>">
+       <input type="hidden" name="passwordChanged" value="<?php echo $isError;?>">
        
 		       <div class="col-md-6 col-xs-12">
 		        <div class=" main-block"> <i class="fa fa-user prefix"> <span>Password </span></i>
@@ -308,8 +276,8 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 <script type="text/javascript">
   
 $(document).ready(function(){
-	if($(".passwordChanged").val() == 1)
-	{setTimeout(function(){location.href="logout.php"}, 2000);}
+	if($(".passwordChanged").val() == 100)
+	{setTimeout(function(){location.href="index.php#login"}, 2000);}
 $(document).on("click",".backTo",function(){
 window.history.back();
 });
