@@ -84,8 +84,6 @@ date_default_timezone_set($xxx);*/
 <!---------------------------------NEW TABLE ADD ON 12-11-2016--------------------------->
       <tr class="bg-gry"> 
 
-       
-
        <!--  <th width="16%"  style="text-align:center;font-weight:bold"></th> -->
 		 <th  style="text-align:center;font-weight:bold;width:100px;vertical-align:middle;">Time</th>
          <th colspan="2"  style="text-align:center;font-weight:bold;vertical-align:middle;"><p style="padding:0;margin:0;font-size:13px;"><?php echo date("l") ?></p><?php echo date("M d Y") ?></th> 

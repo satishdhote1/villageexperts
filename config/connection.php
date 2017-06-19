@@ -10,8 +10,8 @@ class connections
 
 	private $servername="localhost";
 	private $uname="root";
-	//private $password="mysqlroot";
-    private $password="altanaimysql";
+	private $password="mysqlroot";
+   // private $password="altanaimysql";
 	private $dbname="villageexpertsdb";
 
 /*    private $servername="localhost";
