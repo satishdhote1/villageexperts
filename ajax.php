@@ -96,7 +96,7 @@ else if($tag == "forgetPWD"){
         $sql="select * from friendsRegister where  email='".$email."'";
         $tableResult = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($tableResult) > 0) {
-			$row = mysql_fetch_assoc($tableResult);
+			$row = mysqli_fetch_assoc($tableResult);
 			 $name = $row['fname']." ".$row['lname'];
 			$emailObject=new phpSendMail();
 		//----------------------------Email Body Texts------------------------
