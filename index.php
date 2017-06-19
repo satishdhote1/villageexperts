@@ -546,7 +546,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
   <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center">What's My Password?</h1>
+          <h3 class="text-center">What's My Password?</h3>
       </div>
       <div class="modal-body">
           <div class="col-md-12">
@@ -558,9 +558,9 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
                             <div class="panel-body">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control input-lg" placeholder="E-mail Address" name="email" type="email">
+                                        <input class="form-control input-lg emailFP" placeholder="E-mail Address" name="emailFP" type="email">
                                     </div>
-                                    <input class="btn btn-lg btn-primary btn-block" value="Send My Password" type="submit">
+                                    <input class="btn btn-lg btn-primary btn-block submitFP" value="Send My Password" type="button">
                                 </fieldset>
                             </div>
                         </div>
