@@ -25,7 +25,7 @@ $(document).ready(function(){
 								 if(data.success == 1)
 								 {
 
-
+								 	alert("A password reset link has been sent to your email. Please check !");
 								 }
 								 else
 
