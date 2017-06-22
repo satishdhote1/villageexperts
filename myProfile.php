@@ -373,7 +373,7 @@ $sqlParent = "select * from friendsRegister where email = '".$_SESSION['logged_u
 		       <div class="col-xs-12 col-sm-6">
 		        <div class="main-block row">
 		           <div class="col-xs-5">
-		            <div class="userpro"> <img src="<?php echo !empty($resultParentData['image'])?$resultParentData['image']:'images/profile.jpg' ;?>" id="preview"> </div>
+		            <div class="userpro"> <img src="<?php echo !empty($resultParentData['image'])?$resultParentData['image']."#".rand().:'images/profile.jpg' ;?>" id="preview"> </div>
 		          </div>
 		           <div class="col-xs-7">
 		            <div class=""> <i class="fa prefix"></i>
