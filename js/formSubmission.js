@@ -1,6 +1,49 @@
 $(document).ready(function() {
 
-    //Provider Click
+
+				$(document).on("click",".submitFP",function(){
+					var email = $(".emailFP").val();
+					if(email == "")
+					{
+						alert("Emial can not be empty!");
+					}
+					else
+					{
+						$.ajax({
+
+								url:'ajax.php',
+
+								type: 'POST',
+
+								dataType: "json",
+
+								data: {email:email,tag:"forgetPWD"},
+
+								success: function(data)    // A function to be called if request succeed
+								{
+								  console.log(data);
+								 if(data.success == 1)
+								 {
+
+								 	alert("A password reset link has been sent to your email. Please check !");
+								 }
+								 else
+
+								 {
+								 	alert("Sorry ! No account is associated with this email!");
+
+								 }
+								} ,
+								 error: function () {
+									alert("Network error Occured!");
+								}
+
+								 });
+					}
+
+				});
+
+				//Provider Click
 
     $(document).on("click", ".friendLoginButton", function() {
         var email = $(".friendEmail").val();
@@ -40,183 +83,219 @@ $(document).ready(function() {
                     tag: "login"
                 },
 
-                success: function(data) // A function to be called if request succeeds
-                {
+								success: function(data)    // A function to be called if request succeeds
 
-                    $(".SPloginLoader").hide();
+								{
 
-                    console.log(data);
+									 $(".SPloginLoader").hide();
 
-                    if(data.success == 1)
-                    {
+								console.log(data);
 
-                        $(".SPloginLoader").hide();
+								 if(data.success == 1)
 
-                        $(".SPerrors").css({"dilay":"block","color":"green"});
+								 {
 
-                        $(".SPerrors").text(data.msg+" Please Wait! You are Redrecting..");
+                                                                           $(".SPloginLoader").hide();
 
-                        setTimeout(function(){
-                            location.href="friends-family.php";
+									 $(".SPerrors").css({"dilay":"block","color":"green"});
 
-                        }, 1000);
+									 $(".SPerrors").text(data.msg+" Please Wait! You are Redrecting..");
 
-                    }
+									 setTimeout(function(){
 
-                    else
+										// alert();
 
-                    {
+									 location.href="friends-family.php";
 
-                        $(".SPloginLoader").hide();
-                        alert(data.msg);
-                        $(".SPerrors").css({"dilay":"block","color":"red"});
-                        $(".friendPwd").val("");
-                        $(".SPerrors").text(data.msg);
+									}, 1000);
 
-                        $('html, body').animate({
+								 }
 
-                            scrollTop: $(".errors").offset().top
+								 else
 
-                        }, 2000);
+								 {
 
-                    }
+									 $(".SPloginLoader").hide();
+										alert(data.msg);
+									  $(".SPerrors").css({"dilay":"block","color":"red"});
+										$(".friendPwd").val("");
+									 $(".SPerrors").text(data.msg);
 
-                },
+									 $('html, body').animate({
 
-                error: function() {
+													scrollTop: $(".errors").offset().top
 
-                    $(".SPloginLoader").hide();
+												}, 2000);
 
-                    alert("Login not Successful!");
+								 }
 
-                }
+								} ,      
 
-            });
+								 error: function () {
 
-        }
+ $(".SPloginLoader").hide();
 
+									alert("Login not Successful!");
 
+								}  
 
-    });
+								 });
 
+						 }
 
+					 
 
-    //Add friend validation
-    $("#addFriend").validate({
-        // ecify the validation rules
+					});
 
-        rules: {
+				
 
-            fname: "required",
+				//Add friend validation
+				 $("#addFriend").validate({
 
-            lname: "required",
+    
 
-            //city: "required",
+								// ecify the validation rules
 
-            //country: "required",
+								rules: {
 
-            pin: "required",
-            pwds: {
-                required: true,
-                //minlength: 5
-            },
-            cpwd: {
-                required: true,
-                //minlength: 5,
-                equalTo: ".pwds"
-            },
+									fname: "required",
 
+									lname: "required",
 
+									//city: "required",
 
+									//country: "required",
 
-            email: {
+									pin: "required",
+									 pwds: {
+										required: true,
+										//minlength: 5
+									},
+									cpwd: {
+										required: true,
+										//minlength: 5,
+										equalTo: ".pwds"
+									},
 
-                required: true,
+									
 
-                email: true
+									
+									email: {
 
-            },
+										required: true,
 
-            phone: {
+										email: true
 
-                //required: true,
+									},
 
-                //minlength: 10,
-                //digits:true
+									phone: {
 
-            }
+										//required: true,
 
-        },
+										//minlength: 10,
+										//digits:true
 
+									}
 
+								},
 
-        // ecify the validation error messages
+								
 
-        messages: {
+								// ecify the validation error messages
 
-            fname: "First name required",
-            lname: "Last name required",
-            //city: "Please enter your City",
-            //country: "Please enter your Country",
-            email: "email address invalid ",
-            pwds: "Enter Password",
+								messages: {
 
-        }
+									fname: "First name required",
+									lname: "Last name required",
+									
 
-		/*,submitHandler: function(form) {
+									//city: "Please enter your City",
 
-		 form.submit();
+									//country: "Please enter your Country",
 
-		 }*/
+									
 
-    });
+									
 
+									email: "email address invalid ",
+									pwds: "Enter Password",
 
-    //Add friend Submission
-    $(document).on("click", ".addFriendSubmit", function(event) {
+								}
 
-        if ($("#addFriend").valid() == true) {
-            event.preventDefault();
-            var email = $(".email").val();
-            var isexpertreg = $(".isexpertreg").val();
+								/*,submitHandler: function(form) {
 
-            if (isexpertreg == "") {
-                $.ajax({
-                    url: 'ajax.php',
-                    type: 'POST',
-                    dataType: "json",
-                    cache: "false",
-                    data: {
-                        email: $.trim(email),
-                        userType: "addFriend",
-                        tag: "checkEmail"
-                    },
+									form.submit();
 
-                    success: function(dataSR) // A function to be called if request succeeds
-                    {
-                        if (dataSR.success == 1) {
-                            alert("Email already exist !");
-                        } else {
-                            $('#addFriend').unbind('submit').submit();
-                        }
-                    },
-                    error: function() {
-                        alert("Email Checking Error!");
-                    }
+								}*/
 
-                });
-            } else {
-                $('#addFriend').unbind('submit').submit();
-            }
-        }
+							});
+							
+				
+				//Add friend Submission
+				$(document).on("click",".addFriendSubmit",function(event){
 
-    });
+					
 
+					if($("#addFriend").valid() == true)
+					{
+						event.preventDefault();
+						var email = $(".email").val();
+						var isexpertreg = $(".isexpertreg").val();
+						
+						if(isexpertreg == "")
+						{
+						$.ajax({
 
-    //Add expertise  validation
-    $("#SPform").validate({
+									url:'ajax.php',
 
-        // rectify the validation rules
+									type: 'POST',
+
+									dataType: "json",
+									cache:"false",
+									data: {email:$.trim(email),userType:"addFriend",tag:"checkEmail"},  
+
+									success: function(dataSR)    // A function to be called if request succeeds
+									{
+										if(dataSR.success == 1)
+										{
+											alert("Email already exist !");
+											
+										}
+										else
+										{
+											//alert("fgdfgdf");
+											$('#addFriend').unbind('submit').submit();
+										
+				
+
+                               }
+									//}
+							   //}
+										
+									},      
+									error: function () {
+
+										alert("Email Checking Error!");
+
+									}  
+
+									 });
+					}
+					else
+					{
+						$('#addFriend').unbind('submit').submit();
+					}
+			}
+
+				});
+
+
+				//Add expertise  validation
+				 $("#SPform").validate({
+
+    
+
+								// ecify the validation rules
 
         rules: {
             fname: "required",
@@ -243,21 +322,31 @@ $(document).ready(function() {
                 //digits:true
             }
 
-        },
+								},
 
+								
 
+								// ecify the validation error messages
 
-        // rectify the validation error messages
+								messages: {
 
-        messages: {
-            fname: "First name required",
-            lname: "Last name required",
-            SPexpertise: "Please Select Expertise",
-            SP_Sub_Expertise: "Please Select Sub_Expertise",
-            //country: "Please enter your Country",
-            email: "email address invalid ",
-            pwds: "Enter Password",
-        }
+									fname: "First name required",
+									lname: "Last name required",
+									SPexpertise: "Please Select Expertise",
+									SP_Sub_Expertise: "Please Select Sub_Expertise",
+
+									//country: "Please enter your Country",
+
+									email: "email address invalid ",
+									pwds: "Enter Password",
+
+								}
+
+								/*,submitHandler: function(form) {
+
+									form.submit();
+
+								}*/
 
     });
     //add expertise registration

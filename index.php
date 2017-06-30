@@ -2,7 +2,6 @@
 <?php
 include("config/connection.php");
 
-
 session_start();
 
 $conn=new connections();
@@ -175,7 +174,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 
                                             <div class="text-xs-center row">
                                                 <button class="btn log  modal__trigger friendLoginButton" id="friendLoginButton">LOGIN</button>
-                                                <button class="btn log" id="friendForgetPasswordButtonButton">Forgot Password</button>
+                                                <div class="btn log"><a id="friendForgetPasswordButtonButton" href="#" data-target="#pwdModal" data-toggle="modal">Forgot password</a></div>
                                                 <button class="col-md-4 button button2 regClick">
                                                     <strong>REGISTER</strong>
                                                     <p class="button2subheading">New User</p>
@@ -403,7 +402,46 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
         </div>
     </section>
     <!--Main container-->
-    
+
+
+    <!--modal-->
+    <div id="pwdModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h3 class="text-center">What's My Password?</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="col-md-12">
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="text-center">
+
+                                    <p>If you have forgotten your password you can reset it here.</p>
+                                    <div class="panel-body">
+                                        <fieldset>
+                                            <div class="form-group">
+                                                <input class="form-control input-lg emailFP" placeholder="E-mail Address" name="emailFP" type="email">
+                                            </div>
+                                            <input class="btn btn-lg btn-primary btn-block submitFP" value="Send My Password" type="button">
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="col-md-12">
+                        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <!-- SCRIPTS -->
 
@@ -495,6 +533,10 @@ function getCurrentScroll() {
  return window.pageYOffset;
  }
 });
+
+
+
+
 </script>
   
 </body>
