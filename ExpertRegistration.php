@@ -131,12 +131,12 @@ if (mysqli_num_rows($tableResult5) > 0)
     <!--Mask-->
     <div class="col-md-10 col-md-offset-1"> 
       <!--Form-->
-      <div class="card" style="border-radius:10px;overflow:hidden;">
+      <div class="card expertregisterationCard" >
         <div class="card-block" style="padding:0;">
            <a href="index.php" class="back-to"><p class="close backLogin" ><img src="images/Left.png" class="" style="cursor:pointer;padding-top:11px;margin-right: 15px;"></p></a>
           <!--Header-->
           <div class="text-xs-center text-danger">
-          <h3 style="line-height:60px; color:#000;background:#CCCCFF  ;font-weight:bold;"><img width="50px" style="float:left;padding:3px;" src="img/normal/logo.png">Expert Registration</h3>
+          <h3 style="line-height:60px; color:#000;background:#CCCCFF  ;font-weight:bold;">Expert Registration</h3>
             <div class="clearfix"></div>
           </div>
           <div style="padding:0px 25px;"> 

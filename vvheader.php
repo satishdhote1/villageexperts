@@ -3,8 +3,7 @@
         <div class="row logoSection">
 
             <a class="col-md-3 navbar-brand" href="/index.php" target="_blank">
-                <img src="img/normal/logo.png">
-                <p class="brand-text">VILLAGE EXPERTS</p>
+                <h3><img src="img/normal/logo.png">VILLAGE EXPERTS</h3>
             </a>
 
             <div class="col-md-3 navbar-brand">

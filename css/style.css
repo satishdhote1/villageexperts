@@ -1010,6 +1010,11 @@ input[type='file'] {
 .forgetpasswordModal{
     top:120px;
 }
+.expertregisterationCard {
+    border-radius: 10px;
+    overflow: hidden;
+    top:120px;
+}
 .btn-papl:hover,
 .btn-papl:focus {
     background-color: #9595f9 !important;
