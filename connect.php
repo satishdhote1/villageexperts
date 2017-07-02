@@ -51,16 +51,15 @@ if(!empty($user_id)){
 				$link = "<script>window.open('https://'.$hostname.':'.$port.'/conf.html#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
 				echo $link;
 			}else{
-				header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+				header("location:https://".$hostname.":".$port."/#".$currentTimestamp."?app=webrtc&name=".$_SESSION['logged_user_fname']);
 			}
 		}else{
-
+			console.error(" Mail wasnt send from villageexperts connect.php");
 			if(!empty($type) && $type == 'conference'){
 				header("location:https://".$hostname.":".$port."/conf.html#".$currentTimestamp);
 				//$link = "<script>alert(' email not send ' ); window.open('https://'.$hostname.':'.$port.'/conf.html#'.$currentTimestamp', 'width=710,height=555,left=160,top=170')</script>";
-				//echo $link;
 			}else{
-				header("location:https://".$hostname.":".$port."/#".$currentTimestamp);
+				header("location:https://".$hostname.":".$port."/#".$currentTimestamp."?app=webrtc&name=".$_SESSION['logged_user_fname']);
 			}
 		}
 	

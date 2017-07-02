@@ -613,12 +613,17 @@ $(document).on("click",".FLconnectMember",function(){
     $(".connSuccess > span").text(memberName);
     $(".connSuccess").css("display","block");
     //$("html, body").animate({ scrollTop: $(".connSuccess").scrollTop() }, 1000);//scroll to top
-    var memberId =  $(this).attr("for"); 
+    var memberId =  $(this).attr("for");
+    var memberDir =  $(this).attr("dir");
     var imagePath =  $(this).attr("memberImage");
     var memberEmail= $(this).attr("memberEmail"); 
     $('html,body').animate({ scrollTop: 9999 }, 1000);
     setTimeout(function(){
-        location.href="connect.php?memberId="+memberId+"&search=FaF&imagePath="+imagePath+"&memberName="+memberName+"&memberEmail="+memberEmail;
+        location.href="connect.php?memberId="+memberId+
+            "&search=FaF&imagePath="+imagePath+
+            "&memberName="+memberName+
+            "&memberEmail="+memberEmail+
+            "&dir="+dir;
     }, 4000);
 
 });

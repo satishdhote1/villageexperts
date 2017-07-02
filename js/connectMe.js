@@ -18,8 +18,8 @@ $(document).ready(function(e) {
 			async:false,
 			success: function (result) {
 				if(result.success == 1){
-					alert(" Refirecting to webrtc page"  );
-				 	window.location.href="https://"+window.location.hostname+":8084/#"+result.timestamp;
+					alert(" Refirecting to Communication page"  );
+				 	window.location.href="https://"+window.location.hostname+":8084/#"+result.timestamp+"?app=webrtc&name="+result.logged_user_fname;
 				 	//document.location.origin+
 				 	console.log("if: connectme.php post is succesfull " , result);
 				}else{

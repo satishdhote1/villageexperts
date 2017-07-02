@@ -117,7 +117,6 @@ $(document).ready(function() {
 
 	});
 
-				
 
 	//Add friend validation
 	 $("#addFriend").validate({

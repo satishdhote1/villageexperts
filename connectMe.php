@@ -24,6 +24,7 @@ if (mysqli_num_rows($tableResult) > 0)  {
 		if(round((strtotime("now") - $row['start_time'])/3600, 1) < 2){
 			$result['success']=1;
 			$result['error']=0;
+            $result['logged_user_fname']=$_SESSION['logged_user_fname'];
 			//$result['data']=$row;
 			$result['cuurentTimestamp']=strtotime("now");
 			$result['timestamp']=$row['start_time'];   

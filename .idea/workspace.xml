@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="000a793a-d379-4aab-8d28-4f0e4802e9ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connect.php" afterPath="$PROJECT_DIR$/connect.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/connectMe.php" afterPath="$PROJECT_DIR$/connectMe.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friendsandfamily/friendsandfamilyscript.js" afterPath="$PROJECT_DIR$/friendsandfamily/friendsandfamilyscript.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/connectMe.js" afterPath="$PROJECT_DIR$/js/connectMe.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/formSubmission.js" afterPath="$PROJECT_DIR$/js/formSubmission.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpMailer/class.pop3.php" afterPath="$PROJECT_DIR$/phpMailer/class.pop3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/well-come.php" afterPath="$PROJECT_DIR$/well-come.php" />
     </list>
     <ignored path="villageExpert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,11 +32,23 @@
       <file leaf-file-name="vvheader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vvheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
+            <state relative-caret-position="292">
+              <caret line="35" column="157" lean-forward="true" selection-start-line="35" selection-start-column="127" selection-end-line="35" selection-end-column="157" />
               <folding>
                 <element signature="e#503#562#0#HTML" expanded="true" />
                 <element signature="e#646#705#0#HTML" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connectMe.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/connectMe.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding>
+                <marker date="1499009902879" expanded="true" signature="236:397" ph="select conne... connect" />
               </folding>
             </state>
           </provider>
@@ -42,18 +58,29 @@
         <entry file="file://$PROJECT_DIR$/js/connectMe.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
-              <caret line="21" column="79" lean-forward="false" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+              <caret line="21" column="148" lean-forward="false" selection-start-line="21" selection-start-column="131" selection-end-line="21" selection-end-column="148" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="well-come.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/well-come.php">
+      <file leaf-file-name="connect.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/connect.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="547">
-              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="282">
+              <caret line="66" column="74" lean-forward="false" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
+              <folding>
+                <marker date="1499009902836" expanded="true" signature="1442:1541" ph="INSERT INTO connect... " />
+                <marker date="1499009902836" expanded="true" signature="1634:1677" ph="..." />
+                <marker date="1499009902836" expanded="true" signature="1691:1709" ph="..." />
+                <marker date="1499009902836" expanded="true" signature="1806:1898" ph="..." />
+                <marker date="1499009902836" expanded="true" signature="1910:2052" ph="..." />
+                <marker date="1499009902836" expanded="true" signature="2079:2097" ph="..." />
+                <marker date="1499009902836" expanded="true" signature="2399:2454" ph="update frien... " />
+                <marker date="1499009902836" expanded="true" signature="3708:3766" ph="select sp_na... service_provider" />
+                <marker date="1499009902836" expanded="true" signature="3962:4061" ph="INSERT INTO connect... " />
+                <marker date="1499009902836" expanded="true" signature="4424:4522" ph="UPDATE conne... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -61,8 +88,8 @@
       <file leaf-file-name="formSubmission.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -71,8 +98,8 @@
       <file leaf-file-name="friends-family.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/friends-family.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="98" column="4" lean-forward="true" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="48" />
+            <state relative-caret-position="520">
+              <caret line="421" column="0" lean-forward="true" selection-start-line="421" selection-start-column="0" selection-end-line="421" selection-end-column="0" />
               <folding>
                 <marker date="1499005049276" expanded="true" signature="450:528" ph="select paren... friendsExpertInfo" />
                 <marker date="1499005049276" expanded="true" signature="895:973" ph="select useri... friendsExpertInfo" />
@@ -81,6 +108,16 @@
                 <marker date="1499005049276" expanded="true" signature="2159:2237" ph="select useri... friendsExpertInfo" />
                 <marker date="1499005049276" expanded="true" signature="2671:2728" ph="select * fro... friendsRegister" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="friendsandfamilyscript.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/friendsandfamily/friendsandfamilyscript.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="625" column="23" lean-forward="false" selection-start-line="625" selection-start-column="23" selection-end-line="625" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -104,8 +141,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>hm-black</find>
-      <find>checkEmail</find>
       <find>checkEmau</find>
       <find>friendsRegister</find>
       <find>$_SERVER['SERVER_NAME']</find>
@@ -131,9 +166,11 @@
       <find>.button</find>
       <find>submit</find>
       <find>80</find>
-      <find>8084</find>
       <find>worker</find>
       <find>connect</find>
+      <find>FLconnectMember</find>
+      <find>8084</find>
+      <find>port</find>
     </findStrings>
     <dirStrings>
       <dir>F:\villageexperts\PHPmainproject</dir>
@@ -147,7 +184,6 @@
       <list>
         <option value="$PROJECT_DIR$/communication_start.php" />
         <option value="$PROJECT_DIR$/getSubSpecialization.php" />
-        <option value="$PROJECT_DIR$/connect.php" />
         <option value="$PROJECT_DIR$/imageUpload.php" />
         <option value="$PROJECT_DIR$/log_of_service_requests.html" />
         <option value="$PROJECT_DIR$/info.php" />
@@ -178,9 +214,12 @@
         <option value="$PROJECT_DIR$/logout.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/css/style.css" />
-        <option value="$PROJECT_DIR$/js/formSubmission.js" />
-        <option value="$PROJECT_DIR$/js/connectMe.js" />
         <option value="$PROJECT_DIR$/well-come.php" />
+        <option value="$PROJECT_DIR$/js/formSubmission.js" />
+        <option value="$PROJECT_DIR$/friendsandfamily/friendsandfamilyscript.js" />
+        <option value="$PROJECT_DIR$/connect.php" />
+        <option value="$PROJECT_DIR$/js/connectMe.js" />
+        <option value="$PROJECT_DIR$/connectMe.php" />
       </list>
     </option>
   </component>
@@ -231,6 +270,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="villageexperts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="villageexperts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="villageexperts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="friendsandfamily" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -416,7 +469,7 @@
       <workItem from="1497632583316" duration="20782000" />
       <workItem from="1498825093007" duration="658000" />
       <workItem from="1498844581395" duration="1951000" />
-      <workItem from="1498983504034" duration="8540000" />
+      <workItem from="1498983504034" duration="10590000" />
     </task>
     <task id="LOCAL-00001" summary="added style css to head also admin index">
       <created>1491539809659</created>
@@ -593,11 +646,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499008294865</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="connect">
+      <created>1499008469352</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1499008469352</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83226000" />
+    <option name="totallyTimeSpent" value="85276000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -647,7 +707,8 @@
     <MESSAGE value="header and image" />
     <MESSAGE value="header for index" />
     <MESSAGE value="register" />
-    <option name="LAST_COMMIT_MESSAGE" value="register" />
+    <MESSAGE value="connect" />
+    <option name="LAST_COMMIT_MESSAGE" value="connect" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -672,27 +733,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/newProvider.php_22_04_2017.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpMailer/PHPMailerAutoload.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/phpMailer/class.smtp.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/phpMailer/class.pop3.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -966,37 +1006,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vvheader.php">
+    <entry file="file://$PROJECT_DIR$/well-come.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="29" lean-forward="false" selection-start-line="13" selection-start-column="29" selection-end-line="13" selection-end-column="29" />
-          <folding>
-            <element signature="e#503#562#0#HTML" expanded="true" />
-            <element signature="e#646#705#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/connectMe.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="21" column="79" lean-forward="false" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+        <state relative-caret-position="258">
+          <caret line="81" column="14" lean-forward="true" selection-start-line="81" selection-start-column="14" selection-end-line="81" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="120" column="0" lean-forward="true" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+        <state relative-caret-position="340">
+          <caret line="119" column="0" lean-forward="false" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/friends-family.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="98" column="4" lean-forward="true" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="48" />
+        <state relative-caret-position="520">
+          <caret line="421" column="0" lean-forward="true" selection-start-line="421" selection-start-column="0" selection-end-line="421" selection-end-column="0" />
           <folding>
             <marker date="1499005049276" expanded="true" signature="450:528" ph="select paren... friendsExpertInfo" />
             <marker date="1499005049276" expanded="true" signature="895:973" ph="select useri... friendsExpertInfo" />
@@ -1008,11 +1037,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/well-come.php">
+    <entry file="file://$PROJECT_DIR$/friendsandfamily/friendsandfamilyscript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="547">
-          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        <state relative-caret-position="448">
+          <caret line="625" column="23" lean-forward="false" selection-start-line="625" selection-start-column="23" selection-end-line="625" selection-end-column="23" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vvheader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="35" column="157" lean-forward="true" selection-start-line="35" selection-start-column="127" selection-end-line="35" selection-end-column="157" />
+          <folding>
+            <element signature="e#503#562#0#HTML" expanded="true" />
+            <element signature="e#646#705#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connectMe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1499009902879" expanded="true" signature="236:397" ph="select conne... connect" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/connectMe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="21" column="148" lean-forward="false" selection-start-line="21" selection-start-column="131" selection-end-line="21" selection-end-column="148" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/connect.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="282">
+          <caret line="66" column="74" lean-forward="false" selection-start-line="66" selection-start-column="74" selection-end-line="66" selection-end-column="74" />
+          <folding>
+            <marker date="1499009902836" expanded="true" signature="1442:1541" ph="INSERT INTO connect... " />
+            <marker date="1499009902836" expanded="true" signature="1634:1677" ph="..." />
+            <marker date="1499009902836" expanded="true" signature="1691:1709" ph="..." />
+            <marker date="1499009902836" expanded="true" signature="1806:1898" ph="..." />
+            <marker date="1499009902836" expanded="true" signature="1910:2052" ph="..." />
+            <marker date="1499009902836" expanded="true" signature="2079:2097" ph="..." />
+            <marker date="1499009902836" expanded="true" signature="2399:2454" ph="update frien... " />
+            <marker date="1499009902836" expanded="true" signature="3708:3766" ph="select sp_na... service_provider" />
+            <marker date="1499009902836" expanded="true" signature="3962:4061" ph="INSERT INTO connect... " />
+            <marker date="1499009902836" expanded="true" signature="4424:4522" ph="UPDATE conne... " />
+          </folding>
         </state>
       </provider>
     </entry>
