@@ -161,12 +161,12 @@
       <file leaf-file-name="vvheader.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/vvheader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="263">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="17">
+              <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding>
-                <element signature="e#455#514#0#HTML" expanded="true" />
-                <element signature="e#598#657#0#HTML" expanded="true" />
-                <element signature="e#730#1772#0#HTML" expanded="false" />
+                <element signature="e#460#519#0#HTML" expanded="true" />
+                <element signature="e#603#662#0#HTML" expanded="true" />
+                <element signature="e#735#1777#0#HTML" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -496,7 +496,7 @@
       <workItem from="1497632583316" duration="20782000" />
       <workItem from="1498825093007" duration="658000" />
       <workItem from="1498844581395" duration="1951000" />
-      <workItem from="1498983504034" duration="4718000" />
+      <workItem from="1498983504034" duration="4800000" />
     </task>
     <task id="LOCAL-00001" summary="added style css to head also admin index">
       <created>1491539809659</created>
@@ -624,11 +624,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499004418127</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="header and image">
+      <created>1499004639142</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1499004639142</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79404000" />
+    <option name="totallyTimeSpent" value="79486000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -1075,12 +1082,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vvheader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+        <state relative-caret-position="17">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#455#514#0#HTML" expanded="true" />
-            <element signature="e#598#657#0#HTML" expanded="true" />
-            <element signature="e#730#1772#0#HTML" expanded="false" />
+            <element signature="e#460#519#0#HTML" expanded="true" />
+            <element signature="e#603#662#0#HTML" expanded="true" />
+            <element signature="e#735#1777#0#HTML" expanded="false" />
           </folding>
         </state>
       </provider>

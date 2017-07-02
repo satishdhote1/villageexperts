@@ -1,7 +1,6 @@
 <?php
-echo $_SERVER['REQUEST_URI'];
-die();
-if($_SERVER['REQUEST_URI']=="/"){
+
+if($_SERVER['REQUEST_URI']=="/" OR $_SERVER['REQUEST_URI']=="/index.php"){
 ?>
 <nav class="navbar navbar-dark scrolling-navbar logo-scroll">
 
