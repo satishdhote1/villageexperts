@@ -1,4 +1,4 @@
-<php
+<?php
 echo $_SERVER['REQUEST_URI'];
 die();
 if($_SERVER['REQUEST_URI']=="/"){
@@ -18,8 +18,11 @@ if($_SERVER['REQUEST_URI']=="/"){
     </div>
 </nav>
 
-<php
-}else{
+<?php
+
+}
+else
+{
 ?>
 
 <nav class="navbar navbar-dark">
@@ -44,6 +47,6 @@ if($_SERVER['REQUEST_URI']=="/"){
         </div>
     </div>
 </nav>
-<php
+<?php
     }
-    ?>
+?>
