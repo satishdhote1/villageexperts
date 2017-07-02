@@ -3,21 +3,24 @@ $(document).ready(function(e) {
 	worker();
 	
 	var i=0;
+
 	function worker() {
 		console.log("Worker " , i++);
 		$.ajax({
 			type:"POST",
 			url:"connectMe.php",
-        		//data:{getDataOf:"subSpecial",id:expertId},
-        		dataType:'json',
+			//data:{getDataOf:"subSpecial",id:expertId},
+			dataType:'json',
 			contentType: false,
-            		processData: false,
+            processData: false,
 			cache: false,
    			global: false,
 			async:false,
-          		success: function (result) {
-				if(result.success == 1){		
-				 	window.location.href="https://"+window.location.hostname+":8084/#"+result.timestamp;//document.location.origin+
+			success: function (result) {
+				if(result.success == 1){
+					alert(" Refirecting to webrtc page"  );
+				 	window.location.href="https://"+window.location.hostname+":8084/#"+result.timestamp;
+				 	//document.location.origin+
 				 	console.log("if: connectme.php post is succesfull " , result);
 				}else{
 					console.log("else: connectMe.php is not sucesfull" , result);
@@ -25,7 +28,7 @@ $(document).ready(function(e) {
 					 setTimeout(worker, 6000);	
 				}
 			},
-           		error: function (error) {
+           	error: function (error) {
 				console.log("Not Succesful !");
            		}
         	});

@@ -1,46 +1,39 @@
 $(document).ready(function() {
 
     $(document).on("click",".submitFP",function(){
-					var email = $(".emailFP").val();
-					if(email == "")
+		var email = $(".emailFP").val();
+		if(email == "")
+		{
+			alert("Emial can not be empty!");
+		}
+		else
+		{
+			$.ajax({
+					url:'ajax.php',
+					type: 'POST',
+					dataType: "json",
+					data: {email:email,tag:"forgetPWD"},
+					success: function(data)    // A function to be called if request succeed
 					{
-						alert("Emial can not be empty!");
-					}
-					else
-					{
-						$.ajax({
+						console.log(data);
+						if(data.success == 1)
+						{
+						alert("A password reset link has been sent to your email. Please check !");
+						}
+						else
+						{
+						alert("Sorry ! No account is associated with this email!");
 
-								url:'ajax.php',
-
-								type: 'POST',
-
-								dataType: "json",
-
-								data: {email:email,tag:"forgetPWD"},
-
-								success: function(data)    // A function to be called if request succeed
-								{
-								  console.log(data);
-								 if(data.success == 1)
-								 {
-
-								 	alert("A password reset link has been sent to your email. Please check !");
-								 }
-								 else
-
-								 {
-								 	alert("Sorry ! No account is associated with this email!");
-
-								 }
-								} ,
-								 error: function () {
-									alert("Network error Occured!");
-								}
-
-								 });
+						}
+					 } ,
+					 error: function () {
+						alert("Network error Occured!");
 					}
 
-				});
+			});
+		}
+
+	});
 
     //Provider Click
 
@@ -82,152 +75,108 @@ $(document).ready(function() {
                     tag: "login"
                 },
 
-								success: function(data)    // A function to be called if request succeeds
+				success: function(data)    // A function to be called if request succeeds
+				{
+					 $(".SPloginLoader").hide();
+					 console.log(data);
+					 if(data.success == 1)
+					 {
+	                     $(".SPloginLoader").hide();
+						 $(".SPerrors").css({"dilay":"block","color":"green"});
+						 $(".SPerrors").text(data.msg+" Please Wait! You are Redrecting..");
 
-								{
-
-									 $(".SPloginLoader").hide();
-
-								console.log(data);
-
-								 if(data.success == 1)
-
-								 {
-
-                                                                           $(".SPloginLoader").hide();
-
-									 $(".SPerrors").css({"dilay":"block","color":"green"});
-
-									 $(".SPerrors").text(data.msg+" Please Wait! You are Redrecting..");
-
-									 setTimeout(function(){
-
-										// alert();
-
-									 location.href="friends-family.php";
-
+						 setTimeout(function(){
+							 location.href="friends-family.php";
 									}, 1000);
+					 }
+					 else
+					 {
 
-								 }
+						 $(".SPloginLoader").hide();
+						 alert(data.msg);
+						 $(".SPerrors").css({"dilay":"block","color":"red"});
+						 $(".friendPwd").val("");
+						 $(".SPerrors").text(data.msg);
+						 $('html, body').animate({
+							scrollTop: $(".errors").offset().top
+						}, 2000);
+					 }
 
-								 else
+				} ,
 
-								 {
+				 error: function () {
 
-									 $(".SPloginLoader").hide();
-										alert(data.msg);
-									  $(".SPerrors").css({"dilay":"block","color":"red"});
-										$(".friendPwd").val("");
-									 $(".SPerrors").text(data.msg);
+					$(".SPloginLoader").hide();
 
-									 $('html, body').animate({
+					alert("Login not Successful!");
+				}
 
-													scrollTop: $(".errors").offset().top
+			 });
 
-												}, 2000);
+		 }
 
-								 }
-
-								} ,      
-
-								 error: function () {
-
- $(".SPloginLoader").hide();
-
-									alert("Login not Successful!");
-
-								}  
-
-								 });
-
-						 }
-
-					 
-
-					});
+	});
 
 				
 
-				//Add friend validation
-				 $("#addFriend").validate({
+	//Add friend validation
+	 $("#addFriend").validate({
+			// ecify the validation rules
 
-    
+			rules: {
+				fname: "required",
+				lname: "required",
+				//city: "required",
+				//country: "required",
+				pin: "required",
+				 pwds: {
+							required: true,
+							//minlength: 5
+				},
+				cpwd: {
+							required: true,
+							//minlength: 5,
+							equalTo: ".pwds"
+						},
+				email: {
+							required: true,
+							email: true
 
-								// ecify the validation rules
+				},
+				phone: {
+							//required: true,
+							//minlength: 10,
+							//digits:true
 
-								rules: {
+						}
+			},
 
-									fname: "required",
 
-									lname: "required",
 
-									//city: "required",
+			// ecify the validation error messages
 
-									//country: "required",
+			messages: {
 
-									pin: "required",
-									 pwds: {
-										required: true,
-										//minlength: 5
-									},
-									cpwd: {
-										required: true,
-										//minlength: 5,
-										equalTo: ".pwds"
-									},
+						fname: "First name required",
+						lname: "Last name required",
 
-									
 
-									
-									email: {
+						//city: "Please enter your City",
 
-										required: true,
+						//country: "Please enter your Country",
 
-										email: true
+						email: "email address invalid ",
+						pwds: "Enter Password",
 
-									},
+					}
 
-									phone: {
+					/*,submitHandler: function(form) {
 
-										//required: true,
+						form.submit();
 
-										//minlength: 10,
-										//digits:true
+					}*/
 
-									}
-
-								},
-
-								
-
-								// ecify the validation error messages
-
-								messages: {
-
-									fname: "First name required",
-									lname: "Last name required",
-									
-
-									//city: "Please enter your City",
-
-									//country: "Please enter your Country",
-
-									
-
-									
-
-									email: "email address invalid ",
-									pwds: "Enter Password",
-
-								}
-
-								/*,submitHandler: function(form) {
-
-									form.submit();
-
-								}*/
-
-							});
+				});
 							
 				
 				//Add friend Submission
@@ -267,7 +216,7 @@ $(document).ready(function() {
 										
 				
 
-                               }
+										}
 									//}
 							   //}
 										
