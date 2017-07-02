@@ -1,4 +1,8 @@
+<php
+echo $_SERVER['REQUEST_URI'];
+die();
 if($_SERVER['REQUEST_URI']=="/"){
+?>
 <nav class="navbar navbar-dark scrolling-navbar logo-scroll">
 
     <div class="container">
@@ -14,8 +18,9 @@ if($_SERVER['REQUEST_URI']=="/"){
     </div>
 </nav>
 
+<php
 }else{
-
+?>
 
 <nav class="navbar navbar-dark">
     <div class="container">
@@ -39,4 +44,6 @@ if($_SERVER['REQUEST_URI']=="/"){
         </div>
     </div>
 </nav>
-}
+<php
+    }
+    ?>
