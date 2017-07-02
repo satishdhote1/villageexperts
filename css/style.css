@@ -54,8 +54,8 @@ body {
     color: #000 !important;
 }
 .button2 {
-    width: 150px; background-color: rgb(149, 149, 249); margin-left: 0px;
-    background-color: #008CBA;
+    font-size:18px;
+    width: 150px; margin-left: 0px;
 }
 
 .button2subheading{
@@ -1003,6 +1003,12 @@ input[type='file'] {
 }
 .loginSec .fa {
     color: #008cba;
+}
+.friendLoginButton{
+    width:100%
+}
+.forgetpasswordModal{
+    top:120px;
 }
 .btn-papl:hover,
 .btn-papl:focus {

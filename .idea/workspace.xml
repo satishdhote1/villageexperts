@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="000a793a-d379-4aab-8d28-4f0e4802e9ff" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/villageExpert.iml" afterPath="$PROJECT_DIR$/.idea/villageExpert.iml" />
+    <list default="true" id="000a793a-d379-4aab-8d28-4f0e4802e9ff" name="Default" comment="index page with forget password">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/style.css" afterPath="$PROJECT_DIR$/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/friends-family.php" afterPath="$PROJECT_DIR$/friends-family.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/formSubmission.js" afterPath="$PROJECT_DIR$/js/formSubmission.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpMailer/class.pop3.php" afterPath="$PROJECT_DIR$/phpMailer/class.pop3.php" />
     </list>
     <ignored path="villageExpert.iws" />
@@ -45,27 +48,59 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="team.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/team.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+            <state relative-caret-position="-5">
+              <caret line="509" column="6" lean-forward="false" selection-start-line="509" selection-start-column="6" selection-end-line="509" selection-end-column="6" />
               <folding>
-                <marker date="1498824917745" expanded="true" signature="265:314" ph="SELECT * FRO... service_provider" />
-                <marker date="1498824917745" expanded="true" signature="547:597" ph="SELECT * FRO... service_requester" />
-                <marker date="1498824917745" expanded="true" signature="8607:8689" ph="..." />
-                <marker date="1498824917745" expanded="true" signature="8780:8803" ph="..." />
+                <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#i#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#i#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1499001712310" expanded="true" signature="597:717" ph="select * fro... friendsRegister" />
+                <marker date="1499001712310" expanded="true" signature="661:716" ph="select useri... friendsExpertInfo" />
+                <marker date="1499001712310" expanded="true" signature="1375:1497" ph="select * fro... friendsRegister" />
+                <marker date="1499001712310" expanded="true" signature="1441:1496" ph="select useri... friendsExpertInfo" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="friends-family.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="1003" column="15" lean-forward="true" selection-start-line="1003" selection-start-column="15" selection-end-line="1003" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="formSubmission.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="30" selection-end-column="56" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="friends-family.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/friends-family.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="183">
+              <caret line="327" column="77" lean-forward="true" selection-start-line="327" selection-start-column="77" selection-end-line="327" selection-end-column="77" />
+              <folding>
+                <element signature="e#16535#16586#0#HTML" expanded="true" />
+                <element signature="e#16810#16841#0#HTML" expanded="true" />
+                <marker date="1499002260240" expanded="true" signature="450:528" ph="select paren... friendsExpertInfo" />
+                <marker date="1499002260240" expanded="true" signature="895:973" ph="select useri... friendsExpertInfo" />
+                <marker date="1499002260240" expanded="true" signature="1405:1461" ph="select * fro... friendsRegister" />
+                <marker date="1499002260240" expanded="true" signature="1687:1765" ph="select paren... friendsExpertInfo" />
+                <marker date="1499002260240" expanded="true" signature="2159:2237" ph="select useri... friendsExpertInfo" />
+                <marker date="1499002260240" expanded="true" signature="2671:2728" ph="select * fro... friendsRegister" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -84,10 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>name</find>
-      <find>loginbut</find>
-      <find>button2</find>
-      <find>loginsec</find>
       <find>imagecreatefrompng</find>
       <find>imagecreatefromgif</find>
       <find>imagecreatefromjpeg</find>
@@ -96,14 +127,12 @@
       <find>mail</find>
       <find>isexpertreg</find>
       <find>addFriendSubmit</find>
-      <find>friendLoginButton</find>
       <find>modify-badge</find>
       <find>logo-modify</find>
       <find>abs</find>
       <find>.modify-btn-1</find>
       <find>logo-mo</find>
       <find>hm-black</find>
-      <find>login</find>
       <find>checkEmail</find>
       <find>checkEmau</find>
       <find>friendsRegister</find>
@@ -114,6 +143,12 @@
       <find>register</find>
       <find>.modify-badge-2</find>
       <find>$_SERVER</find>
+      <find>friendLoginButton</find>
+      <find>forget</find>
+      <find>button2</find>
+      <find>login</find>
+      <find>pwdModal</find>
+      <find>45%</find>
     </findStrings>
     <dirStrings>
       <dir>F:\villageexperts\PHPmainproject</dir>
@@ -148,16 +183,16 @@
         <option value="&lt;edf90b6e-36bd-482f-be2a-e12f100e309e&gt;/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/admin/admin_login.html" />
         <option value="$PROJECT_DIR$/getSearchData.php" />
-        <option value="$PROJECT_DIR$/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/ajax.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/well-come.php" />
-        <option value="$PROJECT_DIR$/friends-family.php" />
         <option value="$PROJECT_DIR$/css/mainstyle.css" />
         <option value="$PROJECT_DIR$/vvheader.php" />
-        <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/Make-Appointment.php" />
         <option value="$PROJECT_DIR$/config/connection.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/css/style.css" />
+        <option value="$PROJECT_DIR$/js/formSubmission.js" />
+        <option value="$PROJECT_DIR$/friends-family.php" />
       </list>
     </option>
   </component>
@@ -197,6 +232,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -209,10 +246,22 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="villageexperts" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="villageexperts" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -378,7 +427,8 @@
       <workItem from="1497601445899" duration="10908000" />
       <workItem from="1497632583316" duration="20782000" />
       <workItem from="1498825093007" duration="658000" />
-      <workItem from="1498844581395" duration="1116000" />
+      <workItem from="1498844581395" duration="1951000" />
+      <workItem from="1498983504034" duration="2466000" />
     </task>
     <task id="LOCAL-00001" summary="added style css to head also admin index">
       <created>1491539809659</created>
@@ -464,18 +514,27 @@
       <option name="project" value="LOCAL" />
       <updated>1497708574326</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="new workspace">
+      <created>1498964466796</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1498964466796</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73851000" />
+    <option name="totallyTimeSpent" value="77152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16398244" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19692533" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16535433" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.06382979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -485,7 +544,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28477904" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07528642" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -511,7 +569,9 @@
     <MESSAGE value="style header" />
     <MESSAGE value="header" />
     <MESSAGE value="header fixed and ocntant on index  , reg success , make appointment page" />
-    <option name="LAST_COMMIT_MESSAGE" value="header fixed and ocntant on index  , reg success , make appointment page" />
+    <MESSAGE value="new workspace" />
+    <MESSAGE value="index page with forget password" />
+    <option name="LAST_COMMIT_MESSAGE" value="index page with forget password" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -751,13 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="194" column="52" lean-forward="true" selection-start-line="194" selection-start-column="52" selection-end-line="194" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/mainstyle.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-18405">
@@ -769,13 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-306">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -805,26 +851,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/friends-family.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="1094" column="36" lean-forward="false" selection-start-line="1094" selection-start-column="36" selection-end-line="1094" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Make-Appointment.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1445">
           <caret line="85" column="0" lean-forward="false" selection-start-line="85" selection-start-column="0" selection-end-line="85" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/team.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="94" column="48" lean-forward="false" selection-start-line="94" selection-start-column="48" selection-end-line="94" selection-end-column="48" />
+          <folding>
+            <marker date="1498824917745" expanded="true" signature="265:314" ph="SELECT * FRO... service_provider" />
+            <marker date="1498824917745" expanded="true" signature="547:597" ph="SELECT * FRO... service_requester" />
+            <marker date="1498824917745" expanded="true" signature="8607:8689" ph="..." />
+            <marker date="1498824917745" expanded="true" signature="8780:8803" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -836,15 +880,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/team.php">
+    <entry file="file://$PROJECT_DIR$/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="1003" column="15" lean-forward="true" selection-start-line="1003" selection-start-column="15" selection-end-line="1003" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="11" column="35" lean-forward="false" selection-start-line="11" selection-start-column="35" selection-end-line="11" selection-end-column="35" />
+          <caret line="11" column="31" lean-forward="true" selection-start-line="11" selection-start-column="31" selection-end-line="30" selection-end-column="56" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-5">
+          <caret line="509" column="6" lean-forward="false" selection-start-line="509" selection-start-column="6" selection-end-line="509" selection-end-column="6" />
           <folding>
-            <marker date="1498824917745" expanded="true" signature="265:314" ph="SELECT * FRO... service_provider" />
-            <marker date="1498824917745" expanded="true" signature="547:597" ph="SELECT * FRO... service_requester" />
-            <marker date="1498824917745" expanded="true" signature="8607:8689" ph="..." />
-            <marker date="1498824917745" expanded="true" signature="8780:8803" ph="..." />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#i#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#i#0;n#fieldset#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1499001712310" expanded="true" signature="597:717" ph="select * fro... friendsRegister" />
+            <marker date="1499001712310" expanded="true" signature="661:716" ph="select useri... friendsExpertInfo" />
+            <marker date="1499001712310" expanded="true" signature="1375:1497" ph="select * fro... friendsRegister" />
+            <marker date="1499001712310" expanded="true" signature="1441:1496" ph="select useri... friendsExpertInfo" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friends-family.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="327" column="77" lean-forward="true" selection-start-line="327" selection-start-column="77" selection-end-line="327" selection-end-column="77" />
+          <folding>
+            <element signature="e#16535#16586#0#HTML" expanded="true" />
+            <element signature="e#16810#16841#0#HTML" expanded="true" />
+            <marker date="1499002260240" expanded="true" signature="450:528" ph="select paren... friendsExpertInfo" />
+            <marker date="1499002260240" expanded="true" signature="895:973" ph="select useri... friendsExpertInfo" />
+            <marker date="1499002260240" expanded="true" signature="1405:1461" ph="select * fro... friendsRegister" />
+            <marker date="1499002260240" expanded="true" signature="1687:1765" ph="select paren... friendsExpertInfo" />
+            <marker date="1499002260240" expanded="true" signature="2159:2237" ph="select useri... friendsExpertInfo" />
+            <marker date="1499002260240" expanded="true" signature="2671:2728" ph="select * fro... friendsRegister" />
           </folding>
         </state>
       </provider>

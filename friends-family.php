@@ -242,7 +242,7 @@ if (mysqli_num_rows($tableResult4) > 0)  {
 							<div>
 
 							<div class="top-part">
-								<div class="col-md-8 text-xs-left"><label class="modify-badge-2" style="color:#495775;">My Experts List</label>
+                                <div class="col-md-8 text-xs-left"><label class="modify-badge-2" style="color:#495775;">My Experts List</label></div>
 								<div class="col-md-1 clearRequestMailData text-xs-left elBtnAdd" style="padding:0" id="elBtnAdd"><button class="btn btn-width btn-mdb pull-right">Add</button></div>
 								<div class="col-md-1 clearRequestMailData elSave" id="elSave" style="padding-left:0;text-align:right !important;"><button class="btn btn-width btn-mdb pull-right">Save</button></div>
 								<div class="col-md-1 clearRequestMailData elDelete" id="elDelete" style="padding-left:0;text-align:right !important;"><button class="btn btn-width btn-mdb pull-right">Delete</button></div>
@@ -322,8 +322,8 @@ if (mysqli_num_rows($tableResult4) > 0)  {
 											<?php } else{?>
 											<button class="btn btnUserOnline" title="Online"></button>
 											<?php }?>
-											<input style="width: 45%; float:left ; padding-left:10px;" type="text" class="edit_text flFname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flFname<?php echo $userDatas['id']; ?>" name="flFname"  value="<?php echo $userDatas['fname']; ?>">
-											<input style="width: 45%; float:right" type="text" class="edit_text flLname rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="flLname<?php echo $userDatas['id']; ?>" name="flLname"  value="<?php echo $userDatas['lname']; ?>">
+											<input style="width: 40%; float:left ; padding-left:10px;" type="text" class="edit_text flFname rmvReadonly<?php echo $userDatas['id']; ?>" readonly="readonly" id="flFname<?php echo $userDatas['id']; ?>" name="flFname"  value="<?php echo $userDatas['fname']; ?>">
+											<input style="width: 40%; float:right" type="text" class="edit_text flLname rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="flLname<?php echo $userDatas['id']; ?>" name="flLname"  value="<?php echo $userDatas['lname']; ?>">
 										</td>
 										<td style="width: 200px !important;">
 											<input style="width: 100%;" type="text" class="edit_text flEmail rmvReadonly<?php echo $expertDatas['id']; ?>" readonly="readonly" id="flEmail<?php echo $userDatas['id']; ?>" name="flEmail"  value="<?php echo $userDatas['email']; ?>">
