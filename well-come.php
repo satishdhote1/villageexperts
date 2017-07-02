@@ -28,14 +28,12 @@ if(isset($_GET['redirect']) && ($_GET['redirect'] == 'index' || $_GET['redirect'
 <link rel="stylesheet" href="css/font-awesome.min.css">
 <link href="css/bootstrap.min.css" rel="stylesheet">
 <link href="css/mainstyle.css" rel="stylesheet">
-</head>
-<style>
-.over-lap {
-	display: block !important
-}
-</style>
+<link href="css/style.css" rel="stylesheet">
 
-<body class="bodybg" background="img/normal/family.jpg">
+</head>
+
+
+<body>
 <?php include 'vvheader.php';?>
 
 <div class="container">

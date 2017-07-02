@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="000a793a-d379-4aab-8d28-4f0e4802e9ff" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/connectMe.js" afterPath="$PROJECT_DIR$/js/connectMe.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/formSubmission.js" afterPath="$PROJECT_DIR$/js/formSubmission.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/phpMailer/class.pop3.php" afterPath="$PROJECT_DIR$/phpMailer/class.pop3.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/well-come.php" afterPath="$PROJECT_DIR$/well-come.php" />
     </list>
     <ignored path="villageExpert.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +38,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="connectMe.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="connectMe.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/connectMe.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="223">
               <caret line="21" column="79" lean-forward="false" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="well-come.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/well-come.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="547">
+              <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -62,8 +71,8 @@
       <file leaf-file-name="friends-family.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/friends-family.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="403" column="23" lean-forward="false" selection-start-line="403" selection-start-column="16" selection-end-line="403" selection-end-column="23" />
+            <state relative-caret-position="350">
+              <caret line="98" column="4" lean-forward="true" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="48" />
               <folding>
                 <marker date="1499005049276" expanded="true" signature="450:528" ph="select paren... friendsExpertInfo" />
                 <marker date="1499005049276" expanded="true" signature="895:973" ph="select useri... friendsExpertInfo" />
@@ -121,10 +130,10 @@
       <find>submitFP</find>
       <find>.button</find>
       <find>submit</find>
-      <find>worker</find>
-      <find>connect</find>
       <find>80</find>
       <find>8084</find>
+      <find>worker</find>
+      <find>connect</find>
     </findStrings>
     <dirStrings>
       <dir>F:\villageexperts\PHPmainproject</dir>
@@ -159,7 +168,6 @@
         <option value="$PROJECT_DIR$/admin/admin_login.html" />
         <option value="$PROJECT_DIR$/getSearchData.php" />
         <option value="$PROJECT_DIR$/ajax.php" />
-        <option value="$PROJECT_DIR$/well-come.php" />
         <option value="$PROJECT_DIR$/css/mainstyle.css" />
         <option value="$PROJECT_DIR$/Make-Appointment.php" />
         <option value="$PROJECT_DIR$/config/connection.php" />
@@ -172,6 +180,7 @@
         <option value="$PROJECT_DIR$/css/style.css" />
         <option value="$PROJECT_DIR$/js/formSubmission.js" />
         <option value="$PROJECT_DIR$/js/connectMe.js" />
+        <option value="$PROJECT_DIR$/well-come.php" />
       </list>
     </option>
   </component>
@@ -407,7 +416,7 @@
       <workItem from="1497632583316" duration="20782000" />
       <workItem from="1498825093007" duration="658000" />
       <workItem from="1498844581395" duration="1951000" />
-      <workItem from="1498983504034" duration="8365000" />
+      <workItem from="1498983504034" duration="8540000" />
     </task>
     <task id="LOCAL-00001" summary="added style css to head also admin index">
       <created>1491539809659</created>
@@ -577,11 +586,18 @@
       <option name="project" value="LOCAL" />
       <updated>1499007183623</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="register">
+      <created>1499008294865</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1499008294865</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83051000" />
+    <option name="totallyTimeSpent" value="83226000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
@@ -856,13 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/well-come.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="16" lean-forward="false" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ajax.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="112">
@@ -968,6 +977,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/js/connectMe.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="21" column="79" lean-forward="false" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/formSubmission.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
@@ -978,8 +995,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/friends-family.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="403" column="23" lean-forward="false" selection-start-line="403" selection-start-column="16" selection-end-line="403" selection-end-column="23" />
+        <state relative-caret-position="350">
+          <caret line="98" column="4" lean-forward="true" selection-start-line="98" selection-start-column="4" selection-end-line="98" selection-end-column="48" />
           <folding>
             <marker date="1499005049276" expanded="true" signature="450:528" ph="select paren... friendsExpertInfo" />
             <marker date="1499005049276" expanded="true" signature="895:973" ph="select useri... friendsExpertInfo" />
@@ -991,10 +1008,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/connectMe.js">
+    <entry file="file://$PROJECT_DIR$/well-come.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="21" column="79" lean-forward="false" selection-start-line="21" selection-start-column="79" selection-end-line="21" selection-end-column="79" />
+        <state relative-caret-position="547">
+          <caret line="98" column="0" lean-forward="true" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
           <folding />
         </state>
       </provider>
