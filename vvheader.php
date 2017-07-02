@@ -1,6 +1,6 @@
 <?php
 
-if($_SERVER['REQUEST_URI']=="/" OR $_SERVER['REQUEST_URI']=="/index.php"){
+if($_SERVER['REQUEST_URI']=="/" OR $_SERVER['REQUEST_URI']=="/index.php" OR $_SERVER['REQUEST_URI']=="/logout.php" ){
 ?>
 <nav class="navbar navbar-dark scrolling-navbar logo-scroll">
 

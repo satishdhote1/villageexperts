@@ -26,10 +26,12 @@ session_start();
 }
 </style>
 <body class="bodybg" background="img/normal/family.jpg">
+
+<?php include 'vvheader.php';?>
+
 <div class="container-fluid header-part">
   <div class="row">
     <div class="col-md-12 text-center">
-      <div class="logo"> <img src="images/logo.png" alt="logo" > </div>
 			<div class="over-lap">
 				<div class="profile pull-left"> <img src="images/placeholder/male2.jpg" class="img-responsive"> </div>
 					<div class="pull-right">
