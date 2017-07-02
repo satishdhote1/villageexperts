@@ -90,7 +90,49 @@ if($tag == "SPregister")  {
      	}
   	}
 }
+else if($tag == "forgetPWD"){
+   $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
+   if(!empty($email)){
+        $sql="select * from friendsRegister where  email='".$email."'";
+        $tableResult = mysqli_query($conn, $sql);
+		if (mysqli_num_rows($tableResult) > 0) {
+			$row = mysqli_fetch_assoc($tableResult);
+			 $name = $row['fname']." ".$row['lname'];
+			$emailObject=new phpSendMail();
+		//----------------------------Email Body Texts------------------------
+		$body = '';
+		$body = '<div style="width:100%;max-width:660px;margin:0px auto;"><div style="text-align:center;"><img src="http://'.$_SERVER['SERVER_NAME'].'/images/logo.png" /></div>';
+		$body.='<div style="border:solid 1px #EEE;text-align:center; margin-bottom:3px;margin-top:10px;background:#F3F3F3;">			<p style="font-size:16px;color:#036;margin:3px 0;font-family:Georgia, \'Times New Roman\', Times, serif;padding:10px 15px;line-height:25px;text-align:left;">';
+		$body.='Dear '.$name.',<br /><br/> Did you forget your password? No problem! Please click the link below to reset your password.<br><br></p>';
+		// $body.='Dear '.$recieverFname.',<br /><br/>'.$senderName.' is seeking an Appointment with you at  www.VillageExperts.com.<br><br> His convenient timings are: <br><br>'.date('l', strtotime($appointTime[0]))." at ".$appointTime[0].'<br>'.date('l', strtotime($appointTime[1]))." at ".$appointTime[1].'<br>'.date('l', strtotime($appointTime[2]))." at ".$appointTime[2].'<br>'.date('l', strtotime($appointTime[3]))." at ".$appointTime[3].'<br>'.date('l', strtotime($appointTime[4]))." at ".$appointTime[4].'<br><br>'.'Please Click below to confirm a time for this Appointment.<br><br></p>';
+		$body.='<p style="width:200px;margin:20px auto;background:red;color:#fff;padding:12px 0px;font-family:Georgia,\'Times New Roman\', Times, serif;font-size:17px;text-align:center;border-radius:10px;font-weight:bold;"><a href="http://'.$_SERVER["SERVER_NAME"].'/forgetPassword.php?email='.$email.'&token='.rand().'" style="color:#fff;">Reset Password</a></p></div></div>';
 
+		 //----------------------------//Email Body Texts------------------------
+
+		$mailSent = $emailObject->sendMail($email,$recieverFname,"Village-Expert Request for new password.",$body);
+		if($mailSent){
+            $result['success'] = 1;
+			$result['error'] = 0;
+		}
+		else
+		{
+			$result['success'] = 0;
+			$result['error'] = 1;
+		}
+
+			
+        }else{
+			$result['success'] = 0;
+			$result['error'] = 1;
+		}
+    }else{
+		$result['success'] = 0;
+		$result['error'] = 1;
+    }
+
+    echo json_encode($result);
+
+}
 else if($tag == "checkEmail"){
     $userTypess = isset($_REQUEST['userType'])?$_REQUEST['userType']:'';
     $email = isset($_REQUEST['email'])?$_REQUEST['email']:'';
