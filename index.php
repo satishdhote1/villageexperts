@@ -79,25 +79,7 @@ if(!empty($email) && !empty($isFriendreg) && $isFriendreg == "yes"){
 <body>
 
 <!-- Start your project here-->
-
-<!--Navbar-->
-<nav class="navbar navbar-dark scrolling-navbar logo-scroll">
-
-    <div class="container">
-
-        <!--Collapse content-->
-        <div class="logo-modify">
-            <!--Navbar Brand-->
-            <a class="navbar-brand" href="#" target="_blank"><img src="img/normal/logo.png"><p>VILLAGE EXPERTS</p></a>
-            <!--Links-->
-            <div class="btn-primary col-md-2" href="#" target="_blank" style="background: transparent;padding: 10px;float: right;">About</div>
-            <div class="btn-primary col-md-2" href="#" target="_blank" style="background: transparent;padding: 10px;float: right;">Contact US</div>
-        </div>
-        <!--/.Collapse content-->
-
-    </div>
-</nav>
-<!--/.Navbar-->
+<?php include 'vvheader.php';?>
 
 <!--Mask-->
 <div class="view hm-black-strong-1 p-b-2" style="height:auto;">

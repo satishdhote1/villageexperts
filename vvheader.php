@@ -1,3 +1,22 @@
+if($_SERVER['REQUEST_URI']=="/"){
+<nav class="navbar navbar-dark scrolling-navbar logo-scroll">
+
+    <div class="container">
+
+        <div class="logo-modify">
+            <!--Navbar Brand-->
+            <a class="navbar-brand" href="#" target="_blank"><h3><img src="img/normal/logo.png">VILLAGE EXPERTS</h3></a>
+            <!--Links-->
+            <div class="btn-primary col-md-2" href="#" target="_blank" style="background: transparent;padding: 10px;float: right;">About</div>
+            <div class="btn-primary col-md-2" href="#" target="_blank" style="background: transparent;padding: 10px;float: right;">Contact US</div>
+        </div>
+
+    </div>
+</nav>
+
+}else{
+
+
 <nav class="navbar navbar-dark">
     <div class="container">
         <div class="row logoSection">
@@ -17,8 +36,7 @@
 
             <a class="col-md-1" href="logout.php" data-toggle="tooltip" data-placement="bottom" title="Log out!"><img src="images/logout.png" class="topBtn" style="cursor:pointer;"/></a>
 
-         </div>   
+        </div>
     </div>
 </nav>
-
-
+}
