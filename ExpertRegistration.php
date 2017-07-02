@@ -107,25 +107,8 @@ if (mysqli_num_rows($tableResult5) > 0)
 <body style="background:url(img/normal/Experts-1.jpg) no-repeat 100% 100%;background-size:cover;background-attachment:fixed;">
 
     <!-- Start your project here-->
+    <?php include 'vvheader.php';?>
 
-    <!--Navbar-->
-    <nav class="navbar navbar-dark scrolling-navbar logo-scroll">
-
-       
-        <div class="container">
-
-            <!--Collapse content-->
-            <div class="logo-modify">
-                <!--Navbar Brand-->
-                <a class="navbar-brand" href="#" target="_blank"><img src="img/normal/logo.png"><p>VILLAGE EXPERTS</p></a>
-                <!--Links-->
-            </div>
-            <!--/.Collapse content-->
-
-        </div>
-
-    </nav>
-    <!--/.Navbar-->
 <div class="container-fluid">
 <div class="row m-t-3"> 
     <!--Mask-->

@@ -1010,11 +1010,20 @@ input[type='file'] {
 .forgetpasswordModal{
     top:120px;
 }
+.addFriend{
+    padding: 10px;
+}
 .expertregisterationCard {
     border-radius: 10px;
     overflow: hidden;
     top:120px;
 }
+
+.flFname{
+    width: 40%; float:left ; padding-left:10px;}
+.flLname{
+    width: 40%; float:right}
+
 .btn-papl:hover,
 .btn-papl:focus {
     background-color: #9595f9 !important;

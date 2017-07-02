@@ -1,7 +1,6 @@
 $(document).ready(function() {
 
-
-				$(document).on("click",".submitFP",function(){
+    $(document).on("click",".submitFP",function(){
 					var email = $(".emailFP").val();
 					if(email == "")
 					{
@@ -43,7 +42,7 @@ $(document).ready(function() {
 
 				});
 
-				//Provider Click
+    //Provider Click
 
     $(document).on("click", ".friendLoginButton", function() {
         var email = $(".friendEmail").val();
