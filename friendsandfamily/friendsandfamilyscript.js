@@ -623,7 +623,7 @@ $(document).on("click",".FLconnectMember",function(){
             "&search=FaF&imagePath="+imagePath+
             "&memberName="+memberName+
             "&memberEmail="+memberEmail+
-            "&dir="+dir;
+            "&dir="+memberDir;
     }, 4000);
 
 });

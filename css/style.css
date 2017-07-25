@@ -245,11 +245,7 @@ footer.page-footer {
     background-color: #B50214;
     margin-top: 0;
 }
-@media only screen and (max-width: 768px) {
-    .navbar {
-        background-color: #b71c1c;
-    }
-}
+
 /* Necessary for full page carousel*/
 
 html,
@@ -835,7 +831,6 @@ table.head tr td {
 th {
     text-align: center;
     border: 1px solid #eee;
-    font: bold;
 }
 .inner_table {
     overflow-y: auto;
